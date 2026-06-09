@@ -13631,6 +13631,22 @@ const struct ItemInfo gItemsInfo[] =
         .iconPalette = gItemIconPalette_RotomCatalog,
     },
 
+    [ITEM_BULL_ESSENCE] =
+    {
+        .name = ITEM_NAME("Bull Essence"),
+        .price = 0,
+        .importance = 1,
+        .description = COMPOUND_STRING(
+            "A catalog full of\n"
+            "essence liked by\n"
+            "Tauros."),
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_BullEssence,
+        .iconPic = gItemIcon_RotomCatalog,
+        .iconPalette = gItemIconPalette_RotomCatalog,
+    },
+
     [ITEM_GRACIDEA] =
     {
         .name = ITEM_NAME("Gracidea"),

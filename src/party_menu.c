@@ -108,9 +108,13 @@ enum {
     MENU_CATALOG_FRIDGE,
     MENU_CATALOG_FAN,
     MENU_CATALOG_MOWER,
+    MENU_BULL_NORMAL,
+    MENU_BULL_FIGHT,
+    MENU_BULL_WATER,
+    MENU_BULL_FIRE,
     MENU_CHANGE_FORM,
     MENU_CHANGE_ABILITY,
-    MENU_FIELD_MOVES
+    MENU_FIELD_MOVES,
 };
 
 // IDs for the action lists that appear when a party mon is selected
@@ -131,6 +135,7 @@ enum {
     ACTIONS_TAKEITEM_TOSS,
     ACTIONS_ROTOM_CATALOG,
     ACTIONS_ZYGARDE_CUBE,
+    ACTIONS_BULL_ESSENCE,
 };
 
 enum {
@@ -480,6 +485,10 @@ static void CursorCb_CatalogWashing(u8);
 static void CursorCb_CatalogFridge(u8);
 static void CursorCb_CatalogFan(u8);
 static void CursorCb_CatalogMower(u8);
+static void CursorCb_Essence_Normal(u8);
+static void CursorCb_Essence_Fight(u8);
+static void CursorCb_Essence_Water(u8);
+static void CursorCb_Essence_Fire(u8);
 static void CursorCb_ChangeForm(u8);
 static void CursorCb_ChangeAbility(u8);
 void TryItemHoldFormChange(struct Pokemon *mon, s8 slotId, enum BattleTrainer trainer);
@@ -2810,6 +2819,9 @@ void DisplayPartyMenuStdMessage(u32 stringId)
         case PARTY_MSG_WHICH_APPLIANCE:
             *windowPtr = AddWindow(&sOrderWhichApplianceMsgWindowTemplate);
             break;
+        case PARTY_MSG_WHICH_ESSENCE:
+            *windowPtr = AddWindow(&sOrderWhichEssenceMsgWindowTemplate);
+            break;
         default:
             *windowPtr = AddWindow(&sDefaultPartyMsgWindowTemplate);
             break;
@@ -2871,6 +2883,9 @@ static u8 DisplaySelectionWindow(u8 windowType)
         break;
     case SELECTWINDOW_CATALOG:
         window = sCatalogSelectWindowTemplate;
+        break;
+    case SELECTWINDOW_ESSENCE:
+        window = sEssenceSelectWindowTemplate;
         break;
     case SELECTWINDOW_ZYGARDECUBE:
         window = sZygardeCubeSelectWindowTemplate;
@@ -6867,6 +6882,17 @@ void ItemUseCB_RotomCatalog(u8 taskId, TaskFunc task)
     gTasks[taskId].func = Task_HandleSelectionMenuInput;
 }
 
+void ItemUseCB_BullEssence(u8 taskId, TaskFunc task)
+{
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[1]);
+    SetPartyMonSelectionActions(gParties[B_TRAINER_PLAYER], gPartyMenu.slotId, ACTIONS_BULL_ESSENCE);
+    DisplaySelectionWindow(SELECTWINDOW_ESSENCE);
+    DisplayPartyMenuStdMessage(PARTY_MSG_WHICH_ESSENCE);
+    gTasks[taskId].data[0] = 0xFF;
+    gTasks[taskId].func = Task_HandleSelectionMenuInput;
+}
+
 bool32 TryMultichoiceFormChange(u8 taskId)
 {
     struct Pokemon *mon = &gParties[B_TRAINER_PLAYER][gPartyMenu.slotId];
@@ -6934,6 +6960,34 @@ static void CursorCb_CatalogMower(u8 taskId)
 {
     gSpecialVar_Result = 5;
     gSpecialVar_0x8000 = ROTOM_MOW_MOVE;
+    TryMultichoiceFormChange(taskId);
+}
+
+static void CursorCb_Essence_Normal(u8 taskId)
+{
+    gSpecialVar_Result = 0;
+    gSpecialVar_0x8000 = MOVE_RAGING_BULL;
+    TryMultichoiceFormChange(taskId);
+}
+
+static void CursorCb_Essence_Fight(u8 taskId)
+{
+    gSpecialVar_Result = 1;
+    gSpecialVar_0x8000 = MOVE_RAGING_BULL;
+    TryMultichoiceFormChange(taskId);
+}
+
+static void CursorCb_Essence_Water(u8 taskId)
+{
+    gSpecialVar_Result = 2;
+    gSpecialVar_0x8000 = MOVE_RAGING_BULL;
+    TryMultichoiceFormChange(taskId);
+}
+
+static void CursorCb_Essence_Fire(u8 taskId)
+{
+    gSpecialVar_Result = 3;
+    gSpecialVar_0x8000 = MOVE_RAGING_BULL;
     TryMultichoiceFormChange(taskId);
 }
 
