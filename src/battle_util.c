@@ -2260,6 +2260,10 @@ bool32 CanAbilityAbsorbMove(struct DamageContext *ctx)
         if (ctx->moveType == TYPE_GROUND)
             battleScript = AbsorbedByDrainHpAbility(ctx->battlerDef);
         break;
+    case ABILITY_ICE_EATER:
+        if (ctx->moveType == TYPE_ICE)
+            battleScript = AbsorbedByDrainHpAbility(ctx->battlerDef);
+        break;
     case ABILITY_MOTOR_DRIVE:
         if (ctx->moveType == TYPE_ELECTRIC)
             battleScript = AbsorbedByStatIncreaseAbility(ctx, STAT_SPEED, 1);

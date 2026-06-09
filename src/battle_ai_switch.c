@@ -609,6 +609,10 @@ static bool32 FindMonThatAbsorbsOpponentsMove(struct SwitchAiContext *switchCont
         absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_EARTH_EATER;
         absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_LEVITATE;
     }
+    if (incomingType == TYPE_ICE)
+    {
+        absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_ICE_EATER;
+    }
     if (IsSoundMove(switchContext->incomingMove))
     {
         absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_SOUNDPROOF;
