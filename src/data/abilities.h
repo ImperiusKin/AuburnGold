@@ -2480,4 +2480,70 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .name = _("Spicy Spray"),
         .description = COMPOUND_STRING("Burns the foe when damaged."),
     },
+
+    [ABILITY_BLAZING_SOUL] =
+    {
+        .name = _("Blazing Soul"),
+        .description = COMPOUND_STRING("Fire moves go first."),
+    },
+
+    [ABILITY_STRIKER] =
+    {
+        .name = _("Striker"),
+        .description = COMPOUND_STRING("Boosts kicking moves."),
+    },
+
+    [ABILITY_PARASITIC_WASTE] =
+    {
+        .name = _("Parasitic Waste"),
+        .description = COMPOUND_STRING("Moves that inflict the poisoned condition will drain the target instead."),
+    },
+
+    [ABILITY_BULL_RUSH] =
+    {
+        .name = _("Bull Rush"),
+        .description = COMPOUND_STRING("Boosts power by 20% and speed by 50% on first turn."),
+    },
+
+    [ABILITY_SELF_SUFFICIENT] =
+    {
+        .name = _("Self Sufficient"),
+        .description = COMPOUND_STRING("Restores 1/16th hp end of each turn."),
+    },
+
+    [ABILITY_ICE_EATER] =
+    {
+        .name = _("Ice Eater"),
+        .description = COMPOUND_STRING("Immunity and absorbing Ice moves."),
+    },
+
+    [ABILITY_FATAL_PRECISION] =
+    {
+        .name = _("Fatal Precision"),
+        .description = COMPOUND_STRING("Super Effective moves cannot miss and are boosted by 20% damage."),
+    },
+
+    [ABILITY_MOUNTAINEER] =
+    {
+        .name = _("Mounteener"),
+        .description = COMPOUND_STRING("Immune to Rock moves and hazards."),
+    },
+
+    [ABILITY_PROWESS] =
+    {
+        .name = _("Prowess"),
+        .description = COMPOUND_STRING("Raises Special Attack."),
+    },
+
+    [ABILITY_FLURRY] =
+    {
+        .name = _("Flurry"),
+        .description = COMPOUND_STRING("Punching and Kicking moves hit twice."),
+    },
+
+    [ABILITY_BONE_ZONE] =
+    {
+        .name = _("Bone Zone"),
+        .description = COMPOUND_STRING("Bone moves have boosted accuracy and ignore immunities."),
+    },
 };
