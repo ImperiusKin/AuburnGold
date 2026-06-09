@@ -654,6 +654,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestComboMoves = {COMBO_STARTER_LEER},
         .battleAnimScript = gBattleAnimMove_Stomp,
         .validApprenticeMove = TRUE,
+        .kickingMove = TRUE,
     },
 
     [MOVE_DOUBLE_KICK] =
@@ -678,6 +679,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestComboMoves = {0},
         .battleAnimScript = gBattleAnimMove_DoubleKick,
         .validApprenticeMove = TRUE,
+        .kickingMove = TRUE,
     },
 
     [MOVE_MEGA_KICK] =
@@ -701,6 +703,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestComboMoves = {COMBO_STARTER_FOCUS_ENERGY, COMBO_STARTER_MIND_READER},
         .battleAnimScript = gBattleAnimMove_MegaKick,
         .validApprenticeMove = TRUE,
+        .kickingMove = TRUE,
     },
 
     [MOVE_JUMP_KICK] =
@@ -731,6 +734,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestComboMoves = {COMBO_STARTER_MIND_READER},
         .battleAnimScript = gBattleAnimMove_JumpKick,
         .validApprenticeMove = TRUE,
+        .kickingMove = TRUE,
     },
 
     [MOVE_ROLLING_KICK] =
@@ -759,6 +763,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestComboMoves = {0},
         .battleAnimScript = gBattleAnimMove_RollingKick,
         .validApprenticeMove = TRUE,
+        .kickingMove = TRUE,
     },
 
     [MOVE_SAND_ATTACK] =
@@ -1833,6 +1838,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestComboMoves = {0},
         .battleAnimScript = gBattleAnimMove_LowKick,
         .validApprenticeMove = TRUE,
+        .kickingMove = TRUE,
     },
 
     [MOVE_COUNTER] =
@@ -3720,6 +3726,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestComboMoves = {COMBO_STARTER_MIND_READER},
         .battleAnimScript = gBattleAnimMove_HighJumpKick,
         .validApprenticeMove = TRUE,
+        .kickingMove = TRUE,
     },
 
     [MOVE_GLARE] =
@@ -4603,6 +4610,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestComboMoves = {COMBO_STARTER_FOCUS_ENERGY},
         .battleAnimScript = gBattleAnimMove_TripleKick,
         .validApprenticeMove = TRUE,
+        .kickingMove = TRUE,
     },
 
     [MOVE_THIEF] =
@@ -8196,6 +8204,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestComboMoves = {COMBO_STARTER_SUNNY_DAY, COMBO_STARTER_FOCUS_ENERGY},
         .battleAnimScript = gBattleAnimMove_BlazeKick,
         .validApprenticeMove = TRUE,
+        .kickingMove = TRUE,
     },
 
     [MOVE_MUD_SPORT] =
@@ -13108,6 +13117,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestComboStarterId = 0,
         .contestComboMoves = {0},
         .battleAnimScript = gBattleAnimMove_LowSweep,
+        .kickingMove = TRUE,
     },
 
     [MOVE_ACID_SPRAY] =
@@ -17260,6 +17270,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestComboStarterId = 0,
         .contestComboMoves = {0},
         .battleAnimScript = gBattleAnimMove_TropKick,
+        .kickingMove = TRUE,
     },
 
     [MOVE_INSTRUCT] =
@@ -17527,6 +17538,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestComboStarterId = 0,
         .contestComboMoves = {0},
         .battleAnimScript = gBattleAnimMove_StompingTantrum,
+        .kickingMove = TRUE,
     },
 
     [MOVE_SHADOW_BONE] =
@@ -19538,6 +19550,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestComboStarterId = 0,
         .contestComboMoves = {0},
         .battleAnimScript = gBattleAnimMove_TripleAxel,
+        .kickingMove = TRUE,
     },
 
     [MOVE_DUAL_WINGBEAT] =
@@ -19796,6 +19809,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestComboStarterId = 0,
         .contestComboMoves = {0},
         .battleAnimScript = gBattleAnimMove_ThunderousKick,
+        .kickingMove = TRUE,
     },
 
     [MOVE_GLACIAL_LANCE] =
@@ -20491,6 +20505,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             .chance = 30,
         }),
         .battleAnimScript = gBattleAnimMove_AxeKick,
+        .kickingMove = TRUE,
     },
 
     [MOVE_LAST_RESPECTS] =
