@@ -5994,6 +5994,10 @@ enum AIScore BattlerBenefitsFromAbilityScore(enum BattlerId battler, enum Abilit
         if (HasMoveWithCategory(battler, DAMAGE_CATEGORY_PHYSICAL))
             return BEST_EFFECT;
         break;
+    case ABILITY_PROWESS:
+        if (HasMoveWithCategory(battler, DAMAGE_CATEGORY_SPECIAL))
+            return BEST_EFFECT;
+        break;
     // Also used to Worry Seed WORRY_SEED
     case ABILITY_INSOMNIA:
     case ABILITY_VITAL_SPIRIT:

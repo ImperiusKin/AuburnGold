@@ -2533,6 +2533,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Prowess"),
         .description = COMPOUND_STRING("Raises Special Attack."),
+        .aiRating = 10,
     },
 
     [ABILITY_FLURRY] =
