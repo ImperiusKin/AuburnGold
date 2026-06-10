@@ -278,7 +278,7 @@ bool32 IsSwitchinTSpikesAffected(enum BattlerId battler)
         return FALSE;
     if (IS_BATTLER_ANY_TYPE(battler, TYPE_POISON, TYPE_STEEL))
         return FALSE;
-    if (ability == ABILITY_IMMUNITY || ability == ABILITY_MOUNTAINEER || AI_IsAbilityOnSide(battler, ABILITY_PASTEL_VEIL))
+    if (ability == ABILITY_IMMUNITY || ability == ABILITY_MOUNTAINEER || ability == ABILITY_SHIELD_DUST || AI_IsAbilityOnSide(battler, ABILITY_PASTEL_VEIL))
         return FALSE;
     if ((heldItemEffect == HOLD_EFFECT_HEAVY_DUTY_BOOTS || heldItemEffect == HOLD_EFFECT_CURE_PSN || heldItemEffect == HOLD_EFFECT_CURE_STATUS) && !ignoreItem)
         return FALSE;
@@ -1621,7 +1621,7 @@ static u32 GetSwitchinHazardsDamage(enum BattlerId battler)
     enum BattleSide side = GetBattlerSide(battler);
 
     // Check ways mon might avoid all hazards
-    if ((ability != ABILITY_MAGIC_GUARD && ability != ABILITY_MOUNTAINEER) || (heldItemEffect == HOLD_EFFECT_HEAVY_DUTY_BOOTS &&
+    if ((ability != ABILITY_MAGIC_GUARD && ability != ABILITY_MOUNTAINEER && ability != ABILITY_SHIELD_DUST) || (heldItemEffect == HOLD_EFFECT_HEAVY_DUTY_BOOTS &&
         !((gFieldStatuses & STATUS_FIELD_MAGIC_ROOM) || ability == ABILITY_KLUTZ)))
     {
         // Stealth Rock

@@ -9272,7 +9272,7 @@ bool32 IsBattlerAffectedByHazards(enum BattlerId battler, enum HoldEffect holdEf
         ret = FALSE;
         RecordItemEffectBattle(battler, holdEffect);
     }
-    else if (ability == ABILITY_MOUNTAINEER)
+    else if (ability == ABILITY_MOUNTAINEER || ability == ABILITY_SHIELD_DUST)
     {
         ret = FALSE;
     }
