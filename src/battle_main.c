@@ -5921,6 +5921,7 @@ enum Type GetDynamicMoveType(struct Pokemon *mon, enum Move move, enum BattlerId
         {
             //Emboar is Fire Type as a primary type
             case SPECIES_EMBOAR:
+            case SPECIES_EMBOAR_MEGA:
                 newType = GetSpeciesType(species, 0);
             default:
                 break;
