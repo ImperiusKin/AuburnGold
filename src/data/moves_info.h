@@ -18271,6 +18271,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestComboStarterId = 0,
         .contestComboMoves = {0},
         .battleAnimScript = gBattleAnimMove_SnipeShot,
+        .pulseMove = TRUE,
     },
 
     [MOVE_JAW_LOCK] =
@@ -21304,6 +21305,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestComboStarterId = 0,
         .contestComboMoves = {0},
         .battleAnimScript = gBattleAnimMove_ArmorCannon,
+        .pulseMove = TRUE,
     },
 
     [MOVE_BITTER_BLADE] =

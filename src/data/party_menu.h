@@ -845,7 +845,7 @@ struct
     [MENU_CHANGE_FORM]     = {COMPOUND_STRING("Change form"),       CursorCb_ChangeForm},
     [MENU_CHANGE_ABILITY]  = {COMPOUND_STRING("Change Ability"),    CursorCb_ChangeAbility},
     [MENU_BULL_NORMAL]     = {COMPOUND_STRING("Normal"),            CursorCb_Essence_Normal},
-    [MENU_BULL_FIGHT]      = {COMPOUND_STRING("Agressive"),         CursorCb_Essence_Fight},
+    [MENU_BULL_FIGHT]      = {COMPOUND_STRING("Aggressive"),        CursorCb_Essence_Fight},
     [MENU_BULL_WATER]      = {COMPOUND_STRING("Liquid"),            CursorCb_Essence_Water},
     [MENU_BULL_FIRE]       = {COMPOUND_STRING("Fiery"),             CursorCb_Essence_Fire},
 };
