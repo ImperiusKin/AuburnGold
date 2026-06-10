@@ -10341,6 +10341,9 @@ u32 GetTotalAccuracy(enum BattlerId battlerAtk, enum BattlerId battlerDef, enum 
     case ABILITY_VICTORY_STAR:
         calc = (calc * 110) / 100; // 1.1 victory star boost
         break;
+    case ABILITY_ILLUMINATE:
+        calc = (calc * 120) / 100; // 1.2 illuminate boost
+        break;
     case ABILITY_HUSTLE:
         if (IsBattleMovePhysical(move))
             calc = (calc * 80) / 100; // 1.2 hustle loss
