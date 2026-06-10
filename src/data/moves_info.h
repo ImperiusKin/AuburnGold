@@ -20933,7 +20933,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Raging Bull"),
         .description = COMPOUND_STRING(
             "Tackle that breaks barriers.\n"
-            "User's form determines type."),
+            "Becomes the user's type."),
         .effect = EFFECT_RAGING_BULL,
         .power = 90,
         .type = TYPE_NORMAL,

@@ -5914,15 +5914,21 @@ enum Type GetDynamicMoveType(struct Pokemon *mon, enum Move move, enum BattlerId
         }
         break;
     case EFFECT_RAGING_BULL:
+    {
+        enum Type newType = GetSpeciesType(species, 1);
+
         switch (species)
         {
-        case SPECIES_TAUROS_PALDEA_COMBAT:
-        case SPECIES_TAUROS_PALDEA_BLAZE:
-        case SPECIES_TAUROS_PALDEA_AQUA:
-            return GetSpeciesType(species, 1);
-        default:
-            break;
+            //Emboar is Fire Type as a primary type
+            case SPECIES_EMBOAR:
+                newType = GetSpeciesType(species, 0);
+            default:
+                break;
         }
+
+        if (newType != moveType)
+            return newType;
+    }
         break;
     case EFFECT_IVY_CUDGEL:
         switch (species)
