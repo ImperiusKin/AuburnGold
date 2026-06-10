@@ -6813,6 +6813,10 @@ static inline u32 CalcAttackStat(struct DamageContext *ctx)
     // attacker's abilities
     switch (ctx->abilities[battlerAtk])
     {
+    case ABILITY_ILLUSION:
+        if (gBattleStruct->illusion[battlerAtk].state == ILLUSION_ON)
+            modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.3));
+    break;
     case ABILITY_HUGE_POWER:
     case ABILITY_PURE_POWER:
         if (IsBattleMovePhysical(move))
