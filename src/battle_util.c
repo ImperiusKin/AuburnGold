@@ -8243,6 +8243,18 @@ static inline uq4_12_t CalcTypeEffectivenessMultiplierInternal(struct DamageCont
         }
     }
 
+    if ((ctx->abilities[ctx->battlerDef] == ABILITY_MOUNTAINEER && ctx->moveType == TYPE_ROCK && !isPresentHealing) && GetMovePower(ctx->move) != 0)
+    {
+        modifier = UQ_4_12(0.0);
+        ctx->abilityBlocked = TRUE;
+        if (ctx->updateFlags)
+        {
+            gLastUsedAbility = ctx->abilities[ctx->battlerDef];
+            gBattleStruct->moveResultFlags[ctx->battlerDef] |= MOVE_RESULT_MISSED;
+            RecordAbilityBattle(ctx->battlerDef, gBattleMons[ctx->battlerDef].ability);
+        }
+    }
+
     if (ctx->updateFlags)
         TryInitializeFirstSTABMoveTrainerSlide(ctx->battlerDef, ctx->battlerAtk, ctx->moveType);
 
@@ -9240,6 +9252,8 @@ void TrySaveExchangedItem(enum BattlerId battler, enum Item stolenItem)
 bool32 IsBattlerAffectedByHazards(enum BattlerId battler, enum HoldEffect holdEffect, bool32 toxicSpikes)
 {
     bool32 ret = TRUE;
+    u32 ability = GetBattlerAbility(battler);
+
     if (!IsBattlerAlive(battler))
     {
         ret = FALSE;
@@ -9254,6 +9268,11 @@ bool32 IsBattlerAffectedByHazards(enum BattlerId battler, enum HoldEffect holdEf
         ret = FALSE;
         RecordItemEffectBattle(battler, holdEffect);
     }
+    else if (ability == ABILITY_MOUNTAINEER)
+    {
+        ret = FALSE;
+    }
+
     return ret;
 }
 
