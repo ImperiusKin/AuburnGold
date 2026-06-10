@@ -798,7 +798,7 @@ static inline void CalcDynamicMoveDamage(struct DamageContext *ctx, u16 *medianD
             random *= RandomUniform(RNG_AI_DMG_ROLL_RANDOM, 2, 5);
         }
     }
-    else if (ctx->abilities[ctx->battlerAtk] == ABILITY_PARENTAL_BOND
+    else if ((ctx->abilities[ctx->battlerAtk] == ABILITY_PARENTAL_BOND || (ctx->abilities[ctx->battlerAtk] == ABILITY_FLURRY && (IsKickingMove(ctx->move) || IsPunchingMove(ctx->move))))
           && strikeCount == 0
           && !AI_IsDoubleSpreadMove(ctx->battlerAtk, ctx->move))
     {
@@ -1451,7 +1451,7 @@ s32 AI_WhoStrikesFirst(enum BattlerId battlerAI, enum BattlerId battler, enum Mo
 
 bool32 CanEndureHit(enum BattlerId battler, enum BattlerId battlerTarget, enum Move move)
 {
-    if (!AI_BattlerAtMaxHp(battlerTarget) || IsMultiHitMove(move) || gAiLogicData->abilities[battler]  == ABILITY_PARENTAL_BOND)
+    if (!AI_BattlerAtMaxHp(battlerTarget) || IsMultiHitMove(move) || gAiLogicData->abilities[battler] == ABILITY_PARENTAL_BOND || gAiLogicData->abilities[battler] == ABILITY_FLURRY)
         return FALSE;
     if (GetMoveStrikeCount(move) > 1 && !(AI_GetBattlerMoveTargetType(battler, move) == TARGET_SMART && !HasTwoOpponents(battler)))
         return FALSE;

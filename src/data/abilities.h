@@ -2540,6 +2540,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Flurry"),
         .description = COMPOUND_STRING("Punching and Kicking moves hit twice."),
+        .aiRating = 10,
     },
 
     [ABILITY_BONE_ZONE] =
