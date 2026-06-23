@@ -2548,4 +2548,18 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .name = _("Bone Zone"),
         .description = COMPOUND_STRING("Bone moves have boosted accuracy and ignore immunities."),
     },
+
+    [ABILITY_SAGE_POWER] =
+    {
+        .name = _("Sage Power"),
+        .description = COMPOUND_STRING("Ups Sp.Attack and locks move."),
+        .aiRating = 4,
+    },
+
+    [ABILITY_EMPEROR_PRESENCE] =
+    {
+        .name = _("Emperor Presence"),
+        .description = COMPOUND_STRING("Boosts ally's Steel and Water moves."),
+        .aiRating = 2,
+    },
 };

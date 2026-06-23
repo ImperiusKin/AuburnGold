@@ -6589,6 +6589,9 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageContext *ctx)
         if (moveType == TYPE_STEEL)
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
         break;
+    case ABILITY_EMPEROR_PRESENCE:
+        if (moveType == TYPE_STEEL || moveType == TYPE_WATER)
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
     case ABILITY_SHARPNESS:
         if (IsSlicingMove(move))
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
@@ -6617,6 +6620,10 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageContext *ctx)
         {
         case ABILITY_BATTERY:
             if (IsBattleMoveSpecial(move))
+                modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
+            break;
+        case ABILITY_EMPEROR_PRESENCE:
+            if (moveType == TYPE_STEEL || moveType == TYPE_WATER)
                 modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
             break;
         case ABILITY_POWER_SPOT:
