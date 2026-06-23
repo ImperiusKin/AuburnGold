@@ -8848,6 +8848,13 @@ static void Cmd_settaunt(void)
         gLastUsedAbility = ABILITY_OBLIVIOUS;
         RecordAbilityBattle(gBattlerTarget, ABILITY_OBLIVIOUS);
     }
+    else if(GetBattlerAbility(gBattlerTarget) == ABILITY_WAYWARD){
+        gBattlescriptCurrInstr = BattleScript_NotAffectedAbilityPopUp;
+        gBattleStruct->moveResultFlags[gBattlerTarget] |= MOVE_RESULT_DOESNT_AFFECT_FOE;
+        gBattlerAbility = gBattlerTarget;
+        gLastUsedAbility = ABILITY_WAYWARD;
+        RecordAbilityBattle(gBattlerTarget, ABILITY_WAYWARD);
+    }
     else if (gBattleMons[gBattlerTarget].volatiles.tauntTimer == 0)
     {
         u8 turns;

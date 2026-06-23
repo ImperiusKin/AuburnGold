@@ -2562,4 +2562,11 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Boosts ally's Steel and Water moves."),
         .aiRating = 2,
     },
+
+    [ABILITY_WAYWARD] =
+    {
+        .name = _("Wayward"),
+        .description = COMPOUND_STRING("Half damage from Fighting type attacks and immunity to Taunt."),
+        .aiRating = 2,
+    },
 };

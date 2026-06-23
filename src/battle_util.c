@@ -6596,6 +6596,7 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageContext *ctx)
     case ABILITY_EMPEROR_PRESENCE:
         if (moveType == TYPE_STEEL || moveType == TYPE_WATER)
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
+        break;
     case ABILITY_SHARPNESS:
         if (IsSlicingMove(move))
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
@@ -7494,6 +7495,13 @@ static inline uq4_12_t GetDefenderAbilitiesModifier(struct DamageContext *ctx)
         break;
     case ABILITY_PUNK_ROCK:
         if (IsSoundMove(ctx->move))
+        {
+            modifier = UQ_4_12(0.5);
+            recordAbility = TRUE;
+        }
+        break;
+    case ABILITY_WAYWARD:
+        if (ctx->moveType == TYPE_FIGHTING)
         {
             modifier = UQ_4_12(0.5);
             recordAbility = TRUE;
@@ -8978,6 +8986,14 @@ enum ImmunityHealStatusOutcome TryImmunityAbilityHealStatus(enum BattlerId battl
             outcome = IMMUNITY_TAUNT_CLEARED;
         }
         break;
+    case ABILITY_WAYWARD:
+        if (gBattleMons[battler].volatiles.tauntTimer != 0)
+        {
+            gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_CURED_TAUNT;
+            outcome = IMMUNITY_TAUNT_CLEARED;
+        }
+        break;
+    break;
     default:
         break;
     }
