@@ -166,6 +166,14 @@ BattleScript_AbilityStatChange::
 	trystatchanges BS_EFFECT_BATTLER, STAT_CHANGE_IGNORE_SELF
 	return
 
+BattleScript_SelfSufficient::
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_PKMNSABILITYRESTOREDHPALITTLE
+	waitmessage B_WAIT_TIME_LONG
+	healthbarupdate BS_ATTACKER, PASSIVE_HP_UPDATE
+	datahpupdate BS_ATTACKER, PASSIVE_HP_UPDATE
+	return
+
 BattleScript_DefiantActivates::
 	call BattleScript_AbilityPopUp
 	trybattlerstatchange BS_SCRIPTING, STAT_CHANGE_SECOND_QUEUE

@@ -3616,6 +3616,16 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
                     effect++;
                 }
                 break;
+            case ABILITY_SELF_SUFFICIENT:
+                if (gBattleMons[battler].hp < gBattleMons[battler].maxHP
+                && !(B_HEAL_BLOCKING >= GEN_5 && gBattleMons[battler].volatiles.healBlock))
+                {
+                    gEffectBattler = gBattlerAbility = battler;
+                    SetHealAmount(battler, GetNonDynamaxMaxHP(battler) / 16);
+                    BattleScriptCall(BattleScript_SelfSufficient);
+                    effect++;
+                }
+                break;
             case ABILITY_SPEED_BOOST:
                 if (CompareStat(battler, STAT_SPEED, MAX_STAT_STAGE, CMP_LESS_THAN, gLastUsedAbility) && !BattlerJustSwitchedIn(battler))
                 {
