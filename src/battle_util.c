@@ -1531,7 +1531,7 @@ u32 TrySetCantSelectMoveBattleScript(enum BattlerId battler)
             limitations++;
         }
     }
-    if (DYNAMAX_BYPASS_CHECK && (GetBattlerAbility(battler) == ABILITY_GORILLA_TACTICS) && *choicedMove != MOVE_NONE
+    if (DYNAMAX_BYPASS_CHECK && (GetBattlerAbility(battler) == ABILITY_GORILLA_TACTICS || GetBattlerAbility(battler) == ABILITY_SAGE_POWER) && *choicedMove != MOVE_NONE
               && *choicedMove != MOVE_UNAVAILABLE && *choicedMove != move)
     {
         gCurrentMove = *choicedMove;
@@ -1642,6 +1642,9 @@ u32 CheckMoveLimitations(enum BattlerId battler, u8 unusableMoves, u16 check)
             unusableMoves |= 1u << i;
         // Gorilla Tactics
         else if (check & MOVE_LIMITATION_CHOICE_ITEM && GetBattlerAbility(battler) == ABILITY_GORILLA_TACTICS && *choicedMove != MOVE_NONE && *choicedMove != MOVE_UNAVAILABLE && *choicedMove != move)
+            unusableMoves |= 1u << i;
+        // Sage Power
+        else if (check & MOVE_LIMITATION_CHOICE_ITEM && GetBattlerAbility(battler) == ABILITY_SAGE_POWER && *choicedMove != MOVE_NONE && *choicedMove != MOVE_UNAVAILABLE && *choicedMove != move)
             unusableMoves |= 1u << i;
         // Can't Use Twice flag
         else if (check & MOVE_LIMITATION_CANT_USE_TWICE && MoveCantBeUsedTwice(move) && move == gLastResultingMoves[battler])
@@ -6919,6 +6922,12 @@ static inline u32 CalcAttackStat(struct DamageContext *ctx)
         break;
     case ABILITY_GORILLA_TACTICS:
         if (IsBattleMovePhysical(move)
+         && !IsGimmickSelected(battlerAtk, GIMMICK_DYNAMAX)
+         && GetActiveGimmick(battlerAtk) != GIMMICK_DYNAMAX)
+            modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
+        break;
+    case ABILITY_SAGE_POWER:
+        if (IsBattleMoveSpecial(move)
          && !IsGimmickSelected(battlerAtk, GIMMICK_DYNAMAX)
          && GetActiveGimmick(battlerAtk) != GIMMICK_DYNAMAX)
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));

@@ -3713,7 +3713,7 @@ bool32 IsFlinchGuaranteed(enum BattlerId battlerAtk, enum BattlerId battlerDef, 
 bool32 HasChoiceEffect(enum BattlerId battler)
 {
     enum Ability ability = gAiLogicData->abilities[battler];
-    if (ability == ABILITY_GORILLA_TACTICS)
+    if (ability == ABILITY_GORILLA_TACTICS || ability == ABILITY_SAGE_POWER)
         return TRUE;
 
     if (ability == ABILITY_KLUTZ)
