@@ -69,6 +69,7 @@ const u8 *AbsorbedByDrainHpAbility(enum BattlerId battlerDef);
 const u8 *AbsorbedByStatIncreaseAbility(struct DamageContext *ctx, enum Stat statId, u32 statAmount);
 const u8 *AbsorbedByFlashFire(enum BattlerId battlerDef);
 static bool32 IsCriticalHit(struct DamageContext *ctx);
+static bool8 IsBattlerMoveSuperEffective(enum BattlerId battlerAtk, enum BattlerId battlerDef, enum Move move, enum Ability atkAbility);
 
 ARM_FUNC NOINLINE static uq4_12_t PercentToUQ4_12(u32 percent);
 ARM_FUNC NOINLINE static uq4_12_t PercentToUQ4_12_Floored(u32 percent);
@@ -7407,6 +7408,10 @@ static inline uq4_12_t GetAttackerAbilitiesModifier(enum BattlerId battlerAtk, u
         if (typeEffectivenessModifier >= UQ_4_12(2.0))
             return UQ_4_12(1.25);
         break;
+    case ABILITY_FATAL_PRECISION:
+        if (typeEffectivenessModifier >= UQ_4_12(2.0))
+            return UQ_4_12(1.20);
+        break;
     case ABILITY_SNIPER:
         if (isCrit)
             return UQ_4_12(1.5);
@@ -10258,6 +10263,13 @@ bool32 CanMoveSkipAccuracyCalc(enum BattlerId battlerAtk, enum BattlerId battler
         ability = ABILITY_NO_GUARD;
         abilityBattler = battlerDef;
     }
+    else if(abilityAtk == ABILITY_FATAL_PRECISION && IsBattlerMoveSuperEffective(battlerAtk, battlerDef, move, abilityAtk) && 
+            !IsSkyDropInvolved(battlerDef, moveEffect) && !IsSemiInvulnerable(battlerDef, CHECK_ALL) && moveEffect != EFFECT_OHKO)
+    {
+        effect = TRUE;
+        ability = ABILITY_FATAL_PRECISION;
+        abilityBattler = battlerAtk;
+    }
     // If the target is under the effects of Telekinesis, and the move isn't a OH-KO move, move hits.
     else if (gBattleMons[battlerDef].volatiles.telekinesis
           && !IsSemiInvulnerable(battlerDef, CHECK_ALL)
@@ -10301,6 +10313,23 @@ bool32 CanMoveSkipAccuracyCalc(enum BattlerId battlerAtk, enum BattlerId battler
         RecordAbilityBattle(abilityBattler, ability);
 
     return effect;
+}
+
+static bool8 IsBattlerMoveSuperEffective(enum BattlerId battlerAtk, enum BattlerId battlerDef, enum Move move, enum Ability atkAbility){
+    struct DamageContext ctx = {0};
+    uq4_12_t typeEffectivenessModifier = UQ_4_12(1.0);
+
+    ctx.battlerAtk = battlerAtk;
+    ctx.battlerDef = battlerDef;
+    ctx.move = ctx.chosenMove = move;
+    ctx.moveType = GetBattleMoveType(move);
+
+    typeEffectivenessModifier = CalcTypeEffectivenessMultiplier(&ctx);
+
+    if (typeEffectivenessModifier >= UQ_4_12(2.0))
+        return TRUE;
+
+    return FALSE;
 }
 
 u32 GetTotalAccuracy(enum BattlerId battlerAtk, enum BattlerId battlerDef, enum Move move, enum Ability atkAbility, enum Ability defAbility, enum HoldEffect atkHoldEffect, enum HoldEffect defHoldEffect)
@@ -10360,6 +10389,22 @@ u32 GetTotalAccuracy(enum BattlerId battlerAtk, enum BattlerId battlerDef, enum 
         if (IsBattleMovePhysical(move))
             calc = (calc * 80) / 100; // 1.2 hustle loss
         break;
+    case ABILITY_FATAL_PRECISION:
+    {
+        struct DamageContext ctx = {0};
+        uq4_12_t typeEffectivenessModifier = UQ_4_12(1.0);
+
+        ctx.battlerAtk = battlerAtk;
+        ctx.battlerDef = battlerDef;
+        ctx.move = ctx.chosenMove = move;
+        ctx.moveType = GetBattleMoveType(move);
+
+        typeEffectivenessModifier = CalcTypeEffectivenessMultiplier(&ctx);
+
+        if (typeEffectivenessModifier >= UQ_4_12(2.0))
+            calc = (calc * 120) / 100;
+    }
+    break;
     default:
         break;
     }
