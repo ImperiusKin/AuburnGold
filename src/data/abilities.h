@@ -528,6 +528,13 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 5,
     },
 
+    [ABILITY_BAD_COMPANY] =
+    {
+        .name = _("Bad Company"),
+        .description = COMPOUND_STRING("Prevents recoil damage."),
+        .aiRating = 5,
+    },
+
     [ABILITY_DROUGHT] =
     {
         .name = _("Drought"),

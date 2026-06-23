@@ -2508,6 +2508,9 @@ void SetMoveEffect(enum BattlerId battlerAtk, enum BattlerId effectBattler, enum
             enum Stat stat = sAccurateStatOrder[i];
             s32 stage = GetStatStage(stat, effect);
 
+            if(effect->self && GetBattlerAbility(effectBattler) == ABILITY_BAD_COMPANY && effect->moveEffect == MOVE_EFFECT_STAT_MINUS)
+                continue;
+
             if (stage == 0)
                 continue;
 
@@ -2519,8 +2522,14 @@ void SetMoveEffect(enum BattlerId battlerAtk, enum BattlerId effectBattler, enum
                 SetStatChange(BATTLE_PARTNER(effectBattler), stat, stage);
         }
 
-        BattleScriptPush(battleScript);
-        gBattlescriptCurrInstr = BattleScript_MoveEffectStatChange;
+        if(effect->self && GetBattlerAbility(effectBattler) == ABILITY_BAD_COMPANY && effect->moveEffect == MOVE_EFFECT_STAT_MINUS){
+            BattleScriptPush(battleScript);
+            gBattlescriptCurrInstr = BattleScript_MoveEffectStatChangeBlockedByBadCompany;
+        }
+        else{
+            BattleScriptPush(battleScript);
+            gBattlescriptCurrInstr = BattleScript_MoveEffectStatChange;
+        }
         break;
     }
     case MOVE_EFFECT_RECHARGE:

@@ -404,6 +404,7 @@ extern const u8 BattleScript_AbilityStatChange[];
 extern const u8 BattleScript_DefiantActivates[];
 extern const u8 BattleScript_AdrenalineOrbActivates[];
 extern const u8 BattleScript_MoveEffectStatChange[];
+extern const u8 BattleScript_MoveEffectStatChangeBlockedByBadCompany[];
 extern const u8 BattleScript_RemoveElectricType[];
 extern const u8 BattleScript_SeedSowerActivates[];
 extern const u8 BattleScript_WindPowerActivates[];

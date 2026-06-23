@@ -189,6 +189,12 @@ BattleScript_MoveEffectStatChange::
 	trystatchanges BS_ATTACKER, STAT_CHANGE_SILENT_FAILURE | STAT_CHANGE_IGNORE_SELF
 	return
 
+BattleScript_MoveEffectStatChangeBlockedByBadCompany::
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_PKMNSSTATCHANGEFAILURE
+	waitmessage B_WAIT_TIME_LONG
+	return
+
 BattleScript_ItemStatChange::
 	playanimation BS_SCRIPTING, B_ANIM_HELD_ITEM_EFFECT
 	trybattlerstatchange BS_SCRIPTING, STAT_CHANGE_ITEM
