@@ -2933,6 +2933,44 @@ static bool32 TryDancer(void)
     return FALSE;
 }
 
+bool8 MoveCanActivateParasiticWaste(enum Move move)
+{
+    enum BattleMoveEffects moveEffect;
+    u32 additionalEffectCount;
+
+    if (move == MOVE_NONE)
+        move = gCurrentMove;
+
+    moveEffect = GetMoveEffect(move);
+    additionalEffectCount = GetMoveAdditionalEffectCount(move);
+
+    switch(moveEffect){
+        case MOVE_EFFECT_POISON:
+        case MOVE_EFFECT_TOXIC:
+            return TRUE;
+        break;
+        default:
+            //Nothing
+        break;
+    }
+
+    for (u32 effectIndex = 0; effectIndex < additionalEffectCount; effectIndex++)
+    {
+        const struct AdditionalEffect *additionalEffect = GetMoveAdditionalEffectById(move, effectIndex);
+        switch (additionalEffect->moveEffect){
+            case MOVE_EFFECT_POISON:
+            case MOVE_EFFECT_TOXIC:
+                return TRUE;
+            break;
+        default:
+            //Nothing
+        break;
+        }
+    }
+
+    return FALSE;
+}
+
 u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum Ability ability, enum Move move, bool32 shouldAbilityTrigger)
 {
     u32 effect = 0;
@@ -4311,6 +4349,23 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
     case ABILITYEFFECT_MOVE_END_ATTACKER: // Same as above, but for attacker
         switch (gLastUsedAbility)
         {
+        case ABILITY_PARASITIC_WASTE:
+            if (IsBattlerAlive(gBattlerAttacker)
+            && !IsBattleMoveStatus(move) 
+            && MoveCanActivateParasiticWaste(move)
+            && !gBattleStruct->unableToUseMove
+            //&& CanBePoisoned(gBattlerAttacker, gBattlerTarget, gLastUsedAbility, GetBattlerAbility(gBattlerTarget))
+            && IsBattlerTurnDamaged(gBattlerTarget, EXCLUDING_SUBSTITUTES) // Need to actually hit the target
+            && !(B_HEAL_BLOCKING >= GEN_5 && gBattleMons[battler].volatiles.healBlock))
+            {
+                gEffectBattler = gBattlerTarget;
+                gBattleScripting.battler = gBattlerAttacker;
+                SetHealAmount(battler, gBattleScripting.savedDmg / 2);
+                PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
+                BattleScriptCall(BattleScript_ParasiticWasteTrigger);
+                effect++;
+            }
+            break;
         case ABILITY_POISON_TOUCH:
             if (IsBattlerAlive(gBattlerTarget)
              && !gBattleStruct->unableToUseMove
@@ -5279,6 +5334,11 @@ bool32 CanSetNonVolatileStatus(enum BattlerId battlerAtk, enum BattlerId battler
         }
         else if (abilityAtk != ABILITY_CORROSION && IS_BATTLER_ANY_TYPE(battlerDef, TYPE_POISON, TYPE_STEEL))
         {
+            battleScript = BattleScript_NotAffected;
+        }
+        else if (abilityAtk == ABILITY_PARASITIC_WASTE && !IsBattleMoveStatus(gCurrentMove) && MoveCanActivateParasiticWaste(gCurrentMove))
+        {
+            abilityAffected = TRUE;
             battleScript = BattleScript_NotAffected;
         }
         else if ((sideBattler = IsAbilityOnSide(battlerDef, ABILITY_PASTEL_VEIL)))

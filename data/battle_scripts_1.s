@@ -5101,6 +5101,16 @@ BattleScript_AbilityStatusEffect::
 	setnonvolatilestatus TRIGGER_ON_ABILITY
 	return
 
+BattleScript_ParasiticWasteTrigger::
+	healthbarupdate BS_ATTACKER, PASSIVE_HP_UPDATE
+	datahpupdate BS_ATTACKER, PASSIVE_HP_UPDATE
+	call BattleScript_AbilityPopUp
+	printfromtable gAbsorbDrainStringIds
+	waitmessage B_WAIT_TIME_LONG
+	tryfaintmon BS_ATTACKER
+BattleScript_ParasiticWasteTriggerRet:
+	return
+
 BattleScript_BattleBondActivatesOnMoveEndAttacker::
 	pause 5
 	copybyte gBattlerAbility, gBattlerAttacker
