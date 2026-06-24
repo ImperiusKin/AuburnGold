@@ -2553,7 +2553,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_BONE_ZONE] =
     {
         .name = _("Bone Zone"),
-        .description = COMPOUND_STRING("Bone moves have boosted accuracy and ignore immunities."),
+        .description = COMPOUND_STRING("Bone moves have Tinted Lens effect and ignore type immunities or abilities that grant type immunities."),
     },
 
     [ABILITY_SAGE_POWER] =

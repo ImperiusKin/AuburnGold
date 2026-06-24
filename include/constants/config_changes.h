@@ -46,6 +46,8 @@
     F(B_SHEER_COLD_IMMUNITY,       sheerColdImmunity,       (u32, GEN_COUNT - 1)) \
     F(B_ROOST_PURE_FLYING,         roostPureFlying,         (u32, GEN_COUNT - 1)) /* TODO: use in tests */ \
     F(B_STATUS_TYPE_IMMUNITY,      statusTypeImmunity,      (u32, GEN_COUNT - 1)) /* TODO: use in tests */ \
+    F(B_BONE_ZONE_IGNORE_AIR_BALLOON, boneZoneIgnoreAirBalloon, (u32, TRUE)) \
+    F(B_BONE_ZONE_IGNORE_MAGNET_RISE, boneZoneIgnoreMagnetRise, (u32, TRUE)) \
     F(B_HIDDEN_POWER_COUNTER,      hiddenPowerCounter,      (u32, GEN_COUNT - 1)) \
     /* Turn settings */ \
     F(B_BINDING_TURNS,             bindingTurns,            (u32, GEN_COUNT - 1)) \

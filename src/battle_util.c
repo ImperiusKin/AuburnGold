@@ -2249,6 +2249,53 @@ bool32 CanAbilityAbsorbMove(struct DamageContext *ctx)
 {
     const u8 *battleScript = NULL;
 
+    if (ctx->abilities[ctx->battlerAtk] == ABILITY_BONE_ZONE && IsBoneMove(ctx->move))
+    {
+        switch (ctx->abilities[ctx->battlerDef])
+        {
+        case ABILITY_VOLT_ABSORB:
+        case ABILITY_MOTOR_DRIVE:
+            if (ctx->moveType == TYPE_ELECTRIC)
+                return FALSE;
+            break;
+        case ABILITY_WATER_ABSORB:
+        case ABILITY_DRY_SKIN:
+            if (ctx->moveType == TYPE_WATER)
+                return FALSE;
+            break;
+        case ABILITY_EARTH_EATER:
+            if (ctx->moveType == TYPE_GROUND)
+                return FALSE;
+            break;
+        case ABILITY_ICE_EATER:
+            if (ctx->moveType == TYPE_ICE)
+                return FALSE;
+            break;
+        case ABILITY_LIGHTNING_ROD:
+            if (GetConfig(B_REDIRECT_ABILITY_IMMUNITY) >= GEN_5 && ctx->moveType == TYPE_ELECTRIC)
+                return FALSE;
+            break;
+        case ABILITY_STORM_DRAIN:
+            if (GetConfig(B_REDIRECT_ABILITY_IMMUNITY) >= GEN_5 && ctx->moveType == TYPE_WATER)
+                return FALSE;
+            break;
+        case ABILITY_SAP_SIPPER:
+            if (ctx->moveType == TYPE_GRASS)
+                return FALSE;
+            break;
+        case ABILITY_WELL_BAKED_BODY:
+            if (ctx->moveType == TYPE_FIRE)
+                return FALSE;
+            break;
+        case ABILITY_FLASH_FIRE:
+            if (ctx->moveType == TYPE_FIRE)
+                return FALSE;
+            break;
+        default:
+            break;
+        }
+    }
+
     switch (ctx->abilities[ctx->battlerDef])
     {
     case ABILITY_VOLT_ABSORB:
@@ -7491,7 +7538,7 @@ static inline uq4_12_t GetCollisionCourseElectroDriftModifier(enum Move move, uq
     return UQ_4_12(1.0);
 }
 
-static inline uq4_12_t GetAttackerAbilitiesModifier(enum BattlerId battlerAtk, uq4_12_t typeEffectivenessModifier, bool32 isCrit, enum Ability abilityAtk)
+static inline uq4_12_t GetAttackerAbilitiesModifier(enum BattlerId battlerAtk, uq4_12_t typeEffectivenessModifier, bool32 isCrit, enum Ability abilityAtk, enum Move move)
 {
     switch (abilityAtk)
     {
@@ -7509,6 +7556,10 @@ static inline uq4_12_t GetAttackerAbilitiesModifier(enum BattlerId battlerAtk, u
         break;
     case ABILITY_TINTED_LENS:
         if (typeEffectivenessModifier <= UQ_4_12(0.5))
+            return UQ_4_12(2.0);
+        break;
+    case ABILITY_BONE_ZONE:
+        if (IsBoneMove(move) && typeEffectivenessModifier <= UQ_4_12(0.5))
             return UQ_4_12(2.0);
         break;
     default:
@@ -7678,7 +7729,7 @@ static inline uq4_12_t GetOtherModifiers(struct DamageContext *ctx)
 
     if (unmodifiedAttackerSpeed >= unmodifiedDefenderSpeed)
     {
-        DAMAGE_MULTIPLY_MODIFIER(GetAttackerAbilitiesModifier(ctx->battlerAtk, ctx->typeEffectivenessModifier, ctx->isCrit, ctx->abilities[ctx->battlerAtk]));
+        DAMAGE_MULTIPLY_MODIFIER(GetAttackerAbilitiesModifier(ctx->battlerAtk, ctx->typeEffectivenessModifier, ctx->isCrit, ctx->abilities[ctx->battlerAtk], ctx->move));
         DAMAGE_MULTIPLY_MODIFIER(GetDefenderAbilitiesModifier(ctx));
         DAMAGE_MULTIPLY_MODIFIER(GetDefenderPartnerAbilitiesModifier(ctx));
         DAMAGE_MULTIPLY_MODIFIER(GetAttackerItemsModifier(ctx->battlerAtk, ctx->typeEffectivenessModifier, ctx->holdEffects[ctx->battlerAtk]));
@@ -7688,7 +7739,7 @@ static inline uq4_12_t GetOtherModifiers(struct DamageContext *ctx)
     {
         DAMAGE_MULTIPLY_MODIFIER(GetDefenderAbilitiesModifier(ctx));
         DAMAGE_MULTIPLY_MODIFIER(GetDefenderPartnerAbilitiesModifier(ctx));
-        DAMAGE_MULTIPLY_MODIFIER(GetAttackerAbilitiesModifier(ctx->battlerAtk, ctx->typeEffectivenessModifier, ctx->isCrit, ctx->abilities[ctx->battlerAtk]));
+        DAMAGE_MULTIPLY_MODIFIER(GetAttackerAbilitiesModifier(ctx->battlerAtk, ctx->typeEffectivenessModifier, ctx->isCrit, ctx->abilities[ctx->battlerAtk], ctx->move));
         DAMAGE_MULTIPLY_MODIFIER(GetDefenderItemsModifier(ctx));
         DAMAGE_MULTIPLY_MODIFIER(GetAttackerItemsModifier(ctx->battlerAtk, ctx->typeEffectivenessModifier, ctx->holdEffects[ctx->battlerAtk]));
     }
@@ -8206,6 +8257,14 @@ static inline void MulByTypeEffectiveness(struct DamageContext *ctx, uq4_12_t *m
         if (ctx->updateFlags)
             RecordAbilityBattle(ctx->battlerAtk, ctx->abilities[ctx->battlerAtk]);
     }
+    else if (IsBoneMove(ctx->move)
+        && ctx->abilities[ctx->battlerAtk] == ABILITY_BONE_ZONE
+        && mod == UQ_4_12(0.0))
+    {
+        mod = UQ_4_12(1.0);
+        if (ctx->updateFlags)
+            RecordAbilityBattle(ctx->battlerAtk, ctx->abilities[ctx->battlerAtk]);
+    }
 
     if (ctx->moveType == TYPE_PSYCHIC && defType == TYPE_DARK && gBattleMons[ctx->battlerDef].volatiles.miracleEye && mod == UQ_4_12(0.0))
         mod = UQ_4_12(1.0);
@@ -8285,6 +8344,7 @@ static inline uq4_12_t CalcTypeEffectivenessMultiplierInternal(struct DamageCont
 {
     enum Species illusionSpecies;
     enum Type types[3];
+    bool32 boneZoneIgnoresGroundImmunity = FALSE;
     GetBattlerTypes(ctx->battlerDef, FALSE, types);
 
     MulByTypeEffectiveness(ctx, &modifier, types[0]);
@@ -8309,6 +8369,10 @@ static inline uq4_12_t CalcTypeEffectivenessMultiplierInternal(struct DamageCont
     else if (ctx->moveType == TYPE_GROUND
         && !IsBattlerGroundedInverseCheck(ctx->battlerDef, ctx->abilities[ctx->battlerDef], ctx->holdEffects[ctx->battlerDef], INVERSE_BATTLE, ctx->isAnticipation)
         && !(MoveIgnoresTypeIfFlyingAndUngrounded(ctx->move))
+        && !(boneZoneIgnoresGroundImmunity = (ctx->abilities[ctx->battlerAtk] == ABILITY_BONE_ZONE
+            && IsBoneMove(ctx->move)
+            && (ctx->holdEffects[ctx->battlerDef] != HOLD_EFFECT_AIR_BALLOON || GetConfig(B_BONE_ZONE_IGNORE_AIR_BALLOON))
+            && (!gBattleMons[ctx->battlerDef].volatiles.magnetRise || GetConfig(B_BONE_ZONE_IGNORE_MAGNET_RISE))))
         && !(ctx->holdEffects[ctx->battlerDef] == HOLD_EFFECT_RING_TARGET && IS_BATTLER_OF_TYPE(ctx->battlerDef, TYPE_FLYING) && !IsBattlerUngroundedByAbilityItemOrEffect(ctx->battlerDef, ctx->abilities[ctx->battlerDef], ctx->holdEffects[ctx->battlerDef])))
     {
         modifier = UQ_4_12(0.0);
@@ -8323,6 +8387,10 @@ static inline uq4_12_t CalcTypeEffectivenessMultiplierInternal(struct DamageCont
         {
             ctx->airBalloonBlocked = TRUE;
         }
+    }
+    else if (boneZoneIgnoresGroundImmunity && ctx->updateFlags)
+    {
+        RecordAbilityBattle(ctx->battlerAtk, ctx->abilities[ctx->battlerAtk]);
     }
     else if (MoveHasNoEffectOnSameType(ctx->move) && IS_BATTLER_OF_TYPE(ctx->battlerDef, GetMoveType(ctx->move)))
     {
