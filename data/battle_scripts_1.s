@@ -5117,6 +5117,12 @@ BattleScript_ParasiticWasteTrigger::
 BattleScript_ParasiticWasteTriggerRet:
 	return
 
+BattleScript_TheGripperTrigger::
+	call BattleScript_AbilityPopUp
+	seteffectprimary BS_ATTACKER, BS_TARGET, MOVE_EFFECT_PREVENT_ESCAPE
+	printstring STRINGID_TARGETCANTESCAPENOW
+	return
+
 BattleScript_BattleBondActivatesOnMoveEndAttacker::
 	pause 5
 	copybyte gBattlerAbility, gBattlerAttacker

@@ -2576,4 +2576,11 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Half damage from Fighting type attacks and immunity to Taunt."),
         .aiRating = 2,
     },
+
+    [ABILITY_THE_GRIPPER] = 
+    {
+        .name = _("The Gripper"),
+        .description = COMPOUND_STRING("Contact moves from the user prevent the foe from escaping."),
+        .aiRating = 2,
+    },
 };
