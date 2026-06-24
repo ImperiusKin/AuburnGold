@@ -7658,6 +7658,13 @@ static inline uq4_12_t GetDefenderAbilitiesModifier(struct DamageContext *ctx)
             recordAbility = TRUE;
         }
         break;
+    case ABILITY_WATER_COMPACTION:
+        if (ctx->moveType == TYPE_WATER)
+        {
+            modifier = UQ_4_12(0.5);
+            recordAbility = TRUE;
+        }
+        break;
     case ABILITY_WAYWARD:
         if (ctx->moveType == TYPE_FIGHTING)
         {
