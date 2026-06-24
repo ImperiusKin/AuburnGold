@@ -2194,7 +2194,9 @@ static void SetNonVolatileStatus(enum BattlerId battlerAtk, enum BattlerId effec
     switch (effect)
     {
     case MOVE_EFFECT_SLEEP:
-        if (B_SLEEP_TURNS >= GEN_5)
+        if (B_SLEEP_TURNS == GEN_LATEST)
+            gBattleMons[effectBattler].status1 |= STATUS1_SLEEP_TURN(B_FORCED_SLEEP_TURNS);
+        else if (B_SLEEP_TURNS >= GEN_5)
             gBattleMons[effectBattler].status1 |= STATUS1_SLEEP_TURN(RandomUniform(RNG_SLEEP_TURNS, 2, 4));
         else if (B_SLEEP_TURNS >= GEN_3)
             gBattleMons[effectBattler].status1 |= STATUS1_SLEEP_TURN(RandomUniform(RNG_SLEEP_TURNS, 2, 5));
@@ -7160,7 +7162,10 @@ static void Cmd_trysetrest(void)
         else
             gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_REST;
 
-        gBattleMons[gBattlerTarget].status1 = STATUS1_SLEEP_TURN(3);
+        if (B_SLEEP_TURNS == GEN_LATEST)
+            gBattleMons[gBattlerTarget].status1 = STATUS1_SLEEP_TURN(B_FORCED_SLEEP_TURNS_REST);
+        else
+            gBattleMons[gBattlerTarget].status1 = STATUS1_SLEEP_TURN(3);
         BtlController_EmitSetMonData(gBattlerTarget, B_COMM_TO_CONTROLLER, REQUEST_STATUS_BATTLE, 0, sizeof(gBattleMons[gBattlerTarget].status1), &gBattleMons[gBattlerTarget].status1);
         MarkBattlerForControllerExec(gBattlerTarget);
         gBattlescriptCurrInstr = cmd->nextInstr;

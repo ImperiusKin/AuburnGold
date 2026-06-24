@@ -57,6 +57,8 @@
 #define B_DISABLE_TURNS             GEN_LATEST // Disable's turns. See Cmd_disablelastusedattack.
 #define B_TAILWIND_TURNS            GEN_LATEST // In Gen5+, Tailwind lasts 4 turns instead of 3.
 #define B_SLEEP_TURNS               GEN_LATEST // In Gen5+, sleep lasts for 2-4 turns instead of 2-5 turns.
+#define B_FORCED_SLEEP_TURNS        2          // Per Just Another Guy's request, sleep should always be applied for 2 turns
+#define B_FORCED_SLEEP_TURNS_REST   2          // Per Just Another Guy's request, sleep by using rest should always be applied for 2 turns
 #define B_TAUNT_TURNS               GEN_LATEST // In Gen5+, Taunt lasts 3 turns if the user acts before the target, or 4 turns if the target acted before the user. In Gen3, taunt lasts 2 turns and in Gen 4, 3-5 turns.
 #define B_ENCORE_TURNS              GEN_LATEST // In Gen5+, Encore lasts 3 turns if the target hasn't yet moved this turn, or 4 turns if it has. In Gen4, it lasts 3-7 turns. In Gen2-3, 2-6 turns.
 #define B_SPORT_TURNS               GEN_LATEST // In Gen6+, Water/Mud Sport last 5 turns, even if the user switches out.
