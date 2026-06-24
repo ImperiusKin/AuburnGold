@@ -866,6 +866,13 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_ICE_BODY] =
     {
         .name = _("Ice Body"),
+        .description = COMPOUND_STRING("Inflicts frostbite on contact."),
+        .aiRating = 4,
+    },
+
+    [ABILITY_ICE_BODY_OLD] =
+    {
+        .name = _("Ice Body Old"),
         .description = COMPOUND_STRING("HP recovery in Hail or Snow."),
         .aiRating = 3,
     },
