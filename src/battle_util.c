@@ -2850,67 +2850,78 @@ bool32 TryFieldEffects(enum FieldEffectCases caseId)
         }
         break;
     case FIELD_EFFECT_OVERWORLD_WEATHER:
-        if (!(gBattleTypeFlags & BATTLE_TYPE_RECORDED))
         {
-            switch (GetCurrentWeather())
+            u32 currentWeather = GetCurrentWeather();
+            u32 priorityWeather = VarGet(VAR_STARTING_BATTLE_WEATHER);
+            
+            if(priorityWeather != WEATHER_NONE)
+                currentWeather = priorityWeather;
+            
+            VarSet(VAR_STARTING_BATTLE_WEATHER, WEATHER_NONE);
+
+            if (!(gBattleTypeFlags & BATTLE_TYPE_RECORDED))
             {
-            case WEATHER_RAIN:
-            case WEATHER_RAIN_THUNDERSTORM:
-            case WEATHER_DOWNPOUR:
-                if (!(gBattleWeather & B_WEATHER_RAIN))
+                switch (currentWeather)
                 {
-                    gBattleWeather = B_WEATHER_RAIN_NORMAL;
-                    gBattleScripting.animArg1 = B_ANIM_RAIN_CONTINUES;
-                    effect = TRUE;
-                }
-                break;
-            case WEATHER_SANDSTORM:
-                if (!(gBattleWeather & B_WEATHER_SANDSTORM))
-                {
-                    gBattleWeather = B_WEATHER_SANDSTORM;
-                    gBattleScripting.animArg1 = B_ANIM_SANDSTORM_CONTINUES;
-                    effect = TRUE;
-                }
-                break;
-            case WEATHER_DROUGHT:
-                if (!(gBattleWeather & B_WEATHER_SUN))
-                {
-                    gBattleWeather = B_WEATHER_SUN_NORMAL;
-                    gBattleScripting.animArg1 = B_ANIM_SUN_CONTINUES;
-                    effect = TRUE;
-                }
-                break;
-            case WEATHER_SNOW:
-                if (!(gBattleWeather & B_WEATHER_ICY_ANY))
-                {
-                    if (B_OVERWORLD_SNOW >= GEN_9)
+                case WEATHER_RAIN:
+                case WEATHER_RAIN_THUNDERSTORM:
+                case WEATHER_DOWNPOUR:
+                    if (!(gBattleWeather & B_WEATHER_RAIN))
                     {
-                        gBattleWeather = B_WEATHER_SNOW;
-                        gBattleScripting.animArg1 = B_ANIM_SNOW_CONTINUES;
+                        gBattleWeather = B_WEATHER_RAIN_NORMAL;
+                        gBattleScripting.animArg1 = B_ANIM_RAIN_CONTINUES;
+                        effect = TRUE;
                     }
-                    else
+                    break;
+                case WEATHER_SANDSTORM:
+                    if (!(gBattleWeather & B_WEATHER_SANDSTORM))
                     {
-                        gBattleWeather = B_WEATHER_HAIL;
-                        gBattleScripting.animArg1 = B_ANIM_HAIL_CONTINUES;
+                        gBattleWeather = B_WEATHER_SANDSTORM;
+                        gBattleScripting.animArg1 = B_ANIM_SANDSTORM_CONTINUES;
+                        effect = TRUE;
                     }
-                    effect = TRUE;
+                    break;
+                case WEATHER_DROUGHT:
+                    if (!(gBattleWeather & B_WEATHER_SUN))
+                    {
+                        gBattleWeather = B_WEATHER_SUN_NORMAL;
+                        gBattleScripting.animArg1 = B_ANIM_SUN_CONTINUES;
+                        effect = TRUE;
+                    }
+                    break;
+                case WEATHER_SNOW:
+                    if (!(gBattleWeather & B_WEATHER_ICY_ANY))
+                    {
+                        if (B_OVERWORLD_SNOW >= GEN_9)
+                        {
+                            gBattleWeather = B_WEATHER_SNOW;
+                            gBattleScripting.animArg1 = B_ANIM_SNOW_CONTINUES;
+                        }
+                        else
+                        {
+                            gBattleWeather = B_WEATHER_HAIL;
+                            gBattleScripting.animArg1 = B_ANIM_HAIL_CONTINUES;
+                        }
+                        effect = TRUE;
+                    }
+                    break;
+                case WEATHER_FOG_DIAGONAL:
+                case WEATHER_FOG_HORIZONTAL:
+                    if (B_OVERWORLD_FOG == GEN_4 && !(gBattleWeather & B_WEATHER_FOG))
+                    {
+                        gBattleWeather = B_WEATHER_FOG;
+                        gBattleScripting.animArg1 = B_ANIM_FOG_CONTINUES;
+                        effect = TRUE;
+                    }
+                    break;
                 }
-                break;
-            case WEATHER_FOG_DIAGONAL:
-            case WEATHER_FOG_HORIZONTAL:
-                if (B_OVERWORLD_FOG == GEN_4 && !(gBattleWeather & B_WEATHER_FOG))
-                {
-                    gBattleWeather = B_WEATHER_FOG;
-                    gBattleScripting.animArg1 = B_ANIM_FOG_CONTINUES;
-                    effect = TRUE;
-                }
-                break;
             }
-        }
-        if (effect)
-        {
-            gBattleCommunication[MULTISTRING_CHOOSER] = GetCurrentWeather();
-            BattleScriptPushCursorAndCallback(BattleScript_OverworldWeatherStarts);
+
+            if (effect)
+            {
+                gBattleCommunication[MULTISTRING_CHOOSER] = currentWeather;
+                BattleScriptPushCursorAndCallback(BattleScript_OverworldWeatherStarts);
+            }
         }
         break;
     }
