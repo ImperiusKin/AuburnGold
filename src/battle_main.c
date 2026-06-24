@@ -4685,6 +4685,21 @@ u32 GetBattlerTotalSpeedStat(enum BattlerId battler, enum Ability ability, enum 
         speed = (GetParadoxBoostedStatId(battler) == STAT_SPEED) ? (speed * 150) / 100 : speed;
     else if (ability == ABILITY_UNBURDEN && gBattleMons[battler].volatiles.unburdenActive)
         speed *= 2;
+    else if (ability == ABILITY_FLOWER_GIFT && gBattleMons[battler].species == SPECIES_CHERRIM_SUNSHINE && IsBattlerWeatherAffected(GetBattlerHoldEffect(battler), GetWeather(), B_WEATHER_SUN))
+        speed = (speed * 150) / 100;
+    
+    if (IsBattlerAlive(BATTLE_PARTNER(battler)))
+    {
+        switch (GetBattlerAbility(BATTLE_PARTNER(battler)))
+        {
+        case ABILITY_FLOWER_GIFT:
+            if (gBattleMons[BATTLE_PARTNER(battler)].species == SPECIES_CHERRIM_SUNSHINE && IsBattlerWeatherAffected(GetBattlerHoldEffect(BATTLE_PARTNER(battler)), GetWeather(), B_WEATHER_SUN))
+                speed = (speed * 150) / 100;
+            break;
+        default:
+            break;
+        }
+    }
 
     // player's badge boost
     if (!(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK | BATTLE_TYPE_FRONTIER))
