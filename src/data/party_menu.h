@@ -655,6 +655,17 @@ static const struct WindowTemplate sEssenceSelectWindowTemplate =
     .baseBlock = 0x2E9,
 };
 
+static const struct WindowTemplate sWeatherReportSelectWindowTemplate =
+{
+    .bg = 2,
+    .tilemapLeft = 17,
+    .tilemapTop = 9,
+    .width = 12,
+    .height = 10,
+    .paletteNum = 14,
+    .baseBlock = 0x2E9,
+};
+
 static const struct WindowTemplate sZygardeCubeSelectWindowTemplate =
 {
     .bg = 2,
@@ -777,6 +788,7 @@ static const u8 *const sActionStringTable[] =
     [PARTY_MSG_ALREADY_HOLDING_ONE]    = gText_AlreadyHoldingOne,
     [PARTY_MSG_WHICH_APPLIANCE]        = gText_WhichAppliance,
     [PARTY_MSG_WHICH_ESSENCE]          = gText_WhichEssence,
+    [PARTY_MSG_WHICH_WEATHER]          = gText_WhichWeather,
     [PARTY_MSG_CHOOSE_SECOND_FUSION]   = gText_NextFusionMon,
     [PARTY_MSG_NO_POKEMON]             = COMPOUND_STRING("You have no POKéMON."),
     [PARTY_MSG_CHOOSE_MON_FOR_BOX]     = gText_SendWhichMonToPC,
@@ -848,6 +860,10 @@ struct
     [MENU_BULL_FIGHT]      = {COMPOUND_STRING("Aggressive"),        CursorCb_Essence_Fight},
     [MENU_BULL_WATER]      = {COMPOUND_STRING("Liquid"),            CursorCb_Essence_Water},
     [MENU_BULL_FIRE]       = {COMPOUND_STRING("Fiery"),             CursorCb_Essence_Fire},
+    [MENU_WEATHER_NORMAL]  = {COMPOUND_STRING("Normal"),            CursorCb_Weather_Normal},
+    [MENU_WEATHER_RAIN]    = {COMPOUND_STRING("Rain"),              CursorCb_Weather_Rain},
+    [MENU_WEATHER_SUN]     = {COMPOUND_STRING("Sun"),               CursorCb_Weather_Sun},
+    [MENU_WEATHER_HAIL]    = {COMPOUND_STRING("Hail"),              CursorCb_Weather_Hail},
 };
 
 static const u8 sPartyMenuAction_SummarySwitchCancel[] = {MENU_SUMMARY, MENU_SWITCH, MENU_CANCEL1};
@@ -865,50 +881,51 @@ static const u8 sPartyMenuAction_TradeSummaryCancel2[] = {MENU_TRADE2, MENU_SUMM
 static const u8 sPartyMenuAction_TakeItemTossCancel[] = {MENU_TAKE_ITEM, MENU_TOSS, MENU_CANCEL1};
 static const u8 sPartyMenuAction_RotomCatalog[] = {MENU_CATALOG_BULB, MENU_CATALOG_OVEN, MENU_CATALOG_WASHING, MENU_CATALOG_FRIDGE, MENU_CATALOG_FAN, MENU_CATALOG_MOWER, MENU_CANCEL1};
 static const u8 sPartyMenuAction_BullEssence[] = {MENU_BULL_NORMAL, MENU_BULL_FIGHT, MENU_BULL_WATER, MENU_BULL_FIRE, MENU_CANCEL1};
+static const u8 sPartyMenuAction_WeatherReport[] = {MENU_WEATHER_NORMAL, MENU_WEATHER_RAIN, MENU_WEATHER_SUN, MENU_WEATHER_HAIL, MENU_CANCEL1};
 static const u8 sPartyMenuAction_ZygardeCube[] = {MENU_CHANGE_FORM, MENU_CHANGE_ABILITY, MENU_CANCEL1};
-
-
 
 static const u8 *const sPartyMenuActions[] =
 {
-    [ACTIONS_NONE]          = NULL,
-    [ACTIONS_SWITCH]        = sPartyMenuAction_SummarySwitchCancel,
-    [ACTIONS_SHIFT]         = sPartyMenuAction_ShiftSummaryCancel,
-    [ACTIONS_SEND_OUT]      = sPartyMenuAction_SendOutSummaryCancel,
-    [ACTIONS_ENTER]         = sPartyMenuAction_EnterSummaryCancel,
-    [ACTIONS_NO_ENTRY]      = sPartyMenuAction_NoEntrySummaryCancel,
-    [ACTIONS_STORE]         = sPartyMenuAction_StoreSummaryCancel,
-    [ACTIONS_SUMMARY_ONLY]  = sPartyMenuAction_SummaryCancel,
-    [ACTIONS_ITEM]          = sPartyMenuAction_GiveTakeItemCancel,
-    [ACTIONS_MAIL]          = sPartyMenuAction_ReadTakeMailCancel,
-    [ACTIONS_REGISTER]      = sPartyMenuAction_RegisterSummaryCancel,
-    [ACTIONS_TRADE]         = sPartyMenuAction_TradeSummaryCancel1,
-    [ACTIONS_SPIN_TRADE]    = sPartyMenuAction_TradeSummaryCancel2,
-    [ACTIONS_TAKEITEM_TOSS] = sPartyMenuAction_TakeItemTossCancel,
-    [ACTIONS_ROTOM_CATALOG] = sPartyMenuAction_RotomCatalog,
-    [ACTIONS_BULL_ESSENCE]  = sPartyMenuAction_BullEssence,
-    [ACTIONS_ZYGARDE_CUBE]  = sPartyMenuAction_ZygardeCube,
+    [ACTIONS_NONE]           = NULL,
+    [ACTIONS_SWITCH]         = sPartyMenuAction_SummarySwitchCancel,
+    [ACTIONS_SHIFT]          = sPartyMenuAction_ShiftSummaryCancel,
+    [ACTIONS_SEND_OUT]       = sPartyMenuAction_SendOutSummaryCancel,
+    [ACTIONS_ENTER]          = sPartyMenuAction_EnterSummaryCancel,
+    [ACTIONS_NO_ENTRY]       = sPartyMenuAction_NoEntrySummaryCancel,
+    [ACTIONS_STORE]          = sPartyMenuAction_StoreSummaryCancel,
+    [ACTIONS_SUMMARY_ONLY]   = sPartyMenuAction_SummaryCancel,
+    [ACTIONS_ITEM]           = sPartyMenuAction_GiveTakeItemCancel,
+    [ACTIONS_MAIL]           = sPartyMenuAction_ReadTakeMailCancel,
+    [ACTIONS_REGISTER]       = sPartyMenuAction_RegisterSummaryCancel,
+    [ACTIONS_TRADE]          = sPartyMenuAction_TradeSummaryCancel1,
+    [ACTIONS_SPIN_TRADE]     = sPartyMenuAction_TradeSummaryCancel2,
+    [ACTIONS_TAKEITEM_TOSS]  = sPartyMenuAction_TakeItemTossCancel,
+    [ACTIONS_ROTOM_CATALOG]  = sPartyMenuAction_RotomCatalog,
+    [ACTIONS_BULL_ESSENCE]   = sPartyMenuAction_BullEssence,
+    [ACTIONS_WEATHER_REPORT] = sPartyMenuAction_WeatherReport,
+    [ACTIONS_ZYGARDE_CUBE]   = sPartyMenuAction_ZygardeCube,
 };
 
 static const u8 sPartyMenuActionCounts[] =
 {
-    [ACTIONS_NONE]          = 0,
-    [ACTIONS_SWITCH]        = ARRAY_COUNT(sPartyMenuAction_SummarySwitchCancel),
-    [ACTIONS_SHIFT]         = ARRAY_COUNT(sPartyMenuAction_ShiftSummaryCancel),
-    [ACTIONS_SEND_OUT]      = ARRAY_COUNT(sPartyMenuAction_SendOutSummaryCancel),
-    [ACTIONS_ENTER]         = ARRAY_COUNT(sPartyMenuAction_EnterSummaryCancel),
-    [ACTIONS_NO_ENTRY]      = ARRAY_COUNT(sPartyMenuAction_NoEntrySummaryCancel),
-    [ACTIONS_STORE]         = ARRAY_COUNT(sPartyMenuAction_StoreSummaryCancel),
-    [ACTIONS_SUMMARY_ONLY]  = ARRAY_COUNT(sPartyMenuAction_SummaryCancel),
-    [ACTIONS_ITEM]          = ARRAY_COUNT(sPartyMenuAction_GiveTakeItemCancel),
-    [ACTIONS_MAIL]          = ARRAY_COUNT(sPartyMenuAction_ReadTakeMailCancel),
-    [ACTIONS_REGISTER]      = ARRAY_COUNT(sPartyMenuAction_RegisterSummaryCancel),
-    [ACTIONS_TRADE]         = ARRAY_COUNT(sPartyMenuAction_TradeSummaryCancel1),
-    [ACTIONS_SPIN_TRADE]    = ARRAY_COUNT(sPartyMenuAction_TradeSummaryCancel2),
-    [ACTIONS_TAKEITEM_TOSS] = ARRAY_COUNT(sPartyMenuAction_TakeItemTossCancel),
-    [ACTIONS_ROTOM_CATALOG] = ARRAY_COUNT(sPartyMenuAction_RotomCatalog),
-    [ACTIONS_BULL_ESSENCE]  = ARRAY_COUNT(sPartyMenuAction_BullEssence),
-    [ACTIONS_ZYGARDE_CUBE]  = ARRAY_COUNT(sPartyMenuAction_ZygardeCube),
+    [ACTIONS_NONE]           = 0,
+    [ACTIONS_SWITCH]         = ARRAY_COUNT(sPartyMenuAction_SummarySwitchCancel),
+    [ACTIONS_SHIFT]          = ARRAY_COUNT(sPartyMenuAction_ShiftSummaryCancel),
+    [ACTIONS_SEND_OUT]       = ARRAY_COUNT(sPartyMenuAction_SendOutSummaryCancel),
+    [ACTIONS_ENTER]          = ARRAY_COUNT(sPartyMenuAction_EnterSummaryCancel),
+    [ACTIONS_NO_ENTRY]       = ARRAY_COUNT(sPartyMenuAction_NoEntrySummaryCancel),
+    [ACTIONS_STORE]          = ARRAY_COUNT(sPartyMenuAction_StoreSummaryCancel),
+    [ACTIONS_SUMMARY_ONLY]   = ARRAY_COUNT(sPartyMenuAction_SummaryCancel),
+    [ACTIONS_ITEM]           = ARRAY_COUNT(sPartyMenuAction_GiveTakeItemCancel),
+    [ACTIONS_MAIL]           = ARRAY_COUNT(sPartyMenuAction_ReadTakeMailCancel),
+    [ACTIONS_REGISTER]       = ARRAY_COUNT(sPartyMenuAction_RegisterSummaryCancel),
+    [ACTIONS_TRADE]          = ARRAY_COUNT(sPartyMenuAction_TradeSummaryCancel1),
+    [ACTIONS_SPIN_TRADE]     = ARRAY_COUNT(sPartyMenuAction_TradeSummaryCancel2),
+    [ACTIONS_TAKEITEM_TOSS]  = ARRAY_COUNT(sPartyMenuAction_TakeItemTossCancel),
+    [ACTIONS_ROTOM_CATALOG]  = ARRAY_COUNT(sPartyMenuAction_RotomCatalog),
+    [ACTIONS_BULL_ESSENCE]   = ARRAY_COUNT(sPartyMenuAction_BullEssence),
+    [ACTIONS_WEATHER_REPORT] = ARRAY_COUNT(sPartyMenuAction_WeatherReport),
+    [ACTIONS_ZYGARDE_CUBE]   = ARRAY_COUNT(sPartyMenuAction_ZygardeCube),
 };
 
 static const u8 *const sUnionRoomTradeMessages[] =

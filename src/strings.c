@@ -333,6 +333,7 @@ const u8 gText_InUseAlready_PM[] = _("This is in use already.");
 const u8 gText_AlreadyHoldingOne[] = _("{STR_VAR_1} is already holding\none {STR_VAR_2}.");
 const u8 gText_WhichAppliance[] = _("Order which\nappliance?");
 const u8 gText_WhichEssence[] = _("Use which\nessence?");
+const u8 gText_WhichWeather[] = _("Use which\nWeather?");
 const u8 gText_NoUse[] = _("No use.");
 const u8 gText_Able[] = _("ABLE");
 const u8 gText_First_PM[] = _("FIRST");

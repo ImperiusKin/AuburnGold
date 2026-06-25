@@ -13647,6 +13647,22 @@ const struct ItemInfo gItemsInfo[] =
         .iconPalette = gItemIconPalette_RotomCatalog,
     },
 
+    [ITEM_WEATHER_REPORT] =
+    {
+        .name = ITEM_NAME("Weather Report"),
+        .price = 0,
+        .importance = 1,
+        .description = COMPOUND_STRING(
+            "A catalog full of\n"
+            "essence liked by\n"
+            "Castform."),
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_WeatherReport,
+        .iconPic = gItemIcon_RotomCatalog,
+        .iconPalette = gItemIconPalette_RotomCatalog,
+    },
+
     [ITEM_GRACIDEA] =
     {
         .name = ITEM_NAME("Gracidea"),
