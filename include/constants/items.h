@@ -1054,6 +1054,7 @@ enum __attribute__((packed)) Item
 
     ITEM_BULL_ESSENCE = 874,
     ITEM_WEATHER_REPORT = 875,
+    ITEM_ENGINE_BAY = 876,
 
     ITEMS_COUNT,
     ITEM_FIELD_ARROW = ITEMS_COUNT,

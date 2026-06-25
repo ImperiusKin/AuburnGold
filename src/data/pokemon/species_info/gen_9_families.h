@@ -4416,6 +4416,7 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         )
         .levelUpLearnset = sRevavroomLevelUpLearnset,
         .teachableLearnset = sRevavroomTeachableLearnset,
+        .formChangeTable = sRevavroomFormChangeTable,
     },
 #endif //P_FAMILY_VAROOM
 

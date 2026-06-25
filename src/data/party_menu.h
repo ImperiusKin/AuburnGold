@@ -864,6 +864,8 @@ struct
     [MENU_WEATHER_RAIN]    = {COMPOUND_STRING("Rain"),              CursorCb_Weather_Rain},
     [MENU_WEATHER_SUN]     = {COMPOUND_STRING("Sun"),               CursorCb_Weather_Sun},
     [MENU_WEATHER_HAIL]    = {COMPOUND_STRING("Hail"),              CursorCb_Weather_Hail},
+    [MENU_WEATHER_SAND]    = {COMPOUND_STRING("Sand"),              CursorCb_Weather_Sand},
+    
 };
 
 static const u8 sPartyMenuAction_SummarySwitchCancel[] = {MENU_SUMMARY, MENU_SWITCH, MENU_CANCEL1};
@@ -881,7 +883,7 @@ static const u8 sPartyMenuAction_TradeSummaryCancel2[] = {MENU_TRADE2, MENU_SUMM
 static const u8 sPartyMenuAction_TakeItemTossCancel[] = {MENU_TAKE_ITEM, MENU_TOSS, MENU_CANCEL1};
 static const u8 sPartyMenuAction_RotomCatalog[] = {MENU_CATALOG_BULB, MENU_CATALOG_OVEN, MENU_CATALOG_WASHING, MENU_CATALOG_FRIDGE, MENU_CATALOG_FAN, MENU_CATALOG_MOWER, MENU_CANCEL1};
 static const u8 sPartyMenuAction_BullEssence[] = {MENU_BULL_NORMAL, MENU_BULL_FIGHT, MENU_BULL_WATER, MENU_BULL_FIRE, MENU_CANCEL1};
-static const u8 sPartyMenuAction_WeatherReport[] = {MENU_WEATHER_NORMAL, MENU_WEATHER_RAIN, MENU_WEATHER_SUN, MENU_WEATHER_HAIL, MENU_CANCEL1};
+static const u8 sPartyMenuAction_WeatherReport[] = {MENU_WEATHER_NORMAL, MENU_WEATHER_RAIN, MENU_WEATHER_SUN, MENU_WEATHER_HAIL, MENU_WEATHER_SAND, MENU_CANCEL1};
 static const u8 sPartyMenuAction_ZygardeCube[] = {MENU_CHANGE_FORM, MENU_CHANGE_ABILITY, MENU_CANCEL1};
 
 static const u8 *const sPartyMenuActions[] =

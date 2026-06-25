@@ -116,6 +116,7 @@ enum {
     MENU_WEATHER_RAIN,
     MENU_WEATHER_SUN,
     MENU_WEATHER_HAIL,
+    MENU_WEATHER_SAND,
     MENU_CHANGE_FORM,
     MENU_CHANGE_ABILITY,
     MENU_FIELD_MOVES,
@@ -498,6 +499,7 @@ static void CursorCb_Weather_Normal(u8);
 static void CursorCb_Weather_Rain(u8);
 static void CursorCb_Weather_Sun(u8);
 static void CursorCb_Weather_Hail(u8);
+static void CursorCb_Weather_Sand(u8);
 static void CursorCb_ChangeForm(u8);
 static void CursorCb_ChangeAbility(u8);
 void TryItemHoldFormChange(struct Pokemon *mon, s8 slotId, enum BattleTrainer trainer);
@@ -7041,6 +7043,13 @@ static void CursorCb_Weather_Sun(u8 taskId)
 static void CursorCb_Weather_Hail(u8 taskId)
 {
     gSpecialVar_Result = 3;
+    gSpecialVar_0x8000 = MOVE_WEATHER_BALL;
+    TryMultichoiceFormChange(taskId);
+}
+
+static void CursorCb_Weather_Sand(u8 taskId)
+{
+    gSpecialVar_Result = 4;
     gSpecialVar_0x8000 = MOVE_WEATHER_BALL;
     TryMultichoiceFormChange(taskId);
 }
