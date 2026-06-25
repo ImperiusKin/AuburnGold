@@ -2800,6 +2800,9 @@ static const struct SpriteFrameImage sPicTable_CastformRainy[] = {
 static const struct SpriteFrameImage sPicTable_CastformSnowy[] = {
     overworld_ascending_frames(gObjectEventPic_CastformSnowy, 4, 4),
 };
+static const struct SpriteFrameImage sPicTable_CastformSandy[] = {
+    overworld_ascending_frames(gObjectEventPic_CastformSandy, 4, 4),
+};
 #endif //P_FAMILY_CASTFORM
 
 #if P_FAMILY_KECLEON

@@ -12909,6 +12909,11 @@ const u32 gObjectEventPic_Substitute[] = INCGFX_COMP("graphics/pokemon/question_
     const u16 gMonPalette_CastformSnowy[] = INCGFX_U16("graphics/pokemon/castform/snowy/normal.pal", ".gbapal");
     const u32 gMonBackPic_CastformSnowy[] = INCGFX_U32("graphics/pokemon/castform/snowy/back.png", ".4bpp.smol");
     const u16 gMonShinyPalette_CastformSnowy[] = INCGFX_U16("graphics/pokemon/castform/snowy/shiny.pal", ".gbapal");
+
+    const u32 gMonFrontPic_CastformSandy[] = INCGFX_U32("graphics/pokemon/castform/sandy/anim_front.png", ".4bpp.smol");
+    const u16 gMonPalette_CastformSandy[] = INCGFX_U16("graphics/pokemon/castform/sandy/normal.pal", ".gbapal");
+    const u32 gMonBackPic_CastformSandy[] = INCGFX_U32("graphics/pokemon/castform/sandy/back.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_CastformSandy[] = INCGFX_U16("graphics/pokemon/castform/sandy/shiny.pal", ".gbapal");
 #else
     const u32 gMonFrontPic_CastformNormal[] = INCGFX_U32("graphics/pokemon/castform/front_gba.png", ".4bpp.smol");
     const u16 gMonPalette_CastformNormal[] = INCGFX_U16("graphics/pokemon/castform/normal_gba.pal", ".gbapal");
@@ -12929,6 +12934,11 @@ const u32 gObjectEventPic_Substitute[] = INCGFX_COMP("graphics/pokemon/question_
     const u16 gMonPalette_CastformSnowy[] = INCGFX_U16("graphics/pokemon/castform/snowy/normal_gba.pal", ".gbapal");
     const u32 gMonBackPic_CastformSnowy[] = INCGFX_U32("graphics/pokemon/castform/snowy/back_gba.png", ".4bpp.smol");
     const u16 gMonShinyPalette_CastformSnowy[] = INCGFX_U16("graphics/pokemon/castform/snowy/shiny_gba.pal", ".gbapal");
+
+    const u32 gMonFrontPic_CastformSandy[] = INCGFX_U32("graphics/pokemon/castform/sandy/front_gba.png", ".4bpp.smol");
+    const u16 gMonPalette_CastformSandy[] = INCGFX_U16("graphics/pokemon/castform/sandy/normal_gba.pal", ".gbapal");
+    const u32 gMonBackPic_CastformSandy[] = INCGFX_U32("graphics/pokemon/castform/sandy/back_gba.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_CastformSandy[] = INCGFX_U16("graphics/pokemon/castform/sandy/shiny_gba.pal", ".gbapal");
 #endif //P_GBA_STYLE_SPECIES_GFX
 #if !P_GBA_STYLE_SPECIES_ICONS
     const u8 gMonIcon_CastformNormal[] = INCGFX_U8("graphics/pokemon/castform/icon.png", ".4bpp");
@@ -12942,21 +12952,25 @@ const u32 gObjectEventPic_Substitute[] = INCGFX_COMP("graphics/pokemon/question_
     const u8 gMonIcon_CastformSunny[] = INCGFX_U8("graphics/pokemon/castform/sunny/icon.png", ".4bpp");
     const u8 gMonIcon_CastformRainy[] = INCGFX_U8("graphics/pokemon/castform/rainy/icon.png", ".4bpp");
     const u8 gMonIcon_CastformSnowy[] = INCGFX_U8("graphics/pokemon/castform/snowy/icon.png", ".4bpp");
+    const u8 gMonIcon_CastformSandy[] = INCGFX_U8("graphics/pokemon/castform/sandy/icon.png", ".4bpp");
 
 #if OW_POKEMON_OBJECT_EVENTS
     const u32 gObjectEventPic_CastformNormal[] = INCGFX_COMP("graphics/pokemon/castform/overworld.png", ".4bpp", "-mwidth 4 -mheight 4");
     const u32 gObjectEventPic_CastformSunny[] = INCGFX_COMP("graphics/pokemon/castform/sunny/overworld.png", ".4bpp", "-mwidth 4 -mheight 4");
     const u32 gObjectEventPic_CastformRainy[] = INCGFX_COMP("graphics/pokemon/castform/rainy/overworld.png", ".4bpp", "-mwidth 4 -mheight 4");
     const u32 gObjectEventPic_CastformSnowy[] = INCGFX_COMP("graphics/pokemon/castform/snowy/overworld.png", ".4bpp", "-mwidth 4 -mheight 4");
+    const u32 gObjectEventPic_CastformSandy[] = INCGFX_COMP("graphics/pokemon/castform/sandy/overworld.png", ".4bpp", "-mwidth 4 -mheight 4");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
     const u16 gOverworldPalette_CastformNormal[] = INCGFX_U16("graphics/pokemon/castform/overworld_normal.pal", ".gbapal");
     const u16 gOverworldPalette_CastformSunny[] = INCGFX_U16("graphics/pokemon/castform/sunny/overworld_normal.pal", ".gbapal");
     const u16 gOverworldPalette_CastformRainy[] = INCGFX_U16("graphics/pokemon/castform/rainy/overworld_normal.pal", ".gbapal");
     const u16 gOverworldPalette_CastformSnowy[] = INCGFX_U16("graphics/pokemon/castform/snowy/overworld_normal.pal", ".gbapal");
+    const u16 gOverworldPalette_CastformSandy[] = INCGFX_U16("graphics/pokemon/castform/sandy/overworld_normal.pal", ".gbapal");
     const u16 gShinyOverworldPalette_CastformNormal[] = INCGFX_U16("graphics/pokemon/castform/overworld_shiny.pal", ".gbapal");
     const u16 gShinyOverworldPalette_CastformSunny[] = INCGFX_U16("graphics/pokemon/castform/sunny/overworld_shiny.pal", ".gbapal");
     const u16 gShinyOverworldPalette_CastformRainy[] = INCGFX_U16("graphics/pokemon/castform/rainy/overworld_shiny.pal", ".gbapal");
     const u16 gShinyOverworldPalette_CastformSnowy[] = INCGFX_U16("graphics/pokemon/castform/snowy/overworld_shiny.pal", ".gbapal");
+    const u16 gShinyOverworldPalette_CastformSandy[] = INCGFX_U16("graphics/pokemon/castform/sandy/overworld_shiny.pal", ".gbapal");
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 #endif //P_FAMILY_CASTFORM
