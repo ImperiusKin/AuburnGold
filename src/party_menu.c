@@ -117,6 +117,12 @@ enum {
     MENU_WEATHER_SUN,
     MENU_WEATHER_HAIL,
     MENU_WEATHER_SAND,
+    MENU_ENGINE_NORMAL,
+    MENU_ENGINE_SEGIN,
+    MENU_ENGINE_SCHEDAR,
+    MENU_ENGINE_NAVI,
+    MENU_ENGINE_RUCHBAH,
+    MENU_ENGINE_CAPH,
     MENU_CHANGE_FORM,
     MENU_CHANGE_ABILITY,
     MENU_FIELD_MOVES,
@@ -142,6 +148,7 @@ enum {
     ACTIONS_ZYGARDE_CUBE,
     ACTIONS_BULL_ESSENCE,
     ACTIONS_WEATHER_REPORT,
+    ACTIONS_ENGINE_BAY,
 };
 
 enum {
@@ -500,6 +507,7 @@ static void CursorCb_Weather_Rain(u8);
 static void CursorCb_Weather_Sun(u8);
 static void CursorCb_Weather_Hail(u8);
 static void CursorCb_Weather_Sand(u8);
+static void CursorCb_Engine_Caph(u8);
 static void CursorCb_ChangeForm(u8);
 static void CursorCb_ChangeAbility(u8);
 void TryItemHoldFormChange(struct Pokemon *mon, s8 slotId, enum BattleTrainer trainer);
@@ -2903,6 +2911,9 @@ static u8 DisplaySelectionWindow(u8 windowType)
         break;
     case SELECTWINDOW_WEATHER:
         window = sWeatherReportSelectWindowTemplate;
+        break;
+    case SELECTWINDOW_ENGINE:
+        window = sEngineBaySelectWindowTemplate;
         break;
     case SELECTWINDOW_ZYGARDECUBE:
         window = sZygardeCubeSelectWindowTemplate;
@@ -6921,6 +6932,17 @@ void ItemUseCB_WeatherReport(u8 taskId, TaskFunc task)
     gTasks[taskId].func = Task_HandleSelectionMenuInput;
 }
 
+void ItemUseCB_EngineBay(u8 taskId, TaskFunc task)
+{
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[1]);
+    SetPartyMonSelectionActions(gParties[B_TRAINER_PLAYER], gPartyMenu.slotId, ACTIONS_ENGINE_BAY);
+    DisplaySelectionWindow(SELECTWINDOW_ENGINE);
+    DisplayPartyMenuStdMessage(PARTY_MSG_WHICH_WEATHER);
+    gTasks[taskId].data[0] = 0xFF;
+    gTasks[taskId].func = Task_HandleSelectionMenuInput;
+}
+
 bool32 TryMultichoiceFormChange(u8 taskId)
 {
     struct Pokemon *mon = &gParties[B_TRAINER_PLAYER][gPartyMenu.slotId];
@@ -7048,6 +7070,13 @@ static void CursorCb_Weather_Hail(u8 taskId)
 }
 
 static void CursorCb_Weather_Sand(u8 taskId)
+{
+    gSpecialVar_Result = 4;
+    gSpecialVar_0x8000 = MOVE_WEATHER_BALL;
+    TryMultichoiceFormChange(taskId);
+}
+
+static void CursorCb_Engine_Caph(u8 taskId)
 {
     gSpecialVar_Result = 4;
     gSpecialVar_0x8000 = MOVE_WEATHER_BALL;

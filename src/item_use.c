@@ -1483,6 +1483,12 @@ void ItemUseOutOfBattle_WeatherReport(u8 taskId)
     SetUpItemUseCallback(taskId);
 }
 
+void ItemUseOutOfBattle_EngineBay(u8 taskId)
+{
+    gItemUseCB = ItemUseCB_EngineBay;
+    SetUpItemUseCallback(taskId);
+}
+
 void ItemUseOutOfBattle_ZygardeCube(u8 taskId)
 {
     gItemUseCB = ItemUseCB_ZygardeCube;

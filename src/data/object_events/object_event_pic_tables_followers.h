@@ -6409,6 +6409,21 @@ static const struct SpriteFrameImage sPicTable_Varoom[] = {
 static const struct SpriteFrameImage sPicTable_Revavroom[] = {
     overworld_ascending_frames(gObjectEventPic_Revavroom, 4, 4),
 };
+static const struct SpriteFrameImage sPicTable_RevavroomSegin[] = {
+    overworld_ascending_frames(gObjectEventPic_RevavroomSegin, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_RevavroomSchedar[] = {
+    overworld_ascending_frames(gObjectEventPic_RevavroomSchedar, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_RevavroomNavi[] = {
+    overworld_ascending_frames(gObjectEventPic_RevavroomNavi, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_RevavroomRuchbah[] = {
+    overworld_ascending_frames(gObjectEventPic_RevavroomRuchbah, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_RevavroomCaph[] = {
+    overworld_ascending_frames(gObjectEventPic_RevavroomCaph, 4, 4),
+};
 #endif //P_FAMILY_VAROOM
 
 #if P_FAMILY_CYCLIZAR

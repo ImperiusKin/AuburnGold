@@ -4416,8 +4416,79 @@ const struct SpeciesInfo gSpeciesInfoGen9[] =
         )
         .levelUpLearnset = sRevavroomLevelUpLearnset,
         .teachableLearnset = sRevavroomTeachableLearnset,
+        .formSpeciesIdTable = sRevavroomFormSpeciesIdTable,
         .formChangeTable = sRevavroomFormChangeTable,
     },
+
+#define REVAVROOM_FORM_SPECIES_INFO(Form)                                             \
+    {                                                                                 \
+        .baseHP        = 80,                                                          \
+        .baseAttack    = 119,                                                         \
+        .baseDefense   = 90,                                                          \
+        .baseSpeed     = 90,                                                          \
+        .baseSpAttack  = 54,                                                          \
+        .baseSpDefense = 67,                                                          \
+        .types = MON_TYPES(TYPE_STEEL, TYPE_POISON),                                  \
+        .catchRate = 75,                                                              \
+        .expYield = 175,                                                              \
+        .evYield_Attack = 2,                                                          \
+        .genderRatio = PERCENT_FEMALE(50),                                            \
+        .eggCycles = 20,                                                              \
+        .friendship = STANDARD_FRIENDSHIP,                                            \
+        .growthRate = GROWTH_MEDIUM_FAST,                                             \
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MINERAL),                               \
+        .abilities = { ABILITY_OVERCOAT, ABILITY_NONE, ABILITY_FILTER },              \
+        .bodyColor = BODY_COLOR_GRAY,                                                 \
+        .speciesName = _("Revavroom"),                                                \
+        .cryId = CRY_REVAVROOM,                                                       \
+        .natDexNum = NATIONAL_DEX_REVAVROOM,                                          \
+        .categoryName = _("Multi-Cyl"),                                               \
+        .height = 18,                                                                 \
+        .weight = 1200,                                                               \
+        .description = COMPOUND_STRING(                                               \
+            "It creates a gas out of poison and\n"                                   \
+            "minerals from rocks. It then\n"                                         \
+            "detonates the gas in its cylinders- now\n"                              \
+            "numbering eight-to generate energy."),                                  \
+        .pokemonScale = 356,                                                          \
+        .pokemonOffset = 17,                                                          \
+        .trainerScale = 256,                                                          \
+        .trainerOffset = 0,                                                           \
+        .frontPic = gMonFrontPic_Revavroom##Form,                                     \
+        .frontPicSize = MON_COORDS_SIZE(64, 64),                                      \
+        .frontPicYOffset = 8,                                                         \
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,                             \
+        .backPic = gMonBackPic_Revavroom##Form,                                       \
+        .backPicSize = MON_COORDS_SIZE(64, 64),                                       \
+        .backPicYOffset = 16,                                                         \
+        .palette = gMonPalette_Revavroom##Form,                                       \
+        .shinyPalette = gMonShinyPalette_Revavroom##Form,                             \
+        .iconSprite = gMonIcon_Revavroom##Form,                                       \
+        .iconPalIndex = 0,                                                            \
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,                                       \
+        SHADOW(0, 7, SHADOW_SIZE_L)                                                   \
+        FOOTPRINT(Revavroom)                                                          \
+        OVERWORLD(                                                                    \
+            sPicTable_Revavroom##Form,                                                \
+            SIZE_32x32,                                                               \
+            SHADOW_SIZE_M,                                                            \
+            TRACKS_NONE,                                                              \
+            sAnimTable_Following,                                                     \
+            gOverworldPalette_Revavroom##Form,                                        \
+            gShinyOverworldPalette_Revavroom##Form                                    \
+        )                                                                             \
+        .levelUpLearnset = sRevavroomLevelUpLearnset,                                 \
+        .teachableLearnset = sRevavroomTeachableLearnset,                             \
+        .formSpeciesIdTable = sRevavroomFormSpeciesIdTable,                           \
+        .formChangeTable = sRevavroomFormChangeTable,                                 \
+    }
+
+    [SPECIES_REVAVROOM_SEGIN] = REVAVROOM_FORM_SPECIES_INFO(Segin),
+    [SPECIES_REVAVROOM_SCHEDAR] = REVAVROOM_FORM_SPECIES_INFO(Schedar),
+    [SPECIES_REVAVROOM_NAVI] = REVAVROOM_FORM_SPECIES_INFO(Navi),
+    [SPECIES_REVAVROOM_RUCHBAH] = REVAVROOM_FORM_SPECIES_INFO(Ruchbah),
+    [SPECIES_REVAVROOM_CAPH] = REVAVROOM_FORM_SPECIES_INFO(Caph),
+#undef REVAVROOM_FORM_SPECIES_INFO
 #endif //P_FAMILY_VAROOM
 
 #if P_FAMILY_CYCLIZAR

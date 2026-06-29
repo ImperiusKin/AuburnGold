@@ -26397,14 +26397,54 @@ const u32 gObjectEventPic_Substitute[] = INCGFX_COMP("graphics/pokemon/question_
     const u32 gMonBackPic_Revavroom[] = INCGFX_U32("graphics/pokemon/revavroom/back.png", ".4bpp.smol");
     const u16 gMonShinyPalette_Revavroom[] = INCGFX_U16("graphics/pokemon/revavroom/shiny.pal", ".gbapal");
     const u8 gMonIcon_Revavroom[] = INCGFX_U8("graphics/pokemon/revavroom/icon.png", ".4bpp");
+    const u32 gMonFrontPic_RevavroomSegin[] = INCGFX_U32("graphics/pokemon/revavroom/segin/front.png", ".4bpp.smol");
+    const u16 gMonPalette_RevavroomSegin[] = INCGFX_U16("graphics/pokemon/revavroom/segin/normal.pal", ".gbapal");
+    const u32 gMonBackPic_RevavroomSegin[] = INCGFX_U32("graphics/pokemon/revavroom/segin/back.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_RevavroomSegin[] = INCGFX_U16("graphics/pokemon/revavroom/segin/shiny.pal", ".gbapal");
+    const u8 gMonIcon_RevavroomSegin[] = INCGFX_U8("graphics/pokemon/revavroom/segin/icon.png", ".4bpp");
+    const u32 gMonFrontPic_RevavroomSchedar[] = INCGFX_U32("graphics/pokemon/revavroom/schedar/front.png", ".4bpp.smol");
+    const u16 gMonPalette_RevavroomSchedar[] = INCGFX_U16("graphics/pokemon/revavroom/schedar/normal.pal", ".gbapal");
+    const u32 gMonBackPic_RevavroomSchedar[] = INCGFX_U32("graphics/pokemon/revavroom/schedar/back.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_RevavroomSchedar[] = INCGFX_U16("graphics/pokemon/revavroom/schedar/shiny.pal", ".gbapal");
+    const u8 gMonIcon_RevavroomSchedar[] = INCGFX_U8("graphics/pokemon/revavroom/schedar/icon.png", ".4bpp");
+    const u32 gMonFrontPic_RevavroomNavi[] = INCGFX_U32("graphics/pokemon/revavroom/navi/front.png", ".4bpp.smol");
+    const u16 gMonPalette_RevavroomNavi[] = INCGFX_U16("graphics/pokemon/revavroom/navi/normal.pal", ".gbapal");
+    const u32 gMonBackPic_RevavroomNavi[] = INCGFX_U32("graphics/pokemon/revavroom/navi/back.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_RevavroomNavi[] = INCGFX_U16("graphics/pokemon/revavroom/navi/shiny.pal", ".gbapal");
+    const u8 gMonIcon_RevavroomNavi[] = INCGFX_U8("graphics/pokemon/revavroom/navi/icon.png", ".4bpp");
+    const u32 gMonFrontPic_RevavroomRuchbah[] = INCGFX_U32("graphics/pokemon/revavroom/ruchbah/front.png", ".4bpp.smol");
+    const u16 gMonPalette_RevavroomRuchbah[] = INCGFX_U16("graphics/pokemon/revavroom/ruchbah/normal.pal", ".gbapal");
+    const u32 gMonBackPic_RevavroomRuchbah[] = INCGFX_U32("graphics/pokemon/revavroom/ruchbah/back.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_RevavroomRuchbah[] = INCGFX_U16("graphics/pokemon/revavroom/ruchbah/shiny.pal", ".gbapal");
+    const u8 gMonIcon_RevavroomRuchbah[] = INCGFX_U8("graphics/pokemon/revavroom/ruchbah/icon.png", ".4bpp");
+    const u32 gMonFrontPic_RevavroomCaph[] = INCGFX_U32("graphics/pokemon/revavroom/caph/front.png", ".4bpp.smol");
+    const u16 gMonPalette_RevavroomCaph[] = INCGFX_U16("graphics/pokemon/revavroom/caph/normal.pal", ".gbapal");
+    const u32 gMonBackPic_RevavroomCaph[] = INCGFX_U32("graphics/pokemon/revavroom/caph/back.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_RevavroomCaph[] = INCGFX_U16("graphics/pokemon/revavroom/caph/shiny.pal", ".gbapal");
+    const u8 gMonIcon_RevavroomCaph[] = INCGFX_U8("graphics/pokemon/revavroom/caph/icon.png", ".4bpp");
 #if P_FOOTPRINTS
     const u8 gMonFootprint_Revavroom[] = INCGFX_U8("graphics/pokemon/revavroom/footprint.png", ".1bpp");
 #endif //P_FOOTPRINTS
 #if OW_POKEMON_OBJECT_EVENTS
     const u32 gObjectEventPic_Revavroom[] = INCGFX_COMP("graphics/pokemon/revavroom/overworld.png", ".4bpp", "-mwidth 4 -mheight 4");
+    const u32 gObjectEventPic_RevavroomSegin[] = INCGFX_COMP("graphics/pokemon/revavroom/segin/overworld.png", ".4bpp", "-mwidth 4 -mheight 4");
+    const u32 gObjectEventPic_RevavroomSchedar[] = INCGFX_COMP("graphics/pokemon/revavroom/schedar/overworld.png", ".4bpp", "-mwidth 4 -mheight 4");
+    const u32 gObjectEventPic_RevavroomNavi[] = INCGFX_COMP("graphics/pokemon/revavroom/navi/overworld.png", ".4bpp", "-mwidth 4 -mheight 4");
+    const u32 gObjectEventPic_RevavroomRuchbah[] = INCGFX_COMP("graphics/pokemon/revavroom/ruchbah/overworld.png", ".4bpp", "-mwidth 4 -mheight 4");
+    const u32 gObjectEventPic_RevavroomCaph[] = INCGFX_COMP("graphics/pokemon/revavroom/caph/overworld.png", ".4bpp", "-mwidth 4 -mheight 4");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
     const u16 gOverworldPalette_Revavroom[] = INCGFX_U16("graphics/pokemon/revavroom/overworld_normal.pal", ".gbapal");
     const u16 gShinyOverworldPalette_Revavroom[] = INCGFX_U16("graphics/pokemon/revavroom/overworld_shiny.pal", ".gbapal");
+    const u16 gOverworldPalette_RevavroomSegin[] = INCGFX_U16("graphics/pokemon/revavroom/segin/overworld_normal.pal", ".gbapal");
+    const u16 gShinyOverworldPalette_RevavroomSegin[] = INCGFX_U16("graphics/pokemon/revavroom/segin/overworld_shiny.pal", ".gbapal");
+    const u16 gOverworldPalette_RevavroomSchedar[] = INCGFX_U16("graphics/pokemon/revavroom/schedar/overworld_normal.pal", ".gbapal");
+    const u16 gShinyOverworldPalette_RevavroomSchedar[] = INCGFX_U16("graphics/pokemon/revavroom/schedar/overworld_shiny.pal", ".gbapal");
+    const u16 gOverworldPalette_RevavroomNavi[] = INCGFX_U16("graphics/pokemon/revavroom/navi/overworld_normal.pal", ".gbapal");
+    const u16 gShinyOverworldPalette_RevavroomNavi[] = INCGFX_U16("graphics/pokemon/revavroom/navi/overworld_shiny.pal", ".gbapal");
+    const u16 gOverworldPalette_RevavroomRuchbah[] = INCGFX_U16("graphics/pokemon/revavroom/ruchbah/overworld_normal.pal", ".gbapal");
+    const u16 gShinyOverworldPalette_RevavroomRuchbah[] = INCGFX_U16("graphics/pokemon/revavroom/ruchbah/overworld_shiny.pal", ".gbapal");
+    const u16 gOverworldPalette_RevavroomCaph[] = INCGFX_U16("graphics/pokemon/revavroom/caph/overworld_normal.pal", ".gbapal");
+    const u16 gShinyOverworldPalette_RevavroomCaph[] = INCGFX_U16("graphics/pokemon/revavroom/caph/overworld_shiny.pal", ".gbapal");
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 #endif //P_FAMILY_VAROOM

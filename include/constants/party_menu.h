@@ -92,6 +92,7 @@
 #define SELECTWINDOW_ZYGARDECUBE 5
 #define SELECTWINDOW_ESSENCE     6
 #define SELECTWINDOW_WEATHER     7
+#define SELECTWINDOW_ENGINE      8
 
 enum PcMonSelectionType
 {

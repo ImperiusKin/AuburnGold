@@ -659,9 +659,20 @@ static const struct WindowTemplate sWeatherReportSelectWindowTemplate =
 {
     .bg = 2,
     .tilemapLeft = 17,
-    .tilemapTop = 9,
+    .tilemapTop = 7,
     .width = 12,
-    .height = 10,
+    .height = 12,
+    .paletteNum = 14,
+    .baseBlock = 0x2E9,
+};
+
+static const struct WindowTemplate sEngineBaySelectWindowTemplate =
+{
+    .bg = 2,
+    .tilemapLeft = 17,
+    .tilemapTop = 5,
+    .width = 12,
+    .height = 14,
     .paletteNum = 14,
     .baseBlock = 0x2E9,
 };
@@ -865,7 +876,12 @@ struct
     [MENU_WEATHER_SUN]     = {COMPOUND_STRING("Sun"),               CursorCb_Weather_Sun},
     [MENU_WEATHER_HAIL]    = {COMPOUND_STRING("Hail"),              CursorCb_Weather_Hail},
     [MENU_WEATHER_SAND]    = {COMPOUND_STRING("Sand"),              CursorCb_Weather_Sand},
-    
+    [MENU_ENGINE_NORMAL]   = {COMPOUND_STRING("Normal"),            CursorCb_Essence_Normal},
+    [MENU_ENGINE_SEGIN]    = {COMPOUND_STRING("Segin"),             CursorCb_Essence_Fight},
+    [MENU_ENGINE_SCHEDAR]  = {COMPOUND_STRING("Schedar"),           CursorCb_Essence_Water},
+    [MENU_ENGINE_NAVI]     = {COMPOUND_STRING("Navi"),              CursorCb_Essence_Fire},
+    [MENU_ENGINE_RUCHBAH]  = {COMPOUND_STRING("Ruchbah"),           CursorCb_Weather_Sand},
+    [MENU_ENGINE_CAPH]     = {COMPOUND_STRING("Caph"),              CursorCb_Engine_Caph},
 };
 
 static const u8 sPartyMenuAction_SummarySwitchCancel[] = {MENU_SUMMARY, MENU_SWITCH, MENU_CANCEL1};
@@ -884,6 +900,7 @@ static const u8 sPartyMenuAction_TakeItemTossCancel[] = {MENU_TAKE_ITEM, MENU_TO
 static const u8 sPartyMenuAction_RotomCatalog[] = {MENU_CATALOG_BULB, MENU_CATALOG_OVEN, MENU_CATALOG_WASHING, MENU_CATALOG_FRIDGE, MENU_CATALOG_FAN, MENU_CATALOG_MOWER, MENU_CANCEL1};
 static const u8 sPartyMenuAction_BullEssence[] = {MENU_BULL_NORMAL, MENU_BULL_FIGHT, MENU_BULL_WATER, MENU_BULL_FIRE, MENU_CANCEL1};
 static const u8 sPartyMenuAction_WeatherReport[] = {MENU_WEATHER_NORMAL, MENU_WEATHER_RAIN, MENU_WEATHER_SUN, MENU_WEATHER_HAIL, MENU_WEATHER_SAND, MENU_CANCEL1};
+static const u8 sPartyMenuAction_EngineBay[] = {MENU_ENGINE_NORMAL, MENU_ENGINE_SEGIN, MENU_ENGINE_SCHEDAR, MENU_ENGINE_NAVI, MENU_ENGINE_RUCHBAH, MENU_ENGINE_CAPH, MENU_CANCEL1};
 static const u8 sPartyMenuAction_ZygardeCube[] = {MENU_CHANGE_FORM, MENU_CHANGE_ABILITY, MENU_CANCEL1};
 
 static const u8 *const sPartyMenuActions[] =
@@ -905,6 +922,7 @@ static const u8 *const sPartyMenuActions[] =
     [ACTIONS_ROTOM_CATALOG]  = sPartyMenuAction_RotomCatalog,
     [ACTIONS_BULL_ESSENCE]   = sPartyMenuAction_BullEssence,
     [ACTIONS_WEATHER_REPORT] = sPartyMenuAction_WeatherReport,
+    [ACTIONS_ENGINE_BAY]     = sPartyMenuAction_EngineBay,
     [ACTIONS_ZYGARDE_CUBE]   = sPartyMenuAction_ZygardeCube,
 };
 
@@ -927,6 +945,7 @@ static const u8 sPartyMenuActionCounts[] =
     [ACTIONS_ROTOM_CATALOG]  = ARRAY_COUNT(sPartyMenuAction_RotomCatalog),
     [ACTIONS_BULL_ESSENCE]   = ARRAY_COUNT(sPartyMenuAction_BullEssence),
     [ACTIONS_WEATHER_REPORT] = ARRAY_COUNT(sPartyMenuAction_WeatherReport),
+    [ACTIONS_ENGINE_BAY]     = ARRAY_COUNT(sPartyMenuAction_EngineBay),
     [ACTIONS_ZYGARDE_CUBE]   = ARRAY_COUNT(sPartyMenuAction_ZygardeCube),
 };
 

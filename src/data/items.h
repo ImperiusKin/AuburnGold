@@ -13674,7 +13674,7 @@ const struct ItemInfo gItemsInfo[] =
             "Revavroom."),
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_WeatherReport,
+        .fieldUseFunc = ItemUseOutOfBattle_EngineBay,
         .iconPic = gItemIcon_RotomCatalog,
         .iconPalette = gItemIconPalette_RotomCatalog,
     },
