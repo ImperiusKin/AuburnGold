@@ -256,8 +256,6 @@ static void ShowTeachMoveText();
 static s32 GetCurrentSelectedMove(void);
 static void FreeMoveRelearnerResources(void);
 static void RemoveScrollArrows(void);
-static bool32 IsLevelUpMoveRelearnerActive(void);
-static bool32 IsEggMoveRelearnerActive(void);
 static bool32 IsTMMoveRelearnerActive(void);
 static bool32 IsTutorMoveRelearnerActive(void);
 static bool32 HasRelearnerLevelUpMoves(struct BoxPokemon *boxMon);
@@ -556,9 +554,13 @@ static void Task_MoveRelearner_Quit(u8 taskId)
     }
     else
     {
-        SetMainCallback2(CB2_ReturnToField);
+        if(FLAG_MOVE_RELEARNER_FROM_PARTY_MENU)
+            SetMainCallback2(CB2_ReturnToPartyMenuFromRelearnScreen);
+        else
+            SetMainCallback2(CB2_ReturnToField);
     }
 
+    FlagClear(FLAG_MOVE_RELEARNER_FROM_PARTY_MENU);
     FreeMoveRelearnerResources();
     gRelearnMode = RELEARN_MODE_NONE;
     DestroyTask(taskId);
@@ -1083,12 +1085,12 @@ static bool32 HasRelearnerTutorMoves(struct BoxPokemon *boxMon)
     return FALSE;
 }
 
-static bool32 IsLevelUpMoveRelearnerActive(void)
+bool32 IsLevelUpMoveRelearnerActive(void)
 {
-    return TRUE;
+    return (FlagGet(P_FLAG_LEVEL_MOVES) || P_ENABLE_MOVE_RELEARNERS);
 }
 
-static bool32 IsEggMoveRelearnerActive(void)
+bool32 IsEggMoveRelearnerActive(void)
 {
     return (FlagGet(P_FLAG_EGG_MOVES) || P_ENABLE_MOVE_RELEARNERS);
 }

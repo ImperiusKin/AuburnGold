@@ -255,6 +255,7 @@ static const u8* const sBattleAnims_General[NUM_B_ANIMS_GENERAL] =
     [B_ANIM_WONDER_ROOM]            = gBattleAnimGeneral_WonderRoom,
     [B_ANIM_MAGIC_ROOM]             = gBattleAnimGeneral_MagicRoom,
     [B_ANIM_TAILWIND]               = gBattleAnimGeneral_Tailwind,
+    [B_ANIM_GRAVITY]                = gBattleAnimMove_Gravity,
     [B_ANIM_FOG_CONTINUES]          = gBattleAnimGeneral_Fog,
     [B_ANIM_TERA_CHARGE]            = gBattleAnimGeneral_TeraCharge,
     [B_ANIM_TERA_ACTIVATE]          = gBattleAnimGeneral_TeraActivate,

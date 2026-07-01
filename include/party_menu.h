@@ -132,6 +132,7 @@ void ShowPartyMenuToShowcaseMultiBattleParty(void);
 void ChooseMonForDaycare(void);
 bool8 CB2_FadeFromPartyMenu(void);
 void CB2_ReturnToPartyMenuFromSummaryScreen(void);
+void CB2_ReturnToPartyMenuFromRelearnScreen(void);
 void ChooseContestMon(void);
 void ChoosePartyMon(void);
 void ChooseMonForMoveRelearner(void);

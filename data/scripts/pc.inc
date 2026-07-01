@@ -71,3 +71,12 @@ EventScript_AccessPokemonBoxLink::
 	special ShowPokemonStorageSystemPC
 	goto EventScript_TurnOffPC
 	end
+	
+EventScript_PC_FromStartMenu::
+	lockall
+	setvar VAR_0x8004, PC_LOCATION_OTHER
+	playse SE_PC_ON
+	msgbox gText_StorageSystemOpened, MSGBOX_DEFAULT
+	special ShowPokemonStorageSystemPC
+	goto EventScript_TurnOffPC
+	end

@@ -87,6 +87,8 @@ enum {
     MENU_CANCEL1,
     MENU_ITEM,
     MENU_GIVE,
+    MENU_RELEARN,
+    MENU_RELEARN_EGG,
     MENU_TAKE_ITEM,
     MENU_MOVE_ITEM,
     MENU_MAIL,
@@ -479,6 +481,8 @@ static void CursorCb_Item(u8);
 static void CursorCb_Give(u8);
 static void CursorCb_TakeItem(u8);
 static void CursorCb_MoveItem(u8);
+static void CursorCb_RelearnMove(u8);
+static void CursorCb_RelearnEggMoves(u8 taskId);
 static void CursorCb_Mail(u8);
 static void CursorCb_Read(u8);
 static void CursorCb_TakeMail(u8);
@@ -2993,6 +2997,12 @@ static void SetPartyMonSelectionActions(struct Pokemon *mons, u8 slotId, u8 acti
     }
 }
 
+bool32 HasPartyMonAnyRelearnableMoves(enum MoveRelearnerStates state)
+{
+    struct BoxPokemon *boxMon = &gParties[B_TRAINER_PLAYER][gPartyMenu.slotId].box;
+    return CanBoxMonRelearnMoves(boxMon, state);
+}
+
 static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 {
     u8 i, j;
@@ -3021,6 +3031,12 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
             AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_MAIL);
         else
             AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_ITEM);
+
+        if (GetMonData(&mons[1], MON_DATA_SPECIES) != SPECIES_NONE && IsLevelUpMoveRelearnerActive() && HasPartyMonAnyRelearnableMoves(MOVE_RELEARNER_LEVEL_UP_MOVES))
+            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_RELEARN);
+
+        if (GetMonData(&mons[1], MON_DATA_SPECIES) != SPECIES_NONE && IsEggMoveRelearnerActive() && HasPartyMonAnyRelearnableMoves(MOVE_RELEARNER_EGG_MOVES))
+            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_RELEARN_EGG);
     }
     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_CANCEL1);
 }
@@ -3211,6 +3227,15 @@ void CB2_ReturnToPartyMenuFromSummaryScreen(void)
         RestoreMultiPartyFromSummaryScreen();
     gPaletteFade.bufferTransferDisabled = TRUE;
     gPartyMenu.slotId = gLastViewedMonIndex;
+    InitPartyMenu(gPartyMenu.menuType, KEEP_PARTY_LAYOUT, gPartyMenu.action, TRUE, PARTY_MSG_DO_WHAT_WITH_MON, Task_TryCreateSelectionWindow, gPartyMenu.exitCallback);
+}
+
+void CB2_ReturnToPartyMenuFromRelearnScreen(void)
+{
+    if (gBattleTypeFlags & BATTLE_TYPE_MULTI && !AreMultiPartiesFullTeams() && gPartyMenu.menuType == PARTY_MENU_TYPE_IN_BATTLE)
+        RestoreMultiPartyFromSummaryScreen();
+    gPaletteFade.bufferTransferDisabled = TRUE;
+    //gPartyMenu.slotId = gLastViewedMonIndex;
     InitPartyMenu(gPartyMenu.menuType, KEEP_PARTY_LAYOUT, gPartyMenu.action, TRUE, PARTY_MSG_DO_WHAT_WITH_MON, Task_TryCreateSelectionWindow, gPartyMenu.exitCallback);
 }
 
@@ -8493,6 +8518,39 @@ void CursorCb_MoveItemCallback(u8 taskId)
         gTasks[taskId].func = Task_UpdateHeldItemSprite;
         break;
     }
+}
+
+void CursorCb_StartPartyMenuMoveRelearner(u8 taskId)
+{
+    gSpecialVar_0x8004 = gPartyMenu.slotId;
+    PlaySE(SE_SELECT);
+    FlagSet(FLAG_MOVE_RELEARNER_FROM_PARTY_MENU);
+    sPartyMenuInternal->exitCallback = CB2_InitLearnMove;
+    Task_ClosePartyMenu(taskId);
+}
+
+void CursorCb_RelearnMove(u8 taskId)
+{
+    gMoveRelearnerState = MOVE_RELEARNER_LEVEL_UP_MOVES;
+    gTasks[taskId].func = CursorCb_StartPartyMenuMoveRelearner;
+}
+
+void CursorCb_RelearnEggMoves(u8 taskId)
+{
+    gMoveRelearnerState = MOVE_RELEARNER_EGG_MOVES;
+    gTasks[taskId].func = CursorCb_StartPartyMenuMoveRelearner;
+}
+
+void CursorCb_RelearnTMMoves(u8 taskId)
+{
+    gMoveRelearnerState = MOVE_RELEARNER_TM_MOVES;
+    gTasks[taskId].func = CursorCb_StartPartyMenuMoveRelearner;
+}
+
+void CursorCb_RelearnTutorMoves(u8 taskId)
+{
+    gMoveRelearnerState = MOVE_RELEARNER_TM_MOVES;
+    gTasks[taskId].func = CursorCb_StartPartyMenuMoveRelearner;
 }
 
 void CursorCb_MoveItem(u8 taskId)

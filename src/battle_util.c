@@ -2700,6 +2700,15 @@ bool32 TryFieldEffects(enum FieldEffectCases caseId)
                         &gSideTimers[B_SIDE_OPPONENT].swampTimer, gStartingStatuses.swampOpponent ? 0 : 4);
             gStartingStatuses.swampOpponentTemporary = gStartingStatuses.swampOpponent = FALSE;
         }
+        else if (gStartingStatuses.gravity || gStartingStatuses.gravityTemporary)
+        {
+            effect = SetStartingFieldStatus(
+                        STATUS_FIELD_GRAVITY,
+                        B_MSG_SET_GRAVITY,
+                        B_ANIM_GRAVITY,
+                        &gFieldTimers.gravityTimer, gStartingStatuses.gravity ? 0 : 5);
+            gStartingStatuses.gravityTemporary = gStartingStatuses.gravity = FALSE;
+        }
         // Hazards - Spikes
         else if (gStartingStatuses.spikesPlayerL1)
         {

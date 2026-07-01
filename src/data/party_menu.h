@@ -846,6 +846,8 @@ struct
     [MENU_GIVE]            = {gMenuText_Give,                       CursorCb_Give},
     [MENU_TAKE_ITEM]       = {COMPOUND_STRING("TAKE"),              CursorCb_TakeItem},
     [MENU_MOVE_ITEM]       = {COMPOUND_STRING("MOVE"),              CursorCb_MoveItem},
+    [MENU_RELEARN]         = {COMPOUND_STRING("RELEARN"),           CursorCb_RelearnMove},
+    [MENU_RELEARN_EGG]     = {COMPOUND_STRING("EGG MOVES"),         CursorCb_RelearnEggMoves},
     [MENU_MAIL]            = {COMPOUND_STRING("MAIL"),              CursorCb_Mail},
     [MENU_TAKE_MAIL]       = {COMPOUND_STRING("TAKE"),              CursorCb_TakeMail},
     [MENU_READ]            = {COMPOUND_STRING("READ"),              CursorCb_Read},
