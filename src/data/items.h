@@ -15895,7 +15895,7 @@ const struct ItemInfo gItemsInfo[] =
         .iconPic = gItemIcon_PokeshiDoll,
         .iconPalette = gItemIconPalette_PokeshiDoll,
     },
-
+ 
     [ITEM_TIME_CHANGER] =
     {
         .name = ITEM_NAME("Time Changer"),

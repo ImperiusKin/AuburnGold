@@ -2,6 +2,7 @@
 #include "battle_pike.h"
 #include "battle_pyramid.h"
 #include "datetime.h"
+#include "event_data.h"
 #include "rtc.h"
 #include "string_util.h"
 #include "strings.h"
@@ -331,6 +332,10 @@ bool8 IsBetweenHours(s32 hours, s32 begin, s32 end)
 enum TimeOfDay GetTimeOfDay(void)
 {
     UpdateTimeOfDay();
+    if(FlagGet(FLAG_FORCE_TIME_OF_DAY)){
+        enum TimeOfDay ForcedTimeOfDay = VarGet(VAR_FORCED_TIME_OF_DAY);
+        return ForcedTimeOfDay;
+    }
     return gTimeOfDay;
 }
 

@@ -96,35 +96,54 @@ gText_TimeChanger_Dusk::
 gText_TimeChanger_Night::
 	.string "Night.$"
 
+gText_TimeChanger_Real_Time::
+	.string "Real Time.$"
+
 EventScript_AccessTimeChanger::
 	playse SE_PC_LOGIN
 	msgbox gText_TimeChangerOpened, MSGBOX_DEFAULT
-	multichoicedefault 21, 2, MULTI_TIME_CHANGER, 0, FALSE
+	multichoicedefault 21, 0, MULTI_TIME_CHANGER, 0, FALSE
 	switch VAR_RESULT
 	case 0, EventScript_AccessTimeChanger_Morning
 	case 1, EventScript_AccessTimeChanger_Day
 	case 2, EventScript_AccessTimeChanger_Dusk
 	case 3, EventScript_AccessTimeChanger_Night
+	case 4, EventScript_AccessTimeChanger_RealTime
 	case MULTI_B_PRESSED, EventScript_AccessTimeChanger_Cancel
 	end
 
 EventScript_AccessTimeChanger_Morning::
 	msgbox gText_TimeChanger_Morning, MSGBOX_DEFAULT
+	setflag FLAG_FORCE_TIME_OF_DAY
+	setvar VAR_FORCED_TIME_OF_DAY, TIME_MORNING
 	releaseall
 	end
 
 EventScript_AccessTimeChanger_Day::
 	msgbox gText_TimeChanger_Day, MSGBOX_DEFAULT
+	setflag FLAG_FORCE_TIME_OF_DAY
+	setvar VAR_FORCED_TIME_OF_DAY, TIME_DAY
 	releaseall
 	end
 
 EventScript_AccessTimeChanger_Dusk::
 	msgbox gText_TimeChanger_Dusk, MSGBOX_DEFAULT
+	setflag FLAG_FORCE_TIME_OF_DAY
+	setvar VAR_FORCED_TIME_OF_DAY, TIME_EVENING
 	releaseall
 	end
 
 EventScript_AccessTimeChanger_Night::
 	msgbox gText_TimeChanger_Night, MSGBOX_DEFAULT
+	setflag FLAG_FORCE_TIME_OF_DAY
+	setvar VAR_FORCED_TIME_OF_DAY, TIME_NIGHT
+	releaseall
+	end
+
+EventScript_AccessTimeChanger_RealTime::
+	msgbox gText_TimeChanger_Real_Time, MSGBOX_DEFAULT
+	setvar VAR_FORCED_TIME_OF_DAY, TIMES_OF_DAY_COUNT
+	clearflag FLAG_FORCE_TIME_OF_DAY
 	releaseall
 	end
 
