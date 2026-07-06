@@ -72,6 +72,8 @@
 #define P_FLAG_FORCE_SHINY               0  // If this flag is set, all wild and gift Pokémon will forced into being Shiny.
 #define P_FLAG_FORCE_NO_SHINY            0  // If this flag is set, all wild and gift Pokémon will forced into NOT being Shiny.
 
+#define MAX_POKEVIAL_USES 1
+
 // Go here if you want to disable specific families of Pokémon.
 #include "config/species_enabled.h"
 

@@ -13679,6 +13679,21 @@ const struct ItemInfo gItemsInfo[] =
         .iconPalette = gItemIconPalette_RotomCatalog,
     },
 
+    [ITEM_POKE_VIAL] =
+    {
+        .name = ITEM_NAME("Poke-Vial"),
+        .price = 0,
+        .importance = 1,
+        .description = COMPOUND_STRING(
+            "Fully revives and\n"
+            "cures all Pokémon."),
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_FIELD,
+        .fieldUseFunc = ItemUseOutOfBattle_PokeVial,
+        .iconPic = gItemIcon_BerryPouch,
+        .iconPalette = gItemIconPalette_BerryPouch,
+    },
+
     [ITEM_GRACIDEA] =
     {
         .name = ITEM_NAME("Gracidea"),
@@ -15879,6 +15894,22 @@ const struct ItemInfo gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .iconPic = gItemIcon_PokeshiDoll,
         .iconPalette = gItemIconPalette_PokeshiDoll,
+    },
+
+    [ITEM_TIME_CHANGER] =
+    {
+        .name = ITEM_NAME("Time Changer"),
+        .price = 0,
+        .importance = 1,
+        .description = COMPOUND_STRING(
+            "An item that lets\n"
+            "you change the\n"
+            "current time."),
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_FIELD,
+        .fieldUseFunc = ItemUseOutOfBattle_TimeChanger,
+        .iconPic = gItemIcon_BerryPouch,
+        .iconPalette = gItemIconPalette_BerryPouch,
     },
 };
 

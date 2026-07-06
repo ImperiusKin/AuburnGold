@@ -80,3 +80,55 @@ EventScript_PC_FromStartMenu::
 	special ShowPokemonStorageSystemPC
 	goto EventScript_TurnOffPC
 	end
+
+gText_TimeChangerOpened::
+	.string "Time Changer System opened.$"
+
+gText_TimeChanger_Morning::
+	.string "Morning.$"
+
+gText_TimeChanger_Day::
+	.string "Day.$"
+
+gText_TimeChanger_Dusk::
+	.string "Dusk.$"
+
+gText_TimeChanger_Night::
+	.string "Night.$"
+
+EventScript_AccessTimeChanger::
+	playse SE_PC_LOGIN
+	msgbox gText_TimeChangerOpened, MSGBOX_DEFAULT
+	multichoicedefault 21, 2, MULTI_TIME_CHANGER, 0, FALSE
+	switch VAR_RESULT
+	case 0, EventScript_AccessTimeChanger_Morning
+	case 1, EventScript_AccessTimeChanger_Day
+	case 2, EventScript_AccessTimeChanger_Dusk
+	case 3, EventScript_AccessTimeChanger_Night
+	case MULTI_B_PRESSED, EventScript_AccessTimeChanger_Cancel
+	end
+
+EventScript_AccessTimeChanger_Morning::
+	msgbox gText_TimeChanger_Morning, MSGBOX_DEFAULT
+	releaseall
+	end
+
+EventScript_AccessTimeChanger_Day::
+	msgbox gText_TimeChanger_Day, MSGBOX_DEFAULT
+	releaseall
+	end
+
+EventScript_AccessTimeChanger_Dusk::
+	msgbox gText_TimeChanger_Dusk, MSGBOX_DEFAULT
+	releaseall
+	end
+
+EventScript_AccessTimeChanger_Night::
+	msgbox gText_TimeChanger_Night, MSGBOX_DEFAULT
+	releaseall
+	end
+
+EventScript_AccessTimeChanger_Cancel::
+	msgbox gText_TimeChanger_Day, MSGBOX_DEFAULT
+	releaseall
+	end

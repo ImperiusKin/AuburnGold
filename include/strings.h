@@ -2135,6 +2135,10 @@ extern const u8 gText_Cancel3[];
 extern const u8 gText_ExpShareOn[];
 extern const u8 gText_ExpShareOff[];
 
+// Exp. Share
+extern const u8 gText_PokeVialUsed[];
+extern const u8 gText_PokeVialOff[];
+
 // Move Relearner
 extern const u8 MoveRelearner_Text_LevelUpMoveLWR[];
 extern const u8 MoveRelearner_Text_EggMoveLWR[];

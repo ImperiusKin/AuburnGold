@@ -37,6 +37,7 @@
 #include "pokeblock.h"
 #include "pokemon.h"
 #include "script.h"
+#include "script_pokemon_util.h"
 #include "sound.h"
 #include "strings.h"
 #include "string_util.h"
@@ -270,6 +271,47 @@ void ItemUseOutOfBattle_ExpShare(u8 taskId)
 #else
     DisplayDadsAdviceCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem);
 #endif
+}
+
+static void Task_AccessTimeChanger(u8 taskId)
+{
+    ScriptContext_SetupScript(EventScript_AccessTimeChanger);
+    DestroyTask(taskId);
+}
+
+void ItemUseOutOfBattle_TimeChanger(u8 taskId)
+{
+    sItemUseOnFieldCB = Task_AccessTimeChanger;
+    SetUpItemUseOnFieldCallback(taskId);
+}
+
+void ItemUseOutOfBattle_PokeVial(u8 taskId)
+{
+    u8 vialUses = VarGet(VAR_POKEVIAL_USES);
+    bool8 CanUsePokeVial = vialUses != 0;
+    
+    if (CanUsePokeVial)
+    {
+        PlaySE(SE_PC_OFF);
+        if (!gTasks[taskId].data[2]) // to account for pressing select in the overworld
+            DisplayItemMessageOnField(taskId, gText_PokeVialUsed, Task_CloseCantUseKeyItemMessage);
+        else
+            DisplayItemMessage(taskId, FONT_NORMAL, gText_PokeVialUsed, CloseItemMessage);
+
+        if(vialUses != 0)
+            vialUses--;
+
+        VarSet(VAR_POKEVIAL_USES, vialUses);
+        HealPlayerParty();
+    }
+    else
+    {
+        PlaySE(SE_EXP_MAX);
+        if (!gTasks[taskId].data[2]) // to account for pressing select in the overworld
+            DisplayItemMessageOnField(taskId, gText_PokeVialOff, Task_CloseCantUseKeyItemMessage);
+        else
+            DisplayItemMessage(taskId, FONT_NORMAL, gText_PokeVialOff, CloseItemMessage);
+    }
 }
 
 void ItemUseOutOfBattle_Bike(u8 taskId)

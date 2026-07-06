@@ -1127,6 +1127,15 @@ static const struct MenuAction MultichoiceList_Exit[] =
     {gText_Exit},
 };
 
+static const struct MenuAction MultichoiceList_TimeChanger[] =
+{
+    {COMPOUND_STRING("Morning")},
+    {COMPOUND_STRING("Day")},
+    {COMPOUND_STRING("Dusk")},
+    {COMPOUND_STRING("Night")},
+    {gText_Exit},
+};
+
 struct MultichoiceListStruct
 {
     const struct MenuAction *list;
@@ -1135,6 +1144,7 @@ struct MultichoiceListStruct
 
 static const struct MultichoiceListStruct sMultichoiceLists[] =
 {
+    [MULTI_TIME_CHANGER]               = MULTICHOICE(MultichoiceList_TimeChanger),
     [MULTI_BRINEY_ON_DEWFORD]          = MULTICHOICE(MultichoiceList_BrineyOnDewford),
     [MULTI_PC]                         = MULTICHOICE(MultichoiceList_Exit),
     [MULTI_ENTERINFO]                  = MULTICHOICE(MultichoiceList_EnterInfo),
