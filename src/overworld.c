@@ -193,6 +193,7 @@ static bool8 MapLdr_Credits(void);
 static void CameraCB_CreditsPan(struct CameraObject *camera);
 static void Task_OvwldCredits_FadeOut(u8 taskId);
 static void Task_OvwldCredits_WaitFade(u8 taskId);
+static u8 GetTimeChangerOverrideHours(void);
 
 static void *sUnusedOverworldCallback;
 static u8 sPlayerLinkStates[MAX_LINK_PLAYERS];
@@ -954,7 +955,7 @@ static void LoadMapFromWarp(bool32 a1)
     ClearTempFieldEventData();
     ResetDexNavSearch();
     // reset hours override on every warp
-    sHoursOverride = 0;
+    sHoursOverride = GetTimeChangerOverrideHours();
     ResetCyclingRoadChallengeData();
     RestartWildEncounterImmunitySteps();
 #if FREE_MATCH_CALL == FALSE
@@ -3864,9 +3865,7 @@ static void DestroyItemIconSprite(void)
     }
 }
 
-void UseTimeChanger(void)
-{
-    u16 oldHours = sHoursOverride;
+static u8 GetTimeChangerOverrideHours(void){
     u16 hours = 0;
     if(FlagGet(FLAG_FORCE_TIME_OF_DAY)){
         switch(VarGet(VAR_FORCED_TIME_OF_DAY)){
@@ -3886,23 +3885,16 @@ void UseTimeChanger(void)
     }
     else{
         //Remove Override
-        hours = FALSE;
-
-    #define MORNING_HOUR_BEGIN 6
-    #define MORNING_HOUR_END   10
-
-    #define DAY_HOUR_BEGIN     10
-    #define DAY_HOUR_END       19
-
-    #define EVENING_HOUR_BEGIN 19
-    #define EVENING_HOUR_END   20
-
-    #define NIGHT_HOUR_BEGIN   20
-    #define NIGHT_HOUR_END     6
+        return FALSE;
     }
+    return hours;
+}
+
+void UseTimeChanger(void)
+{
     UpdateTimeOfDay();
     FormChangeTimeUpdate();
-    sHoursOverride = hours;
+    sHoursOverride = GetTimeChangerOverrideHours();
     gTimeUpdateCounter = 0;
 }
 
