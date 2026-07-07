@@ -3864,7 +3864,50 @@ static void DestroyItemIconSprite(void)
     }
 }
 
+void UseTimeChanger(void)
+{
+    u16 oldHours = sHoursOverride;
+    u16 hours = 0;
+    if(FlagGet(FLAG_FORCE_TIME_OF_DAY)){
+        switch(VarGet(VAR_FORCED_TIME_OF_DAY)){
+            case TIME_MORNING:
+                hours = MORNING_HOUR_BEGIN + ((MORNING_HOUR_END - MORNING_HOUR_BEGIN) / 2);
+            break;
+            case TIME_DAY:
+                hours = DAY_HOUR_BEGIN + ((DAY_HOUR_END - DAY_HOUR_BEGIN) / 2);
+            break;
+            case TIME_EVENING:
+                hours = EVENING_HOUR_BEGIN; //This one only last 1 hour
+            break;
+            case TIME_NIGHT:
+                hours = NIGHT_HOUR_BEGIN + (((NIGHT_HOUR_END + 24) - NIGHT_HOUR_BEGIN) / 2);
+            break;
+        }
+    }
+    else{
+        //Remove Override
+        hours = FALSE;
+
+    #define MORNING_HOUR_BEGIN 6
+    #define MORNING_HOUR_END   10
+
+    #define DAY_HOUR_BEGIN     10
+    #define DAY_HOUR_END       19
+
+    #define EVENING_HOUR_BEGIN 19
+    #define EVENING_HOUR_END   20
+
+    #define NIGHT_HOUR_BEGIN   20
+    #define NIGHT_HOUR_END     6
+    }
+    UpdateTimeOfDay();
+    FormChangeTimeUpdate();
+    sHoursOverride = hours;
+    gTimeUpdateCounter = 0;
+}
+
 // returns old sHoursOverride
+
 u16 SetTimeOfDay(u16 hours)
 {
     u16 oldHours = sHoursOverride;

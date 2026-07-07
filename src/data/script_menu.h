@@ -1131,7 +1131,7 @@ static const struct MenuAction MultichoiceList_TimeChanger[] =
 {
     {COMPOUND_STRING("Morning")},
     {COMPOUND_STRING("Day")},
-    {COMPOUND_STRING("Dusk")},
+    {COMPOUND_STRING("Evening")},
     {COMPOUND_STRING("Night")},
     {COMPOUND_STRING("Real-Time")},
     {gText_Exit},

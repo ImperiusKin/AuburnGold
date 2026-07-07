@@ -1,0 +1,152 @@
+raw `
+EventScript_PC::
+	lockall
+	setvar VAR_0x8004, PC_LOCATION_OTHER
+	special DoPCTurnOnEffect
+	playse SE_PC_ON
+	msgbox Text_BootUpPC, MSGBOX_DEFAULT
+	goto EventScript_PCMainMenu
+	end
+
+EventScript_PCMainMenu::
+	message gText_WhichPCShouldBeAccessed
+	waitmessage
+	special ScriptMenu_CreatePCMultichoice
+	goto EventScript_AccessPC
+	end
+
+EventScript_AccessPC::
+	switch VAR_RESULT
+	case 0, EventScript_AccessPokemonStorage
+	case 1, EventScript_AccessPlayersPC
+	case 2, EventScript_AccessHallOfFame
+	case 3, EventScript_TurnOffPC
+	case MULTI_B_PRESSED, EventScript_TurnOffPC
+	end
+
+EventScript_AccessPlayersPC::
+	playse SE_PC_LOGIN
+	msgbox gText_AccessedPlayersPC, MSGBOX_DEFAULT
+	special PlayerPC
+	goto EventScript_PCMainMenu
+	end
+
+EventScript_AccessPokemonStorage::
+	playse SE_PC_LOGIN
+	call_if_unset FLAG_SYS_PC_LANETTE, EventScript_AccessSomeonesPC
+	call_if_set FLAG_SYS_PC_LANETTE, EventScript_AccessLanettesPC
+	msgbox gText_StorageSystemOpened, MSGBOX_DEFAULT
+	special ShowPokemonStorageSystemPC
+	goto EventScript_PCMainMenu
+	end
+
+EventScript_AccessSomeonesPC::
+	msgbox gText_AccessedSomeonesPC, MSGBOX_DEFAULT
+	return
+
+EventScript_AccessLanettesPC::
+#if IS_FRLG
+	msgbox gText_AccessedBillsPC, MSGBOX_DEFAULT
+#else
+	msgbox gText_AccessedLanettesPC, MSGBOX_DEFAULT
+#endif
+	return
+
+EventScript_TurnOffPC::
+	setvar VAR_0x8004, PC_LOCATION_OTHER
+	playse SE_PC_OFF
+	special DoPCTurnOffEffect
+	releaseall
+	end
+
+EventScript_AccessHallOfFame::
+	goto_if_unset FLAG_SYS_GAME_CLEAR, EventScript_TurnOffPC
+	playse SE_PC_LOGIN
+	special AccessHallOfFamePC
+	goto EventScript_AccessPC
+	end
+
+EventScript_AccessPokemonBoxLink::
+	playse SE_PC_LOGIN
+	msgbox gText_StorageSystemOpened, MSGBOX_DEFAULT
+	special ShowPokemonStorageSystemPC
+	goto EventScript_TurnOffPC
+	end
+	
+EventScript_PC_FromStartMenu::
+	lockall
+	setvar VAR_0x8004, PC_LOCATION_OTHER
+	playse SE_PC_ON
+	msgbox gText_StorageSystemOpened, MSGBOX_DEFAULT
+	special ShowPokemonStorageSystemPC
+	goto EventScript_TurnOffPC
+	end
+`
+
+script EventScript_AccessTimeChanger{
+	playse(SE_PC_LOGIN)
+	msgbox(format("What time do you want to set?"), MSGBOX_DEFAULT)
+	multichoicedefault (21, 0, MULTI_TIME_CHANGER, 0, FALSE)
+	switch(var(VAR_RESULT)){
+		case TIME_MORNING:
+			if(flag(FLAG_FORCE_TIME_OF_DAY) && var(VAR_FORCED_TIME_OF_DAY) == TIME_MORNING){
+				msgbox(format("The time is already set to Morning!"), MSGBOX_DEFAULT)
+			}
+			else{
+				msgbox(format("The time has been changed to Morning!"), MSGBOX_DEFAULT)
+				setflag(FLAG_FORCE_TIME_OF_DAY)
+				setvar(VAR_FORCED_TIME_OF_DAY, TIME_MORNING)
+				special(UseTimeChanger)
+			}
+		break
+		case TIME_DAY:
+			if(flag(FLAG_FORCE_TIME_OF_DAY) && var(VAR_FORCED_TIME_OF_DAY) == TIME_DAY){
+				msgbox(format("The time is already set to Day!"), MSGBOX_DEFAULT)
+			}
+			else{
+				msgbox(format("The time has been changed Day!"), MSGBOX_DEFAULT)
+				setflag(FLAG_FORCE_TIME_OF_DAY)
+				setvar(VAR_FORCED_TIME_OF_DAY, TIME_DAY)
+				special(UseTimeChanger)
+			}
+		break
+		case TIME_EVENING:
+			if(flag(FLAG_FORCE_TIME_OF_DAY) && var(VAR_FORCED_TIME_OF_DAY) == TIME_EVENING){
+				msgbox(format("The time is already set to Evening!"), MSGBOX_DEFAULT)
+			}
+			else{
+				msgbox(format("The time has been changed to Evening!"), MSGBOX_DEFAULT)
+				setflag(FLAG_FORCE_TIME_OF_DAY)
+				setvar(VAR_FORCED_TIME_OF_DAY, TIME_EVENING)
+				special(UseTimeChanger)
+			}
+		break
+		case TIME_NIGHT:
+			if(flag(FLAG_FORCE_TIME_OF_DAY) && var(VAR_FORCED_TIME_OF_DAY) == TIME_NIGHT){
+				msgbox(format("The time is already set to Night!"), MSGBOX_DEFAULT)
+			}
+			else{
+				msgbox(format("The time has been changed Night!"), MSGBOX_DEFAULT)
+				setflag(FLAG_FORCE_TIME_OF_DAY)
+				setvar(VAR_FORCED_TIME_OF_DAY, TIME_NIGHT)
+				special(UseTimeChanger)
+			}
+		break
+		case TIMES_OF_DAY_COUNT:
+			if(!flag(FLAG_FORCE_TIME_OF_DAY)){
+				msgbox(format("The time is already set to real time!"), MSGBOX_DEFAULT)
+			}
+			else{
+				msgbox(format("The time has been set to to follow the real time!"), MSGBOX_DEFAULT)
+				clearflag(FLAG_FORCE_TIME_OF_DAY)
+				setvar(VAR_FORCED_TIME_OF_DAY, TIMES_OF_DAY_COUNT)
+				special(UseTimeChanger)
+			}
+		break
+		case MULTI_B_PRESSED:
+			msgbox(format("The Time Changer System was closed!"), MSGBOX_DEFAULT)
+		break
+	}
+	releaseall
+	end
+}
