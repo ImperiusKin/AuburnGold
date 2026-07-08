@@ -3653,7 +3653,7 @@ static void Cmd_tryfaintmon(void)
             gBattlescriptCurrInstr = BattleScript_FaintBattler;
             if (IsOnPlayerSide(battler))
             {
-                bool8 isNuzlocke = FlagGet(FLAG_SYS_NUZLOCKE_MODE);
+                bool8 isNuzlocke = AreNuzlockeRulesEnabled();
                 u8 monId = gBattlerPartyIndexes[battler];
                 gHitMarker |= HITMARKER_PLAYER_FAINTED;
                 if (gBattleResults.playerFaintCounter < 255)

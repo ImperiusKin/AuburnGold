@@ -959,6 +959,11 @@ u32 GiveScriptedMonToPlayer(struct Pokemon *mon, u8 slot);
 void ChangePokemonNicknameWithCallback(void (*callback)(void));
 bool32 HasShedinjaHPHandling(enum Species species);
 
+void SetNuzlockeCaughtFlag(u8 locationIndex);
+void ClearNuzlockeCaughtFlag(u8 locationIndex);
+bool8 GetNuzlockeCaughtFlag(u8 locationIndex);
+bool8 AreNuzlockeRulesEnabled(void);
+
 static inline u32 OWE_GetMovementTypeFromSpecies(enum Species speciesId)
 {
     speciesId = SanitizeSpeciesId(speciesId);

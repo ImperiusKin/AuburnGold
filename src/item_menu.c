@@ -167,6 +167,7 @@ static void Task_ItemContext_MultipleRows(u8);
 static bool8 IsValidContextMenuPos(s8);
 static void BagMenu_RemoveWindow(u8);
 static void PrintThereIsNoPokemon(u8);
+static void PrintItemIsBannedFromUse(u8);
 static void Task_ChooseHowManyToToss(u8);
 static void AskTossItems(u8);
 static void Task_RemoveItemFromBag(u8);
@@ -1862,6 +1863,23 @@ static void RemoveContextWindow(void)
         BagMenu_RemoveWindow(ITEMWIN_2x3);
 }
 
+static bool8 IsItemBannedFromUse(u16 item){
+    if(AreNuzlockeRulesEnabled()){
+        switch(item){
+            case ITEM_REVIVE:
+            case ITEM_MAX_REVIVE:
+            case ITEM_RARE_CANDY:
+            case ITEM_SACRED_ASH:
+                return TRUE;
+            break;
+            default:
+            break;
+        }
+    }
+
+    return FALSE;
+}
+
 static void ItemMenu_UseOutOfBattle(u8 taskId)
 {
     if (GetItemFieldFunc(gSpecialVar_ItemId))
@@ -1870,6 +1888,10 @@ static void ItemMenu_UseOutOfBattle(u8 taskId)
         if (CalculatePlayerPartyCount() == 0 && GetItemType(gSpecialVar_ItemId) == ITEM_USE_PARTY_MENU)
         {
             PrintThereIsNoPokemon(taskId);
+        }
+        else if(IsItemBannedFromUse(gSpecialVar_ItemId))
+        {
+            PrintItemIsBannedFromUse(taskId);
         }
         else
         {
@@ -2054,6 +2076,12 @@ static void PrintThereIsNoPokemon(u8 taskId)
     DisplayItemMessage(taskId, FONT_NORMAL, gText_NoPokemon, HandleErrorMessage);
 }
 
+static const u8 gText_ItemIsBanned[] = _("This item is banned from use in\nNuzlocke mode.");
+static void PrintItemIsBannedFromUse(u8 taskId)
+{
+    DisplayItemMessage(taskId, FONT_NORMAL, gText_ItemIsBanned, HandleErrorMessage);
+}
+
 static void PrintItemCantBeHeld(u8 taskId)
 {
     CopyItemName(gSpecialVar_ItemId, gStringVar1);
@@ -2096,7 +2124,10 @@ static void ItemMenu_UseInBattle(u8 taskId)
         return;
 
     RemoveContextWindow();
-    if (type == ITEM_USE_BAG_MENU || (type == ITEM_USE_BATTLER && !IsDoubleBattle()))
+    
+    if(IsItemBannedFromUse(gSpecialVar_ItemId))
+        PrintItemIsBannedFromUse(taskId);
+    else if (type == ITEM_USE_BAG_MENU || (type == ITEM_USE_BATTLER && !IsDoubleBattle()))
         ItemUseInBattle_BagMenu(taskId);
     else if (type == ITEM_USE_PARTY_MENU || (type == ITEM_USE_BATTLER && IsDoubleBattle()))
         ItemUseInBattle_PartyMenu(taskId);

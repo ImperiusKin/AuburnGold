@@ -1411,7 +1411,7 @@ enum {
 
 static const u8 *GenerateRecoveryMessage(u8 taskId)
 {
-    bool8 isNuzlocke = FlagGet(FLAG_SYS_NUZLOCKE_MODE);
+    bool8 isNuzlocke = AreNuzlockeRulesEnabled();
     bool32 forfeitTrainer = DidPlayerForfeitNormalTrainerBattle();
     bool32 destinationIsPlayersHouse = (gTasks[taskId].tIsPlayerHouse == TRUE);
 

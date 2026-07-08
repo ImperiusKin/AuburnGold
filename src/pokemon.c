@@ -2988,13 +2988,51 @@ void CopyMon(void *dest, void *src, size_t size)
     memcpy(dest, src, size);
 }
 
+// Nuzlocke Stuff
+void SetNuzlockeCaughtFlag(u8 locationIndex) {
+    u8 byteIndex = locationIndex / 8;
+    u8 bitIndex = locationIndex % 8;
+    gSaveBlock2Ptr->hasCaughtMonOnLocation[byteIndex] |= (1 << bitIndex);
+}
+
+void ClearNuzlockeCaughtFlag(u8 locationIndex) {
+    u8 byteIndex = locationIndex / 8;
+    u8 bitIndex = locationIndex % 8;
+    gSaveBlock2Ptr->hasCaughtMonOnLocation[byteIndex] &= ~(1 << bitIndex);
+}
+
+bool8 GetNuzlockeCaughtFlag(u8 locationIndex) {
+    u8 byteIndex = locationIndex / 8;
+    u8 bitIndex = locationIndex % 8;
+    return (gSaveBlock2Ptr->hasCaughtMonOnLocation[byteIndex] & (1 << bitIndex)) != 0;
+}
+
+bool8 AreNuzlockeRulesEnabled(void){
+    return FlagGet(FLAG_SYS_NUZLOCKE_MODE);
+}
+
 u8 GiveCapturedMonToPlayer(struct Pokemon *mon)
 {
     s32 i;
+    u32 caughtLocation = GetCurrentRegionMapSectionId();
+    bool8 nuzlockeRules = AreNuzlockeRulesEnabled() && !FlagGet(FLAG_TEMP_CAN_CATCH_POKEMON);
+    u16 isDisabled = FALSE;
 
     SetMonData(mon, MON_DATA_OT_NAME, gSaveBlock2Ptr->playerName);
     SetMonData(mon, MON_DATA_OT_GENDER, &gSaveBlock2Ptr->playerGender);
     SetMonData(mon, MON_DATA_OT_ID, gSaveBlock2Ptr->playerTrainerId);
+
+    if(nuzlockeRules && !IsMonShiny(mon)){
+        u16 newHP = 0;
+        isDisabled = TRUE;
+
+        SetNuzlockeCaughtFlag(caughtLocation);
+
+        SetMonData(mon, MON_DATA_IS_DISABLED, &isDisabled);
+        SetMonData(mon, MON_DATA_HP, &newHP);
+    }
+
+    FlagClear(FLAG_TEMP_CAN_CATCH_POKEMON);
 
     for (i = 0; i < PARTY_SIZE; i++)
     {
@@ -3002,7 +3040,7 @@ u8 GiveCapturedMonToPlayer(struct Pokemon *mon)
             break;
     }
 
-    if (i >= PARTY_SIZE)
+    if (i >= PARTY_SIZE || isDisabled)
         return CopyMonToPC(mon);
 
     CopyMon(&gParties[B_TRAINER_PLAYER][i], mon, sizeof(*mon));
@@ -6863,8 +6901,23 @@ struct BoxPokemon *GetSelectedBoxMonFromPcOrParty(void)
 u32 GiveScriptedMonToPlayer(struct Pokemon *mon, u8 slot)
 {
     u32 sentToPc;
+    bool8 isDisabled = FALSE;
     u32 i = 0;
-    if (slot < PARTY_SIZE)
+
+    if(!FlagGet(FLAG_TEMP_CAN_CATCH_POKEMON) && !IsMonShiny(&gParties[B_TRAINER_PLAYER][i])){
+        u32 caughtLocation = GetCurrentRegionMapSectionId();
+        u16 newHP = 0;
+        isDisabled = TRUE;
+
+        SetNuzlockeCaughtFlag(caughtLocation);
+
+        SetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_IS_DISABLED, &isDisabled);
+        SetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_HP, &newHP);
+    }
+
+    FlagClear(FLAG_TEMP_CAN_CATCH_POKEMON);
+
+    if (slot < PARTY_SIZE && !isDisabled)
     {
         CopyMon(&gParties[B_TRAINER_PLAYER][slot], mon, sizeof(struct Pokemon));
         sentToPc = MON_GIVEN_TO_PARTY;

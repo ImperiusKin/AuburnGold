@@ -39,7 +39,7 @@ static void HealPlayerPartyNuzlocke(void);
 void HealPlayerParty(void)
 {
     u32 i;
-    bool8 isNuzlocke = FlagGet(FLAG_SYS_NUZLOCKE_MODE);
+    bool8 isNuzlocke = AreNuzlockeRulesEnabled();
     if(!isNuzlocke){
         for (i = 0; i < gPartiesCount[B_TRAINER_PLAYER]; i++)
             HealPokemon(&gParties[B_TRAINER_PLAYER][i]);
@@ -538,8 +538,14 @@ static u32 ScriptGiveMonParameterized(u8 side, u8 slot, enum Species species, u8
 
 u32 ScriptGiveMon(enum Species species, u8 level, enum Item item)
 {
+    u32 caughtLocation = GetCurrentRegionMapSectionId();
     struct Pokemon mon;
     u8 heldItem[2];
+
+    if (AreNuzlockeRulesEnabled() && !GetNuzlockeCaughtFlag(caughtLocation)) {
+        SetNuzlockeCaughtFlag(caughtLocation);
+        FlagSet(FLAG_TEMP_CAN_CATCH_POKEMON);
+    }
 
     CreateRandomMon(&mon, species, level);
     if (item)
