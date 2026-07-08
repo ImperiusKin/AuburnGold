@@ -392,6 +392,9 @@ static void (*const sMovementStatusHandler[])(struct LinkPlayerObjectEvent *, st
 // code
 void DoWhiteOut(void)
 {
+    bool8 isNuzlocke = FlagGet(FLAG_SYS_NUZLOCKE_MODE);
+    if(isNuzlocke)
+        EnablePlayerPartyMons();
     RunScriptImmediately(EventScript_WhiteOut);
     HealPlayerParty();
     Overworld_ResetStateAfterWhiteOut();

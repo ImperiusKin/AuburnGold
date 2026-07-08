@@ -320,6 +320,50 @@ EventScript_AccessTimeChanger_34:
 	goto EventScript_AccessTimeChanger_33
 
 
+EventScript_AfterWhiteOutHeal::
+# 155 "data/scripts/pc.pory"
+	lockall
+# 156 "data/scripts/pc.pory"
+	msgbox gText_FirstShouldRestoreMonsHealth
+# 157 "data/scripts/pc.pory"
+	call EventScript_PkmnCenterNurse_TakeAndHealPkmn
+# 158 "data/scripts/pc.pory"
+	goto_if_set FLAG_DEFEATED_RUSTBORO_GYM, EventScript_AfterWhiteOutHeal_2
+# 164 "data/scripts/pc.pory"
+	msgbox EventScript_AfterWhiteOutHeal_Text_1
+EventScript_AfterWhiteOutHeal_1:
+# 173 "data/scripts/pc.pory"
+	applymovement VAR_LAST_TALKED, Movement_PkmnCenterNurse_Bow
+# 174 "data/scripts/pc.pory"
+	waitmovement 0
+# 175 "data/scripts/pc.pory"
+	fadedefaultbgm
+# 176 "data/scripts/pc.pory"
+	goto_if_set FLAG_SYS_NUZLOCKE_MODE, EventScript_AfterWhiteOutHeal_6
+EventScript_AfterWhiteOutHeal_5:
+# 183 "data/scripts/pc.pory"
+	releaseall
+	end
+
+EventScript_AfterWhiteOutHeal_2:
+# 159 "data/scripts/pc.pory"
+	msgbox EventScript_AfterWhiteOutHeal_Text_0
+	goto EventScript_AfterWhiteOutHeal_1
+
+EventScript_AfterWhiteOutHeal_6:
+# 177 "data/scripts/pc.pory"
+	message EventScript_AfterWhiteOutHeal_Text_2
+# 178 "data/scripts/pc.pory"
+	clearflag FLAG_SYS_NUZLOCKE_MODE
+# 179 "data/scripts/pc.pory"
+	special HealPlayerParty
+# 180 "data/scripts/pc.pory"
+	waitmessage
+# 181 "data/scripts/pc.pory"
+	forcesave
+	goto EventScript_AfterWhiteOutHeal_5
+
+
 EventScript_AccessTimeChanger_Text_0:
 # 88 "data/scripts/pc.pory"
 	.string "What time do you want to set?$"
@@ -368,3 +412,28 @@ EventScript_AccessTimeChanger_Text_10:
 EventScript_AccessTimeChanger_Text_11:
 # 147 "data/scripts/pc.pory"
 	.string "The Time Changer System was closed!$"
+
+EventScript_AfterWhiteOutHeal_Text_0:
+# 159 "data/scripts/pc.pory"
+	.string "Your POKéMON have been healed\n"
+	.string "to perfect health.\p"
+	.string "We hope you excel!$"
+
+EventScript_AfterWhiteOutHeal_Text_1:
+# 164 "data/scripts/pc.pory"
+	.string "Your POKéMON have been healed\n"
+	.string "to perfect health.\p"
+	.string "If your POKéMON's energy, HP,\n"
+	.string "is down, please come see us.\p"
+	.string "If you're planning to go far in the\n"
+	.string "field, you should buy some POTIONS\l"
+	.string "at the POKéMON MART.\p"
+	.string "We hope you excel!$"
+
+EventScript_AfterWhiteOutHeal_Text_2:
+# 177 "data/scripts/pc.pory"
+	.string "You lost this Nuzlocke run, Nuzlocke\n"
+	.string "Mode has been disabled, you can\l"
+	.string "continue this save file as if it was a\l"
+	.string "normal save or start a new save, the\l"
+	.string "game will now save!$"

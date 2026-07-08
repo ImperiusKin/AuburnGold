@@ -3653,11 +3653,14 @@ static void Cmd_tryfaintmon(void)
             gBattlescriptCurrInstr = BattleScript_FaintBattler;
             if (IsOnPlayerSide(battler))
             {
+                bool8 isNuzlocke = FlagGet(FLAG_SYS_NUZLOCKE_MODE);
+                u8 monId = gBattlerPartyIndexes[battler];
                 gHitMarker |= HITMARKER_PLAYER_FAINTED;
                 if (gBattleResults.playerFaintCounter < 255)
                     gBattleResults.playerFaintCounter++;
                 AdjustFriendshipOnBattleFaint(battler);
                 gSideTimers[B_SIDE_PLAYER].retaliateTimer = 2;
+                SetMonData(&gParties[B_TRAINER_PLAYER][monId], MON_DATA_IS_DISABLED, &isNuzlocke);
             }
             else
             {

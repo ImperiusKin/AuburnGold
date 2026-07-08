@@ -34,18 +34,25 @@
 static void CB2_ReturnFromChooseHalfParty(void);
 static void CB2_ReturnFromChooseBattleFrontierParty(void);
 static void HealPlayerBoxes(void);
+static void HealPlayerPartyNuzlocke(void);
 
 void HealPlayerParty(void)
 {
     u32 i;
-    for (i = 0; i < gPartiesCount[B_TRAINER_PLAYER]; i++)
-        HealPokemon(&gParties[B_TRAINER_PLAYER][i]);
-    if (OW_PC_HEAL >= GEN_8)
-        HealPlayerBoxes();
+    bool8 isNuzlocke = FlagGet(FLAG_SYS_NUZLOCKE_MODE);
+    if(!isNuzlocke){
+        for (i = 0; i < gPartiesCount[B_TRAINER_PLAYER]; i++)
+            HealPokemon(&gParties[B_TRAINER_PLAYER][i]);
+        if (OW_PC_HEAL >= GEN_8)
+            HealPlayerBoxes();
 
-    // Recharge Tera Orb, if possible.
-    if (B_FLAG_TERA_ORB_CHARGED != 0 && CheckBagHasItem(ITEM_TERA_ORB, 1))
-        FlagSet(B_FLAG_TERA_ORB_CHARGED);
+        // Recharge Tera Orb, if possible.
+        if (B_FLAG_TERA_ORB_CHARGED != 0 && CheckBagHasItem(ITEM_TERA_ORB, 1))
+            FlagSet(B_FLAG_TERA_ORB_CHARGED);
+    }
+    else{
+        HealPlayerPartyNuzlocke();
+    }
 }
 
 static void HealPlayerBoxes(void)
@@ -60,6 +67,59 @@ static void HealPlayerBoxes(void)
             boxMon = &gPokemonStoragePtr->boxes[boxId][boxPosition];
             if (GetBoxMonData(boxMon, MON_DATA_SANITY_HAS_SPECIES))
                 HealBoxPokemon(boxMon);
+        }
+    }
+}
+
+static void HealPlayerPartyNuzlocke(void)
+{
+    u32 i;
+
+    //Heal Party
+    for (i = 0; i < gPartiesCount[B_TRAINER_PLAYER]; i++){
+        //Only Cure Alive Mons
+        if(GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_HP) != 0 && !GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_IS_DISABLED))
+            HealPokemon(&gParties[B_TRAINER_PLAYER][i]);
+    }
+
+    //Heal Boxes
+    if (OW_PC_HEAL >= GEN_8){
+        int boxId, boxPosition;
+        struct BoxPokemon *boxMon;
+
+        for (boxId = 0; boxId < TOTAL_BOXES_COUNT; boxId++)
+        {
+            for (boxPosition = 0; boxPosition < IN_BOX_COUNT; boxPosition++)
+            {
+                boxMon = &gPokemonStoragePtr->boxes[boxId][boxPosition];
+                if (GetBoxMonData(boxMon, MON_DATA_SANITY_HAS_SPECIES) && GetBoxMonData(boxMon, MON_DATA_HP) != 0 && !GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_IS_DISABLED))
+                    HealBoxPokemon(boxMon);
+            }
+        }
+    }
+}
+
+void EnablePlayerPartyMons(void){
+    u32 i;
+    bool8 isMonDisabled = FALSE;
+
+    //Heal Party
+    for (i = 0; i < gPartiesCount[B_TRAINER_PLAYER]; i++)
+        SetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_IS_DISABLED, &isMonDisabled);
+
+    //Heal Boxes
+    if (OW_PC_HEAL >= GEN_8){
+        int boxId, boxPosition;
+        struct BoxPokemon *boxMon;
+
+        for (boxId = 0; boxId < TOTAL_BOXES_COUNT; boxId++)
+        {
+            for (boxPosition = 0; boxPosition < IN_BOX_COUNT; boxPosition++)
+            {
+                boxMon = &gPokemonStoragePtr->boxes[boxId][boxPosition];
+                if (GetBoxMonData(boxMon, MON_DATA_SANITY_HAS_SPECIES))
+                    SetBoxMonData(boxMon, MON_DATA_IS_DISABLED, &isMonDisabled);
+            }
         }
     }
 }

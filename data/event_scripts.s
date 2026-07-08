@@ -1062,26 +1062,6 @@ EventScript_WhiteOut::
 	goto EventScript_ResetMrBriney
 	end
 
-EventScript_AfterWhiteOutHeal::
-	lockall
-	msgbox gText_FirstShouldRestoreMonsHealth
-	call EventScript_PkmnCenterNurse_TakeAndHealPkmn
-	call_if_unset FLAG_DEFEATED_RUSTBORO_GYM, EventScript_AfterWhiteOutHealMsgPreFirstBoss
-	call_if_set FLAG_DEFEATED_RUSTBORO_GYM, EventScript_AfterWhiteOutHealMsg
-	applymovement VAR_LAST_TALKED, Movement_PkmnCenterNurse_Bow
-	waitmovement 0
-	fadedefaultbgm
-	releaseall
-	end
-
-EventScript_AfterWhiteOutHealMsgPreFirstBoss::
-	msgbox gText_MonsHealedShouldBuyPotions
-	return
-
-EventScript_AfterWhiteOutHealMsg::
-	msgbox gText_MonsHealed
-	return
-
 EventScript_AfterWhiteOutMomHeal::
 	lockall
 	textcolor NPC_TEXT_COLOR_FEMALE
@@ -1408,21 +1388,6 @@ gText_PlayerWhitedOut::
 gText_FirstShouldRestoreMonsHealth::
 	.string "First, you should restore your\n"
 	.string "POKéMON to full health.$"
-
-gText_MonsHealedShouldBuyPotions::
-	.string "Your POKéMON have been healed\n"
-	.string "to perfect health.\p"
-	.string "If your POKéMON's energy, HP,\n"
-	.string "is down, please come see us.\p"
-	.string "If you're planning to go far in the\n"
-	.string "field, you should buy some POTIONS\l"
-	.string "at the POKéMON MART.\p"
-	.string "We hope you excel!$"
-
-gText_MonsHealed::
-	.string "Your POKéMON have been healed\n"
-	.string "to perfect health.\p"
-	.string "We hope you excel!$"
 
 gText_HadQuiteAnExperienceTakeRest::
 	.string "MOM: {PLAYER}!\n"

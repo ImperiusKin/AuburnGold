@@ -150,3 +150,36 @@ script EventScript_AccessTimeChanger{
 	releaseall
 	end
 }
+
+script EventScript_AfterWhiteOutHeal{
+	lockall
+	msgbox(gText_FirstShouldRestoreMonsHealth)
+	call(EventScript_PkmnCenterNurse_TakeAndHealPkmn)
+	if(flag(FLAG_DEFEATED_RUSTBORO_GYM)){
+		msgbox("Your POKéMON have been healed\n"
+			   "to perfect health.\p"
+			   "We hope you excel!$")
+	}
+	else{
+		msgbox("Your POKéMON have been healed\n"
+			   "to perfect health.\p"
+			   "If your POKéMON's energy, HP,\n"
+			   "is down, please come see us.\p"
+			   "If you're planning to go far in the\n"
+			   "field, you should buy some POTIONS\l"
+			   "at the POKéMON MART.\p"
+			   "We hope you excel!$")
+	}
+	applymovement(VAR_LAST_TALKED, Movement_PkmnCenterNurse_Bow)
+	waitmovement(0)
+	fadedefaultbgm
+	if(flag(FLAG_SYS_NUZLOCKE_MODE)){
+		message(format("You lost this Nuzlocke run, Nuzlocke Mode has been disabled, you can continue this save file as if it was a normal save or start a new save, the game will now save!"))
+		clearflag(FLAG_SYS_NUZLOCKE_MODE)
+		special(HealPlayerParty)
+		waitmessage
+		forcesave
+	}
+	releaseall
+	end
+}

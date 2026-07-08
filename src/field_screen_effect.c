@@ -65,6 +65,7 @@ static const u8 sText_PlayerScurriedToCenter[] = _("{PLAYER} scurried to a POKé
 static const u8 sText_PlayerScurriedBackHome[] = _("{PLAYER} scurried back home, protecting\nthe exhausted and fainted POKéMON from\nfurther harm…\p");
 static const u8 sText_PlayerRegroupCenter[] = _("{PLAYER} scurried to a POKéMON CENTER,\nto regroup and reconsider the battle\nstrategy…\p");
 static const u8 sText_PlayerRegroupHome[] = _("{PLAYER} scurried back home, to regroup\nand reconsider the battle strategy…\p");
+static const u8 sText_PlayerLostNuzlocke[] = _("{PLAYER} has lost its nuzlocke run.\nNuzlocke mode has been disabled and you can\ncontinue this save file without it…\p");
 
 // data[0] is used universally by tasks in this file as a state for switches
 #define tState       data[0]
@@ -1410,10 +1411,13 @@ enum {
 
 static const u8 *GenerateRecoveryMessage(u8 taskId)
 {
+    bool8 isNuzlocke = FlagGet(FLAG_SYS_NUZLOCKE_MODE);
     bool32 forfeitTrainer = DidPlayerForfeitNormalTrainerBattle();
     bool32 destinationIsPlayersHouse = (gTasks[taskId].tIsPlayerHouse == TRUE);
 
-    if (forfeitTrainer && destinationIsPlayersHouse)
+    if(isNuzlocke)
+        return sText_PlayerLostNuzlocke;
+    else if (forfeitTrainer && destinationIsPlayersHouse)
         return sText_PlayerRegroupHome;
     else if (forfeitTrainer && !destinationIsPlayersHouse)
         return sText_PlayerRegroupCenter;

@@ -2163,6 +2163,9 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
         case MON_DATA_HELD_ITEM:
             retVal = GetSubstruct0(boxMon)->heldItem;
             break;
+        case MON_DATA_IS_DISABLED:
+            retVal = GetSubstruct0(boxMon)->isDisabled;
+            break;
         case MON_DATA_EXP:
             retVal = GetSubstruct0(boxMon)->experience;
             break;
@@ -2677,6 +2680,9 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
         }
         case MON_DATA_HELD_ITEM:
             SET16(GetSubstruct0(boxMon)->heldItem);
+            break;
+        case MON_DATA_IS_DISABLED:
+            SET16(GetSubstruct0(boxMon)->isDisabled);
             break;
         case MON_DATA_EXP:
             SET32(GetSubstruct0(boxMon)->experience);
