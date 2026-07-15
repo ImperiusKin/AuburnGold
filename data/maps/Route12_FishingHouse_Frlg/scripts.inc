@@ -60,19 +60,19 @@ Route12_FishingHouse_EventScript_NotMagikarp::
 
 Route12_FishingHouse_EventScript_NotRecordMagikarp::
 	goto_if_unset FLAG_GOT_RECORD_SETTING_MAGIKARP, Route12_FishingHouse_EventScript_NewRecordMagikarp
-	msgbox Route12_FishingHouse_Text_HmmXSizeDoesntMeasureUp
+	msgbox Route12_FishingHouse_Text_HmmXInchesDoesntMeasureUp
 	release
 	end
 
 Route12_FishingHouse_EventScript_TieRecordMagikarp::
 	goto_if_unset FLAG_GOT_RECORD_SETTING_MAGIKARP, Route12_FishingHouse_EventScript_NewRecordMagikarp
-	msgbox Route12_FishingHouse_Text_HuhXSizeSameSizeAsLast
+	msgbox Route12_FishingHouse_Text_HuhXInchesSameSizeAsLast
 	release
 	end
 
 Route12_FishingHouse_EventScript_NewRecordMagikarp::
 	setflag FLAG_GOT_RECORD_SETTING_MAGIKARP
-	msgbox Route12_FishingHouse_Text_WhoaXSizeTakeThis
+	msgbox Route12_FishingHouse_Text_WhoaXInchesTakeThis
 	giveitem ITEM_NET_BALL
 	goto_if_eq VAR_RESULT, FALSE, Route12_FishingHouse_EventScript_NoRoomForNetBall
 	msgbox Route12_FishingHouse_Text_LookForwardToGreaterRecords
@@ -93,7 +93,7 @@ Route12_FishingHouse_EventScript_MagikarpRecordSign::
 
 Route12_FishingHouse_EventScript_MagikarpRecordSignRecordSet::
 	special GetMagikarpSizeRecordInfo
-	msgbox Route12_FishingHouse_Text_MostGiganticMagikarpXSize
+	msgbox Route12_FishingHouse_Text_MostGiganticMagikarpXInches
 	releaseall
 	end
 
@@ -143,9 +143,9 @@ Route12_FishingHouse_Text_OhMagikarpAllowMeToSee::
 	.string "Why, if it isn't a MAGIKARP!\p"
 	.string "Allow me to see it, quick!$"
 
-Route12_FishingHouse_Text_WhoaXSizeTakeThis::
+Route12_FishingHouse_Text_WhoaXInchesTakeThis::
 	.string "… … …Whoa!\n"
-	.string "{STR_VAR_2}!\p"
+	.string "{STR_VAR_2} inches!\p"
 	.string "You have a rare appreciation for\n"
 	.string "the fine, poetic aspects of fishing!\p"
 	.string "You must take this.\n"
@@ -155,17 +155,17 @@ Route12_FishingHouse_Text_LookForwardToGreaterRecords::
 	.string "I'll look forward to seeing greater\n"
 	.string "records from you!$"
 
-Route12_FishingHouse_Text_HuhXSizeSameSizeAsLast::
+Route12_FishingHouse_Text_HuhXInchesSameSizeAsLast::
 	.string "Huh?\n"
-	.string "{STR_VAR_2}?\p"
+	.string "{STR_VAR_2} inches?\p"
 	.string "This is the same size as the one\n"
 	.string "I saw before.$"
 
-Route12_FishingHouse_Text_HmmXSizeDoesntMeasureUp::
+Route12_FishingHouse_Text_HmmXInchesDoesntMeasureUp::
 	.string "Hmm…\n"
-	.string "This one is {STR_VAR_2} long.\p"
+	.string "This one is {STR_VAR_2} inches long.\p"
 	.string "It doesn't measure up to the\n"
-	.string "{STR_VAR_3} one you brought before.$"
+	.string "{STR_VAR_3}-inch one you brought before.$"
 
 Route12_FishingHouse_Text_DoesntLookLikeMagikarp::
 	.string "Uh… That doesn't look much like\n"
@@ -176,12 +176,13 @@ Route12_FishingHouse_Text_NoRoomForGift::
 	.string "I had a gift for you, but you have\n"
 	.string "no room for it.$"
 
-Route12_FishingHouse_Text_MostGiganticMagikarpXSize::
+Route12_FishingHouse_Text_MostGiganticMagikarpXInches::
 	.string "The most gigantic MAGIKARP\n"
 	.string "I have ever witnessed…\p"
-	.string "{STR_VAR_3}!$"
+	.string "{STR_VAR_3} inches!$"
 
 Route12_FishingHouse_Text_BlankChartOfSomeSort::
 	.string "It's a blank chart of some sort.\p"
 	.string "It has spaces for writing in\n"
 	.string "records of some kind.$"
+

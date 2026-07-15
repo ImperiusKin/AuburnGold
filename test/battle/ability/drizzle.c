@@ -27,14 +27,14 @@ SINGLE_BATTLE_TEST("Drizzle sets up rain for 5 turns (Gen6+)")
 {
     GIVEN {
         WITH_CONFIG(B_ABILITY_WEATHER, GEN_6);
-        PLAYER(SPECIES_POLITOED) { Ability(ABILITY_DRIZZLE); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_POLITOED) { Moves(MOVE_CELEBRATE); Ability(ABILITY_DRIZZLE); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); }
     } WHEN {
-        TURN {}
-        TURN {}
-        TURN {}
-        TURN {}
-        TURN {}
+        TURN { MOVE(player, MOVE_CELEBRATE); MOVE(opponent, MOVE_CELEBRATE); }
+        TURN { MOVE(player, MOVE_CELEBRATE); MOVE(opponent, MOVE_CELEBRATE); }
+        TURN { MOVE(player, MOVE_CELEBRATE); MOVE(opponent, MOVE_CELEBRATE); }
+        TURN { MOVE(player, MOVE_CELEBRATE); MOVE(opponent, MOVE_CELEBRATE); }
+        TURN { MOVE(player, MOVE_CELEBRATE); MOVE(opponent, MOVE_CELEBRATE); }
     } SCENE {
         ABILITY_POPUP(player, ABILITY_DRIZZLE);
         MESSAGE("Rain continues to fall.");
@@ -49,18 +49,17 @@ SINGLE_BATTLE_TEST("Drizzle sets up rain for 8 turns with Damp Rock (Gen6+)")
 {
     GIVEN {
         WITH_CONFIG(B_ABILITY_WEATHER, GEN_6);
-        ASSUME(gItemsInfo[ITEM_DAMP_ROCK].holdEffect == HOLD_EFFECT_DAMP_ROCK);
-        PLAYER(SPECIES_POLITOED) { Ability(ABILITY_DRIZZLE); Item(ITEM_DAMP_ROCK); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_POLITOED) { Moves(MOVE_CELEBRATE); Ability(ABILITY_DRIZZLE); Item(ITEM_DAMP_ROCK); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); }
     } WHEN {
-        TURN {}
-        TURN {}
-        TURN {}
-        TURN {}
-        TURN {}
-        TURN {}
-        TURN {}
-        TURN {}
+        TURN { MOVE(player, MOVE_CELEBRATE); MOVE(opponent, MOVE_CELEBRATE); }
+        TURN { MOVE(player, MOVE_CELEBRATE); MOVE(opponent, MOVE_CELEBRATE); }
+        TURN { MOVE(player, MOVE_CELEBRATE); MOVE(opponent, MOVE_CELEBRATE); }
+        TURN { MOVE(player, MOVE_CELEBRATE); MOVE(opponent, MOVE_CELEBRATE); }
+        TURN { MOVE(player, MOVE_CELEBRATE); MOVE(opponent, MOVE_CELEBRATE); }
+        TURN { MOVE(player, MOVE_CELEBRATE); MOVE(opponent, MOVE_CELEBRATE); }
+        TURN { MOVE(player, MOVE_CELEBRATE); MOVE(opponent, MOVE_CELEBRATE); }
+        TURN { MOVE(player, MOVE_CELEBRATE); MOVE(opponent, MOVE_CELEBRATE); }
     } SCENE {
         ABILITY_POPUP(player, ABILITY_DRIZZLE);
         MESSAGE("Rain continues to fall.");
@@ -78,18 +77,18 @@ SINGLE_BATTLE_TEST("Drizzle sets up permanent rain (Gen3-5)")
 {
     GIVEN {
         WITH_CONFIG(B_ABILITY_WEATHER, GEN_3);
-        PLAYER(SPECIES_POLITOED) { Ability(ABILITY_DRIZZLE); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_POLITOED) { Moves(MOVE_CELEBRATE); Ability(ABILITY_DRIZZLE); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); }
     } WHEN {
-        TURN {}
-        TURN {}
-        TURN {}
-        TURN {}
-        TURN {}
-        TURN {}
-        TURN {}
-        TURN {}
-        TURN {}
+        TURN { MOVE(player, MOVE_CELEBRATE); MOVE(opponent, MOVE_CELEBRATE); }
+        TURN { MOVE(player, MOVE_CELEBRATE); MOVE(opponent, MOVE_CELEBRATE); }
+        TURN { MOVE(player, MOVE_CELEBRATE); MOVE(opponent, MOVE_CELEBRATE); }
+        TURN { MOVE(player, MOVE_CELEBRATE); MOVE(opponent, MOVE_CELEBRATE); }
+        TURN { MOVE(player, MOVE_CELEBRATE); MOVE(opponent, MOVE_CELEBRATE); }
+        TURN { MOVE(player, MOVE_CELEBRATE); MOVE(opponent, MOVE_CELEBRATE); }
+        TURN { MOVE(player, MOVE_CELEBRATE); MOVE(opponent, MOVE_CELEBRATE); }
+        TURN { MOVE(player, MOVE_CELEBRATE); MOVE(opponent, MOVE_CELEBRATE); }
+        TURN { MOVE(player, MOVE_CELEBRATE); MOVE(opponent, MOVE_CELEBRATE); }
     } SCENE {
         ABILITY_POPUP(player, ABILITY_DRIZZLE);
         MESSAGE("Rain continues to fall.");
