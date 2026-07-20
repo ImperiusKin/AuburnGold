@@ -285,6 +285,30 @@ void ItemUseOutOfBattle_TimeChanger(u8 taskId)
     SetUpItemUseOnFieldCallback(taskId);
 }
 
+void ItemUseOutOfBattle_HexOrb(u8 taskId)
+{
+    sItemUseOnFieldCB = Task_AccessTimeChanger;
+    SetUpItemUseOnFieldCallback(taskId);
+}
+
+void ItemUseOutOfBattle_CandyBox(u8 taskId)
+{
+    sItemUseOnFieldCB = Task_AccessTimeChanger;
+    SetUpItemUseOnFieldCallback(taskId);
+}
+
+void ItemUseOutOfBattle_NatureChanger(u8 taskId)
+{
+    sItemUseOnFieldCB = Task_AccessTimeChanger;
+    SetUpItemUseOnFieldCallback(taskId);
+}
+
+void ItemUseOutOfBattle_GenderChanger(u8 taskId)
+{
+    sItemUseOnFieldCB = Task_AccessTimeChanger;
+    SetUpItemUseOnFieldCallback(taskId);
+}
+
 void ItemUseOutOfBattle_PokeVial(u8 taskId)
 {
     u8 vialUses = VarGet(VAR_POKEVIAL_USES);

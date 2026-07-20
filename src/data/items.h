@@ -15911,6 +15911,70 @@ const struct ItemInfo gItemsInfo[] =
         .iconPic = gItemIcon_BerryPouch,
         .iconPalette = gItemIconPalette_BerryPouch,
     },
+ 
+    [ITEM_HEX_ORB] =
+    {
+        .name = ITEM_NAME("Hex Orb"),
+        .price = 0,
+        .importance = 1,
+        .description = COMPOUND_STRING(
+            "An item that lets\n"
+            "you change a\n"
+            "Pokémon status."),
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_FIELD,
+        .fieldUseFunc = ItemUseOutOfBattle_HexOrb,
+        .iconPic = gItemIcon_BerryPouch,
+        .iconPalette = gItemIconPalette_BerryPouch,
+    },
+ 
+    [ITEM_CANDY_BOX] =
+    {
+        .name = ITEM_NAME("Candy Box"),
+        .price = 0,
+        .importance = 1,
+        .description = COMPOUND_STRING(
+            "An item that lets\n"
+            "you change a\n"
+            "Pokémon level."),
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_FIELD,
+        .fieldUseFunc = ItemUseOutOfBattle_CandyBox,
+        .iconPic = gItemIcon_BerryPouch,
+        .iconPalette = gItemIconPalette_BerryPouch,
+    },
+ 
+    [ITEM_NATURE_CHANGER] =
+    {
+        .name = ITEM_NAME("Nature Changer"),
+        .price = 0,
+        .importance = 1,
+        .description = COMPOUND_STRING(
+            "An item that lets\n"
+            "you change a\n"
+            "Pokémon nature."),
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_FIELD,
+        .fieldUseFunc = ItemUseOutOfBattle_NatureChanger,
+        .iconPic = gItemIcon_BerryPouch,
+        .iconPalette = gItemIconPalette_BerryPouch,
+    },
+ 
+    [ITEM_GENDER_CHANGER] =
+    {
+        .name = ITEM_NAME("Gender Changer"),
+        .price = 0,
+        .importance = 1,
+        .description = COMPOUND_STRING(
+            "An item that lets\n"
+            "you change a\n"
+            "Gender nature."),
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_FIELD,
+        .fieldUseFunc = ItemUseOutOfBattle_GenderChanger,
+        .iconPic = gItemIcon_BerryPouch,
+        .iconPalette = gItemIconPalette_BerryPouch,
+    },
 };
 
 #undef ITEM_NAME
