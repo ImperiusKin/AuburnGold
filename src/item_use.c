@@ -311,8 +311,8 @@ void ItemUseOutOfBattle_NatureChanger(u8 taskId)
 
 void ItemUseOutOfBattle_GenderChanger(u8 taskId)
 {
-    sItemUseOnFieldCB = Task_AccessTimeChanger;
-    SetUpItemUseOnFieldCallback(taskId);
+    gItemUseCB = ItemUseCB_GenderChanger;
+    SetUpItemUseCallback(taskId);
 }
 
 void ItemUseOutOfBattle_PokeVial(u8 taskId)

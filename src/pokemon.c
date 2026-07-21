@@ -1833,6 +1833,7 @@ u8 GetBoxMonGender(struct BoxPokemon *boxMon)
 {
     enum Species species = GetBoxMonData(boxMon, MON_DATA_SPECIES);
     u32 personality = GetBoxMonData(boxMon, MON_DATA_PERSONALITY);
+    bool8 genderReversed = GetBoxMonData(boxMon, MON_DATA_REVERSED_GENDER);
 
     switch (gSpeciesInfo[species].genderRatio)
     {
@@ -1842,10 +1843,18 @@ u8 GetBoxMonGender(struct BoxPokemon *boxMon)
         return gSpeciesInfo[species].genderRatio;
     }
 
-    if (gSpeciesInfo[species].genderRatio > (personality & 0xFF))
-        return MON_FEMALE;
-    else
-        return MON_MALE;
+    if (gSpeciesInfo[species].genderRatio > (personality & 0xFF)){
+        if(genderReversed)
+            return MON_MALE;
+        else
+            return MON_FEMALE;
+    }
+    else{
+        if(genderReversed)
+            return MON_MALE;
+        else
+            return MON_FEMALE;
+    }
 }
 
 u8 GetGenderFromSpeciesAndPersonality(enum Species species, u32 personality)
@@ -2168,6 +2177,9 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
             break;
         case MON_DATA_IS_DISABLED:
             retVal = GetSubstruct0(boxMon)->isDisabled;
+            break;
+        case MON_DATA_REVERSED_GENDER:
+            retVal = GetSubstruct0(boxMon)->genderReversed;
             break;
         case MON_DATA_EXP:
             retVal = GetSubstruct0(boxMon)->experience;
@@ -2686,6 +2698,9 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
             break;
         case MON_DATA_IS_DISABLED:
             SET16(GetSubstruct0(boxMon)->isDisabled);
+            break;
+        case MON_DATA_REVERSED_GENDER:
+            SET16(GetSubstruct0(boxMon)->genderReversed);
             break;
         case MON_DATA_EXP:
             SET32(GetSubstruct0(boxMon)->experience);

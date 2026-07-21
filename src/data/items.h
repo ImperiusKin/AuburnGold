@@ -15970,7 +15970,8 @@ const struct ItemInfo gItemsInfo[] =
             "you change a\n"
             "Gender nature."),
         .pocket = POCKET_KEY_ITEMS,
-        .type = ITEM_USE_FIELD,
+        .sortType = ITEM_TYPE_FIELD_USE,
+        .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_GenderChanger,
         .iconPic = gItemIcon_BerryPouch,
         .iconPalette = gItemIconPalette_BerryPouch,
