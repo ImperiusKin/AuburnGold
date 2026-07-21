@@ -551,6 +551,7 @@ extern const u8 EventScript_PC[];
 extern const u8 EventScript_PC_FromStartMenu[];
 
 extern const u8 EventScript_AccessTimeChanger[];
+extern const u8 EventScript_HexOrb_Single[];
 extern const u8 EventScript_AccessPokemonBoxLink[];
 extern const u8 EventScript_TestSignpostMsg[];
 extern const u8 EventScript_HiddenItemScript[];

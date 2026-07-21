@@ -683,6 +683,56 @@ void Script_GetChosenMonDefensiveIVs(void)
     ConvertIntToDecimalStringN(gStringVar3, GetMonData(&gParties[B_TRAINER_PLAYER][gSpecialVar_0x8004], MON_DATA_SPDEF_IV), STR_CONV_MODE_LEFT_ALIGN, 3);
 }
 
+u16 CanPartyMonBeSetWithStatus(u32 slot, u32 status){
+    struct Pokemon *mon = &gParties[B_TRAINER_PLAYER][slot];
+    u16 species = GetMonData(mon, MON_DATA_SPECIES);
+    u16 ability = GetMonAbility(mon);
+    enum Type type1 = GetSpeciesType(species, 0);
+    enum Type type2 = GetSpeciesType(species, 1);
+
+    switch(status){
+        case STATUS1_POISON:
+            if(type1 == TYPE_POISON || type2 == TYPE_POISON || 
+               type1 == TYPE_STEEL  || type2 == TYPE_STEEL)
+                return SET_STATUS_NOT_POSSIBLE_TYPE;
+            else if(ability == ABILITY_IMMUNITY || ability == ABILITY_PASTEL_VEIL)
+                return SET_STATUS_NOT_POSSIBLE_ABILITY;
+        break;
+        case STATUS1_BURN:
+            if(type1 == TYPE_FIRE || type2 == TYPE_FIRE)
+                return SET_STATUS_NOT_POSSIBLE_TYPE;
+            else if(ability == ABILITY_WATER_BUBBLE || ability == ABILITY_WATER_VEIL || ability == ABILITY_THERMAL_EXCHANGE)
+                return SET_STATUS_NOT_POSSIBLE_ABILITY;
+        break;
+        case STATUS1_PARALYSIS:
+            if(type1 == TYPE_ELECTRIC || type2 == TYPE_ELECTRIC)
+                return SET_STATUS_NOT_POSSIBLE_TYPE;
+            if(ability == ABILITY_LIMBER)
+                return SET_STATUS_NOT_POSSIBLE_ABILITY;
+        break;
+        case STATUS1_FREEZE:
+        case STATUS1_FROSTBITE:
+            if(type1 == TYPE_ICE || type2 == TYPE_ICE)
+                return SET_STATUS_NOT_POSSIBLE_TYPE;
+            if(ability == ABILITY_MAGMA_ARMOR)
+                return SET_STATUS_NOT_POSSIBLE_ABILITY;
+        break;
+        case STATUS1_SLEEP:
+            if(ability == ABILITY_SWEET_VEIL || ability == ABILITY_VITAL_SPIRIT || ability == ABILITY_INSOMNIA)
+                return SET_STATUS_NOT_POSSIBLE_ABILITY;
+        break;
+    }
+
+    switch(ability){
+        case ABILITY_COMATOSE:
+        case ABILITY_PURIFYING_SALT:
+            return SET_STATUS_NOT_POSSIBLE_ABILITY;
+        break;
+    }
+
+    return SET_STATUS_POSSIBLE;
+}
+
 void Script_SetStatus1(struct ScriptContext *ctx)
 {
     u32 status1 = VarGet(ScriptReadHalfword(ctx));
@@ -705,7 +755,11 @@ void Script_SetStatus1(struct ScriptContext *ctx)
     }
     else
     {
-        SetMonData(&gParties[B_TRAINER_PLAYER][slot], MON_DATA_STATUS, &status1);
+        u16 canSetStatus = CanPartyMonBeSetWithStatus(slot, status1);
+        VarSet(VAR_0x8004, canSetStatus);
+
+        if(canSetStatus == SET_STATUS_POSSIBLE)
+            SetMonData(&gParties[B_TRAINER_PLAYER][slot], MON_DATA_STATUS, &status1);
     }
 }
 

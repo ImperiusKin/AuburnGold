@@ -364,6 +364,170 @@ EventScript_AfterWhiteOutHeal_6:
 	goto EventScript_AfterWhiteOutHeal_5
 
 
+EventScript_HexOrb_Single::
+# 197 "data/scripts/pc.pory"
+	msgbox EventScript_HexOrb_Single_Text_0, MSGBOX_DEFAULT
+# 198 "data/scripts/pc.pory"
+	special ChoosePartyMon
+# 199 "data/scripts/pc.pory"
+	goto_if_ge VAR_0x8004, PARTY_SIZE, EventScript_HexOrb_Single_Cancel
+# 200 "data/scripts/pc.pory"
+	specialvar VAR_RESULT, ScriptGetPartyMonSpecies
+# 201 "data/scripts/pc.pory"
+	goto_if_eq VAR_RESULT, SPECIES_EGG, EventScript_HexOrb_Single_Egg
+# 202 "data/scripts/pc.pory"
+	dynmultipush EventScript_HexOrb_Single_Text_1, 0
+# 203 "data/scripts/pc.pory"
+	dynmultipush EventScript_HexOrb_Single_Text_2, 1
+# 205 "data/scripts/pc.pory"
+	dynmultipush EventScript_HexOrb_Single_Text_3, 2
+# 207 "data/scripts/pc.pory"
+	dynmultipush EventScript_HexOrb_Single_Text_4, 3
+# 208 "data/scripts/pc.pory"
+	dynmultipush EventScript_HexOrb_Single_Text_5, 4
+# 209 "data/scripts/pc.pory"
+	bufferpartymonnick STR_VAR_1, VAR_0x8004
+# 210 "data/scripts/pc.pory"
+	msgbox EventScript_HexOrb_Single_Text_6, MSGBOX_DEFAULT
+# 211 "data/scripts/pc.pory"
+	dynmultistack 0, 0, FALSE, 5, FALSE, 0, NULL
+# 212 "data/scripts/pc.pory"
+	switch VAR_RESULT
+# 213 "data/scripts/pc.pory"
+	case 0, EventScript_HexOrb_Single_3
+# 225 "data/scripts/pc.pory"
+	case 1, EventScript_HexOrb_Single_4
+# 249 "data/scripts/pc.pory"
+	case 2, EventScript_HexOrb_Single_5
+# 273 "data/scripts/pc.pory"
+	case 3, EventScript_HexOrb_Single_6
+# 285 "data/scripts/pc.pory"
+	case 4, EventScript_HexOrb_Single_7
+# 286 "data/scripts/pc.pory"
+	case MULTI_B_PRESSED, EventScript_HexOrb_Single_7
+EventScript_HexOrb_Single_1:
+# 290 "data/scripts/pc.pory"
+	releaseall
+	end
+
+EventScript_HexOrb_Single_3:
+# 214 "data/scripts/pc.pory"
+	setstatus1 STATUS1_POISON, VAR_0x8004
+# 215 "data/scripts/pc.pory"
+	compare VAR_0x8004, SET_STATUS_POSSIBLE
+	goto_if_eq EventScript_HexOrb_Single_9
+# 218 "data/scripts/pc.pory"
+	compare VAR_0x8004, SET_STATUS_NOT_POSSIBLE_ABILITY
+	goto_if_eq EventScript_HexOrb_Single_10
+# 222 "data/scripts/pc.pory"
+	msgbox EventScript_HexOrb_Single_Text_9, MSGBOX_DEFAULT
+EventScript_HexOrb_Single_8:
+	goto EventScript_HexOrb_Single_1
+
+EventScript_HexOrb_Single_4:
+# 226 "data/scripts/pc.pory"
+	setstatus1 STATUS1_PARALYSIS, VAR_0x8004
+# 227 "data/scripts/pc.pory"
+	compare VAR_0x8004, SET_STATUS_POSSIBLE
+	goto_if_eq EventScript_HexOrb_Single_15
+# 230 "data/scripts/pc.pory"
+	compare VAR_0x8004, SET_STATUS_NOT_POSSIBLE_ABILITY
+	goto_if_eq EventScript_HexOrb_Single_16
+# 234 "data/scripts/pc.pory"
+	msgbox EventScript_HexOrb_Single_Text_12, MSGBOX_DEFAULT
+EventScript_HexOrb_Single_14:
+	goto EventScript_HexOrb_Single_1
+
+EventScript_HexOrb_Single_5:
+# 250 "data/scripts/pc.pory"
+	setstatus1 STATUS1_BURN, VAR_0x8004
+# 251 "data/scripts/pc.pory"
+	compare VAR_0x8004, SET_STATUS_POSSIBLE
+	goto_if_eq EventScript_HexOrb_Single_21
+# 254 "data/scripts/pc.pory"
+	compare VAR_0x8004, SET_STATUS_NOT_POSSIBLE_ABILITY
+	goto_if_eq EventScript_HexOrb_Single_22
+# 258 "data/scripts/pc.pory"
+	msgbox EventScript_HexOrb_Single_Text_15, MSGBOX_DEFAULT
+EventScript_HexOrb_Single_20:
+	goto EventScript_HexOrb_Single_1
+
+EventScript_HexOrb_Single_6:
+# 274 "data/scripts/pc.pory"
+	setstatus1 STATUS1_FROSTBITE, VAR_0x8004
+# 275 "data/scripts/pc.pory"
+	compare VAR_0x8004, SET_STATUS_POSSIBLE
+	goto_if_eq EventScript_HexOrb_Single_27
+# 278 "data/scripts/pc.pory"
+	compare VAR_0x8004, SET_STATUS_NOT_POSSIBLE_ABILITY
+	goto_if_eq EventScript_HexOrb_Single_28
+# 282 "data/scripts/pc.pory"
+	msgbox EventScript_HexOrb_Single_Text_18, MSGBOX_DEFAULT
+EventScript_HexOrb_Single_26:
+	goto EventScript_HexOrb_Single_1
+
+EventScript_HexOrb_Single_7:
+# 287 "data/scripts/pc.pory"
+	goto EventScript_HexOrb_Single_Cancel
+	goto EventScript_HexOrb_Single_1
+
+EventScript_HexOrb_Single_9:
+# 216 "data/scripts/pc.pory"
+	msgbox EventScript_HexOrb_Single_Text_7, MSGBOX_DEFAULT
+	goto EventScript_HexOrb_Single_8
+
+EventScript_HexOrb_Single_10:
+# 219 "data/scripts/pc.pory"
+	msgbox EventScript_HexOrb_Single_Text_8, MSGBOX_DEFAULT
+	goto EventScript_HexOrb_Single_8
+
+EventScript_HexOrb_Single_15:
+# 228 "data/scripts/pc.pory"
+	msgbox EventScript_HexOrb_Single_Text_10, MSGBOX_DEFAULT
+	goto EventScript_HexOrb_Single_14
+
+EventScript_HexOrb_Single_16:
+# 231 "data/scripts/pc.pory"
+	msgbox EventScript_HexOrb_Single_Text_11, MSGBOX_DEFAULT
+	goto EventScript_HexOrb_Single_14
+
+EventScript_HexOrb_Single_21:
+# 252 "data/scripts/pc.pory"
+	msgbox EventScript_HexOrb_Single_Text_13, MSGBOX_DEFAULT
+	goto EventScript_HexOrb_Single_20
+
+EventScript_HexOrb_Single_22:
+# 255 "data/scripts/pc.pory"
+	msgbox EventScript_HexOrb_Single_Text_14, MSGBOX_DEFAULT
+	goto EventScript_HexOrb_Single_20
+
+EventScript_HexOrb_Single_27:
+# 276 "data/scripts/pc.pory"
+	msgbox EventScript_HexOrb_Single_Text_16, MSGBOX_DEFAULT
+	goto EventScript_HexOrb_Single_26
+
+EventScript_HexOrb_Single_28:
+# 279 "data/scripts/pc.pory"
+	msgbox EventScript_HexOrb_Single_Text_17, MSGBOX_DEFAULT
+	goto EventScript_HexOrb_Single_26
+
+
+EventScript_HexOrb_Single_Cancel::
+# 295 "data/scripts/pc.pory"
+	msgbox EventScript_HexOrb_Single_Cancel_Text_0, MSGBOX_DEFAULT
+# 296 "data/scripts/pc.pory"
+	releaseall
+	end
+
+
+EventScript_HexOrb_Single_Egg::
+# 301 "data/scripts/pc.pory"
+	msgbox EventScript_HexOrb_Single_Egg_Text_0, MSGBOX_DEFAULT
+# 302 "data/scripts/pc.pory"
+	releaseall
+	end
+
+
 EventScript_AccessTimeChanger_Text_0:
 # 88 "data/scripts/pc.pory"
 	.string "What time do you want to set?$"
@@ -437,3 +601,101 @@ EventScript_AfterWhiteOutHeal_Text_2:
 	.string "continue this save file as if it was a\l"
 	.string "normal save or start a new save, the\l"
 	.string "game will now save!$"
+
+EventScript_HexOrb_Single_Text_0:
+# 197 "data/scripts/pc.pory"
+	.string "Choose what Pokémon you want to\n"
+	.string "inflict with an status!$"
+
+EventScript_HexOrb_Single_Text_1:
+# 202 "data/scripts/pc.pory"
+	.string "Poison$"
+
+EventScript_HexOrb_Single_Text_2:
+# 203 "data/scripts/pc.pory"
+	.string "Paralysis$"
+
+EventScript_HexOrb_Single_Text_3:
+# 205 "data/scripts/pc.pory"
+	.string "Burn$"
+
+EventScript_HexOrb_Single_Text_4:
+# 207 "data/scripts/pc.pory"
+	.string "Frostbite$"
+
+EventScript_HexOrb_Single_Text_5:
+# 208 "data/scripts/pc.pory"
+	.string "Close$"
+
+EventScript_HexOrb_Single_Text_6:
+# 210 "data/scripts/pc.pory"
+	.string "What status do you want\n"
+	.string "{STR_VAR_1} to be inflicted with.$"
+
+EventScript_HexOrb_Single_Text_7:
+# 216 "data/scripts/pc.pory"
+	.string "{STR_VAR_1} was inflicted with\n"
+	.string "Poison!$"
+
+EventScript_HexOrb_Single_Text_8:
+# 219 "data/scripts/pc.pory"
+	.string "{STR_VAR_1} cannot be Poisoned due\n"
+	.string "to its ability!$"
+
+EventScript_HexOrb_Single_Text_9:
+# 222 "data/scripts/pc.pory"
+	.string "{STR_VAR_1} cannot be Poisoned due\n"
+	.string "to its typing!$"
+
+EventScript_HexOrb_Single_Text_10:
+# 228 "data/scripts/pc.pory"
+	.string "{STR_VAR_1} was inflicted with\n"
+	.string "Paralysis!$"
+
+EventScript_HexOrb_Single_Text_11:
+# 231 "data/scripts/pc.pory"
+	.string "{STR_VAR_1} cannot be Paralyzed\n"
+	.string "due to its ability!$"
+
+EventScript_HexOrb_Single_Text_12:
+# 234 "data/scripts/pc.pory"
+	.string "{STR_VAR_1} cannot be Paralyzed\n"
+	.string "due to its typing!$"
+
+EventScript_HexOrb_Single_Text_13:
+# 252 "data/scripts/pc.pory"
+	.string "{STR_VAR_1} was inflicted with Burn!$"
+
+EventScript_HexOrb_Single_Text_14:
+# 255 "data/scripts/pc.pory"
+	.string "{STR_VAR_1} cannot be Burned due to\n"
+	.string "its ability!$"
+
+EventScript_HexOrb_Single_Text_15:
+# 258 "data/scripts/pc.pory"
+	.string "{STR_VAR_1} cannot be Burned due to\n"
+	.string "its typing!$"
+
+EventScript_HexOrb_Single_Text_16:
+# 276 "data/scripts/pc.pory"
+	.string "{STR_VAR_1} was inflicted with\n"
+	.string "Frostbite!$"
+
+EventScript_HexOrb_Single_Text_17:
+# 279 "data/scripts/pc.pory"
+	.string "{STR_VAR_1} cannot be Frostbiten\n"
+	.string "due to its ability!$"
+
+EventScript_HexOrb_Single_Text_18:
+# 282 "data/scripts/pc.pory"
+	.string "{STR_VAR_1} cannot be Frostbiten\n"
+	.string "due to its typing!$"
+
+EventScript_HexOrb_Single_Cancel_Text_0:
+# 295 "data/scripts/pc.pory"
+	.string "No Pokémon was inflicted with any\n"
+	.string "status!$"
+
+EventScript_HexOrb_Single_Egg_Text_0:
+# 301 "data/scripts/pc.pory"
+	.string "Eggs can't be inflicted with status!$"

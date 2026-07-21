@@ -15924,8 +15924,8 @@ const struct ItemInfo gItemsInfo[] =
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_FIELD,
         .fieldUseFunc = ItemUseOutOfBattle_HexOrb,
-        .iconPic = gItemIcon_BerryPouch,
-        .iconPalette = gItemIconPalette_BerryPouch,
+        .iconPic = gItemIcon_AdrenalineOrb,
+        .iconPalette = gItemIconPalette_AdrenalineOrb,
     },
  
     [ITEM_CANDY_BOX] =

@@ -174,6 +174,11 @@ enum BattleSide
 #define B_OUTCOME_MON_TELEPORTED       10
 #define B_OUTCOME_LINK_BATTLE_RAN      (1 << 7) // 128
 
+//Hex Orb Stuff
+#define SET_STATUS_POSSIBLE             0
+#define SET_STATUS_NOT_POSSIBLE_ABILITY 1
+#define SET_STATUS_NOT_POSSIBLE_TYPE    2
+
 // Non-volatile status conditions
 // These remain outside of battle and after switching out.
 // If a new STATUS1 is added here, it should also be added to

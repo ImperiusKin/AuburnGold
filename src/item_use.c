@@ -279,6 +279,12 @@ static void Task_AccessTimeChanger(u8 taskId)
     DestroyTask(taskId);
 }
 
+static void Task_AccessHexOrbScript(u8 taskId)
+{
+    ScriptContext_SetupScript(EventScript_HexOrb_Single);
+    DestroyTask(taskId);
+}
+
 void ItemUseOutOfBattle_TimeChanger(u8 taskId)
 {
     sItemUseOnFieldCB = Task_AccessTimeChanger;
@@ -287,7 +293,7 @@ void ItemUseOutOfBattle_TimeChanger(u8 taskId)
 
 void ItemUseOutOfBattle_HexOrb(u8 taskId)
 {
-    sItemUseOnFieldCB = Task_AccessTimeChanger;
+    sItemUseOnFieldCB = Task_AccessHexOrbScript;
     SetUpItemUseOnFieldCallback(taskId);
 }
 

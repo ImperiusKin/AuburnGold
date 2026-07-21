@@ -183,3 +183,122 @@ script EventScript_AfterWhiteOutHeal{
 	releaseall
 	end
 }
+
+const HEX_ORB_POISON = 0
+const HEX_ORB_PARALYSIS = 1
+const HEX_ORB_BURN = 2
+const HEX_ORB_FROSTBITE = 3
+const HEX_ORB_CANCEL = 4
+
+//const HEX_ORB_SLEEP = 2
+//const HEX_ORB_FREEZE = 4
+
+script EventScript_HexOrb_Single{
+	msgbox(format("Choose what Pokémon you want to inflict with an status!"), MSGBOX_DEFAULT)
+	special(ChoosePartyMon)
+	goto_if_ge(VAR_0x8004, PARTY_SIZE, EventScript_HexOrb_Single_Cancel)
+	specialvar(VAR_RESULT, ScriptGetPartyMonSpecies)
+	goto_if_eq(VAR_RESULT, SPECIES_EGG, EventScript_HexOrb_Single_Egg)
+	dynmultipush(format("Poison"),    HEX_ORB_POISON)
+	dynmultipush(format("Paralysis"), HEX_ORB_PARALYSIS)
+	//dynmultipush(format("Sleep"),   HEX_ORB_SLEEP)
+	dynmultipush(format("Burn"),      HEX_ORB_BURN)
+	//dynmultipush(format("Freeze"),  HEX_ORB_FREEZE)
+	dynmultipush(format("Frostbite"), HEX_ORB_FROSTBITE)
+	dynmultipush(format("Close"),     HEX_ORB_CANCEL)
+	bufferpartymonnick(STR_VAR_1, VAR_0x8004)
+	msgbox(format("What status do you want {STR_VAR_1} to be inflicted with."), MSGBOX_DEFAULT)
+	dynmultistack(0, 0, FALSE, 5, FALSE, 0, NULL)
+	switch(var(VAR_RESULT)){
+		case HEX_ORB_POISON:
+			setstatus1(STATUS1_POISON, VAR_0x8004)
+			if(var(VAR_0x8004) == SET_STATUS_POSSIBLE){
+				msgbox(format("{STR_VAR_1} was inflicted with Poison!"), MSGBOX_DEFAULT)
+			}
+			elif(var(VAR_0x8004) == SET_STATUS_NOT_POSSIBLE_ABILITY){
+				msgbox(format("{STR_VAR_1} cannot be Poisoned due to its ability!"), MSGBOX_DEFAULT)
+			}
+			else{
+				msgbox(format("{STR_VAR_1} cannot be Poisoned due to its typing!"), MSGBOX_DEFAULT)
+			}
+		break
+		case HEX_ORB_PARALYSIS:
+			setstatus1(STATUS1_PARALYSIS, VAR_0x8004)
+			if(var(VAR_0x8004) == SET_STATUS_POSSIBLE){
+				msgbox(format("{STR_VAR_1} was inflicted with Paralysis!"), MSGBOX_DEFAULT)
+			}
+			elif(var(VAR_0x8004) == SET_STATUS_NOT_POSSIBLE_ABILITY){
+				msgbox(format("{STR_VAR_1} cannot be Paralyzed due to its ability!"), MSGBOX_DEFAULT)
+			}
+			else{
+				msgbox(format("{STR_VAR_1} cannot be Paralyzed due to its typing!"), MSGBOX_DEFAULT)
+			}
+		break
+		//case HEX_ORB_SLEEP:
+		//	setstatus1(STATUS1_SLEEP, VAR_0x8004)
+		//	if(var(VAR_0x8004) == SET_STATUS_POSSIBLE){
+		//		msgbox(format("{STR_VAR_1} was inflicted with Sleep!"), MSGBOX_DEFAULT)
+		//	}
+		//	elif(var(VAR_0x8004) == SET_STATUS_NOT_POSSIBLE_ABILITY){
+		//		msgbox(format("{STR_VAR_1} cannot be Slept due to its ability!"), MSGBOX_DEFAULT)
+		//	}
+		//	else{
+		//		msgbox(format("{STR_VAR_1} cannot be Slept due to its typing!"), MSGBOX_DEFAULT)
+		//	}
+		//break
+		case HEX_ORB_BURN:
+			setstatus1(STATUS1_BURN, VAR_0x8004)
+			if(var(VAR_0x8004) == SET_STATUS_POSSIBLE){
+				msgbox(format("{STR_VAR_1} was inflicted with Burn!"), MSGBOX_DEFAULT)
+			}
+			elif(var(VAR_0x8004) == SET_STATUS_NOT_POSSIBLE_ABILITY){
+				msgbox(format("{STR_VAR_1} cannot be Burned due to its ability!"), MSGBOX_DEFAULT)
+			}
+			else{
+				msgbox(format("{STR_VAR_1} cannot be Burned due to its typing!"), MSGBOX_DEFAULT)
+			}
+		break
+		//case HEX_ORB_FREEZE:
+		//	setstatus1(STATUS1_FREEZE, VAR_0x8004)
+		//	if(var(VAR_0x8004) == SET_STATUS_POSSIBLE){
+		//		msgbox(format("{STR_VAR_1} was inflicted with Freeze!"), MSGBOX_DEFAULT)
+		//	}
+		//	elif(var(VAR_0x8004) == SET_STATUS_NOT_POSSIBLE_ABILITY){
+		//		msgbox(format("{STR_VAR_1} cannot be Frozen due to its ability!"), MSGBOX_DEFAULT)
+		//	}
+		//	else{
+		//		msgbox(format("{STR_VAR_1} cannot be Frozen due to its typing!"), MSGBOX_DEFAULT)
+		//	}
+		//break
+		case HEX_ORB_FROSTBITE:
+			setstatus1(STATUS1_FROSTBITE, VAR_0x8004)
+			if(var(VAR_0x8004) == SET_STATUS_POSSIBLE){
+				msgbox(format("{STR_VAR_1} was inflicted with Frostbite!"), MSGBOX_DEFAULT)
+			}
+			elif(var(VAR_0x8004) == SET_STATUS_NOT_POSSIBLE_ABILITY){
+				msgbox(format("{STR_VAR_1} cannot be Frostbiten due to its ability!"), MSGBOX_DEFAULT)
+			}
+			else{
+				msgbox(format("{STR_VAR_1} cannot be Frostbiten due to its typing!"), MSGBOX_DEFAULT)
+			}
+		break
+		case HEX_ORB_CANCEL:
+		case MULTI_B_PRESSED:
+			goto(EventScript_HexOrb_Single_Cancel)
+		break
+	}
+	releaseall
+	end
+}
+
+script EventScript_HexOrb_Single_Cancel{
+	msgbox(format("No Pokémon was inflicted with any status!"), MSGBOX_DEFAULT)
+	releaseall
+	end
+}
+
+script EventScript_HexOrb_Single_Egg{
+	msgbox(format("Eggs can't be inflicted with status!"), MSGBOX_DEFAULT)
+	releaseall
+	end
+}
