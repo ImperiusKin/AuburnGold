@@ -6904,15 +6904,15 @@ u32 GiveScriptedMonToPlayer(struct Pokemon *mon, u8 slot)
     bool8 isDisabled = FALSE;
     u32 i = 0;
 
-    if(!FlagGet(FLAG_TEMP_CAN_CATCH_POKEMON) && !IsMonShiny(&gParties[B_TRAINER_PLAYER][i])){
+    if(AreNuzlockeRulesEnabled() && !FlagGet(FLAG_TEMP_CAN_CATCH_POKEMON) && !IsMonShiny(mon)){
         u32 caughtLocation = GetCurrentRegionMapSectionId();
         u16 newHP = 0;
         isDisabled = TRUE;
 
         SetNuzlockeCaughtFlag(caughtLocation);
 
-        SetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_IS_DISABLED, &isDisabled);
-        SetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_HP, &newHP);
+        SetMonData(mon, MON_DATA_IS_DISABLED, &isDisabled);
+        SetMonData(mon, MON_DATA_HP, &newHP);
     }
 
     FlagClear(FLAG_TEMP_CAN_CATCH_POKEMON);
