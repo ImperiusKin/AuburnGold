@@ -1392,7 +1392,7 @@ void CalculateMonStats(struct Pokemon *mon)
         iv[i] = GetMonData(mon, MON_DATA_HP_IV + i);
         ev[i] = GetMonData(mon, MON_DATA_HP_EV + i);
 
-        if (hyperTrained[i])
+        if (hyperTrained[i] || FlagGet(FLAG_SYS_PERFECT_IVS_MODE))
         {
         #if TESTING
             if (gMain.inBattle)
@@ -1400,6 +1400,9 @@ void CalculateMonStats(struct Pokemon *mon)
         #endif
             iv[i] = MAX_PER_STAT_IVS;
         }
+
+        if (FlagGet(FLAG_SYS_NO_EVS_MODE))
+            ev[i] = 0;
 
         if (i == STAT_HP)
             continue;
