@@ -2240,37 +2240,800 @@
     "MOVE_WISH"	
 	],
 	"SANDSHREW": [
-		
+    "MOVE_AERIAL_ACE",
+    "MOVE_BIDE",
+    "MOVE_BODY_SLAM",
+    "MOVE_BRICK_BREAK",
+    "MOVE_BULLDOZE",
+    "MOVE_CHIP_AWAY",
+    "MOVE_COUNTER",
+    "MOVE_CRUSH_CLAW",
+    "MOVE_CUT",
+    "MOVE_DEFENCE_CURL",
+    "MOVE_DIG",
+    "MOVE_EARTH_POWER",
+    "MOVE_EARTHQUAKE",
+    "MOVE_ENDURE",
+    "MOVE_FACADE",
+    "MOVE_FLAIL",
+    "MOVE_FOCUS_PUNCH",
+    "MOVE_FRUSTRATION",
+    "MOVE_FURY_CUTTER",
+    "MOVE_FURY_SWIPES",
+    "MOVE_GYRO_BALL",
+    "MOVE_HIGH_HORSEPOWER",
+    "MOVE_HIDDEN_POWER",
+    "MOVE_HONE_CLAWS",
+    "MOVE_IRON_TAIL",
+    "MOVE_KNOCK_OFF",
+    "MOVE_LEECH_LIFE",
+    "MOVE_METAL_CLAW",
+    "MOVE_MIMIC",
+    "MOVE_MUD_SHOT",
+    "MOVE_NATURAL_GIFT",
+    "MOVE_NIGHT_SLASH",
+    "MOVE_POISON_JAB",
+    "MOVE_POISON_STING",
+    "MOVE_PROTECT",
+    "MOVE_RAGE",
+    "MOVE_RAPID_SPIN",
+    "MOVE_REST",
+    "MOVE_RETURN",
+    "MOVE_ROCK_CLIMB",
+    "MOVE_ROCK_SLIDE",
+    "MOVE_ROCK_SMASH",
+    "MOVE_ROCK_TOMB",
+    "MOVE_ROLLOUT",
+    "MOVE_ROTOTILLER",
+    "MOVE_SAND_TOMB",
+    "MOVE_SANDSTORM",
+    "MOVE_SCORCHING_SANDS",
+    "MOVE_SCRATCH",
+    "MOVE_SECRET_POWER",
+    "MOVE_SHADOW_CLAW",
+    "MOVE_SLASH",
+    "MOVE_SLEEP_TALK",
+    "MOVE_SPIKES",
+    "MOVE_STEALTH_ROCK",
+    "MOVE_STOMPING_TANTRUM",
+    "MOVE_STRENGTH",
+    "MOVE_SUBSTITUTE",
+    "MOVE_SUNNY_DAY",
+    "MOVE_SWIFT",
+    "MOVE_SWORDS_DANCE",
+    "MOVE_TERA_BLAST",
+    "MOVE_THIEF",
+    "MOVE_THROAT_CHOP",
+    "MOVE_TOXIC",
+    "MOVE_WORK_UP",
+    "MOVE_X_SCISSOR"		
 	],
 	"SANDSLASH": [
-		
+    "MOVE_AERIAL_ACE",
+    "MOVE_BIDE",
+    "MOVE_BODY_SLAM",
+    "MOVE_BRICK_BREAK",
+    "MOVE_BULLDOZE",
+    "MOVE_CHIP_AWAY",
+    "MOVE_COUNTER",
+    "MOVE_CRUSH_CLAW",
+    "MOVE_CUT",
+    "MOVE_DIG",
+    "MOVE_DRILL_RUN",
+    "MOVE_EARTH_POWER",
+    "MOVE_EARTHQUAKE",
+    "MOVE_ENDURE",
+    "MOVE_FACADE",
+    "MOVE_FLAIL",
+    "MOVE_FOCUS_BLAST",
+    "MOVE_FOCUS_PUNCH",
+    "MOVE_FRUSTRATION",
+    "MOVE_FURY_CUTTER",
+    "MOVE_FURY_SWIPES",
+    "MOVE_GYRO_BALL",
+    "MOVE_HIGH_HORSEPOWER",
+    "MOVE_HIDDEN_POWER",
+    "MOVE_HONE_CLAWS",
+    "MOVE_IRON_TAIL",
+    "MOVE_KNOCK_OFF",
+    "MOVE_LEECH_LIFE",
+    "MOVE_MAGNITUDE",
+    "MOVE_METAL_CLAW",
+    "MOVE_MIMIC",
+    "MOVE_MUD_SHOT",
+    "MOVE_NATURAL_GIFT",
+    "MOVE_NIGHT_SLASH",
+    "MOVE_PIN_MISSILE",
+    "MOVE_POISON_JAB",
+    "MOVE_POISON_STING",
+    "MOVE_PROTECT",
+    "MOVE_RAGE",
+    "MOVE_RAPID_SPIN",
+    "MOVE_REST",
+    "MOVE_RETURN",
+    "MOVE_ROCK_CLIMB",
+    "MOVE_ROCK_SLIDE",
+    "MOVE_ROCK_SMASH",
+    "MOVE_ROCK_TOMB",
+    "MOVE_ROLLOUT",
+    "MOVE_ROTOTILLER",
+    "MOVE_SAND_TOMB",
+    "MOVE_SANDSTORM",
+    "MOVE_SCORCHING_SANDS",
+    "MOVE_SECRET_POWER",
+    "MOVE_SHADOW_CLAW",
+    "MOVE_SLASH",
+    "MOVE_SLEEP_TALK",
+    "MOVE_SPIKES",
+    "MOVE_SPIKY_SHIELD",
+    "MOVE_STEALTH_ROCK",
+    "MOVE_STOMPING_TANTRUM",
+    "MOVE_STONE_EDGE",
+    "MOVE_STRENGTH",
+    "MOVE_SUBSTITUTE",
+    "MOVE_SUNNY_DAY",
+    "MOVE_SWIFT",
+    "MOVE_SWORDS_DANCE",
+    "MOVE_TERA_BLAST",
+    "MOVE_THIEF",
+    "MOVE_THROAT_CHOP",
+    "MOVE_TOXIC",
+    "MOVE_WORK_UP",
+    "MOVE_X_SCISSOR"		
 	],
 	"SANDSHREW_ALOLA": [
-		
+    "MOVE_AERIAL_ACE",
+    "MOVE_AMNESIA",
+    "MOVE_BIDE",
+    "MOVE_BLIZZARD",
+    "MOVE_BODY_SLAM",
+    "MOVE_BRICK_BREAK",
+    "MOVE_BULLDOZE",
+    "MOVE_CHIP_AWAY",
+    "MOVE_COUNTER",
+    "MOVE_CRUSH_CLAW",
+    "MOVE_CURSE",
+    "MOVE_CUT",
+    "MOVE_DEFENSE_CURL",
+    "MOVE_DIG",
+    "MOVE_EARTHQUAKE",
+    "MOVE_ENDURE",
+    "MOVE_FACADE",
+    "MOVE_FOCUS_PUNCH",
+    "MOVE_FRUSTRATION",
+    "MOVE_FURY_CUTTER",
+    "MOVE_FURY_SWIPES",
+    "MOVE_GYRO_BALL",
+    "MOVE_HIGH_HORSEPOWER",
+    "MOVE_HIDDEN_POWER",
+    "MOVE_HONE_CLAWS",
+    "MOVE_ICE_BALL",
+    "MOVE_ICE_PUNCH",
+    "MOVE_ICE_SHARD",
+    "MOVE_ICICLE_SPEAR",
+    "MOVE_IRON_DEFENSE",
+    "MOVE_IRON_HEAD",
+    "MOVE_IRON_TAIL",
+    "MOVE_KNOCK_OFF",
+    "MOVE_LEECH_LIFE",
+    "MOVE_METAL_CLAW",
+    "MOVE_MIMIC",
+    "MOVE_NATURAL_GIFT",
+    "MOVE_NIGHT_SLASH",
+    "MOVE_POISON_JAB",
+    "MOVE_PROTECT",
+    "MOVE_RAGE",
+    "MOVE_RAPID_SPIN",
+    "MOVE_REST",
+    "MOVE_RETURN",
+    "MOVE_ROCK_SLIDE",
+    "MOVE_ROCK_TOMB",
+    "MOVE_SCRATCH",
+    "MOVE_SECRET_POWER",
+    "MOVE_SHADOW_CLAW",
+    "MOVE_SLASH",
+    "MOVE_SLEEP_TALK",
+    "MOVE_SNOWSCAPE",
+    "MOVE_SPIKES",
+    "MOVE_STEALTH_ROCK",
+    "MOVE_STEEL_BEAM",
+    "MOVE_STRENGTH",
+    "MOVE_SUBSTITUTE",
+    "MOVE_SUNNY_DAY",
+    "MOVE_SWIFT",
+    "MOVE_SWORDS_DANCE",
+    "MOVE_TERA_BLAST",
+    "MOVE_THIEF",
+    "MOVE_THROAT_CHOP",
+    "MOVE_TOXIC",
+    "MOVE_TRIPLE_AXEL",
+    "MOVE_WORK_UP",
+    "MOVE_X_SCISSOR"		
 	],
 	"SANDSLASH_ALOLA": [
-		
+    "MOVE_AERIAL_ACE",
+    "MOVE_AMNESIA",
+    "MOVE_BIDE",
+    "MOVE_BLIZZARD",
+    "MOVE_BODY_SLAM",
+    "MOVE_BRICK_BREAK",
+    "MOVE_BULLDOZE",
+    "MOVE_CHIP_AWAY",
+    "MOVE_COUNTER",
+    "MOVE_CRUSH_CLAW",
+    "MOVE_CURSE",
+    "MOVE_CUT",
+    "MOVE_DIG",
+    "MOVE_DRILL_RUN",
+    "MOVE_EARTHQUAKE",
+    "MOVE_ENDURE",
+    "MOVE_FACADE",
+    "MOVE_FOCUS_BLAST",
+    "MOVE_FOCUS_PUNCH",
+    "MOVE_FRUSTRATION",
+    "MOVE_GYRO_BALL",
+    "MOVE_HIGH_HORSEPOWER",
+    "MOVE_HIDDEN_POWER",
+    "MOVE_HONE_CLAWS",
+    "MOVE_ICE_BALL",
+    "MOVE_ICE_PUNCH",
+    "MOVE_ICE_SHARD",
+    "MOVE_ICICLE_CRASH",
+    "MOVE_ICICLE_SPEAR",
+    "MOVE_IRON_DEFENSE",
+    "MOVE_IRON_HEAD",
+    "MOVE_IRON_TAIL",
+    "MOVE_KNOCK_OFF",
+    "MOVE_LEECH_LIFE",
+    "MOVE_METAL_BURST",
+    "MOVE_METAL_CLAW",
+    "MOVE_MIMIC",
+    "MOVE_NATURAL_GIFT",
+    "MOVE_NIGHT_SLASH",
+    "MOVE_PIN_MISSILE",
+    "MOVE_POISON_JAB",
+    "MOVE_PROTECT",
+    "MOVE_RAGE",
+    "MOVE_RAPID_SPIN",
+    "MOVE_REST",
+    "MOVE_RETURN",
+    "MOVE_ROCK_SLIDE",
+    "MOVE_ROCK_TOMB",
+    "MOVE_SECRET_POWER",
+    "MOVE_SHADOW_CLAW",
+    "MOVE_SLASH",
+    "MOVE_SLEEP_TALK",
+    "MOVE_SNOWSCAPE",
+    "MOVE_SPIKES",
+    "MOVE_SPIKY_SHIELD",
+    "MOVE_STEALTH_ROCK",
+    "MOVE_STEEL_BEAM",
+    "MOVE_STRENGTH",
+    "MOVE_SUBSTITUTE",
+    "MOVE_SUNNY_DAY",
+    "MOVE_SWORDS_DANCE",
+    "MOVE_TERA_BLAST",
+    "MOVE_THIEF",
+    "MOVE_THROAT_CHOP",
+    "MOVE_TOXIC",
+    "MOVE_TRIPLE_AXEL",
+    "MOVE_WORK_UP",
+    "MOVE_X_SCISSOR"		
 	],
 	"NIDORAN_F": [
-		
+    "MOVE_AERIAL_ACE",
+    "MOVE_BEAT_UP",
+    "MOVE_BIDE",
+    "MOVE_BITE",
+    "MOVE_BLIZZARD",
+    "MOVE_BODY_SLAM",
+    "MOVE_CAPTIVATE",
+    "MOVE_CHARM",
+    "MOVE_CHIP_AWAY",
+    "MOVE_COUNTER",
+    "MOVE_CRUNCH",
+    "MOVE_CUT",
+    "MOVE_DIG",
+    "MOVE_DISABLE",
+    "MOVE_DOUBLE_KICK",
+    "MOVE_ENDURE",
+    "MOVE_FACADE",
+    "MOVE_FLATTER",
+    "MOVE_FOCUS_ENERGY",
+    "MOVE_FRUSTRATION",
+    "MOVE_FURY_SWIPES",
+    "MOVE_GROWL",
+    "MOVE_HELPING_HAND",
+    "MOVE_HIDDEN_POWER",
+    "MOVE_ICE_BEAM",
+    "MOVE_IRON_TAIL",
+    "MOVE_MIMIC",
+    "MOVE_NATURAL_GIFT",
+    "MOVE_POISON_FANG",
+    "MOVE_POISON_JAB",
+    "MOVE_POISON_STING",
+    "MOVE_POISON_TAIL",
+    "MOVE_PROTECT",
+    "MOVE_PURSUIT",
+    "MOVE_RAGE",
+    "MOVE_RAIN_DANCE",
+    "MOVE_REFLECT",
+    "MOVE_REST",
+    "MOVE_RETURN",
+    "MOVE_ROCK_SMASH",
+    "MOVE_SCRATCH",
+    "MOVE_SECRET_POWER",
+    "MOVE_SHADOW_CLAW",
+    "MOVE_SKULL_BASH",
+    "MOVE_SLEEP_TALK",
+    "MOVE_SLUDGE_BOMB",
+    "MOVE_STRENGTH",
+    "MOVE_SUBSTITUTE",
+    "MOVE_SUNNY_DAY",
+    "MOVE_SUPERSONIC",
+    "MOVE_TAIL_WHIP",
+    "MOVE_TAKE_DOWN",
+    "MOVE_TERA_BLAST",
+    "MOVE_THIEF",
+    "MOVE_THUNDER",
+    "MOVE_THUNDERBOLT",
+    "MOVE_TOXIC",
+    "MOVE_TOXIC_SPIKES",
+    "MOVE_VENOM_DRENCH",
+    "MOVE_VENOSHOCK"		
 	],
 	"NIDORINA": [
-		
+    "MOVE_AERIAL_ACE",
+    "MOVE_BEAT_UP",
+    "MOVE_BIDE",
+    "MOVE_BITE",
+    "MOVE_BLIZZARD",
+    "MOVE_BODY_SLAM",
+    "MOVE_CAPTIVATE",
+    "MOVE_CHARM",
+    "MOVE_CHIP_AWAY",
+    "MOVE_COUNTER",
+    "MOVE_CRUNCH",
+    "MOVE_CUT",
+    "MOVE_DIG",
+    "MOVE_DISABLE",
+    "MOVE_DOUBLE_KICK",
+    "MOVE_ENDURE",
+    "MOVE_FACADE",
+    "MOVE_FLATTER",
+    "MOVE_FOCUS_ENERGY",
+    "MOVE_FRUSTRATION",
+    "MOVE_FURY_SWIPES",
+    "MOVE_GROWL",
+    "MOVE_HIDDEN_POWER",
+    "MOVE_ICE_BEAM",
+    "MOVE_IRON_TAIL",
+    "MOVE_MIMIC",
+    "MOVE_NATURAL_GIFT",
+    "MOVE_POISON_FANG",
+    "MOVE_POISON_JAB",
+    "MOVE_POISON_STING",
+    "MOVE_POISON_TAIL",
+    "MOVE_PROTECT",
+    "MOVE_PURSUIT",
+    "MOVE_RAGE",
+    "MOVE_RAIN_DANCE",
+    "MOVE_REFLECT",
+    "MOVE_REST",
+    "MOVE_RETURN",
+    "MOVE_ROCK_SMASH",
+    "MOVE_SCRATCH",
+    "MOVE_SECRET_POWER",
+    "MOVE_SHADOW_CLAW",
+    "MOVE_SKULL_BASH",
+    "MOVE_SLEEP_TALK",
+    "MOVE_SLUDGE_BOMB",
+    "MOVE_STOMPING_TANTRUM",
+    "MOVE_STRENGTH",
+    "MOVE_SUBSTITUTE",
+    "MOVE_SUNNY_DAY",
+    "MOVE_SUPERSONIC",
+    "MOVE_TAIL_WHIP",
+    "MOVE_TAKE_DOWN",
+    "MOVE_TERA_BLAST",
+    "MOVE_THIEF",
+    "MOVE_THUNDER",
+    "MOVE_THUNDERBOLT",
+    "MOVE_TOXIC",
+    "MOVE_TOXIC_SPIKES",
+    "MOVE_VENOM_DRENCH",
+    "MOVE_VENOSHOCK"		
 	],
 	"NIDOQUEEN": [
-		
+    "MOVE_AERIAL_ACE",
+    "MOVE_AURA_SPHERE",
+    "MOVE_BEAT_UP",
+    "MOVE_BIDE",
+    "MOVE_BLIZZARD",
+    "MOVE_BODY_PRESS",
+    "MOVE_BODY_SLAM",
+    "MOVE_BRICK_BREAK",
+    "MOVE_BULLDOZE",
+    "MOVE_CHARM",
+    "MOVE_CHIP_AWAY",
+    "MOVE_COUNTER",
+    "MOVE_CUT",
+    "MOVE_DIG",
+    "MOVE_DISABLE",
+    "MOVE_DRAGON_PULSE",
+    "MOVE_DRAGON_TAIL",
+    "MOVE_DRILL_RUN",
+    "MOVE_EARTH_POWER",
+    "MOVE_EARTHQUAKE",
+    "MOVE_ENDURE",
+    "MOVE_FACADE",
+    "MOVE_FIRE_BLAST",
+    "MOVE_FIRE_PUNCH",
+    "MOVE_FLAMETHROWER",
+    "MOVE_FOCUS_BLAST",
+    "MOVE_FOCUS_PUNCH",
+    "MOVE_FOCUS_ENERGY",
+    "MOVE_FRUSTRATION",
+    "MOVE_HEX",
+    "MOVE_HIDDEN_POWER",
+    "MOVE_HIGH_HORSEPOWER",
+    "MOVE_ICE_BEAM",
+    "MOVE_ICE_PUNCH",
+    "MOVE_ICY_WIND",
+    "MOVE_IRON_TAIL",
+    "MOVE_MIMIC",
+    "MOVE_NATURAL_GIFT",
+    "MOVE_POISON_FANG",
+    "MOVE_POISON_JAB",
+    "MOVE_POISON_STING",
+    "MOVE_POISON_TAIL",
+    "MOVE_POWER_UP_PUNCH",
+    "MOVE_PROTECT",
+    "MOVE_PURSUIT",
+    "MOVE_RAGE",
+    "MOVE_RAIN_DANCE",
+    "MOVE_REFLECT",
+    "MOVE_REST",
+    "MOVE_RETURN",
+    "MOVE_ROAR",
+    "MOVE_ROCK_BLAST",
+    "MOVE_ROCK_SLIDE",
+    "MOVE_ROCK_SMASH",
+    "MOVE_ROCK_TOMB",
+    "MOVE_SANDSTORM",
+    "MOVE_SCALE_SHOT",
+    "MOVE_SCORCHING_SANDS",
+    "MOVE_SCRATCH",
+    "MOVE_SECRET_POWER",
+    "MOVE_SHADOW_BALL",
+    "MOVE_SHADOW_CLAW",
+    "MOVE_SKULL_BASH",
+    "MOVE_SLEEP_TALK",
+    "MOVE_SLUDGE",
+    "MOVE_SLUDGE_BOMB",
+    "MOVE_SLUDGE_WAVE",
+    "MOVE_STEALTH_ROCK",
+    "MOVE_STOMPING_TANTRUM",
+    "MOVE_STRENGTH",
+    "MOVE_SUBSTITUTE",
+    "MOVE_SUNNY_DAY",
+    "MOVE_SUPERPOWER",
+    "MOVE_SUPERSONIC",
+    "MOVE_SURF",
+    "MOVE_TAIL_WHIP",
+    "MOVE_TAKE_DOWN",
+    "MOVE_TAUNT",
+    "MOVE_TERA_BLAST",
+    "MOVE_THIEF",
+    "MOVE_THUNDER",
+    "MOVE_THUNDER_PUNCH",
+    "MOVE_THUNDERBOLT",
+    "MOVE_TOXIC",
+    "MOVE_VENOM_DRENCH",
+    "MOVE_VENOSHOCK"		
 	],
 	"NIDORAN_M": [
-		
+    "MOVE_AERIAL_ACE",
+    "MOVE_AMNESIA",
+    "MOVE_BEAT_UP",
+    "MOVE_BIDE",
+    "MOVE_BLIZZARD",
+    "MOVE_BODY_SLAM",
+    "MOVE_CAPTIVATE",
+    "MOVE_CHIP_AWAY",
+    "MOVE_CONFUSION",
+    "MOVE_COUNTER",
+    "MOVE_CUT",
+    "MOVE_DIG",
+    "MOVE_DISABLE",
+    "MOVE_DOUBLE_KICK",
+    "MOVE_DRILL_RUN",
+    "MOVE_ENDURE",
+    "MOVE_FACADE",
+    "MOVE_FLATTER",
+    "MOVE_FOCUS_ENERGY",
+    "MOVE_FRUSTRATION",
+    "MOVE_FURY_ATTACK",
+    "MOVE_HEAD_SMASH",
+    "MOVE_HELPING_HAND",
+    "MOVE_HIDDEN_POWER",
+    "MOVE_HORN_ATTACK",
+    "MOVE_ICE_BEAM",
+    "MOVE_IRON_TAIL",
+    "MOVE_LEER",
+    "MOVE_MIMIC",
+    "MOVE_NATURAL_GIFT",
+    "MOVE_PECK",
+    "MOVE_POISON_JAB",
+    "MOVE_POISON_STING",
+    "MOVE_POISON_TAIL",
+    "MOVE_PROTECT",
+    "MOVE_RAGE",
+    "MOVE_RAIN_DANCE",
+    "MOVE_REFLECT",
+    "MOVE_REST",
+    "MOVE_RETURN",
+    "MOVE_ROCK_SMASH",
+    "MOVE_SECRET_POWER",
+    "MOVE_SHADOW_CLAW",
+    "MOVE_SLEEP_TALK",
+    "MOVE_SLUDGE_BOMB",
+    "MOVE_STRENGTH",
+    "MOVE_SUBSTITUTE",
+    "MOVE_SUCKER_PUNCH",
+    "MOVE_SUNNY_DAY",
+    "MOVE_SUPERSONIC",
+    "MOVE_TAKE_DOWN",
+    "MOVE_TERA_BLAST",
+    "MOVE_THIEF",
+    "MOVE_THUNDER",
+    "MOVE_THUNDERBOLT",
+    "MOVE_TOXIC",
+    "MOVE_TOXIC_SPIKES",
+    "MOVE_VENOM_DRENCH",
+    "MOVE_VENOSHOCK"		
 	],
 	"NIDORINO": [
-		
+    "MOVE_AMNESIA",
+    "MOVE_BEAT_UP",
+    "MOVE_BIDE",
+    "MOVE_BLIZZARD",
+    "MOVE_BODY_SLAM",
+    "MOVE_CAPTIVATE",
+    "MOVE_CHIP_AWAY",
+    "MOVE_CONFUSION",
+    "MOVE_COUNTER",
+    "MOVE_CUT",
+    "MOVE_DIG",
+    "MOVE_DISABLE",
+    "MOVE_DOUBLE_KICK",
+    "MOVE_DRILL_RUN",
+    "MOVE_ENDURE",
+    "MOVE_FACADE",
+    "MOVE_FLATTER",
+    "MOVE_FOCUS_ENERGY",
+    "MOVE_FRUSTRATION",
+    "MOVE_FURY_ATTACK",
+    "MOVE_HEAD_SMASH",
+    "MOVE_HIDDEN_POWER",
+    "MOVE_HORN_ATTACK",
+    "MOVE_ICE_BEAM",
+    "MOVE_IRON_TAIL",
+    "MOVE_LEER",
+    "MOVE_MIMIC",
+    "MOVE_NATURAL_GIFT",
+    "MOVE_PECK",
+    "MOVE_POISON_JAB",
+    "MOVE_POISON_STING",
+    "MOVE_POISON_TAIL",
+    "MOVE_PROTECT",
+    "MOVE_RAGE",
+    "MOVE_RAIN_DANCE",
+    "MOVE_REFLECT",
+    "MOVE_REST",
+    "MOVE_RETURN",
+    "MOVE_ROCK_SMASH",
+    "MOVE_SECRET_POWER",
+    "MOVE_SHADOW_CLAW",
+    "MOVE_SLEEP_TALK",
+    "MOVE_SLUDGE_BOMB",
+    "MOVE_STOMPING_TANTRUM",
+    "MOVE_STRENGTH",
+    "MOVE_SUBSTITUTE",
+    "MOVE_SUCKER_PUNCH",
+    "MOVE_SUNNY_DAY",
+    "MOVE_SUPERSONIC",
+    "MOVE_TAKE_DOWN",
+    "MOVE_TERA_BLAST",
+    "MOVE_THIEF",
+    "MOVE_THUNDER",
+    "MOVE_THUNDERBOLT",
+    "MOVE_TOXIC",
+    "MOVE_TOXIC_SPIKES",
+    "MOVE_VENOM_DRENCH",
+    "MOVE_VENOSHOCK"		
 	],
 	"NIDOKING": [
-		
+    "MOVE_AMNESIA",
+    "MOVE_AURA_SPHERE",
+    "MOVE_BEAT_UP",
+    "MOVE_BIDE",
+    "MOVE_BLIZZARD",
+    "MOVE_BODY_PRESS",
+    "MOVE_BODY_SLAM",
+    "MOVE_BRICK_BREAK",
+    "MOVE_BULLDOZE",
+    "MOVE_CHIP_AWAY",
+    "MOVE_CONFUSION",
+    "MOVE_COUNTER",
+    "MOVE_CUT",
+    "MOVE_DIG",
+    "MOVE_DISABLE",
+    "MOVE_DOUBLE_KICK",
+    "MOVE_DRAGON_PULSE",
+    "MOVE_DRAGON_TAIL",
+    "MOVE_DRILL_RUN",
+    "MOVE_EARTH_POWER",
+    "MOVE_EARTHQUAKE",
+    "MOVE_ENDURE",
+    "MOVE_FACADE",
+    "MOVE_FIRE_BLAST",
+    "MOVE_FIRE_PUNCH",
+    "MOVE_FLAMETHROWER",
+    "MOVE_FOCUS_BLAST",
+    "MOVE_FOCUS_PUNCH",
+    "MOVE_FOCUS_ENERGY",
+    "MOVE_FRUSTRATION",
+    "MOVE_HEAD_SMASH",
+    "MOVE_HEX",
+    "MOVE_HIGH_HORSEPOWER",
+    "MOVE_HIDDEN_POWER",
+    "MOVE_ICE_BEAM",
+    "MOVE_ICE_PUNCH",
+    "MOVE_ICY_WIND",
+    "MOVE_IRON_TAIL",
+    "MOVE_MEGAHORN",
+    "MOVE_MIMIC",
+    "MOVE_NATURAL_GIFT",
+    "MOVE_PECK",
+    "MOVE_POISON_JAB",
+    "MOVE_POISON_STING",
+    "MOVE_POISON_TAIL",
+    "MOVE_POWER_UP_PUNCH",
+    "MOVE_PROTECT",
+    "MOVE_RAGE",
+    "MOVE_RAIN_DANCE",
+    "MOVE_REFLECT",
+    "MOVE_REST",
+    "MOVE_RETURN",
+    "MOVE_ROAR",
+    "MOVE_ROCK_BLAST",
+    "MOVE_ROCK_SLIDE",
+    "MOVE_ROCK_SMASH",
+    "MOVE_ROCK_TOMB",
+    "MOVE_SANDSTORM",
+    "MOVE_SCALE_SHOT",
+    "MOVE_SCORCHING_SANDS",
+    "MOVE_SECRET_POWER",
+    "MOVE_SHADOW_BALL",
+    "MOVE_SHADOW_CLAW",
+    "MOVE_SLEEP_TALK",
+    "MOVE_SLUDGE",
+    "MOVE_SLUDGE_BOMB",
+    "MOVE_SLUDGE_WAVE",
+    "MOVE_STEALTH_ROCK",
+    "MOVE_STOMPING_TANTRUM",
+    "MOVE_STONE_EDGE",
+    "MOVE_STRENGTH",
+    "MOVE_SUBSTITUTE",
+    "MOVE_SUCKER_PUNCH",
+    "MOVE_SUNNY_DAY",
+    "MOVE_SUPERPOWER",
+    "MOVE_SUPERSONIC",
+    "MOVE_SURF",
+    "MOVE_TAKE_DOWN",
+    "MOVE_TAUNT",
+    "MOVE_TERA_BLAST",
+    "MOVE_THIEF",
+    "MOVE_THRASH",
+    "MOVE_THUNDER",
+    "MOVE_THUNDER_PUNCH",
+    "MOVE_THUNDERBOLT",
+    "MOVE_TOXIC",
+    "MOVE_VENOM_DRENCH",
+    "MOVE_VENOSHOCK"
 	],
 	"CLEFAIRY": [
-		
+    "MOVE_AFTER_YOU",
+    "MOVE_ALLURING_VOICE",
+    "MOVE_AMNESIA",
+    "MOVE_AROMATHERAPY",
+    "MOVE_BELLY_DRUM",
+    "MOVE_BIDE",
+    "MOVE_BLIZZARD",
+    "MOVE_BODY_SLAM",
+    "MOVE_BRICK_BREAK",
+    "MOVE_CALM_MIND",
+    "MOVE_CHARGE_BEAM",
+    "MOVE_COSMIC_POWER",
+    "MOVE_COVET",
+    "MOVE_DAZZLING_GLEAM",
+    "MOVE_DEFENSE_CURL",
+    "MOVE_DIG",
+    "MOVE_DISARMING_VOICE",
+    "MOVE_DOUBLE_SLAP",
+    "MOVE_DRAIN_PUNCH",
+    "MOVE_DRAINING_KISS",
+    "MOVE_DUAL_WINGBEAT",
+    "MOVE_ENCORE",
+    "MOVE_FACADE",
+    "MOVE_FAKE_TEARS",
+    "MOVE_FIRE_BLAST",
+    "MOVE_FIRE_PUNCH",
+    "MOVE_FLASH",
+    "MOVE_FLAMETHROWER",
+    "MOVE_FOCUS_PUNCH",
+    "MOVE_FOLLOW_ME",
+    "MOVE_FRUSTRATION",
+    "MOVE_GRASS_KNOT",
+    "MOVE_GRAVITY",
+    "MOVE_GROWL",
+    "MOVE_HEAL_PULSE",
+    "MOVE_HEALING_WISH",
+    "MOVE_HIDDEN_POWER",
+    "MOVE_HYPER_VOICE",
+    "MOVE_ICE_BEAM",
+    "MOVE_ICE_PUNCH",
+    "MOVE_ICY_WIND",
+    "MOVE_IRON_TAIL",
+    "MOVE_KNOCK_OFF",
+    "MOVE_LIGHT_SCREEN",
+    "MOVE_LUCKY_CHANT",
+    "MOVE_METEOR_BEAM",
+    "MOVE_METEOR_MASH",
+    "MOVE_METRONOME",
+    "MOVE_MIMIC",
+    "MOVE_MISTY_EXPLOSION",
+    "MOVE_MISTY_TERRAIN",
+    "MOVE_MOONBLAST",
+    "MOVE_MYSTICAL_FIRE",
+    "MOVE_NATURAL_GIFT",
+    "MOVE_PLAY_ROUGH",
+    "MOVE_POUND",
+    "MOVE_POWER_UP_PUNCH",
+    "MOVE_PRESENT",
+    "MOVE_PROTECT",
+    "MOVE_PSYCHIC",
+    "MOVE_PSYSHOCK",
+    "MOVE_RAGE",
+    "MOVE_RAIN_DANCE",
+    "MOVE_REFLECT",
+    "MOVE_REST",
+    "MOVE_RETURN",
+    "MOVE_ROCK_SMASH",
+    "MOVE_SECRET_POWER",
+    "MOVE_SHADOW_BALL",
+    "MOVE_SING",
+    "MOVE_SLEEP_TALK",
+    "MOVE_SOFT_BOILED",
+    "MOVE_SOLAR_BEAM",
+    "MOVE_SPOTLIGHT",
+    "MOVE_STEALTH_ROCK",
+    "MOVE_STORED_POWER",
+    "MOVE_STRENGTH",
+    "MOVE_SUBSTITUTE",
+    "MOVE_SUNNY_DAY",
+    "MOVE_TELEPORT",
+    "MOVE_TERA_BLAST",
+    "MOVE_THUNDER",
+    "MOVE_THUNDER_PUNCH",
+    "MOVE_THUNDER_WAVE",
+    "MOVE_THUNDERBOLT",
+    "MOVE_TICKLE",
+    "MOVE_TOXIC",
+    "MOVE_WISH",
+    "MOVE_WORK_UP",
+    "MOVE_ZEN_HEADBUTT"		
 	],
 	"CLEFABLE": [
 		
@@ -2278,7 +3041,13 @@
 	"VULPIX": [
 		
 	],
+	"VULPIX_ALOLA": [
+		
+	],
 	"NINETALES": [
+		
+	],
+	"NINETALES_ALOLA": [
 		
 	],
 	"WIGGLYTUFF": [
@@ -2314,13 +3083,28 @@
 	"DIGLETT": [
 		
 	],
+	"DIGLETT_ALOLA": [
+		
+	],
 	"DUGTRIO": [
+		
+	],
+	"DUGTRIO_ALOLA": [
 		
 	],
 	"MEOWTH": [
 		
 	],
+	"MEOWTH_ALOLA": [
+		
+	],
+	"MEOWTH_GALAR": [
+		
+	],
 	"PERSIAN": [
+		
+	],
+	"PERSIAN_ALOLA": [
 		
 	],
 	"PSYDUCK": [
@@ -2338,7 +3122,13 @@
 	"GROWLITHE": [
 		
 	],
+	"GROWLITHE_HISUI": [
+		
+	],
 	"ARCANINE": [
+		
+	],
+	"ARCANINE_HISUI": [
 		
 	],
 	"POLIWAG": [
@@ -2386,22 +3176,43 @@
 	"GEODUDE": [
 		
 	],
+	"GEODUDE_ALOLA": [
+		
+	],
 	"GRAVELER": [
+		
+	],
+	"GRAVELER_ALOLA": [
 		
 	],
 	"GOLEM": [
 		
 	],
+	"GOLEM_ALOLA": [
+		
+	],
 	"PONYTA": [
+		
+	],
+	"PONYTA_GALAR": [
 		
 	],
 	"RAPIDASH": [
 		
 	],
+	"RAPIDASH_GALAR": [
+		
+	],
 	"SLOWPOKE": [
 		
 	],
+	"SLOWPOKE_GALAR": [
+		
+	],
 	"SLOWBRO": [
+		
+	],
+	"SLOWBRO_GALAR": [
 		
 	],
 	"MAGNEMITE": [
@@ -2411,6 +3222,9 @@
 		
 	],
 	"FARFETCHD": [
+		
+	],
+	"FARFETCHD_GALAR": [
 		
 	],
 	"DODUO": [
@@ -2428,7 +3242,13 @@
 	"GRIMER": [
 		
 	],
+	"GRIMER_ALOLA": [
+		
+	],
 	"MUK": [
+		
+	],
+	"MUK_ALOLA": [
 		
 	],
 	"SHELLDER": [
@@ -2464,7 +3284,13 @@
 	"VOLTORB": [
 		
 	],
+	"VOLTORB_HISUI": [
+		
+	],
 	"ELECTRODE": [
+		
+	],
+	"ELECTRODE_HISUI": [
 		
 	],
 	"EXEGGCUTE": [
@@ -2473,10 +3299,16 @@
 	"EXEGGUTOR": [
 		
 	],
+	"EXEGGUTOR_ALOLA": [
+		
+	],
 	"CUBONE": [
 		
 	],
 	"MAROWAK": [
+		
+	],
+	"MAROWAK_ALOLA": [
 		
 	],
 	"HITMONLEE": [
@@ -2492,6 +3324,9 @@
 		
 	],
 	"WEEZING": [
+		
+	],
+	"WEEZING_GALAR": [
 		
 	],
 	"RHYHORN": [
@@ -2530,6 +3365,9 @@
 	"MR_MIME": [
 		
 	],
+	"MR_MIME_GALAR": [
+		
+	],
 	"SCYTHER": [
 		
 	],
@@ -2546,6 +3384,15 @@
 		
 	],
 	"TAUROS": [
+		
+	],
+	"TAUROS_PALDEA_AQUA": [
+		
+	],
+	"TAUROS_PALDEA_BLAZE": [
+		
+	],
+	"TAUROS_PALDEA_COMBAT": [
 		
 	],
 	"MAGIKARP": [
@@ -2596,10 +3443,19 @@
 	"ARTICUNO": [
 		
 	],
+	"ARTICUNO_GALAR": [
+		
+	],
 	"ZAPDOS": [
 		
 	],
+	"ZAPDOS_GALAR": [
+		
+	],
 	"MOLTRES": [
+		
+	],
+	"MOLTRES_GALAR": [
 		
 	],
 	"DRATINI": [
@@ -2633,6 +3489,9 @@
 		
 	],
 	"TYPHLOSION": [
+		
+	],
+	"TYPHLOSION_HISUI": [
 		
 	],
 	"TOTODILE": [
@@ -2734,7 +3593,65 @@
     "MOVE_WISH"		
 	],
 	"CLEFFA": [
-		
+    "MOVE_ALLURING_VOICE",
+    "MOVE_AMNESIA",
+    "MOVE_AROMATHERAPY",
+    "MOVE_BELLY_DRUM",
+    "MOVE_BIDE",
+    "MOVE_BODY_SLAM",
+    "MOVE_CHARM",
+    "MOVE_COPYCAT",
+    "MOVE_COVET",
+    "MOVE_DIG",
+    "MOVE_DRAINING_KISS",
+    "MOVE_ENCORE",
+    "MOVE_FACADE",
+    "MOVE_FAKE_TEARS",
+    "MOVE_FLASH",
+    "MOVE_FIRE_BLAST",
+    "MOVE_FLAMETHROWER",
+    "MOVE_FRUSTRATION",
+    "MOVE_GRASS_KNOT",
+    "MOVE_GRAVITY",
+    "MOVE_HEAL_PULSE",
+    "MOVE_HIDDEN_POWER",
+    "MOVE_HYPER_VOICE",
+    "MOVE_ICY_WIND",
+    "MOVE_IRON_TAIL",
+    "MOVE_LIGHT_SCREEN",
+    "MOVE_MAGICAL_LEAF",
+    "MOVE_METRONOME",
+    "MOVE_MIMIC",
+    "MOVE_MISTY_TERRAIN",
+    "MOVE_NATURAL_GIFT",
+    "MOVE_PLAY_ROUGH",
+    "MOVE_POUND",
+    "MOVE_PRESENT",
+    "MOVE_PROTECT",
+    "MOVE_PSYCHIC",
+    "MOVE_PSYSHOCK",
+    "MOVE_RAGE",
+    "MOVE_RAIN_DANCE",
+    "MOVE_REFLECT",
+    "MOVE_REST",
+    "MOVE_RETURN",
+    "MOVE_SECRET_POWER",
+    "MOVE_SHADOW_BALL",
+    "MOVE_SING",
+    "MOVE_SLEEP_TALK",
+    "MOVE_SOFT_BOILED",
+    "MOVE_SOLAR_BEAM",
+    "MOVE_STORED_POWER",
+    "MOVE_SUBSTITUTE",
+    "MOVE_SUNNY_DAY",
+    "MOVE_SWEET_KISS",
+    "MOVE_TERA_BLAST",
+    "MOVE_THUNDER_WAVE",
+    "MOVE_TICKLE",
+    "MOVE_TOXIC",
+    "MOVE_WISH",
+    "MOVE_WORK_UP",
+    "MOVE_ZEN_HEADBUTT"		
 	],
 	"IGGLYBUFF": [
 		
@@ -2799,6 +3716,9 @@
 	"WOOPER": [
 		
 	],
+	"WOOPER_PALDEA": [
+		
+	],
 	"QUAGSIRE": [
 		
 	],
@@ -2812,6 +3732,9 @@
 		
 	],
 	"SLOWKING": [
+		
+	],
+	"SLOWKING_GALAR": [
 		
 	],
 	"MISDREAVUS": [
@@ -2850,6 +3773,9 @@
 	"QWILFISH": [
 		
 	],
+	"QWILFISH_HISUI": [
+		
+	],
 	"SCIZOR": [
 		
 	],
@@ -2860,6 +3786,9 @@
 		
 	],
 	"SNEASEL": [
+		
+	],
+	"SNEASEL_HISUI": [
 		
 	],
 	"TEDDIURSA": [
@@ -2881,6 +3810,9 @@
 		
 	],
 	"CORSOLA": [
+		
+	],
+	"CORSOLA_GALAR": [
 		
 	],
 	"REMORAID": [
@@ -3006,7 +3938,13 @@
 	"ZIGZAGOON": [
 		
 	],
+	"ZIGZAGOON_GALAR": [
+		
+	],
 	"LINOONE": [
+		
+	],
+	"LINOONE_GALAR": [
 		
 	],
 	"WURMPLE": [
@@ -3372,6 +4310,18 @@
 	"JIRACHI": [
 		
 	],
+	"DEOXYS_ATTACK": [
+		
+	],
+	"DEOXYS_DEFENSE": [
+		
+	],
+	"DEOXYS_NORMAL": [
+		
+	],
+	"DEOXYS_SPEED": [
+		
+	],
 	"TURTWIG": [
 		
 	],
@@ -3451,6 +4401,15 @@
 		
 	],
 	"WORMADAM": [
+		
+	],
+	"WORMADAM_PLANT": [
+		
+	],
+	"WORMADAM_SANDY": [
+		
+	],
+	"WORMADAM_TRASH": [
 		
 	],
 	"MOTHIM": [
@@ -3651,6 +4610,21 @@
 	"ROTOM": [
 		
 	],
+	"ROTOM_FAN": [
+		
+	],
+	"ROTOM_FROST": [
+		
+	],
+	"ROTOM_HEAT": [
+		
+	],
+	"ROTOM_MOW": [
+		
+	],
+	"ROTOM_WASH": [
+		
+	],
 	"UXIE": [
 		
 	],
@@ -3687,6 +4661,12 @@
 	"DARKRAI": [
 		
 	],
+	"SHAYMIN_LAND": [
+		
+	],
+	"SHAYMIN_SKY": [
+		
+	],
 	"ARCEUS": [
 		
 	],
@@ -3718,6 +4698,9 @@
 		
 	],
 	"SAMUROTT": [
+		
+	],
+	"SAMUROTT_HISUI": [
 		
 	],
 	"PATRAT": [
@@ -3858,7 +4841,13 @@
 	"LILLIGANT": [
 		
 	],
+	"LILLIGANT_HISUI": [
+		
+	],
 	"BASCULIN": [
+		
+	],
+	"BASCULIN_WHITE_STRIPED": [
 		
 	],
 	"SANDILE": [
@@ -3873,7 +4862,13 @@
 	"DARUMAKA": [
 		
 	],
+	"DARUMAKA_GALAR": [
+		
+	],
 	"DARMANITAN": [
+		
+	],
+	"DARMANITAN_GALAR": [
 		
 	],
 	"MARACTUS": [
@@ -3895,6 +4890,9 @@
 		
 	],
 	"YAMASK": [
+		
+	],
+	"YAMASK_GALAR": [
 		
 	],
 	"COFAGRIGUS": [
@@ -3921,7 +4919,13 @@
 	"ZORUA": [
 		
 	],
+	"ZORUA_HISUI": [
+		
+	],
 	"ZOROARK": [
+		
+	],
+	"ZOROARK_HISUI": [
 		
 	],
 	"MINCCINO": [
@@ -4065,6 +5069,9 @@
 	"STUNFISK": [
 		
 	],
+	"STUNFISK_GALAR": [
+		
+	],
 	"MIENFOO": [
 		
 	],
@@ -4093,6 +5100,9 @@
 		
 	],
 	"BRAVIARY": [
+		
+	],
+	"BRAVIARY_HISUI": [
 		
 	],
 	"VULLABY": [
@@ -4147,6 +5157,12 @@
 		
 	],
 	"KYUREM": [
+		
+	],
+	"KYUREM_BLACK": [
+		
+	],
+	"KYUREM_WHITE": [
 		
 	],
 	"KELDEO": [
@@ -4224,6 +5240,9 @@
 	"FLOETTE": [
 		
 	],
+	"FLOETTE_ETERNAL": [
+		
+	],
 	"FLORGES": [
 		
 	],
@@ -4246,6 +5265,12 @@
 		
 	],
 	"MEOWSTIC": [
+		
+	],
+	"MEOWSTIC_F": [
+		
+	],
+	"MEOWSTIC_M": [
 		
 	],
 	"HONEDGE": [
@@ -4329,7 +5354,13 @@
 	"SLIGGOO": [
 		
 	],
+	"SLIGGOO_HISUI": [
+		
+	],
 	"GOODRA": [
+		
+	],
+	"GOODRA_HISUI": [
 		
 	],
 	"KLEFKI": [
@@ -4353,6 +5384,9 @@
 	"AVALUGG": [
 		
 	],
+	"AVALUGG_HISUI": [
+		
+	],
 	"NOIBAT": [
 		
 	],
@@ -4371,6 +5405,12 @@
 	"DIANCIE": [
 		
 	],
+	"HOOPA_CONFINED": [
+		
+	],
+	"HOOPA_UNBOUND": [
+		
+	],
 	"VOLCANION": [
 		
 	],
@@ -4381,6 +5421,9 @@
 		
 	],
 	"DECIDUEYE": [
+		
+	],
+	"DECIDUEYE_HISUI": [
 		
 	],
 	"LITTEN": [
@@ -4441,6 +5484,15 @@
 		
 	],
 	"ROCKRUFF": [
+		
+	],
+	"LYCANROC_DUSK": [
+		
+	],
+	"LYCANROC_MIDDAY": [
+		
+	],
+	"LYCANROC_MIDNIGHT": [
 		
 	],
 	"WISHIWASHI": [
@@ -4752,6 +5804,12 @@
 	"TOXEL": [
 		
 	],
+	"TOXTRICITY_AMPED": [
+		
+	],
+	"TOXTRICITY_LOW_KEY": [
+		
+	],
 	"SIZZLIPEDE": [
 		
 	],
@@ -4830,6 +5888,12 @@
 	"EISCUE": [
 		
 	],
+	"INDEEDEE_F": [
+		
+	],
+	"INDEEDEE_M": [
+		
+	],
 	"MORPEKO": [
 		
 	],
@@ -4875,6 +5939,12 @@
 	"KUBFU": [
 		
 	],
+	"URSHIFU_RAPID_STRIKE": [
+		
+	],
+	"URSHIFU_SINGLE_STRIKE": [
+		
+	],
 	"ZARUDE": [
 		
 	],
@@ -4893,6 +5963,12 @@
 	"CALYREX": [
 		
 	],
+	"CALYREX_ICE": [
+		
+	],
+	"CALYREX_SHADOW": [
+		
+	],
 	"WYRDEER": [
 		
 	],
@@ -4900,6 +5976,9 @@
 		
 	],
 	"URSALUNA": [
+		
+	],
+	"URSALUNA_BLOODMOON": [
 		
 	],
 	"BASCULEGION": [
@@ -4945,6 +6024,12 @@
 		
 	],
 	"OINKOLOGNE": [
+		
+	],
+	"OINKOLOGNE_F": [
+		
+	],
+	"OINKOLOGNE_M": [
 		
 	],
 	"TAROUNTULA": [
@@ -5269,267 +6354,6 @@
 		
 	],
 	"PECHARUNT": [
-		
-	],
-	"VULPIX_ALOLA": [
-		
-	],
-	"NINETALES_ALOLA": [
-		
-	],
-	"DIGLETT_ALOLA": [
-		
-	],
-	"DUGTRIO_ALOLA": [
-		
-	],
-	"MEOWTH_ALOLA": [
-		
-	],
-	"MEOWTH_GALAR": [
-		
-	],
-	"PERSIAN_ALOLA": [
-		
-	],
-	"GROWLITHE_HISUI": [
-		
-	],
-	"ARCANINE_HISUI": [
-		
-	],
-	"GEODUDE_ALOLA": [
-		
-	],
-	"GRAVELER_ALOLA": [
-		
-	],
-	"PONYTA_GALAR": [
-		
-	],
-	"RAPIDASH_GALAR": [
-		
-	],
-	"SLOWPOKE_GALAR": [
-		
-	],
-	"SLOWBRO_GALAR": [
-		
-	],
-	"FARFETCHD_GALAR": [
-		
-	],
-	"GRIMER_ALOLA": [
-		
-	],
-	"MUK_ALOLA": [
-		
-	],
-	"VOLTORB_HISUI": [
-		
-	],
-	"ELECTRODE_HISUI": [
-		
-	],
-	"EXEGGUTOR_ALOLA": [
-		
-	],
-	"MAROWAK_ALOLA": [
-		
-	],
-	"WEEZING_GALAR": [
-		
-	],
-	"MR_MIME_GALAR": [
-		
-	],
-	"TAUROS_PALDEA_AQUA": [
-		
-	],
-	"TAUROS_PALDEA_BLAZE": [
-		
-	],
-	"TAUROS_PALDEA_COMBAT": [
-		
-	],
-	"ARTICUNO_GALAR": [
-		
-	],
-	"ZAPDOS_GALAR": [
-		
-	],
-	"MOLTRES_GALAR": [
-		
-	],
-	"TYPHLOSION_HISUI": [
-		
-	],
-	"WOOPER_PALDEA": [
-		
-	],
-	"SLOWKING_GALAR": [
-		
-	],
-	"QWILFISH_HISUI": [
-		
-	],
-	"SNEASEL_HISUI": [
-		
-	],
-	"CORSOLA_GALAR": [
-		
-	],
-	"ZIGZAGOON_GALAR": [
-		
-	],
-	"LINOONE_GALAR": [
-		
-	],
-	"DEOXYS_ATTACK": [
-		
-	],
-	"DEOXYS_DEFENSE": [
-		
-	],
-	"DEOXYS_NORMAL": [
-		
-	],
-	"DEOXYS_SPEED": [
-		
-	],
-	"WORMADAM_PLANT": [
-		
-	],
-	"WORMADAM_SANDY": [
-		
-	],
-	"WORMADAM_TRASH": [
-		
-	],
-	"ROTOM_FAN": [
-		
-	],
-	"ROTOM_FROST": [
-		
-	],
-	"ROTOM_HEAT": [
-		
-	],
-	"ROTOM_MOW": [
-		
-	],
-	"ROTOM_WASH": [
-		
-	],
-	"SHAYMIN_LAND": [
-		
-	],
-	"SHAYMIN_SKY": [
-		
-	],
-	"SAMUROTT_HISUI": [
-		
-	],
-	"LILLIGANT_HISUI": [
-		
-	],
-	"BASCULIN_WHITE_STRIPED": [
-		
-	],
-	"DARUMAKA_GALAR": [
-		
-	],
-	"DARMANITAN_GALAR": [
-		
-	],
-	"YAMASK_GALAR": [
-		
-	],
-	"ZORUA_HISUI": [
-		
-	],
-	"ZOROARK_HISUI": [
-		
-	],
-	"STUNFISK_GALAR": [
-		
-	],
-	"BRAVIARY_HISUI": [
-		
-	],
-	"KYUREM_BLACK": [
-		
-	],
-	"KYUREM_WHITE": [
-		
-	],
-	"FLOETTE_ETERNAL": [
-		
-	],
-	"MEOWSTIC_F": [
-		
-	],
-	"MEOWSTIC_M": [
-		
-	],
-	"SLIGGOO_HISUI": [
-		
-	],
-	"GOODRA_HISUI": [
-		
-	],
-	"AVALUGG_HISUI": [
-		
-	],
-	"HOOPA_CONFINED": [
-		
-	],
-	"HOOPA_UNBOUND": [
-		
-	],
-	"DECIDUEYE_HISUI": [
-		
-	],
-	"LYCANROC_DUSK": [
-		
-	],
-	"LYCANROC_MIDDAY": [
-		
-	],
-	"LYCANROC_MIDNIGHT": [
-		
-	],
-	"TOXTRICITY_AMPED": [
-		
-	],
-	"TOXTRICITY_LOW_KEY": [
-		
-	],
-	"INDEEDEE_F": [
-		
-	],
-	"INDEEDEE_M": [
-		
-	],
-	"URSHIFU_RAPID_STRIKE": [
-		
-	],
-	"URSHIFU_SINGLE_STRIKE": [
-		
-	],
-	"CALYREX_ICE": [
-		
-	],
-	"CALYREX_SHADOW": [
-		
-	],
-	"URSALUNA_BLOODMOON": [
-		
-	],
-	"OINKOLOGNE_F": [
-		
-	],
-	"OINKOLOGNE_M": [
 		
 	]
 }
