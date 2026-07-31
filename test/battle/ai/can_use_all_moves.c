@@ -7,7 +7,55 @@
 // Jump to "TODO: AI HANDLING" and "TODO: AI TESTS"
 // In many cases, AI handling exists but is likely insufficient in some way.
 
-AI_DOUBLE_BATTLE_TEST("AI values moves above Splash, 1-100")
+AI_DOUBLE_BATTLE_TEST("AI uses Final Gambit")
+{
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT);
+        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_SPLASH, MOVE_FINAL_GAMBIT); }
+        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET);
+    } WHEN {
+        TURN { EXPECT_MOVE(opponentLeft, MOVE_FINAL_GAMBIT); SEND_OUT(playerLeft, 2); }
+    }
+}
+
+AI_DOUBLE_BATTLE_TEST("AI uses Guillotine")
+{
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT);
+        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_SPLASH, MOVE_GUILLOTINE); }
+        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET);
+    } WHEN {
+        TURN { EXPECT_MOVE(opponentLeft, MOVE_GUILLOTINE); SEND_OUT(playerLeft, 2); }
+    }
+}
+
+AI_DOUBLE_BATTLE_TEST("AI uses Sheer Cold")
+{
+    GIVEN {
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT);
+        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_SPLASH, MOVE_SHEER_COLD); }
+        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET);
+    } WHEN {
+        TURN { EXPECT_MOVE(opponentLeft, MOVE_SHEER_COLD); SEND_OUT(playerLeft, 2); }
+    }
+}
+
+AI_DOUBLE_BATTLE_TEST("AI can use all moves, 1-100")
 {
     enum Move moveStart = MOVE_NONE;
     enum Move moveCap = 100;
@@ -15,59 +63,61 @@ AI_DOUBLE_BATTLE_TEST("AI values moves above Splash, 1-100")
     if (moveCap > MOVES_COUNT)
         moveCap = MOVES_COUNT - 1;
 
+    s32 j;
     enum Move move = MOVE_NONE;
 
     enum BattleMoveEffects effect;
 
-    for (u32 j = moveStart + 1; j <= moveCap; j++)
+    for (j = moveStart + 1; j <= moveCap; j++)
     {
         effect = GetMoveEffect(j);
+
+        // Stat raising effects are not meant to be used when you have only Splash.
+        if (IsStatRaisingMove(j))
+            continue;
 
         switch (effect)
         {
         //TODO: AI HANDLING
+        case EFFECT_OHKO: // Guillotine is crashing the test entirely.
         case EFFECT_MIST:
         case EFFECT_TELEPORT:
 
         //TODO: AI TESTS
         case EFFECT_RESTORE_HP:
+        case EFFECT_MIMIC:
         case EFFECT_DISABLE:
 
         // tests exist elsewhere
-        case EFFECT_STAT_CHANGE:
-        case EFFECT_GROWTH:
-            break;
 
+        // Skipped on purpose.
+        case EFFECT_PROTECT:
+        case EFFECT_NON_VOLATILE_STATUS:
+        case EFFECT_DO_NOTHING:
+        case EFFECT_HOLD_HANDS:
+        case EFFECT_CELEBRATE:
+        case EFFECT_HAPPY_HOUR:
+            break;
         default:
             PARAMETRIZE { move = j; }
         }
     }
 
     GIVEN {
-        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT);
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_HP_AWARE | AI_FLAG_OMNISCIENT);
+        PLAYER(SPECIES_WOBBUFFET) { Status1(STATUS1_POISON); }
         PLAYER(SPECIES_WOBBUFFET);
         PLAYER(SPECIES_WOBBUFFET);
-        PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_SPLASH, move); }
-        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_POUND, move); }
-        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_SPLASH, move); Status1(STATUS1_BURN); Item(ITEM_STARF_BERRY); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_POUND, move); Item(ITEM_STARF_BERRY); }
+        OPPONENT(SPECIES_WOBBUFFET) { Status1(STATUS1_BURN); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
-        switch (GetMoveEffect(move))
-        {
-        case EFFECT_DISABLE:
-            TURN { SCORE_LT_VAL(opponentLeft, move, AI_SCORE_DEFAULT, target: playerLeft); }
-            break;
-        case EFFECT_OHKO:
-            TURN { EXPECT_MOVE(opponentLeft, move); SEND_OUT(playerLeft, 2); }
-            break;
-        default:
-            TURN { EXPECT_MOVE(opponentLeft, move); }
-        }
+        TURN { EXPECT_MOVE(opponentLeft, move); }
     }
 }
 
-AI_DOUBLE_BATTLE_TEST("AI values moves above Splash, 101-200")
+AI_DOUBLE_BATTLE_TEST("AI can use all moves, 101-200")
 {
     enum Move moveStart = 100;
     enum Move moveCap = 200;
@@ -75,13 +125,18 @@ AI_DOUBLE_BATTLE_TEST("AI values moves above Splash, 101-200")
     if (moveCap > MOVES_COUNT)
         moveCap = MOVES_COUNT - 1;
 
+    s32 j;
     enum Move move = MOVE_NONE;
 
     enum BattleMoveEffects effect;
 
-    for (u32 j = moveStart + 1; j <= moveCap; j++)
+    for (j = moveStart + 1; j <= moveCap; j++)
     {
         effect = GetMoveEffect(j);
+
+        // Stat raising effects are not meant to be used when you have only Splash.
+        if (IsStatRaisingMove(j))
+            continue;
 
         switch (effect)
         {
@@ -108,15 +163,17 @@ AI_DOUBLE_BATTLE_TEST("AI values moves above Splash, 101-200")
         case EFFECT_SPITE:
 
         // tests exist elsewhere
-        case EFFECT_DEFENSE_CURL:
-        case EFFECT_STAT_CHANGE:
         case EFFECT_HAZE:
         case EFFECT_REST:
         case EFFECT_SNORE:
-        case EFFECT_MINIMIZE:
 
         // Skipped on purpose.
         case EFFECT_PROTECT:
+        case EFFECT_NON_VOLATILE_STATUS:
+        case EFFECT_DO_NOTHING:
+        case EFFECT_HOLD_HANDS:
+        case EFFECT_CELEBRATE:
+        case EFFECT_HAPPY_HOUR:
             break;
         default:
             PARAMETRIZE { move = j; }
@@ -124,8 +181,8 @@ AI_DOUBLE_BATTLE_TEST("AI values moves above Splash, 101-200")
     }
 
     GIVEN {
-        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT);
-        PLAYER(SPECIES_WOBBUFFET);
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_HP_AWARE | AI_FLAG_OMNISCIENT);
+        PLAYER(SPECIES_WOBBUFFET) { Status1(STATUS1_POISON); }
         PLAYER(SPECIES_WOBBUFFET);
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_SPLASH, move); Status1(STATUS1_BURN); Item(ITEM_STARF_BERRY); }
@@ -133,21 +190,11 @@ AI_DOUBLE_BATTLE_TEST("AI values moves above Splash, 101-200")
         OPPONENT(SPECIES_WOBBUFFET) { Status1(STATUS1_BURN); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
-        switch (GetMoveEffect(move))
-        {
-        case EFFECT_DO_NOTHING:
-            TURN { SCORE_LT_VAL(opponentLeft, move, AI_SCORE_DEFAULT, target: playerLeft); }
-            break;
-        case EFFECT_OHKO:
-            TURN { EXPECT_MOVE(opponentLeft, move); SEND_OUT(playerLeft, 2); }
-            break;
-        default:
-            TURN { EXPECT_MOVE(opponentLeft, move); }
-        }
+        TURN { EXPECT_MOVE(opponentLeft, move); }
     }
 }
 
-AI_DOUBLE_BATTLE_TEST("AI values moves above Splash, 201-300")
+AI_DOUBLE_BATTLE_TEST("AI can use all moves, 201-300")
 {
     enum Move moveStart = 200;
     enum Move moveCap = 300;
@@ -155,13 +202,18 @@ AI_DOUBLE_BATTLE_TEST("AI values moves above Splash, 201-300")
     if (moveCap > MOVES_COUNT)
         moveCap = MOVES_COUNT - 1;
 
+    s32 j;
     enum Move move = MOVE_NONE;
 
     enum BattleMoveEffects effect;
 
-    for (u32 j = moveStart + 1; j <= moveCap; j++)
+    for (j = moveStart + 1; j <= moveCap; j++)
     {
         effect = GetMoveEffect(j);
+
+        // Stat raising effects are not meant to be used when you have only Splash.
+        if (IsStatRaisingMove(j))
+            continue;
 
         switch (effect)
         {
@@ -188,12 +240,11 @@ AI_DOUBLE_BATTLE_TEST("AI values moves above Splash, 201-300")
         case EFFECT_SPIT_UP:
         case EFFECT_SWALLOW:
         case EFFECT_WISH:
+        case EFFECT_RECYCLE:
 
         // tests exist elsewhere
-        case EFFECT_STAT_CHANGE:
-        case EFFECT_CHARGE:
-        case EFFECT_STOCKPILE:
         case EFFECT_HEAL_BELL:
+        case EFFECT_SLEEP_TALK:
         case EFFECT_WEATHER:
         case EFFECT_ROLE_PLAY:
         case EFFECT_REFRESH:
@@ -201,6 +252,10 @@ AI_DOUBLE_BATTLE_TEST("AI values moves above Splash, 201-300")
         // Skipped on purpose.
         case EFFECT_PROTECT:
         case EFFECT_NON_VOLATILE_STATUS:
+        case EFFECT_DO_NOTHING:
+        case EFFECT_HOLD_HANDS:
+        case EFFECT_CELEBRATE:
+        case EFFECT_HAPPY_HOUR:
             break;
         default:
             PARAMETRIZE { move = j; }
@@ -208,7 +263,7 @@ AI_DOUBLE_BATTLE_TEST("AI values moves above Splash, 201-300")
     }
 
     GIVEN {
-        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT);
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_HP_AWARE | AI_FLAG_OMNISCIENT);
         PLAYER(SPECIES_WOBBUFFET) { Status1(STATUS1_POISON); }
         PLAYER(SPECIES_WOBBUFFET);
         PLAYER(SPECIES_WOBBUFFET);
@@ -217,19 +272,11 @@ AI_DOUBLE_BATTLE_TEST("AI values moves above Splash, 201-300")
         OPPONENT(SPECIES_WOBBUFFET) { Status1(STATUS1_BURN); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
-        switch (GetMoveEffect(move))
-        {
-        case EFFECT_RECYCLE:
-        case EFFECT_SLEEP_TALK:
-            TURN { SCORE_LT_VAL(opponentLeft, move, AI_SCORE_DEFAULT, target: playerLeft); }
-            break;
-        default:
-            TURN { EXPECT_MOVE(opponentLeft, move); }
-        }
+        TURN { EXPECT_MOVE(opponentLeft, move); }
     }
 }
 
-AI_DOUBLE_BATTLE_TEST("AI values moves above Splash, 301-400")
+AI_DOUBLE_BATTLE_TEST("AI can use all moves, 301-400")
 {
     enum Move moveStart = 300;
     enum Move moveCap = 400;
@@ -237,17 +284,23 @@ AI_DOUBLE_BATTLE_TEST("AI values moves above Splash, 301-400")
     if (moveCap > MOVES_COUNT)
         moveCap = MOVES_COUNT - 1;
 
+    s32 j;
     enum Move move = MOVE_NONE;
 
     enum BattleMoveEffects effect;
 
-    for (u32 j = moveStart + 1; j <= moveCap; j++)
+    for (j = moveStart + 1; j <= moveCap; j++)
     {
         effect = GetMoveEffect(j);
+
+        // Stat raising effects are not meant to be used when you have only Splash.
+        if (IsStatRaisingMove(j))
+            continue;
 
         switch (effect)
         {
         //TODO: AI HANDLING
+        case EFFECT_OHKO: // Guillotine is crashing the test entirely.
         case EFFECT_WATER_SPORT:
         case EFFECT_LUCKY_CHANT:
         case EFFECT_ME_FIRST:
@@ -261,18 +314,24 @@ AI_DOUBLE_BATTLE_TEST("AI values moves above Splash, 301-400")
         //TODO: AI TESTS
         case EFFECT_RESTORE_HP:
         case EFFECT_ROOST:
+        case EFFECT_GUARD_SWAP:
+        case EFFECT_POWER_SWAP:
+        case EFFECT_HEART_SWAP:
         case EFFECT_TAILWIND:
         case EFFECT_POWER_TRICK:
         case EFFECT_MAGNET_RISE:
 
         // tests exist elsewhere
-        case EFFECT_STAT_CHANGE:
         case EFFECT_GRAVITY:
         case EFFECT_HEAL_BELL:
 
         // Skipped on purpose.
         case EFFECT_PROTECT:
         case EFFECT_NON_VOLATILE_STATUS:
+        case EFFECT_DO_NOTHING:
+        case EFFECT_HOLD_HANDS:
+        case EFFECT_CELEBRATE:
+        case EFFECT_HAPPY_HOUR:
             break;
         default:
             PARAMETRIZE { move = j; }
@@ -280,7 +339,7 @@ AI_DOUBLE_BATTLE_TEST("AI values moves above Splash, 301-400")
     }
 
     GIVEN {
-        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT);
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_HP_AWARE | AI_FLAG_OMNISCIENT);
         PLAYER(SPECIES_WOBBUFFET) { Status1(STATUS1_POISON); }
         PLAYER(SPECIES_WOBBUFFET);
         PLAYER(SPECIES_WOBBUFFET);
@@ -289,23 +348,11 @@ AI_DOUBLE_BATTLE_TEST("AI values moves above Splash, 301-400")
         OPPONENT(SPECIES_WOBBUFFET) { Status1(STATUS1_BURN); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
-        switch (GetMoveEffect(move))
-        {
-        case EFFECT_GUARD_SWAP:
-        case EFFECT_POWER_SWAP:
-        case EFFECT_HEART_SWAP:
-            TURN { SCORE_LT_VAL(opponentLeft, move, AI_SCORE_DEFAULT, target: playerLeft); }
-            break;
-        case EFFECT_OHKO:
-            TURN { EXPECT_MOVE(opponentLeft, move); SEND_OUT(playerLeft, 2); }
-            break;
-        default:
-            TURN { EXPECT_MOVE(opponentLeft, move); }
-        }
+        TURN { EXPECT_MOVE(opponentLeft, move); }
     }
 }
 
-AI_DOUBLE_BATTLE_TEST("AI values moves above Splash, 401-500")
+AI_DOUBLE_BATTLE_TEST("AI can use all moves, 401-500")
 {
     enum Move moveStart = 400;
     enum Move moveCap = 500;
@@ -313,13 +360,18 @@ AI_DOUBLE_BATTLE_TEST("AI values moves above Splash, 401-500")
     if (moveCap > MOVES_COUNT)
         moveCap = MOVES_COUNT - 1;
 
+    s32 j;
     enum Move move = MOVE_NONE;
 
     enum BattleMoveEffects effect;
 
-    for (u32 j = moveStart + 1; j <= moveCap; j++)
+    for (j = moveStart + 1; j <= moveCap; j++)
     {
         effect = GetMoveEffect(j);
+
+        // Stat raising effects are not meant to be used when you have only Splash.
+        if (IsStatRaisingMove(j))
+            continue;
 
         switch (effect)
         {
@@ -333,11 +385,10 @@ AI_DOUBLE_BATTLE_TEST("AI values moves above Splash, 401-500")
 
         //TODO: AI TESTS
         case EFFECT_RESTORE_HP:
+        case EFFECT_CAPTIVATE:
         case EFFECT_DARK_VOID: // Gen 4-6's case is not being handled
 
         // tests exist elsewhere
-        case EFFECT_STAT_CHANGE:
-        case EFFECT_AUTOTOMIZE:
         case EFFECT_TRICK_ROOM:
         case EFFECT_GUARD_SPLIT:
         case EFFECT_POWER_SPLIT:
@@ -345,6 +396,10 @@ AI_DOUBLE_BATTLE_TEST("AI values moves above Splash, 401-500")
         // Skipped on purpose.
         case EFFECT_PROTECT:
         case EFFECT_NON_VOLATILE_STATUS:
+        case EFFECT_DO_NOTHING:
+        case EFFECT_HOLD_HANDS:
+        case EFFECT_CELEBRATE:
+        case EFFECT_HAPPY_HOUR:
             break;
         default:
             PARAMETRIZE { move = j; }
@@ -352,7 +407,7 @@ AI_DOUBLE_BATTLE_TEST("AI values moves above Splash, 401-500")
     }
 
     GIVEN {
-        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT);
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_HP_AWARE | AI_FLAG_OMNISCIENT);
         PLAYER(SPECIES_WOBBUFFET) { Status1(STATUS1_POISON); }
         PLAYER(SPECIES_WOBBUFFET);
         PLAYER(SPECIES_WOBBUFFET);
@@ -361,18 +416,11 @@ AI_DOUBLE_BATTLE_TEST("AI values moves above Splash, 401-500")
         OPPONENT(SPECIES_WOBBUFFET) { Status1(STATUS1_BURN); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
-        switch (GetMoveEffect(move))
-        {
-        case EFFECT_CAPTIVATE:
-            TURN { SCORE_LT_VAL(opponentLeft, move, AI_SCORE_DEFAULT, target: playerLeft); }
-            break;
-        default:
-            TURN { EXPECT_MOVE(opponentLeft, move); }
-        }
+        TURN { EXPECT_MOVE(opponentLeft, move); }
     }
 }
 
-AI_DOUBLE_BATTLE_TEST("AI values moves above Splash, 501-600")
+AI_DOUBLE_BATTLE_TEST("AI can use all moves, 501-600")
 {
     enum Move moveStart = 515;
     enum Move moveCap = 600;
@@ -380,16 +428,22 @@ AI_DOUBLE_BATTLE_TEST("AI values moves above Splash, 501-600")
     if (moveCap > MOVES_COUNT)
         moveCap = MOVES_COUNT - 1;
 
+    s32 j;
     enum Move move = MOVE_NONE;
 
     enum BattleMoveEffects effect;
 
-    for (u32 j = moveStart + 1; j <= moveCap; j++)
+    for (j = moveStart + 1; j <= moveCap; j++)
     {
         effect = GetMoveEffect(j);
 
+        // Stat raising effects are not meant to be used when you have only Splash.
+        if (IsStatRaisingMove(j))
+            continue;
+
         switch (effect)
         {
+        case EFFECT_FINAL_GAMBIT:
         //TODO: AI HANDLING
         case EFFECT_ALLY_SWITCH:
         case EFFECT_QUASH:
@@ -408,7 +462,6 @@ AI_DOUBLE_BATTLE_TEST("AI values moves above Splash, 501-600")
         case EFFECT_FAIRY_LOCK:
 
         // tests exist elsewhere
-        case EFFECT_STAT_CHANGE:
         case EFFECT_ROTOTILLER:
         case EFFECT_FLOWER_SHIELD:
         case EFFECT_GRASSY_TERRAIN:
@@ -417,6 +470,10 @@ AI_DOUBLE_BATTLE_TEST("AI values moves above Splash, 501-600")
         // Skipped on purpose.
         case EFFECT_PROTECT:
         case EFFECT_NON_VOLATILE_STATUS:
+        case EFFECT_DO_NOTHING:
+        case EFFECT_HOLD_HANDS:
+        case EFFECT_CELEBRATE:
+        case EFFECT_HAPPY_HOUR:
             break;
         default:
             PARAMETRIZE { move = j; }
@@ -424,7 +481,7 @@ AI_DOUBLE_BATTLE_TEST("AI values moves above Splash, 501-600")
     }
 
     GIVEN {
-        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT);
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_HP_AWARE | AI_FLAG_OMNISCIENT);
         PLAYER(SPECIES_WOBBUFFET) { Status1(STATUS1_POISON); }
         PLAYER(SPECIES_WOBBUFFET);
         PLAYER(SPECIES_WOBBUFFET);
@@ -433,18 +490,11 @@ AI_DOUBLE_BATTLE_TEST("AI values moves above Splash, 501-600")
         OPPONENT(SPECIES_WOBBUFFET) { Status1(STATUS1_BURN); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
-        switch (GetMoveEffect(move))
-        {
-        case EFFECT_FINAL_GAMBIT:
-            TURN { EXPECT_MOVE(opponentLeft, move); SEND_OUT(playerLeft, 2); }
-            break;
-        default:
-            TURN { EXPECT_MOVE(opponentLeft, move); }
-        }
+        TURN { EXPECT_MOVE(opponentLeft, move); }
     }
 }
 
-AI_DOUBLE_BATTLE_TEST("AI values moves above Splash, 601-700")
+AI_DOUBLE_BATTLE_TEST("AI can use all moves, 601-700")
 {
     enum Move moveStart = 600;
     enum Move moveCap = 700;
@@ -452,17 +502,24 @@ AI_DOUBLE_BATTLE_TEST("AI values moves above Splash, 601-700")
     if (moveCap > MOVES_COUNT)
         moveCap = MOVES_COUNT - 1;
 
+    s32 j;
     enum Move move = MOVE_NONE;
 
     enum BattleMoveEffects effect;
 
-    for (u32 j = moveStart + 1; j <= moveCap; j++)
+    for (j = moveStart + 1; j <= moveCap; j++)
     {
         effect = GetMoveEffect(j);
+
+        // Stat raising effects are not meant to be used when you have only Splash.
+        if (IsStatRaisingMove(j))
+            continue;
 
         switch (effect)
         {
         //TODO: AI HANDLING
+        case EFFECT_FAIL_IF_NOT_ARG_TYPE:
+        case EFFECT_STUFF_CHEEKS:
         case EFFECT_NO_RETREAT:
         case EFFECT_TEATIME:
 
@@ -476,16 +533,18 @@ AI_DOUBLE_BATTLE_TEST("AI values moves above Splash, 601-700")
         case EFFECT_SOAK:
 
         // tests exist elsewhere
-        case EFFECT_STAT_CHANGE:
-        case EFFECT_STUFF_CHEEKS:
-        case EFFECT_GEOMANCY:
         case EFFECT_ELECTRIC_TERRAIN:
         case EFFECT_PSYCHIC_TERRAIN:
         case EFFECT_AURORA_VEIL:
+        case EFFECT_STAT_CHANGE_MAGNETIC:
 
         // Skipped on purpose.
         case EFFECT_PROTECT:
         case EFFECT_NON_VOLATILE_STATUS:
+        case EFFECT_DO_NOTHING:
+        case EFFECT_HOLD_HANDS:
+        case EFFECT_CELEBRATE:
+        case EFFECT_HAPPY_HOUR:
             break;
         default:
             PARAMETRIZE { move = j; }
@@ -493,7 +552,7 @@ AI_DOUBLE_BATTLE_TEST("AI values moves above Splash, 601-700")
     }
 
     GIVEN {
-        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT);
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_HP_AWARE | AI_FLAG_OMNISCIENT);
         PLAYER(SPECIES_WOBBUFFET) { Status1(STATUS1_POISON); }
         PLAYER(SPECIES_WOBBUFFET);
         PLAYER(SPECIES_WOBBUFFET);
@@ -502,26 +561,11 @@ AI_DOUBLE_BATTLE_TEST("AI values moves above Splash, 601-700")
         OPPONENT(SPECIES_WOBBUFFET) { Status1(STATUS1_BURN); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
-        switch (GetMoveEffect(move))
-        {
-        case EFFECT_DO_NOTHING:
-        case EFFECT_HOLD_HANDS:
-        case EFFECT_CELEBRATE:
-        case EFFECT_HAPPY_HOUR:
-        case EFFECT_STAT_CHANGE_MAGNETIC:
-            TURN { SCORE_LT_VAL(opponentLeft, move, AI_SCORE_DEFAULT, target: playerLeft); }
-            break;
-
-        case EFFECT_FAIL_IF_NOT_ARG_TYPE:
-            TURN { NOT_EXPECT_MOVE(opponentLeft, move); }
-            break;
-        default:
-            TURN { EXPECT_MOVE(opponentLeft, move); }
-        }
+        TURN { EXPECT_MOVE(opponentLeft, move); }
     }
 }
 
-AI_DOUBLE_BATTLE_TEST("AI values moves above Splash, 701-800")
+AI_DOUBLE_BATTLE_TEST("AI can use all moves, 701-800")
 {
     enum Move moveStart = 700;
     enum Move moveCap = 800;
@@ -529,13 +573,18 @@ AI_DOUBLE_BATTLE_TEST("AI values moves above Splash, 701-800")
     if (moveCap > MOVES_COUNT)
         moveCap = MOVES_COUNT - 1;
 
+    s32 j;
     enum Move move = MOVE_NONE;
 
     enum BattleMoveEffects effect;
 
-    for (u32 j = moveStart + 1; j <= moveCap; j++)
+    for (j = moveStart + 1; j <= moveCap; j++)
     {
         effect = GetMoveEffect(j);
+
+        // Stat raising effects are not meant to be used when you have only Splash.
+        if (IsStatRaisingMove(j))
+            continue;
 
         switch (effect)
         {
@@ -546,13 +595,12 @@ AI_DOUBLE_BATTLE_TEST("AI values moves above Splash, 701-800")
 
         //TODO: AI TESTS
         case EFFECT_RESTORE_HP:
+        case EFFECT_STEEL_ROLLER:
         case EFFECT_JUNGLE_HEALING:
         case EFFECT_POWER_TRICK:
         case EFFECT_TAKE_HEART:
 
         // tests exist elsewhere
-        case EFFECT_STAT_CHANGE:
-        case EFFECT_STAT_CHANGE_HALF_HP:
         case EFFECT_COURT_CHANGE:
         case EFFECT_DOODLE:
         case EFFECT_LIFE_DEW:
@@ -560,6 +608,10 @@ AI_DOUBLE_BATTLE_TEST("AI values moves above Splash, 701-800")
         // Skipped on purpose.
         case EFFECT_PROTECT:
         case EFFECT_NON_VOLATILE_STATUS:
+        case EFFECT_DO_NOTHING:
+        case EFFECT_HOLD_HANDS:
+        case EFFECT_CELEBRATE:
+        case EFFECT_HAPPY_HOUR:
             break;
         default:
             PARAMETRIZE { move = j; }
@@ -567,7 +619,7 @@ AI_DOUBLE_BATTLE_TEST("AI values moves above Splash, 701-800")
     }
 
     GIVEN {
-        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT);
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_HP_AWARE | AI_FLAG_OMNISCIENT);
         PLAYER(SPECIES_WOBBUFFET) { Status1(STATUS1_POISON); }
         PLAYER(SPECIES_WOBBUFFET);
         PLAYER(SPECIES_WOBBUFFET);
@@ -576,18 +628,11 @@ AI_DOUBLE_BATTLE_TEST("AI values moves above Splash, 701-800")
         OPPONENT(SPECIES_WOBBUFFET) { Status1(STATUS1_BURN); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
-        switch (GetMoveEffect(move))
-        {
-        case EFFECT_STEEL_ROLLER:
-            TURN { SCORE_LT_VAL(opponentLeft, move, AI_SCORE_DEFAULT, target: playerLeft); }
-            break;
-        default:
-            TURN { EXPECT_MOVE(opponentLeft, move); }
-        }
+        TURN { EXPECT_MOVE(opponentLeft, move); }
     }
 }
 
-AI_DOUBLE_BATTLE_TEST("AI values moves above Splash, 801-900")
+AI_DOUBLE_BATTLE_TEST("AI can use all moves, 801-900")
 {
     enum Move moveStart = 800;
     enum Move moveCap = 900;
@@ -595,13 +640,18 @@ AI_DOUBLE_BATTLE_TEST("AI values moves above Splash, 801-900")
     if (moveCap > MOVES_COUNT)
         moveCap = MOVES_COUNT - 1;
 
+    s32 j;
     enum Move move = MOVE_NONE;
 
     enum BattleMoveEffects effect;
 
-    for (u32 j = moveStart + 1; j <= moveCap; j++)
+    for (j = moveStart + 1; j <= moveCap; j++)
     {
         effect = GetMoveEffect(j);
+
+        // Stat raising effects are not meant to be used when you have only Splash.
+        if (IsStatRaisingMove(j))
+            continue;
 
         switch (effect)
         {
@@ -614,7 +664,6 @@ AI_DOUBLE_BATTLE_TEST("AI values moves above Splash, 801-900")
         case EFFECT_TIDY_UP:
 
         // tests exist elsewhere
-        case EFFECT_STAT_CHANGE:
         case EFFECT_DRAGON_CHEER:
             break;
         case EFFECT_WEATHER:
@@ -626,6 +675,10 @@ AI_DOUBLE_BATTLE_TEST("AI values moves above Splash, 801-900")
         // Skipped on purpose.
         case EFFECT_PROTECT:
         case EFFECT_NON_VOLATILE_STATUS:
+        case EFFECT_DO_NOTHING:
+        case EFFECT_HOLD_HANDS:
+        case EFFECT_CELEBRATE:
+        case EFFECT_HAPPY_HOUR:
             break;
         default:
             PARAMETRIZE { move = j; }
@@ -633,7 +686,7 @@ AI_DOUBLE_BATTLE_TEST("AI values moves above Splash, 801-900")
     }
 
     GIVEN {
-        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT);
+        AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_HP_AWARE | AI_FLAG_OMNISCIENT);
         PLAYER(SPECIES_WOBBUFFET) { Status1(STATUS1_POISON); }
         PLAYER(SPECIES_WOBBUFFET);
         PLAYER(SPECIES_WOBBUFFET);
