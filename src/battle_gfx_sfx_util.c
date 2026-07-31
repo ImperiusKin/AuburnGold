@@ -184,7 +184,7 @@ u16 ChooseMoveAndTargetInBattlePalace(enum BattlerId battler)
     {
         if (moveInfo->moves[i] == MOVE_NONE)
             break;
-        if (selectedGroup == GetBattlePalaceMoveGroup(battler, moveInfo->moves[i]) && moveInfo->currentPp[i] != 0)
+        if (selectedGroup == GetBattlePalaceMoveGroup(battler, moveInfo->moves[i]) && moveInfo->currentPP[i] != 0)
             selectedMoves |= 1u << i;
     }
 
@@ -1261,7 +1261,7 @@ void SpriteCB_EnemyShadow(struct Sprite *shadowSprite)
         return;
     }
 
-    s8 xOffset = 0, UNUSED yOffset = 0, size = SHADOW_SIZE_S;
+    s8 xOffset = 0, yOffset = 0, size = SHADOW_SIZE_S;
     if (gAnimScriptActive || battlerSprite->invisible)
     {
         invisible = TRUE;

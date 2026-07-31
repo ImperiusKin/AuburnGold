@@ -3828,7 +3828,7 @@ BattleScript_SelectingImprisonedMoveInPalace::
 	printstring STRINGID_PKMNCANTUSEMOVESEALED
 	goto BattleScript_SelectingUnusableMoveInPalace
 
-BattleScript_GrudgeTakesPp::
+BattleScript_GrudgeTakesPP::
 	printstring STRINGID_PKMNLOSTPPGRUDGE
 	waitmessage B_WAIT_TIME_LONG
 	return
@@ -3959,6 +3959,7 @@ BattleScript_BattlerFormChangeNoPopup::
 	handleformchange BS_SCRIPTING, 0
 	playanimation BS_SCRIPTING, B_ANIM_FORM_CHANGE
 	waitanimation
+	sethword sABILITY_OVERWRITE, 0
 BattleScript_BattlerFormChangeFromAfterAnimation::
 	handleformchange BS_SCRIPTING, 1
 	switchinabilities BS_SCRIPTING
