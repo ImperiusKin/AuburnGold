@@ -2913,7 +2913,7 @@ static const struct LevelUpMove sGengarLevelUpLearnset[] = {
 
 #if P_FAMILY_ONIX
 static const struct LevelUpMove sOnixLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 1, MOVE_MUD_SPORT),1
+    LEVEL_UP_MOVE( 1, MOVE_MUD_SPORT),
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),
     LEVEL_UP_MOVE( 1, MOVE_HARDEN),
     LEVEL_UP_MOVE( 1, MOVE_BIND),
