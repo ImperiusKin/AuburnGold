@@ -5276,6 +5276,7 @@ static const struct LevelUpMove sFeraligatrLevelUpLearnset[] = {
     LEVEL_UP_MOVE(38, MOVE_SCREECH),
     LEVEL_UP_MOVE(42, MOVE_THRASH),
     LEVEL_UP_MOVE(44, MOVE_AQUA_FANG),
+    LEVEL_UP_MOVE(46, MOVE_DOUBLE_EDGE),
     LEVEL_UP_MOVE(48, MOVE_SUPERPOWER),
     LEVEL_UP_MOVE(52, MOVE_TRIPLE_DIVE),
     LEVEL_UP_MOVE(54, MOVE_JAW_LOCK),
@@ -5566,7 +5567,7 @@ static const struct LevelUpMove sTogeticLevelUpLearnset[] = {
 #if P_GEN_4_CROSS_EVOS
 static const struct LevelUpMove sTogekissLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_SKY_ATTACK),
-    LEVEL_UP_MOVE( 1, MOVE_AFTER_YOU,
+    LEVEL_UP_MOVE( 1, MOVE_AFTER_YOU),
     LEVEL_UP_MOVE( 1, MOVE_EXTREME_SPEED),
     LEVEL_UP_MOVE( 1, MOVE_AURA_SPHERE),
     LEVEL_UP_MOVE( 1, MOVE_AIR_SLASH),
