@@ -7,6 +7,7 @@ static const u16 sNoneEggMoveLearnset[] = {
 #if P_FAMILY_BULBASAUR
 static const u16 sBulbasaurEggMoveLearnset[] = {
     MOVE_SKULL_BASH,
+    MOVE_ACID_SPRAY,
     MOVE_CHARM,
     MOVE_PETAL_DANCE,
     MOVE_MAGICAL_LEAF,
