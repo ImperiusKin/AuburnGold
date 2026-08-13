@@ -4896,6 +4896,14 @@ static const u16 sBouffalantEggMoveLearnset[] = {
 };
 #endif //P_FAMILY_BOUFFALANT
 
+#if P_FAMILY_RUFFLET
+static const u16 sRuffletEggMoveLearnset[] = {
+    MOVE_ROCK_SMASH,
+    MOVE_ROOST,
+    MOVE_UNAVAILABLE,
+};
+#endif //P_FAMILY_RUFFLET
+
 #if P_FAMILY_VULLABY
 static const u16 sVullabyEggMoveLearnset[] = {
     MOVE_STEEL_WING,
