@@ -5799,7 +5799,6 @@ static const u16 sYamperEggMoveLearnset[] = {
     MOVE_DOUBLE_EDGE,
     MOVE_FLAME_CHARGE,
     MOVE_HOWL,
-    MOVE_SAND_ATTACK,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_YAMPER
@@ -5949,7 +5948,7 @@ static const u16 sEiscueEggMoveLearnset[] = {
 #endif //P_FAMILY_EISCUE
 
 #if P_FAMILY_INDEEDEE
-static const u16 sIndeedeeEggMoveLearnset[] = {
+static const u16 sIndeedeeMEggMoveLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
