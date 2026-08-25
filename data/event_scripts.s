@@ -1737,9 +1737,7 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/scripts/dexnav.inc"
 	.include "data/scripts/battle_frontier.inc"
 	.include "data/scripts/apricorn_tree.inc"
-<<<<<<< Updated upstream
 	.include "data/scripts/wild_encounter.inc"
-=======
 
 	.include "data/maps/NewBarkTown/scripts.inc"
 
@@ -1802,4 +1800,3 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/Sprout_Tower_F3/scripts.inc"
 
 	.include "data/maps/Connection_Amberite_HalluForest/scripts.inc"
->>>>>>> Stashed changes
