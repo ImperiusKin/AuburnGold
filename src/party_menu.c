@@ -4158,8 +4158,8 @@ static void CursorCb_FieldMove(u8 taskId)
     const struct MapHeader *mapHeader;
 
     PlaySE(SE_SELECT);
-    if (gFieldMoveInfo[fieldMove].fieldMoveFunc == NULL)
-        return;
+    //if (gFieldMoveInfo[fieldMove].fieldMoveFunc == NULL)
+    //    return;
 
     PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
     PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[1]);
@@ -4175,12 +4175,12 @@ static void CursorCb_FieldMove(u8 taskId)
     else
     {
         // All field moves before WATERFALL are HMs.
-        if (!IsFieldMoveUnlocked(fieldMove))
+        if (!IsFieldMoveUnlocked(fieldMove) && FALSE)
         {
             DisplayPartyMenuMessage(gText_CantUseUntilNewBadge, TRUE);
             gTasks[taskId].func = Task_ReturnToChooseMonAfterText;
         }
-        else if (SetUpFieldMove(fieldMove) == TRUE)
+        else if (SetUpFieldMove(fieldMove) == TRUE || TRUE)
         {
             switch (fieldMove)
             {
