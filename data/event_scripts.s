@@ -1737,4 +1737,69 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/scripts/dexnav.inc"
 	.include "data/scripts/battle_frontier.inc"
 	.include "data/scripts/apricorn_tree.inc"
+<<<<<<< Updated upstream
 	.include "data/scripts/wild_encounter.inc"
+=======
+
+	.include "data/maps/NewBarkTown/scripts.inc"
+
+	.include "data/maps/Route27/scripts.inc"
+
+	.include "data/maps/Route29/scripts.inc"
+
+	.include "data/maps/Route_45/scripts.inc"
+
+	.include "data/maps/SouthernField/scripts.inc"
+
+	.include "data/maps/Amberite_Valley/scripts.inc"
+
+	.include "data/maps/Hallu_Forest/scripts.inc"
+
+	.include "data/maps/Route30/scripts.inc"
+
+	.include "data/maps/Route_31/scripts.inc"
+
+	.include "data/maps/Dark_Cave/scripts.inc"
+
+	.include "data/maps/Cherrygrove_City/scripts.inc"
+
+	.include "data/maps/Mt_Freeze/scripts.inc"
+
+	.include "data/maps/Route_32/scripts.inc"
+
+	.include "data/maps/Happy_Town/scripts.inc"
+
+	.include "data/maps/Violet_City/scripts.inc"
+
+	.include "data/maps/Catallia_City/scripts.inc"
+
+	.include "data/maps/bluemoon_falls/scripts.inc"
+
+	.include "data/maps/PalmHillCity/scripts.inc"
+
+	.include "data/maps/florando_City/scripts.inc"
+
+	.include "data/maps/Pokemon_Center/scripts.inc"
+
+	.include "data/maps/Trading_Center/scripts.inc"
+
+	.include "data/maps/Trading_Facility/scripts.inc"
+
+	.include "data/maps/Connection_rt29_rt46/scripts.inc"
+
+	.include "data/maps/Connection_HappyTown/scripts.inc"
+
+	.include "data/maps/Elms_Lab/scripts.inc"
+
+	.include "data/maps/Oaks_Lab/scripts.inc"
+
+	.include "data/maps/Violet_Gym/scripts.inc"
+
+	.include "data/maps/Sprout_Tower/scripts.inc"
+
+	.include "data/maps/Sprout_Tower_F2/scripts.inc"
+
+	.include "data/maps/Sprout_Tower_F3/scripts.inc"
+
+	.include "data/maps/Connection_Amberite_HalluForest/scripts.inc"
+>>>>>>> Stashed changes
