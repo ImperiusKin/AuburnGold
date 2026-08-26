@@ -5701,7 +5701,6 @@ static const u16 sGrookeyEggMoveLearnset[] = {
 #if P_FAMILY_SCORBUNNY
 static const u16 sScorbunnyEggMoveLearnset[] = {
     MOVE_HIGH_JUMP_KICK,
-    MOVE_SAND_ATTACK,
     MOVE_SUCKER_PUNCH,
     MOVE_SUPER_FANG,
     MOVE_UNAVAILABLE,
@@ -5735,7 +5734,6 @@ static const u16 sRookideeEggMoveLearnset[] = {
     MOVE_DEFOG,
     MOVE_ROCK_SMASH,
     MOVE_ROOST,
-    MOVE_SAND_ATTACK,
     MOVE_SKY_ATTACK,
     MOVE_SPITE,
     MOVE_TAILWIND,
