@@ -21955,6 +21955,7 @@ static const struct LevelUpMove sQuaquavalLevelUpLearnset[] = {
 static const struct LevelUpMove sLechonkLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),
 	LEVEL_UP_MOVE( 1, MOVE_TAIL_WHIP),
+    LEVEL_UP_MOVE( 1, MOVE_MUD_SLAP),
 	LEVEL_UP_MOVE( 4, MOVE_DISARMING_VOICE),
 	LEVEL_UP_MOVE( 7, MOVE_ECHOED_VOICE),
 	LEVEL_UP_MOVE(10, MOVE_MUD_SHOT),
@@ -21972,6 +21973,7 @@ static const struct LevelUpMove sLechonkLevelUpLearnset[] = {
 static const struct LevelUpMove sOinkologneMLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),
 	LEVEL_UP_MOVE( 1, MOVE_TAIL_WHIP),
+    LEVEL_UP_MOVE( 1, MOVE_MUD_SLAP),
 	LEVEL_UP_MOVE( 4, MOVE_DISARMING_VOICE),
 	LEVEL_UP_MOVE( 7, MOVE_ECHOED_VOICE),
 	LEVEL_UP_MOVE(10, MOVE_MUD_SHOT),
@@ -21991,6 +21993,7 @@ static const struct LevelUpMove sOinkologneMLevelUpLearnset[] = {
 static const struct LevelUpMove sOinkologneFLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_TACKLE),
 	LEVEL_UP_MOVE( 1, MOVE_TAIL_WHIP),
+    LEVEL_UP_MOVE( 1, MOVE_MUD_SLAP),
 	LEVEL_UP_MOVE( 4, MOVE_DISARMING_VOICE),
 	LEVEL_UP_MOVE( 7, MOVE_ECHOED_VOICE),
 	LEVEL_UP_MOVE(10, MOVE_MUD_SHOT),
