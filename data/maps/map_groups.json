@@ -164,7 +164,9 @@
     "Sprout_Tower",
     "Sprout_Tower_F2",
     "Sprout_Tower_F3",
-    "Connection_Amberite_HalluForest"
+    "Connection_Amberite_HalluForest",
+    "Player_House",
+    "Player_House_F2"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",

@@ -1992,3 +1992,25 @@ const struct Tileset gTileset_SproutTower_Sec =
     .metatileAttributes = gMetatileAttributes_SproutTower_Sec,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_PlayerHouse =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_PlayerHouse,
+    .palettes = gTilesetPalettes_PlayerHouse,
+    .metatiles = gMetatiles_PlayerHouse,
+    .metatileAttributes = gMetatileAttributes_PlayerHouse,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_PlayerHouseSec =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_PlayerHouseSec,
+    .palettes = gTilesetPalettes_PlayerHouseSec,
+    .metatiles = gMetatiles_PlayerHouseSec,
+    .metatileAttributes = gMetatileAttributes_PlayerHouseSec,
+    .callback = NULL,
+};
