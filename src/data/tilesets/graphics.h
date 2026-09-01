@@ -3827,3 +3827,41 @@ const u16 gTilesetPalettes_SproutTower_Sec[][16] =
 };
 
 const u32 gTilesetTiles_SproutTower_Sec[] = INCBIN_U32("data/tilesets/secondary/sprout_tower_sec/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_PlayerHouse[][16] =
+{
+    INCBIN_U16("data/tilesets/primary/player_house/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/primary/player_house/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/primary/player_house/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/primary/player_house/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/primary/player_house/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/primary/player_house/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/primary/player_house/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/primary/player_house/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/primary/player_house/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/primary/player_house/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/primary/player_house/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/primary/player_house/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/primary/player_house/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_PlayerHouse[] = INCBIN_U32("data/tilesets/primary/player_house/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_PlayerHouseSec[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/player_house_sec/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/player_house_sec/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/player_house_sec/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/player_house_sec/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/player_house_sec/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/player_house_sec/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/player_house_sec/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/player_house_sec/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/player_house_sec/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/player_house_sec/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/player_house_sec/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/player_house_sec/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/player_house_sec/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_PlayerHouseSec[] = INCBIN_U32("data/tilesets/secondary/player_house_sec/tiles.4bpp.lz");

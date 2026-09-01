@@ -531,3 +531,9 @@ const u16 gMetatileAttributes_SproutTower[] = INCBIN_U16("data/tilesets/primary/
 
 const u16 gMetatiles_SproutTower_Sec[] = INCBIN_U16("data/tilesets/secondary/sprout_tower_sec/metatiles.bin");
 const u16 gMetatileAttributes_SproutTower_Sec[] = INCBIN_U16("data/tilesets/secondary/sprout_tower_sec/metatile_attributes.bin");
+
+const u16 gMetatiles_PlayerHouse[] = INCBIN_U16("data/tilesets/primary/player_house/metatiles.bin");
+const u16 gMetatileAttributes_PlayerHouse[] = INCBIN_U16("data/tilesets/primary/player_house/metatile_attributes.bin");
+
+const u16 gMetatiles_PlayerHouseSec[] = INCBIN_U16("data/tilesets/secondary/player_house_sec/metatiles.bin");
+const u16 gMetatileAttributes_PlayerHouseSec[] = INCBIN_U16("data/tilesets/secondary/player_house_sec/metatile_attributes.bin");
