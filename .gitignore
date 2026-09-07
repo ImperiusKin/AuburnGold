@@ -59,6 +59,7 @@ test/battle/trainer_control.h
 test/battle/partner_control.h
 tools/compresSmol/compresSmol
 tools/compresSmol/compresSmolTilemap
+data/maps/*/scripts.inc
 tools/aif2pcm/aif2pcm
 *.Identifier
 *.smol

@@ -1391,7 +1391,7 @@ void CalculateMonStats(struct Pokemon *mon)
         iv[i] = GetMonData(mon, MON_DATA_HP_IV + i);
         ev[i] = GetMonData(mon, MON_DATA_HP_EV + i);
 
-        if (hyperTrained[i])
+        if (hyperTrained[i] || FlagGet(FLAG_SYS_PERFECT_IVS_MODE))
         {
         #if TESTING
             if (gMain.inBattle)
@@ -1399,6 +1399,9 @@ void CalculateMonStats(struct Pokemon *mon)
         #endif
             iv[i] = MAX_PER_STAT_IVS;
         }
+
+        if (FlagGet(FLAG_SYS_NO_EVS_MODE))
+            ev[i] = 0;
 
         if (i == STAT_HP)
             continue;
@@ -1806,6 +1809,7 @@ u8 GetBoxMonGender(struct BoxPokemon *boxMon)
 {
     enum Species species = GetBoxMonData(boxMon, MON_DATA_SPECIES);
     u32 personality = GetBoxMonData(boxMon, MON_DATA_PERSONALITY);
+    bool8 genderReversed = GetBoxMonData(boxMon, MON_DATA_REVERSED_GENDER);
 
     switch (gSpeciesInfo[species].genderRatio)
     {
@@ -1815,10 +1819,18 @@ u8 GetBoxMonGender(struct BoxPokemon *boxMon)
         return gSpeciesInfo[species].genderRatio;
     }
 
-    if (gSpeciesInfo[species].genderRatio > (personality & 0xFF))
-        return MON_FEMALE;
-    else
-        return MON_MALE;
+    if (gSpeciesInfo[species].genderRatio > (personality & 0xFF)){
+        if(genderReversed)
+            return MON_MALE;
+        else
+            return MON_FEMALE;
+    }
+    else{
+        if(genderReversed)
+            return MON_MALE;
+        else
+            return MON_FEMALE;
+    }
 }
 
 u8 GetGenderFromSpeciesAndPersonality(enum Species species, u32 personality)
@@ -2137,6 +2149,12 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
             break;
         case MON_DATA_HELD_ITEM:
             retVal = GetSubstruct0(boxMon)->heldItem;
+            break;
+        case MON_DATA_IS_DISABLED:
+            retVal = GetSubstruct0(boxMon)->isDisabled;
+            break;
+        case MON_DATA_REVERSED_GENDER:
+            retVal = GetSubstruct0(boxMon)->genderReversed;
             break;
         case MON_DATA_EXP:
             retVal = GetSubstruct0(boxMon)->experience;
@@ -2653,6 +2671,12 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
         case MON_DATA_HELD_ITEM:
             SET16(GetSubstruct0(boxMon)->heldItem);
             break;
+        case MON_DATA_IS_DISABLED:
+            SET16(GetSubstruct0(boxMon)->isDisabled);
+            break;
+        case MON_DATA_REVERSED_GENDER:
+            SET16(GetSubstruct0(boxMon)->genderReversed);
+            break;
         case MON_DATA_EXP:
             SET32(GetSubstruct0(boxMon)->experience);
             break;
@@ -2957,13 +2981,51 @@ void CopyMon(void *dest, void *src, size_t size)
     memcpy(dest, src, size);
 }
 
+// Nuzlocke Stuff
+void SetNuzlockeCaughtFlag(u8 locationIndex) {
+    u8 byteIndex = locationIndex / 8;
+    u8 bitIndex = locationIndex % 8;
+    gSaveBlock2Ptr->hasCaughtMonOnLocation[byteIndex] |= (1 << bitIndex);
+}
+
+void ClearNuzlockeCaughtFlag(u8 locationIndex) {
+    u8 byteIndex = locationIndex / 8;
+    u8 bitIndex = locationIndex % 8;
+    gSaveBlock2Ptr->hasCaughtMonOnLocation[byteIndex] &= ~(1 << bitIndex);
+}
+
+bool8 GetNuzlockeCaughtFlag(u8 locationIndex) {
+    u8 byteIndex = locationIndex / 8;
+    u8 bitIndex = locationIndex % 8;
+    return (gSaveBlock2Ptr->hasCaughtMonOnLocation[byteIndex] & (1 << bitIndex)) != 0;
+}
+
+bool8 AreNuzlockeRulesEnabled(void){
+    return FlagGet(FLAG_SYS_NUZLOCKE_MODE);
+}
+
 u8 GiveCapturedMonToPlayer(struct Pokemon *mon)
 {
     s32 i;
+    u32 caughtLocation = GetCurrentRegionMapSectionId();
+    bool8 nuzlockeRules = AreNuzlockeRulesEnabled() && !FlagGet(FLAG_TEMP_CAN_CATCH_POKEMON);
+    u16 isDisabled = FALSE;
 
     SetMonData(mon, MON_DATA_OT_NAME, gSaveBlock2Ptr->playerName);
     SetMonData(mon, MON_DATA_OT_GENDER, &gSaveBlock2Ptr->playerGender);
     SetMonData(mon, MON_DATA_OT_ID, gSaveBlock2Ptr->playerTrainerId);
+
+    if(nuzlockeRules && !IsMonShiny(mon)){
+        u16 newHP = 0;
+        isDisabled = TRUE;
+
+        SetNuzlockeCaughtFlag(caughtLocation);
+
+        SetMonData(mon, MON_DATA_IS_DISABLED, &isDisabled);
+        SetMonData(mon, MON_DATA_HP, &newHP);
+    }
+
+    FlagClear(FLAG_TEMP_CAN_CATCH_POKEMON);
 
     for (i = 0; i < PARTY_SIZE; i++)
     {
@@ -2971,7 +3033,7 @@ u8 GiveCapturedMonToPlayer(struct Pokemon *mon)
             break;
     }
 
-    if (i >= PARTY_SIZE)
+    if (i >= PARTY_SIZE || isDisabled)
         return CopyMonToPC(mon);
 
     CopyMon(&gParties[B_TRAINER_PLAYER][i], mon, sizeof(*mon));
@@ -6756,8 +6818,23 @@ struct BoxPokemon *GetSelectedBoxMonFromPcOrParty(void)
 u32 GiveScriptedMonToPlayer(struct Pokemon *mon, u8 slot)
 {
     u32 sentToPc;
+    bool8 isDisabled = FALSE;
     u32 i = 0;
-    if (slot < PARTY_SIZE)
+
+    if(AreNuzlockeRulesEnabled() && !FlagGet(FLAG_TEMP_CAN_CATCH_POKEMON) && !IsMonShiny(mon)){
+        u32 caughtLocation = GetCurrentRegionMapSectionId();
+        u16 newHP = 0;
+        isDisabled = TRUE;
+
+        SetNuzlockeCaughtFlag(caughtLocation);
+
+        SetMonData(mon, MON_DATA_IS_DISABLED, &isDisabled);
+        SetMonData(mon, MON_DATA_HP, &newHP);
+    }
+
+    FlagClear(FLAG_TEMP_CAN_CATCH_POKEMON);
+
+    if (slot < PARTY_SIZE && !isDisabled)
     {
         CopyMon(&gParties[B_TRAINER_PLAYER][slot], mon, sizeof(struct Pokemon));
         sentToPc = MON_GIVEN_TO_PARTY;

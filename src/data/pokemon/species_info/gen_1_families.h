@@ -17459,6 +17459,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sTaurosLevelUpLearnset,
         .teachableLearnset = sTaurosTeachableLearnset,
         .formSpeciesIdTable = sTaurosFormSpeciesIdTable,
+        .formChangeTable = sTaurosFormChangeTable,
     },
 
 #if P_PALDEAN_FORMS
@@ -17526,6 +17527,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .teachableLearnset = sTaurosPaldeaCombatTeachableLearnset,
         .eggMoveLearnset = sTaurosPaldeaCombatEggMoveLearnset,
         .formSpeciesIdTable = sTaurosFormSpeciesIdTable,
+        .formChangeTable = sTaurosFormChangeTable,
     },
 
     [SPECIES_TAUROS_PALDEA_BLAZE] =
@@ -17592,6 +17594,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .teachableLearnset = sTaurosPaldeaBlazeTeachableLearnset,
         .eggMoveLearnset = sTaurosPaldeaBlazeEggMoveLearnset,
         .formSpeciesIdTable = sTaurosFormSpeciesIdTable,
+        .formChangeTable = sTaurosFormChangeTable,
     },
 
     [SPECIES_TAUROS_PALDEA_AQUA] =
@@ -17658,6 +17661,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .teachableLearnset = sTaurosPaldeaAquaTeachableLearnset,
         .eggMoveLearnset = sTaurosPaldeaAquaEggMoveLearnset,
         .formSpeciesIdTable = sTaurosFormSpeciesIdTable,
+        .formChangeTable = sTaurosFormChangeTable,
     },
 #endif //P_PALDEAN_FORMS
 #endif //P_FAMILY_TAUROS

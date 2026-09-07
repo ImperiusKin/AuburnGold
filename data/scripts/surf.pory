@@ -1,0 +1,31 @@
+
+//Surf
+script EventScript_UseSurf{
+	checkfieldmove(FIELD_MOVE_SURF)
+	goto_if_eq(VAR_RESULT, PARTY_SIZE, EventScript_TMHM_ReleaseAll)
+	bufferpartymonnick(STR_VAR_1, VAR_RESULT)
+	setfieldeffectargument(0, VAR_RESULT)
+	lockall
+	msgbox("The water is dyed a deep blue… \nWould you like to SURF?", MSGBOX_YESNO)
+	if(var(VAR_RESULT) == YES){
+		msgbox("{STR_VAR_1} used SURF!", MSGBOX_DEFAULT)
+		dofieldeffect(FLDEFF_USE_SURF)
+	}
+	releaseall
+	end
+}
+
+script EventScript_CurrentTooFast{
+	lockall
+	checkfieldmove(FIELD_MOVE_SURF)
+	goto_if_eq(VAR_RESULT, FALSE, EventScript_TMHM_ReleaseAll)
+	playse(SE_SELECT)
+	msgbox("The current is much too fast! \nSURF can't be used here…")
+	releaseall
+	end
+}
+
+script EventScript_TMHM_ReleaseAll{
+	releaseall
+	end
+}

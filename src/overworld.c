@@ -194,6 +194,7 @@ static bool8 MapLdr_Credits(void);
 static void CameraCB_CreditsPan(struct CameraObject *camera);
 static void Task_OvwldCredits_FadeOut(u8 taskId);
 static void Task_OvwldCredits_WaitFade(u8 taskId);
+static u8 GetTimeChangerOverrideHours(void);
 
 static void *sUnusedOverworldCallback;
 static u8 sPlayerLinkStates[MAX_LINK_PLAYERS];
@@ -392,6 +393,9 @@ static void (*const sMovementStatusHandler[])(struct LinkPlayerObjectEvent *, st
 // code
 void DoWhiteOut(void)
 {
+    bool8 isNuzlocke = AreNuzlockeRulesEnabled();
+    if(isNuzlocke)
+        EnablePlayerPartyMons();
     RunScriptImmediately(EventScript_WhiteOut);
     HealPlayerParty();
     Overworld_ResetStateAfterWhiteOut();
@@ -955,7 +959,7 @@ static void LoadMapFromWarp(bool32 a1)
     ClearTempFieldEventData();
     ResetDexNavSearch();
     // reset hours override on every warp
-    sHoursOverride = 0;
+    sHoursOverride = GetTimeChangerOverrideHours();
     ResetCyclingRoadChallengeData();
     RestartWildEncounterImmunitySteps();
 #if FREE_MATCH_CALL == FALSE
@@ -3841,7 +3845,41 @@ static void DestroyItemIconSprite(void)
     }
 }
 
+static u8 GetTimeChangerOverrideHours(void){
+    u16 hours = 0;
+    if(FlagGet(FLAG_FORCE_TIME_OF_DAY)){
+        switch(VarGet(VAR_FORCED_TIME_OF_DAY)){
+            case TIME_MORNING:
+                hours = MORNING_HOUR_BEGIN + ((MORNING_HOUR_END - MORNING_HOUR_BEGIN) / 2);
+            break;
+            case TIME_DAY:
+                hours = DAY_HOUR_BEGIN + ((DAY_HOUR_END - DAY_HOUR_BEGIN) / 2);
+            break;
+            case TIME_EVENING:
+                hours = EVENING_HOUR_BEGIN; //This one only last 1 hour
+            break;
+            case TIME_NIGHT:
+                hours = NIGHT_HOUR_BEGIN + (((NIGHT_HOUR_END + 24) - NIGHT_HOUR_BEGIN) / 2);
+            break;
+        }
+    }
+    else{
+        //Remove Override
+        return FALSE;
+    }
+    return hours;
+}
+
+void UseTimeChanger(void)
+{
+    UpdateTimeOfDay(TRUE);
+    FormChangeTimeUpdate();
+    sHoursOverride = GetTimeChangerOverrideHours();
+    gTimeUpdateCounter = 0;
+}
+
 // returns old sHoursOverride
+
 u16 SetTimeOfDay(u16 hours)
 {
     u16 oldHours = sHoursOverride;

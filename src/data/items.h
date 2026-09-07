@@ -13631,6 +13631,69 @@ const struct ItemInfo gItemsInfo[] =
         .iconPalette = gItemIconPalette_RotomCatalog,
     },
 
+    [ITEM_BULL_ESSENCE] =
+    {
+        .name = ITEM_NAME("Bull Essence"),
+        .price = 0,
+        .importance = 1,
+        .description = COMPOUND_STRING(
+            "A catalog full of\n"
+            "essence liked by\n"
+            "Tauros."),
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_BullEssence,
+        .iconPic = gItemIcon_RotomCatalog,
+        .iconPalette = gItemIconPalette_RotomCatalog,
+    },
+
+    [ITEM_WEATHER_REPORT] =
+    {
+        .name = ITEM_NAME("Weather Report"),
+        .price = 0,
+        .importance = 1,
+        .description = COMPOUND_STRING(
+            "A catalog full of\n"
+            "essence liked by\n"
+            "Castform."),
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_WeatherReport,
+        .iconPic = gItemIcon_RotomCatalog,
+        .iconPalette = gItemIconPalette_RotomCatalog,
+    },
+
+    [ITEM_ENGINE_BAY] =
+    {
+        .name = ITEM_NAME("Engine Bay"),
+        .price = 0,
+        .importance = 1,
+        .description = COMPOUND_STRING(
+            "A catalog full of\n"
+            "essence liked by\n"
+            "Revavroom."),
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_EngineBay,
+        .iconPic = gItemIcon_RotomCatalog,
+        .iconPalette = gItemIconPalette_RotomCatalog,
+    },
+
+    [ITEM_POKE_VIAL] =
+    {
+        .name = ITEM_NAME("Poke-Vial"),
+        .price = 0,
+        .importance = 1,
+        .description = COMPOUND_STRING(
+            "Fully revives and\n"
+            "cures all Pokémon."),
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_FIELD,
+        .fieldUseFunc = ItemUseOutOfBattle_PokeVial,
+        .iconPic = gItemIcon_BerryPouch,
+        .iconPalette = gItemIconPalette_BerryPouch,
+    },
+
     [ITEM_GRACIDEA] =
     {
         .name = ITEM_NAME("Gracidea"),
@@ -15831,6 +15894,87 @@ const struct ItemInfo gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .iconPic = gItemIcon_PokeshiDoll,
         .iconPalette = gItemIconPalette_PokeshiDoll,
+    },
+ 
+    [ITEM_TIME_CHANGER] =
+    {
+        .name = ITEM_NAME("Time Changer"),
+        .price = 0,
+        .importance = 1,
+        .description = COMPOUND_STRING(
+            "An item that lets\n"
+            "you change the\n"
+            "current time."),
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_FIELD,
+        .fieldUseFunc = ItemUseOutOfBattle_TimeChanger,
+        .iconPic = gItemIcon_BerryPouch,
+        .iconPalette = gItemIconPalette_BerryPouch,
+    },
+ 
+    [ITEM_HEX_ORB] =
+    {
+        .name = ITEM_NAME("Hex Orb"),
+        .price = 0,
+        .importance = 1,
+        .description = COMPOUND_STRING(
+            "An item that lets\n"
+            "you change a\n"
+            "Pokémon status."),
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_FIELD,
+        .fieldUseFunc = ItemUseOutOfBattle_HexOrb,
+        .iconPic = gItemIcon_AdrenalineOrb,
+        .iconPalette = gItemIconPalette_AdrenalineOrb,
+    },
+ 
+    [ITEM_CANDY_BOX] =
+    {
+        .name = ITEM_NAME("Candy Box"),
+        .price = 0,
+        .importance = 1,
+        .description = COMPOUND_STRING(
+            "An item that lets\n"
+            "you change a\n"
+            "Pokémon level."),
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_FIELD,
+        .fieldUseFunc = ItemUseOutOfBattle_CandyBox,
+        .iconPic = gItemIcon_BerryPouch,
+        .iconPalette = gItemIconPalette_BerryPouch,
+    },
+ 
+    [ITEM_NATURE_CHANGER] =
+    {
+        .name = ITEM_NAME("Nature Changer"),
+        .price = 0,
+        .importance = 1,
+        .description = COMPOUND_STRING(
+            "An item that lets\n"
+            "you change a\n"
+            "Pokémon nature."),
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_FIELD,
+        .fieldUseFunc = ItemUseOutOfBattle_NatureChanger,
+        .iconPic = gItemIcon_BerryPouch,
+        .iconPalette = gItemIconPalette_BerryPouch,
+    },
+ 
+    [ITEM_GENDER_CHANGER] =
+    {
+        .name = ITEM_NAME("Gender Changer"),
+        .price = 0,
+        .importance = 1,
+        .description = COMPOUND_STRING(
+            "An item that lets\n"
+            "you change a\n"
+            "Gender nature."),
+        .pocket = POCKET_KEY_ITEMS,
+        .sortType = ITEM_TYPE_FIELD_USE,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_GenderChanger,
+        .iconPic = gItemIcon_BerryPouch,
+        .iconPalette = gItemIconPalette_BerryPouch,
     },
 };
 

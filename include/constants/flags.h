@@ -26,7 +26,7 @@
 #define FLAG_TEMP_D      (TEMP_FLAGS_START + 0xD)  // Unused Flag
 #define FLAG_TEMP_E      (TEMP_FLAGS_START + 0xE)  // When set, follower Pokémon won't be spawned
 #define FLAG_TEMP_F      (TEMP_FLAGS_START + 0xF)  // Unused Flag
-#define FLAG_TEMP_10     (TEMP_FLAGS_START + 0x10) // Unused Flag
+#define FLAG_TEMP_10     (TEMP_FLAGS_START + 0x10) // FLAG_TEMP_CAN_CATCH_POKEMON
 #define FLAG_TEMP_11     (TEMP_FLAGS_START + 0x11)
 #define FLAG_TEMP_12     (TEMP_FLAGS_START + 0x12)
 #define FLAG_TEMP_13     (TEMP_FLAGS_START + 0x13)
@@ -44,6 +44,8 @@
 #define FLAG_TEMP_1F     (TEMP_FLAGS_START + 0x1F)
 #define TEMP_FLAGS_END   FLAG_TEMP_1F
 #define NUM_TEMP_FLAGS   (TEMP_FLAGS_END - TEMP_FLAGS_START + 1)
+
+#define FLAG_TEMP_CAN_CATCH_POKEMON FLAG_TEMP_10
 
 #if IS_FRLG
 
@@ -106,8 +108,8 @@
 #define FLAG_RESCUED_BIRCH                       0x52
 #define FLAG_LEGENDARIES_IN_SOOTOPOLIS           0x53
 
-#define FLAG_UNUSED_0x054                    0x54  // Unused Flag
-#define FLAG_UNUSED_0x055                    0x55  // Unused Flag
+#define FLAG_FORCE_TIME_OF_DAY                   0x54
+#define FLAG_SYS_NUZLOCKE_MODE                   0x55
 
 #define FLAG_HIDE_CONTEST_POKE_BALL          0x56  // Always set after new game, object it hides is added directly
 #define FLAG_MET_RIVAL_MOM                   0x57
@@ -127,9 +129,7 @@
 #define FLAG_MOSSDEEP_GYM_SWITCH_2           0x65 //
 #define FLAG_MOSSDEEP_GYM_SWITCH_3           0x66 //
 #define FLAG_MOSSDEEP_GYM_SWITCH_4           0x67 //
-
-#define FLAG_UNUSED_0x068                    0x68  // Unused Flag
-
+#define FLAG_MOVE_RELEARNER_FROM_PARTY_MENU  0x68 // System Flag
 #define FLAG_OCEANIC_MUSEUM_MET_REPORTER     0x69
 #define FLAG_RECEIVED_HM_STRENGTH            0x6A
 #define FLAG_RECEIVED_HM_ROCK_SMASH          0x6B
@@ -263,7 +263,7 @@
 #define FLAG_RECEIVED_TM_ROAR                0xE7
 #define FLAG_RECEIVED_TM_GIGA_DRAIN          0xE8
 
-#define FLAG_UNUSED_0x0E9                    0xE9 // Unused Flag
+#define FLAG_SYS_PERFECT_IVS_MODE            0xE9
 
 #define FLAG_RECEIVED_TM_REST                0xEA
 #define FLAG_RECEIVED_TM_ATTRACT             0xEB
@@ -468,7 +468,7 @@
 #define FLAG_REGISTERED_DRAKE                (TRAINER_REGISTERED_FLAGS_START + REMATCH_DRAKE)
 #define FLAG_REGISTERED_WALLACE              (TRAINER_REGISTERED_FLAGS_START + REMATCH_WALLACE)
 
-#define FLAG_UNUSED_0x1AA                    0x1AA // Unused Flag
+#define FLAG_SYS_NO_EVS_MODE                 0x1AA
 #define FLAG_UNUSED_0x1AB                    0x1AB // Unused Flag
 
 #define FLAG_DEFEATED_DEOXYS                 0x1AC

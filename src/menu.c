@@ -1881,6 +1881,8 @@ void BlitMenuInfoIcon(u8 windowId, u8 iconId, u16 x, u16 y)
     BlitBitmapRectToWindow(windowId, &gMenuInfoElements_Gfx[sMenuInfoIcons[iconId].offset * 32], 0, 0, 128, 128, x, y, sMenuInfoIcons[iconId].width, sMenuInfoIcons[iconId].height);
 }
 
+static const u8 sText_SavingNuzlocke[] = _("NUZLOCKE MODE ON");
+
 void BufferSaveMenuText(u8 textId, u8 *dest, u8 color)
 {
     s32 curFlag;
@@ -1897,6 +1899,9 @@ void BufferSaveMenuText(u8 textId, u8 *dest, u8 color)
 
     switch (textId)
     {
+    case SAVE_MENU_NUZLOCKE:
+        StringCopy(string, sText_SavingNuzlocke);
+        break;
     case SAVE_MENU_NAME:
         StringCopy(string, gSaveBlock2Ptr->playerName);
         break;

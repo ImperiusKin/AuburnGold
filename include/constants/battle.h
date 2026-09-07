@@ -165,6 +165,11 @@ enum BattleSide
 #define B_OUTCOME_MON_TELEPORTED       10
 #define B_OUTCOME_LINK_BATTLE_RAN      (1 << 7) // 128
 
+//Hex Orb Stuff
+#define SET_STATUS_POSSIBLE             0
+#define SET_STATUS_NOT_POSSIBLE_ABILITY 1
+#define SET_STATUS_NOT_POSSIBLE_TYPE    2
+
 // Non-volatile status conditions
 // These remain outside of battle and after switching out.
 // If a new STATUS1 is added here, it should also be added to
@@ -800,6 +805,8 @@ enum FaintedActions
     F(STARTING_STATUS_SWAMP_PLAYER_TEMPORARY,         swampPlayerTemporary,       (u32, 1)) /* Swamp Player Temporary (4 turns) */         \
     F(STARTING_STATUS_SWAMP_OPPONENT,                 swampOpponent,              (u32, 1)) /* Swamp Opponent (Permanent) */               \
     F(STARTING_STATUS_SWAMP_OPPONENT_TEMPORARY,       swampOpponentTemporary,     (u32, 1)) /* Swamp Opponent Temporary (4 turns) */       \
+    F(STARTING_STATUS_GRAVITY,                        gravity,                    (u32, 1)) /* Gravity(Permanent) */                       \
+    F(STARTING_STATUS_GRAVITY_TEMPORARY,              gravityTemporary,           (u32, 1)) /* Gravity Temporary (5 turns) */              \
     /* Hazards */                                                                                                                          \
     F(STARTING_STATUS_SPIKES_PLAYER_L1,               spikesPlayerL1,             (u32, 1)) /* Spikes Player Layer 1 */                    \
     F(STARTING_STATUS_SPIKES_PLAYER_L2,               spikesPlayerL2,             (u32, 1)) /* Spikes Player Layer 2 */                    \

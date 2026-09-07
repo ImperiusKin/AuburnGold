@@ -505,7 +505,7 @@ static enum CancelerResult CancelerChoiceLock(struct BattleCalcValues *cv)
 
     if (gChosenMove != MOVE_STRUGGLE
      && (*choicedMoveAtk == MOVE_NONE || *choicedMoveAtk == MOVE_UNAVAILABLE)
-     && (IsHoldEffectChoice(holdEffect) || cv->abilities[cv->battlerAtk] == ABILITY_GORILLA_TACTICS))
+     && (IsHoldEffectChoice(holdEffect) || cv->abilities[cv->battlerAtk] == ABILITY_GORILLA_TACTICS || cv->abilities[cv->battlerAtk] == ABILITY_SAGE_POWER))
         *choicedMoveAtk = gChosenMove;
 
     u32 moveIndex;
@@ -2280,7 +2280,7 @@ static enum CancelerResult CancelerAccuracyCheck(struct BattleCalcValues *cv)
 
 static bool32 IsMoveParentalBondAffected(struct BattleCalcValues *cv)
 {
-    if (cv->abilities[cv->battlerAtk] != ABILITY_PARENTAL_BOND
+    if (!((cv->abilities[cv->battlerAtk] == ABILITY_PARENTAL_BOND) || (cv->abilities[cv->battlerAtk] == ABILITY_FLURRY && (IsKickingMove(cv->move) || IsPunchingMove(cv->move))))
      || gBattleStruct->numSpreadTargets > 1
      || IsMoveParentalBondBanned(cv->move)
      || GetMoveCategory(cv->move) == DAMAGE_CATEGORY_STATUS
@@ -3387,6 +3387,7 @@ static enum MoveEndResult MoveEndMoveBlockRecoil(struct BattleCalcValues *cv)
         if (IsBattlerTurnDamaged(cv->battlerDef, INCLUDING_SUBSTITUTES) && IsBattlerAlive(cv->battlerAtk))
         {
             if (IsAbilityAndRecord(cv->battlerAtk, cv->abilities[cv->battlerAtk], ABILITY_ROCK_HEAD)
+             || IsAbilityAndRecord(cv->battlerAtk, cv->abilities[cv->battlerAtk], ABILITY_BAD_COMPANY)
              || IsAbilityAndRecord(cv->battlerAtk, cv->abilities[cv->battlerAtk], ABILITY_MAGIC_GUARD))
                 break;
 
@@ -3512,10 +3513,23 @@ static enum MoveEndResult MoveEndMoveBlock(struct BattleCalcValues *cv)
             if (cv->abilities[battlerDef] == ABILITY_STICKY_HOLD)
             {
                 BattleScriptCall(BattleScript_StickyHoldActivatesRet);
-                gBattlerAbility = battlerDef;
-                gLastUsedAbility = gBattleMons[battlerDef].ability;
-                RecordAbilityBattle(battlerDef, gLastUsedAbility);
-                return MOVEEND_RESULT_RUN_SCRIPT;
+                result = MOVEEND_RESULT_RUN_SCRIPT;
+                break;
+            }
+
+            gLastUsedItem = gBattleMons[cv->battlerDef].item;
+            gBattleMons[cv->battlerDef].item = ITEM_NONE;
+            if (gBattleMons[cv->battlerDef].ability != ABILITY_GORILLA_TACTICS && gBattleMons[cv->battlerDef].ability != ABILITY_SAGE_POWER)
+                gBattleStruct->choicedMove[cv->battlerDef] = MOVE_NONE;
+            CheckSetUnburden(cv->battlerDef);
+
+            // In Gen 5+, Knock Off removes the target's item rather than rendering it unusable
+            if (B_KNOCK_OFF_REMOVAL >= GEN_5)
+            {
+                BtlController_EmitSetMonData(cv->battlerDef, B_COMM_TO_CONTROLLER, REQUEST_HELDITEM_BATTLE, 0, sizeof(gBattleMons[cv->battlerDef].item), &gBattleMons[cv->battlerDef].item);
+                MarkBattlerForControllerExec(cv->battlerDef);
+                // Mark item as stolen so it will be restored after battle
+                gBattleStruct->itemLost[side][gBattlerPartyIndexes[cv->battlerDef]].stolen = TRUE;
             }
             else
             {

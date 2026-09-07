@@ -106,6 +106,7 @@ enum FlagsVarsDebugMenu
     DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_TRAINER_SEE,
     DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_CATCHING,
     DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_BAG_USE,
+    DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_NUZLOCKE,
 };
 
 enum DebugBattleType
@@ -329,6 +330,7 @@ static void DebugAction_FlagsVars_CollisionOnOff(u8 taskId);
 static void DebugAction_FlagsVars_EncounterOnOff(u8 taskId);
 static void DebugAction_FlagsVars_TrainerSeeOnOff(u8 taskId);
 static void DebugAction_FlagsVars_BagUseOnOff(u8 taskId);
+static void DebugAction_FlagsVars_NuzlockeOnOff(u8 taskId);
 static void DebugAction_FlagsVars_CatchingOnOff(u8 taskId);
 static void DebugAction_FlagsVars_RunningShoes(u8 taskId);
 
@@ -726,6 +728,7 @@ static const struct DebugMenuOption sDebugMenu_Actions_Flags[] =
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_TRAINER_SEE]   = { COMPOUND_STRING("Toggle {STR_VAR_1}Trainer See OFF"), DebugAction_ToggleFlag, DebugAction_FlagsVars_TrainerSeeOnOff },
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_CATCHING]      = { COMPOUND_STRING("Toggle {STR_VAR_1}Catching OFF"),    DebugAction_ToggleFlag, DebugAction_FlagsVars_CatchingOnOff },
     [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_BAG_USE]       = { COMPOUND_STRING("Toggle {STR_VAR_1}Bag Use OFF"),     DebugAction_ToggleFlag, DebugAction_FlagsVars_BagUseOnOff },
+    [DEBUG_FLAGVAR_MENU_ITEM_TOGGLE_NUZLOCKE]      = { COMPOUND_STRING("Toggle {STR_VAR_1}Nuzlocke OFF"),    DebugAction_ToggleFlag, DebugAction_FlagsVars_NuzlockeOnOff },
     { NULL }
 };
 
@@ -2595,6 +2598,15 @@ static void DebugAction_FlagsVars_BagUseOnOff(u8 taskId)
     PlaySE(SE_SELECT);
     VarSet(B_VAR_NO_BAG_USE, (VarGet(B_VAR_NO_BAG_USE) + 1) % 3);
 #endif
+}
+
+static void DebugAction_FlagsVars_NuzlockeOnOff(u8 taskId)
+{
+    if (FlagGet(FLAG_SYS_NUZLOCKE_MODE))
+        PlaySE(SE_PC_OFF);
+    else
+        PlaySE(SE_PC_LOGIN);
+    FlagToggle(FLAG_SYS_NUZLOCKE_MODE);
 }
 
 static void DebugAction_FlagsVars_CatchingOnOff(u8 taskId)

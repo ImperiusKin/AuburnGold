@@ -159,7 +159,7 @@ static bool32 HandleEndTurnWeatherDamage(enum BattlerId battler)
         break;
     case BATTLE_WEATHER_HAIL:
     case BATTLE_WEATHER_SNOW:
-        if (ability == ABILITY_ICE_BODY)
+        if (ability == ABILITY_ICE_BODY_OLD)
         {
             if (AbilityBattleEffects(ABILITYEFFECT_ENDTURN, battler, ability, MOVE_NONE, TRUE))
                 effect = TRUE;
@@ -523,7 +523,10 @@ static bool32 HandleEndTurnPoison(enum BattlerId battler)
 
     gBattleStruct->eventState.endTurnBattler++;
 
-    if (IsBattlerPresent(battler) && (gBattleMons[battler].status1 & STATUS1_POISON || isToxicPoison))
+    if ((gBattleMons[battler].status1 & STATUS1_POISON || gBattleMons[battler].status1 & STATUS1_TOXIC_POISON)
+     && IsBattlerPresent(battler)
+     && !IsAbilityAndRecord(battler, ability, ABILITY_MAGIC_GUARD)
+     && !IsAbilityAndRecord(battler, ability, ABILITY_TOXIC_BOOST))
     {
         if (IsAbilityAndRecord(battler, ability, ABILITY_MAGIC_GUARD))
         {
@@ -572,7 +575,8 @@ static bool32 HandleEndTurnBurn(enum BattlerId battler)
 
     if (gBattleMons[battler].status1 & STATUS1_BURN
      && IsBattlerPresent(battler)
-     && !IsAbilityAndRecord(battler, ability, ABILITY_MAGIC_GUARD))
+     && !IsAbilityAndRecord(battler, ability, ABILITY_MAGIC_GUARD)
+     && !IsAbilityAndRecord(battler, ability, ABILITY_FLARE_BOOST))
     {
         s32 burnDamage = GetNonDynamaxMaxHP(battler) / ((GetConfig(B_BURN_DAMAGE) >= GEN_7 || GetConfig(B_BURN_DAMAGE) == GEN_1) ? 16 : 8);
         if (ability == ABILITY_HEATPROOF)
@@ -700,9 +704,9 @@ static bool32 HandleEndTurnSaltCure(enum BattlerId battler)
     {
         s32 saltCureDamage = 0;
         if (IS_BATTLER_ANY_TYPE(battler, TYPE_STEEL, TYPE_WATER))
-            saltCureDamage = GetNonDynamaxMaxHP(battler) / 4;
-        else
             saltCureDamage = GetNonDynamaxMaxHP(battler) / 8;
+        else
+            saltCureDamage = GetNonDynamaxMaxHP(battler) / 16;
         SetPassiveDamageAmount(battler, saltCureDamage);
         PREPARE_MOVE_BUFFER(gBattleTextBuff1, MOVE_SALT_CURE);
         BattleScriptCall(BattleScript_SaltCureExtraDamage);
@@ -955,7 +959,9 @@ static bool32 HandleEndTurnYawn(enum BattlerId battler)
             }
             else
             {
-                if (B_SLEEP_TURNS >= GEN_5)
+                if (B_SLEEP_TURNS == GEN_LATEST)
+                    gBattleMons[battler].status1 |= (B_FORCED_SLEEP_TURNS);
+                else if (B_SLEEP_TURNS >= GEN_5)
                     gBattleMons[battler].status1 |= (RandomUniform(RNG_SLEEP_TURNS, 2, 4));
                 else if (B_SLEEP_TURNS >= GEN_3)
                     gBattleMons[battler].status1 |= (RandomUniform(RNG_SLEEP_TURNS, 2, 5));
@@ -1338,6 +1344,7 @@ static bool32 HandleEndTurnThirdEventBlock(enum BattlerId battler)
         case ABILITY_MOODY:
         case ABILITY_PICKUP:
         case ABILITY_SPEED_BOOST:
+        case ABILITY_SELF_SUFFICIENT:
             if (AbilityBattleEffects(ABILITYEFFECT_ENDTURN, battler, ability, MOVE_NONE, TRUE))
                 effect = TRUE;
             break;

@@ -351,6 +351,8 @@ void BattleSetup_StartBattlePikeWildBattle(void)
 
 static void DoStandardWildBattle(bool32 isDouble)
 {
+    u32 caughtLocation = GetCurrentRegionMapSectionId();
+    
     LockPlayerFieldControls();
     FreezeObjectEvents();
     StopPlayerAvatar();
@@ -367,6 +369,13 @@ static void DoStandardWildBattle(bool32 isDouble)
         VarSet(VAR_TEMP_E, 0);
         gBattleTypeFlags |= BATTLE_TYPE_PYRAMID;
     }
+
+    // If its the first encounter and you have nuzlocke rules enabled set the correct flags
+    if (AreNuzlockeRulesEnabled() && !GetNuzlockeCaughtFlag(caughtLocation)) {
+        SetNuzlockeCaughtFlag(caughtLocation);
+        FlagSet(FLAG_TEMP_CAN_CATCH_POKEMON);
+    }
+
     CreateBattleStartTask(GetWildBattleTransition(), 0);
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
     IncrementGameStat(GAME_STAT_WILD_BATTLES);

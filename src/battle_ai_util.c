@@ -802,7 +802,7 @@ static inline void CalcDynamicMoveDamage(struct DamageContext *ctx, u16 *medianD
             random *= RandomUniform(RNG_AI_DMG_ROLL_RANDOM, 2, 5);
         }
     }
-    else if (ctx->abilities[ctx->battlerAtk] == ABILITY_PARENTAL_BOND
+    else if ((ctx->abilities[ctx->battlerAtk] == ABILITY_PARENTAL_BOND || (ctx->abilities[ctx->battlerAtk] == ABILITY_FLURRY && (IsKickingMove(ctx->move) || IsPunchingMove(ctx->move))))
           && strikeCount == 0
           && !AI_IsDoubleSpreadMove(ctx->battlerAtk, ctx->move))
     {
@@ -1038,7 +1038,7 @@ struct SimulatedDamage AI_CalcDamage(enum Move move, enum BattlerId battlerAtk, 
 bool32 AI_IsDamagedByRecoil(enum BattlerId battler)
 {
     enum Ability ability = gAiLogicData->abilities[battler];
-    if (ability == ABILITY_MAGIC_GUARD || ability == ABILITY_ROCK_HEAD)
+    if (ability == ABILITY_MAGIC_GUARD || ability == ABILITY_ROCK_HEAD || ability == ABILITY_BAD_COMPANY)
         return FALSE;
     return TRUE;
 }
@@ -1463,7 +1463,7 @@ s32 AI_WhoStrikesFirst(enum BattlerId battlerAI, enum BattlerId battler, enum Mo
 
 bool32 CanEndureHit(enum BattlerId battler, enum BattlerId battlerTarget, enum Move move)
 {
-    if (!AI_BattlerAtMaxHp(battlerTarget) || IsMultiHitMove(move) || gAiLogicData->abilities[battler]  == ABILITY_PARENTAL_BOND)
+    if (!AI_BattlerAtMaxHp(battlerTarget) || IsMultiHitMove(move) || gAiLogicData->abilities[battler] == ABILITY_PARENTAL_BOND || gAiLogicData->abilities[battler] == ABILITY_FLURRY)
         return FALSE;
     if (GetMoveStrikeCount(move) > 1 && !(AI_GetBattlerMoveTargetType(battler, move) == TARGET_SMART && !HasTwoOpponents(battler)))
         return FALSE;
@@ -3325,7 +3325,7 @@ static bool32 DoesBattlerTakeHailDamage(enum BattlerId battlerId, enum Ability a
 
     if (!IS_BATTLER_OF_TYPE(battlerId, TYPE_ICE)
       && ability != ABILITY_SNOW_CLOAK
-      && ability != ABILITY_ICE_BODY
+      && ability != ABILITY_ICE_BODY_OLD
       && ability != ABILITY_MAGIC_GUARD
       && ability != ABILITY_OVERCOAT)
         return TRUE;
@@ -3353,7 +3353,7 @@ static u32 GetWeatherDamage(enum BattlerId battlerId)
                 damage = 1;
         }
     }
-    if ((weather & B_WEATHER_HAIL) && ability != ABILITY_ICE_BODY)
+    if ((weather & B_WEATHER_HAIL) && ability != ABILITY_ICE_BODY_OLD)
     {
         if (DoesBattlerTakeHailDamage(battlerId, ability)
           && gBattleMons[battlerId].volatiles.semiInvulnerable != STATE_UNDERGROUND
@@ -3782,7 +3782,7 @@ bool32 IsFlinchGuaranteed(enum BattlerId battlerAtk, enum BattlerId battlerDef, 
 bool32 HasChoiceEffect(enum BattlerId battler)
 {
     enum Ability ability = gAiLogicData->abilities[battler];
-    if (ability == ABILITY_GORILLA_TACTICS)
+    if (ability == ABILITY_GORILLA_TACTICS || ability == ABILITY_SAGE_POWER)
         return TRUE;
 
     if (ability == ABILITY_KLUTZ)
@@ -6033,6 +6033,7 @@ enum AIScore BattlerBenefitsFromAbilityScore(enum BattlerId battler, enum Abilit
         return GOOD_EFFECT;
     // Conditional ability logic goes here.
     case ABILITY_COMPOUND_EYES:
+    case ABILITY_ILLUMINATE:
         if (HasMoveWithLowAccuracy(battler, GetBattlerLeftFoe(battler), 90, FALSE)
          || HasMoveWithLowAccuracy(battler, GetBattlerRightFoe(battler), 90, FALSE))
             return GOOD_EFFECT;
@@ -6056,6 +6057,10 @@ enum AIScore BattlerBenefitsFromAbilityScore(enum BattlerId battler, enum Abilit
     case ABILITY_HUGE_POWER:
     case ABILITY_PURE_POWER:
         if (HasMoveWithCategory(battler, DAMAGE_CATEGORY_PHYSICAL))
+            return BEST_EFFECT;
+        break;
+    case ABILITY_PROWESS:
+        if (HasMoveWithCategory(battler, DAMAGE_CATEGORY_SPECIAL))
             return BEST_EFFECT;
         break;
     // Also used to Worry Seed WORRY_SEED
