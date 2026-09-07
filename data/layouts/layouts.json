@@ -9367,7 +9367,7 @@
     {
       "id": "LAYOUT_SOUTHERN_FIELD",
       "name": "SouthernField_Layout",
-      "width": 41,
+      "width": 47,
       "height": 60,
       "primary_tileset": "gTileset_Johto_Primary_2",
       "secondary_tileset": "gTileset_Southern_Field",
@@ -9378,7 +9378,7 @@
       "id": "LAYOUT_AMBERITE_VALLEY",
       "name": "Amberite_Valley_Layout",
       "width": 50,
-      "height": 50,
+      "height": 52,
       "primary_tileset": "gTileset_Johto_Primary_2",
       "secondary_tileset": "gTileset_Amberite_Valley",
       "border_filepath": "data/layouts/Amberite_Valley/border.bin",
@@ -9388,7 +9388,7 @@
       "id": "LAYOUT_HALLU_FOREST",
       "name": "Hallu_Forest_Layout",
       "width": 45,
-      "height": 65,
+      "height": 67,
       "primary_tileset": "gTileset_HalluForest_Primary",
       "secondary_tileset": "gTileset_HalluForest_Secondary",
       "border_filepath": "data/layouts/Hallu_Forest/border.bin",
@@ -9633,6 +9633,26 @@
       "secondary_tileset": "gTileset_Connections_Sec",
       "border_filepath": "data/layouts/Connection_Amberite_HalluForest/border.bin",
       "blockdata_filepath": "data/layouts/Connection_Amberite_HalluForest/map.bin"
+    },
+    {
+      "id": "LAYOUT_PLAYER_HOUSE",
+      "name": "Player_House_Layout",
+      "width": 12,
+      "height": 12,
+      "primary_tileset": "gTileset_PlayerHouse",
+      "secondary_tileset": "gTileset_PlayerHouseSec",
+      "border_filepath": "data/layouts/Player_House/border.bin",
+      "blockdata_filepath": "data/layouts/Player_House/map.bin"
+    },
+    {
+      "id": "LAYOUT_PLAYER_HOUSE_F2",
+      "name": "Player_House_F2_Layout",
+      "width": 12,
+      "height": 12,
+      "primary_tileset": "gTileset_PlayerHouse",
+      "secondary_tileset": "gTileset_PlayerHouseSec",
+      "border_filepath": "data/layouts/Player_House_F2/border.bin",
+      "blockdata_filepath": "data/layouts/Player_House_F2/map.bin"
     }
   ]
 }
