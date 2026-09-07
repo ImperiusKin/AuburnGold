@@ -1,3 +1,102 @@
 mapscripts NewBarkTown_MapScripts {
 	
 }
+
+script NewBarkTown_EventScript_Youngerster1{
+    lock
+    faceplayer
+    msgbox(format("I heard the Cinnabar Gym Leader picked an actual active volcano. An active one. I don't know if I signed up for this..."))
+    release
+}
+
+script NewBarkTown_EventScript_Youngerster2{
+    lock
+    faceplayer
+    msgbox(format("Gym Leaders with 'favorable environments'... that sounds like a nice way of saying 'unfair advantage,' if you ask me."))
+    release
+}
+
+script NewBarkTown_EventScript_Youngerster3{
+    lock
+    faceplayer
+    msgbox(format("This is going to be the adventure of a lifetime. I can't wait!"))
+    release
+}
+
+script NewBarkTown_EventScript_Youngerster4{
+    lock
+    faceplayer
+    msgbox(format("Still, this is going to take most of us years, not months. Hope everyone's ready for the long haul."))
+    release
+}
+
+const FLAG_NEWBARK_RIVAL_LEAVE = FLAG_TEMP_1
+script NewBarkTown_EventScript_Rival{
+    lock
+    faceplayer
+    msgbox(format("So you're entering too, huh?. I already got my trainer supply kit and my starter so I will begin my journey now!"))
+    closemessage
+    applymovement(LOCALID_PLAYER, moves(
+        walk_left
+        face_right
+    ))
+    waitmovement(0)
+    applymovement(LOCALID_NEWBARK_RIVAL, moves(
+        walk_down * 10
+    ))
+    waitmovement(0)
+    setflag(FLAG_NEWBARK_RIVAL_LEAVE)
+    msgbox(format("Next time I see you make sure to be ready since I'm going to challenge you to a battle!"))
+    closemessage
+
+	playse(SE_PIN)
+    applymovement(LOCALID_NEWBARK_ELM, Common_Movement_ExclamationMark)
+    waitmovement(0)
+    
+    applymovement(LOCALID_NEWBARK_ELM, moves(
+        walk_down * 2
+        face_left
+    ))
+    waitmovement(0)
+
+    msgbox(format("{PLAYER} you're here too!, I was just explaining the others on how the tournament will work, it has some changes from past tournaments so make sure to pay proper attention:"))
+    msgbox(format("-Eligibility for Champions league requires completion of Kanto and Rematches of visiting gym leaders now in Kanto."))
+    msgbox(format("-Explains each gym leader has been given favorable environments to add to the challenge."))
+    msgbox(format("That should be all, pretty simple right?, for now take this."))
+    giveitem(ITEM_POKE_BALL)
+    goto(NewBarkTown_EventScript_ChooseStarter)
+    release
+}
+
+script NewBarkTown_EventScript_ChooseStarter{
+    msgbox(format("Please choose your partner Pokémon, make sure to choose carefully."))
+    //dynmultichoice(0, 0, TRUE, 6, 0, DYN_MULTICHOICE_CB_NONE, "Bulbasaur", "Charmander", "Squirtle", "Chikorita", "Cyndaquil", "Totodile", "Treecko" ,"Torchic", "Mudkip", "Turtwig", "Chimchar", "Piplup", "Snivy", "Tepig", "Oshawott", "Chespin", "Fennekin", "Froakie", "Rowlet", "Litten", "Popplio", "Grookey", "Scorbunny", "Sobble", "Sprigatito", "Fuecoco", "Quaxly", "Browt", "Pombon", "Gecqua", "Pikachu", "Eevee", "Riolu")
+    dynmultichoice(0, 0, TRUE, 6, 0, DYN_MULTICHOICE_CB_NONE, "Bulbasaur", "Charmander", "Squirtle", "Chikorita", "Cyndaquil", "Totodile", "Treecko" ,"Torchic", "Mudkip", "Turtwig", "Chimchar", "Piplup", "Snivy", "Tepig", "Oshawott", "Chespin", "Fennekin", "Froakie", "Rowlet", "Litten", "Popplio", "Grookey", "Scorbunny", "Sobble", "Sprigatito", "Fuecoco", "Quaxly", "Pikachu", "Eevee", "Riolu")
+    //Give Starter
+	showmonpic(SPECIES_NONE, 10, 3)
+	msgbox(format("Do you want the {STR_VAR_2} Pokémon {STR_VAR_1} as your first partner?"), MSGBOX_YESNO)
+	hidemonpic
+	if (var(VAR_RESULT) == NO){
+		goto(NewBarkTown_EventScript_ChooseStarter)
+	}
+	givemon(SPECIES_NONE, 5, ITEM_ORAN_BERRY)
+	playfanfare(MUS_OBTAIN_ITEM)
+	waitfanfare
+	msgbox(format("{PLAYER} received a {STR_VAR_1}!"), MSGBOX_DEFAULT)
+    setflag(FLAG_SYS_POKEMON_GET)
+    goto(NewBarkTown_EventScript_ElmPokedex)
+    release
+}
+
+script NewBarkTown_EventScript_ElmPokedex{
+    msgbox(format("And finally here is a Pokédex, it can capture all the data of Pokémon you see or catch!"))
+    setflag(FLAG_SYS_POKEDEX_GET)
+	playfanfare(MUS_OBTAIN_ITEM)
+	waitfanfare
+	msgbox(format("{PLAYER} received the Pokédex!"), MSGBOX_DEFAULT)
+    msgbox(format("You can start your journey by going to Route 29 to the left of Newbark, there should be some trainers ready for a challenge there so prepare yourself!."))
+    msgbox(format("Good luck with your journey everyone, I will be waiting for the news for when you get your first badges!"))
+    setflag(FLAG_ADVENTURE_STARTED)
+    warp(MAP_NEW_BARK_TOWN, 22, 15)
+    release
+}
