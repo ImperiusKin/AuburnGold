@@ -1996,11 +1996,58 @@ bool8 ScrCmd_drawboxtext(struct ScriptContext *ctx)
     return FALSE;
 }
 
+
+
 bool8 ScrCmd_showmonpic(struct ScriptContext *ctx)
 {
     enum Species species = VarGet(ScriptReadHalfword(ctx));
     u8 x = ScriptReadByte(ctx);
     u8 y = ScriptReadByte(ctx);
+
+    if(species == SPECIES_NONE){
+        static const u16 sStarterList[] = {
+            SPECIES_BULBASAUR,
+            SPECIES_CHARMANDER,
+            SPECIES_SQUIRTLE,
+            SPECIES_CHIKORITA,
+            SPECIES_CYNDAQUIL,
+            SPECIES_TOTODILE,
+            SPECIES_TREECKO,
+            SPECIES_TORCHIC,
+            SPECIES_MUDKIP,
+            SPECIES_TURTWIG,
+            SPECIES_CHIMCHAR,
+            SPECIES_PIPLUP,
+            SPECIES_SNIVY,
+            SPECIES_TEPIG,
+            SPECIES_OSHAWOTT,
+            SPECIES_CHESPIN,
+            SPECIES_FENNEKIN,
+            SPECIES_FROAKIE,
+            SPECIES_ROWLET,
+            SPECIES_LITTEN,
+            SPECIES_POPPLIO,
+            SPECIES_GROOKEY,
+            SPECIES_SCORBUNNY,
+            SPECIES_SOBBLE,
+            SPECIES_SPRIGATITO,
+            SPECIES_FUECOCO,
+            SPECIES_QUAXLY,
+            //SPECIES_BROWT,
+            //SPECIES_POMBON,
+            //SPECIES_GECQUA,
+            SPECIES_PIKACHU,
+            SPECIES_EEVEE,
+            SPECIES_RIOLU,
+        };
+
+        u16 starterSpecies = sStarterList[VarGet(VAR_RESULT)];
+        u16 starterNum = SpeciesToNationalPokedexNum(starterSpecies);
+        VarSet(VAR_TEMP_1, starterSpecies);
+        StringCopy(gStringVar1, GetSpeciesName(starterSpecies));
+        StringCopy(gStringVar2, GetSpeciesCategory(starterSpecies));
+        species = starterSpecies;
+    }
 
     Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
 

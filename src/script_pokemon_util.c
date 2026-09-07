@@ -542,6 +542,9 @@ u32 ScriptGiveMon(enum Species species, u8 level, enum Item item)
     struct Pokemon mon;
     u8 heldItem[2];
 
+    if(species == SPECIES_NONE)
+        species = VarGet(VAR_TEMP_1);
+
     if (AreNuzlockeRulesEnabled() && !GetNuzlockeCaughtFlag(caughtLocation)) {
         SetNuzlockeCaughtFlag(caughtLocation);
         FlagSet(FLAG_TEMP_CAN_CATCH_POKEMON);
@@ -607,6 +610,9 @@ void ScrCmd_createmon(struct ScriptContext *ctx)
             nonFixedIvCount++;
         }
     }
+
+    if(species == SPECIES_NONE)
+        species = VarGet(VAR_TEMP_1);
 
     // Perfect IV calculation
     if (gSpeciesInfo[species].perfectIVCount != 0)
