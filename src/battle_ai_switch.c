@@ -278,7 +278,7 @@ bool32 IsSwitchinTSpikesAffected(enum BattlerId battler)
         return FALSE;
     if (IS_BATTLER_ANY_TYPE(battler, TYPE_POISON, TYPE_STEEL))
         return FALSE;
-    if (ability == ABILITY_IMMUNITY || AI_IsAbilityOnSide(battler, ABILITY_PASTEL_VEIL))
+    if (ability == ABILITY_IMMUNITY || ability == ABILITY_MOUNTAINEER || ability == ABILITY_SHIELD_DUST || AI_IsAbilityOnSide(battler, ABILITY_PASTEL_VEIL))
         return FALSE;
     if ((heldItemEffect == HOLD_EFFECT_HEAVY_DUTY_BOOTS || heldItemEffect == HOLD_EFFECT_CURE_PSN || heldItemEffect == HOLD_EFFECT_CURE_STATUS) && !ignoreItem)
         return FALSE;
@@ -308,7 +308,8 @@ static bool32 AI_DoesChoiceEffectBlockMove(enum BattlerId battler, enum Move mov
     // Choice locked into something else
     if (gAiLogicData->lastUsedMove[battler] != MOVE_NONE && gAiLogicData->lastUsedMove[battler] != move
     && (IsHoldEffectChoice(GetBattlerHoldEffect(battler) && IsBattlerItemEnabled(battler))
-        || gAiLogicData->abilities[battler] == ABILITY_GORILLA_TACTICS))
+        || gAiLogicData->abilities[battler] == ABILITY_GORILLA_TACTICS 
+        || gAiLogicData->abilities[battler] == ABILITY_SAGE_POWER))
         return TRUE;
     return FALSE;
 }
@@ -610,6 +611,10 @@ static bool32 FindMonThatAbsorbsOpponentsMove(struct SwitchAiContext *switchCont
     {
         absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_EARTH_EATER;
         absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_LEVITATE;
+    }
+    if (incomingType == TYPE_ICE)
+    {
+        absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_ICE_EATER;
     }
     if (IsSoundMove(switchContext->incomingMove))
     {
@@ -1624,7 +1629,7 @@ static u32 GetSwitchinHazardsDamage(enum BattlerId battler)
     enum BattleSide side = GetBattlerSide(battler);
 
     // Check ways mon might avoid all hazards
-    if (ability != ABILITY_MAGIC_GUARD || (heldItemEffect == HOLD_EFFECT_HEAVY_DUTY_BOOTS &&
+    if ((ability != ABILITY_MAGIC_GUARD && ability != ABILITY_MOUNTAINEER && ability != ABILITY_SHIELD_DUST) || (heldItemEffect == HOLD_EFFECT_HEAVY_DUTY_BOOTS &&
         !((gFieldStatuses & STATUS_FIELD_MAGIC_ROOM) || ability == ABILITY_KLUTZ)))
     {
         // Stealth Rock
@@ -1684,7 +1689,7 @@ static s32 GetSwitchinWeatherImpact(enum BattlerId battler)
     {
         if ((weather  & B_WEATHER_HAIL)
          && !IS_BATTLER_OF_TYPE(battler, TYPE_ICE)
-         && ability != ABILITY_SNOW_CLOAK && ability != ABILITY_ICE_BODY)
+         && ability != ABILITY_SNOW_CLOAK && ability != ABILITY_ICE_BODY_OLD)
         {
             weatherImpact = maxHP / 16;
             if (weatherImpact == 0)
@@ -1723,7 +1728,7 @@ static s32 GetSwitchinWeatherImpact(enum BattlerId battler)
                 weatherImpact = -1;
         }
     }
-    if ((weather & (B_WEATHER_HAIL | B_WEATHER_SNOW)) && ability == ABILITY_ICE_BODY)
+    if ((weather & (B_WEATHER_HAIL | B_WEATHER_SNOW)) && ability == ABILITY_ICE_BODY_OLD)
     {
         weatherImpact = -(maxHP / 16);
         if (weatherImpact == 0)

@@ -34,18 +34,25 @@
 static void CB2_ReturnFromChooseHalfParty(void);
 static void CB2_ReturnFromChooseBattleFrontierParty(void);
 static void HealPlayerBoxes(void);
+static void HealPlayerPartyNuzlocke(void);
 
 void HealPlayerParty(void)
 {
     u32 i;
-    for (i = 0; i < gPartiesCount[B_TRAINER_PLAYER]; i++)
-        HealPokemon(&gParties[B_TRAINER_PLAYER][i]);
-    if (OW_PC_HEAL >= GEN_8)
-        HealPlayerBoxes();
+    bool8 isNuzlocke = AreNuzlockeRulesEnabled();
+    if(!isNuzlocke){
+        for (i = 0; i < gPartiesCount[B_TRAINER_PLAYER]; i++)
+            HealPokemon(&gParties[B_TRAINER_PLAYER][i]);
+        if (OW_PC_HEAL >= GEN_8)
+            HealPlayerBoxes();
 
-    // Recharge Tera Orb, if possible.
-    if (B_FLAG_TERA_ORB_CHARGED != 0 && CheckBagHasItem(ITEM_TERA_ORB, 1))
-        FlagSet(B_FLAG_TERA_ORB_CHARGED);
+        // Recharge Tera Orb, if possible.
+        if (B_FLAG_TERA_ORB_CHARGED != 0 && CheckBagHasItem(ITEM_TERA_ORB, 1))
+            FlagSet(B_FLAG_TERA_ORB_CHARGED);
+    }
+    else{
+        HealPlayerPartyNuzlocke();
+    }
 }
 
 static void HealPlayerBoxes(void)
@@ -60,6 +67,59 @@ static void HealPlayerBoxes(void)
             boxMon = &gPokemonStoragePtr->boxes[boxId][boxPosition];
             if (GetBoxMonData(boxMon, MON_DATA_SANITY_HAS_SPECIES))
                 HealBoxPokemon(boxMon);
+        }
+    }
+}
+
+static void HealPlayerPartyNuzlocke(void)
+{
+    u32 i;
+
+    //Heal Party
+    for (i = 0; i < gPartiesCount[B_TRAINER_PLAYER]; i++){
+        //Only Cure Alive Mons
+        if(GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_HP) != 0 && !GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_IS_DISABLED))
+            HealPokemon(&gParties[B_TRAINER_PLAYER][i]);
+    }
+
+    //Heal Boxes
+    if (OW_PC_HEAL >= GEN_8){
+        int boxId, boxPosition;
+        struct BoxPokemon *boxMon;
+
+        for (boxId = 0; boxId < TOTAL_BOXES_COUNT; boxId++)
+        {
+            for (boxPosition = 0; boxPosition < IN_BOX_COUNT; boxPosition++)
+            {
+                boxMon = &gPokemonStoragePtr->boxes[boxId][boxPosition];
+                if (GetBoxMonData(boxMon, MON_DATA_SANITY_HAS_SPECIES) && GetBoxMonData(boxMon, MON_DATA_HP) != 0 && !GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_IS_DISABLED))
+                    HealBoxPokemon(boxMon);
+            }
+        }
+    }
+}
+
+void EnablePlayerPartyMons(void){
+    u32 i;
+    bool8 isMonDisabled = FALSE;
+
+    //Heal Party
+    for (i = 0; i < gPartiesCount[B_TRAINER_PLAYER]; i++)
+        SetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_IS_DISABLED, &isMonDisabled);
+
+    //Heal Boxes
+    if (OW_PC_HEAL >= GEN_8){
+        int boxId, boxPosition;
+        struct BoxPokemon *boxMon;
+
+        for (boxId = 0; boxId < TOTAL_BOXES_COUNT; boxId++)
+        {
+            for (boxPosition = 0; boxPosition < IN_BOX_COUNT; boxPosition++)
+            {
+                boxMon = &gPokemonStoragePtr->boxes[boxId][boxPosition];
+                if (GetBoxMonData(boxMon, MON_DATA_SANITY_HAS_SPECIES))
+                    SetBoxMonData(boxMon, MON_DATA_IS_DISABLED, &isMonDisabled);
+            }
         }
     }
 }
@@ -478,8 +538,14 @@ static u32 ScriptGiveMonParameterized(u8 side, u8 slot, enum Species species, u8
 
 u32 ScriptGiveMon(enum Species species, u8 level, enum Item item)
 {
+    u32 caughtLocation = GetCurrentRegionMapSectionId();
     struct Pokemon mon;
     u8 heldItem[2];
+
+    if (AreNuzlockeRulesEnabled() && !GetNuzlockeCaughtFlag(caughtLocation)) {
+        SetNuzlockeCaughtFlag(caughtLocation);
+        FlagSet(FLAG_TEMP_CAN_CATCH_POKEMON);
+    }
 
     CreateRandomMon(&mon, species, level);
     if (item)
@@ -617,6 +683,56 @@ void Script_GetChosenMonDefensiveIVs(void)
     ConvertIntToDecimalStringN(gStringVar3, GetMonData(&gParties[B_TRAINER_PLAYER][gSpecialVar_0x8004], MON_DATA_SPDEF_IV), STR_CONV_MODE_LEFT_ALIGN, 3);
 }
 
+u16 CanPartyMonBeSetWithStatus(u32 slot, u32 status){
+    struct Pokemon *mon = &gParties[B_TRAINER_PLAYER][slot];
+    u16 species = GetMonData(mon, MON_DATA_SPECIES);
+    u16 ability = GetMonAbility(mon);
+    enum Type type1 = GetSpeciesType(species, 0);
+    enum Type type2 = GetSpeciesType(species, 1);
+
+    switch(status){
+        case STATUS1_POISON:
+            if(type1 == TYPE_POISON || type2 == TYPE_POISON || 
+               type1 == TYPE_STEEL  || type2 == TYPE_STEEL)
+                return SET_STATUS_NOT_POSSIBLE_TYPE;
+            else if(ability == ABILITY_IMMUNITY || ability == ABILITY_PASTEL_VEIL)
+                return SET_STATUS_NOT_POSSIBLE_ABILITY;
+        break;
+        case STATUS1_BURN:
+            if(type1 == TYPE_FIRE || type2 == TYPE_FIRE)
+                return SET_STATUS_NOT_POSSIBLE_TYPE;
+            else if(ability == ABILITY_WATER_BUBBLE || ability == ABILITY_WATER_VEIL || ability == ABILITY_THERMAL_EXCHANGE)
+                return SET_STATUS_NOT_POSSIBLE_ABILITY;
+        break;
+        case STATUS1_PARALYSIS:
+            if(type1 == TYPE_ELECTRIC || type2 == TYPE_ELECTRIC)
+                return SET_STATUS_NOT_POSSIBLE_TYPE;
+            if(ability == ABILITY_LIMBER)
+                return SET_STATUS_NOT_POSSIBLE_ABILITY;
+        break;
+        case STATUS1_FREEZE:
+        case STATUS1_FROSTBITE:
+            if(type1 == TYPE_ICE || type2 == TYPE_ICE)
+                return SET_STATUS_NOT_POSSIBLE_TYPE;
+            if(ability == ABILITY_MAGMA_ARMOR)
+                return SET_STATUS_NOT_POSSIBLE_ABILITY;
+        break;
+        case STATUS1_SLEEP:
+            if(ability == ABILITY_SWEET_VEIL || ability == ABILITY_VITAL_SPIRIT || ability == ABILITY_INSOMNIA)
+                return SET_STATUS_NOT_POSSIBLE_ABILITY;
+        break;
+    }
+
+    switch(ability){
+        case ABILITY_COMATOSE:
+        case ABILITY_PURIFYING_SALT:
+            return SET_STATUS_NOT_POSSIBLE_ABILITY;
+        break;
+    }
+
+    return SET_STATUS_POSSIBLE;
+}
+
 void Script_SetStatus1(struct ScriptContext *ctx)
 {
     u32 status1 = VarGet(ScriptReadHalfword(ctx));
@@ -639,7 +755,11 @@ void Script_SetStatus1(struct ScriptContext *ctx)
     }
     else
     {
-        SetMonData(&gParties[B_TRAINER_PLAYER][slot], MON_DATA_STATUS, &status1);
+        u16 canSetStatus = CanPartyMonBeSetWithStatus(slot, status1);
+        VarSet(VAR_0x8004, canSetStatus);
+
+        if(canSetStatus == SET_STATUS_POSSIBLE)
+            SetMonData(&gParties[B_TRAINER_PLAYER][slot], MON_DATA_STATUS, &status1);
     }
 }
 

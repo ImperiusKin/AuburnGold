@@ -64,6 +64,8 @@
 #define PARTY_MSG_NO_POKEMON                29
 #define PARTY_MSG_CHOOSE_MON_FOR_BOX        30
 #define PARTY_MSG_MOVE_ITEM_WHERE           31
+#define PARTY_MSG_WHICH_ESSENCE             32
+#define PARTY_MSG_WHICH_WEATHER             33
 
 #define PARTY_MSG_NONE                      127
 
@@ -88,6 +90,9 @@
 #define SELECTWINDOW_MOVES       3
 #define SELECTWINDOW_CATALOG     4
 #define SELECTWINDOW_ZYGARDECUBE 5
+#define SELECTWINDOW_ESSENCE     6
+#define SELECTWINDOW_WEATHER     7
+#define SELECTWINDOW_ENGINE      8
 
 enum PcMonSelectionType
 {

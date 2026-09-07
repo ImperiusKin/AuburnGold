@@ -271,7 +271,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Illuminate"),
         .description = COMPOUND_STRING("Encounter rate increases."),
-        .aiRating = 0,
+        .aiRating = 7,
         .breakable = TRUE,
     },
 
@@ -309,7 +309,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_MAGMA_ARMOR] =
     {
         .name = _("Magma Armor"),
-        .description = COMPOUND_STRING("Prevents freezing."),
+        .description = COMPOUND_STRING("Prevents frostbite."),
         .aiRating = 1,
         .breakable = TRUE,
     },
@@ -524,6 +524,13 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_ROCK_HEAD] =
     {
         .name = _("Rock Head"),
+        .description = COMPOUND_STRING("Prevents recoil damage."),
+        .aiRating = 5,
+    },
+
+    [ABILITY_BAD_COMPANY] =
+    {
+        .name = _("Bad Company"),
         .description = COMPOUND_STRING("Prevents recoil damage."),
         .aiRating = 5,
     },
@@ -859,6 +866,13 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_ICE_BODY] =
     {
         .name = _("Ice Body"),
+        .description = COMPOUND_STRING("Inflicts frostbite on contact."),
+        .aiRating = 4,
+    },
+
+    [ABILITY_ICE_BODY_OLD] =
+    {
+        .name = _("Ice Body Old"),
         .description = COMPOUND_STRING("HP recovery in Hail or Snow."),
         .aiRating = 3,
     },
@@ -1470,7 +1484,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_WATER_COMPACTION] =
     {
         .name = _("Water Compaction"),
-        .description = COMPOUND_STRING("Water boosts Defense."),
+        .description = COMPOUND_STRING("Water boosts Defense and does less damage."),
         .aiRating = 4,
     },
 
@@ -1540,7 +1554,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_LIQUID_VOICE] =
     {
         .name = _("Liquid Voice"),
-        .description = COMPOUND_STRING("Makes sound moves Water."),
+        .description = COMPOUND_STRING("Makes sound moves Water and boost them by 20%."),
         .aiRating = 5,
     },
 
@@ -2471,5 +2485,101 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("Spicy Spray"),
         .description = COMPOUND_STRING("Burns the foe when damaged."),
+    },
+
+    [ABILITY_BLAZING_SOUL] =
+    {
+        .name = _("Blazing Soul"),
+        .description = COMPOUND_STRING("Fire moves go first."),
+    },
+
+    [ABILITY_STRIKER] =
+    {
+        .name = _("Striker"),
+        .description = COMPOUND_STRING("Boosts kicking moves."),
+    },
+
+    [ABILITY_PARASITIC_WASTE] =
+    {
+        .name = _("Parasitic Waste"),
+        .description = COMPOUND_STRING("Moves that inflict the poisoned condition will drain the target instead."),
+    },
+
+    [ABILITY_BULL_RUSH] =
+    {
+        .name = _("Bull Rush"),
+        .description = COMPOUND_STRING("Boosts power by 20% and speed by 50% on first turn."),
+    },
+
+    [ABILITY_SELF_SUFFICIENT] =
+    {
+        .name = _("Self Sufficient"),
+        .description = COMPOUND_STRING("Restores 1/16th hp end of each turn."),
+    },
+
+    [ABILITY_ICE_EATER] =
+    {
+        .name = _("Ice Eater"),
+        .description = COMPOUND_STRING("Immunity and absorbing Ice moves."),
+    },
+
+    [ABILITY_FATAL_PRECISION] =
+    {
+        .name = _("Fatal Precision"),
+        .description = COMPOUND_STRING("Super Effective moves cannot miss and are boosted by 20% damage."),
+    },
+
+    [ABILITY_MOUNTAINEER] =
+    {
+        .name = _("Mounteener"),
+        .description = COMPOUND_STRING("Immune to Rock moves and hazards."),
+    },
+
+    [ABILITY_PROWESS] =
+    {
+        .name = _("Prowess"),
+        .description = COMPOUND_STRING("Raises Special Attack."),
+        .aiRating = 10,
+    },
+
+    [ABILITY_FLURRY] =
+    {
+        .name = _("Flurry"),
+        .description = COMPOUND_STRING("Punching and Kicking moves hit twice."),
+        .aiRating = 10,
+    },
+
+    [ABILITY_BONE_ZONE] =
+    {
+        .name = _("Bone Zone"),
+        .description = COMPOUND_STRING("Bone moves have Tinted Lens effect and ignore type immunities or abilities that grant type immunities."),
+    },
+
+    [ABILITY_SAGE_POWER] =
+    {
+        .name = _("Sage Power"),
+        .description = COMPOUND_STRING("Ups Sp.Attack and locks move."),
+        .aiRating = 4,
+    },
+
+    [ABILITY_EMPEROR_PRESENCE] =
+    {
+        .name = _("Emperor Presence"),
+        .description = COMPOUND_STRING("Boosts ally's Steel and Water moves."),
+        .aiRating = 2,
+    },
+
+    [ABILITY_WAYWARD] =
+    {
+        .name = _("Wayward"),
+        .description = COMPOUND_STRING("Half damage from Fighting type attacks and immunity to Taunt."),
+        .aiRating = 2,
+    },
+
+    [ABILITY_THE_GRIPPER] = 
+    {
+        .name = _("The Gripper"),
+        .description = COMPOUND_STRING("Contact moves from the user prevent the foe from escaping."),
+        .aiRating = 2,
     },
 };

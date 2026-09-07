@@ -4676,6 +4676,8 @@ u32 GetBattlerTotalSpeedStat(enum BattlerId battler, enum Ability ability, enum 
 
     // other abilities
     if (ability == ABILITY_QUICK_FEET && gBattleMons[battler].status1 & STATUS1_ANY)
+        speed *= 2;
+    else if (ability == ABILITY_BULL_RUSH && IsBattlersFirstTurn(battler))
         speed = (speed * 150) / 100;
     else if (ability == ABILITY_SURGE_SURFER && gFieldStatuses & STATUS_FIELD_ELECTRIC_TERRAIN)
         speed *= 2;
@@ -4687,6 +4689,21 @@ u32 GetBattlerTotalSpeedStat(enum BattlerId battler, enum Ability ability, enum 
         speed = (GetParadoxBoostedStatId(battler) == STAT_SPEED) ? (speed * 150) / 100 : speed;
     else if (ability == ABILITY_UNBURDEN && gBattleMons[battler].volatiles.unburdenActive)
         speed *= 2;
+    else if (ability == ABILITY_FLOWER_GIFT && gBattleMons[battler].species == SPECIES_CHERRIM_SUNSHINE && IsBattlerWeatherAffected(GetBattlerHoldEffect(battler), GetWeather(), B_WEATHER_SUN))
+        speed = (speed * 150) / 100;
+    
+    if (IsBattlerAlive(GetPartnerBattler(battler)))
+    {
+        switch (GetBattlerAbility(GetPartnerBattler(battler)))
+        {
+        case ABILITY_FLOWER_GIFT:
+            if (gBattleMons[GetPartnerBattler(battler)].species == SPECIES_CHERRIM_SUNSHINE && IsBattlerWeatherAffected(GetBattlerHoldEffect(GetPartnerBattler(battler)), GetWeather(), B_WEATHER_SUN))
+                speed = (speed * 150) / 100;
+            break;
+        default:
+            break;
+        }
+    }
 
     // player's badge boost
     if (!(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK | BATTLE_TYPE_FRONTIER))
@@ -4753,6 +4770,12 @@ s32 GetBattleMovePriority(enum BattlerId battler, enum Ability ability, enum Mov
     else if (ability == ABILITY_GALE_WINGS
           && (GetConfig(B_GALE_WINGS) < GEN_7 || IsBattlerAtMaxHp(battler))
           && GetMoveType(move) == TYPE_FLYING)
+    {
+        priority++;
+    }
+    else if (ability == ABILITY_BLAZING_SOUL
+          && (GetConfig(B_GALE_WINGS) < GEN_7 || IsBattlerAtMaxHp(battler))
+          && GetMoveType(move) == TYPE_FIRE)
     {
         priority++;
     }
@@ -5904,15 +5927,22 @@ enum Type GetDynamicMoveType(struct Pokemon *mon, enum Move move, enum BattlerId
         }
         break;
     case EFFECT_RAGING_BULL:
+    {
+        enum Type newType = GetSpeciesType(species, 1);
+
         switch (species)
         {
-        case SPECIES_TAUROS_PALDEA_COMBAT:
-        case SPECIES_TAUROS_PALDEA_BLAZE:
-        case SPECIES_TAUROS_PALDEA_AQUA:
-            return GetSpeciesType(species, 1);
-        default:
-            break;
+            //Emboar is Fire Type as a primary type
+            case SPECIES_EMBOAR:
+            case SPECIES_EMBOAR_MEGA:
+                newType = GetSpeciesType(species, 0);
+            default:
+                break;
         }
+
+        if (newType != moveType)
+            return newType;
+    }
         break;
     case EFFECT_IVY_CUDGEL:
         switch (species)

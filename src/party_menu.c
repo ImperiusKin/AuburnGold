@@ -87,6 +87,8 @@ enum {
     MENU_CANCEL1,
     MENU_ITEM,
     MENU_GIVE,
+    MENU_RELEARN,
+    MENU_RELEARN_EGG,
     MENU_TAKE_ITEM,
     MENU_MOVE_ITEM,
     MENU_MAIL,
@@ -108,9 +110,24 @@ enum {
     MENU_CATALOG_FRIDGE,
     MENU_CATALOG_FAN,
     MENU_CATALOG_MOWER,
+    MENU_BULL_NORMAL,
+    MENU_BULL_FIGHT,
+    MENU_BULL_WATER,
+    MENU_BULL_FIRE,
+    MENU_WEATHER_NORMAL,
+    MENU_WEATHER_RAIN,
+    MENU_WEATHER_SUN,
+    MENU_WEATHER_HAIL,
+    MENU_WEATHER_SAND,
+    MENU_ENGINE_NORMAL,
+    MENU_ENGINE_SEGIN,
+    MENU_ENGINE_SCHEDAR,
+    MENU_ENGINE_NAVI,
+    MENU_ENGINE_RUCHBAH,
+    MENU_ENGINE_CAPH,
     MENU_CHANGE_FORM,
     MENU_CHANGE_ABILITY,
-    MENU_FIELD_MOVES
+    MENU_FIELD_MOVES,
 };
 
 // IDs for the action lists that appear when a party mon is selected
@@ -131,6 +148,9 @@ enum {
     ACTIONS_TAKEITEM_TOSS,
     ACTIONS_ROTOM_CATALOG,
     ACTIONS_ZYGARDE_CUBE,
+    ACTIONS_BULL_ESSENCE,
+    ACTIONS_WEATHER_REPORT,
+    ACTIONS_ENGINE_BAY,
 };
 
 enum {
@@ -461,6 +481,8 @@ static void CursorCb_Item(u8);
 static void CursorCb_Give(u8);
 static void CursorCb_TakeItem(u8);
 static void CursorCb_MoveItem(u8);
+static void CursorCb_RelearnMove(u8);
+static void CursorCb_RelearnEggMoves(u8 taskId);
 static void CursorCb_Mail(u8);
 static void CursorCb_Read(u8);
 static void CursorCb_TakeMail(u8);
@@ -480,6 +502,16 @@ static void CursorCb_CatalogWashing(u8);
 static void CursorCb_CatalogFridge(u8);
 static void CursorCb_CatalogFan(u8);
 static void CursorCb_CatalogMower(u8);
+static void CursorCb_Essence_Normal(u8);
+static void CursorCb_Essence_Fight(u8);
+static void CursorCb_Essence_Water(u8);
+static void CursorCb_Essence_Fire(u8);
+static void CursorCb_Weather_Normal(u8);
+static void CursorCb_Weather_Rain(u8);
+static void CursorCb_Weather_Sun(u8);
+static void CursorCb_Weather_Hail(u8);
+static void CursorCb_Weather_Sand(u8);
+static void CursorCb_Engine_Caph(u8);
 static void CursorCb_ChangeForm(u8);
 static void CursorCb_ChangeAbility(u8);
 void TryItemHoldFormChange(struct Pokemon *mon, s8 slotId, enum BattleTrainer trainer);
@@ -507,6 +539,8 @@ static u8 IndividualToCombinedPartyId(u8 index, enum BattlerId battler);
 
 static const u8 sText_askText[] = _("Would you like to change {STR_VAR_1}'s\nability to {STR_VAR_2}?");
 static const u8 sText_doneText[] = _("{STR_VAR_1}'s ability became\n{STR_VAR_2}!{PAUSE_UNTIL_PRESS}");
+static const u8 sText_askGenderText[] = _("Would you like to change {STR_VAR_1}'s\ngender?");
+static const u8 sText_doneGenderText[] = _("{STR_VAR_1}'s gender changed!{PAUSE_UNTIL_PRESS}");
 static const u8 sText_BasePointsResetToZero[] = _("{STR_VAR_1}'s base points\nwere all reset to zero!{PAUSE_UNTIL_PRESS}");
 static const u8 sText_CannotSendMonToBoxHM[] = _("Cannot send that mon to the box,\nbecause it knows a HM move.{PAUSE_UNTIL_PRESS}");
 static const u8 sText_CannotSendMonToBoxPartner[] = _("Cannot send a mon that doesn't\nbelong to you to the box.{PAUSE_UNTIL_PRESS}");
@@ -2807,6 +2841,12 @@ void DisplayPartyMenuStdMessage(u32 stringId)
         case PARTY_MSG_WHICH_APPLIANCE:
             *windowPtr = AddWindow(&sOrderWhichApplianceMsgWindowTemplate);
             break;
+        case PARTY_MSG_WHICH_ESSENCE:
+            *windowPtr = AddWindow(&sOrderWhichEssenceMsgWindowTemplate);
+            break;
+        case PARTY_MSG_WHICH_WEATHER:
+            *windowPtr = AddWindow(&sOrderWhichEssenceMsgWindowTemplate);
+            break;
         default:
             *windowPtr = AddWindow(&sDefaultPartyMsgWindowTemplate);
             break;
@@ -2868,6 +2908,15 @@ static u8 DisplaySelectionWindow(u8 windowType)
         break;
     case SELECTWINDOW_CATALOG:
         window = sCatalogSelectWindowTemplate;
+        break;
+    case SELECTWINDOW_ESSENCE:
+        window = sEssenceSelectWindowTemplate;
+        break;
+    case SELECTWINDOW_WEATHER:
+        window = sWeatherReportSelectWindowTemplate;
+        break;
+    case SELECTWINDOW_ENGINE:
+        window = sEngineBaySelectWindowTemplate;
         break;
     case SELECTWINDOW_ZYGARDECUBE:
         window = sZygardeCubeSelectWindowTemplate;
@@ -2947,6 +2996,12 @@ static void SetPartyMonSelectionActions(struct Pokemon *mons, u8 slotId, u8 acti
     }
 }
 
+bool32 HasPartyMonAnyRelearnableMoves(enum MoveRelearnerStates state)
+{
+    struct BoxPokemon *boxMon = &gParties[B_TRAINER_PLAYER][gPartyMenu.slotId].box;
+    return CanBoxMonRelearnMoves(boxMon, state);
+}
+
 static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 {
     u8 i, j;
@@ -2975,6 +3030,12 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
             AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_MAIL);
         else
             AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_ITEM);
+
+        if (GetMonData(&mons[1], MON_DATA_SPECIES) != SPECIES_NONE && IsLevelUpMoveRelearnerActive() && HasPartyMonAnyRelearnableMoves(MOVE_RELEARNER_LEVEL_UP_MOVES))
+            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_RELEARN);
+
+        if (GetMonData(&mons[1], MON_DATA_SPECIES) != SPECIES_NONE && IsEggMoveRelearnerActive() && HasPartyMonAnyRelearnableMoves(MOVE_RELEARNER_EGG_MOVES))
+            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_RELEARN_EGG);
     }
     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_CANCEL1);
 }
@@ -3165,6 +3226,15 @@ void CB2_ReturnToPartyMenuFromSummaryScreen(void)
         RestoreMultiPartyFromSummaryScreen();
     gPaletteFade.bufferTransferDisabled = TRUE;
     gPartyMenu.slotId = gLastViewedMonIndex;
+    InitPartyMenu(gPartyMenu.menuType, KEEP_PARTY_LAYOUT, gPartyMenu.action, TRUE, PARTY_MSG_DO_WHAT_WITH_MON, Task_TryCreateSelectionWindow, gPartyMenu.exitCallback);
+}
+
+void CB2_ReturnToPartyMenuFromRelearnScreen(void)
+{
+    if (gBattleTypeFlags & BATTLE_TYPE_MULTI && !AreMultiPartiesFullTeams() && gPartyMenu.menuType == PARTY_MENU_TYPE_IN_BATTLE)
+        RestoreMultiPartyFromSummaryScreen();
+    gPaletteFade.bufferTransferDisabled = TRUE;
+    //gPartyMenu.slotId = gLastViewedMonIndex;
     InitPartyMenu(gPartyMenu.menuType, KEEP_PARTY_LAYOUT, gPartyMenu.action, TRUE, PARTY_MSG_DO_WHAT_WITH_MON, Task_TryCreateSelectionWindow, gPartyMenu.exitCallback);
 }
 
@@ -4085,8 +4155,8 @@ static void CursorCb_FieldMove(u8 taskId)
     const struct MapHeader *mapHeader;
 
     PlaySE(SE_SELECT);
-    if (gFieldMoveInfo[fieldMove].fieldMoveFunc == NULL)
-        return;
+    //if (gFieldMoveInfo[fieldMove].fieldMoveFunc == NULL)
+    //    return;
 
     PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
     PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[1]);
@@ -4102,12 +4172,12 @@ static void CursorCb_FieldMove(u8 taskId)
     else
     {
         // All field moves before WATERFALL are HMs.
-        if (!IsFieldMoveUnlocked(fieldMove))
+        if (!IsFieldMoveUnlocked(fieldMove) && FALSE)
         {
             DisplayPartyMenuMessage(gText_CantUseUntilNewBadge, TRUE);
             gTasks[taskId].func = Task_ReturnToChooseMonAfterText;
         }
-        else if (SetUpFieldMove(fieldMove) == TRUE)
+        else if (SetUpFieldMove(fieldMove) == TRUE || TRUE)
         {
             switch (fieldMove)
             {
@@ -5126,6 +5196,107 @@ void ItemUseCB_AbilityPatch(u8 taskId, TaskFunc task)
         tAbilityNum = 2;
     SetWordTaskArg(taskId, tOldFunc, (uintptr_t)(gTasks[taskId].func));
     gTasks[taskId].func = Task_AbilityPatch;
+}
+
+//Gender Changer
+bool8 CanSpeciesChangeGender(u16 species){
+    switch(species){
+        case SPECIES_COMBEE:
+        case SPECIES_BURMY:
+        case SPECIES_SALANDIT:
+            return TRUE;
+        break;
+        case SPECIES_SNORUNT:
+        case SPECIES_KIRLIA:
+            return TRUE;
+        break;
+    }
+
+    return FALSE;
+}
+
+void Task_GenderChanger(u8 taskId)
+{
+    s16 *data = gTasks[taskId].data;
+
+    switch (tState)
+    {
+    case 0:
+        // Can't use.
+        if (!CanSpeciesChangeGender(tSpecies) || !tSpecies)
+        {
+            gPartyMenuUseExitCallback = FALSE;
+            PlaySE(SE_SELECT);
+            DisplayPartyMenuMessage(gText_WontHaveEffect, 1);
+            ScheduleBgCopyTilemapToVram(2);
+            gTasks[taskId].func = Task_ClosePartyMenuAfterText;
+            return;
+        }
+        gPartyMenuUseExitCallback = TRUE;
+        GetMonNickname(&gParties[B_TRAINER_PLAYER][tMonId], gStringVar1);
+        //StringCopy(gStringVar2, gAbilitiesInfo[GetAbilityBySpecies(tSpecies, tAbilityNum)].name);
+        StringExpandPlaceholders(gStringVar4, sText_askGenderText);
+        PlaySE(SE_SELECT);
+        DisplayPartyMenuMessage(gStringVar4, 1);
+        ScheduleBgCopyTilemapToVram(2);
+        tState++;
+        break;
+    case 1:
+        if (!IsPartyMenuTextPrinterActive())
+        {
+            PartyMenuDisplayYesNoMenu();
+            tState++;
+        }
+        break;
+    case 2:
+        switch (Menu_ProcessInputNoWrapClearOnChoose())
+        {
+        case 0:
+            tState++;
+            break;
+        case 1:
+        case MENU_B_PRESSED:
+            gPartyMenuUseExitCallback = FALSE;
+            PlaySE(SE_SELECT);
+            ScheduleBgCopyTilemapToVram(2);
+            // Don't exit party selections screen, return to choosing a mon.
+            ClearStdWindowAndFrameToTransparent(6, 0);
+            ClearWindowTilemap(6);
+            DisplayPartyMenuStdMessage(5);
+            gTasks[taskId].func = (void *)GetWordTaskArg(taskId, tOldFunc);
+            return;
+        }
+        break;
+    case 3:
+        PlaySE(SE_USE_ITEM);
+        StringExpandPlaceholders(gStringVar4, sText_doneGenderText);
+        DisplayPartyMenuMessage(gStringVar4, 1);
+        ScheduleBgCopyTilemapToVram(2);
+        tState++;
+        break;
+    case 4:
+        if (!IsPartyMenuTextPrinterActive())
+            tState++;
+        break;
+    case 5:
+        SetMonData(&gParties[B_TRAINER_PLAYER][tMonId], MON_DATA_REVERSED_GENDER, &tAbilityNum);
+        DisplayPartyPokemonData(tMonId);
+        //RemoveBagItem(gSpecialVar_ItemId, 1);
+        gTasks[taskId].func = Task_ClosePartyMenu;
+        break;
+    }
+}
+
+void ItemUseCB_GenderChanger(u8 taskId, TaskFunc task)
+{
+    s16 *data = gTasks[taskId].data;
+
+    tState = 0;
+    tMonId = gPartyMenu.slotId;
+    tSpecies = GetMonData(&gParties[B_TRAINER_PLAYER][tMonId], MON_DATA_SPECIES);
+    tAbilityNum = GetMonData(&gParties[B_TRAINER_PLAYER][tMonId], MON_DATA_REVERSED_GENDER) ^ 1;
+    SetWordTaskArg(taskId, tOldFunc, (uintptr_t)(gTasks[taskId].func));
+    gTasks[taskId].func = Task_GenderChanger;
 }
 
 #undef tState
@@ -6863,6 +7034,39 @@ void ItemUseCB_RotomCatalog(u8 taskId, TaskFunc task)
     gTasks[taskId].func = Task_HandleSelectionMenuInput;
 }
 
+void ItemUseCB_BullEssence(u8 taskId, TaskFunc task)
+{
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[1]);
+    SetPartyMonSelectionActions(gParties[B_TRAINER_PLAYER], gPartyMenu.slotId, ACTIONS_BULL_ESSENCE);
+    DisplaySelectionWindow(SELECTWINDOW_ESSENCE);
+    DisplayPartyMenuStdMessage(PARTY_MSG_WHICH_ESSENCE);
+    gTasks[taskId].data[0] = 0xFF;
+    gTasks[taskId].func = Task_HandleSelectionMenuInput;
+}
+
+void ItemUseCB_WeatherReport(u8 taskId, TaskFunc task)
+{
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[1]);
+    SetPartyMonSelectionActions(gParties[B_TRAINER_PLAYER], gPartyMenu.slotId, ACTIONS_WEATHER_REPORT);
+    DisplaySelectionWindow(SELECTWINDOW_WEATHER);
+    DisplayPartyMenuStdMessage(PARTY_MSG_WHICH_WEATHER);
+    gTasks[taskId].data[0] = 0xFF;
+    gTasks[taskId].func = Task_HandleSelectionMenuInput;
+}
+
+void ItemUseCB_EngineBay(u8 taskId, TaskFunc task)
+{
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[0]);
+    PartyMenuRemoveWindow(&sPartyMenuInternal->windowId[1]);
+    SetPartyMonSelectionActions(gParties[B_TRAINER_PLAYER], gPartyMenu.slotId, ACTIONS_ENGINE_BAY);
+    DisplaySelectionWindow(SELECTWINDOW_ENGINE);
+    DisplayPartyMenuStdMessage(PARTY_MSG_WHICH_WEATHER);
+    gTasks[taskId].data[0] = 0xFF;
+    gTasks[taskId].func = Task_HandleSelectionMenuInput;
+}
+
 bool32 TryMultichoiceFormChange(u8 taskId)
 {
     struct Pokemon *mon = &gParties[B_TRAINER_PLAYER][gPartyMenu.slotId];
@@ -6930,6 +7134,76 @@ static void CursorCb_CatalogMower(u8 taskId)
 {
     gSpecialVar_Result = 5;
     gSpecialVar_0x8000 = ROTOM_MOW_MOVE;
+    TryMultichoiceFormChange(taskId);
+}
+
+static void CursorCb_Essence_Normal(u8 taskId)
+{
+    gSpecialVar_Result = 0;
+    gSpecialVar_0x8000 = MOVE_RAGING_BULL;
+    TryMultichoiceFormChange(taskId);
+}
+
+static void CursorCb_Essence_Fight(u8 taskId)
+{
+    gSpecialVar_Result = 1;
+    gSpecialVar_0x8000 = MOVE_RAGING_BULL;
+    TryMultichoiceFormChange(taskId);
+}
+
+static void CursorCb_Essence_Water(u8 taskId)
+{
+    gSpecialVar_Result = 2;
+    gSpecialVar_0x8000 = MOVE_RAGING_BULL;
+    TryMultichoiceFormChange(taskId);
+}
+
+static void CursorCb_Essence_Fire(u8 taskId)
+{
+    gSpecialVar_Result = 3;
+    gSpecialVar_0x8000 = MOVE_RAGING_BULL;
+    TryMultichoiceFormChange(taskId);
+}
+
+static void CursorCb_Weather_Normal(u8 taskId)
+{
+    gSpecialVar_Result = 0;
+    gSpecialVar_0x8000 = MOVE_WEATHER_BALL;
+    TryMultichoiceFormChange(taskId);
+}
+
+static void CursorCb_Weather_Rain(u8 taskId)
+{
+    gSpecialVar_Result = 1;
+    gSpecialVar_0x8000 = MOVE_WEATHER_BALL;
+    TryMultichoiceFormChange(taskId);
+}
+
+static void CursorCb_Weather_Sun(u8 taskId)
+{
+    gSpecialVar_Result = 2;
+    gSpecialVar_0x8000 = MOVE_WEATHER_BALL;
+    TryMultichoiceFormChange(taskId);
+}
+
+static void CursorCb_Weather_Hail(u8 taskId)
+{
+    gSpecialVar_Result = 3;
+    gSpecialVar_0x8000 = MOVE_WEATHER_BALL;
+    TryMultichoiceFormChange(taskId);
+}
+
+static void CursorCb_Weather_Sand(u8 taskId)
+{
+    gSpecialVar_Result = 4;
+    gSpecialVar_0x8000 = MOVE_WEATHER_BALL;
+    TryMultichoiceFormChange(taskId);
+}
+
+static void CursorCb_Engine_Caph(u8 taskId)
+{
+    gSpecialVar_Result = 4;
+    gSpecialVar_0x8000 = MOVE_WEATHER_BALL;
     TryMultichoiceFormChange(taskId);
 }
 
@@ -8341,6 +8615,39 @@ void CursorCb_MoveItemCallback(u8 taskId)
         gTasks[taskId].func = Task_UpdateHeldItemSprite;
         break;
     }
+}
+
+void CursorCb_StartPartyMenuMoveRelearner(u8 taskId)
+{
+    gSpecialVar_0x8004 = gPartyMenu.slotId;
+    PlaySE(SE_SELECT);
+    FlagSet(FLAG_MOVE_RELEARNER_FROM_PARTY_MENU);
+    sPartyMenuInternal->exitCallback = CB2_InitLearnMove;
+    Task_ClosePartyMenu(taskId);
+}
+
+void CursorCb_RelearnMove(u8 taskId)
+{
+    gMoveRelearnerState = MOVE_RELEARNER_LEVEL_UP_MOVES;
+    gTasks[taskId].func = CursorCb_StartPartyMenuMoveRelearner;
+}
+
+void CursorCb_RelearnEggMoves(u8 taskId)
+{
+    gMoveRelearnerState = MOVE_RELEARNER_EGG_MOVES;
+    gTasks[taskId].func = CursorCb_StartPartyMenuMoveRelearner;
+}
+
+void CursorCb_RelearnTMMoves(u8 taskId)
+{
+    gMoveRelearnerState = MOVE_RELEARNER_TM_MOVES;
+    gTasks[taskId].func = CursorCb_StartPartyMenuMoveRelearner;
+}
+
+void CursorCb_RelearnTutorMoves(u8 taskId)
+{
+    gMoveRelearnerState = MOVE_RELEARNER_TM_MOVES;
+    gTasks[taskId].func = CursorCb_StartPartyMenuMoveRelearner;
 }
 
 void CursorCb_MoveItem(u8 taskId)

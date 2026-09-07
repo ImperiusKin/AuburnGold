@@ -201,8 +201,11 @@ Debug_EventScript_Text_DefensiveIVs:
 	.string "HP IVs: {STR_VAR_1}, DEF IVs: {STR_VAR_2}, SPDEF IVs: {STR_VAR_3}$"
 
 Debug_EventScript_Script_1::
-	release
-	end
+	setstartingstatus STARTING_STATUS_GRAVITY
+	cleartrainerflag TRAINER_CHARLIE
+    trainerbattle_single TRAINER_CHARLIE, AbandonedShip_Corridors_1F_Text_CharlieIntro, AbandonedShip_Corridors_1F_Text_CharlieDefeat
+    release
+    end
 
 Debug_EventScript_Script_2::
 	release

@@ -2082,7 +2082,7 @@ void StealTargetItem(enum BattlerId battlerStealer, enum BattlerId itemBattler)
     BtlController_EmitSetMonData(itemBattler, B_COMM_TO_CONTROLLER, REQUEST_HELDITEM_BATTLE, 0, sizeof(gBattleMons[itemBattler].item), &gBattleMons[itemBattler].item);  // remove target item
     MarkBattlerForControllerExec(itemBattler);
 
-    if (GetBattlerAbility(itemBattler) != ABILITY_GORILLA_TACTICS)
+    if (GetBattlerAbility(itemBattler) != ABILITY_GORILLA_TACTICS && GetBattlerAbility(itemBattler) != ABILITY_SAGE_POWER)
         gBattleStruct->choicedMove[itemBattler] = MOVE_NONE;
 
     TrySaveExchangedItem(itemBattler, gLastUsedItem);
@@ -2176,7 +2176,9 @@ static void SetNonVolatileStatus(enum BattlerId battlerAtk, enum BattlerId effec
     switch (effect)
     {
     case MOVE_EFFECT_SLEEP:
-        if (B_SLEEP_TURNS >= GEN_5)
+        if (B_SLEEP_TURNS == GEN_LATEST)
+            gBattleMons[effectBattler].status1 |= STATUS1_SLEEP_TURN(B_FORCED_SLEEP_TURNS);
+        else if (B_SLEEP_TURNS >= GEN_5)
             gBattleMons[effectBattler].status1 |= STATUS1_SLEEP_TURN(RandomUniform(RNG_SLEEP_TURNS, 2, 4));
         else if (B_SLEEP_TURNS >= GEN_3)
             gBattleMons[effectBattler].status1 |= STATUS1_SLEEP_TURN(RandomUniform(RNG_SLEEP_TURNS, 2, 5));
@@ -2490,6 +2492,9 @@ void SetMoveEffect(enum BattlerId battlerAtk, enum BattlerId effectBattler, enum
             enum Stat stat = sAccurateStatOrder[i];
             s32 stage = GetStatStage(stat, effect);
 
+            if(effect->self && GetBattlerAbility(effectBattler) == ABILITY_BAD_COMPANY && effect->moveEffect == MOVE_EFFECT_STAT_MINUS)
+                continue;
+
             if (stage == 0)
                 continue;
 
@@ -2501,8 +2506,14 @@ void SetMoveEffect(enum BattlerId battlerAtk, enum BattlerId effectBattler, enum
                 SetStatChange(GetPartnerBattler(effectBattler), stat, stage);
         }
 
-        BattleScriptPush(battleScript);
-        gBattlescriptCurrInstr = BattleScript_MoveEffectStatChange;
+        if(effect->self && GetBattlerAbility(effectBattler) == ABILITY_BAD_COMPANY && effect->moveEffect == MOVE_EFFECT_STAT_MINUS){
+            BattleScriptPush(battleScript);
+            gBattlescriptCurrInstr = BattleScript_MoveEffectStatChangeBlockedByBadCompany;
+        }
+        else{
+            BattleScriptPush(battleScript);
+            gBattlescriptCurrInstr = BattleScript_MoveEffectStatChange;
+        }
         break;
     }
     case MOVE_EFFECT_RECHARGE:
@@ -3626,6 +3637,26 @@ static void Cmd_tryfaintmon(void)
             SetValuesOnFaint(battler);
             BattleScriptPush(cmd->nextInstr);
             gBattlescriptCurrInstr = BattleScript_FaintBattler;
+            if (IsOnPlayerSide(battler))
+            {
+                bool8 isNuzlocke = AreNuzlockeRulesEnabled();
+                u8 monId = gBattlerPartyIndexes[battler];
+                gHitMarker |= HITMARKER_PLAYER_FAINTED;
+                if (gBattleResults.playerFaintCounter < 255)
+                    gBattleResults.playerFaintCounter++;
+                AdjustFriendshipOnBattleFaint(battler);
+                gSideTimers[B_SIDE_PLAYER].retaliateTimer = 2;
+                SetMonData(&gParties[B_TRAINER_PLAYER][monId], MON_DATA_IS_DISABLED, &isNuzlocke);
+            }
+            else
+            {
+                if (gBattleResults.opponentFaintCounter < 255)
+                    gBattleResults.opponentFaintCounter++;
+                gBattleResults.lastOpponentSpecies = GetMonData(GetBattlerMon(battler), MON_DATA_SPECIES);
+                gSideTimers[B_SIDE_OPPONENT].retaliateTimer = 2;
+            }
+
+            TryDeactivateSleepClause(battler, gBattlerPartyIndexes[battler]);
         }
         else
         {
@@ -7082,7 +7113,10 @@ static void Cmd_trysetrest(void)
         else
             gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_REST;
 
-        gBattleMons[gBattlerTarget].status1 = STATUS1_SLEEP_TURN(3);
+        if (B_SLEEP_TURNS == GEN_LATEST)
+            gBattleMons[gBattlerTarget].status1 = STATUS1_SLEEP_TURN(B_FORCED_SLEEP_TURNS_REST);
+        else
+            gBattleMons[gBattlerTarget].status1 = STATUS1_SLEEP_TURN(3);
         BtlController_EmitSetMonData(gBattlerTarget, B_COMM_TO_CONTROLLER, REQUEST_STATUS_BATTLE, 0, sizeof(gBattleMons[gBattlerTarget].status1), &gBattleMons[gBattlerTarget].status1);
         MarkBattlerForControllerExec(gBattlerTarget);
         gBattlescriptCurrInstr = cmd->nextInstr;
@@ -8782,6 +8816,13 @@ static void Cmd_settaunt(void)
         gLastUsedAbility = ABILITY_OBLIVIOUS;
         RecordAbilityBattle(gBattlerTarget, ABILITY_OBLIVIOUS);
     }
+    else if(GetBattlerAbility(gBattlerTarget) == ABILITY_WAYWARD){
+        gBattlescriptCurrInstr = BattleScript_NotAffectedAbilityPopUp;
+        gBattleStruct->moveResultFlags[gBattlerTarget] |= MOVE_RESULT_DOESNT_AFFECT_FOE;
+        gBattlerAbility = gBattlerTarget;
+        gLastUsedAbility = ABILITY_WAYWARD;
+        RecordAbilityBattle(gBattlerTarget, ABILITY_WAYWARD);
+    }
     else if (gBattleMons[gBattlerTarget].volatiles.tauntTimer == 0)
     {
         u8 turns;
@@ -8900,10 +8941,10 @@ static void Cmd_tryswapitems(void)
             BtlController_EmitSetMonData(gBattlerTarget, B_COMM_TO_CONTROLLER, REQUEST_HELDITEM_BATTLE, 0, sizeof(gBattleMons[gBattlerTarget].item), &gBattleMons[gBattlerTarget].item);
             MarkBattlerForControllerExec(gBattlerTarget);
 
-            if (GetBattlerAbility(gBattlerTarget) != ABILITY_GORILLA_TACTICS)
+            if (GetBattlerAbility(gBattlerTarget) != ABILITY_GORILLA_TACTICS && GetBattlerAbility(gBattlerTarget) != ABILITY_SAGE_POWER)
                 gBattleStruct->choicedMove[gBattlerTarget] = MOVE_NONE;
 
-            if (GetBattlerAbility(gBattlerAttacker) != ABILITY_GORILLA_TACTICS
+            if (GetBattlerAbility(gBattlerAttacker) != ABILITY_GORILLA_TACTICS && GetBattlerAbility(gBattlerAttacker) != ABILITY_SAGE_POWER
              && (!IsHoldEffectChoice(GetItemHoldEffect(oldItemDef))
              || (GetConfig(B_MODERN_TRICK_CHOICE_LOCK) >= GEN_5)))
             {
