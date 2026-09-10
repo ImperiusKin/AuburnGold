@@ -1,40 +1,42 @@
 mapscripts NewBarkTown_MapScripts {
-     MAP_SCRIPT_ON_FRAME_TABLE [
-        VAR_TEMP_0, 0 {
-            lock
-            call(NewBarkTown_EventScript_MoveYoungsters)
-            release
+    MAP_SCRIPT_ON_TRANSITION {
+        if(!flag(FLAG_ADVENTURE_STARTED)){
+            checkplayergender
+            if(var(VAR_RESULT) != MALE){
+                setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL)
+            }
+            else{
+                setvar(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_RIVAL_MAY_NORMAL)
+            }
+
+            removeobject (LOCALID_NEWBARK_TRAINER_1)
+            setobjectxyperm(LOCALID_NEWBARK_TRAINER_1, 22, 13)
+            setobjectmovementtype (LOCALID_NEWBARK_TRAINER_1, MOVEMENT_TYPE_FACE_RIGHT)
+            addobject (LOCALID_NEWBARK_TRAINER_1)
+
+            removeobject (LOCALID_NEWBARK_TRAINER_2)
+            setobjectxyperm(LOCALID_NEWBARK_TRAINER_2, 22, 14)
+            setobjectmovementtype (LOCALID_NEWBARK_TRAINER_2, MOVEMENT_TYPE_FACE_RIGHT)
+            addobject (LOCALID_NEWBARK_TRAINER_2)
+
+            removeobject (LOCALID_NEWBARK_TRAINER_3)
+            setobjectxyperm(LOCALID_NEWBARK_TRAINER_3, 24, 13)
+            setobjectmovementtype (LOCALID_NEWBARK_TRAINER_3, MOVEMENT_TYPE_FACE_LEFT)
+            addobject (LOCALID_NEWBARK_TRAINER_3)
+
+            removeobject (LOCALID_NEWBARK_TRAINER_4)
+            setobjectxyperm(LOCALID_NEWBARK_TRAINER_4, 24, 14)
+            setobjectmovementtype (LOCALID_NEWBARK_TRAINER_4, MOVEMENT_TYPE_FACE_LEFT)
+            addobject (LOCALID_NEWBARK_TRAINER_4)
         }
-    ]
-}
-
-script NewBarkTown_EventScript_MoveYoungsters{
-    if(flag(FLAG_ADVENTURE_STARTED) ){
-        removeobject (LOCALID_NEWBARK_TRAINER_1)
-        setobjectxyperm(LOCALID_NEWBARK_TRAINER_1, 20, 22)
-        setobjectmovementtype (LOCALID_NEWBARK_TRAINER_1, MOVEMENT_TYPE_WANDER_AROUND)
-        addobject (LOCALID_NEWBARK_TRAINER_1)
-
-        removeobject (LOCALID_NEWBARK_TRAINER_2)
-        setobjectxyperm(LOCALID_NEWBARK_TRAINER_2, 21, 22)
-        setobjectmovementtype (LOCALID_NEWBARK_TRAINER_2, MOVEMENT_TYPE_WANDER_AROUND)
-        addobject (LOCALID_NEWBARK_TRAINER_2)
-
-        removeobject (LOCALID_NEWBARK_TRAINER_3)
-        setobjectxyperm(LOCALID_NEWBARK_TRAINER_3, 22, 22)
-        setobjectmovementtype (LOCALID_NEWBARK_TRAINER_3, MOVEMENT_TYPE_WANDER_AROUND)
-        addobject (LOCALID_NEWBARK_TRAINER_3)
-
-        removeobject (LOCALID_NEWBARK_TRAINER_4)
-        setobjectxyperm(LOCALID_NEWBARK_TRAINER_4, 23, 22)
-        setobjectmovementtype (LOCALID_NEWBARK_TRAINER_4, MOVEMENT_TYPE_WANDER_AROUND)
-        addobject (LOCALID_NEWBARK_TRAINER_4)
     }
-    setvar(VAR_TEMP_0, 1)
-    return
 }
 
-//LOCALID_NEWBARK_TRAINER_1
+script NewBarkTown_EventScript_AreaIsClosed{
+    lock
+    msgbox(format("The door is closed."))
+    release
+}
 
 script NewBarkTown_EventScript_Youngerster1{
     lock
@@ -76,7 +78,7 @@ script NewBarkTown_EventScript_Youngerster4{
     lock
     faceplayer
     if(flag(FLAG_ADVENTURE_STARTED)){
-        msgbox(format("This adventure I'm about to go into needs more preparation than I thought."))
+        msgbox(format("This adventure I'm about to go into needs more preparations than I thought."))
     }
     else{
         msgbox(format("Still, this is going to take most of us years, not months. Hope everyone's ready for the long haul."))
@@ -84,10 +86,10 @@ script NewBarkTown_EventScript_Youngerster4{
     release
 }
 
-const FLAG_NEWBARK_RIVAL_LEAVE = FLAG_TEMP_1
 script NewBarkTown_EventScript_Rival{
     lock
     faceplayer
+	playbgm(MUS_RG_ENCOUNTER_RIVAL, 0)
     msgbox(format("So you're entering too, huh?. I already got my trainer supply kit and my starter so I will begin my journey now!"))
     closemessage
     applymovement(LOCALID_PLAYER, moves(
@@ -99,20 +101,20 @@ script NewBarkTown_EventScript_Rival{
         walk_down * 10
     ))
     waitmovement(0)
-    setflag(FLAG_NEWBARK_RIVAL_LEAVE)
     msgbox(format("Next time I see you make sure to be ready since I'm going to challenge you to a battle!"))
     closemessage
 
 	playse(SE_PIN)
     applymovement(LOCALID_NEWBARK_ELM, Common_Movement_ExclamationMark)
     waitmovement(0)
-    
+
     applymovement(LOCALID_NEWBARK_ELM, moves(
         walk_down * 2
         face_left
     ))
     waitmovement(0)
 
+	playbgm(MUS_RG_OAK, 0)
     msgbox(format("{PLAYER} you're here too!, I was just explaining the others on how the tournament will work, it has some changes from past tournaments so make sure to pay proper attention:"))
     msgbox(format("-Eligibility for Champions league requires completion of Kanto and Rematches of visiting gym leaders now in Kanto."))
     msgbox(format("-Explains each gym leader has been given favorable environments to add to the challenge."))
@@ -135,8 +137,8 @@ script NewBarkTown_EventScript_ChooseStarter{
 	}
 	givemon(SPECIES_NONE, 5, ITEM_ORAN_BERRY)
 	playfanfare(MUS_OBTAIN_ITEM)
-	waitfanfare
 	msgbox(format("{PLAYER} received a {STR_VAR_1}!"), MSGBOX_DEFAULT)
+	waitfanfare
     setflag(FLAG_SYS_POKEMON_GET)
     goto(NewBarkTown_EventScript_ElmPokedex)
     release
@@ -146,12 +148,23 @@ script NewBarkTown_EventScript_ElmPokedex{
     msgbox(format("And finally here is a Pokédex, it can capture all the data of Pokémon you see or catch!"))
     setflag(FLAG_SYS_POKEDEX_GET)
 	playfanfare(MUS_OBTAIN_ITEM)
-	waitfanfare
 	msgbox(format("{PLAYER} received the Pokédex!"), MSGBOX_DEFAULT)
+	waitfanfare
     msgbox(format("You can start your journey by going to Route 29 to the left of Newbark, there should be some trainers ready for a challenge there so prepare yourself!."))
     msgbox(format("Good luck with your journey everyone, I will be waiting for the news for when you get your first badges!"))
     setflag(FLAG_ADVENTURE_STARTED)
     warp(MAP_NEW_BARK_TOWN, 22, 15)
-    call(NewBarkTown_EventScript_MoveYoungsters)
+    release
+}
+
+script NewBarkTown_EventScript_Nurse{
+    if(!flag(FLAG_SYS_POKEDEX_GET)){
+        lock
+        faceplayer
+        msgbox(format("There is something happening at the lab to the north, maybe the Professor is starting another tournament!"))
+    }
+    else{
+        goto(Common_EventScript_PkmnCenterNurse_Updated)
+    }
     release
 }
