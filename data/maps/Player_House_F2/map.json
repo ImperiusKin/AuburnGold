@@ -2,7 +2,7 @@
   "id": "MAP_PLAYER_HOUSE_F2",
   "name": "Player_House_F2",
   "layout": "LAYOUT_PLAYER_HOUSE_F2",
-  "music": "MUS_DUMMY",
+  "music": "MUS_LITTLEROOT",
   "region_map_section": "MAPSEC_ABANDONED_SHIP",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

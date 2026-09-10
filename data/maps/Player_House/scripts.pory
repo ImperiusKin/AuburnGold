@@ -1,3 +1,153 @@
 mapscripts Player_House_MapScripts {
-	
+    MAP_SCRIPT_ON_TRANSITION {
+        if(!flag(FLAG_NEWBARK_TOWN_MOM_INTRODUCTION)){
+            setvar(VAR_TEMP_1, 1)
+        }
+    }
+}
+
+script Player_House_EventScript_Mom_Trigger_0{
+    setvar(VAR_TEMP_0, 0)
+    call(Player_House_EventScript_Mom_Trigger_Base)
+}
+
+script Player_House_EventScript_Mom_Trigger_1{
+    setvar(VAR_TEMP_0, 1)
+    call(Player_House_EventScript_Mom_Trigger_Base)
+}
+
+script Player_House_EventScript_Mom_Trigger_2{
+    setvar(VAR_TEMP_0, 2)
+    call(Player_House_EventScript_Mom_Trigger_Base)
+}
+
+script Player_House_EventScript_Mom_Trigger_Base{
+    lock
+
+	playse(SE_PIN)
+    applymovement(LOCALID_NEWBARK_TOWN_MOM, Common_Movement_ExclamationMark)
+    waitmovement(0)
+
+    switch(var(VAR_TEMP_0)){
+        case 0:
+            applymovement(LOCALID_NEWBARK_TOWN_MOM, moves(
+                walk_right * 2
+                walk_up * 5
+                walk_right * 4
+                face_up
+            ))
+            waitmovement(0)
+            applymovement(LOCALID_PLAYER, moves(face_down))
+            waitmovement(0)
+        break
+        case 1:
+            applymovement(LOCALID_NEWBARK_TOWN_MOM, moves(
+                walk_right * 2
+                walk_up * 5
+                walk_right * 3
+            ))
+            waitmovement(0)
+        break
+        case 2:
+            applymovement(LOCALID_NEWBARK_TOWN_MOM, moves(
+                walk_right * 2
+                walk_up * 4
+                walk_right * 4
+            ))
+            waitmovement(0)
+            applymovement(LOCALID_PLAYER, moves(face_left))
+            waitmovement(0)
+        break
+    }
+    msgbox("Oh, {PLAYER}…! Our neighbor,\n"
+	       "PROF.ELM, was looking for you.\p"
+	       "He said he wanted you to do\n"
+	       "something for him.\p"
+	       "Oh! I almost forgot! Your POKéGEAR\n"
+	       "is back from the repair shop.\p"
+	       "Here you go!")
+
+    playfanfare(MUS_OBTAIN_ITEM)
+    msgbox("{PLAYER} obtained the POKéGEAR.")
+	waitfanfare
+
+    msgbox("MOM: Phone numbers are stored\n"
+	       "in memory.\p"
+	       "Just choose a name you want to call.\p"
+	       "Gee, isn't that convenient?")
+
+    msgbox("Oh, and don't forget your\n"
+	       "RUNNING SHOES!")
+
+    msgbox("{PLAYER} switched shoes with the\n"
+	       "RUNNING SHOES.")
+
+    setflag(FLAG_SYS_B_DASH)
+
+    msgbox("MOM: {PLAYER}, press the B Button\n"
+	       "while wearing these to run fast!")
+
+    msgbox("MOM: PROF.ELM is waiting for you.\p"
+	       "Hurry up, baby!")
+    closemessage
+
+    switch(var(VAR_TEMP_0)){
+        case 0:
+            applymovement(LOCALID_NEWBARK_TOWN_MOM, moves(
+                walk_left * 4
+                walk_down * 5
+                walk_left * 2
+                face_up
+            ))
+        break
+        case 1:
+            applymovement(LOCALID_NEWBARK_TOWN_MOM, moves(
+                walk_left * 3
+                walk_down * 5
+                walk_left * 2
+                face_up
+            ))
+        break
+        case 2:
+            applymovement(LOCALID_NEWBARK_TOWN_MOM, moves(
+                walk_left * 4
+                walk_down * 4
+                walk_left * 2
+                face_up
+            ))
+        break
+    }
+    waitmovement(0)
+
+    setflag(FLAG_NEWBARK_TOWN_MOM_INTRODUCTION)
+    setvar(VAR_TEMP_1, 0)
+    release
+}
+
+script Player_House_EventScript_Mom{
+    lock
+    faceplayer
+    if(!flag(FLAG_ADVENTURE_STARTED)){
+        msgbox("MOM: PROF.ELM is waiting for you.\p"
+               "Hurry up, baby!")
+    }
+    else{
+        if(!flag(FLAG_NEWBARK_MOM_SHOWN_STARTER)){
+            msgbox("MOM: Wow, that's a cute POKéMON.\n"
+                   "Where did you get it?\p"
+                   "…\p"
+                   "So, you're leaving on an adventure...\n"
+                   "That does sound challenging...\p"
+                   "Just be careful.\p"
+                   "POKéMON are your friends.\n"
+                   "You need to work as a team.\p"
+                   "Now, go on!\n"
+                   "I'm behind you all the way!")
+            setflag(FLAG_NEWBARK_MOM_SHOWN_STARTER)
+        }
+        else{
+            msgbox("I'm behind you all the way!")
+        }
+    }
+    release
 }
