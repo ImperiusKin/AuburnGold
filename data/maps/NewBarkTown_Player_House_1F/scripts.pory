@@ -1,4 +1,4 @@
-mapscripts Player_House_MapScripts {
+mapscripts NewBarkTown_Player_House_1F_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         if(!flag(FLAG_NEWBARK_TOWN_MOM_INTRODUCTION)){
             setvar(VAR_TEMP_1, 1)
@@ -6,22 +6,22 @@ mapscripts Player_House_MapScripts {
     }
 }
 
-script Player_House_EventScript_Mom_Trigger_0{
+script NewBarkTown_Player_House_1F_EventScript_Mom_Trigger_0{
     setvar(VAR_TEMP_0, 0)
-    call(Player_House_EventScript_Mom_Trigger_Base)
+    call(NewBarkTown_Player_House_1F_EventScript_Mom_Trigger_Base)
 }
 
-script Player_House_EventScript_Mom_Trigger_1{
+script NewBarkTown_Player_House_1F_EventScript_Mom_Trigger_1{
     setvar(VAR_TEMP_0, 1)
-    call(Player_House_EventScript_Mom_Trigger_Base)
+    call(NewBarkTown_Player_House_1F_EventScript_Mom_Trigger_Base)
 }
 
-script Player_House_EventScript_Mom_Trigger_2{
+script NewBarkTown_Player_House_1F_EventScript_Mom_Trigger_2{
     setvar(VAR_TEMP_0, 2)
-    call(Player_House_EventScript_Mom_Trigger_Base)
+    call(NewBarkTown_Player_House_1F_EventScript_Mom_Trigger_Base)
 }
 
-script Player_House_EventScript_Mom_Trigger_Base{
+script NewBarkTown_Player_House_1F_EventScript_Mom_Trigger_Base{
     lock
 
 	playse(SE_PIN)
@@ -124,7 +124,7 @@ script Player_House_EventScript_Mom_Trigger_Base{
     release
 }
 
-script Player_House_EventScript_Mom{
+script NewBarkTown_Player_House_1F_EventScript_Mom{
     lock
     faceplayer
     if(!flag(FLAG_ADVENTURE_STARTED)){

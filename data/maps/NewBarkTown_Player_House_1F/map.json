@@ -1,7 +1,7 @@
 {
-  "id": "MAP_PLAYER_HOUSE",
-  "name": "Player_House",
-  "layout": "LAYOUT_PLAYER_HOUSE",
+  "id": "MAP_NEW_BARK_TOWN_PLAYER_HOUSE_1_F",
+  "name": "NewBarkTown_Player_House_1F",
+  "layout": "LAYOUT_NEW_BARK_TOWN_PLAYER_HOUSE_1_F",
   "music": "MUS_LITTLEROOT",
   "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
   "requires_flash": false,
@@ -25,7 +25,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Player_House_EventScript_Mom",
+      "script": "NewBarkTown_Player_House_1F_EventScript_Mom",
       "flag": "0"
     }
   ],
@@ -34,14 +34,14 @@
       "x": 9,
       "y": 2,
       "elevation": 0,
-      "dest_map": "MAP_PLAYER_HOUSE_F2",
+      "dest_map": "MAP_NEW_BARK_TOWN_PLAYER_HOUSE_2_F",
       "dest_warp_id": "0"
     },
     {
       "x": 9,
       "y": 3,
       "elevation": 0,
-      "dest_map": "MAP_PLAYER_HOUSE_F2",
+      "dest_map": "MAP_NEW_BARK_TOWN_PLAYER_HOUSE_2_F",
       "dest_warp_id": "1"
     },
     {
@@ -74,7 +74,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_1",
       "var_value": "1",
-      "script": "Player_House_EventScript_Mom_Trigger_0"
+      "script": "NewBarkTown_Player_House_1F_EventScript_Mom_Trigger_0"
     },
     {
       "type": "trigger",
@@ -83,7 +83,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_1",
       "var_value": "1",
-      "script": "Player_House_EventScript_Mom_Trigger_1"
+      "script": "NewBarkTown_Player_House_1F_EventScript_Mom_Trigger_1"
     },
     {
       "type": "trigger",
@@ -92,7 +92,7 @@
       "elevation": 0,
       "var": "VAR_TEMP_1",
       "var_value": "1",
-      "script": "Player_House_EventScript_Mom_Trigger_2"
+      "script": "NewBarkTown_Player_House_1F_EventScript_Mom_Trigger_2"
     }
   ],
   "bg_events": []
