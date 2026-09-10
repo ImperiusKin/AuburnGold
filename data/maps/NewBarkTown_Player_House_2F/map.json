@@ -1,7 +1,7 @@
 {
-  "id": "MAP_PLAYER_HOUSE_F2",
-  "name": "Player_House_F2",
-  "layout": "LAYOUT_PLAYER_HOUSE_F2",
+  "id": "MAP_NEW_BARK_TOWN_PLAYER_HOUSE_2_F",
+  "name": "NewBarkTown_Player_House_2F",
+  "layout": "LAYOUT_NEW_BARK_TOWN_PLAYER_HOUSE_2_F",
   "music": "MUS_LITTLEROOT",
   "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
   "requires_flash": false,
@@ -19,14 +19,14 @@
       "x": 2,
       "y": 2,
       "elevation": 0,
-      "dest_map": "MAP_PLAYER_HOUSE",
+      "dest_map": "MAP_NEW_BARK_TOWN_PLAYER_HOUSE_1_F",
       "dest_warp_id": "0"
     },
     {
       "x": 2,
       "y": 3,
       "elevation": 0,
-      "dest_map": "MAP_PLAYER_HOUSE",
+      "dest_map": "MAP_NEW_BARK_TOWN_PLAYER_HOUSE_1_F",
       "dest_warp_id": "1"
     }
   ],

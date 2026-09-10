@@ -9515,14 +9515,14 @@
       "blockdata_filepath": "data/layouts/florando_City/map.bin"
     },
     {
-      "id": "LAYOUT_POKEMON_CENTER",
-      "name": "Pokemon_Center_Layout",
+      "id": "LAYOUT_NEW_BARK_TOWN_POKEMON_CENTER",
+      "name": "NewBarkTown_Pokemon_Center_Layout",
       "width": 20,
       "height": 20,
       "primary_tileset": "gTileset_PC_Primary",
       "secondary_tileset": "gTileset_PC_Secondary",
-      "border_filepath": "data/layouts/Pokemon_Center/border.bin",
-      "blockdata_filepath": "data/layouts/Pokemon_Center/map.bin"
+      "border_filepath": "data/layouts/NewBarkTown_Pokemon_Center/border.bin",
+      "blockdata_filepath": "data/layouts/NewBarkTown_Pokemon_Center/map.bin"
     },
     {
       "id": "LAYOUT_TRADING_CENTER",
@@ -9565,14 +9565,14 @@
       "blockdata_filepath": "data/layouts/Connection_HappyTown/map.bin"
     },
     {
-      "id": "LAYOUT_ELMS_LAB",
-      "name": "Elms_Lab_Layout",
+      "id": "LAYOUT_NEW_BARK_TOWN_ELMS_LAB",
+      "name": "NewBarkTown_Elms_Lab_Layout",
       "width": 14,
       "height": 15,
       "primary_tileset": "gTileset_Lab_Primary",
       "secondary_tileset": "gTileset_Lab_Secondary",
-      "border_filepath": "data/layouts/Elms_Lab/border.bin",
-      "blockdata_filepath": "data/layouts/Elms_Lab/map.bin"
+      "border_filepath": "data/layouts/NewBarkTown_Elms_Lab/border.bin",
+      "blockdata_filepath": "data/layouts/NewBarkTown_Elms_Lab/map.bin"
     },
     {
       "id": "LAYOUT_OAKS_LAB",
@@ -9635,24 +9635,24 @@
       "blockdata_filepath": "data/layouts/Connection_Amberite_HalluForest/map.bin"
     },
     {
-      "id": "LAYOUT_PLAYER_HOUSE",
-      "name": "Player_House_Layout",
+      "id": "LAYOUT_NEW_BARK_TOWN_PLAYER_HOUSE_1_F",
+      "name": "NewBarkTown_Player_House_1F_Layout",
       "width": 12,
       "height": 12,
       "primary_tileset": "gTileset_PlayerHouse",
       "secondary_tileset": "gTileset_PlayerHouseSec",
-      "border_filepath": "data/layouts/Player_House/border.bin",
-      "blockdata_filepath": "data/layouts/Player_House/map.bin"
+      "border_filepath": "data/layouts/NewBarkTown_Player_House_1F/border.bin",
+      "blockdata_filepath": "data/layouts/NewBarkTown_Player_House_1F/map.bin"
     },
     {
-      "id": "LAYOUT_PLAYER_HOUSE_F2",
-      "name": "Player_House_F2_Layout",
+      "id": "LAYOUT_NEW_BARK_TOWN_PLAYER_HOUSE_2_F",
+      "name": "NewBarkTown_Player_House_2F_Layout",
       "width": 12,
       "height": 12,
       "primary_tileset": "gTileset_PlayerHouse",
       "secondary_tileset": "gTileset_PlayerHouseSec",
-      "border_filepath": "data/layouts/Player_House_F2/border.bin",
-      "blockdata_filepath": "data/layouts/Player_House_F2/map.bin"
+      "border_filepath": "data/layouts/NewBarkTown_Player_House_2F/border.bin",
+      "blockdata_filepath": "data/layouts/NewBarkTown_Player_House_2F/map.bin"
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
-  "id": "MAP_POKEMON_CENTER",
-  "name": "Pokemon_Center",
-  "layout": "LAYOUT_POKEMON_CENTER",
+  "id": "MAP_NEW_BARK_TOWN_POKEMON_CENTER",
+  "name": "NewBarkTown_Pokemon_Center",
+  "layout": "LAYOUT_NEW_BARK_TOWN_POKEMON_CENTER",
   "music": "MUS_POKE_CENTER",
   "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
   "requires_flash": false,
