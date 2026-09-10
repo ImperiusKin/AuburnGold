@@ -9357,7 +9357,7 @@
     {
       "id": "LAYOUT_ROUTE_45",
       "name": "Route_45_Layout",
-      "width": 25,
+      "width": 30,
       "height": 50,
       "primary_tileset": "gTileset_Johto_Primary_3",
       "secondary_tileset": "gTileset_TrainStationExterior",
@@ -9397,7 +9397,7 @@
     {
       "id": "LAYOUT_ROUTE30",
       "name": "Route30_Layout",
-      "width": 55,
+      "width": 63,
       "height": 60,
       "primary_tileset": "gTileset_Route_30",
       "secondary_tileset": "gTileset_Route_30_Secondary",
