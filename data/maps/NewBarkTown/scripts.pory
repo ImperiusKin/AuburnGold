@@ -1,32 +1,86 @@
 mapscripts NewBarkTown_MapScripts {
-	
+     MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_TEMP_0, 0 {
+            lock
+            call(NewBarkTown_EventScript_MoveYoungsters)
+            release
+        }
+    ]
 }
+
+script NewBarkTown_EventScript_MoveYoungsters{
+    if(flag(FLAG_ADVENTURE_STARTED) ){
+        removeobject (LOCALID_NEWBARK_TRAINER_1)
+        setobjectxyperm(LOCALID_NEWBARK_TRAINER_1, 20, 22)
+        setobjectmovementtype (LOCALID_NEWBARK_TRAINER_1, MOVEMENT_TYPE_WANDER_AROUND)
+        addobject (LOCALID_NEWBARK_TRAINER_1)
+
+        removeobject (LOCALID_NEWBARK_TRAINER_2)
+        setobjectxyperm(LOCALID_NEWBARK_TRAINER_2, 21, 22)
+        setobjectmovementtype (LOCALID_NEWBARK_TRAINER_2, MOVEMENT_TYPE_WANDER_AROUND)
+        addobject (LOCALID_NEWBARK_TRAINER_2)
+
+        removeobject (LOCALID_NEWBARK_TRAINER_3)
+        setobjectxyperm(LOCALID_NEWBARK_TRAINER_3, 22, 22)
+        setobjectmovementtype (LOCALID_NEWBARK_TRAINER_3, MOVEMENT_TYPE_WANDER_AROUND)
+        addobject (LOCALID_NEWBARK_TRAINER_3)
+
+        removeobject (LOCALID_NEWBARK_TRAINER_4)
+        setobjectxyperm(LOCALID_NEWBARK_TRAINER_4, 23, 22)
+        setobjectmovementtype (LOCALID_NEWBARK_TRAINER_4, MOVEMENT_TYPE_WANDER_AROUND)
+        addobject (LOCALID_NEWBARK_TRAINER_4)
+    }
+    setvar(VAR_TEMP_0, 1)
+    return
+}
+
+//LOCALID_NEWBARK_TRAINER_1
 
 script NewBarkTown_EventScript_Youngerster1{
     lock
     faceplayer
-    msgbox(format("I heard the Cinnabar Gym Leader picked an actual active volcano. An active one. I don't know if I signed up for this..."))
+    if(flag(FLAG_ADVENTURE_STARTED)){
+        msgbox(format("I choose Squirtle for my journey, it should help me with fire Pokémon and volcanos."))
+    }
+    else{
+        msgbox(format("I heard the Cinnabar Gym Leader picked an actual active volcano. An active one. I don't know if I signed up for this..."))
+    }
     release
 }
 
 script NewBarkTown_EventScript_Youngerster2{
     lock
     faceplayer
-    msgbox(format("Gym Leaders with 'favorable environments'... that sounds like a nice way of saying 'unfair advantage,' if you ask me."))
+    if(flag(FLAG_ADVENTURE_STARTED)){
+        msgbox(format("I was battling on route 29 and got jumped by a big Rattata, maybe I need to train more before I continue my journey."))
+    }
+    else{
+        msgbox(format("Gym Leaders with 'favorable environments'... that sounds like a nice way of saying 'unfair advantage,' if you ask me."))
+    }
     release
 }
 
 script NewBarkTown_EventScript_Youngerster3{
     lock
     faceplayer
-    msgbox(format("This is going to be the adventure of a lifetime. I can't wait!"))
+    if(flag(FLAG_ADVENTURE_STARTED)){
+        msgbox(format("I forgot to ask Elm to give me my Pokédex, I'm too shy to ask him so I asked his aide to help me, he should be back soon."))
+    }
+    else{
+        msgbox(format("This is going to be the adventure of a lifetime. I can't wait!"))
+    }
     release
 }
 
 script NewBarkTown_EventScript_Youngerster4{
     lock
     faceplayer
-    msgbox(format("Still, this is going to take most of us years, not months. Hope everyone's ready for the long haul."))
+    if(flag(FLAG_ADVENTURE_STARTED)){
+        msgbox(format("This adventure I'm about to go into needs more preparation than I thought."))
+    }
+    else{
+        msgbox(format("Still, this is going to take most of us years, not months. Hope everyone's ready for the long haul."))
+    }
     release
 }
 
@@ -98,5 +152,6 @@ script NewBarkTown_EventScript_ElmPokedex{
     msgbox(format("Good luck with your journey everyone, I will be waiting for the news for when you get your first badges!"))
     setflag(FLAG_ADVENTURE_STARTED)
     warp(MAP_NEW_BARK_TOWN, 22, 15)
+    call(NewBarkTown_EventScript_MoveYoungsters)
     release
 }
