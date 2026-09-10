@@ -376,7 +376,13 @@ NewBarkTown_EventScript_Woman_Trigger_Base_8:
 
 NewBarkTown_EventScript_Woman::
 # 242 "data/maps/NewBarkTown/scripts.pory"
+	lock
+# 243 "data/maps/NewBarkTown/scripts.pory"
+	faceplayer
+# 244 "data/maps/NewBarkTown/scripts.pory"
 	msgbox NewBarkTown_EventScript_Woman_Text_0
+# 245 "data/maps/NewBarkTown/scripts.pory"
+	release
 	return
 
 
@@ -729,7 +735,7 @@ NewBarkTown_EventScript_Woman_Trigger_Base_Text_0:
 	.string "the town!$"
 
 NewBarkTown_EventScript_Woman_Text_0:
-# 242 "data/maps/NewBarkTown/scripts.pory"
+# 244 "data/maps/NewBarkTown/scripts.pory"
 	.string "Wild Pokémon appear after this area, be\n"
 	.string "careful and visit the Pokémon Center\l"
 	.string "when you need to heal your party!.$"
