@@ -40,6 +40,7 @@
       "flag": "FLAG_ADVENTURE_STARTED"
     },
     {
+      "local_id": "LOCALID_NEWBARK_TRAINER_3",
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
       "x": 24,
       "y": 13,
@@ -50,9 +51,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NewBarkTown_EventScript_Youngerster3",
-      "flag": "FLAG_ADVENTURE_STARTED"
+      "flag": "FLAG_DEFEATED_CHEREN"
     },
     {
+      "local_id": "LOCALID_NEWBARK_TRAINER_1",
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
       "x": 22,
       "y": 13,
@@ -63,7 +65,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NewBarkTown_EventScript_Youngerster1",
-      "flag": "FLAG_ADVENTURE_STARTED"
+      "flag": "FLAG_DEFEATED_CHEREN"
     },
     {
       "local_id": "LOCALID_NEWBARK_RIVAL",
@@ -80,6 +82,7 @@
       "flag": "FLAG_ADVENTURE_STARTED"
     },
     {
+      "local_id": "LOCALID_NEWBARK_TRAINER_2",
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
       "x": 22,
       "y": 14,
@@ -90,9 +93,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NewBarkTown_EventScript_Youngerster2",
-      "flag": "FLAG_ADVENTURE_STARTED"
+      "flag": "FLAG_DEFEATED_CHEREN"
     },
     {
+      "local_id": "LOCALID_NEWBARK_TRAINER_4",
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
       "x": 24,
       "y": 14,
@@ -103,10 +107,18 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NewBarkTown_EventScript_Youngerster4",
-      "flag": "FLAG_ADVENTURE_STARTED"
+      "flag": "FLAG_DEFEATED_CHEREN"
     }
   ],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "x": 37,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_PLAYER_HOUSE",
+      "dest_warp_id": "2"
+    }
+  ],
   "coord_events": [],
   "bg_events": []
 }
