@@ -2,21 +2,21 @@
 #define GUARD_GLOBAL_FIELDMAP_H
 
 // Masks/shifts for blocks in the map grid
-// Map grid blocks consist of a 10 bit metatile id, a 2 bit collision value, and a 4 bit elevation value
+// Map grid blocks consist of a 12 bit metatile id, a 1 bit collision value, and a 3 bit elevation value
 // This is the data stored in each data/layouts/*/map.bin file
-#define MAPGRID_METATILE_ID_MASK 0x03FF // Bits 0-9
-#define MAPGRID_COLLISION_MASK   0x0C00 // Bits 10-11
-#define MAPGRID_ELEVATION_MASK   0xF000 // Bits 12-15
+#define MAPGRID_METATILE_ID_MASK 0x0FFF // Bits 0-11
+#define MAPGRID_COLLISION_MASK   0x1000 // Bit  12
+#define MAPGRID_ELEVATION_MASK   0xE000 // Bits 13-15
 #define MAPGRID_METATILE_ID_SHIFT 0
-#define MAPGRID_COLLISION_SHIFT  10
-#define MAPGRID_ELEVATION_SHIFT  12
+#define MAPGRID_COLLISION_SHIFT  12
+#define MAPGRID_ELEVATION_SHIFT  13
 
 enum
 {
     ELEVATION_TRANSITION = 0,
     ELEVATION_SURF = 1,
     ELEVATION_DEFAULT = 3,
-    ELEVATION_MULTI_LEVEL = 15,
+    ELEVATION_MULTI_LEVEL = 7, // Was 15 before the metatile count expansion (see MAX_ELEVATION_LEVEL in fieldmap.h)
     ELEVATION_INVALID = 0xFFFF
 };
 
