@@ -2025,3 +2025,14 @@ const struct Tileset gTileset_LabSecondaryMerged =
     .metatileAttributes = gMetatileAttributes_LabSecondaryMerged,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_PlayerHouseSecMerged =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_PlayerHouseSecMerged,
+    .palettes = gTilesetPalettes_PlayerHouseSecMerged,
+    .metatiles = gMetatiles_PlayerHouseSecMerged,
+    .metatileAttributes = gMetatileAttributes_PlayerHouseSecMerged,
+    .callback = NULL,
+};
