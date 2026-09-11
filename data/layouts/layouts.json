@@ -9639,8 +9639,8 @@
       "name": "NewBarkTown_Player_House_1F_Layout",
       "width": 12,
       "height": 12,
-      "primary_tileset": "gTileset_PlayerHouse",
-      "secondary_tileset": "gTileset_PlayerHouseSec",
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PlayerHouseSecMerged",
       "border_filepath": "data/layouts/NewBarkTown_Player_House_1F/border.bin",
       "blockdata_filepath": "data/layouts/NewBarkTown_Player_House_1F/map.bin"
     },
@@ -9649,8 +9649,8 @@
       "name": "NewBarkTown_Player_House_2F_Layout",
       "width": 12,
       "height": 12,
-      "primary_tileset": "gTileset_PlayerHouse",
-      "secondary_tileset": "gTileset_PlayerHouseSec",
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PlayerHouseSecMerged",
       "border_filepath": "data/layouts/NewBarkTown_Player_House_2F/border.bin",
       "blockdata_filepath": "data/layouts/NewBarkTown_Player_House_2F/map.bin"
     }
