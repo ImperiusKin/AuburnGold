@@ -2036,3 +2036,14 @@ const struct Tileset gTileset_PlayerHouseSecMerged =
     .metatileAttributes = gMetatileAttributes_PlayerHouseSecMerged,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_PcSecondaryMerged =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_PcSecondaryMerged,
+    .palettes = gTilesetPalettes_PcSecondaryMerged,
+    .metatiles = gMetatiles_PcSecondaryMerged,
+    .metatileAttributes = gMetatileAttributes_PcSecondaryMerged,
+    .callback = NULL,
+};

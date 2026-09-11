@@ -9519,8 +9519,8 @@
       "name": "NewBarkTown_Pokemon_Center_Layout",
       "width": 20,
       "height": 20,
-      "primary_tileset": "gTileset_PC_Primary",
-      "secondary_tileset": "gTileset_PC_Secondary",
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PcSecondaryMerged",
       "border_filepath": "data/layouts/NewBarkTown_Pokemon_Center/border.bin",
       "blockdata_filepath": "data/layouts/NewBarkTown_Pokemon_Center/map.bin"
     },
