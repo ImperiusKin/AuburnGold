@@ -2014,3 +2014,14 @@ const struct Tileset gTileset_PlayerHouseSec =
     .metatileAttributes = gMetatileAttributes_PlayerHouseSec,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_LabSecondaryMerged =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_LabSecondaryMerged,
+    .palettes = gTilesetPalettes_LabSecondaryMerged,
+    .metatiles = gMetatiles_LabSecondaryMerged,
+    .metatileAttributes = gMetatileAttributes_LabSecondaryMerged,
+    .callback = NULL,
+};
