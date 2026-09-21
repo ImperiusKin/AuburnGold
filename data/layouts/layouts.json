@@ -9437,8 +9437,8 @@
     {
       "id": "LAYOUT_MT_FREEZE",
       "name": "Mt_Freeze_Layout",
-      "width": 36,
-      "height": 44,
+      "width": 50,
+      "height": 69,
       "primary_tileset": "gTileset_Mt_Freeze_Primary",
       "secondary_tileset": "gTileset_Mt_Freeze_Secondary",
       "border_filepath": "data/layouts/Mt_Freeze/border.bin",
@@ -9487,7 +9487,7 @@
     {
       "id": "LAYOUT_BLUEMOON_FALLS",
       "name": "bluemoon_falls_Layout",
-      "width": 45,
+      "width": 46,
       "height": 51,
       "primary_tileset": "gTileset_Route_30",
       "secondary_tileset": "gTileset_Route_30_Secondary",
@@ -9499,7 +9499,7 @@
       "name": "PalmHillCity_Layout",
       "width": 49,
       "height": 41,
-      "primary_tileset": "gTileset_PalmHill_Primary",
+      "primary_tileset": "gTileset_Johto_Primary_2",
       "secondary_tileset": "gTileset_Palm_Hill_City",
       "border_filepath": "data/layouts/PalmHillCity/border.bin",
       "blockdata_filepath": "data/layouts/PalmHillCity/map.bin"
