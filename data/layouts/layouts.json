@@ -9529,8 +9529,8 @@
       "name": "Trading_Center_Layout",
       "width": 11,
       "height": 12,
-      "primary_tileset": "gTileset_Trading_Center",
-      "secondary_tileset": "gTileset_Trading_Center_Sec",
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_TradingCenterSecMerged",
       "border_filepath": "data/layouts/Trading_Center/border.bin",
       "blockdata_filepath": "data/layouts/Trading_Center/map.bin"
     },

@@ -2058,3 +2058,14 @@ const struct Tileset gTileset_TradingFacilitySecMerged =
     .metatileAttributes = gMetatileAttributes_TradingFacilitySecMerged,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_TradingCenterSecMerged =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_TradingCenterSecMerged,
+    .palettes = gTilesetPalettes_TradingCenterSecMerged,
+    .metatiles = gMetatiles_TradingCenterSecMerged,
+    .metatileAttributes = gMetatileAttributes_TradingCenterSecMerged,
+    .callback = NULL,
+};
