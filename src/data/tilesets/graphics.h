@@ -3676,97 +3676,97 @@ const u16 gTilesetPalettes_SproutTower_Sec[][16] =
 
 const u32 gTilesetTiles_SproutTower_Sec[] = INCBIN_U32("data/tilesets/secondary/sprout_tower_sec/tiles.4bpp.lz");
 
-const u16 gTilesetPalettes_LabSecondaryMerged[][16] =
+const u16 gTilesetPalettes_Lab_Jotho[][16] =
 {
-    INCBIN_U16("data/tilesets/secondary/lab_secondary_merged/palettes/00.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/lab_secondary_merged/palettes/01.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/lab_secondary_merged/palettes/02.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/lab_secondary_merged/palettes/03.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/lab_secondary_merged/palettes/04.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/lab_secondary_merged/palettes/05.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/lab_secondary_merged/palettes/06.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/lab_secondary_merged/palettes/07.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/lab_secondary_merged/palettes/08.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/lab_secondary_merged/palettes/09.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/lab_secondary_merged/palettes/10.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/lab_secondary_merged/palettes/11.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/lab_secondary_merged/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lab_jotho/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lab_jotho/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lab_jotho/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lab_jotho/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lab_jotho/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lab_jotho/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lab_jotho/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lab_jotho/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lab_jotho/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lab_jotho/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lab_jotho/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lab_jotho/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/lab_jotho/palettes/12.gbapal"),
 };
 
-const u32 gTilesetTiles_LabSecondaryMerged[] = INCBIN_U32("data/tilesets/secondary/lab_secondary_merged/tiles.4bpp.lz");
+const u32 gTilesetTiles_Lab_Jotho[] = INCBIN_U32("data/tilesets/secondary/lab_jotho/tiles.4bpp.lz");
 
-const u16 gTilesetPalettes_PlayerHouseSecMerged[][16] =
+const u16 gTilesetPalettes_Players_House[][16] =
 {
-    INCBIN_U16("data/tilesets/secondary/player_house_sec_merged/palettes/00.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/player_house_sec_merged/palettes/01.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/player_house_sec_merged/palettes/02.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/player_house_sec_merged/palettes/03.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/player_house_sec_merged/palettes/04.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/player_house_sec_merged/palettes/05.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/player_house_sec_merged/palettes/06.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/player_house_sec_merged/palettes/07.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/player_house_sec_merged/palettes/08.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/player_house_sec_merged/palettes/09.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/player_house_sec_merged/palettes/10.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/player_house_sec_merged/palettes/11.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/player_house_sec_merged/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/players_house/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/players_house/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/players_house/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/players_house/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/players_house/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/players_house/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/players_house/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/players_house/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/players_house/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/players_house/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/players_house/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/players_house/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/players_house/palettes/12.gbapal"),
 };
 
-const u32 gTilesetTiles_PlayerHouseSecMerged[] = INCBIN_U32("data/tilesets/secondary/player_house_sec_merged/tiles.4bpp.lz");
+const u32 gTilesetTiles_Players_House[] = INCBIN_U32("data/tilesets/secondary/players_house/tiles.4bpp.lz");
 
-const u16 gTilesetPalettes_PcSecondaryMerged[][16] =
+const u16 gTilesetPalettes_Pokemon_Center_Jotho[][16] =
 {
-    INCBIN_U16("data/tilesets/secondary/pc_secondary_merged/palettes/00.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/pc_secondary_merged/palettes/01.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/pc_secondary_merged/palettes/02.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/pc_secondary_merged/palettes/03.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/pc_secondary_merged/palettes/04.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/pc_secondary_merged/palettes/05.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/pc_secondary_merged/palettes/06.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/pc_secondary_merged/palettes/07.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/pc_secondary_merged/palettes/08.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/pc_secondary_merged/palettes/09.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/pc_secondary_merged/palettes/10.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/pc_secondary_merged/palettes/11.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/pc_secondary_merged/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/pokemon_center_jotho/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/pokemon_center_jotho/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/pokemon_center_jotho/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/pokemon_center_jotho/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/pokemon_center_jotho/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/pokemon_center_jotho/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/pokemon_center_jotho/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/pokemon_center_jotho/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/pokemon_center_jotho/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/pokemon_center_jotho/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/pokemon_center_jotho/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/pokemon_center_jotho/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/pokemon_center_jotho/palettes/12.gbapal"),
 };
 
-const u32 gTilesetTiles_PcSecondaryMerged[] = INCBIN_U32("data/tilesets/secondary/pc_secondary_merged/tiles.4bpp.lz");
+const u32 gTilesetTiles_Pokemon_Center_Jotho[] = INCBIN_U32("data/tilesets/secondary/pokemon_center_jotho/tiles.4bpp.lz");
 
-const u16 gTilesetPalettes_TradingFacilitySecMerged[][16] =
+const u16 gTilesetPalettes_Trading_Facility[][16] =
 {
-    INCBIN_U16("data/tilesets/secondary/trading_facility_sec_merged/palettes/00.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/trading_facility_sec_merged/palettes/01.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/trading_facility_sec_merged/palettes/02.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/trading_facility_sec_merged/palettes/03.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/trading_facility_sec_merged/palettes/04.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/trading_facility_sec_merged/palettes/05.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/trading_facility_sec_merged/palettes/06.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/trading_facility_sec_merged/palettes/07.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/trading_facility_sec_merged/palettes/08.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/trading_facility_sec_merged/palettes/09.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/trading_facility_sec_merged/palettes/10.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/trading_facility_sec_merged/palettes/11.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/trading_facility_sec_merged/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/trading_facility/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/trading_facility/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/trading_facility/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/trading_facility/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/trading_facility/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/trading_facility/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/trading_facility/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/trading_facility/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/trading_facility/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/trading_facility/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/trading_facility/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/trading_facility/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/trading_facility/palettes/12.gbapal"),
 };
 
-const u32 gTilesetTiles_TradingFacilitySecMerged[] = INCBIN_U32("data/tilesets/secondary/trading_facility_sec_merged/tiles.4bpp.lz");
+const u32 gTilesetTiles_Trading_Facility[] = INCBIN_U32("data/tilesets/secondary/trading_facility/tiles.4bpp.lz");
 
-const u16 gTilesetPalettes_TradingCenterSecMerged[][16] =
+const u16 gTilesetPalettes_Trading_Center[][16] =
 {
-    INCBIN_U16("data/tilesets/secondary/trading_center_sec_merged/palettes/00.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/trading_center_sec_merged/palettes/01.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/trading_center_sec_merged/palettes/02.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/trading_center_sec_merged/palettes/03.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/trading_center_sec_merged/palettes/04.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/trading_center_sec_merged/palettes/05.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/trading_center_sec_merged/palettes/06.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/trading_center_sec_merged/palettes/07.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/trading_center_sec_merged/palettes/08.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/trading_center_sec_merged/palettes/09.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/trading_center_sec_merged/palettes/10.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/trading_center_sec_merged/palettes/11.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/trading_center_sec_merged/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/trading_center/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/trading_center/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/trading_center/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/trading_center/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/trading_center/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/trading_center/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/trading_center/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/trading_center/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/trading_center/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/trading_center/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/trading_center/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/trading_center/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/trading_center/palettes/12.gbapal"),
 };
 
-const u32 gTilesetTiles_TradingCenterSecMerged[] = INCBIN_U32("data/tilesets/secondary/trading_center_sec_merged/tiles.4bpp.lz");
+const u32 gTilesetTiles_Trading_Center[] = INCBIN_U32("data/tilesets/secondary/trading_center/tiles.4bpp.lz");
