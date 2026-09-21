@@ -1905,57 +1905,57 @@ const struct Tileset gTileset_SproutTower_Sec =
     .callback = NULL,
 };
 
-const struct Tileset gTileset_LabSecondaryMerged =
+const struct Tileset gTileset_Lab_Jotho =
 {
     .isCompressed = TRUE,
     .isSecondary = TRUE,
-    .tiles = gTilesetTiles_LabSecondaryMerged,
-    .palettes = gTilesetPalettes_LabSecondaryMerged,
-    .metatiles = gMetatiles_LabSecondaryMerged,
-    .metatileAttributes = gMetatileAttributes_LabSecondaryMerged,
+    .tiles = gTilesetTiles_Lab_Jotho,
+    .palettes = gTilesetPalettes_Lab_Jotho,
+    .metatiles = gMetatiles_Lab_Jotho,
+    .metatileAttributes = gMetatileAttributes_Lab_Jotho,
     .callback = NULL,
 };
 
-const struct Tileset gTileset_PlayerHouseSecMerged =
+const struct Tileset gTileset_Players_House =
 {
     .isCompressed = TRUE,
     .isSecondary = TRUE,
-    .tiles = gTilesetTiles_PlayerHouseSecMerged,
-    .palettes = gTilesetPalettes_PlayerHouseSecMerged,
-    .metatiles = gMetatiles_PlayerHouseSecMerged,
-    .metatileAttributes = gMetatileAttributes_PlayerHouseSecMerged,
+    .tiles = gTilesetTiles_Players_House,
+    .palettes = gTilesetPalettes_Players_House,
+    .metatiles = gMetatiles_Players_House,
+    .metatileAttributes = gMetatileAttributes_Players_House,
     .callback = NULL,
 };
 
-const struct Tileset gTileset_PcSecondaryMerged =
+const struct Tileset gTileset_Pokemon_Center_Jotho =
 {
     .isCompressed = TRUE,
     .isSecondary = TRUE,
-    .tiles = gTilesetTiles_PcSecondaryMerged,
-    .palettes = gTilesetPalettes_PcSecondaryMerged,
-    .metatiles = gMetatiles_PcSecondaryMerged,
-    .metatileAttributes = gMetatileAttributes_PcSecondaryMerged,
+    .tiles = gTilesetTiles_Pokemon_Center_Jotho,
+    .palettes = gTilesetPalettes_Pokemon_Center_Jotho,
+    .metatiles = gMetatiles_Pokemon_Center_Jotho,
+    .metatileAttributes = gMetatileAttributes_Pokemon_Center_Jotho,
     .callback = NULL,
 };
 
-const struct Tileset gTileset_TradingFacilitySecMerged =
+const struct Tileset gTileset_Trading_Facility =
 {
     .isCompressed = TRUE,
     .isSecondary = TRUE,
-    .tiles = gTilesetTiles_TradingFacilitySecMerged,
-    .palettes = gTilesetPalettes_TradingFacilitySecMerged,
-    .metatiles = gMetatiles_TradingFacilitySecMerged,
-    .metatileAttributes = gMetatileAttributes_TradingFacilitySecMerged,
+    .tiles = gTilesetTiles_Trading_Facility,
+    .palettes = gTilesetPalettes_Trading_Facility,
+    .metatiles = gMetatiles_Trading_Facility,
+    .metatileAttributes = gMetatileAttributes_Trading_Facility,
     .callback = NULL,
 };
 
-const struct Tileset gTileset_TradingCenterSecMerged =
+const struct Tileset gTileset_Trading_Center =
 {
     .isCompressed = TRUE,
     .isSecondary = TRUE,
-    .tiles = gTilesetTiles_TradingCenterSecMerged,
-    .palettes = gTilesetPalettes_TradingCenterSecMerged,
-    .metatiles = gMetatiles_TradingCenterSecMerged,
-    .metatileAttributes = gMetatileAttributes_TradingCenterSecMerged,
+    .tiles = gTilesetTiles_Trading_Center,
+    .palettes = gTilesetPalettes_Trading_Center,
+    .metatiles = gMetatiles_Trading_Center,
+    .metatileAttributes = gMetatileAttributes_Trading_Center,
     .callback = NULL,
 };

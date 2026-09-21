@@ -9520,7 +9520,7 @@
       "width": 20,
       "height": 20,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_PcSecondaryMerged",
+      "secondary_tileset": "gTileset_Pokemon_Center_Jotho",
       "border_filepath": "data/layouts/NewBarkTown_Pokemon_Center/border.bin",
       "blockdata_filepath": "data/layouts/NewBarkTown_Pokemon_Center/map.bin"
     },
@@ -9530,7 +9530,7 @@
       "width": 11,
       "height": 12,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_TradingCenterSecMerged",
+      "secondary_tileset": "gTileset_Trading_Center",
       "border_filepath": "data/layouts/Trading_Center/border.bin",
       "blockdata_filepath": "data/layouts/Trading_Center/map.bin"
     },
@@ -9540,7 +9540,7 @@
       "width": 12,
       "height": 12,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_TradingFacilitySecMerged",
+      "secondary_tileset": "gTileset_Trading_Facility",
       "border_filepath": "data/layouts/Trading_Facility/border.bin",
       "blockdata_filepath": "data/layouts/Trading_Facility/map.bin"
     },
@@ -9570,7 +9570,7 @@
       "width": 14,
       "height": 15,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_LabSecondaryMerged",
+      "secondary_tileset": "gTileset_Lab_Jotho",
       "border_filepath": "data/layouts/NewBarkTown_Elms_Lab/border.bin",
       "blockdata_filepath": "data/layouts/NewBarkTown_Elms_Lab/map.bin"
     },
@@ -9580,7 +9580,7 @@
       "width": 14,
       "height": 15,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_LabSecondaryMerged",
+      "secondary_tileset": "gTileset_Lab_Jotho",
       "border_filepath": "data/layouts/Oaks_Lab/border.bin",
       "blockdata_filepath": "data/layouts/Oaks_Lab/map.bin"
     },
@@ -9640,7 +9640,7 @@
       "width": 12,
       "height": 12,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_PlayerHouseSecMerged",
+      "secondary_tileset": "gTileset_Players_House",
       "border_filepath": "data/layouts/NewBarkTown_Player_House_1F/border.bin",
       "blockdata_filepath": "data/layouts/NewBarkTown_Player_House_1F/map.bin"
     },
@@ -9650,7 +9650,7 @@
       "width": 12,
       "height": 12,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_PlayerHouseSecMerged",
+      "secondary_tileset": "gTileset_Players_House",
       "border_filepath": "data/layouts/NewBarkTown_Player_House_2F/border.bin",
       "blockdata_filepath": "data/layouts/NewBarkTown_Player_House_2F/map.bin"
     }

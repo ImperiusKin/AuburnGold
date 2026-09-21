@@ -508,17 +508,17 @@ const u16 gMetatileAttributes_SproutTower[] = INCBIN_U16("data/tilesets/primary/
 const u16 gMetatiles_SproutTower_Sec[] = INCBIN_U16("data/tilesets/secondary/sprout_tower_sec/metatiles.bin");
 const u16 gMetatileAttributes_SproutTower_Sec[] = INCBIN_U16("data/tilesets/secondary/sprout_tower_sec/metatile_attributes.bin");
 
-const u16 gMetatiles_LabSecondaryMerged[] = INCBIN_U16("data/tilesets/secondary/lab_secondary_merged/metatiles.bin");
-const u16 gMetatileAttributes_LabSecondaryMerged[] = INCBIN_U16("data/tilesets/secondary/lab_secondary_merged/metatile_attributes.bin");
+const u16 gMetatiles_Lab_Jotho[] = INCBIN_U16("data/tilesets/secondary/lab_jotho/metatiles.bin");
+const u16 gMetatileAttributes_Lab_Jotho[] = INCBIN_U16("data/tilesets/secondary/lab_jotho/metatile_attributes.bin");
 
-const u16 gMetatiles_PlayerHouseSecMerged[] = INCBIN_U16("data/tilesets/secondary/player_house_sec_merged/metatiles.bin");
-const u16 gMetatileAttributes_PlayerHouseSecMerged[] = INCBIN_U16("data/tilesets/secondary/player_house_sec_merged/metatile_attributes.bin");
+const u16 gMetatiles_Players_House[] = INCBIN_U16("data/tilesets/secondary/players_house/metatiles.bin");
+const u16 gMetatileAttributes_Players_House[] = INCBIN_U16("data/tilesets/secondary/players_house/metatile_attributes.bin");
 
-const u16 gMetatiles_PcSecondaryMerged[] = INCBIN_U16("data/tilesets/secondary/pc_secondary_merged/metatiles.bin");
-const u16 gMetatileAttributes_PcSecondaryMerged[] = INCBIN_U16("data/tilesets/secondary/pc_secondary_merged/metatile_attributes.bin");
+const u16 gMetatiles_Pokemon_Center_Jotho[] = INCBIN_U16("data/tilesets/secondary/pokemon_center_jotho/metatiles.bin");
+const u16 gMetatileAttributes_Pokemon_Center_Jotho[] = INCBIN_U16("data/tilesets/secondary/pokemon_center_jotho/metatile_attributes.bin");
 
-const u16 gMetatiles_TradingFacilitySecMerged[] = INCBIN_U16("data/tilesets/secondary/trading_facility_sec_merged/metatiles.bin");
-const u16 gMetatileAttributes_TradingFacilitySecMerged[] = INCBIN_U16("data/tilesets/secondary/trading_facility_sec_merged/metatile_attributes.bin");
+const u16 gMetatiles_Trading_Facility[] = INCBIN_U16("data/tilesets/secondary/trading_facility/metatiles.bin");
+const u16 gMetatileAttributes_Trading_Facility[] = INCBIN_U16("data/tilesets/secondary/trading_facility/metatile_attributes.bin");
 
-const u16 gMetatiles_TradingCenterSecMerged[] = INCBIN_U16("data/tilesets/secondary/trading_center_sec_merged/metatiles.bin");
-const u16 gMetatileAttributes_TradingCenterSecMerged[] = INCBIN_U16("data/tilesets/secondary/trading_center_sec_merged/metatile_attributes.bin");
+const u16 gMetatiles_Trading_Center[] = INCBIN_U16("data/tilesets/secondary/trading_center/metatiles.bin");
+const u16 gMetatileAttributes_Trading_Center[] = INCBIN_U16("data/tilesets/secondary/trading_center/metatile_attributes.bin");
