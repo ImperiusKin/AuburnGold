@@ -9539,8 +9539,8 @@
       "name": "Trading_Facility_Layout",
       "width": 12,
       "height": 12,
-      "primary_tileset": "gTileset_Trading_Facility",
-      "secondary_tileset": "gTileset_Trading_Facility_Sec",
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_TradingFacilitySecMerged",
       "border_filepath": "data/layouts/Trading_Facility/border.bin",
       "blockdata_filepath": "data/layouts/Trading_Facility/map.bin"
     },

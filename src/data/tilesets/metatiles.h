@@ -546,3 +546,6 @@ const u16 gMetatileAttributes_PlayerHouseSecMerged[] = INCBIN_U16("data/tilesets
 
 const u16 gMetatiles_PcSecondaryMerged[] = INCBIN_U16("data/tilesets/secondary/pc_secondary_merged/metatiles.bin");
 const u16 gMetatileAttributes_PcSecondaryMerged[] = INCBIN_U16("data/tilesets/secondary/pc_secondary_merged/metatile_attributes.bin");
+
+const u16 gMetatiles_TradingFacilitySecMerged[] = INCBIN_U16("data/tilesets/secondary/trading_facility_sec_merged/metatiles.bin");
+const u16 gMetatileAttributes_TradingFacilitySecMerged[] = INCBIN_U16("data/tilesets/secondary/trading_facility_sec_merged/metatile_attributes.bin");
