@@ -493,18 +493,6 @@ const u16 gMetatileAttributes_PC_Primary[] = INCBIN_U16("data/tilesets/primary/p
 const u16 gMetatiles_PC_Secondary[] = INCBIN_U16("data/tilesets/secondary/pc_secondary/metatiles.bin");
 const u16 gMetatileAttributes_PC_Secondary[] = INCBIN_U16("data/tilesets/secondary/pc_secondary/metatile_attributes.bin");
 
-const u16 gMetatiles_Trading_Center[] = INCBIN_U16("data/tilesets/primary/trading_center/metatiles.bin");
-const u16 gMetatileAttributes_Trading_Center[] = INCBIN_U16("data/tilesets/primary/trading_center/metatile_attributes.bin");
-
-const u16 gMetatiles_Trading_Center_Sec[] = INCBIN_U16("data/tilesets/secondary/trading_center_sec/metatiles.bin");
-const u16 gMetatileAttributes_Trading_Center_Sec[] = INCBIN_U16("data/tilesets/secondary/trading_center_sec/metatile_attributes.bin");
-
-const u16 gMetatiles_Trading_Facility[] = INCBIN_U16("data/tilesets/primary/trading_facility/metatiles.bin");
-const u16 gMetatileAttributes_Trading_Facility[] = INCBIN_U16("data/tilesets/primary/trading_facility/metatile_attributes.bin");
-
-const u16 gMetatiles_Trading_Facility_Sec[] = INCBIN_U16("data/tilesets/secondary/trading_facility_sec/metatiles.bin");
-const u16 gMetatileAttributes_Trading_Facility_Sec[] = INCBIN_U16("data/tilesets/secondary/trading_facility_sec/metatile_attributes.bin");
-
 const u16 gMetatiles_Connections[] = INCBIN_U16("data/tilesets/primary/connections/metatiles.bin");
 const u16 gMetatileAttributes_Connections[] = INCBIN_U16("data/tilesets/primary/connections/metatile_attributes.bin");
 

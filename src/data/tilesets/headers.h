@@ -1850,50 +1850,6 @@ const struct Tileset gTileset_PC_Secondary =
     .callback = NULL,
 };
 
-const struct Tileset gTileset_Trading_Center =
-{
-    .isCompressed = TRUE,
-    .isSecondary = FALSE,
-    .tiles = gTilesetTiles_Trading_Center,
-    .palettes = gTilesetPalettes_Trading_Center,
-    .metatiles = gMetatiles_Trading_Center,
-    .metatileAttributes = gMetatileAttributes_Trading_Center,
-    .callback = NULL,
-};
-
-const struct Tileset gTileset_Trading_Center_Sec =
-{
-    .isCompressed = TRUE,
-    .isSecondary = TRUE,
-    .tiles = gTilesetTiles_Trading_Center_Sec,
-    .palettes = gTilesetPalettes_Trading_Center_Sec,
-    .metatiles = gMetatiles_Trading_Center_Sec,
-    .metatileAttributes = gMetatileAttributes_Trading_Center_Sec,
-    .callback = NULL,
-};
-
-const struct Tileset gTileset_Trading_Facility =
-{
-    .isCompressed = TRUE,
-    .isSecondary = FALSE,
-    .tiles = gTilesetTiles_Trading_Facility,
-    .palettes = gTilesetPalettes_Trading_Facility,
-    .metatiles = gMetatiles_Trading_Facility,
-    .metatileAttributes = gMetatileAttributes_Trading_Facility,
-    .callback = NULL,
-};
-
-const struct Tileset gTileset_Trading_Facility_Sec =
-{
-    .isCompressed = TRUE,
-    .isSecondary = TRUE,
-    .tiles = gTilesetTiles_Trading_Facility_Sec,
-    .palettes = gTilesetPalettes_Trading_Facility_Sec,
-    .metatiles = gMetatiles_Trading_Facility_Sec,
-    .metatileAttributes = gMetatileAttributes_Trading_Facility_Sec,
-    .callback = NULL,
-};
-
 const struct Tileset gTileset_Connections =
 {
     .isCompressed = TRUE,
