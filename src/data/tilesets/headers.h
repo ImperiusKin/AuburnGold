@@ -1828,28 +1828,6 @@ const struct Tileset gTileset_Florando_Secondary =
     .callback = NULL,
 };
 
-const struct Tileset gTileset_PC_Primary =
-{
-    .isCompressed = TRUE,
-    .isSecondary = FALSE,
-    .tiles = gTilesetTiles_PC_Primary,
-    .palettes = gTilesetPalettes_PC_Primary,
-    .metatiles = gMetatiles_PC_Primary,
-    .metatileAttributes = gMetatileAttributes_PC_Primary,
-    .callback = NULL,
-};
-
-const struct Tileset gTileset_PC_Secondary =
-{
-    .isCompressed = TRUE,
-    .isSecondary = TRUE,
-    .tiles = gTilesetTiles_PC_Secondary,
-    .palettes = gTilesetPalettes_PC_Secondary,
-    .metatiles = gMetatiles_PC_Secondary,
-    .metatileAttributes = gMetatileAttributes_PC_Secondary,
-    .callback = NULL,
-};
-
 const struct Tileset gTileset_Connections =
 {
     .isCompressed = TRUE,
@@ -1869,28 +1847,6 @@ const struct Tileset gTileset_Connections_Sec =
     .palettes = gTilesetPalettes_Connections_Sec,
     .metatiles = gMetatiles_Connections_Sec,
     .metatileAttributes = gMetatileAttributes_Connections_Sec,
-    .callback = NULL,
-};
-
-const struct Tileset gTileset_Lab_Primary =
-{
-    .isCompressed = TRUE,
-    .isSecondary = FALSE,
-    .tiles = gTilesetTiles_Lab_Primary,
-    .palettes = gTilesetPalettes_Lab_Primary,
-    .metatiles = gMetatiles_Lab_Primary,
-    .metatileAttributes = gMetatileAttributes_Lab_Primary,
-    .callback = NULL,
-};
-
-const struct Tileset gTileset_Lab_Secondary =
-{
-    .isCompressed = TRUE,
-    .isSecondary = TRUE,
-    .tiles = gTilesetTiles_Lab_Secondary,
-    .palettes = gTilesetPalettes_Lab_Secondary,
-    .metatiles = gMetatiles_Lab_Secondary,
-    .metatileAttributes = gMetatileAttributes_Lab_Secondary,
     .callback = NULL,
 };
 
@@ -1946,28 +1902,6 @@ const struct Tileset gTileset_SproutTower_Sec =
     .palettes = gTilesetPalettes_SproutTower_Sec,
     .metatiles = gMetatiles_SproutTower_Sec,
     .metatileAttributes = gMetatileAttributes_SproutTower_Sec,
-    .callback = NULL,
-};
-
-const struct Tileset gTileset_PlayerHouse =
-{
-    .isCompressed = TRUE,
-    .isSecondary = FALSE,
-    .tiles = gTilesetTiles_PlayerHouse,
-    .palettes = gTilesetPalettes_PlayerHouse,
-    .metatiles = gMetatiles_PlayerHouse,
-    .metatileAttributes = gMetatileAttributes_PlayerHouse,
-    .callback = NULL,
-};
-
-const struct Tileset gTileset_PlayerHouseSec =
-{
-    .isCompressed = TRUE,
-    .isSecondary = TRUE,
-    .tiles = gTilesetTiles_PlayerHouseSec,
-    .palettes = gTilesetPalettes_PlayerHouseSec,
-    .metatiles = gMetatiles_PlayerHouseSec,
-    .metatileAttributes = gMetatileAttributes_PlayerHouseSec,
     .callback = NULL,
 };
 
