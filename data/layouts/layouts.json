@@ -9589,8 +9589,8 @@
       "name": "Violet_Gym_Layout",
       "width": 16,
       "height": 16,
-      "primary_tileset": "gTileset_VioletGym",
-      "secondary_tileset": "gTileset_VioletGym_Sec2",
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Violet_Gym",
       "border_filepath": "data/layouts/Violet_Gym/border.bin",
       "blockdata_filepath": "data/layouts/Violet_Gym/map.bin"
     },
