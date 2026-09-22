@@ -1806,28 +1806,6 @@ const struct Tileset gTileset_Connections_Sec =
     .callback = NULL,
 };
 
-const struct Tileset gTileset_SproutTower =
-{
-    .isCompressed = TRUE,
-    .isSecondary = FALSE,
-    .tiles = gTilesetTiles_SproutTower,
-    .palettes = gTilesetPalettes_SproutTower,
-    .metatiles = gMetatiles_SproutTower,
-    .metatileAttributes = gMetatileAttributes_SproutTower,
-    .callback = NULL,
-};
-
-const struct Tileset gTileset_SproutTower_Sec =
-{
-    .isCompressed = TRUE,
-    .isSecondary = TRUE,
-    .tiles = gTilesetTiles_SproutTower_Sec,
-    .palettes = gTilesetPalettes_SproutTower_Sec,
-    .metatiles = gMetatiles_SproutTower_Sec,
-    .metatileAttributes = gMetatileAttributes_SproutTower_Sec,
-    .callback = NULL,
-};
-
 const struct Tileset gTileset_Lab_Jotho =
 {
     .isCompressed = TRUE,
@@ -1891,5 +1869,16 @@ const struct Tileset gTileset_Violet_Gym =
     .palettes = gTilesetPalettes_Violet_Gym,
     .metatiles = gMetatiles_Violet_Gym,
     .metatileAttributes = gMetatileAttributes_Violet_Gym,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_Sprout_Tower =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Sprout_Tower,
+    .palettes = gTilesetPalettes_Sprout_Tower,
+    .metatiles = gMetatiles_Sprout_Tower,
+    .metatileAttributes = gMetatileAttributes_Sprout_Tower,
     .callback = NULL,
 };
