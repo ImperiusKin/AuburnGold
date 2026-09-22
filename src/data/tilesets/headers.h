@@ -1850,39 +1850,6 @@ const struct Tileset gTileset_Connections_Sec =
     .callback = NULL,
 };
 
-const struct Tileset gTileset_VioletGym =
-{
-    .isCompressed = TRUE,
-    .isSecondary = FALSE,
-    .tiles = gTilesetTiles_VioletGym,
-    .palettes = gTilesetPalettes_VioletGym,
-    .metatiles = gMetatiles_VioletGym,
-    .metatileAttributes = gMetatileAttributes_VioletGym,
-    .callback = NULL,
-};
-
-const struct Tileset gTileset_VioletGym_Sec =
-{
-    .isCompressed = TRUE,
-    .isSecondary = FALSE,
-    .tiles = gTilesetTiles_VioletGym_Sec,
-    .palettes = gTilesetPalettes_VioletGym_Sec,
-    .metatiles = gMetatiles_VioletGym_Sec,
-    .metatileAttributes = gMetatileAttributes_VioletGym_Sec,
-    .callback = NULL,
-};
-
-const struct Tileset gTileset_VioletGym_Sec2 =
-{
-    .isCompressed = TRUE,
-    .isSecondary = TRUE,
-    .tiles = gTilesetTiles_VioletGym_Sec2,
-    .palettes = gTilesetPalettes_VioletGym_Sec2,
-    .metatiles = gMetatiles_VioletGym_Sec2,
-    .metatileAttributes = gMetatileAttributes_VioletGym_Sec2,
-    .callback = NULL,
-};
-
 const struct Tileset gTileset_SproutTower =
 {
     .isCompressed = TRUE,
@@ -1957,5 +1924,16 @@ const struct Tileset gTileset_Trading_Center =
     .palettes = gTilesetPalettes_Trading_Center,
     .metatiles = gMetatiles_Trading_Center,
     .metatileAttributes = gMetatileAttributes_Trading_Center,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_Violet_Gym =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Violet_Gym,
+    .palettes = gTilesetPalettes_Violet_Gym,
+    .metatiles = gMetatiles_Violet_Gym,
+    .metatileAttributes = gMetatileAttributes_Violet_Gym,
     .callback = NULL,
 };
