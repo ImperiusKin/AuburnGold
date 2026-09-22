@@ -272,17 +272,6 @@ const struct Tileset gTileset_PokemonFanClub =
     .callback = NULL,
 };
 
-const struct Tileset gTileset_Unused1 =
-{
-    .isCompressed = TRUE,
-    .isSecondary = TRUE,
-    .tiles = gTilesetTiles_Unused1,
-    .palettes = gTilesetPalettes_Unused1,
-    .metatiles = gMetatiles_Unused1,
-    .metatileAttributes = gMetatileAttributes_Unused1,
-    .callback = NULL,
-};
-
 const struct Tileset gTileset_MeteorFalls =
 {
     .isCompressed = TRUE,
@@ -445,17 +434,6 @@ const struct Tileset gTileset_InsideOfTruck =
     .palettes = gTilesetPalettes_InsideOfTruck,
     .metatiles = gMetatiles_InsideOfTruck,
     .metatileAttributes = gMetatileAttributes_InsideOfTruck,
-    .callback = NULL,
-};
-
-const struct Tileset gTileset_Unused2 =
-{
-    .isCompressed = TRUE,
-    .isSecondary = TRUE,
-    .tiles = gTilesetTiles_Unused2,
-    .palettes = gTilesetPalettes_Unused2,
-    .metatiles = gMetatiles_Unused2,
-    .metatileAttributes = gMetatileAttributes_Unused2,
     .callback = NULL,
 };
 
@@ -1199,17 +1177,6 @@ const struct Tileset gTileset_ViridianForest =
     .callback = NULL,
 };
 
-const struct Tileset gTileset_UnusedGatehouse1 =
-{
-    .isCompressed = TRUE,
-    .isSecondary = TRUE,
-    .tiles = gTilesetTiles_UnusedGatehouse1,
-    .palettes = gTilesetPalettes_UnusedGatehouse1,
-    .metatiles = gMetatiles_UnusedGatehouse1,
-    .metatileAttributes = gMetatileAttributes_UnusedGatehouse1,
-    .callback = NULL,
-};
-
 const struct Tileset gTileset_RockTunnel =
 {
     .isCompressed = TRUE,
@@ -1240,17 +1207,6 @@ const struct Tileset gTileset_SeafoamIslands =
     .palettes = gTilesetPalettes_SeafoamIslands,
     .metatiles = gMetatiles_SeafoamIslands,
     .metatileAttributes = gMetatileAttributes_SeafoamIslands,
-    .callback = NULL,
-};
-
-const struct Tileset gTileset_UnusedGatehouse2 =
-{
-    .isCompressed = TRUE,
-    .isSecondary = TRUE,
-    .tiles = gTilesetTiles_UnusedGatehouse2,
-    .palettes = gTilesetPalettes_UnusedGatehouse2,
-    .metatiles = gMetatiles_UnusedGatehouse2,
-    .metatileAttributes = gMetatileAttributes_UnusedGatehouse2,
     .callback = NULL,
 };
 
