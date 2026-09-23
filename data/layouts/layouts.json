@@ -9599,8 +9599,8 @@
       "name": "Sprout_Tower_Layout",
       "width": 22,
       "height": 22,
-      "primary_tileset": "gTileset_SproutTower",
-      "secondary_tileset": "gTileset_SproutTower_Sec",
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Sprout_Tower",
       "border_filepath": "data/layouts/Sprout_Tower/border.bin",
       "blockdata_filepath": "data/layouts/Sprout_Tower/map.bin"
     },
@@ -9609,8 +9609,8 @@
       "name": "Sprout_Tower_F2_Layout",
       "width": 22,
       "height": 22,
-      "primary_tileset": "gTileset_SproutTower",
-      "secondary_tileset": "gTileset_SproutTower_Sec",
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Sprout_Tower",
       "border_filepath": "data/layouts/Sprout_Tower_F2/border.bin",
       "blockdata_filepath": "data/layouts/Sprout_Tower_F2/map.bin"
     },
@@ -9619,8 +9619,8 @@
       "name": "Sprout_Tower_F3_Layout",
       "width": 21,
       "height": 22,
-      "primary_tileset": "gTileset_SproutTower",
-      "secondary_tileset": "gTileset_SproutTower_Sec",
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Sprout_Tower",
       "border_filepath": "data/layouts/Sprout_Tower_F3/border.bin",
       "blockdata_filepath": "data/layouts/Sprout_Tower_F3/map.bin"
     },
