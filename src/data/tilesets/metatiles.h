@@ -481,12 +481,6 @@ const u16 gMetatileAttributes_Connections[] = INCBIN_U16("data/tilesets/primary/
 const u16 gMetatiles_Connections_Sec[] = INCBIN_U16("data/tilesets/secondary/connections_sec/metatiles.bin");
 const u16 gMetatileAttributes_Connections_Sec[] = INCBIN_U16("data/tilesets/secondary/connections_sec/metatile_attributes.bin");
 
-const u16 gMetatiles_SproutTower[] = INCBIN_U16("data/tilesets/primary/sprout_tower/metatiles.bin");
-const u16 gMetatileAttributes_SproutTower[] = INCBIN_U16("data/tilesets/primary/sprout_tower/metatile_attributes.bin");
-
-const u16 gMetatiles_SproutTower_Sec[] = INCBIN_U16("data/tilesets/secondary/sprout_tower_sec/metatiles.bin");
-const u16 gMetatileAttributes_SproutTower_Sec[] = INCBIN_U16("data/tilesets/secondary/sprout_tower_sec/metatile_attributes.bin");
-
 const u16 gMetatiles_Lab_Jotho[] = INCBIN_U16("data/tilesets/secondary/lab_jotho/metatiles.bin");
 const u16 gMetatileAttributes_Lab_Jotho[] = INCBIN_U16("data/tilesets/secondary/lab_jotho/metatile_attributes.bin");
 
@@ -504,3 +498,6 @@ const u16 gMetatileAttributes_Trading_Center[] = INCBIN_U16("data/tilesets/secon
 
 const u16 gMetatiles_Violet_Gym[] = INCBIN_U16("data/tilesets/secondary/violet_gym/metatiles.bin");
 const u16 gMetatileAttributes_Violet_Gym[] = INCBIN_U16("data/tilesets/secondary/violet_gym/metatile_attributes.bin");
+
+const u16 gMetatiles_Sprout_Tower[] = INCBIN_U16("data/tilesets/secondary/sprout_tower/metatiles.bin");
+const u16 gMetatileAttributes_Sprout_Tower[] = INCBIN_U16("data/tilesets/secondary/sprout_tower/metatile_attributes.bin");
