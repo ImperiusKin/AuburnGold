@@ -1,21 +1,29 @@
-const VAR_NEWBARK_TOWN_STATE = VAR_TEMP_1
+//Newbark Town States
+// 0 - Adventure Started, no Pokémon
+// 1 - Elm's speech is finished, no starter given yet
+// 2 - Player got its first Pokémon and Pokédex, can go to route 29
+
 const VAR_WOMAN_TRIGGER = VAR_TEMP_2
-const LOCALID_NEWBARK_RIVAL = LOCALID_NEWBARK_ELM
+//Woman Trigger State
+// 0 - Trigger script not letting you go to route 29
+// 1 - Player is free to go to route 29
+//This variable is also used to register what tile triggered the script and adopts the script accordingly
+
+const VAR_STARTER_SOURCE = VAR_TEMP_3
+//Starter Source State
+// 0 - You got the starter from the Aide
+// 1 - You got the starter from Professor Elm
 
 mapscripts NewBarkTown_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
-        if(flag(FLAG_SYS_POKEMON_GET)){
-            //Starter Pokémon Obtained
-            setvar(VAR_NEWBARK_TOWN_STATE, 1)
-        }
-        else{
-            if(flag(FLAG_ADVENTURE_STARTED)){
-                setvar(VAR_NEWBARK_TOWN_STATE, 1)
-            }
-            else{
-                setvar(VAR_NEWBARK_TOWN_STATE, 0)
-            }
-            call (NewBarkTown_EventScript_MoveNPCs)
+        switch(var(VAR_NEWBARK_TOWN_STATE)){
+            case 0:
+            case 1:
+                call(NewBarkTown_EventScript_MoveNPCs)
+            break
+            default:
+                setvar(VAR_WOMAN_TRIGGER, 1)
+            break
         }
     }
 }
@@ -238,7 +246,6 @@ script NewBarkTown_EventScript_Elm{
     waitstate
     end
 }
-const VAR_STARTER_SOURCE = VAR_TEMP_3
 
 script NewBarkTown_EventScript_Aide{
     lock
@@ -273,6 +280,7 @@ script NewBarkTown_EventScript_ChooseStarter{
 	msgbox(format("{PLAYER} received a {STR_VAR_1}!"), MSGBOX_DEFAULT)
 	waitfanfare
     setflag(FLAG_SYS_POKEMON_GET)
+    setvar(VAR_NEWBARK_TOWN_STATE, 2)
     goto(NewBarkTown_EventScript_ElmPokedex)
     release
 }
@@ -355,6 +363,7 @@ script NewBarkTown_EventScript_Woman_Trigger_Base{
 
     applymovement(LOCALID_PLAYER, moves(walk_right))
     waitmovement(0)
+    setvar(VAR_WOMAN_TRIGGER, 0) //Makes the script run again if you go here again
     release
 }
 
