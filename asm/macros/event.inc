@@ -479,6 +479,13 @@
 	formatwarp \map, \a, \b, \c
 	.endm
 
+	@ Reloads the current map with the current coordinates
+	.macro reloadmap
+	setflag FLAG_SYS_RELOAD_MAP
+	warp MAP_LITTLEROOT_TOWN, 192, 192, 192
+	waitstate
+	.endm
+
 	@ Warps the player to the specified map without playing a sound effect.
 	@ Warp commands can be given either the id of which warp location to go to on the destination map
 	@ or a pair of x/y coordinates to go to directly on the destination map.

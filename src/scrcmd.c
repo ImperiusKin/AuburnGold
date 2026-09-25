@@ -972,12 +972,24 @@ bool8 ScrCmd_warp(struct ScriptContext *ctx)
     u8 warpId = ScriptReadByte(ctx);
     u16 x = VarGet(ScriptReadHalfword(ctx));
     u16 y = VarGet(ScriptReadHalfword(ctx));
+    bool8 reloadMap = FlagGet(FLAG_SYS_RELOAD_MAP);
 
     Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE | SCREFF_HARDWARE);
+    FlagClear(FLAG_SYS_RELOAD_MAP);
 
-    SetWarpDestination(mapGroup, mapNum, warpId, x, y);
-    DoWarp();
-    ResetInitialPlayerAvatarState();
+    if(reloadMap){
+        //u8 layerDirection = GetPlayerFacingDirection();
+        //StoreInitialPlayerAvatarState();
+        SetWarpDestination(gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum, 255, gSaveBlock1Ptr->pos.x, gSaveBlock1Ptr->pos.y);
+        DoWarp();
+        ResetInitialPlayerAvatarState();
+    }
+    else{
+        SetWarpDestination(mapGroup, mapNum, warpId, x, y);
+        DoWarp();
+        ResetInitialPlayerAvatarState();
+    }
+
     return TRUE;
 }
 

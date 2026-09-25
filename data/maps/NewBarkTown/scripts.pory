@@ -1,48 +1,57 @@
-const VAR_ELM_TRIGGER = VAR_TEMP_1
+const VAR_NEWBARK_TOWN_STATE = VAR_TEMP_1
 const VAR_WOMAN_TRIGGER = VAR_TEMP_2
 const LOCALID_NEWBARK_RIVAL = LOCALID_NEWBARK_ELM
-
 
 mapscripts NewBarkTown_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         if(flag(FLAG_SYS_POKEMON_GET)){
             //Starter Pokémon Obtained
-            setvar(VAR_ELM_TRIGGER, 1)
+            setvar(VAR_NEWBARK_TOWN_STATE, 1)
         }
         else{
             if(flag(FLAG_ADVENTURE_STARTED)){
-                setvar(VAR_ELM_TRIGGER, 1)
+                setvar(VAR_NEWBARK_TOWN_STATE, 1)
             }
             else{
-                setvar(VAR_ELM_TRIGGER, 0)
+                setvar(VAR_NEWBARK_TOWN_STATE, 0)
             }
-            //Move NPCs from the crowd if the starter selection is over
-            removeobject (LOCALID_NEWBARK_TRAINER_1)
-            setobjectxyperm(LOCALID_NEWBARK_TRAINER_1, 21, 13)
-            setobjectmovementtype (LOCALID_NEWBARK_TRAINER_1, MOVEMENT_TYPE_FACE_RIGHT)
-            addobject (LOCALID_NEWBARK_TRAINER_1)
-
-            removeobject (LOCALID_NEWBARK_TRAINER_2)
-            setobjectxyperm(LOCALID_NEWBARK_TRAINER_2, 22, 15)
-            setobjectmovementtype (LOCALID_NEWBARK_TRAINER_2, MOVEMENT_TYPE_FACE_UP)
-            addobject (LOCALID_NEWBARK_TRAINER_2)
-
-            removeobject (LOCALID_NEWBARK_TRAINER_3)
-            setobjectxyperm(LOCALID_NEWBARK_TRAINER_3, 25, 13)
-            setobjectmovementtype (LOCALID_NEWBARK_TRAINER_3, MOVEMENT_TYPE_FACE_LEFT)
-            addobject (LOCALID_NEWBARK_TRAINER_3)
-
-            removeobject (LOCALID_NEWBARK_TRAINER_4)
-            setobjectxyperm(LOCALID_NEWBARK_TRAINER_4, 24, 15)
-            setobjectmovementtype (LOCALID_NEWBARK_TRAINER_4, MOVEMENT_TYPE_FACE_UP)
-            addobject (LOCALID_NEWBARK_TRAINER_4)
+            call (NewBarkTown_EventScript_MoveNPCs)
         }
     }
 }
 
+script NewBarkTown_EventScript_MoveNPCs{
+    //Move NPCs from the crowd if the starter selection is over
+    setobjectxyperm(LOCALID_NEWBARK_TRAINER_1, 21, 13)
+    setobjectmovementtype (LOCALID_NEWBARK_TRAINER_1, MOVEMENT_TYPE_FACE_RIGHT)
+
+    setobjectxyperm(LOCALID_NEWBARK_TRAINER_2, 22, 15)
+    setobjectmovementtype (LOCALID_NEWBARK_TRAINER_2, MOVEMENT_TYPE_FACE_UP)
+
+    setobjectxyperm(LOCALID_NEWBARK_TRAINER_3, 25, 13)
+    setobjectmovementtype (LOCALID_NEWBARK_TRAINER_3, MOVEMENT_TYPE_FACE_LEFT)
+
+    setobjectxyperm(LOCALID_NEWBARK_TRAINER_4, 24, 15)
+    setobjectmovementtype (LOCALID_NEWBARK_TRAINER_4, MOVEMENT_TYPE_FACE_UP)
+    end
+}
+
+//Signs
 script NewBarkTown_EventScript_AreaIsClosed{
     lock
     msgbox(format("The door is closed."))
+    release
+}
+
+script NewBarkTown_EventScript_Sign_Pokemon_Lab{
+    lock
+    msgbox(format("Pokémon Lab."))
+    release
+}
+
+script NewBarkTown_EventScript_Sign_Player_House{
+    lock
+    msgbox(format("{PLAYER}'s House."))
     release
 }
 
@@ -208,6 +217,7 @@ script NewBarkTown_EventScript_Elm{
 	delay (60)
     //call(NewBarkTown_EventScript_Elm_Speech)
     msgbox(format("Was I supposed to say something more inspiring?"))
+    closemessage
 	applymovement(LOCALID_NEWBARK_ELM, moves(face_up))
     waitmovement(0)
 	opendoor(23, 12)
@@ -217,81 +227,38 @@ script NewBarkTown_EventScript_Elm{
 	closedoor(23, 12)
 	waitdooranim
     removeobject(LOCALID_NEWBARK_ELM)
-    //setflag(FLAG_ADVENTURE_STARTED)
+    setflag(FLAG_ADVENTURE_STARTED)
 
 	applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_down * 3))
     waitmovement(0)
 	special(RemoveCameraObject)
 	delay(50)
-    warp(MAP_NEW_BARK_TOWN, 23, 16)
+    setvar(VAR_NEWBARK_TOWN_STATE, 1)
+    reloadmap
     waitstate
     end
 }
-
-script NewBarkTown_EventScript_Rival{
-    lock
-    faceplayer
-	playbgm(MUS_RG_ENCOUNTER_RIVAL, 0)
-    msgbox(format("So you're entering too, huh?. I already got my trainer supply kit and my starter so I will begin my journey now!"))
-    closemessage
-    applymovement(LOCALID_PLAYER, moves(
-        walk_left
-        face_right
-    ))
-    waitmovement(0)
-    applymovement(LOCALID_NEWBARK_RIVAL, moves(
-        walk_down * 10
-    ))
-    waitmovement(0)
-    msgbox(format("Next time I see you make sure to be ready since I'm going to challenge you to a battle!"))
-    closemessage
-
-	playse(SE_PIN)
-    applymovement(LOCALID_NEWBARK_ELM, Common_Movement_ExclamationMark)
-    waitmovement(0)
-
-    applymovement(LOCALID_NEWBARK_ELM, moves(
-        walk_down * 2
-        face_left
-    ))
-    waitmovement(0)
-
-	playbgm(MUS_RG_OAK, 0)
-    msgbox(format("{PLAYER} you're here too!, I was just explaining the others on how the tournament will work, it has some changes from past tournaments so make sure to pay proper attention:"))
-    msgbox(format("-Eligibility for Champions league requires completion of Kanto and Rematches of visiting gym leaders now in Kanto."))
-    msgbox(format("-Explains each gym leader has been given favorable environments to add to the challenge."))
-    msgbox(format("That should be all, pretty simple right?, for now take this."))
-    giveitem(ITEM_POKE_BALL)
-    goto(NewBarkTown_EventScript_ChooseStarter)
-    release
-}
-
 const VAR_STARTER_SOURCE = VAR_TEMP_3
-
-script NewBarkTown_EventScript_Elm_Starter{
-    lock
-    faceplayer
-    if(flag(FLAG_SYS_POKEMON_GET)){
-        msgbox(format("Prof Elm: Good luck with your journey!."))
-    }
-    else{
-        setvar(VAR_STARTER_SOURCE, 0)
-        msgbox(format("Prof Elm: I will be giving away your Starter along with some items."))
-        goto(NewBarkTown_EventScript_ChooseStarter)
-    }
-}
-
 
 script NewBarkTown_EventScript_Aide{
     lock
     faceplayer
     setvar(VAR_STARTER_SOURCE, 1)
-    msgbox(format("Aide: I will be giving away your Starter along with some items."))
+    msgbox(format("Aide: I'm Elm's Aide, he asked me to give all of you some items to help you on your journey, use them wisely!"))
+    giveitem(ITEM_POKE_BALL, 5)
+    giveitem(ITEM_POTION, 3)
+    giveitem(ITEM_REPEL, 5)
+    msgbox(format("You also need your Pokedex, this item lets you see all the data of Pokémon you see or catch."))
+    setflag(FLAG_SYS_POKEDEX_GET)
+	playfanfare(MUS_OBTAIN_ITEM)
+	msgbox(format("{PLAYER} received the Pokédex!"), MSGBOX_DEFAULT)
+	waitfanfare
+    msgbox(format("And finally its time for you to choose your first partner Pokémon."))
     goto(NewBarkTown_EventScript_ChooseStarter)
 }
 
 script NewBarkTown_EventScript_ChooseStarter{
-    msgbox(format("Choose your starter Pokémon carefully."))
+    msgbox(format("Choose the partner you want to have in your adventure."))
     //dynmultichoice(0, 0, TRUE, 6, 0, DYN_MULTICHOICE_CB_NONE, "Bulbasaur", "Charmander", "Squirtle", "Chikorita", "Cyndaquil", "Totodile", "Treecko" ,"Torchic", "Mudkip", "Turtwig", "Chimchar", "Piplup", "Snivy", "Tepig", "Oshawott", "Chespin", "Fennekin", "Froakie", "Rowlet", "Litten", "Popplio", "Grookey", "Scorbunny", "Sobble", "Sprigatito", "Fuecoco", "Quaxly", "Browt", "Pombon", "Gecqua", "Pikachu", "Eevee", "Riolu")
     dynmultichoice(0, 0, TRUE, 6, 0, DYN_MULTICHOICE_CB_NONE, "Bulbasaur", "Charmander", "Squirtle", "Chikorita", "Cyndaquil", "Totodile", "Treecko" ,"Torchic", "Mudkip", "Turtwig", "Chimchar", "Piplup", "Snivy", "Tepig", "Oshawott", "Chespin", "Fennekin", "Froakie", "Rowlet", "Litten", "Popplio", "Grookey", "Scorbunny", "Sobble", "Sprigatito", "Fuecoco", "Quaxly", "Pikachu", "Eevee", "Riolu")
     //Give Starter
@@ -311,16 +278,11 @@ script NewBarkTown_EventScript_ChooseStarter{
 }
 
 script NewBarkTown_EventScript_ElmPokedex{
-    msgbox(format("And finally here is a Pokédex, it can capture all the data of Pokémon you see or catch!"))
-    setflag(FLAG_SYS_POKEDEX_GET)
-	playfanfare(MUS_OBTAIN_ITEM)
-	msgbox(format("{PLAYER} received the Pokédex!"), MSGBOX_DEFAULT)
-	waitfanfare
     msgbox(format("You can start your journey by going to Route 29 to the left of Newbark, there should be some trainers ready for a challenge there so prepare yourself!."))
-    setflag(FLAG_ADVENTURE_STARTED)
+    setflag(FLAG_SYS_POKEMON_GET)
     if(var(VAR_STARTER_SOURCE) == 1){ //Warp if you talked to the aide
         msgbox(format("Aide: Good luck with your journey!"))
-        warp(MAP_NEW_BARK_TOWN, 23, 13)
+        reloadmap
         waitstate
     }
     else{
@@ -328,18 +290,6 @@ script NewBarkTown_EventScript_ElmPokedex{
     }
     release
     end
-}
-
-script NewBarkTown_EventScript_Nurse{
-    if(!flag(FLAG_SYS_POKEDEX_GET)){
-        lock
-        faceplayer
-        msgbox(format("There is something happening at the lab to the north, maybe the Professor is starting another tournament!"))
-    }
-    else{
-        goto(Common_EventScript_PkmnCenterNurse_Updated)
-    }
-    release
 }
 
 script NewBarkTown_EventScript_Woman_Trigger_0{
@@ -383,7 +333,7 @@ script NewBarkTown_EventScript_Woman_Trigger_Base{
     applymovement(LOCALID_PLAYER, moves(face_up))
     waitmovement(0)
 
-    msgbox(format("Oh, {PLAYER}…! PROF.ELM was looking for you, visit him at his lab in the north of the town!"))
+    msgbox(format("Oh, {PLAYER}…! Prof.Elm is doing some kind of conference outside his laboratory, you should go to see what is happening!"))
     closemessage
 
     switch(var(VAR_WOMAN_TRIGGER)){
@@ -413,4 +363,88 @@ script NewBarkTown_EventScript_Woman{
     faceplayer
     msgbox(format("Wild Pokémon appear after this area, be careful and visit the Pokémon Center when you need to heal your party!."))
     release
+}
+
+//Pokémon Lab
+script NewBarkTown_EventScript_Elm_Starter{
+    lock
+    faceplayer
+    if(flag(FLAG_SYS_POKEMON_GET)){
+        msgbox(format("Prof Elm: Good luck with your journey!."))
+    }
+    else{
+        setvar(VAR_STARTER_SOURCE, 0)
+        msgbox(format("Prof Elm: I see you came to see me directly, I should give you some items to help you on your journey."))
+        giveitem(ITEM_POKE_BALL, 5)
+        giveitem(ITEM_POTION, 3)
+        giveitem(ITEM_REPEL, 5)
+        msgbox(format("You also need your Pokedex, this item lets you see all the data of Pokémon you see or catch"))
+        setflag(FLAG_SYS_POKEDEX_GET)
+        playfanfare(MUS_OBTAIN_ITEM)
+        msgbox(format("{PLAYER} received the Pokédex!"), MSGBOX_DEFAULT)
+        waitfanfare
+        msgbox(format("And finally its time for you to choose your first partner Pokémon."))
+        goto(NewBarkTown_EventScript_ChooseStarter)
+    }
+}
+
+script NewBarkTown_EventScript_Aide_2{
+    lock
+    faceplayer
+    setvar(VAR_STARTER_SOURCE, 1)
+    msgbox(format("I'm currently researching Pokémon Eggs and how genetics are passed between 2 compatible Pokémon."))
+    release
+    end
+}
+
+//Pokémon Center
+script NewBarkTown_EventScript_Nurse{
+    if(!flag(FLAG_SYS_POKEDEX_GET)){
+        lock
+        faceplayer
+        msgbox(format("There is something happening at the lab to the north, maybe the Professor is starting another tournament!"))
+    }
+    else{
+        goto(Common_EventScript_PkmnCenterNurse_Updated)
+    }
+    release
+}
+
+mart NewBarkTown_Mart_Items {
+    ITEM_POKE_BALL
+    ITEM_POTION
+    ITEM_ANTIDOTE
+    ITEM_BURN_HEAL
+    ITEM_ICE_HEAL
+    ITEM_AWAKENING
+    ITEM_PARALYZE_HEAL
+    ITEM_REVIVE
+    ITEM_REPEL
+    ITEM_NONE
+}
+
+script NewBarkTown_EventScript_Shop_Clerk{
+    if(!flag(FLAG_SYS_POKEDEX_GET)){
+        lock
+        faceplayer
+        msgbox(format("I wish I could go to a Pokémon journey like those people outside Elm's lab!"))
+    }
+    else{
+        lock
+        faceplayer
+        message(gText_HowMayIServeYou)
+        waitmessage
+        pokemart(NewBarkTown_Mart_Items)
+        msgbox(gText_PleaseComeAgain, MSGBOX_DEFAULT)
+    }
+    release
+    end
+}
+
+script NewBarkTown_EventScript_Fixing_Clerk{
+    lock
+    faceplayer
+    msgbox(format("This machine is currently being mantained, please come back later!"))
+    release
+    end
 }
