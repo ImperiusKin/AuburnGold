@@ -18,22 +18,23 @@ script Route29_EventScript_Trainer_2{
 
 const ROUTE29_TRAINER_3 = TRAINER_ALLEN
 script Route29_EventScript_Trainer_3{
-	trainerbattle_single(ROUTE29_TRAINER_3, format("You're heading west too? Good!\nI'm beating every Trainer between here and the Champion'S League!"), format("Months of studying...\n...Except you, I guess."))
+	trainerbattle_single(ROUTE29_TRAINER_3, format("You're heading west too? Good!\nI'm beating every Trainer between here and the Champion'S League!"), format("...Except you, I guess."))
 	msgbox(format("Fine! ONE loss doesn't mean anything!\pThere's still all of Johto ahead of me!"), MSGBOX_AUTOCLOSE)
 	end
 }
 const FLAG_TALKED_TO_CHEREN = FLAG_TEMP_1
-const TRAINER_CHEREN = TRAINER_ROXANNE_1
+const TRAINER_CHEREN = TRAINER_MAY_ROUTE_103_TORCHIC
 script Route29_EventScript_Cheren{
     faceplayer
     lock
+    setflag(FLAG_DEFEATED_GRUSHA)
     if(flag(FLAG_DEFEATED_CHEREN)){
         msgbox(format("Keep moving forward. There are plenty of trainers ahead stronger than me.\pDon't let one victory make you careless."))
     }
     elif(flag(FLAG_DEFEATED_GRUSHA)){
         msgbox(format(
-            "Cheren: So, you made it through Mt. Freeze.\n"
-            "Good. Then you've earned your battle.\n"
+            "Cheren: So, you made it through Mt. Freeze.\p"
+            "Good. Then you've earned your battle.\p"
             "Let's see what you can do."))
 	    trainerbattle_no_intro(TRAINER_CHEREN, format("I knew I saw potential in you!"))
         msgbox(format("You've earned these."))
