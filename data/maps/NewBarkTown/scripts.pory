@@ -223,8 +223,8 @@ script NewBarkTown_EventScript_Elm{
 	applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_up * 3))
     waitmovement(0)
 	delay (60)
-    //call(NewBarkTown_EventScript_Elm_Speech)
-    msgbox(format("Was I supposed to say something more inspiring?"))
+    call(NewBarkTown_EventScript_Elm_Speech)
+    //msgbox(format("Was I supposed to say something more inspiring?"))
     closemessage
 	applymovement(LOCALID_NEWBARK_ELM, moves(face_up))
     waitmovement(0)
