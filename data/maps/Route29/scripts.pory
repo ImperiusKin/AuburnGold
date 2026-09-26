@@ -1,3 +1,86 @@
 mapscripts Route29_MapScripts {
 	
 }
+
+const ROUTE29_TRAINER_1 = TRAINER_CALVIN_1
+script Route29_EventScript_Trainer_1{
+	trainerbattle_single(ROUTE29_TRAINER_1, format("Hey!\nYou started in New Bark Town too, right?\pThen we're starting from the same place!\nLet's see who got the better start!"), format("Okay...\nYou got the better start."))
+	msgbox(format("I thought having a good Pokémon would be enough.\pMaybe I should actually think about my moves..."), MSGBOX_AUTOCLOSE)
+	end
+}
+
+const ROUTE29_TRAINER_2 = TRAINER_RICK
+script Route29_EventScript_Trainer_2{
+	trainerbattle_single(ROUTE29_TRAINER_2, format("Hold it!\nI've been preparing for this tournament for months.\pMoves...Items...Type matchups...\nLet's see if all that studying paid off!"), format("Months of studying...\nGone in five minutes."))
+	msgbox(format("That wasn't wasted time. Now I know what my team needs.\pLosing teaches you a lot if you're paying attention."), MSGBOX_AUTOCLOSE)
+	end
+}
+
+const ROUTE29_TRAINER_3 = TRAINER_ALLEN
+script Route29_EventScript_Trainer_3{
+	trainerbattle_single(ROUTE29_TRAINER_3, format("You're heading west too? Good!\nI'm beating every Trainer between here and the Champion'S League!"), format("Months of studying...\n...Except you, I guess."))
+	msgbox(format("Fine! ONE loss doesn't mean anything!\pThere's still all of Johto ahead of me!"), MSGBOX_AUTOCLOSE)
+	end
+}
+const FLAG_TALKED_TO_CHEREN = FLAG_TEMP_1
+const TRAINER_CHEREN = TRAINER_ROXANNE_1
+script Route29_EventScript_Cheren{
+    faceplayer
+    lock
+    if(flag(FLAG_DEFEATED_CHEREN)){
+        msgbox(format("Keep moving forward. There are plenty of trainers ahead stronger than me.\pDon't let one victory make you careless."))
+    }
+    elif(flag(FLAG_DEFEATED_GRUSHA)){
+        msgbox(format(
+            "Cheren: So, you made it through Mt. Freeze.\n"
+            "Good. Then you've earned your battle.\n"
+            "Let's see what you can do."))
+	    trainerbattle_no_intro(TRAINER_CHEREN, format("I knew I saw potential in you!"))
+        msgbox(format("You've earned these."))
+        giveitem(ITEM_HEX_ORB, 1)
+        msgbox(format("The Hex Orb can inflict status conditions on Pokémon outside of battle. It can't put a Pokémon to sleep, though. Used properly, it can give you an advantage before a difficult battle."))
+        msgbox(format("And take this as well."))
+        giveitem(ITEM_TM_ROAR, 1)
+        setflag(FLAG_DEFEATED_CHEREN)
+        msgbox(format("Roar forces an opponent out of battle. Controlling the matchup can be just as important as dealing damage."))
+        msgbox(format("Use them well."))
+        msgbox(format("Keep moving forward. There are plenty of trainers ahead stronger than me.\pDon't let one victory make you careless."))
+    }
+    elif(flag(FLAG_TALKED_TO_CHEREN)){
+        msgbox(format("Train your Pokémon. Learn what your team can and can't do. When you return...we'll battle."))
+    }
+    else{
+        msgbox(format(
+            "Another tournament challenger?\n"
+            "...I see.\p"
+            "You've only just left New Bark Town. Then I imagine you're looking for a battle."), MSGBOX_YESNO)
+        if(var(VAR_RESULT) == YES){
+            msgbox(format("I thought so.\nBut I'm afraid the answer is no."))
+        }
+        else{
+            msgbox(format("Good. Knowing when NOT to battle is important, too."))
+        }
+        msgbox(format(
+            "My name is Cheren. I'm a Gym Leader from the Unova region.\p"
+            "For this tournament, I've been asked to serve as one of the visiting challengers.\p"
+            "That means you'll battle me eventually."))
+        delay (60)
+        msgbox(format(
+            "But not yet.\p"
+            "A Trainer shouldn't be judged by what they can do five minutes after receiving a Pokémon.\p"
+            "There's a place not far from here called Mt. Freeze. You will find a young man named Grusha. Defeat him and then you and I can battle.\p"
+            "Train your Pokémon. Learn what your team can and can't do. When you return...we'll battle."))
+        setflag(FLAG_TALKED_TO_CHEREN)
+    }
+    release
+	end
+}
+
+script Route29_EventScript_Train_Conductor{
+    lock
+    faceplayer
+    //The train conductor npc is an early game pre-fly fast travel option that will allow the player to get from there to any location that has a gym or to New Bark town. Must have beaten the gym before it is available to be fast traveled to. Eventually the player will have or fly or the Flying Network outside each pokemon center and select routes. (Think Corviknight taxi service but any bird mon big enough to carry two people)
+	msgbox(format("Sorry about this but for tournament participants, I have been instructed to not allow you to ride the train until after you beat the gym leader from the city you want to travel to."))
+	release
+    end
+}
