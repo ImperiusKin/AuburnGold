@@ -59,36 +59,25 @@ script NewBarkTown_Player_House_1F_EventScript_Mom_Trigger_Base{
             waitmovement(0)
         break
     }
-    msgbox("Oh, {PLAYER}…! Our neighbor,\n"
-	       "PROF.ELM, was looking for you.\p"
-	       "He said he wanted you to do\n"
-	       "something for him.\p"
-	       "Oh! I almost forgot! Your POKéGEAR\n"
-	       "is back from the repair shop.\p"
-	       "Here you go!")
+    msgbox(format("Mom: Oh, {PLAYER}…! Our neighbor, Prof.Elm, was looking for you.\p"
+                  "He is about to give his speech soon, I hope he isn’t too nervous, you can see him at his Lab."))
 
-    playfanfare(MUS_OBTAIN_ITEM)
-    msgbox("{PLAYER} obtained the POKéGEAR.")
-	waitfanfare
+    //playfanfare(MUS_OBTAIN_ITEM)
+    //msgbox("{PLAYER} obtained the POKéGEAR.")
+	//waitfanfare
 
-    msgbox("MOM: Phone numbers are stored\n"
-	       "in memory.\p"
-	       "Just choose a name you want to call.\p"
-	       "Gee, isn't that convenient?")
+    //msgbox("Mom: Phone numbers are stored\n"
+	//       "in memory.\p"
+	//       "Just choose a name you want to call.\p"
+	//       "Gee, isn't that convenient?")
 
-    msgbox("Oh, and don't forget your\n"
-	       "RUNNING SHOES!")
-
-    msgbox("{PLAYER} switched shoes with the\n"
-	       "RUNNING SHOES.")
+    msgbox(format("Oh, and don't forget your Running Shoes!"))
+    msgbox(format("{PLAYER} switched shoes with the Running Shoes."))
 
     setflag(FLAG_SYS_B_DASH)
 
-    msgbox("MOM: {PLAYER}, press the B Button\n"
-	       "while wearing these to run fast!")
-
-    msgbox("MOM: PROF.ELM is waiting for you.\p"
-	       "Hurry up, baby!")
+    msgbox(format("Mom: {PLAYER}, press the B Button while wearing these to run fast!"))
+    msgbox(format("Mom: Best of luck sweetie!"))
     closemessage
 
     switch(var(VAR_TEMP_0)){
@@ -128,18 +117,17 @@ script NewBarkTown_Player_House_1F_EventScript_Mom{
     lock
     faceplayer
     if(!flag(FLAG_ADVENTURE_STARTED)){
-        msgbox("MOM: PROF.ELM is waiting for you.\p"
-               "Hurry up, baby!")
+        msgbox("Mom: Best of luck sweetie!")
     }
     else{
         if(!flag(FLAG_NEWBARK_MOM_SHOWN_STARTER)){
-            msgbox("MOM: Wow, that's a cute POKéMON.\n"
+            msgbox("Mom: Wow, that's a cute Pokémon.\n"
                    "Where did you get it?\p"
                    "…\p"
                    "So, you're leaving on an adventure...\n"
                    "That does sound challenging...\p"
                    "Just be careful.\p"
-                   "POKéMON are your friends.\n"
+                   "Pokémon are your friends.\n"
                    "You need to work as a team.\p"
                    "Now, go on!\n"
                    "I'm behind you all the way!")
