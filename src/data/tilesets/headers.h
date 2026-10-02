@@ -1882,3 +1882,14 @@ const struct Tileset gTileset_Sprout_Tower =
     .metatileAttributes = gMetatileAttributes_Sprout_Tower,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_Palm_Hill_City_Primary =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_Palm_Hill_City_Primary,
+    .palettes = gTilesetPalettes_Palm_Hill_City_Primary,
+    .metatiles = gMetatiles_Palm_Hill_City_Primary,
+    .metatileAttributes = gMetatileAttributes_Palm_Hill_City_Primary,
+    .callback = NULL,
+};
