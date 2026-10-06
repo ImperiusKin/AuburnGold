@@ -9349,7 +9349,7 @@
       "name": "Route29_Layout",
       "width": 78,
       "height": 42,
-      "primary_tileset": "gTileset_Johto_Primary_2",
+      "primary_tileset": "gTileset_Johto_Primary",
       "secondary_tileset": "gTileset_TrainStationExterior",
       "border_filepath": "data/layouts/Route29/border.bin",
       "blockdata_filepath": "data/layouts/Route29/map.bin"
@@ -9359,7 +9359,7 @@
       "name": "Route_45_Layout",
       "width": 30,
       "height": 50,
-      "primary_tileset": "gTileset_Johto_Primary_3",
+      "primary_tileset": "gTileset_Johto_Primary",
       "secondary_tileset": "gTileset_TrainStationExterior",
       "border_filepath": "data/layouts/Route_45/border.bin",
       "blockdata_filepath": "data/layouts/Route_45/map.bin"
@@ -9369,7 +9369,7 @@
       "name": "SouthernField_Layout",
       "width": 47,
       "height": 60,
-      "primary_tileset": "gTileset_Johto_Primary_2",
+      "primary_tileset": "gTileset_Johto_Primary",
       "secondary_tileset": "gTileset_Southern_Field",
       "border_filepath": "data/layouts/SouthernField/border.bin",
       "blockdata_filepath": "data/layouts/SouthernField/map.bin"
@@ -9379,7 +9379,7 @@
       "name": "Amberite_Valley_Layout",
       "width": 50,
       "height": 52,
-      "primary_tileset": "gTileset_Johto_Primary_2",
+      "primary_tileset": "gTileset_Johto_Primary",
       "secondary_tileset": "gTileset_Amberite_Valley",
       "border_filepath": "data/layouts/Amberite_Valley/border.bin",
       "blockdata_filepath": "data/layouts/Amberite_Valley/map.bin"
