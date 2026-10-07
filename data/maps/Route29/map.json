@@ -22,6 +22,16 @@
       "map": "MAP_NEW_BARK_TOWN",
       "offset": -2,
       "direction": "right"
+    },
+    {
+      "map": "MAP_ROUTE_45",
+      "offset": 16,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_CHERRYGROVE_CITY",
+      "offset": 2,
+      "direction": "left"
     }
   ],
   "object_events": [
