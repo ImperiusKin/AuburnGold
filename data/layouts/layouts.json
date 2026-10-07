@@ -9329,7 +9329,7 @@
       "name": "NewBarkTown_Layout",
       "width": 50,
       "height": 41,
-      "primary_tileset": "gTileset_Johto_Primary",
+      "primary_tileset": "gTileset_General_Jotho",
       "secondary_tileset": "gTileset_NewBarkTown",
       "border_filepath": "data/layouts/NewBarkTown/border.bin",
       "blockdata_filepath": "data/layouts/NewBarkTown/map.bin"
@@ -9339,7 +9339,7 @@
       "name": "Route27_Layout",
       "width": 40,
       "height": 40,
-      "primary_tileset": "gTileset_Johto_Primary",
+      "primary_tileset": "gTileset_General_Jotho",
       "secondary_tileset": "gTileset_NewBarkTown",
       "border_filepath": "data/layouts/Route27/border.bin",
       "blockdata_filepath": "data/layouts/Route27/map.bin"
@@ -9349,7 +9349,7 @@
       "name": "Route29_Layout",
       "width": 78,
       "height": 42,
-      "primary_tileset": "gTileset_Johto_Primary",
+      "primary_tileset": "gTileset_General_Jotho",
       "secondary_tileset": "gTileset_TrainStationExterior",
       "border_filepath": "data/layouts/Route29/border.bin",
       "blockdata_filepath": "data/layouts/Route29/map.bin"
@@ -9359,7 +9359,7 @@
       "name": "Route_45_Layout",
       "width": 30,
       "height": 50,
-      "primary_tileset": "gTileset_Johto_Primary",
+      "primary_tileset": "gTileset_General_Jotho",
       "secondary_tileset": "gTileset_TrainStationExterior",
       "border_filepath": "data/layouts/Route_45/border.bin",
       "blockdata_filepath": "data/layouts/Route_45/map.bin"
@@ -9369,7 +9369,7 @@
       "name": "SouthernField_Layout",
       "width": 47,
       "height": 60,
-      "primary_tileset": "gTileset_Johto_Primary",
+      "primary_tileset": "gTileset_General_Jotho",
       "secondary_tileset": "gTileset_Southern_Field",
       "border_filepath": "data/layouts/SouthernField/border.bin",
       "blockdata_filepath": "data/layouts/SouthernField/map.bin"
@@ -9379,7 +9379,7 @@
       "name": "Amberite_Valley_Layout",
       "width": 50,
       "height": 52,
-      "primary_tileset": "gTileset_Johto_Primary",
+      "primary_tileset": "gTileset_General_Jotho",
       "secondary_tileset": "gTileset_Amberite_Valley",
       "border_filepath": "data/layouts/Amberite_Valley/border.bin",
       "blockdata_filepath": "data/layouts/Amberite_Valley/map.bin"
@@ -9653,6 +9653,16 @@
       "secondary_tileset": "gTileset_Players_House",
       "border_filepath": "data/layouts/NewBarkTown_Player_House_2F/border.bin",
       "blockdata_filepath": "data/layouts/NewBarkTown_Player_House_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_TEST_MAP",
+      "name": "TestMap_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General_Jotho",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/TestMap/border.bin",
+      "blockdata_filepath": "data/layouts/TestMap/map.bin"
     }
   ]
 }

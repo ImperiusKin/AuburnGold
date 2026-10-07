@@ -166,7 +166,8 @@
     "Sprout_Tower_F3",
     "Connection_Amberite_HalluForest",
     "NewBarkTown_Player_House_1F",
-    "NewBarkTown_Player_House_2F"
+    "NewBarkTown_Player_House_2F",
+    "TestMap"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",
