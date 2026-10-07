@@ -9399,7 +9399,7 @@
       "name": "Route30_Layout",
       "width": 63,
       "height": 60,
-      "primary_tileset": "gTileset_Route_30",
+      "primary_tileset": "gTileset_General_Jotho",
       "secondary_tileset": "gTileset_Route_30_Secondary",
       "border_filepath": "data/layouts/Route30/border.bin",
       "blockdata_filepath": "data/layouts/Route30/map.bin"
@@ -9409,7 +9409,7 @@
       "name": "Route_31_Layout",
       "width": 60,
       "height": 30,
-      "primary_tileset": "gTileset_Route_30",
+      "primary_tileset": "gTileset_General_Jotho",
       "secondary_tileset": "gTileset_Route_30_Secondary",
       "border_filepath": "data/layouts/Route_31/border.bin",
       "blockdata_filepath": "data/layouts/Route_31/map.bin"
@@ -9427,9 +9427,9 @@
     {
       "id": "LAYOUT_CHERRYGROVE_CITY",
       "name": "Cherrygrove_City_Layout",
-      "width": 72,
+      "width": 69,
       "height": 40,
-      "primary_tileset": "gTileset_Route_30",
+      "primary_tileset": "gTileset_General_Jotho",
       "secondary_tileset": "gTileset_Route_30_Secondary",
       "border_filepath": "data/layouts/Cherrygrove_City/border.bin",
       "blockdata_filepath": "data/layouts/Cherrygrove_City/map.bin"
