@@ -1767,3 +1767,5 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/Sprout_Tower_F3/scripts.inc"
 
 	.include "data/maps/Connection_Amberite_HalluForest/scripts.inc"
+
+	.include "data/maps/TestMap/scripts.inc"

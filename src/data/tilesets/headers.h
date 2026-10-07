@@ -1894,3 +1894,14 @@ const struct Tileset gTileset_Palm_Hill_City_Primary =
     .callback = NULL,
 };
 
+
+const struct Tileset gTileset_General_Jotho =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_General_Jotho,
+    .palettes = gTilesetPalettes_General_Jotho,
+    .metatiles = gMetatiles_General_Jotho,
+    .metatileAttributes = gMetatileAttributes_General_Jotho,
+    .callback = NULL,
+};
