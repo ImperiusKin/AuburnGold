@@ -1893,3 +1893,4 @@ const struct Tileset gTileset_Palm_Hill_City_Primary =
     .metatileAttributes = gMetatileAttributes_Palm_Hill_City_Primary,
     .callback = NULL,
 };
+

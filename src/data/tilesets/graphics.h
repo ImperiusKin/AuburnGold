@@ -3644,3 +3644,4 @@ const u16 gTilesetPalettes_Palm_Hill_City_Primary[][16] =
 };
 
 const u32 gTilesetTiles_Palm_Hill_City_Primary[] = INCBIN_U32("data/tilesets/primary/palm_hill_city_primary/tiles.4bpp.lz");
+
