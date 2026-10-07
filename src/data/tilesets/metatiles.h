@@ -504,3 +504,4 @@ const u16 gMetatileAttributes_Sprout_Tower[] = INCBIN_U16("data/tilesets/seconda
 
 const u16 gMetatiles_Palm_Hill_City_Primary[] = INCBIN_U16("data/tilesets/primary/palm_hill_city_primary/metatiles.bin");
 const u16 gMetatileAttributes_Palm_Hill_City_Primary[] = INCBIN_U16("data/tilesets/primary/palm_hill_city_primary/metatile_attributes.bin");
+
