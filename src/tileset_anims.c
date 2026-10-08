@@ -1253,6 +1253,18 @@ static const u16 *const sTilesetAnims_General_Jotho_Flower[] = {
     sTilesetAnims_General_Jotho_Flower_Frame4
 };
 
+static const u16 sTilesetAnims_General_Jotho_Flower_2_Frame0[] = INCGFX_U16("data/tilesets/primary/general_jotho/anim/flower2/0.png", ".4bpp");
+static const u16 sTilesetAnims_General_Jotho_Flower_2_Frame1[] = INCGFX_U16("data/tilesets/primary/general_jotho/anim/flower2/1.png", ".4bpp");
+static const u16 sTilesetAnims_General_Jotho_Flower_2_Frame2[] = INCGFX_U16("data/tilesets/primary/general_jotho/anim/flower2/2.png", ".4bpp");
+static const u16 sTilesetAnims_General_Jotho_Flower_2_Frame3[] = INCGFX_U16("data/tilesets/primary/general_jotho/anim/flower2/3.png", ".4bpp");
+
+static const u16 *const sTilesetAnims_General_Jotho_Flower_2[] = {
+    sTilesetAnims_General_Jotho_Flower_2_Frame0,
+    sTilesetAnims_General_Jotho_Flower_2_Frame1,
+    sTilesetAnims_General_Jotho_Flower_2_Frame2,
+    sTilesetAnims_General_Jotho_Flower_2_Frame3
+};
+
 static const u16 sTilesetAnims_General_Jotho_Water_Frame0[] = INCGFX_U16("data/tilesets/primary/general_jotho/anim/water/0.png", ".4bpp");
 static const u16 sTilesetAnims_General_Jotho_Water_Frame1[] = INCGFX_U16("data/tilesets/primary/general_jotho/anim/water/1.png", ".4bpp");
 static const u16 sTilesetAnims_General_Jotho_Water_Frame2[] = INCGFX_U16("data/tilesets/primary/general_jotho/anim/water/2.png", ".4bpp");
@@ -1403,6 +1415,11 @@ static void QueueAnimTiles_General_Jotho_Flower(u16 timer)
     AppendTilesetAnimToBuffer(sTilesetAnims_General_Jotho_Flower[timer % ARRAY_COUNT(sTilesetAnims_General_Jotho_Flower)], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(508)), 4 * TILE_SIZE_4BPP);
 }
 
+static void QueueAnimTiles_General_Jotho_Flower_2(u16 timer)
+{
+    AppendTilesetAnimToBuffer(sTilesetAnims_General_Jotho_Flower_2[timer % ARRAY_COUNT(sTilesetAnims_General_Jotho_Flower_2)], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(504)), 4 * TILE_SIZE_4BPP);
+}
+
 static void QueueAnimTiles_General_Jotho_Water(u16 timer)
 {
     AppendTilesetAnimToBuffer(sTilesetAnims_General_Jotho_Water[timer % ARRAY_COUNT(sTilesetAnims_General_Jotho_Water)], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(500)), 4 * TILE_SIZE_4BPP);
@@ -1426,6 +1443,8 @@ static void TilesetAnim_General_Jotho(u16 timer)
     //    QueueAnimTiles_General_Jotho_Water_Current_LandWatersEdge(timer / 16);
     if (timer % 16 == 2)
         QueueAnimTiles_General_Jotho_Flower(timer / 16);
+    if (timer % 16 == 3)
+        QueueAnimTiles_General_Jotho_Flower_2(timer / 16);
     if (timer % 16 == 3)
         QueueAnimTiles_General_Jotho_Water(timer / 16);
 }
