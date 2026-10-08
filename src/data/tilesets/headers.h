@@ -1903,5 +1903,5 @@ const struct Tileset gTileset_General_Jotho =
     .palettes = gTilesetPalettes_General_Jotho,
     .metatiles = gMetatiles_General_Jotho,
     .metatileAttributes = gMetatileAttributes_General_Jotho,
-    .callback = NULL,
+    .callback = InitTilesetAnim_General_Jotho,
 };

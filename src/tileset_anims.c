@@ -1323,11 +1323,38 @@ static void TilesetAnim_General_Frlg(u16 timer)
         QueueAnimTiles_General_Frlg_Flower(timer / 16);
 }
 
+static void QueueAnimTiles_General_Jotho_Flower(u16 timer)
+{
+    AppendTilesetAnimToBuffer(sTilesetAnims_General_Flower[timer % ARRAY_COUNT(sTilesetAnims_General_Flower)], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(508)), 4 * TILE_SIZE_4BPP);
+}
+
+static void QueueAnimTiles_General_Water_Jotho(u16 timer)
+{
+    AppendTilesetAnimToBuffer(sTilesetAnims_General_Water_Current_LandWatersEdge[timer % ARRAY_COUNT(sTilesetAnims_General_Water_Current_LandWatersEdge)], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(416)), 48 * TILE_SIZE_4BPP);
+}
+
+static void TilesetAnim_General_Jotho(u16 timer)
+{
+    //if (timer % 8 == 0)
+    //    QueueAnimTiles_General_SandWatersEdge(timer / 8);
+    if (timer % 16 == 1)
+        QueueAnimTiles_General_Water_Jotho(timer / 16);
+    if (timer % 16 == 2)
+        QueueAnimTiles_General_Jotho_Flower(timer / 16);
+}
+
 void InitTilesetAnim_General_Frlg(void)
 {
     sPrimaryTilesetAnimCounter = 0;
     sPrimaryTilesetAnimCounterMax = 640;
     sPrimaryTilesetAnimCallback = TilesetAnim_General_Frlg;
+}
+
+void InitTilesetAnim_General_Jotho(void)
+{
+    sPrimaryTilesetAnimCounter = 0;
+    sPrimaryTilesetAnimCounterMax = 640;
+    sPrimaryTilesetAnimCallback = TilesetAnim_General_Jotho;
 }
 
 static void QueueAnimTiles_CeladonCity_Fountain(u16 timer)
