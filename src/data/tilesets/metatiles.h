@@ -415,9 +415,6 @@ const u16 gMetatileAttributes_Cherrygrove_City[] = INCBIN_U16("data/tilesets/sec
 const u16 gMetatiles_Violet_City[] = INCBIN_U16("data/tilesets/secondary/violet_city/metatiles.bin");
 const u16 gMetatileAttributes_Violet_City[] = INCBIN_U16("data/tilesets/secondary/violet_city/metatile_attributes.bin");
 
-const u16 gMetatiles_Happy_Town_Primary[] = INCBIN_U16("data/tilesets/primary/happy_town_primary/metatiles.bin");
-const u16 gMetatileAttributes_Happy_Town_Primary[] = INCBIN_U16("data/tilesets/primary/happy_town_primary/metatile_attributes.bin");
-
 const u16 gMetatiles_Happy_Town_Secondary[] = INCBIN_U16("data/tilesets/secondary/happy_town_secondary/metatiles.bin");
 const u16 gMetatileAttributes_Happy_Town_Secondary[] = INCBIN_U16("data/tilesets/secondary/happy_town_secondary/metatile_attributes.bin");
 

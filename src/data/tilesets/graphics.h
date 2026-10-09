@@ -3075,25 +3075,6 @@ const u16 gTilesetPalettes_Violet_City[][16] =
 
 const u32 gTilesetTiles_Violet_City[] = INCBIN_U32("data/tilesets/secondary/violet_city/tiles.4bpp.lz");
 
-const u16 gTilesetPalettes_Happy_Town_Primary[][16] =
-{
-    INCBIN_U16("data/tilesets/primary/happy_town_primary/palettes/00.gbapal"),
-    INCBIN_U16("data/tilesets/primary/happy_town_primary/palettes/01.gbapal"),
-    INCBIN_U16("data/tilesets/primary/happy_town_primary/palettes/02.gbapal"),
-    INCBIN_U16("data/tilesets/primary/happy_town_primary/palettes/03.gbapal"),
-    INCBIN_U16("data/tilesets/primary/happy_town_primary/palettes/04.gbapal"),
-    INCBIN_U16("data/tilesets/primary/happy_town_primary/palettes/05.gbapal"),
-    INCBIN_U16("data/tilesets/primary/happy_town_primary/palettes/06.gbapal"),
-    INCBIN_U16("data/tilesets/primary/happy_town_primary/palettes/07.gbapal"),
-    INCBIN_U16("data/tilesets/primary/happy_town_primary/palettes/08.gbapal"),
-    INCBIN_U16("data/tilesets/primary/happy_town_primary/palettes/09.gbapal"),
-    INCBIN_U16("data/tilesets/primary/happy_town_primary/palettes/10.gbapal"),
-    INCBIN_U16("data/tilesets/primary/happy_town_primary/palettes/11.gbapal"),
-    INCBIN_U16("data/tilesets/primary/happy_town_primary/palettes/12.gbapal"),
-};
-
-const u32 gTilesetTiles_Happy_Town_Primary[] = INCBIN_U32("data/tilesets/primary/happy_town_primary/tiles.4bpp.lz");
-
 const u16 gTilesetPalettes_Happy_Town_Secondary[][16] =
 {
     INCBIN_U16("data/tilesets/secondary/happy_town_secondary/palettes/00.gbapal"),
