@@ -1586,25 +1586,14 @@ const struct Tileset gTileset_Happy_Town_Secondary =
     .callback = NULL,
 };
 
-const struct Tileset gTileset_Catallia_Primary =
-{
-    .isCompressed = TRUE,
-    .isSecondary = FALSE,
-    .tiles = gTilesetTiles_Catallia_Primary,
-    .palettes = gTilesetPalettes_Catallia_Primary,
-    .metatiles = gMetatiles_Catallia_Primary,
-    .metatileAttributes = gMetatileAttributes_Catallia_Primary,
-    .callback = NULL,
-};
-
-const struct Tileset gTileset_Catallia_Secondary =
+const struct Tileset gTileset_Catallia_City =
 {
     .isCompressed = TRUE,
     .isSecondary = TRUE,
-    .tiles = gTilesetTiles_Catallia_Secondary,
-    .palettes = gTilesetPalettes_Catallia_Secondary,
-    .metatiles = gMetatiles_Catallia_Secondary,
-    .metatileAttributes = gMetatileAttributes_Catallia_Secondary,
+    .tiles = gTilesetTiles_Catallia_City,
+    .palettes = gTilesetPalettes_Catallia_City,
+    .metatiles = gMetatiles_Catallia_City,
+    .metatileAttributes = gMetatileAttributes_Catallia_City,
     .callback = NULL,
 };
 
