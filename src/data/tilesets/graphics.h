@@ -3056,44 +3056,6 @@ const u16 gTilesetPalettes_Cherrygrove_City[][16] =
 
 const u32 gTilesetTiles_Cherrygrove_City[] = INCBIN_U32("data/tilesets/secondary/cherrygrove_city/tiles.4bpp.lz");
 
-const u16 gTilesetPalettes_Mt_Freeze_Primary[][16] =
-{
-    INCBIN_U16("data/tilesets/primary/mt_freeze_primary/palettes/00.gbapal"),
-    INCBIN_U16("data/tilesets/primary/mt_freeze_primary/palettes/01.gbapal"),
-    INCBIN_U16("data/tilesets/primary/mt_freeze_primary/palettes/02.gbapal"),
-    INCBIN_U16("data/tilesets/primary/mt_freeze_primary/palettes/03.gbapal"),
-    INCBIN_U16("data/tilesets/primary/mt_freeze_primary/palettes/04.gbapal"),
-    INCBIN_U16("data/tilesets/primary/mt_freeze_primary/palettes/05.gbapal"),
-    INCBIN_U16("data/tilesets/primary/mt_freeze_primary/palettes/06.gbapal"),
-    INCBIN_U16("data/tilesets/primary/mt_freeze_primary/palettes/07.gbapal"),
-    INCBIN_U16("data/tilesets/primary/mt_freeze_primary/palettes/08.gbapal"),
-    INCBIN_U16("data/tilesets/primary/mt_freeze_primary/palettes/09.gbapal"),
-    INCBIN_U16("data/tilesets/primary/mt_freeze_primary/palettes/10.gbapal"),
-    INCBIN_U16("data/tilesets/primary/mt_freeze_primary/palettes/11.gbapal"),
-    INCBIN_U16("data/tilesets/primary/mt_freeze_primary/palettes/12.gbapal"),
-};
-
-const u32 gTilesetTiles_Mt_Freeze_Primary[] = INCBIN_U32("data/tilesets/primary/mt_freeze_primary/tiles.4bpp.lz");
-
-const u16 gTilesetPalettes_Mt_Freeze_Secondary[][16] =
-{
-    INCBIN_U16("data/tilesets/secondary/mt_freeze_secondary/palettes/00.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/mt_freeze_secondary/palettes/01.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/mt_freeze_secondary/palettes/02.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/mt_freeze_secondary/palettes/03.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/mt_freeze_secondary/palettes/04.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/mt_freeze_secondary/palettes/05.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/mt_freeze_secondary/palettes/06.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/mt_freeze_secondary/palettes/07.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/mt_freeze_secondary/palettes/08.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/mt_freeze_secondary/palettes/09.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/mt_freeze_secondary/palettes/10.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/mt_freeze_secondary/palettes/11.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/mt_freeze_secondary/palettes/12.gbapal"),
-};
-
-const u32 gTilesetTiles_Mt_Freeze_Secondary[] = INCBIN_U32("data/tilesets/secondary/mt_freeze_secondary/tiles.4bpp.lz");
-
 const u16 gTilesetPalettes_Secondary_Replacement[][16] =
 {
     INCBIN_U16("data/tilesets/secondary/secondary_replacement/palettes/00.gbapal"),
@@ -3492,3 +3454,22 @@ const u16 gTilesetPalettes_Hallu_Forest[][16] =
 };
 
 const u32 gTilesetTiles_Hallu_Forest[] = INCBIN_U32("data/tilesets/secondary/hallu_forest/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_MtFreeze[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/Mt_Freeze/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/Mt_Freeze/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/Mt_Freeze/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/Mt_Freeze/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/Mt_Freeze/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/Mt_Freeze/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/Mt_Freeze/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/Mt_Freeze/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/Mt_Freeze/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/Mt_Freeze/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/Mt_Freeze/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/Mt_Freeze/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/Mt_Freeze/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_MtFreeze[] = INCBIN_U32("data/tilesets/secondary/Mt_Freeze/tiles.4bpp.lz");
