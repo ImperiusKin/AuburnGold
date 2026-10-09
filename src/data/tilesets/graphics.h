@@ -3189,44 +3189,6 @@ const u16 gTilesetPalettes_Florando_Secondary[][16] =
 
 const u32 gTilesetTiles_Florando_Secondary[] = INCBIN_U32("data/tilesets/secondary/florando_secondary/tiles.4bpp.lz");
 
-const u16 gTilesetPalettes_Connections[][16] =
-{
-    INCBIN_U16("data/tilesets/primary/connections/palettes/00.gbapal"),
-    INCBIN_U16("data/tilesets/primary/connections/palettes/01.gbapal"),
-    INCBIN_U16("data/tilesets/primary/connections/palettes/02.gbapal"),
-    INCBIN_U16("data/tilesets/primary/connections/palettes/03.gbapal"),
-    INCBIN_U16("data/tilesets/primary/connections/palettes/04.gbapal"),
-    INCBIN_U16("data/tilesets/primary/connections/palettes/05.gbapal"),
-    INCBIN_U16("data/tilesets/primary/connections/palettes/06.gbapal"),
-    INCBIN_U16("data/tilesets/primary/connections/palettes/07.gbapal"),
-    INCBIN_U16("data/tilesets/primary/connections/palettes/08.gbapal"),
-    INCBIN_U16("data/tilesets/primary/connections/palettes/09.gbapal"),
-    INCBIN_U16("data/tilesets/primary/connections/palettes/10.gbapal"),
-    INCBIN_U16("data/tilesets/primary/connections/palettes/11.gbapal"),
-    INCBIN_U16("data/tilesets/primary/connections/palettes/12.gbapal"),
-};
-
-const u32 gTilesetTiles_Connections[] = INCBIN_U32("data/tilesets/primary/connections/tiles.4bpp.lz");
-
-const u16 gTilesetPalettes_Connections_Sec[][16] =
-{
-    INCBIN_U16("data/tilesets/secondary/connections_sec/palettes/00.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/connections_sec/palettes/01.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/connections_sec/palettes/02.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/connections_sec/palettes/03.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/connections_sec/palettes/04.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/connections_sec/palettes/05.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/connections_sec/palettes/06.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/connections_sec/palettes/07.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/connections_sec/palettes/08.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/connections_sec/palettes/09.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/connections_sec/palettes/10.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/connections_sec/palettes/11.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/connections_sec/palettes/12.gbapal"),
-};
-
-const u32 gTilesetTiles_Connections_Sec[] = INCBIN_U32("data/tilesets/secondary/connections_sec/tiles.4bpp.lz");
-
 const u16 gTilesetPalettes_Lab_Jotho[][16] =
 {
     INCBIN_U16("data/tilesets/secondary/lab_jotho/palettes/00.gbapal"),
@@ -3454,3 +3416,41 @@ const u16 gTilesetPalettes_PalmHillCityMerged[][16] =
 };
 
 const u32 gTilesetTiles_PalmHillCityMerged[] = INCBIN_U32("data/tilesets/secondary/palm_hill_city_merged/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_FlorandoSecondaryMerged[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/florando_secondary_merged/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/florando_secondary_merged/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/florando_secondary_merged/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/florando_secondary_merged/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/florando_secondary_merged/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/florando_secondary_merged/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/florando_secondary_merged/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/florando_secondary_merged/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/florando_secondary_merged/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/florando_secondary_merged/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/florando_secondary_merged/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/florando_secondary_merged/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/florando_secondary_merged/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_FlorandoSecondaryMerged[] = INCBIN_U32("data/tilesets/secondary/florando_secondary_merged/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_Connections[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/connections/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/connections/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/connections/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/connections/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/connections/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/connections/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/connections/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/connections/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/connections/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/connections/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/connections/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/connections/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/connections/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_Connections[] = INCBIN_U32("data/tilesets/secondary/connections/tiles.4bpp.lz");

@@ -1630,28 +1630,6 @@ const struct Tileset gTileset_Florando_Secondary =
     .callback = NULL,
 };
 
-const struct Tileset gTileset_Connections =
-{
-    .isCompressed = TRUE,
-    .isSecondary = FALSE,
-    .tiles = gTilesetTiles_Connections,
-    .palettes = gTilesetPalettes_Connections,
-    .metatiles = gMetatiles_Connections,
-    .metatileAttributes = gMetatileAttributes_Connections,
-    .callback = NULL,
-};
-
-const struct Tileset gTileset_Connections_Sec =
-{
-    .isCompressed = TRUE,
-    .isSecondary = TRUE,
-    .tiles = gTilesetTiles_Connections_Sec,
-    .palettes = gTilesetPalettes_Connections_Sec,
-    .metatiles = gMetatiles_Connections_Sec,
-    .metatileAttributes = gMetatileAttributes_Connections_Sec,
-    .callback = NULL,
-};
-
 const struct Tileset gTileset_Lab_Jotho =
 {
     .isCompressed = TRUE,
@@ -1781,5 +1759,27 @@ const struct Tileset gTileset_PalmHillCityMerged =
     .palettes = gTilesetPalettes_PalmHillCityMerged,
     .metatiles = gMetatiles_PalmHillCityMerged,
     .metatileAttributes = gMetatileAttributes_PalmHillCityMerged,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_FlorandoSecondaryMerged =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_FlorandoSecondaryMerged,
+    .palettes = gTilesetPalettes_FlorandoSecondaryMerged,
+    .metatiles = gMetatiles_FlorandoSecondaryMerged,
+    .metatileAttributes = gMetatileAttributes_FlorandoSecondaryMerged,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_Connections =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Connections,
+    .palettes = gTilesetPalettes_Connections,
+    .metatiles = gMetatiles_Connections,
+    .metatileAttributes = gMetatileAttributes_Connections,
     .callback = NULL,
 };
