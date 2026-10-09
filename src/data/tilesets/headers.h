@@ -1509,17 +1509,6 @@ const struct Tileset gTileset_NewBarkTown =
     .callback = NULL,
 };
 
-const struct Tileset gTileset_Johto_Primary =
-{
-    .isCompressed = TRUE,
-    .isSecondary = FALSE,
-    .tiles = gTilesetTiles_Johto_Primary,
-    .palettes = gTilesetPalettes_Johto_Primary,
-    .metatiles = gMetatiles_Johto_Primary,
-    .metatileAttributes = gMetatileAttributes_Johto_Primary,
-    .callback = NULL,
-};
-
 const struct Tileset gTileset_TrainStationExterior =
 {
     .isCompressed = TRUE,
@@ -1528,28 +1517,6 @@ const struct Tileset gTileset_TrainStationExterior =
     .palettes = gTilesetPalettes_TrainStationExterior,
     .metatiles = gMetatiles_TrainStationExterior,
     .metatileAttributes = gMetatileAttributes_TrainStationExterior,
-    .callback = NULL,
-};
-
-const struct Tileset gTileset_Johto_Primary_2 =
-{
-    .isCompressed = TRUE,
-    .isSecondary = FALSE,
-    .tiles = gTilesetTiles_Johto_Primary_2,
-    .palettes = gTilesetPalettes_Johto_Primary_2,
-    .metatiles = gMetatiles_Johto_Primary_2,
-    .metatileAttributes = gMetatileAttributes_Johto_Primary_2,
-    .callback = NULL,
-};
-
-const struct Tileset gTileset_Johto_Primary_3 =
-{
-    .isCompressed = TRUE,
-    .isSecondary = FALSE,
-    .tiles = gTilesetTiles_Johto_Primary_3,
-    .palettes = gTilesetPalettes_Johto_Primary_3,
-    .metatiles = gMetatiles_Johto_Primary_3,
-    .metatileAttributes = gMetatileAttributes_Johto_Primary_3,
     .callback = NULL,
 };
 
@@ -1597,25 +1564,14 @@ const struct Tileset gTileset_HalluForest_Secondary =
     .callback = NULL,
 };
 
-const struct Tileset gTileset_Route_30 =
-{
-    .isCompressed = TRUE,
-    .isSecondary = FALSE,
-    .tiles = gTilesetTiles_Route_30,
-    .palettes = gTilesetPalettes_Route_30,
-    .metatiles = gMetatiles_Route_30,
-    .metatileAttributes = gMetatileAttributes_Route_30,
-    .callback = NULL,
-};
-
-const struct Tileset gTileset_Route_30_Secondary =
+const struct Tileset gTileset_Cherrygrove_City =
 {
     .isCompressed = TRUE,
     .isSecondary = TRUE,
-    .tiles = gTilesetTiles_Route_30_Secondary,
-    .palettes = gTilesetPalettes_Route_30_Secondary,
-    .metatiles = gMetatiles_Route_30_Secondary,
-    .metatileAttributes = gMetatileAttributes_Route_30_Secondary,
+    .tiles = gTilesetTiles_Cherrygrove_City,
+    .palettes = gTilesetPalettes_Cherrygrove_City,
+    .metatiles = gMetatiles_Cherrygrove_City,
+    .metatileAttributes = gMetatileAttributes_Cherrygrove_City,
     .callback = NULL,
 };
 
@@ -1663,17 +1619,6 @@ const struct Tileset gTileset_Mt_Freeze_Secondary =
     .callback = NULL,
 };
 
-const struct Tileset gTileset_Primary_Replacement =
-{
-    .isCompressed = TRUE,
-    .isSecondary = FALSE,
-    .tiles = gTilesetTiles_Primary_Replacement,
-    .palettes = gTilesetPalettes_Primary_Replacement,
-    .metatiles = gMetatiles_Primary_Replacement,
-    .metatileAttributes = gMetatileAttributes_Primary_Replacement,
-    .callback = NULL,
-};
-
 const struct Tileset gTileset_Secondary_Replacement =
 {
     .isCompressed = TRUE,
@@ -1707,17 +1652,6 @@ const struct Tileset gTileset_Happy_Town_Secondary =
     .callback = NULL,
 };
 
-const struct Tileset gTileset_Violet_City_Primary =
-{
-    .isCompressed = TRUE,
-    .isSecondary = FALSE,
-    .tiles = gTilesetTiles_Violet_City_Primary,
-    .palettes = gTilesetPalettes_Violet_City_Primary,
-    .metatiles = gMetatiles_Violet_City_Primary,
-    .metatileAttributes = gMetatileAttributes_Violet_City_Primary,
-    .callback = NULL,
-};
-
 const struct Tileset gTileset_Catallia_Primary =
 {
     .isCompressed = TRUE,
@@ -1748,17 +1682,6 @@ const struct Tileset gTileset_Palm_Hill_City =
     .palettes = gTilesetPalettes_Palm_Hill_City,
     .metatiles = gMetatiles_Palm_Hill_City,
     .metatileAttributes = gMetatileAttributes_Palm_Hill_City,
-    .callback = NULL,
-};
-
-const struct Tileset gTileset_PalmHill_Primary =
-{
-    .isCompressed = TRUE,
-    .isSecondary = FALSE,
-    .tiles = gTilesetTiles_PalmHill_Primary,
-    .palettes = gTilesetPalettes_PalmHill_Primary,
-    .metatiles = gMetatiles_PalmHill_Primary,
-    .metatileAttributes = gMetatileAttributes_PalmHill_Primary,
     .callback = NULL,
 };
 
@@ -1893,7 +1816,6 @@ const struct Tileset gTileset_Palm_Hill_City_Primary =
     .metatileAttributes = gMetatileAttributes_Palm_Hill_City_Primary,
     .callback = NULL,
 };
-
 
 const struct Tileset gTileset_General_Jotho =
 {
