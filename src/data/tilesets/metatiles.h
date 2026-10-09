@@ -412,8 +412,8 @@ const u16 gMetatileAttributes_Amberite_Valley[] = INCBIN_U16("data/tilesets/seco
 const u16 gMetatiles_Cherrygrove_City[] = INCBIN_U16("data/tilesets/secondary/cherrygrove_city/metatiles.bin");
 const u16 gMetatileAttributes_Cherrygrove_City[] = INCBIN_U16("data/tilesets/secondary/cherrygrove_city/metatile_attributes.bin");
 
-const u16 gMetatiles_Secondary_Replacement[] = INCBIN_U16("data/tilesets/secondary/secondary_replacement/metatiles.bin");
-const u16 gMetatileAttributes_Secondary_Replacement[] = INCBIN_U16("data/tilesets/secondary/secondary_replacement/metatile_attributes.bin");
+const u16 gMetatiles_Violet_City[] = INCBIN_U16("data/tilesets/secondary/violet_city/metatiles.bin");
+const u16 gMetatileAttributes_Violet_City[] = INCBIN_U16("data/tilesets/secondary/violet_city/metatile_attributes.bin");
 
 const u16 gMetatiles_Happy_Town_Primary[] = INCBIN_U16("data/tilesets/primary/happy_town_primary/metatiles.bin");
 const u16 gMetatileAttributes_Happy_Town_Primary[] = INCBIN_U16("data/tilesets/primary/happy_town_primary/metatile_attributes.bin");
@@ -426,12 +426,6 @@ const u16 gMetatileAttributes_Catallia_Primary[] = INCBIN_U16("data/tilesets/pri
 
 const u16 gMetatiles_Catallia_Secondary[] = INCBIN_U16("data/tilesets/secondary/catallia_secondary/metatiles.bin");
 const u16 gMetatileAttributes_Catallia_Secondary[] = INCBIN_U16("data/tilesets/secondary/catallia_secondary/metatile_attributes.bin");
-
-const u16 gMetatiles_Florando_Primary[] = INCBIN_U16("data/tilesets/primary/florando_primary/metatiles.bin");
-const u16 gMetatileAttributes_Florando_Primary[] = INCBIN_U16("data/tilesets/primary/florando_primary/metatile_attributes.bin");
-
-const u16 gMetatiles_Florando_Secondary[] = INCBIN_U16("data/tilesets/secondary/florando_secondary/metatiles.bin");
-const u16 gMetatileAttributes_Florando_Secondary[] = INCBIN_U16("data/tilesets/secondary/florando_secondary/metatile_attributes.bin");
 
 const u16 gMetatiles_Lab_Jotho[] = INCBIN_U16("data/tilesets/secondary/lab_jotho/metatiles.bin");
 const u16 gMetatileAttributes_Lab_Jotho[] = INCBIN_U16("data/tilesets/secondary/lab_jotho/metatile_attributes.bin");
@@ -469,8 +463,8 @@ const u16 gMetatileAttributes_MtFreeze[] = INCBIN_U16("data/tilesets/secondary/M
 const u16 gMetatiles_PalmHillCityMerged[] = INCBIN_U16("data/tilesets/secondary/palm_hill_city_merged/metatiles.bin");
 const u16 gMetatileAttributes_PalmHillCityMerged[] = INCBIN_U16("data/tilesets/secondary/palm_hill_city_merged/metatile_attributes.bin");
 
-const u16 gMetatiles_FlorandoSecondaryMerged[] = INCBIN_U16("data/tilesets/secondary/florando_secondary_merged/metatiles.bin");
-const u16 gMetatileAttributes_FlorandoSecondaryMerged[] = INCBIN_U16("data/tilesets/secondary/florando_secondary_merged/metatile_attributes.bin");
+const u16 gMetatiles_Florando_City[] = INCBIN_U16("data/tilesets/secondary/florando_city/metatiles.bin");
+const u16 gMetatileAttributes_Florando_City[] = INCBIN_U16("data/tilesets/secondary/florando_city/metatile_attributes.bin");
 
 const u16 gMetatiles_Connections[] = INCBIN_U16("data/tilesets/secondary/connections/metatiles.bin");
 const u16 gMetatileAttributes_Connections[] = INCBIN_U16("data/tilesets/secondary/connections/metatile_attributes.bin");
