@@ -1553,14 +1553,14 @@ const struct Tileset gTileset_Cherrygrove_City =
     .callback = NULL,
 };
 
-const struct Tileset gTileset_Secondary_Replacement =
+const struct Tileset gTileset_Violet_City =
 {
     .isCompressed = TRUE,
     .isSecondary = TRUE,
-    .tiles = gTilesetTiles_Secondary_Replacement,
-    .palettes = gTilesetPalettes_Secondary_Replacement,
-    .metatiles = gMetatiles_Secondary_Replacement,
-    .metatileAttributes = gMetatileAttributes_Secondary_Replacement,
+    .tiles = gTilesetTiles_Violet_City,
+    .palettes = gTilesetPalettes_Violet_City,
+    .metatiles = gMetatiles_Violet_City,
+    .metatileAttributes = gMetatileAttributes_Violet_City,
     .callback = NULL,
 };
 
@@ -1605,28 +1605,6 @@ const struct Tileset gTileset_Catallia_Secondary =
     .palettes = gTilesetPalettes_Catallia_Secondary,
     .metatiles = gMetatiles_Catallia_Secondary,
     .metatileAttributes = gMetatileAttributes_Catallia_Secondary,
-    .callback = NULL,
-};
-
-const struct Tileset gTileset_Florando_Primary =
-{
-    .isCompressed = TRUE,
-    .isSecondary = FALSE,
-    .tiles = gTilesetTiles_Florando_Primary,
-    .palettes = gTilesetPalettes_Florando_Primary,
-    .metatiles = gMetatiles_Florando_Primary,
-    .metatileAttributes = gMetatileAttributes_Florando_Primary,
-    .callback = NULL,
-};
-
-const struct Tileset gTileset_Florando_Secondary =
-{
-    .isCompressed = TRUE,
-    .isSecondary = TRUE,
-    .tiles = gTilesetTiles_Florando_Secondary,
-    .palettes = gTilesetPalettes_Florando_Secondary,
-    .metatiles = gMetatiles_Florando_Secondary,
-    .metatileAttributes = gMetatileAttributes_Florando_Secondary,
     .callback = NULL,
 };
 
@@ -1762,14 +1740,14 @@ const struct Tileset gTileset_PalmHillCityMerged =
     .callback = NULL,
 };
 
-const struct Tileset gTileset_FlorandoSecondaryMerged =
+const struct Tileset gTileset_Florando_City =
 {
     .isCompressed = TRUE,
     .isSecondary = TRUE,
-    .tiles = gTilesetTiles_FlorandoSecondaryMerged,
-    .palettes = gTilesetPalettes_FlorandoSecondaryMerged,
-    .metatiles = gMetatiles_FlorandoSecondaryMerged,
-    .metatileAttributes = gMetatileAttributes_FlorandoSecondaryMerged,
+    .tiles = gTilesetTiles_Florando_City,
+    .palettes = gTilesetPalettes_Florando_City,
+    .metatiles = gMetatiles_Florando_City,
+    .metatileAttributes = gMetatileAttributes_Florando_City,
     .callback = NULL,
 };
 

@@ -9450,7 +9450,7 @@
       "width": 45,
       "height": 135,
       "primary_tileset": "gTileset_General_Jotho",
-      "secondary_tileset": "gTileset_Secondary_Replacement",
+      "secondary_tileset": "gTileset_Violet_City",
       "border_filepath": "data/layouts/Route_32/border.bin",
       "blockdata_filepath": "data/layouts/Route_32/map.bin"
     },
@@ -9470,7 +9470,7 @@
       "width": 56,
       "height": 51,
       "primary_tileset": "gTileset_General_Jotho",
-      "secondary_tileset": "gTileset_Secondary_Replacement",
+      "secondary_tileset": "gTileset_Violet_City",
       "border_filepath": "data/layouts/Violet_City/border.bin",
       "blockdata_filepath": "data/layouts/Violet_City/map.bin"
     },
@@ -9510,7 +9510,7 @@
       "width": 45,
       "height": 46,
       "primary_tileset": "gTileset_General_Jotho",
-      "secondary_tileset": "gTileset_FlorandoSecondaryMerged",
+      "secondary_tileset": "gTileset_Florando_City",
       "border_filepath": "data/layouts/florando_City/border.bin",
       "blockdata_filepath": "data/layouts/florando_City/map.bin"
     },
