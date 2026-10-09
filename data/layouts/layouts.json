@@ -9499,8 +9499,8 @@
       "name": "PalmHillCity_Layout",
       "width": 31,
       "height": 36,
-      "primary_tileset": "gTileset_Palm_Hill_City_Primary",
-      "secondary_tileset": "gTileset_Palm_Hill_City",
+      "primary_tileset": "gTileset_General_Jotho",
+      "secondary_tileset": "gTileset_PalmHillCityMerged",
       "border_filepath": "data/layouts/PalmHillCity/border.bin",
       "blockdata_filepath": "data/layouts/PalmHillCity/map.bin"
     },
