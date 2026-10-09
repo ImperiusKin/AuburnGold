@@ -9449,7 +9449,7 @@
       "name": "Route_32_Layout",
       "width": 45,
       "height": 135,
-      "primary_tileset": "gTileset_Primary_Replacement",
+      "primary_tileset": "gTileset_General_Jotho",
       "secondary_tileset": "gTileset_Secondary_Replacement",
       "border_filepath": "data/layouts/Route_32/border.bin",
       "blockdata_filepath": "data/layouts/Route_32/map.bin"
@@ -9469,7 +9469,7 @@
       "name": "Violet_City_Layout",
       "width": 56,
       "height": 51,
-      "primary_tileset": "gTileset_Violet_City_Primary",
+      "primary_tileset": "gTileset_General_Jotho",
       "secondary_tileset": "gTileset_Secondary_Replacement",
       "border_filepath": "data/layouts/Violet_City/border.bin",
       "blockdata_filepath": "data/layouts/Violet_City/map.bin"
