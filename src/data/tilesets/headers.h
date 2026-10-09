@@ -1564,17 +1564,6 @@ const struct Tileset gTileset_Violet_City =
     .callback = NULL,
 };
 
-const struct Tileset gTileset_Happy_Town_Primary =
-{
-    .isCompressed = TRUE,
-    .isSecondary = FALSE,
-    .tiles = gTilesetTiles_Happy_Town_Primary,
-    .palettes = gTilesetPalettes_Happy_Town_Primary,
-    .metatiles = gMetatiles_Happy_Town_Primary,
-    .metatileAttributes = gMetatileAttributes_Happy_Town_Primary,
-    .callback = NULL,
-};
-
 const struct Tileset gTileset_Happy_Town_Secondary =
 {
     .isCompressed = TRUE,
