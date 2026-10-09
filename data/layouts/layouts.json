@@ -9419,8 +9419,8 @@
       "name": "Dark_Cave_Layout",
       "width": 50,
       "height": 42,
-      "primary_tileset": "gTileset_Dark_Cave",
-      "secondary_tileset": "gTileset_Dark_Cave_Secondary",
+      "primary_tileset": "gTileset_General_Jotho",
+      "secondary_tileset": "gTileset_Dark_Cave",
       "border_filepath": "data/layouts/Dark_Cave/border.bin",
       "blockdata_filepath": "data/layouts/Dark_Cave/map.bin"
     },

@@ -1575,28 +1575,6 @@ const struct Tileset gTileset_Cherrygrove_City =
     .callback = NULL,
 };
 
-const struct Tileset gTileset_Dark_Cave =
-{
-    .isCompressed = TRUE,
-    .isSecondary = FALSE,
-    .tiles = gTilesetTiles_Dark_Cave,
-    .palettes = gTilesetPalettes_Dark_Cave,
-    .metatiles = gMetatiles_Dark_Cave,
-    .metatileAttributes = gMetatileAttributes_Dark_Cave,
-    .callback = NULL,
-};
-
-const struct Tileset gTileset_Dark_Cave_Secondary =
-{
-    .isCompressed = TRUE,
-    .isSecondary = TRUE,
-    .tiles = gTilesetTiles_Dark_Cave_Secondary,
-    .palettes = gTilesetPalettes_Dark_Cave_Secondary,
-    .metatiles = gMetatiles_Dark_Cave_Secondary,
-    .metatileAttributes = gMetatileAttributes_Dark_Cave_Secondary,
-    .callback = NULL,
-};
-
 const struct Tileset gTileset_Mt_Freeze_Primary =
 {
     .isCompressed = TRUE,
@@ -1826,4 +1804,15 @@ const struct Tileset gTileset_General_Jotho =
     .metatiles = gMetatiles_General_Jotho,
     .metatileAttributes = gMetatileAttributes_General_Jotho,
     .callback = InitTilesetAnim_General_Jotho,
+};
+
+const struct Tileset gTileset_Dark_Cave =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Dark_Cave,
+    .palettes = gTilesetPalettes_Dark_Cave,
+    .metatiles = gMetatiles_Dark_Cave,
+    .metatileAttributes = gMetatileAttributes_Dark_Cave,
+    .callback = NULL,
 };
