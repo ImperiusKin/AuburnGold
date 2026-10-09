@@ -1608,17 +1608,6 @@ const struct Tileset gTileset_Catallia_Secondary =
     .callback = NULL,
 };
 
-const struct Tileset gTileset_Palm_Hill_City =
-{
-    .isCompressed = TRUE,
-    .isSecondary = TRUE,
-    .tiles = gTilesetTiles_Palm_Hill_City,
-    .palettes = gTilesetPalettes_Palm_Hill_City,
-    .metatiles = gMetatiles_Palm_Hill_City,
-    .metatileAttributes = gMetatileAttributes_Palm_Hill_City,
-    .callback = NULL,
-};
-
 const struct Tileset gTileset_Florando_Primary =
 {
     .isCompressed = TRUE,
@@ -1740,17 +1729,6 @@ const struct Tileset gTileset_Sprout_Tower =
     .callback = NULL,
 };
 
-const struct Tileset gTileset_Palm_Hill_City_Primary =
-{
-    .isCompressed = TRUE,
-    .isSecondary = FALSE,
-    .tiles = gTilesetTiles_Palm_Hill_City_Primary,
-    .palettes = gTilesetPalettes_Palm_Hill_City_Primary,
-    .metatiles = gMetatiles_Palm_Hill_City_Primary,
-    .metatileAttributes = gMetatileAttributes_Palm_Hill_City_Primary,
-    .callback = NULL,
-};
-
 const struct Tileset gTileset_General_Jotho =
 {
     .isCompressed = TRUE,
@@ -1792,5 +1770,16 @@ const struct Tileset gTileset_MtFreeze =
     .palettes = gTilesetPalettes_MtFreeze,
     .metatiles = gMetatiles_MtFreeze,
     .metatileAttributes = gMetatileAttributes_MtFreeze,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_PalmHillCityMerged =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_PalmHillCityMerged,
+    .palettes = gTilesetPalettes_PalmHillCityMerged,
+    .metatiles = gMetatiles_PalmHillCityMerged,
+    .metatileAttributes = gMetatileAttributes_PalmHillCityMerged,
     .callback = NULL,
 };

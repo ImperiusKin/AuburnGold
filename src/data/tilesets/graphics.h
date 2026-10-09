@@ -3151,25 +3151,6 @@ const u16 gTilesetPalettes_Catallia_Secondary[][16] =
 
 const u32 gTilesetTiles_Catallia_Secondary[] = INCBIN_U32("data/tilesets/secondary/catallia_secondary/tiles.4bpp.lz");
 
-const u16 gTilesetPalettes_Palm_Hill_City[][16] =
-{
-    INCBIN_U16("data/tilesets/secondary/palm_hill_city/palettes/00.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/palm_hill_city/palettes/01.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/palm_hill_city/palettes/02.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/palm_hill_city/palettes/03.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/palm_hill_city/palettes/04.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/palm_hill_city/palettes/05.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/palm_hill_city/palettes/06.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/palm_hill_city/palettes/07.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/palm_hill_city/palettes/08.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/palm_hill_city/palettes/09.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/palm_hill_city/palettes/10.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/palm_hill_city/palettes/11.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/palm_hill_city/palettes/12.gbapal"),
-};
-
-const u32 gTilesetTiles_Palm_Hill_City[] = INCBIN_U32("data/tilesets/secondary/palm_hill_city/tiles.4bpp.lz");
-
 const u16 gTilesetPalettes_Florando_Primary[][16] =
 {
     INCBIN_U16("data/tilesets/primary/florando_primary/palettes/00.gbapal"),
@@ -3379,25 +3360,6 @@ const u16 gTilesetPalettes_Sprout_Tower[][16] =
 
 const u32 gTilesetTiles_Sprout_Tower[] = INCBIN_U32("data/tilesets/secondary/sprout_tower/tiles.4bpp.lz");
 
-const u16 gTilesetPalettes_Palm_Hill_City_Primary[][16] =
-{
-    INCBIN_U16("data/tilesets/primary/palm_hill_city_primary/palettes/00.gbapal"),
-    INCBIN_U16("data/tilesets/primary/palm_hill_city_primary/palettes/01.gbapal"),
-    INCBIN_U16("data/tilesets/primary/palm_hill_city_primary/palettes/02.gbapal"),
-    INCBIN_U16("data/tilesets/primary/palm_hill_city_primary/palettes/03.gbapal"),
-    INCBIN_U16("data/tilesets/primary/palm_hill_city_primary/palettes/04.gbapal"),
-    INCBIN_U16("data/tilesets/primary/palm_hill_city_primary/palettes/05.gbapal"),
-    INCBIN_U16("data/tilesets/primary/palm_hill_city_primary/palettes/06.gbapal"),
-    INCBIN_U16("data/tilesets/primary/palm_hill_city_primary/palettes/07.gbapal"),
-    INCBIN_U16("data/tilesets/primary/palm_hill_city_primary/palettes/08.gbapal"),
-    INCBIN_U16("data/tilesets/primary/palm_hill_city_primary/palettes/09.gbapal"),
-    INCBIN_U16("data/tilesets/primary/palm_hill_city_primary/palettes/10.gbapal"),
-    INCBIN_U16("data/tilesets/primary/palm_hill_city_primary/palettes/11.gbapal"),
-    INCBIN_U16("data/tilesets/primary/palm_hill_city_primary/palettes/12.gbapal"),
-};
-
-const u32 gTilesetTiles_Palm_Hill_City_Primary[] = INCBIN_U32("data/tilesets/primary/palm_hill_city_primary/tiles.4bpp.lz");
-
 const u16 gTilesetPalettes_General_Jotho[][16] =
 {
     INCBIN_U16("data/tilesets/primary/general_jotho/palettes/00.gbapal"),
@@ -3473,3 +3435,22 @@ const u16 gTilesetPalettes_MtFreeze[][16] =
 };
 
 const u32 gTilesetTiles_MtFreeze[] = INCBIN_U32("data/tilesets/secondary/Mt_Freeze/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_PalmHillCityMerged[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/palm_hill_city_merged/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/palm_hill_city_merged/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/palm_hill_city_merged/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/palm_hill_city_merged/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/palm_hill_city_merged/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/palm_hill_city_merged/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/palm_hill_city_merged/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/palm_hill_city_merged/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/palm_hill_city_merged/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/palm_hill_city_merged/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/palm_hill_city_merged/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/palm_hill_city_merged/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/palm_hill_city_merged/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_PalmHillCityMerged[] = INCBIN_U32("data/tilesets/secondary/palm_hill_city_merged/tiles.4bpp.lz");

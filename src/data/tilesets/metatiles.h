@@ -427,9 +427,6 @@ const u16 gMetatileAttributes_Catallia_Primary[] = INCBIN_U16("data/tilesets/pri
 const u16 gMetatiles_Catallia_Secondary[] = INCBIN_U16("data/tilesets/secondary/catallia_secondary/metatiles.bin");
 const u16 gMetatileAttributes_Catallia_Secondary[] = INCBIN_U16("data/tilesets/secondary/catallia_secondary/metatile_attributes.bin");
 
-const u16 gMetatiles_Palm_Hill_City[] = INCBIN_U16("data/tilesets/secondary/palm_hill_city/metatiles.bin");
-const u16 gMetatileAttributes_Palm_Hill_City[] = INCBIN_U16("data/tilesets/secondary/palm_hill_city/metatile_attributes.bin");
-
 const u16 gMetatiles_Florando_Primary[] = INCBIN_U16("data/tilesets/primary/florando_primary/metatiles.bin");
 const u16 gMetatileAttributes_Florando_Primary[] = INCBIN_U16("data/tilesets/primary/florando_primary/metatile_attributes.bin");
 
@@ -463,9 +460,6 @@ const u16 gMetatileAttributes_Violet_Gym[] = INCBIN_U16("data/tilesets/secondary
 const u16 gMetatiles_Sprout_Tower[] = INCBIN_U16("data/tilesets/secondary/sprout_tower/metatiles.bin");
 const u16 gMetatileAttributes_Sprout_Tower[] = INCBIN_U16("data/tilesets/secondary/sprout_tower/metatile_attributes.bin");
 
-const u16 gMetatiles_Palm_Hill_City_Primary[] = INCBIN_U16("data/tilesets/primary/palm_hill_city_primary/metatiles.bin");
-const u16 gMetatileAttributes_Palm_Hill_City_Primary[] = INCBIN_U16("data/tilesets/primary/palm_hill_city_primary/metatile_attributes.bin");
-
 const u16 gMetatiles_General_Jotho[] = INCBIN_U16("data/tilesets/primary/general_jotho/metatiles.bin");
 const u16 gMetatileAttributes_General_Jotho[] = INCBIN_U16("data/tilesets/primary/general_jotho/metatile_attributes.bin");
 
@@ -477,3 +471,6 @@ const u16 gMetatileAttributes_Hallu_Forest[] = INCBIN_U16("data/tilesets/seconda
 
 const u16 gMetatiles_MtFreeze[] = INCBIN_U16("data/tilesets/secondary/Mt_Freeze/metatiles.bin");
 const u16 gMetatileAttributes_MtFreeze[] = INCBIN_U16("data/tilesets/secondary/Mt_Freeze/metatile_attributes.bin");
+
+const u16 gMetatiles_PalmHillCityMerged[] = INCBIN_U16("data/tilesets/secondary/palm_hill_city_merged/metatiles.bin");
+const u16 gMetatileAttributes_PalmHillCityMerged[] = INCBIN_U16("data/tilesets/secondary/palm_hill_city_merged/metatile_attributes.bin");
