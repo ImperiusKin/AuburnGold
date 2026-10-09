@@ -3037,44 +3037,6 @@ const u16 gTilesetPalettes_Amberite_Valley[][16] =
 
 const u32 gTilesetTiles_Amberite_Valley[] = INCBIN_U32("data/tilesets/secondary/amberite_valley/tiles.4bpp.lz");
 
-const u16 gTilesetPalettes_HalluForest_Primary[][16] =
-{
-    INCBIN_U16("data/tilesets/primary/hallu_forest_primary/palettes/00.gbapal"),
-    INCBIN_U16("data/tilesets/primary/hallu_forest_primary/palettes/01.gbapal"),
-    INCBIN_U16("data/tilesets/primary/hallu_forest_primary/palettes/02.gbapal"),
-    INCBIN_U16("data/tilesets/primary/hallu_forest_primary/palettes/03.gbapal"),
-    INCBIN_U16("data/tilesets/primary/hallu_forest_primary/palettes/04.gbapal"),
-    INCBIN_U16("data/tilesets/primary/hallu_forest_primary/palettes/05.gbapal"),
-    INCBIN_U16("data/tilesets/primary/hallu_forest_primary/palettes/06.gbapal"),
-    INCBIN_U16("data/tilesets/primary/hallu_forest_primary/palettes/07.gbapal"),
-    INCBIN_U16("data/tilesets/primary/hallu_forest_primary/palettes/08.gbapal"),
-    INCBIN_U16("data/tilesets/primary/hallu_forest_primary/palettes/09.gbapal"),
-    INCBIN_U16("data/tilesets/primary/hallu_forest_primary/palettes/10.gbapal"),
-    INCBIN_U16("data/tilesets/primary/hallu_forest_primary/palettes/11.gbapal"),
-    INCBIN_U16("data/tilesets/primary/hallu_forest_primary/palettes/12.gbapal"),
-};
-
-const u32 gTilesetTiles_HalluForest_Primary[] = INCBIN_U32("data/tilesets/primary/hallu_forest_primary/tiles.4bpp.lz");
-
-const u16 gTilesetPalettes_HalluForest_Secondary[][16] =
-{
-    INCBIN_U16("data/tilesets/secondary/hallu_forest_secondary/palettes/00.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/hallu_forest_secondary/palettes/01.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/hallu_forest_secondary/palettes/02.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/hallu_forest_secondary/palettes/03.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/hallu_forest_secondary/palettes/04.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/hallu_forest_secondary/palettes/05.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/hallu_forest_secondary/palettes/06.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/hallu_forest_secondary/palettes/07.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/hallu_forest_secondary/palettes/08.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/hallu_forest_secondary/palettes/09.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/hallu_forest_secondary/palettes/10.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/hallu_forest_secondary/palettes/11.gbapal"),
-    INCBIN_U16("data/tilesets/secondary/hallu_forest_secondary/palettes/12.gbapal"),
-};
-
-const u32 gTilesetTiles_HalluForest_Secondary[] = INCBIN_U32("data/tilesets/secondary/hallu_forest_secondary/tiles.4bpp.lz");
-
 const u16 gTilesetPalettes_Cherrygrove_City[][16] =
 {
     INCBIN_U16("data/tilesets/secondary/cherrygrove_city/palettes/00.gbapal"),
@@ -3511,3 +3473,22 @@ const u16 gTilesetPalettes_Dark_Cave[][16] =
 };
 
 const u32 gTilesetTiles_Dark_Cave[] = INCBIN_U32("data/tilesets/secondary/dark_cave/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_Hallu_Forest[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/hallu_forest/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/hallu_forest/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/hallu_forest/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/hallu_forest/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/hallu_forest/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/hallu_forest/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/hallu_forest/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/hallu_forest/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/hallu_forest/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/hallu_forest/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/hallu_forest/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/hallu_forest/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/hallu_forest/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_Hallu_Forest[] = INCBIN_U32("data/tilesets/secondary/hallu_forest/tiles.4bpp.lz");

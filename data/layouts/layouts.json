@@ -9389,8 +9389,8 @@
       "name": "Hallu_Forest_Layout",
       "width": 45,
       "height": 67,
-      "primary_tileset": "gTileset_HalluForest_Primary",
-      "secondary_tileset": "gTileset_HalluForest_Secondary",
+      "primary_tileset": "gTileset_General_Jotho",
+      "secondary_tileset": "gTileset_Hallu_Forest",
       "border_filepath": "data/layouts/Hallu_Forest/border.bin",
       "blockdata_filepath": "data/layouts/Hallu_Forest/map.bin"
     },

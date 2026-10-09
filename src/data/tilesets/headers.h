@@ -1542,28 +1542,6 @@ const struct Tileset gTileset_Amberite_Valley =
     .callback = NULL,
 };
 
-const struct Tileset gTileset_HalluForest_Primary =
-{
-    .isCompressed = TRUE,
-    .isSecondary = FALSE,
-    .tiles = gTilesetTiles_HalluForest_Primary,
-    .palettes = gTilesetPalettes_HalluForest_Primary,
-    .metatiles = gMetatiles_HalluForest_Primary,
-    .metatileAttributes = gMetatileAttributes_HalluForest_Primary,
-    .callback = NULL,
-};
-
-const struct Tileset gTileset_HalluForest_Secondary =
-{
-    .isCompressed = TRUE,
-    .isSecondary = TRUE,
-    .tiles = gTilesetTiles_HalluForest_Secondary,
-    .palettes = gTilesetPalettes_HalluForest_Secondary,
-    .metatiles = gMetatiles_HalluForest_Secondary,
-    .metatileAttributes = gMetatileAttributes_HalluForest_Secondary,
-    .callback = NULL,
-};
-
 const struct Tileset gTileset_Cherrygrove_City =
 {
     .isCompressed = TRUE,
@@ -1814,5 +1792,16 @@ const struct Tileset gTileset_Dark_Cave =
     .palettes = gTilesetPalettes_Dark_Cave,
     .metatiles = gMetatiles_Dark_Cave,
     .metatileAttributes = gMetatileAttributes_Dark_Cave,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_Hallu_Forest =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Hallu_Forest,
+    .palettes = gTilesetPalettes_Hallu_Forest,
+    .metatiles = gMetatiles_Hallu_Forest,
+    .metatileAttributes = gMetatileAttributes_Hallu_Forest,
     .callback = NULL,
 };

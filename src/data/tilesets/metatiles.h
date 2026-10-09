@@ -409,12 +409,6 @@ const u16 gMetatileAttributes_Southern_Field[] = INCBIN_U16("data/tilesets/secon
 const u16 gMetatiles_Amberite_Valley[] = INCBIN_U16("data/tilesets/secondary/amberite_valley/metatiles.bin");
 const u16 gMetatileAttributes_Amberite_Valley[] = INCBIN_U16("data/tilesets/secondary/amberite_valley/metatile_attributes.bin");
 
-const u16 gMetatiles_HalluForest_Primary[] = INCBIN_U16("data/tilesets/primary/hallu_forest_primary/metatiles.bin");
-const u16 gMetatileAttributes_HalluForest_Primary[] = INCBIN_U16("data/tilesets/primary/hallu_forest_primary/metatile_attributes.bin");
-
-const u16 gMetatiles_HalluForest_Secondary[] = INCBIN_U16("data/tilesets/secondary/hallu_forest_secondary/metatiles.bin");
-const u16 gMetatileAttributes_HalluForest_Secondary[] = INCBIN_U16("data/tilesets/secondary/hallu_forest_secondary/metatile_attributes.bin");
-
 const u16 gMetatiles_Cherrygrove_City[] = INCBIN_U16("data/tilesets/secondary/cherrygrove_city/metatiles.bin");
 const u16 gMetatileAttributes_Cherrygrove_City[] = INCBIN_U16("data/tilesets/secondary/cherrygrove_city/metatile_attributes.bin");
 
@@ -483,3 +477,6 @@ const u16 gMetatileAttributes_General_Jotho[] = INCBIN_U16("data/tilesets/primar
 
 const u16 gMetatiles_Dark_Cave[] = INCBIN_U16("data/tilesets/secondary/dark_cave/metatiles.bin");
 const u16 gMetatileAttributes_Dark_Cave[] = INCBIN_U16("data/tilesets/secondary/dark_cave/metatile_attributes.bin");
+
+const u16 gMetatiles_Hallu_Forest[] = INCBIN_U16("data/tilesets/secondary/hallu_forest/metatiles.bin");
+const u16 gMetatileAttributes_Hallu_Forest[] = INCBIN_U16("data/tilesets/secondary/hallu_forest/metatile_attributes.bin");
