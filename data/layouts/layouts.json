@@ -9459,7 +9459,7 @@
       "name": "Happy_Town_Layout",
       "width": 56,
       "height": 55,
-      "primary_tileset": "gTileset_Happy_Town_Primary",
+      "primary_tileset": "gTileset_General_Jotho",
       "secondary_tileset": "gTileset_Happy_Town_Secondary",
       "border_filepath": "data/layouts/Happy_Town/border.bin",
       "blockdata_filepath": "data/layouts/Happy_Town/map.bin"
@@ -9479,8 +9479,8 @@
       "name": "Catallia_City_Layout",
       "width": 63,
       "height": 58,
-      "primary_tileset": "gTileset_Catallia_Primary",
-      "secondary_tileset": "gTileset_Catallia_Secondary",
+      "primary_tileset": "gTileset_General_Jotho",
+      "secondary_tileset": "gTileset_Catallia_City",
       "border_filepath": "data/layouts/Catallia_City/border.bin",
       "blockdata_filepath": "data/layouts/Catallia_City/map.bin"
     },
