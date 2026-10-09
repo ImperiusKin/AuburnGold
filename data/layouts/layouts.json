@@ -9509,8 +9509,8 @@
       "name": "florando_City_Layout",
       "width": 45,
       "height": 46,
-      "primary_tileset": "gTileset_Florando_Primary",
-      "secondary_tileset": "gTileset_Florando_Secondary",
+      "primary_tileset": "gTileset_General_Jotho",
+      "secondary_tileset": "gTileset_FlorandoSecondaryMerged",
       "border_filepath": "data/layouts/florando_City/border.bin",
       "blockdata_filepath": "data/layouts/florando_City/map.bin"
     },
@@ -9549,8 +9549,8 @@
       "name": "Connection_rt29_rt46_Layout",
       "width": 11,
       "height": 17,
-      "primary_tileset": "gTileset_Connections",
-      "secondary_tileset": "gTileset_Connections_Sec",
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Connections",
       "border_filepath": "data/layouts/Connection_rt29_rt46/border.bin",
       "blockdata_filepath": "data/layouts/Connection_rt29_rt46/map.bin"
     },
@@ -9559,8 +9559,8 @@
       "name": "Connection_HappyTown_Layout",
       "width": 22,
       "height": 12,
-      "primary_tileset": "gTileset_Connections",
-      "secondary_tileset": "gTileset_Connections_Sec",
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Connections",
       "border_filepath": "data/layouts/Connection_HappyTown/border.bin",
       "blockdata_filepath": "data/layouts/Connection_HappyTown/map.bin"
     },
@@ -9629,8 +9629,8 @@
       "name": "Connection_Amberite_HalluForest_Layout",
       "width": 11,
       "height": 17,
-      "primary_tileset": "gTileset_Connections",
-      "secondary_tileset": "gTileset_Connections_Sec",
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Connections",
       "border_filepath": "data/layouts/Connection_Amberite_HalluForest/border.bin",
       "blockdata_filepath": "data/layouts/Connection_Amberite_HalluForest/map.bin"
     },
