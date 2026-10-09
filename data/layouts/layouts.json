@@ -9400,7 +9400,7 @@
       "width": 63,
       "height": 60,
       "primary_tileset": "gTileset_General_Jotho",
-      "secondary_tileset": "gTileset_Route_30_Secondary",
+      "secondary_tileset": "gTileset_Cherrygrove_City",
       "border_filepath": "data/layouts/Route30/border.bin",
       "blockdata_filepath": "data/layouts/Route30/map.bin"
     },
@@ -9410,7 +9410,7 @@
       "width": 60,
       "height": 30,
       "primary_tileset": "gTileset_General_Jotho",
-      "secondary_tileset": "gTileset_Route_30_Secondary",
+      "secondary_tileset": "gTileset_Cherrygrove_City",
       "border_filepath": "data/layouts/Route_31/border.bin",
       "blockdata_filepath": "data/layouts/Route_31/map.bin"
     },
@@ -9430,7 +9430,7 @@
       "width": 69,
       "height": 40,
       "primary_tileset": "gTileset_General_Jotho",
-      "secondary_tileset": "gTileset_Route_30_Secondary",
+      "secondary_tileset": "gTileset_Cherrygrove_City",
       "border_filepath": "data/layouts/Cherrygrove_City/border.bin",
       "blockdata_filepath": "data/layouts/Cherrygrove_City/map.bin"
     },
@@ -9490,7 +9490,7 @@
       "width": 46,
       "height": 51,
       "primary_tileset": "gTileset_General_Jotho",
-      "secondary_tileset": "gTileset_Route_30_Secondary",
+      "secondary_tileset": "gTileset_Cherrygrove_City",
       "border_filepath": "data/layouts/bluemoon_falls/border.bin",
       "blockdata_filepath": "data/layouts/bluemoon_falls/map.bin"
     },
