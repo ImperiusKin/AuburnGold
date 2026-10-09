@@ -1553,28 +1553,6 @@ const struct Tileset gTileset_Cherrygrove_City =
     .callback = NULL,
 };
 
-const struct Tileset gTileset_Mt_Freeze_Primary =
-{
-    .isCompressed = TRUE,
-    .isSecondary = FALSE,
-    .tiles = gTilesetTiles_Mt_Freeze_Primary,
-    .palettes = gTilesetPalettes_Mt_Freeze_Primary,
-    .metatiles = gMetatiles_Mt_Freeze_Primary,
-    .metatileAttributes = gMetatileAttributes_Mt_Freeze_Primary,
-    .callback = NULL,
-};
-
-const struct Tileset gTileset_Mt_Freeze_Secondary =
-{
-    .isCompressed = TRUE,
-    .isSecondary = TRUE,
-    .tiles = gTilesetTiles_Mt_Freeze_Secondary,
-    .palettes = gTilesetPalettes_Mt_Freeze_Secondary,
-    .metatiles = gMetatiles_Mt_Freeze_Secondary,
-    .metatileAttributes = gMetatileAttributes_Mt_Freeze_Secondary,
-    .callback = NULL,
-};
-
 const struct Tileset gTileset_Secondary_Replacement =
 {
     .isCompressed = TRUE,
@@ -1803,5 +1781,16 @@ const struct Tileset gTileset_Hallu_Forest =
     .palettes = gTilesetPalettes_Hallu_Forest,
     .metatiles = gMetatiles_Hallu_Forest,
     .metatileAttributes = gMetatileAttributes_Hallu_Forest,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_MtFreeze =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_MtFreeze,
+    .palettes = gTilesetPalettes_MtFreeze,
+    .metatiles = gMetatiles_MtFreeze,
+    .metatileAttributes = gMetatileAttributes_MtFreeze,
     .callback = NULL,
 };
