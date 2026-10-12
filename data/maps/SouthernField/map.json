@@ -15,12 +15,12 @@
   "connections": [
     {
       "map": "MAP_ROUTE29",
-      "offset": -17,
+      "offset": -16,
       "direction": "up"
     },
     {
       "map": "MAP_AMBERITE_VALLEY",
-      "offset": 1,
+      "offset": 0,
       "direction": "down"
     }
   ],

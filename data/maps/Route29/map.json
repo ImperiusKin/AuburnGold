@@ -15,7 +15,7 @@
   "connections": [
     {
       "map": "MAP_SOUTHERN_FIELD",
-      "offset": 17,
+      "offset": 16,
       "direction": "down"
     },
     {
