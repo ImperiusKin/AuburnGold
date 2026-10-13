@@ -13,7 +13,14 @@ JASC-PAL
 120 120 128
 64 72 104
 88 88 112
+<<<<<<< Updated upstream:data/tilesets/secondary/palm_hill_city_merged/palettes/12.pal
 216 144 128
 248 192 152
 184 120 112
 0 0 0
+=======
+176 176 160
+246 246 255
+248 248 248
+208 208 216
+>>>>>>> Stashed changes:data/tilesets/secondary/palm_hill_city/palettes/09.pal
