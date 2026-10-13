@@ -9367,7 +9367,7 @@
     {
       "id": "LAYOUT_SOUTHERN_FIELD",
       "name": "SouthernField_Layout",
-      "width": 47,
+      "width": 48,
       "height": 60,
       "primary_tileset": "gTileset_General_Jotho",
       "secondary_tileset": "gTileset_Southern_Field",
@@ -9377,7 +9377,7 @@
     {
       "id": "LAYOUT_AMBERITE_VALLEY",
       "name": "Amberite_Valley_Layout",
-      "width": 50,
+      "width": 52,
       "height": 52,
       "primary_tileset": "gTileset_General_Jotho",
       "secondary_tileset": "gTileset_Amberite_Valley",
@@ -9438,7 +9438,7 @@
       "id": "LAYOUT_MT_FREEZE",
       "name": "Mt_Freeze_Layout",
       "width": 50,
-      "height": 69,
+      "height": 71,
       "primary_tileset": "gTileset_General_Jotho",
       "secondary_tileset": "gTileset_MtFreeze",
       "border_filepath": "data/layouts/Mt_Freeze/border.bin",
