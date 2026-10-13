@@ -9438,7 +9438,7 @@
       "id": "LAYOUT_MT_FREEZE",
       "name": "Mt_Freeze_Layout",
       "width": 50,
-      "height": 69,
+      "height": 71,
       "primary_tileset": "gTileset_General_Jotho",
       "secondary_tileset": "gTileset_MtFreeze",
       "border_filepath": "data/layouts/Mt_Freeze/border.bin",
