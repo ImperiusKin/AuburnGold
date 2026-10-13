@@ -17,6 +17,7 @@ JASC-PAL
 216 144 128
 248 192 152
 184 120 112
+<<<<<<< HEAD
 0 0 0
 =======
 176 176 160
@@ -24,3 +25,6 @@ JASC-PAL
 248 248 248
 208 208 216
 >>>>>>> Stashed changes:data/tilesets/secondary/palm_hill_city/palettes/09.pal
+=======
+168 248 0
+>>>>>>> 24d5421bb70fe62d6d0da5fbbde34e6bd3c8fe1a
