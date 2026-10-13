@@ -1768,12 +1768,10 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 
 	.include "data/maps/Connection_Amberite_HalluForest/scripts.inc"
 
-<<<<<<< Updated upstream
 	.include "data/maps/TestMap/scripts.inc"
-=======
+
 	.include "data/maps/VioletCity_HappyTown_Connection/scripts.inc"
 
 	.include "data/maps/VioletCityConnectionRoute31/scripts.inc"
 
 	.include "data/maps/CherrygroveBluemoonConnection/scripts.inc"
->>>>>>> Stashed changes

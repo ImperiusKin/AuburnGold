@@ -9497,17 +9497,10 @@
     {
       "id": "LAYOUT_PALM_HILL_CITY",
       "name": "PalmHillCity_Layout",
-<<<<<<< Updated upstream
       "width": 31,
       "height": 36,
       "primary_tileset": "gTileset_General_Jotho",
       "secondary_tileset": "gTileset_PalmHillCityMerged",
-=======
-      "width": 41,
-      "height": 46,
-      "primary_tileset": "gTileset_Palm_Hill_City_Primary",
-      "secondary_tileset": "gTileset_Palm_Hill_City",
->>>>>>> Stashed changes
       "border_filepath": "data/layouts/PalmHillCity/border.bin",
       "blockdata_filepath": "data/layouts/PalmHillCity/map.bin"
     },
@@ -9662,7 +9655,6 @@
       "blockdata_filepath": "data/layouts/NewBarkTown_Player_House_2F/map.bin"
     },
     {
-<<<<<<< Updated upstream
       "id": "LAYOUT_TEST_MAP",
       "name": "TestMap_Layout",
       "width": 20,
@@ -9671,13 +9663,14 @@
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/TestMap/border.bin",
       "blockdata_filepath": "data/layouts/TestMap/map.bin"
-=======
+    },
+    {
       "id": "LAYOUT_VIOLET_CITY_HAPPY_TOWN_CONNECTION",
       "name": "VioletCity_HappyTown_Connection_Layout",
       "width": 16,
       "height": 16,
-      "primary_tileset": "gTileset_Connections",
-      "secondary_tileset": "gTileset_Connections_Sec",
+      "primary_tileset": "gTileset_General_Jotho",
+      "secondary_tileset": "gTileset_Connections",
       "border_filepath": "data/layouts/VioletCity_HappyTown_Connection/border.bin",
       "blockdata_filepath": "data/layouts/VioletCity_HappyTown_Connection/map.bin"
     },
@@ -9686,8 +9679,8 @@
       "name": "VioletCityConnectionRoute31_Layout",
       "width": 15,
       "height": 8,
-      "primary_tileset": "gTileset_Connections",
-      "secondary_tileset": "gTileset_Connections_Sec",
+      "primary_tileset": "gTileset_General_Jotho",
+      "secondary_tileset": "gTileset_Connections",
       "border_filepath": "data/layouts/VioletCityConnectionRoute31/border.bin",
       "blockdata_filepath": "data/layouts/VioletCityConnectionRoute31/map.bin"
     },
@@ -9696,11 +9689,10 @@
       "name": "CherrygroveBluemoonConnection_Layout",
       "width": 11,
       "height": 17,
-      "primary_tileset": "gTileset_Connections",
-      "secondary_tileset": "gTileset_Connections_Sec",
+      "primary_tileset": "gTileset_General_Jotho",
+      "secondary_tileset": "gTileset_Connections",
       "border_filepath": "data/layouts/CherrygroveBluemoonConnection/border.bin",
       "blockdata_filepath": "data/layouts/CherrygroveBluemoonConnection/map.bin"
->>>>>>> Stashed changes
     }
   ]
 }
