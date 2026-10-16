@@ -27,21 +27,21 @@
   "object_events": [],
   "warp_events": [
     {
-      "x": 62,
+      "x": 61,
       "y": 23,
       "elevation": 0,
       "dest_map": "MAP_ROUTE29",
       "dest_warp_id": "2"
     },
     {
-      "x": 16,
+      "x": 15,
       "y": 5,
       "elevation": 0,
       "dest_map": "MAP_BLUEMOON_FALLS",
       "dest_warp_id": "0"
     },
     {
-      "x": 17,
+      "x": 16,
       "y": 5,
       "elevation": 0,
       "dest_map": "MAP_BLUEMOON_FALLS",
