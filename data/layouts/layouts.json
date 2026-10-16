@@ -9507,8 +9507,8 @@
     {
       "id": "LAYOUT_FLORANDO_CITY",
       "name": "florando_City_Layout",
-      "width": 45,
-      "height": 46,
+      "width": 46,
+      "height": 47,
       "primary_tileset": "gTileset_General_Jotho",
       "secondary_tileset": "gTileset_Florando_City",
       "border_filepath": "data/layouts/florando_City/border.bin",
