@@ -9427,7 +9427,7 @@
     {
       "id": "LAYOUT_CHERRYGROVE_CITY",
       "name": "Cherrygrove_City_Layout",
-      "width": 69,
+      "width": 68,
       "height": 40,
       "primary_tileset": "gTileset_General_Jotho",
       "secondary_tileset": "gTileset_Cherrygrove_City",
