@@ -9743,6 +9743,16 @@
       "secondary_tileset": "gTileset_Connections",
       "border_filepath": "data/layouts/ConnectionRt29Cherrygrove/border.bin",
       "blockdata_filepath": "data/layouts/ConnectionRt29Cherrygrove/map.bin"
+    },
+    {
+      "id": "LAYOUT_CONNECTION_CHERRY_BLUEMOON",
+      "name": "Connection_CherryBluemoon_Layout",
+      "width": 11,
+      "height": 17,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Connections",
+      "border_filepath": "data/layouts/Connection_CherryBluemoon/border.bin",
+      "blockdata_filepath": "data/layouts/Connection_CherryBluemoon/map.bin"
     }
   ]
 }

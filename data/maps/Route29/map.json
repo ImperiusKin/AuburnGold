@@ -117,25 +117,25 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 4,
+      "x": 3,
       "y": 24,
       "elevation": 0,
-      "dest_map": "MAP_CHERRYGROVE_CITY",
+      "dest_map": "MAP_CONNECTION_RT29CHERRYGROVE",
       "dest_warp_id": "0"
     },
     {
-      "x": 4,
+      "x": 3,
       "y": 25,
       "elevation": 0,
-      "dest_map": "MAP_CHERRYGROVE_CITY",
-      "dest_warp_id": "3"
+      "dest_map": "MAP_CONNECTION_RT29CHERRYGROVE",
+      "dest_warp_id": "0"
     },
     {
-      "x": 4,
+      "x": 3,
       "y": 26,
       "elevation": 0,
-      "dest_map": "MAP_CHERRYGROVE_CITY",
-      "dest_warp_id": "4"
+      "dest_map": "MAP_CONNECTION_RT29CHERRYGROVE",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],
