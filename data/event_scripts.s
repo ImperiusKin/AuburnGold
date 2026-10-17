@@ -1781,3 +1781,7 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/Cherrygrove_City_Pokemon_Center/scripts.inc"
 
 	.include "data/maps/Amberite_Valley_Pokemon_Center/scripts.inc"
+
+	.include "data/maps/ConnectionRt29Rt46/scripts.inc"
+
+	.include "data/maps/ConnectionRt29Cherrygrove/scripts.inc"
