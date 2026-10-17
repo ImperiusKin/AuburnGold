@@ -37,14 +37,14 @@
       "x": 15,
       "y": 5,
       "elevation": 0,
-      "dest_map": "MAP_BLUEMOON_FALLS",
+      "dest_map": "MAP_CONNECTION_CHERRY_BLUEMOON",
       "dest_warp_id": "0"
     },
     {
       "x": 16,
       "y": 5,
       "elevation": 0,
-      "dest_map": "MAP_BLUEMOON_FALLS",
+      "dest_map": "MAP_CONNECTION_CHERRY_BLUEMOON",
       "dest_warp_id": "0"
     },
     {

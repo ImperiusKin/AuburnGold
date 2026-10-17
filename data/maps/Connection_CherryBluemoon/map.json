@@ -1,0 +1,35 @@
+{
+  "id": "MAP_CONNECTION_CHERRY_BLUEMOON",
+  "name": "Connection_CherryBluemoon",
+  "layout": "LAYOUT_CONNECTION_CHERRY_BLUEMOON",
+  "music": "MUS_DUMMY",
+  "region_map_section": "MAPSEC_AMBERITE_VALLEY",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_NONE",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": false,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 5,
+      "y": 15,
+      "elevation": 0,
+      "dest_map": "MAP_CHERRYGROVE_CITY",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 5,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_BLUEMOON_FALLS",
+      "dest_warp_id": "2"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

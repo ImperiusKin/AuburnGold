@@ -1785,3 +1785,5 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/ConnectionRt29Rt46/scripts.inc"
 
 	.include "data/maps/ConnectionRt29Cherrygrove/scripts.inc"
+
+	.include "data/maps/Connection_CherryBluemoon/scripts.inc"
