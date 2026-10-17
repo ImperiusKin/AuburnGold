@@ -170,7 +170,10 @@
     "TestMap",
     "VioletCity_HappyTown_Connection",
     "VioletCityConnectionRoute31",
-    "CherrygroveBluemoonConnection"
+    "CherrygroveBluemoonConnection",
+    "Violet_City_Pokemon_Center",
+    "Cherrygrove_City_Pokemon_Center",
+    "Amberite_Valley_Pokemon_Center"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",

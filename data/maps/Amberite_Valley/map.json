@@ -3,7 +3,7 @@
   "name": "Amberite_Valley",
   "layout": "LAYOUT_AMBERITE_VALLEY",
   "music": "MUS_DUMMY",
-  "region_map_section": "MAPSEC_ALTERING_CAVE",
+  "region_map_section": "MAPSEC_AMBERITE_VALLEY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_NONE",
@@ -20,7 +20,36 @@
     }
   ],
   "object_events": [],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "x": 26,
+      "y": 26,
+      "elevation": 0,
+      "dest_map": "MAP_AMBERITE_VALLEY_POKEMON_CENTER",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 29,
+      "y": 41,
+      "elevation": 0,
+      "dest_map": "MAP_HALLU_FOREST",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 30,
+      "y": 41,
+      "elevation": 0,
+      "dest_map": "MAP_HALLU_FOREST",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 31,
+      "y": 41,
+      "elevation": 0,
+      "dest_map": "MAP_HALLU_FOREST",
+      "dest_warp_id": "1"
+    }
+  ],
   "coord_events": [],
   "bg_events": []
 }

@@ -3,7 +3,7 @@
   "name": "Happy_Town",
   "layout": "LAYOUT_HAPPY_TOWN",
   "music": "MUS_DUMMY",
-  "region_map_section": "MAPSEC_ALTERING_CAVE",
+  "region_map_section": "MAPSEC_HAPPY_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_NONE",

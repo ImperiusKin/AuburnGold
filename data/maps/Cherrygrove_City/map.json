@@ -3,7 +3,7 @@
   "name": "Cherrygrove_City",
   "layout": "LAYOUT_CHERRYGROVE_CITY",
   "music": "MUS_DUMMY",
-  "region_map_section": "MAPSEC_ALTERING_CAVE",
+  "region_map_section": "MAPSEC_CHERRYGROVE_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_NONE",
@@ -15,7 +15,7 @@
   "connections": [
     {
       "map": "MAP_ROUTE30",
-      "offset": 6,
+      "offset": 5,
       "direction": "up"
     },
     {
@@ -27,8 +27,8 @@
   "object_events": [],
   "warp_events": [
     {
-      "x": 61,
-      "y": 23,
+      "x": 60,
+      "y": 22,
       "elevation": 0,
       "dest_map": "MAP_ROUTE29",
       "dest_warp_id": "2"
@@ -45,6 +45,27 @@
       "y": 5,
       "elevation": 0,
       "dest_map": "MAP_BLUEMOON_FALLS",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 60,
+      "y": 23,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE29",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 60,
+      "y": 24,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE29",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 51,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_CHERRYGROVE_CITY_POKEMON_CENTER",
       "dest_warp_id": "0"
     }
   ],

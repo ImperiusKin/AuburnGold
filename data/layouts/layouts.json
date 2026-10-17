@@ -9693,6 +9693,36 @@
       "secondary_tileset": "gTileset_Connections",
       "border_filepath": "data/layouts/CherrygroveBluemoonConnection/border.bin",
       "blockdata_filepath": "data/layouts/CherrygroveBluemoonConnection/map.bin"
+    },
+    {
+      "id": "LAYOUT_VIOLET_CITY_POKEMON_CENTER",
+      "name": "Violet_City_Pokemon_Center_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Pokemon_Center_Jotho",
+      "border_filepath": "data/layouts/Violet_City_Pokemon_Center/border.bin",
+      "blockdata_filepath": "data/layouts/Violet_City_Pokemon_Center/map.bin"
+    },
+    {
+      "id": "LAYOUT_CHERRYGROVE_CITY_POKEMON_CENTER",
+      "name": "Cherrygrove_City_Pokemon_Center_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Pokemon_Center_Jotho",
+      "border_filepath": "data/layouts/Cherrygrove_City_Pokemon_Center/border.bin",
+      "blockdata_filepath": "data/layouts/Cherrygrove_City_Pokemon_Center/map.bin"
+    },
+    {
+      "id": "LAYOUT_AMBERITE_VALLEY_POKEMON_CENTER",
+      "name": "Amberite_Valley_Pokemon_Center_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Pokemon_Center_Jotho",
+      "border_filepath": "data/layouts/Amberite_Valley_Pokemon_Center/border.bin",
+      "blockdata_filepath": "data/layouts/Amberite_Valley_Pokemon_Center/map.bin"
     }
   ]
 }
