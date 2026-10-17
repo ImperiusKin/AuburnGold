@@ -3,7 +3,7 @@
   "name": "NewBarkTown_Pokemon_Center",
   "layout": "LAYOUT_NEW_BARK_TOWN_POKEMON_CENTER",
   "music": "MUS_POKE_CENTER",
-  "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
+  "region_map_section": "MAPSEC_NEW_BARK_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",

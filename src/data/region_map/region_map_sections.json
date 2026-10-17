@@ -1626,6 +1626,74 @@
       "y": 4,
       "width": 1,
       "height": 1
+    },
+    {
+      "id": "MAPSEC_ROUTE_29",
+      "name": "ROUTE 29"
+    },
+    {
+      "id": "MAPSEC_ROUTE_31",
+      "name": "ROUTE 31"
+    },
+    {
+      "id": "MAPSEC_ROUTE_32",
+      "name": "ROUTE 32"
+    },
+    {
+      "id": "MAPSEC_ROUTE_30",
+      "name": "ROUTE 30"
+    },
+    {
+      "id": "MAPSEC_ROUTE_45",
+      "name": "ROUTE 45"
+    },
+    {
+      "id": "MAPSEC_VIOLET_CITY",
+      "name": "VIOLET CITY"
+    },
+    {
+      "id": "MAPSEC_DARK_CAVE",
+      "name": "DARK CAVE"
+    },
+    {
+      "id": "MAPSEC_NEW_BARK_TOWN",
+      "name": "NEW BARK TOWN"
+    },
+    {
+      "id": "MAPSEC_MT_FREEZE",
+      "name": "MT FREEZE"
+    },
+    {
+      "id": "MAPSEC_SOUTHERN_FIELD",
+      "name": "SOUTHERN FIELD"
+    },
+    {
+      "id": "MAPSEC_CATALLIA_CITY",
+      "name": "CATALLIA CITY"
+    },
+    {
+      "id": "MAPSEC_HALLU_FOREST",
+      "name": "HALLU FOREST"
+    },
+    {
+      "id": "MAPSEC_HAPPY_TOWN",
+      "name": "HAPPY TOWN"
+    },
+    {
+      "id": "MAPSEC_FLORANDO_CITY",
+      "name": "FLORANDO CITY"
+    },
+    {
+      "id": "MAPSEC_AMBERITE_VALLEY",
+      "name": "AMBERITE VALLEY"
+    },
+    {
+      "id": "MAPSEC_PALM_HILL_CITY",
+      "name": "PALM HILL CITY"
+    },
+    {
+      "id": "MAPSEC_CHERRYGROVE_CITY",
+      "name": "CHERRYGROVE CITY"
     }
   ]
 }

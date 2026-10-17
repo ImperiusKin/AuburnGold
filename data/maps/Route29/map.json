@@ -3,7 +3,7 @@
   "name": "Route29",
   "layout": "LAYOUT_ROUTE29",
   "music": "MUS_ROUTE101",
-  "region_map_section": "MAPSEC_ROUTE_101",
+  "region_map_section": "MAPSEC_ROUTE_29",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_ROUTE",
@@ -117,11 +117,25 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 3,
-      "y": 25,
+      "x": 4,
+      "y": 24,
       "elevation": 0,
       "dest_map": "MAP_CHERRYGROVE_CITY",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 4,
+      "y": 25,
+      "elevation": 0,
+      "dest_map": "MAP_CHERRYGROVE_CITY",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 4,
+      "y": 26,
+      "elevation": 0,
+      "dest_map": "MAP_CHERRYGROVE_CITY",
+      "dest_warp_id": "4"
     }
   ],
   "coord_events": [],
