@@ -106,14 +106,14 @@
       "x": 29,
       "y": 7,
       "elevation": 0,
-      "dest_map": "MAP_ROUTE_45",
+      "dest_map": "MAP_CONNECTION_RT29_RT46",
       "dest_warp_id": "0"
     },
     {
       "x": 28,
       "y": 7,
       "elevation": 0,
-      "dest_map": "MAP_ROUTE_45",
+      "dest_map": "MAP_CONNECTION_RT29_RT46",
       "dest_warp_id": "0"
     },
     {

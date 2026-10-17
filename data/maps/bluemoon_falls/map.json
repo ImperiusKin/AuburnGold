@@ -19,29 +19,29 @@
       "x": 19,
       "y": 40,
       "elevation": 0,
-      "dest_map": "MAP_CHERRYGROVE_CITY",
-      "dest_warp_id": "2"
+      "dest_map": "MAP_CHERRYGROVE_BLUEMOON_CONNECTION",
+      "dest_warp_id": "1"
     },
     {
       "x": 21,
       "y": 40,
       "elevation": 0,
-      "dest_map": "MAP_CHERRYGROVE_CITY",
-      "dest_warp_id": "2"
+      "dest_map": "MAP_CHERRYGROVE_BLUEMOON_CONNECTION",
+      "dest_warp_id": "1"
     },
     {
       "x": 20,
       "y": 40,
       "elevation": 0,
-      "dest_map": "MAP_CHERRYGROVE_CITY",
-      "dest_warp_id": "2"
+      "dest_map": "MAP_CHERRYGROVE_BLUEMOON_CONNECTION",
+      "dest_warp_id": "1"
     },
     {
       "x": 22,
       "y": 40,
       "elevation": 0,
-      "dest_map": "MAP_CHERRYGROVE_CITY",
-      "dest_warp_id": "2"
+      "dest_map": "MAP_CHERRYGROVE_BLUEMOON_CONNECTION",
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [],

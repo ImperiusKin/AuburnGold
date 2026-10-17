@@ -173,7 +173,9 @@
     "CherrygroveBluemoonConnection",
     "Violet_City_Pokemon_Center",
     "Cherrygrove_City_Pokemon_Center",
-    "Amberite_Valley_Pokemon_Center"
+    "Amberite_Valley_Pokemon_Center",
+    "ConnectionRt29Rt46",
+    "ConnectionRt29Cherrygrove"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",

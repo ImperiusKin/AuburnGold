@@ -9723,6 +9723,26 @@
       "secondary_tileset": "gTileset_Pokemon_Center_Jotho",
       "border_filepath": "data/layouts/Amberite_Valley_Pokemon_Center/border.bin",
       "blockdata_filepath": "data/layouts/Amberite_Valley_Pokemon_Center/map.bin"
+    },
+    {
+      "id": "LAYOUT_CONNECTION_RT29RT46",
+      "name": "ConnectionRt29Rt46_Layout",
+      "width": 11,
+      "height": 17,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Connections",
+      "border_filepath": "data/layouts/ConnectionRt29Rt46/border.bin",
+      "blockdata_filepath": "data/layouts/ConnectionRt29Rt46/map.bin"
+    },
+    {
+      "id": "LAYOUT_CONNECTION_RT29CHERRYGROVE",
+      "name": "ConnectionRt29Cherrygrove_Layout",
+      "width": 15,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Connections",
+      "border_filepath": "data/layouts/ConnectionRt29Cherrygrove/border.bin",
+      "blockdata_filepath": "data/layouts/ConnectionRt29Cherrygrove/map.bin"
     }
   ]
 }
