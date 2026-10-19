@@ -1791,3 +1791,5 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/ConnectionAmbvalleyHalluForest/scripts.inc"
 
 	.include "data/maps/ConnectionHallu_Mtfreeze/scripts.inc"
+
+	.include "data/maps/Connection_Amb_Florando_Catallia/scripts.inc"

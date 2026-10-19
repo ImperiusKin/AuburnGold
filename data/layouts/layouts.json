@@ -9773,6 +9773,16 @@
       "secondary_tileset": "gTileset_Connections",
       "border_filepath": "data/layouts/ConnectionAmbvalleyHalluForest/border.bin",
       "blockdata_filepath": "data/layouts/ConnectionAmbvalleyHalluForest/map.bin"
+    },
+    {
+      "id": "LAYOUT_CONNECTION_AMB_FLORANDO_CATALLIA",
+      "name": "Connection_Amb_Florando_Catallia_Layout",
+      "width": 19,
+      "height": 13,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Connections",
+      "border_filepath": "data/layouts/Connection_Amb_Florando_Catallia/border.bin",
+      "blockdata_filepath": "data/layouts/Connection_Amb_Florando_Catallia/map.bin"
     }
   ]
 }

@@ -48,6 +48,27 @@
       "elevation": 0,
       "dest_map": "MAP_CONNECTION_AMBERITE_HALLU_FOREST",
       "dest_warp_id": "1"
+    },
+    {
+      "x": 13,
+      "y": 29,
+      "elevation": 0,
+      "dest_map": "MAP_CONNECTION_AMB_FLORANDO_CATALLIA",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 13,
+      "y": 28,
+      "elevation": 0,
+      "dest_map": "MAP_CONNECTION_AMB_FLORANDO_CATALLIA",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 13,
+      "y": 30,
+      "elevation": 0,
+      "dest_map": "MAP_CONNECTION_AMB_FLORANDO_CATALLIA",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],
