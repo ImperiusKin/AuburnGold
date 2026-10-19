@@ -32,21 +32,21 @@
       "x": 29,
       "y": 41,
       "elevation": 0,
-      "dest_map": "MAP_HALLU_FOREST",
+      "dest_map": "MAP_CONNECTION_AMBERITE_HALLU_FOREST",
       "dest_warp_id": "0"
     },
     {
       "x": 30,
       "y": 41,
       "elevation": 0,
-      "dest_map": "MAP_HALLU_FOREST",
+      "dest_map": "MAP_CONNECTION_AMBERITE_HALLU_FOREST",
       "dest_warp_id": "0"
     },
     {
       "x": 31,
       "y": 41,
       "elevation": 0,
-      "dest_map": "MAP_HALLU_FOREST",
+      "dest_map": "MAP_CONNECTION_AMBERITE_HALLU_FOREST",
       "dest_warp_id": "1"
     }
   ],

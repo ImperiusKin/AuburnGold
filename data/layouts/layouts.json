@@ -9753,6 +9753,26 @@
       "secondary_tileset": "gTileset_Connections",
       "border_filepath": "data/layouts/Connection_CherryBluemoon/border.bin",
       "blockdata_filepath": "data/layouts/Connection_CherryBluemoon/map.bin"
+    },
+    {
+      "id": "LAYOUT_CONNECTION_HALLU_MTFREEZE",
+      "name": "ConnectionHallu_Mtfreeze_Layout",
+      "width": 11,
+      "height": 17,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Connections",
+      "border_filepath": "data/layouts/ConnectionHallu_Mtfreeze/border.bin",
+      "blockdata_filepath": "data/layouts/ConnectionHallu_Mtfreeze/map.bin"
+    },
+    {
+      "id": "LAYOUT_CONNECTION_AMBVALLEY_HALLU_FOREST",
+      "name": "ConnectionAmbvalleyHalluForest_Layout",
+      "width": 11,
+      "height": 17,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Connections",
+      "border_filepath": "data/layouts/ConnectionAmbvalleyHalluForest/border.bin",
+      "blockdata_filepath": "data/layouts/ConnectionAmbvalleyHalluForest/map.bin"
     }
   ]
 }

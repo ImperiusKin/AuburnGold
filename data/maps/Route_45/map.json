@@ -25,28 +25,28 @@
       "x": 12,
       "y": 42,
       "elevation": 0,
-      "dest_map": "MAP_ROUTE29",
+      "dest_map": "MAP_CONNECTION_RT29_RT46",
       "dest_warp_id": "1"
     },
     {
       "x": 11,
       "y": 42,
       "elevation": 0,
-      "dest_map": "MAP_ROUTE29",
+      "dest_map": "MAP_CONNECTION_RT29_RT46",
       "dest_warp_id": "1"
     },
     {
       "x": 13,
       "y": 42,
       "elevation": 0,
-      "dest_map": "MAP_ROUTE29",
+      "dest_map": "MAP_CONNECTION_RT29_RT46",
       "dest_warp_id": "1"
     },
     {
       "x": 14,
       "y": 42,
       "elevation": 0,
-      "dest_map": "MAP_ROUTE29",
+      "dest_map": "MAP_CONNECTION_RT29_RT46",
       "dest_warp_id": "1"
     }
   ],
