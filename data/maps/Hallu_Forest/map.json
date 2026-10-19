@@ -19,35 +19,35 @@
       "x": 23,
       "y": 6,
       "elevation": 0,
-      "dest_map": "MAP_AMBERITE_VALLEY",
-      "dest_warp_id": "2"
+      "dest_map": "MAP_CONNECTION_AMBERITE_HALLU_FOREST",
+      "dest_warp_id": "1"
     },
     {
       "x": 24,
       "y": 6,
       "elevation": 0,
-      "dest_map": "MAP_AMBERITE_VALLEY",
-      "dest_warp_id": "2"
+      "dest_map": "MAP_CONNECTION_AMBERITE_HALLU_FOREST",
+      "dest_warp_id": "1"
     },
     {
       "x": 23,
       "y": 58,
       "elevation": 0,
-      "dest_map": "MAP_MT_FREEZE",
+      "dest_map": "MAP_CONNECTION_HALLU_MTFREEZE",
       "dest_warp_id": "0"
     },
     {
       "x": 24,
       "y": 58,
       "elevation": 0,
-      "dest_map": "MAP_MT_FREEZE",
+      "dest_map": "MAP_CONNECTION_HALLU_MTFREEZE",
       "dest_warp_id": "0"
     },
     {
       "x": 25,
       "y": 58,
       "elevation": 0,
-      "dest_map": "MAP_MT_FREEZE",
+      "dest_map": "MAP_CONNECTION_HALLU_MTFREEZE",
       "dest_warp_id": "0"
     }
   ],
