@@ -178,7 +178,8 @@
     "ConnectionRt29Cherrygrove",
     "Connection_CherryBluemoon",
     "ConnectionAmbvalleyHalluForest",
-    "ConnectionHallu_Mtfreeze"
+    "ConnectionHallu_Mtfreeze",
+    "Connection_Amb_Florando_Catallia"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",
