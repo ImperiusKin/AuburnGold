@@ -83,18 +83,1196 @@ Gender: Male
 Music: Male
 Double Battle: No
 
-=== TRAINER_SAWYER_1 ===
-Name: SAWYER
+/*Split 1 - Johto - Start*/
+/*Route 29 Trainers - Start*/
+=== TRAINER_RANDY ===
+Name: RANDY
+Class: Youngster
+Pic: Youngster
+Gender: Male
+Music: Youngster
+Double Battle: No
+AI: Smart Trainer
+
+Machop @ Oran Berry
+Level: 10
+Ability: No Guard
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Mach Punch
+- Thunder Punch
+- Rock Tomb
+- Karate Chop
+
+Treecko @ Oran Berry
+Level: 12
+Ability: Unburden
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Quick Attack
+- Bullet Seed
+- Thunder Punch
+- Rock Tomb
+
+=== TRAINER_EMILY ===
+Name: EMILY
+Class: Picnicker
+Pic: Picnicker
+Gender: Female
+Music: Picnicker
+Double Battle: No
+AI: Smart Trainer
+
+Minccino @ Oran Berry
+Level: 10
+Ability: Skill Link
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Jolly
+- Tail Slap
+- Baby-Doll Eyes
+- Tickle
+- Flail
+
+Totodile @ Mystic Water
+Level: 12
+Ability: Torrent
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Aqua Jet
+- Cut
+- Rock Tomb
+- Flip Turn
+
+=== TRAINER_LUKE ===
+Name: LUKE
+Class: Youngster
+Pic: Youngster
+Gender: Male
+Music: Youngster
+Double Battle: No
+AI: Smart Trainer
+
+Shinx @ Oran Berry
+Level: 10
+Ability: Intimidate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Jolly
+- Bite
+- Thunder Fang
+- Ice Fang
+- Howl
+
+Fletchling @ Sharp Beak
+Level: 11
+Ability: Gale Wings
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Pluck
+- Flame Charge
+- Quick Attack
+- Steel Wing
+
+Chimchar @ Charcoal
+Level: 12
+Ability: Iron Fist
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Naive
+- Will O Wisp
+- Thunder Punch
+- Low Sweep
+- Fire  Punch
+
+=== TRAINER_CHEREN ===
+Name: CHEREN
+Class: Leader
+Pic: Cheren
+Gender: Male
+Music: Cheren
+Double Battle: No
+AI: Smart Trainer / Prediction
+
+Minccino @ Silk Scarf
+Level: 12
+Ability: Skill Link
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Tail Slap
+- Baby Doll Eyes
+- U Turn
+- Seed Bomb
+
+Jigglypuff @ Berry Juice
+Level: 12
+Ability: Competitive
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Bold
+- Disarming Voice
+- Flash
+- Wish
+- Play Nice
+
+Muchlax @ Berry Juice
+Level: 12
+Ability: Thick Fat
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Impish
+- Zen Headbutt
+- Thunder Punch
+- Work Up
+- Charm
+
+Zangoose @ Muscle Band
+Level: 13
+Ability: Tough Claws
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Quick Attack
+- Pursuit
+- Swords Dance
+- Double Kick
+/*Route 29 Trainer End*/
+
+/*Route 29 South Trainer Start*/
+=== TRAINER_DYLAN ===
+Name: DYLAN
+Class: Camper
+Pic: Camper
+Gender: Male
+Music: Camper
+Double Battle: No
+AI: Smart Trainer
+
+Sewaddle @ Oran Berry
+Level: 11
+Ability: Swarm
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Bug Bite
+- Razor Leaf
+- String Shot
+- Grassy Terrain
+
+Sentret @ 
+Level: 11
+Ability: 
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Jolly
+- U Turn
+- Tail Slap
+- Quick Attack
+- Pursuit
+
+Chespin @ Miracle Seed
+Level: 12
+Ability: Iron Barbs
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Impish
+- Rock Tomb
+- Leech Seed
+- Razor Leaf
+- Power Up Punch
+
+=== TRAINER_SOPHIE ===
+Name: SOPHIE
+Class: Picnicker
+Pic: Picnicker
+Gender: Female
+Music: Picnicker
+Double Battle: No
+AI: Smart Trainer
+
+Cutiefly @ Oran Berry
+Level: 11
+Ability: Shield Dust
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Timid
+- Mega Drain
+- Fairy Wind
+- Struggle Bug
+- Stun Spore
+
+Meowth @ Miracle Seed
+Level: 11
+Ability: Technician
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Fake Out
+- Bite
+- Bullet Seed
+- Covet
+
+Fennekin @ Charcoal
+Level: 12
+Ability: Blaze
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Timid
+- Will O Wisp
+- Grass Knot
+- Incinerate
+- Hypnosis
+
+=== TRAINER_KATY ===
+Name: KATY
+Class: Leader
+Pic: Katy
+Gender: Female
+Music: Katy_Leader
+Double Battle: No
+AI: Smart Trainer / Prediction
+
+Dewpider @ Mystic Water
+Level: 12
+Ability: Water Bubble
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Bold
+- Bubble Beam
+- Infestation
+- Icy Wind
+- Spider Web
+
+Volbeat @ Wise Glasses
+Level: 12
+Ability: Prankster
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+- Signal Beam
+- Flash
+- Light Screen
+- Roost
+
+Heracross @ Loaded Dice
+Level: 13
+Ability: Moxie
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Arm Thrust
+- Rock Blast
+- Pin Missile
+- Bullet Seed
+/*Route 29 South Trainer End*/
+
+/*Hallu Forrest Trainer Start*/
+=== TRAINER_DYLAN ===
+Name: ELLIOT
+Class: Bug Catcher
+Pic: Camper
+Gender: Male
+Music: Camper
+Double Battle: No
+AI: Smart Trainer
+
+Spinarak @ Quick Claw
+Level: 11
+Ability: Sniper
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Leech Life
+- Sonic Boom
+- Pursuit
+- Toxic Spikes
+
+Nincada @ Quick Claw
+Level: 11
+Ability: Compound Eyes
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Jolly
+- Bug Bite
+- Feint Attack
+- Endure
+- Flail
+
+Dwebble @ Oran Berry
+Level: 12
+Ability: Shell Armor
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Impish
+- Rock Blast
+- Bulldoze
+- Bug Bite
+- Counter
+
+=== TRAINER_SOPHIE ===
+Name: SOPHIE
+Class: Aroma Lady
+Pic: Aroma Lady
+Gender: Female
+Music: Aroma Lady
+Double Battle: No
+AI: Smart Trainer
+
+Morelull @ Big Root
+Level: 11
+Ability: Shield Dust
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Timid
+- Draining Kiss
+- Flash
+- Grassy Terrain
+- Leech Seed
+
+Foongus @ Oran Berry
+Level: 12
+Ability: Effect Spore
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Bold
+- Clear Smog
+- Gastro Acid
+- Stun Spore
+- Grass Knot
+
+Phantump @ Oran Berry
+Level: 12
+Ability: Harvest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Leech Seed
+- Confuse Ray
+- Will O Wisp
+- Grassy Glide
+/*Hallu Forrest Trainer End*/
+
+/*Florando City Trainer Start*/
+=== TRAINER_ADRIAN ===
+Name: ADRIAN
+Class: Psychic
+Pic: Psychic
+Gender: Male
+Music: Psychic
+Double Battle: No
+AI: Smart Trainer
+
+Espurr @ Oran Berry
+Level: 12
+Ability: Infiltrator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+- Psybeam
+- Thunder Wave
+- Flash
+- Yawn
+
+Natu @ 
+Level: 12
+Ability: Synchronize
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Timid
+- Night Shade
+- Psybeam
+- Air Cutter
+- Roost
+
+Munna @ 
+Level: 12
+Ability: Synchronize
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+- Psybeam
+- Yawn
+- Calm Mind
+- Stored Power
+
+=== TRAINER_SOREN ===
+Name: SOREN
+Class: Bird Keeper
+Pic: Bird Keeper
+Gender: Male
+Music: Bird Keeper
+Double Battle: No
+AI: Smart Trainer
+
+Taillow @ Oran Berry
+Level: 12
+Ability: Scrappy
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Quick Attack
+- Pluck
+- U Turn
+- Work Up
+
+Rufflet @ Black Belt
+Level: 12
+Ability: Sheer Force
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Jolly
+- Quick Attack
+- Rock Smash
+- Bulk Up
+- Steel Wing
+
+Emolga @ 
+Level: 12
+Ability: Motor Drive
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+- Quick Attack
+- Charm
+- Electroweb
+- Electro Ball
+
+=== TRAINER_HALA ===
+Name: HALA
+Class: Leader
+Pic: Hala
+Gender: Male
+Music: Hala
+Double Battle: No
+AI: Smart Trainer / Prediction
+
+Crabrawler @ Hard Stone
+Level: 12
+Ability: Iron Fist
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Rock Tomb
+- Pursuit
+- Drain Punch
+- Ice Punch
+
+Scraggy @ Roseli Berry
+Level: 12
+Ability: Intimidate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Impish
+- Low Sweep
+- Feint Attack
+- Drain Punch
+- Poison Jab
+
+Throh @ Adrenaline Orb
+Level: 13
+Ability: Technician
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Brave
+- Revenge
+- Rock Tomb
+- Bulk Up
+- Knock Off
+/*Florando City Trainer End*/
+
+/*Mt Freeeze Trainer Start*/
+=== TRAINER_CALEB ===
+Name: CALEB
+Class: Camper
+Pic: Camper 
+Gender: Male
+Music: Camper
+Double Battle: No
+AI: Smart Trainer
+
+Swinub @ Oran Berry
+Level: 12
+Ability: Thick Fat
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Impish
+- Ice Shard
+- Rock Tomb
+- Bulldoze
+- Avalanche
+
+Snorunt @ Oran Berry
+Level: 12
+Ability: Ice Body
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Bold
+- Icy Wind
+- Ice Shard
+- Flash
+- Light Screen
+
+Vulpix-Alola @ NeverMeltIce
+Level: 12
+Ability: Serene Grace
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Timid
+- Ice Shard
+- Extrasensory
+- Weather Ball
+- Icy Wind
+
+=== TRAINER_CHARLES ===
+Name: Charles
 Class: Hiker
 Pic: Hiker
 Gender: Male
 Music: Hiker
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
 
-Geodude
-Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Sandshrew-Alola @ Occa Berry
+Level: 12
+Ability: Slush Rush
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Ice Shard
+- Cut
+- Aerial Ace
+- Icicle Spear
+
+Vanillite @ Oran Berry 
+Level: 12
+Ability: Slush Rush
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+- Icy Wind
+- Water Pulse
+- Ice Shard
+- Light Screen
+
+Cetoddle @ Oran Berry
+Level: 12
+Ability: Slush Rush 
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Ice Shard
+- Ice Fang
+- Stomping Tantrum
+- Yawn
+
+=== TRAINER_GRUSHA ===
+Name: GRUSHA
+Class: Leader
+Pic: Grusha
+Gender: Male
+Music: Grusha
+Double Battle: No
+AI: Smart Trainer / Prediction
+
+Spheal @ Berry Juice
+Level: 12
+Ability: Icy Body
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Bold
+- Baby Doll Eyes
+- Encore
+- Water Pulse
+- Icy Wind
+
+Cubchoo @ Expert Belt
+Level: 12
+Ability: Slush Rush
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Aqua Jet
+- Ice Punch
+- Rock Tomb
+- Cut
+
+Delibird @ NeverMeltIce
+Level: 12
+Ability: Refrigerate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Flip Turn
+- Dual Wingbeat
+- Quick Attack
+- Ice Punch
+
+Frigibax @ Shell Bell
+Level: 13
+Ability: Thermal Exchange
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Impish
+- Aqua Tail
+- Ice Fang
+- Swords Dance
+- Ice Shard
+/*Mt Freeeze Trainer End*/
+
+/*Route 30 Trainer Start*/
+=== TRAINER_JOEY ===
+Name: JOEY
+Class: Cooltrainer
+Pic: Cooltrainer
+Gender: Male
+Music: Cooltrainer
+Double Battle: No
+AI: Smart Trainer
+
+Rattata-Alola @ Oran Berry
+Level: 12
+Ability: Gluttony
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Jolly
+- Bite
+- Quick Attack
+- Hyper Fang
+- Zen Headbutt
+
+Poochyena @ Oran Berry
+Level: 11
+Ability: Moxie
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Bite
+- Howl
+- Play Rough
+- Ice Fang
+
+Pidove @ Oran Berry
+Level: 12
+Ability: Super Luck
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Jolly
+- Quick Attack
+- Wing Attack
+- Work Up
+- Night Slash
+
+=== TRAINER_MICHAEL ===
+Name: MICHAEL
+Class: Camper
+Pic: Camper
+Gender: Male
+Music: Camper
+Double Battle: No
+AI: Smart Trainer
+
+Pikipek @ Oran Berry
+Level: 11
+Ability: Skill Link
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Jolly
+- Rock Blast
+- Bullet Seed
+- Rock Smash
+- Quick Attack
+
+Zigzagoon-Galar @ Kings Rock
+Level: 11
+Ability: Quick Feet
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Pin Missile
+- Snarl
+- Headbutt
+- Pursuit
+
+Yamper @ Muscle Band
+Level: 12
+Ability: Pick Up
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Bite
+- Nuzzle
+- Fire Fang
+- Thunder Fang
+/*Route 30 Trainer End*/
+
+/*Route 31 Trainer Start*/
+=== TRAINER_DONALD ===
+Name: DONALD
+Class: Bug Catcher
+Pic: Bug Catcher
+Gender: Male
+Music: Bug Catcher
+Double Battle: No
+AI: Smart Trainer
+
+Ledyba @ Wise Glasses
+Level: 12
+Ability: Early Bird
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+- Air Cutter
+- Supersonic
+- Flash
+- Psybeam
+
+Butterfree @ Magnet
+Level: 12
+Ability: Compound Eyes
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+- Psybeam
+- Struggle Bug
+- Flash
+- Giga Drain
+
+Kricketune @ Expert Belt
+Level: 12
+Ability: Technician
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Pounce
+- Rock Tomb
+- Aerial Ace
+- Bullet Seed
+
+=== TRAINER_WADE ===
+Name: WADE
+Class: Bug Catcher
+Pic: Bug Catcher
+Gender: Male
+Music: Bug Catcher
+Double Battle: No
+AI: Smart Trainer
+
+Dustox @ Oran Berry
+Level: 12
+Ability: Insomnia
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Bold
+- Toxic Spikes
+- Venoshock
+- Struggle Bug
+- Flash
+
+Venipede @ Oran Berry
+Level: 12
+Ability: Poison Touch
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Brave
+- Pin Missile
+- Venoshock
+- Payback
+- Rock Smash
+
+Skorupi @ Oran Berry
+Level: 12
+Ability: Sniper
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Venoshock
+- Pin Missile
+- Pursuit
+- Poison Tail
+
+=== TRAINER_ROARK ===
+Name: ROARK
+Class: Leader
+Pic: Roark
+Gender: Male
+Music: TwinBedrock
+Double Battle: No
+AI: Smart Trainer / Prediction
+
+Tyrunt @ Muscle Band
+Level: 12
+Ability: Strong Jaw
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Fire Fang
+- Thunder Fang
+- Rock Tomb
+- Scale Shot
+
+Cranidos @ Muscle Band
+Level: 13
+Ability: Sheer Force
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Zen Headbutt
+- Pursuit
+- Rock Tomb
+- Fire Punch
+
+=== TRAINER_ROXANNE ===
+Name: ROXANNE
+Class: Leader
+Pic: Roxanne
+Gender: Female
+Music: TwinBedrock
+Double Battle: No
+AI: Smart Trainer / Prediction
+
+Geodude-Alola @ Magnet
+Level: 12
+Ability: Galvanize
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Impish
+- Rapid Spin
+- Strength
+- Smack Down
+- Rock Tomb
+
+Nosepass @ Berry Juice
+Level: 13
+Ability: Sturdy
+IVs: 30 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 30 Spe
+Nature: Bold
+- Thunder Wave
+- Power Gem
+- Hidden Power
+- Protect
+/*Route 31 Trainer End*/
+
+/*Violet City Trainer Start*/
+/*Sprout Tower Trainer Start - Violet City*/
+=== TRAINER_JIN ===
+Name: JIN
+Class: Sage
+Pic: Sage
+Gender: Male
+Music: Sage
+Double Battle: No
+AI: Smart Trainer
+
+Bellsprout @ Oran Berry
+Level: 12
+Ability: Gluttony
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Growth
+- Leech Life
+- Poison Jab
+- Bullet Seed
+
+Natu @ Oran Berry
+Level: 12
+Ability: Synchronize
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Timid
+- Night Shade
+- Air Cutter
+- Thunder Wave
+- U Turn
+
+Makuhita @ Black Belt
+Level: 13
+Ability: Sheer Force
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Fake Out
+- Force Palm
+- Rock Tomb
+- Thunder Punch
+
+=== TRAINER_TROY ===
+Name: TROY
+Class: Sage
+Pic: Sage
+Gender: Male
+Music: Sage
+Double Battle: No
+AI: Smart Trainer
+
+Growlithe @ Muscle Band
+Level: 12
+Ability: Intimidate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Jolly
+- Bite
+- Rock Smash
+- Fire Fang
+- Body Slam
+
+Buizel @ Wide Lens
+Level: 12
+Ability: Technician
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Rock Tomb
+- Quick Attack
+- Flip Turn
+- Sonic Boom
+
+Lillipup @ Muscle Band
+Level: 13
+Ability: Vital Spirit
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Bite
+- Play Rought
+- Psychic Fangs
+- Thunder Fang
+
+=== TRAINER_CHOW ===
+Name: CHOW
+Class: Sage
+Pic: Sage
+Gender: Male
+Music: Sage
+Double Battle: No
+AI: Smart Trainer
+
+Lotad @ Oran Berry
+Level: 12
+Ability: Own Tempo
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Calm
+- Bubble Beam
+- Aurora Beam
+- Grass Knot
+- Flash
+
+Shuckle @ Berry Juice
+Level: 12
+Ability: Sturdy
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Careful
+- Knock Off
+- Flash
+- Infestation
+- Sand Tomb
+
+Slowpoke @ Oran Berry
+Level: 13
+Ability: Regenerator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Bold
+- Water Pulse
+- Thunder Wave
+- Future Sight
+- Teleport
+
+=== TRAINER_EDMOND ===
+Name: EDMOND
+Class: Sage
+Pic: Sage
+Gender: Male
+Music: Sage
+Double Battle: No
+AI: Smart Trainer
+
+Duskull @ Expert Belt
+Level: 13
+Ability: Prankster
+IVs: 31 HP / 31 Atk / 31 Def / 30 SpA / 31 SpD / 30 Spe
+Nature: Modest
+- Will O Wisp
+- Hidden Power
+- Flash
+- Icy Wind
+
+Whismur @ Throat Spray
+Level: 13
+Ability: Scrappy
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+- Roar
+- Hyper Voice
+- Fake Tears
+- Disarming Voice
+
+Chatot @ Metronome
+Level: 13
+Ability: Punk Rock
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+- Hyper Voice
+- Alluring Voice
+- Encore
+- Sing
+
+=== TRAINER_MILO ===
+Name: MILO
+Class: Leader
+Pic: Milo
+Gender: Male
+Music: Milo
+Double Battle: No
+AI: Smart Trainer / Prediction
+
+Lileep @ Yache Berry
+Level: 13
+Ability: Storm Drain
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Bold
+- Recover
+- Power Gem
+- Flash
+- Stealth Rock
+
+Lombre @ Damp Rock
+Level: 14
+Ability: Rain Dish
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+- Bubble Beam
+- Rain Dance
+- Icy Wind
+- Leech Seed
+
+Shroomish @ Eviolite
+Level: 14
+Ability: Effect Spore
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Bold
+- Leech Seed
+- Mega Drain
+- Charm
+- Fake Tears
+
+Tropius @ Berry Juice
+Level: 15
+Ability: Wind Rider
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+- Dragon Breath
+- Weather Ball
+- Roost
+- Energy Ball
+
+/*Sprout Tower Trainer End - Violet City*/
+=== TRAINER_FALKNER_SINGLE ===
+Name: FALKNER
+Class: Leader
+Pic: Falkner
+Gender: Male
+Music: Falkner
+Double Battle: No
+AI: Smart Trainer / Prediction
+
+Fletchling @ Berry Juice
+Level: 14
+Ability: Gale Wings
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Impish
+- Tailwind
+- Quick Attack
+- Pluck
+- U Turn
+
+Staravia @ Muscle Band
+Level: 14
+Ability: Intimidate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Steel Wing
+- Quick Attack
+- Dual Wingbeat
+- Tailwind
+
+Wattrel @ Wise Glasses
+Level: 15
+Ability: Volt Absorb
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+- Roost
+- Volt Switch
+- Air Slash
+- Electroweb
+
+Murkrow @ Scope Lens
+Level: 15
+Ability: Super Luck
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+- Air Cutter
+- Nasty Plot
+- Thunder Wave
+- Icy Wind
+
+Gligar @ Yache Berry
+Level: 15
+Ability: Hyper Cutter
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Knock Off
+- Roost
+- Aerial Ace
+- Bulldoze
+
+=== TRAINER_FALKNER_DOUBLE ===
+Name: FALKNER
+Class: Leader
+Pic: Falkner
+Gender: Male
+Music: Falkner
+Double Battle: Yes
+AI: Smart Trainer / Prediction
+
+Fletchling @ Berry Juice
+Level: 14
+Ability: Gale Wings
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Impish
+- Tailwind
+- Quick Attack
+- Pluck
+- U Turn
+
+Staravia @ Muscle Band
+Level: 14
+Ability: Intimidate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Steel Wing
+- Quick Attack
+- Dual Wingbeat
+- Tailwind
+
+Wattrel @ Wise Glasses
+Level: 15
+Ability: Volt Absorb
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+- Roost
+- Volt Switch
+- Air Slash
+- Electroweb
+
+Murkrow @ Scope Lens
+Level: 15
+Ability: Super Luck
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Modest
+- Air Cutter
+- Nasty Plot
+- Thunder Wave
+- Icy Wind
+
+Gligar @ Yache Berry
+Level: 15
+Ability: Hyper Cutter
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Knock Off
+- Roost
+- Aerial Ace
+- Bulldoze
+/*Violet City Trainer End*/
+/*Route 32 Trainer Start*/
+=== TRAINER_METAL ===
+Name: METAL
+Class: Rival
+Pic: Metal
+Gender: Male
+Music: Metal
+Double Battle: No
+AI: Smart Trainer / Prediction
+
+Aron @ Focus Sash
+Level: 20
+Ability: Battle Armor
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Impish
+- Iron Head
+- Stealth Rock
+- Body Press
+- Aerial Ace
+
+Scyther @ Charti Berry
+Level: 20
+Ability: Technician
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Pursuit
+- Pounce
+- Dual Wingbeat
+- Rock Smash
+
+Honedge @ Scope Lens
+Level: 20
+Ability: No Guard
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Adamant
+- Swords Dance
+- Iron Head
+- Shadow Sneak
+- Shadow Claw
+
+Skarmory @ Sitrus Berry
+Level: 20
+Ability: Sturdy
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Nature: Impish
+- Dual Wingbeat
+- Rock Slide
+- Body Press
+- Steel Wing
+/*Route 32 Trainer End*/
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_1 ===
 Name: GRUNT
