@@ -16,7 +16,7 @@
   "object_events": [
     {
       "local_id": "LOCALID_NEWBARK_TOWN_MOM",
-      "graphics_id": "OBJ_EVENT_GFX_MOM",
+      "graphics_id": "OBJ_EVENT_GFX_GEN4_MOM_3",
       "x": 2,
       "y": 8,
       "elevation": 0,
