@@ -654,6 +654,16 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Gen4TeamPla
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Gen4TeamPlasmaBossGhetsis;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Gen4TeamPlasmaBossGhetsisB2w2;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Gen4TeamPlasmaBossGhetsisB2w2Withstaff;
+// Auburn Gold
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GymLeaderCherenAuburn;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GymLeaderFalknerAuburn;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Grusha;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Hala;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Katy;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Metal;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Milo;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GymLeaderRoarkAuburn;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GymLeaderRoxanneAuburn;
 // Begin Pokémon event objects
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokeBall;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Follower;
@@ -1322,6 +1332,15 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_GEN4_TEAM_PLASMA_BOSS_GHETSIS] = &gObjectEventGraphicsInfo_Gen4TeamPlasmaBossGhetsis,
     [OBJ_EVENT_GFX_GEN4_TEAM_PLASMA_BOSS_GHETSIS_B2W2] = &gObjectEventGraphicsInfo_Gen4TeamPlasmaBossGhetsisB2w2,
     [OBJ_EVENT_GFX_GEN4_TEAM_PLASMA_BOSS_GHETSIS_B2W2_WITHSTAFF] = &gObjectEventGraphicsInfo_Gen4TeamPlasmaBossGhetsisB2w2Withstaff,
+    [OBJ_EVENT_GFX_GYM_LEADER_CHEREN_AUBURN]   = &gObjectEventGraphicsInfo_GymLeaderCherenAuburn,
+    [OBJ_EVENT_GFX_GYM_LEADER_FALKNER_AUBURN]  = &gObjectEventGraphicsInfo_GymLeaderFalknerAuburn,
+    [OBJ_EVENT_GFX_GRUSHA]                     = &gObjectEventGraphicsInfo_Grusha,
+    [OBJ_EVENT_GFX_HALA]                       = &gObjectEventGraphicsInfo_Hala,
+    [OBJ_EVENT_GFX_KATY]                       = &gObjectEventGraphicsInfo_Katy,
+    [OBJ_EVENT_GFX_METAL]                      = &gObjectEventGraphicsInfo_Metal,
+    [OBJ_EVENT_GFX_MILO]                       = &gObjectEventGraphicsInfo_Milo,
+    [OBJ_EVENT_GFX_GYM_LEADER_ROARK_AUBURN]    = &gObjectEventGraphicsInfo_GymLeaderRoarkAuburn,
+    [OBJ_EVENT_GFX_GYM_LEADER_ROXANNE_AUBURN]  = &gObjectEventGraphicsInfo_GymLeaderRoxanneAuburn,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {
