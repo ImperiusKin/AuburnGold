@@ -1124,6 +1124,26 @@ const u16 gObjectEventPal_Gen4TeamPlasmaBossGhetsisB2w2[] = INCGFX_U16("graphics
 const u32 gObjectEventPic_Gen4TeamPlasmaBossGhetsisB2w2Withstaff[] = INCGFX_U32("graphics/object_events/pics/people/gen4/team_plasma_boss_ghetsis_b2w2_withstaff.png", ".4bpp", "-mwidth 4 -mheight 4");
 const u16 gObjectEventPal_Gen4TeamPlasmaBossGhetsisB2w2Withstaff[] = INCGFX_U16("graphics/object_events/pics/people/gen4/team_plasma_boss_ghetsis_b2w2_withstaff.png", ".gbapal");
 
+// Auburn Gold
+const u32 gObjectEventPic_GymLeaderCherenAuburn[] = INCGFX_U32("graphics/object_events/pics/people/auburn/gym_leader_cheren_auburn.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u16 gObjectEventPal_GymLeaderCherenAuburn[] = INCGFX_U16("graphics/object_events/pics/people/auburn/gym_leader_cheren_auburn.png", ".gbapal");
+const u32 gObjectEventPic_GymLeaderFalknerAuburn[] = INCGFX_U32("graphics/object_events/pics/people/auburn/gym_leader_falkner_auburn.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u16 gObjectEventPal_GymLeaderFalknerAuburn[] = INCGFX_U16("graphics/object_events/pics/people/auburn/gym_leader_falkner_auburn.png", ".gbapal");
+const u32 gObjectEventPic_Grusha[] = INCGFX_U32("graphics/object_events/pics/people/auburn/grusha.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u16 gObjectEventPal_Grusha[] = INCGFX_U16("graphics/object_events/pics/people/auburn/grusha.png", ".gbapal");
+const u32 gObjectEventPic_Hala[] = INCGFX_U32("graphics/object_events/pics/people/auburn/hala.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u16 gObjectEventPal_Hala[] = INCGFX_U16("graphics/object_events/pics/people/auburn/hala.png", ".gbapal");
+const u32 gObjectEventPic_Katy[] = INCGFX_U32("graphics/object_events/pics/people/auburn/katy.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u16 gObjectEventPal_Katy[] = INCGFX_U16("graphics/object_events/pics/people/auburn/katy.png", ".gbapal");
+const u32 gObjectEventPic_Metal[] = INCGFX_U32("graphics/object_events/pics/people/auburn/metal.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u16 gObjectEventPal_Metal[] = INCGFX_U16("graphics/object_events/pics/people/auburn/metal.png", ".gbapal");
+const u32 gObjectEventPic_Milo[] = INCGFX_U32("graphics/object_events/pics/people/auburn/milo.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u16 gObjectEventPal_Milo[] = INCGFX_U16("graphics/object_events/pics/people/auburn/milo.png", ".gbapal");
+const u32 gObjectEventPic_GymLeaderRoarkAuburn[] = INCGFX_U32("graphics/object_events/pics/people/auburn/gym_leader_roark_auburn.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u16 gObjectEventPal_GymLeaderRoarkAuburn[] = INCGFX_U16("graphics/object_events/pics/people/auburn/gym_leader_roark_auburn.png", ".gbapal");
+const u32 gObjectEventPic_GymLeaderRoxanneAuburn[] = INCGFX_U32("graphics/object_events/pics/people/auburn/gym_leader_roxanne_auburn.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u16 gObjectEventPal_GymLeaderRoxanneAuburn[] = INCGFX_U16("graphics/object_events/pics/people/auburn/gym_leader_roxanne_auburn.png", ".gbapal");
+
 const u16 gObjectEventPic_LaprasOld[] = INCGFX_U16("graphics/object_events/pics/pokemon_old/lapras.png", ".4bpp", "-mwidth 2 -mheight 2");
 const u16 gObjectEventPic_ZapdosOld[] = INCGFX_U16("graphics/object_events/pics/pokemon_old/zapdos.png", ".4bpp");
 const u16 gObjectEventPic_MoltresOld[] = INCGFX_U16("graphics/object_events/pics/pokemon_old/moltres.png", ".4bpp");
