@@ -22,12 +22,11 @@ script Route29_EventScript_Trainer_3{
 	msgbox(format("Fine! ONE loss doesn't mean anything!\pThere's still all of Johto ahead of me!"), MSGBOX_AUTOCLOSE)
 	end
 }
-const FLAG_TALKED_TO_CHEREN = FLAG_TEMP_1
-const TRAINER_CHEREN = TRAINER_MAY_ROUTE_103_TORCHIC
+const TRAINER_CHEREN = TRAINER_MAY_ROUTE_103_TORCHIC 
 script Route29_EventScript_Cheren{
     faceplayer
     lock
-    setflag(FLAG_DEFEATED_GRUSHA)
+    //setflag(FLAG_DEFEATED_GRUSHA)
     if(flag(FLAG_DEFEATED_CHEREN)){
         msgbox(format("Keep moving forward. There are plenty of trainers ahead stronger than me.\pDon't let one victory make you careless."))
     }

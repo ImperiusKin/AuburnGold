@@ -1,3 +1,69 @@
 mapscripts Route_31_MapScripts {
 	
 }
+
+const ROUTE31_TRAINER_1 = TRAINER_ALLEN
+script Route31_EventScript_Trainer_1{
+    trainerbattle_single(ROUTE31_TRAINER_1, format("I've been camping out here for a few days! Fresh air, great scenery, and plenty of Trainers to battle! What more could you want?"), format("Well, maybe a win would've been nice..."))
+    msgbox(format("I was thinking about exploring Dark Cave, but it's pretty intimidating in there. Maybe I'll stick to camping for now!"), MSGBOX_AUTOCLOSE)
+    end
+}
+
+const ROUTE31_TRAINER_2 = TRAINER_ALLEN
+script Route31_EventScript_Trainer_2{
+    trainerbattle_single(ROUTE31_TRAINER_2, format("I've been watching Trainers pass through here all day! You look like someone who knows how to battle! Let's find out if I'm right!"), format("Wow! I was right about you!"))
+    msgbox(format("I heard Violet City has been getting lots of visitors because of the tournament. I wonder how many of them have already earned their first Badge?"), MSGBOX_AUTOCLOSE)
+    end
+}
+
+const ROUTE31_TRAINER_ROXANNE = TRAINER_ALLEN
+const ROUTE31_TRAINER_ROARK = TRAINER_ALLEN
+script Route31_EventScript_Roxanne_Roark{
+    faceplayer
+    lock
+    if(!flag(FLAG_DEFEATED_ROXANNE)){
+        msgbox(format("Roxanne: Oh! Another Trainer looking to enter Dark Cave?"))
+        msgbox(format("Roark: You've got good timing! We've been waiting for someone to challenge us!"))
+        msgbox(format("Roxanne: As part of the tournament, we've been tasked with guarding this entrance."))
+        msgbox(format("Roark: And the only way through is to beat both of us in a Double Battle!"))
+        msgbox(format("Roxanne: Rock-type Pokémon are known for their resilience, but there's much more to them than simply enduring attacks."))
+        msgbox(format("Roark: That's right! When we work together, our Pokémon can really bring the house down!"))
+        msgbox(format("Roxanne: Now then, are you prepared to put your knowledge and teamwork to the test?"), MSGBOX_YESNO)
+        if(var(VAR_RESULT) == NO){
+            goto(Route31_EventScript_Roxanne_Roark_No)
+        }
+        msgbox(format("Roxanne: Let us demonstrate the strength of a well-coordinated team!"))
+        msgbox(format("Roark: Get ready! We're gonna rock your world!"))
+        trainerbattle_two_trainers(ROUTE31_TRAINER_ROXANNE, format("Whoa! You broke right through our defenses!"), ROUTE31_TRAINER_ROARK, format("An impressive display of strategy and cooperation!"))
+        msgbox(format("Roxanne: Before you go, we'd each like to give you something for overcoming our challenge! First, please accept this TM"))
+        giveitem(ITEM_TM_ROCK_TOMB) //Rock Tomb
+        msgbox(format("It damages your opponent while lowering their Speed. I'm also giving you this!"))
+        giveitem(ITEM_MUSCLE_BAND, 1)
+        msgbox(format("It slightly increases the power of your Pokémon's physical attacks."))
+        msgbox(format("Roark: And I've got a couple of things for you, too!"))
+        giveitem(ITEM_TM_SMACK_DOWN, 1) //Smack Down
+        msgbox(format("It's great for knocking Flying-type Pokémon out of the sky!"))
+        msgbox(format("And take this!"))
+        giveitem(ITEM_QUICK_CLAW, 1)
+        msgbox(format("Sometimes it'll let your Pokémon move first, even if they're slower than their opponent!"))
+        setflag(FLAG_DEFEATED_ROXANNE)
+        msgbox(format("Roxanne: I hope these rewards prove useful in your future battle"))
+        msgbox(format("Roark: Keep getting stronger! Maybe we'll get another chance to battle someday!"))
+        msgbox(format("Roxanne: Do enjoy exploration of Dark Cave!"))
+    }
+    else{
+        msgbox(format("Roxanne: Hey! How's the exploring going? Find anything interesting in Dark Cave?"))
+        msgbox(format("Roark: The geological formations inside are quite fascinating. I'd encourage you to take your time exploring."))
+    }
+    release
+    end
+}
+
+
+script Route31_EventScript_Roxanne_Roark_No{
+    msgbox(format("Roark: Aw, come on! We were just getting fired up!"))
+    msgbox(format("Roxanne: There's no need to rush. A well-prepared Trainer knows when to reconsider their approach."))
+    msgbox(format("Roark: Just don't keep us waiting too long!"))
+    release
+    end
+}

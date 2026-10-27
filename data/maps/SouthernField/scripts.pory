@@ -1,3 +1,39 @@
 mapscripts SouthernField_MapScripts {
 	
 }
+
+const SOUTHERNFIELDS_TRAINER_1 = TRAINER_RICK
+script SouthernFields_EventScript_Trainer_1{
+    trainerbattle_single(SOUTHERNFIELDS_TRAINER_1, format("I came down here to get some training in! You're training too, right? Then let's battle!"), format("Looks like you got more training out of that..."))
+    msgbox(format("There has to be stronger Bug Pokémon deeper in the forest. Wonder if Katy knows where they are?"), MSGBOX_AUTOCLOSE)
+    end
+}
+
+const SOUTHERNFIELDS_TRAINER_2 = TRAINER_RICK
+script SouthernFields_EventScript_Trainer_2{
+    trainerbattle_single(SOUTHERNFIELDS_TRAINER_2, format("Look around! This place is crawling with Bug Pokémon! I've caught a few already. Want to see them?"), format("Aw...They were doing so well!"))
+    msgbox(format("I'll stay here a while longer. I've still got some work to do."), MSGBOX_AUTOCLOSE)
+    end
+}
+
+const SOUTHERNFIELDS_KATY = TRAINER_RICK
+script SouthernFields_EventScript_Katy{
+    faceplayer
+    lock
+    if(flag(FLAG_DEFEATED_KATY)){
+        msgbox(format("Bug Pokémon can seem fragile at first. Give them a little time, though... You might be surprised by what they become."))
+    }
+    else{
+        msgbox(format("Katy: Hello there! I'm Katy, a Gym Leader from Paldea. I came to Johto to help with the tournament... but I couldn't pass up a place like this! Since you're here too... How about a battle?"))
+        trainerbattle_no_intro(TRAINER_RICK, format("That was a lovely battle!"))
+        msgbox(format("Here, these are for you."))
+        giveitem(ITEM_TM_ROAR, 1)
+        msgbox(format("Signal Beam is a Bug-type move that may confuse the target."))
+        msgbox(format("You should have these, too!"))
+        giveitem(ITEM_WISE_GLASSES, 1)
+        setflag(FLAG_DEFEATED_KATY)
+        msgbox(format("They'll strengthen the special moves of the Pokémon holding them. I hope they serve you well!"))
+    }
+    release
+    end
+}

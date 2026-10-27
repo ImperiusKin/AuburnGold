@@ -1,3 +1,31 @@
 mapscripts Amberite_Valley_MapScripts {
 	
 }
+
+script Amberite_Valley_EventScript_Market_NPC{
+    lock
+    faceplayer
+    random(6)
+    switch(var(VAR_RESULT)){
+        case 0:
+            msgbox(format("Everyone's rushing ahead to find the next battle. Let them! I'd rather be prepared when I get there."))
+        break
+        case 1:
+            msgbox(format("Finding a good TM can completely change a Pokémon. That's why I always check what's for sale!"))
+        break
+        case 2:
+            msgbox(format("Potions, Antidotes, Pokéballs... It adds up fast! Maybe I shouldn't have spent so much."))
+        break
+        case 3:
+            msgbox(format("I'm looking for something my whole team can use. A strong move isn't much good if none of your Pokémon can learn it!"))
+        break
+        case 4:
+            msgbox(format("I bought everything I wanted! Now I can't afford anything I need."))
+        break
+        case 5:
+            msgbox(format("Don't just buy what looks strongest. Think about what your team is missing. That's what I'm trying to do, anyway..."))
+        break
+    }
+    release
+    end
+}
