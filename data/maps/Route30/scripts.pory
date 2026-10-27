@@ -1,3 +1,17 @@
 mapscripts Route30_MapScripts {
 	
 }
+
+const ROUTE30_TRAINER_1 = TRAINER_ALLEN
+script Route30_EventScript_Trainer_1{
+    trainerbattle_single(ROUTE30_TRAINER_1, format("I've been training my Pokémon against all the wild Pokémon around here! Let's see how they do against a real Trainer!"), format("Aw, man! I thought we were ready!"))
+    msgbox(format("Guess battling wild Pokémon isn't quite the same as battling other Trainers. We'll have to practice some more!"), MSGBOX_AUTOCLOSE)
+    end
+}
+
+const ROUTE30_TRAINER_2= TRAINER_ALLEN
+script Route30_EventScript_Trainer_2{
+    trainerbattle_single(ROUTE30_TRAINER_2, format("There are all kinds of Pokémon hiding in the grass around here! Wanna see what I've caught?"), format("Guess I didn't catch enough kinds of pokemon."))
+    msgbox(format("Maybe I should try catching something in Hallu Forest... I bet there are some really rare Pokémon in there!"), MSGBOX_AUTOCLOSE)
+    end
+}

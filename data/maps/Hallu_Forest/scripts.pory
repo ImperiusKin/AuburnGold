@@ -1,3 +1,24 @@
 mapscripts Hallu_Forest_MapScripts {
 	
 }
+
+const HALLU_FOREST_TRAINER_1 = TRAINER_CALVIN_1
+script Hallu_Forest_EventScript_Trainer_1{
+    trainerbattle_single(HALLU_FOREST_TRAINER_1, format("Does this forest seem too quiet to you? Maybe a battle will make it feel less creepy!"), format("Somehow... It's even quieter now."))
+    msgbox(format("I keep feeling like something's watching us. Let's not stay here too long..."), MSGBOX_AUTOCLOSE)
+    end
+}
+
+const HALLU_FOREST_TRAINER_2 = TRAINER_CALVIN_1
+script Hallu_Forest_EventScript_Trainer_2{
+    trainerbattle_single(HALLU_FOREST_TRAINER_2, format("I've been following this path for a while...I'm PRETTY sure I'm still going the right way. Before I get lost again, let's battle!"), format("Great...now I'm lost AND I lost."))
+    msgbox(format("I could've sworn I passed that same tree already... Maybe I should turn around."), MSGBOX_AUTOCLOSE)
+    end
+}
+
+const HALLU_FOREST_TRAINER_3 = TRAINER_CALVIN_1
+script Hallu_Forest_EventScript_Trainer_3{
+    trainerbattle_single(HALLU_FOREST_TRAINER_3, format("My Pokémon keep stopping and staring into the trees. I don't see anything... Maybe a battle will get their minds off it!"), format("They were distracted... ...Right?"))
+    msgbox(format("They're doing it again. Whatever they're looking at... I still can't see it."), MSGBOX_AUTOCLOSE)
+    end
+}
