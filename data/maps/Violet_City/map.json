@@ -27,29 +27,29 @@
   "object_events": [],
   "warp_events": [
     {
-      "x": 48,
+      "x": 44,
       "y": 35,
       "elevation": 0,
       "dest_map": "MAP_ROUTE_31",
       "dest_warp_id": "0"
     },
     {
-      "x": 48,
+      "x": 44,
       "y": 36,
       "elevation": 0,
       "dest_map": "MAP_ROUTE_31",
       "dest_warp_id": "1"
     },
     {
-      "x": 48,
+      "x": 44,
       "y": 37,
       "elevation": 0,
       "dest_map": "MAP_ROUTE_31",
       "dest_warp_id": "2"
     },
     {
-      "x": 42,
-      "y": 34,
+      "x": 31,
+      "y": 24,
       "elevation": 0,
       "dest_map": "MAP_VIOLET_CITY_POKEMON_CENTER",
       "dest_warp_id": "0"
