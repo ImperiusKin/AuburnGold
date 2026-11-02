@@ -26,8 +26,8 @@
       "x": 9,
       "y": 2,
       "elevation": 0,
-      "dest_map": "MAP_CONNECTION_AMB_FLORANDO_CATALLIA",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_CATALLIA_CITY",
+      "dest_warp_id": "2"
     },
     {
       "x": 1,

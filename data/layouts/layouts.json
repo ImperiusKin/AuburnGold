@@ -9377,7 +9377,7 @@
     {
       "id": "LAYOUT_AMBERITE_VALLEY",
       "name": "Amberite_Valley_Layout",
-      "width": 52,
+      "width": 60,
       "height": 52,
       "primary_tileset": "gTileset_General_Jotho",
       "secondary_tileset": "gTileset_Amberite_Valley",
@@ -9477,8 +9477,8 @@
     {
       "id": "LAYOUT_CATALLIA_CITY",
       "name": "Catallia_City_Layout",
-      "width": 63,
-      "height": 58,
+      "width": 72,
+      "height": 66,
       "primary_tileset": "gTileset_General_Jotho",
       "secondary_tileset": "gTileset_Catallia_City",
       "border_filepath": "data/layouts/Catallia_City/border.bin",
@@ -9783,6 +9783,26 @@
       "secondary_tileset": "gTileset_Connections",
       "border_filepath": "data/layouts/Connection_Amb_Florando_Catallia/border.bin",
       "blockdata_filepath": "data/layouts/Connection_Amb_Florando_Catallia/map.bin"
+    },
+    {
+      "id": "LAYOUT_CATALLIA_CITY_POKEMON_CENTER",
+      "name": "Catallia_City_Pokemon_Center_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Pokemon_Center_Jotho",
+      "border_filepath": "data/layouts/Catallia_City_Pokemon_Center/border.bin",
+      "blockdata_filepath": "data/layouts/Catallia_City_Pokemon_Center/map.bin"
+    },
+    {
+      "id": "LAYOUT_CONNECTION_AMB_VALLEY_PALM_HILL",
+      "name": "Connection_AmbValley_PalmHill_Layout",
+      "width": 16,
+      "height": 13,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Connections",
+      "border_filepath": "data/layouts/Connection_AmbValley_PalmHill/border.bin",
+      "blockdata_filepath": "data/layouts/Connection_AmbValley_PalmHill/map.bin"
     }
   ]
 }
