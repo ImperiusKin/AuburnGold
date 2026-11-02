@@ -179,7 +179,9 @@
     "Connection_CherryBluemoon",
     "ConnectionAmbvalleyHalluForest",
     "ConnectionHallu_Mtfreeze",
-    "Connection_Amb_Florando_Catallia"
+    "Connection_Amb_Florando_Catallia",
+    "Connection_AmbValley_PalmHill",
+    "Catallia_City_Pokemon_Center"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",

@@ -109,6 +109,27 @@
       "elevation": 0,
       "dest_map": "MAP_CONNECTION_AMB_FLORANDO_CATALLIA",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 49,
+      "y": 39,
+      "elevation": 0,
+      "dest_map": "MAP_CONNECTION_AMB_VALLEY_PALM_HILL",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 49,
+      "y": 38,
+      "elevation": 0,
+      "dest_map": "MAP_CONNECTION_AMB_VALLEY_PALM_HILL",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 49,
+      "y": 37,
+      "elevation": 0,
+      "dest_map": "MAP_CONNECTION_AMB_VALLEY_PALM_HILL",
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [],

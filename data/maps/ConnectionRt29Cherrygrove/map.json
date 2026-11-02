@@ -17,14 +17,14 @@
   "warp_events": [
     {
       "x": 13,
-      "y": 5,
+      "y": 7,
       "elevation": 0,
       "dest_map": "MAP_ROUTE29",
       "dest_warp_id": "3"
     },
     {
       "x": 1,
-      "y": 5,
+      "y": 7,
       "elevation": 0,
       "dest_map": "MAP_CHERRYGROVE_CITY",
       "dest_warp_id": "3"

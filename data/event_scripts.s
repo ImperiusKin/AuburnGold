@@ -1793,3 +1793,7 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/ConnectionHallu_Mtfreeze/scripts.inc"
 
 	.include "data/maps/Connection_Amb_Florando_Catallia/scripts.inc"
+
+	.include "data/maps/Connection_AmbValley_PalmHill/scripts.inc"
+
+	.include "data/maps/Catallia_City_Pokemon_Center/scripts.inc"
