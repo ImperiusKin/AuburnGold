@@ -3,7 +3,7 @@
   "name": "Violet_City",
   "layout": "LAYOUT_VIOLET_CITY",
   "music": "MUS_DUMMY",
-  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_VIOLET_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_NONE",
@@ -17,10 +17,51 @@
       "map": "MAP_ROUTE_32",
       "offset": -6,
       "direction": "down"
+    },
+    {
+      "map": "MAP_ROUTE_31",
+      "offset": 22,
+      "direction": "right"
     }
   ],
   "object_events": [],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "x": 44,
+      "y": 35,
+      "elevation": 0,
+      "dest_map": "MAP_VIOLET_CITY_CONNECTION_ROUTE31",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 44,
+      "y": 36,
+      "elevation": 0,
+      "dest_map": "MAP_VIOLET_CITY_CONNECTION_ROUTE31",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 44,
+      "y": 37,
+      "elevation": 0,
+      "dest_map": "MAP_VIOLET_CITY_CONNECTION_ROUTE31",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 31,
+      "y": 24,
+      "elevation": 0,
+      "dest_map": "MAP_VIOLET_CITY_POKEMON_CENTER",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 38,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_SPROUT_TOWER",
+      "dest_warp_id": "0"
+    }
+  ],
   "coord_events": [],
   "bg_events": []
 }

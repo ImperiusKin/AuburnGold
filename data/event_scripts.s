@@ -1767,3 +1767,33 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/Sprout_Tower_F3/scripts.inc"
 
 	.include "data/maps/Connection_Amberite_HalluForest/scripts.inc"
+
+	.include "data/maps/TestMap/scripts.inc"
+
+	.include "data/maps/VioletCity_HappyTown_Connection/scripts.inc"
+
+	.include "data/maps/VioletCityConnectionRoute31/scripts.inc"
+
+	.include "data/maps/CherrygroveBluemoonConnection/scripts.inc"
+
+	.include "data/maps/Violet_City_Pokemon_Center/scripts.inc"
+
+	.include "data/maps/Cherrygrove_City_Pokemon_Center/scripts.inc"
+
+	.include "data/maps/Amberite_Valley_Pokemon_Center/scripts.inc"
+
+	.include "data/maps/ConnectionRt29Rt46/scripts.inc"
+
+	.include "data/maps/ConnectionRt29Cherrygrove/scripts.inc"
+
+	.include "data/maps/Connection_CherryBluemoon/scripts.inc"
+
+	.include "data/maps/ConnectionAmbvalleyHalluForest/scripts.inc"
+
+	.include "data/maps/ConnectionHallu_Mtfreeze/scripts.inc"
+
+	.include "data/maps/Connection_Amb_Florando_Catallia/scripts.inc"
+
+	.include "data/maps/Connection_AmbValley_PalmHill/scripts.inc"
+
+	.include "data/maps/Catallia_City_Pokemon_Center/scripts.inc"

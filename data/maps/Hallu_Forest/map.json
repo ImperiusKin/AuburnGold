@@ -3,7 +3,7 @@
   "name": "Hallu_Forest",
   "layout": "LAYOUT_HALLU_FOREST",
   "music": "MUS_DUMMY",
-  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_HALLU_FOREST",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_NONE",
@@ -13,8 +13,84 @@
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": null,
-  "object_events": [],
-  "warp_events": [],
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GEN4_ACE_TRAINER_F",
+      "x": 18,
+      "y": 36,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "Hallu_Forest_EventScript_Trainer_1",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GEN4_ACE_TRAINER_F",
+      "x": 18,
+      "y": 22,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "Hallu_Forest_EventScript_Trainer_2",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GEN4_ACE_TRAINER_F",
+      "x": 19,
+      "y": 54,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "Hallu_Forest_EventScript_Trainer_3",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 23,
+      "y": 6,
+      "elevation": 0,
+      "dest_map": "MAP_CONNECTION_AMBERITE_HALLU_FOREST",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 24,
+      "y": 6,
+      "elevation": 0,
+      "dest_map": "MAP_CONNECTION_AMBERITE_HALLU_FOREST",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 23,
+      "y": 58,
+      "elevation": 0,
+      "dest_map": "MAP_CONNECTION_HALLU_MTFREEZE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 24,
+      "y": 58,
+      "elevation": 0,
+      "dest_map": "MAP_CONNECTION_HALLU_MTFREEZE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 25,
+      "y": 58,
+      "elevation": 0,
+      "dest_map": "MAP_CONNECTION_HALLU_MTFREEZE",
+      "dest_warp_id": "0"
+    }
+  ],
   "coord_events": [],
   "bg_events": []
 }

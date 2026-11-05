@@ -119,8 +119,12 @@ class TilesetFixerApp(tk.Tk):
         add(row2, "Analyze Palette Usage", self._analyze_palettes, "analyze")
         add(row3, "Consolidate Palettes", self._consolidate_palettes, "consolidate")
         add(row3, "Minimize Own Palettes", self._minimize_palettes, "minimize")
-        ttk.Button(actions, text="Restore Backups for This Tileset", command=self._restore_backups).pack(
-            anchor="w", padx=6, pady=(0, 6)
+        bottom = ttk.Frame(actions)
+        bottom.pack(fill="x", padx=6, pady=(0, 6))
+        add(bottom, "Rename Tileset...", self._rename_tileset, "rename")
+        add(bottom, "Delete Tileset...", self._delete_tileset, "delete")
+        ttk.Button(bottom, text="Restore Backups for This Tileset", command=self._restore_backups).pack(
+            side="left"
         )
 
         log_frame = ttk.LabelFrame(right, text="Output")
@@ -138,7 +142,7 @@ class TilesetFixerApp(tk.Tk):
             secondary_only_enabled = enabled
         state = "normal" if enabled else "disabled"
         sec_state = "normal" if secondary_only_enabled else "disabled"
-        for key in ("wipe", "dedupe", "prune"):
+        for key in ("wipe", "dedupe", "prune", "delete", "rename"):
             self.buttons[key].configure(state=state)
         for key in ("standalone", "analyze", "consolidate", "minimize"):
             self.buttons[key].configure(state=sec_state)
@@ -175,6 +179,11 @@ class TilesetFixerApp(tk.Tk):
             lines.append(f"used by {len(ts.maps)} map(s): " + ", ".join(sorted({m for m, _ in ts.maps}))[:400])
         else:
             lines.append("used by 0 maps (not referenced by any layout)")
+        using_layouts = core.find_layouts_using_tileset(ts)
+        lines.append(
+            f"deletable: NO - referenced by {len(using_layouts)} layout(s)" if using_layouts
+            else "deletable: yes (no layout references it)"
+        )
         self.detail_var.set("\n".join(lines))
         self._set_actions_enabled(True, secondary_only_enabled=ts.is_secondary)
 
@@ -332,6 +341,48 @@ class TilesetFixerApp(tk.Tk):
         ):
             return
         self._run_in_background(lambda: core.apply_secondary_palette_minimization(primary_ts, ts, ask_restore=False))
+
+    def _rename_tileset(self):
+        ts = self._current_ts()
+        if not ts:
+            return
+        new_name = simpledialog.askstring(
+            "Rename tileset", "New name (e.g. gTileset_MyNewName):",
+            initialvalue=ts.name, parent=self,
+        )
+        if not new_name or new_name == ts.name:
+            return
+        if not new_name.startswith("gTileset_"):
+            new_name = "gTileset_" + new_name
+        if new_name in self.tilesets:
+            messagebox.showerror("Error", f"{new_name} already exists.")
+            return
+        if not self._confirm(
+            f"This will rename {ts.name} to {new_name} everywhere (headers, layouts.json, "
+            f"metatile_labels.h, and every reference in src/+include/) and rename its data "
+            f"directory. Continue?"
+        ):
+            return
+        self._run_in_background(lambda: core.rename_tileset(ts, self.tilesets, new_name, ask_restore=False))
+
+    def _delete_tileset(self):
+        ts = self._current_ts()
+        if not ts:
+            return
+        using = core.find_layouts_using_tileset(ts)
+        if using:
+            messagebox.showerror(
+                "Can't delete",
+                f"{ts.name} is still used by {len(using)} layout(s), e.g. {', '.join(using[:5])}"
+                + (", ..." if len(using) > 5 else "") + ".",
+            )
+            return
+        if not self._confirm(
+            f"This will remove {ts.name} from headers.h/metatiles.h/graphics.h and move "
+            f"{ts.dir.relative_to(core.ROOT)}/ to {ts.dir.name}.deleted/ (not permanently deleted). Continue?"
+        ):
+            return
+        self._run_in_background(lambda: core.delete_tileset(ts, self.tilesets, ask_restore=False))
 
     def _restore_backups(self):
         ts = self._current_ts()

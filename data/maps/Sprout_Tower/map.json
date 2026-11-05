@@ -3,7 +3,7 @@
   "name": "Sprout_Tower",
   "layout": "LAYOUT_SPROUT_TOWER",
   "music": "MUS_DUMMY",
-  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_RUSTURF_TUNNEL",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_NONE",
@@ -14,7 +14,22 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": null,
   "object_events": [],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "x": 11,
+      "y": 21,
+      "elevation": 0,
+      "dest_map": "MAP_VIOLET_CITY",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 12,
+      "y": 21,
+      "elevation": 0,
+      "dest_map": "MAP_VIOLET_CITY",
+      "dest_warp_id": "4"
+    }
+  ],
   "coord_events": [],
   "bg_events": []
 }

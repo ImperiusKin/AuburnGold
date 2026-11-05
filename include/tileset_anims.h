@@ -40,4 +40,7 @@ void InitTilesetAnim_CeladonGym(void);
 void InitTilesetAnim_SilphCo(void);
 void InitTilesetAnim_MtEmber(void);
 
+// Jotho
+void InitTilesetAnim_General_Jotho(void);
+
 #endif // GUARD_TILESET_ANIMS_H
