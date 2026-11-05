@@ -3,7 +3,7 @@
   "name": "Connection_CherryBluemoon",
   "layout": "LAYOUT_CONNECTION_CHERRY_BLUEMOON",
   "music": "MUS_DUMMY",
-  "region_map_section": "MAPSEC_AMBERITE_VALLEY",
+  "region_map_section": "MAPSEC_CHERRYGROVE_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_NONE",
