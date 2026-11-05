@@ -729,7 +729,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sDewottLevelUpLearnset,
         .teachableLearnset = sDewottTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_SAMUROTT, CONDITIONS({IF_NOT_NIGHT, TIME_NIGHT})}
+        .evolutions = EVOLUTION({EVO_LEVEL, 36, SPECIES_SAMUROTT, CONDITIONS({IF_NOT_TIME, TIME_NIGHT})}
                             #if P_HISUIAN_FORMS
                                 ,{EVO_LEVEL, 36, SPECIES_SAMUROTT_HISUI, CONDITIONS({IF_TIME, TIME_NIGHT})}
                             #endif
@@ -4143,7 +4143,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         SHADOW(2, 14, SHADOW_SIZE_L)
     #if OW_BATTLE_ONLY_FORMS
         OVERWORLD(
-            sPicTable_ScoliopedeMega,
+            sPicTable_ScolipedeMega,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_NONE,
@@ -4382,7 +4382,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .eggMoveLearnset = sPetililEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_ITEM, ITEM_SUN_STONE, SPECIES_LILLIGANT}
                             #if P_HISUIAN_FORMS
-                                ,({EVO_ITEM, ITEM_LEAF_STONE, SPECIES_LILLIGANT_HISUI})
+                                ,{EVO_ITEM, ITEM_LEAF_STONE, SPECIES_LILLIGANT_HISUI}
                             #endif
                             ),
     },
@@ -6752,7 +6752,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .palette = gMonPalette_GarbodorMega,
         .shinyPalette = gMonShinyPalette_GarbodorMega,
         .iconSprite = gMonIcon_GarbodorMega,
-        .iconPalIndex = 0,
+        .iconPalIndex = P_GBA_STYLE_SPECIES_ICONS ? 1 : 4, // Bulbasaur icon copy
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         FOOTPRINT(Garbodor)
         SHADOW(-2, 16, SHADOW_SIZE_L)
@@ -9943,7 +9943,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
-        .abilities = { ABILITY_EELEVITATE, ABILITY_EELEVITATE, ABILITY_TRANSISTOR },
+        .abilities = { ABILITY_EELEVATE, ABILITY_EELEVATE, ABILITY_TRANSISTOR },
         .bodyColor = BODY_COLOR_BLUE,
         .speciesName = _("Eelektross"),
     #if P_MODIFIED_MEGA_CRIES
@@ -10638,6 +10638,8 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sHaxorusLevelUpLearnset,
         .teachableLearnset = sHaxorusTeachableLearnset,
+        .formChangeTable = sHaxorusFormChangeTable,
+        .formSpeciesIdTable = sHaxorusFormSpeciesIdTable,
     },
 
 #if P_MEGA_EVOLUTIONS
@@ -10688,7 +10690,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .palette = gMonPalette_HaxorusMega,
         .shinyPalette = gMonShinyPalette_HaxorusMega,
         .iconSprite = gMonIcon_HaxorusMega,
-        .iconPalIndex = 2,
+        .iconPalIndex = P_GBA_STYLE_SPECIES_ICONS ? 1 : 4, // Bulbasaur icon copy
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(-3, 14, SHADOW_SIZE_L)
         FOOTPRINT(Haxorus)
@@ -12635,6 +12637,8 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         )
         .levelUpLearnset = sHydreigonLevelUpLearnset,
         .teachableLearnset = sHydreigonTeachableLearnset,
+        .formChangeTable = sHydreigonFormChangeTable,
+        .formSpeciesIdTable = sHydreigonFormSpeciesIdTable,
     },
 
 #if P_MEGA_EVOLUTIONS
@@ -12685,7 +12689,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .palette = gMonPalette_HydreigonMega,
         .shinyPalette = gMonShinyPalette_HydreigonMega,
         .iconSprite = gMonIcon_HydreigonMega,
-        .iconPalIndex = 2,
+        .iconPalIndex = P_GBA_STYLE_SPECIES_ICONS ? 1 : 4, // Bulbasaur icon copy
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         FOOTPRINT(Hydreigon)
     #if OW_BATTLE_ONLY_FORMS

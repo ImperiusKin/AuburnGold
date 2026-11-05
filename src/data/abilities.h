@@ -2582,4 +2582,18 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Contact moves from the user prevent the foe from escaping."),
         .aiRating = 2,
     },
+
+    [ABILITY_QUILL_RUSH] =
+    {
+        .name = _("Quill Rush"),
+        .description = COMPOUND_STRING("Placeholder ability. No effect yet."),
+        .aiRating = 0,
+    },
+
+    [ABILITY_WATER_HYDRATION] =
+    {
+        .name = _("Water Hydration"),
+        .description = COMPOUND_STRING("Placeholder ability. No effect yet."),
+        .aiRating = 0,
+    },
 };

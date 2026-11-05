@@ -1238,7 +1238,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .levelUpLearnset = sLinooneLevelUpLearnset,
         .teachableLearnset = sLinooneTeachableLearnset,
         .formSpeciesIdTable = sLinooneFormSpeciesIdTable,
-        .evolutions = EVOLUTION({EVO_LEVEL, 35, SPECIES_LIBREOONE}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 35, SPECIES_LIBERGOON}),
     },
 
     [SPECIES_LIBERGOON] =
@@ -1295,7 +1295,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .palette = gMonPalette_Libergoon,
         .shinyPalette = gMonShinyPalette_Libergoon,
         .iconSprite = gMonIcon_Libergoon,
-        .iconPalIndex = 2,
+        .iconPalIndex = P_GBA_STYLE_SPECIES_ICONS ? 1 : 4, // Bulbasaur icon copy
         .pokemonJumpType = PKMN_JUMP_TYPE_NORMAL,
         SHADOW(-6, 0, SHADOW_SIZE_L)
         FOOTPRINT(Libergoon)
@@ -2532,7 +2532,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING),
-        .abilities = { ABILITY_GUTS, ABILITY_SCRAPPY, ABILITY_AERIALATE },
+        .abilities = { ABILITY_GUTS, ABILITY_SCRAPPY, ABILITY_AERILATE },
         .bodyColor = BODY_COLOR_BLUE,
         .speciesName = _("Swellow"),
         .cryId = CRY_SWELLOW,
@@ -3684,7 +3684,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_TRUANT, ABILITY_INSOMNIA, ABILITY_COMOTOSE },
+        .abilities = { ABILITY_TRUANT, ABILITY_INSOMNIA, ABILITY_COMATOSE },
         .bodyColor = BODY_COLOR_BROWN,
         .speciesName = _("Slaking"),
         .cryId = CRY_SLAKING,
@@ -6276,6 +6276,8 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         )
         .levelUpLearnset = sRoseradeLevelUpLearnset,
         .teachableLearnset = sRoseradeTeachableLearnset,
+        .formChangeTable = sRoseradeFormChangeTable,
+        .formSpeciesIdTable = sRoseradeFormSpeciesIdTable,
     },
 #endif //P_GEN_4_CROSS_EVOS
 
@@ -6335,7 +6337,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .palette = gMonPalette_RoseradeMega,
         .shinyPalette = gMonShinyPalette_RoseradeMega,
         .iconSprite = gMonIcon_RoseradeMega,
-        .iconPalIndex = 0,
+        .iconPalIndex = P_GBA_STYLE_SPECIES_ICONS ? 1 : 4, // Bulbasaur icon copy
     #if P_GENDER_DIFFERENCES
         .frontPicFemale = gMonFrontPic_RoseradeMega,
         .frontPicSizeFemale = MON_COORDS_SIZE(48, 56),
@@ -10301,6 +10303,8 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         )
         .levelUpLearnset = sDusknoirLevelUpLearnset,
         .teachableLearnset = sDusknoirTeachableLearnset,
+        .formChangeTable = sDusknoirFormChangeTable,
+        .formSpeciesIdTable = sDusknoirFormSpeciesIdTable,
     },
 #endif //P_GEN_4_CROSS_EVOS
 
@@ -10354,7 +10358,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .palette = gMonPalette_DusknoirMega,
         .shinyPalette = gMonShinyPalette_DusknoirMega,
         .iconSprite = gMonIcon_DusknoirMega,
-        .iconPalIndex = 0,
+        .iconPalIndex = P_GBA_STYLE_SPECIES_ICONS ? 1 : 4, // Bulbasaur icon copy
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         FOOTPRINT(Chimecho)
         SHADOW(-2, 18, SHADOW_SIZE_L)
@@ -11566,7 +11570,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .evolutions = EVOLUTION({EVO_TRADE, 0, SPECIES_HUNTAIL, CONDITIONS({IF_HOLD_ITEM, ITEM_DEEP_SEA_TOOTH})},
                                 {EVO_TRADE, 0, SPECIES_GOREBYSS, CONDITIONS({IF_HOLD_ITEM, ITEM_DEEP_SEA_SCALE})},
                                 {EVO_ITEM, ITEM_WATER_STONE, SPECIES_HUNTAIL},
-                                {EVO_ITEM, ITEM_SUN__STONE, SPECIES_GOREBYSS}),
+                                {EVO_ITEM, ITEM_SUN_STONE, SPECIES_GOREBYSS}),
     },
 
     [SPECIES_HUNTAIL] =
@@ -13523,7 +13527,7 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         .friendship = 100,
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
-        .abilities = { ABILITY_SERENE_GRACE, ABILITY_SERENE_GRACE, ABILITY_COMOTOSE },
+        .abilities = { ABILITY_SERENE_GRACE, ABILITY_SERENE_GRACE, ABILITY_COMATOSE },
         .bodyColor = BODY_COLOR_YELLOW,
         .speciesName = _("Jirachi"),
         .cryId = CRY_JIRACHI,

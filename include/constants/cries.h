@@ -2558,4 +2558,18 @@ enum PokemonCry
     CRY_COUNT,
 };
 
+// Placeholder cries for species from LevelUpData-PokemonUpdates (reuse an existing cry)
+#define CRY_MALARKEE             CRY_FARFETCHD
+#define CRY_PURSOLA              CRY_CORSOLA
+#define CRY_BARBEQWIL            CRY_QWILFISH
+#define CRY_LIBERGOON            CRY_LINOONE
+#define CRY_MR_HYMN              CRY_MR_MIME
+#define CRY_DUSKNOIR_MEGA        CRY_DUSKNOIR
+#define CRY_GOODRA_MEGA          CRY_GOODRA
+#define CRY_GOODRA_HISUI_MEGA    CRY_GOODRA
+#define CRY_HAXORUS_MEGA         CRY_HAXORUS
+#define CRY_HYDREIGON_MEGA       CRY_HYDREIGON
+#define CRY_LAPRAS_MEGA          CRY_LAPRAS
+#define CRY_MAGNEZONE_MEGA       CRY_MAGNEZONE
+
 #endif // GUARD_CONSTANTS_CRIES_H

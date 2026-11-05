@@ -1429,9 +1429,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .abilities = { ABILITY_COMPOUND_EYES, ABILITY_COMPOUND_EYES, ABILITY_TINTED_LENS },
         .bodyColor = BODY_COLOR_WHITE,
         .speciesName = _("Butterfree"),
-        .cryId = CRY_BUTTERFREE,
-        .natDexNum = NATIONAL_DEX_BUTTERFREE,
-        .categoryName = _("Butterfly"),
     #if P_MODIFIED_MEGA_CRIES
         .cryId = CRY_BUTTERFREE,
     #else
@@ -1477,7 +1474,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .palette = gMonPalette_ButterfreeMega,
         .shinyPalette = gMonShinyPalette_ButterfreeMega,
         .iconSprite = gMonIcon_ButterfreeMega,
-        .iconPalIndex = 0,
+        .iconPalIndex = P_GBA_STYLE_SPECIES_ICONS ? 1 : 4, // Bulbasaur icon copy
 #if P_GENDER_DIFFERENCES && !P_GBA_STYLE_SPECIES_GFX
         .frontPicFemale = gMonFrontPic_ButterfreeFMega,
         .frontPicSizeFemale = MON_COORDS_SIZE(64, 56),
@@ -1507,7 +1504,9 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .teachableLearnset = sButterfreeTeachableLearnset,
         .formSpeciesIdTable = sButterfreeFormSpeciesIdTable,
         .formChangeTable = sButterfreeFormChangeTable,
+        .isMegaEvolution = TRUE,
     },
+#endif //P_MEGA_EVOLUTIONS
 
 #if P_GIGANTAMAX_FORMS
     [SPECIES_BUTTERFREE_GMAX] =
@@ -3491,7 +3490,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .palette = gMonPalette_PikachuFlying,
         .shinyPalette = gMonShinyPalette_PikachuFlying,
         .iconSprite = gMonIcon_PikachuFlying,
-        .iconPalIndex = 1,
+        .iconPalIndex = P_GBA_STYLE_SPECIES_ICONS ? 1 : 4, // Bulbasaur icon copy
         .pokemonJumpType = PKMN_JUMP_TYPE_NORMAL,
         SHADOW(-3, 5, SHADOW_SIZE_M)
         FOOTPRINT(Pikachu)
@@ -3543,7 +3542,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .palette = gMonPalette_PikachuSurfing,
         .shinyPalette = gMonShinyPalette_PikachuSurfing,
         .iconSprite = gMonIcon_PikachuSurfing,
-        .iconPalIndex = 1,
+        .iconPalIndex = P_GBA_STYLE_SPECIES_ICONS ? 1 : 4, // Bulbasaur icon copy
         .pokemonJumpType = PKMN_JUMP_TYPE_NORMAL,
         SHADOW(-3, 5, SHADOW_SIZE_M)
         FOOTPRINT(Pikachu)
@@ -7538,7 +7537,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .teachableLearnset = sMeowthAlolaTeachableLearnset,
         .eggMoveLearnset = sMeowthAlolaEggMoveLearnset,
         .formSpeciesIdTable = sMeowthFormSpeciesIdTable,
-        .evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_PERSIAN_ALOLA})},
+        .evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_PERSIAN_ALOLA}),
     },
 
     [SPECIES_PERSIAN_ALOLA] =
@@ -9389,7 +9388,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     #else
         .cryId = CRY_MACHAMP,
     #endif // P_MODIFIED_MEGA_CRIES
-        .natDexNum = NATIONAL_DEX_MACHAMP
+        .natDexNum = NATIONAL_DEX_MACHAMP,
         .categoryName = _("Superpower"),
         .height = 18,
         .weight = 1600,
@@ -9414,7 +9413,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .palette = gMonPalette_MachampMega,
         .shinyPalette = gMonShinyPalette_MachampMega,
         .iconSprite = gMonIcon_MachampMega,
-        .iconPalIndex = 2,
+        .iconPalIndex = P_GBA_STYLE_SPECIES_ICONS ? 1 : 4, // Bulbasaur icon copy
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(7, 13, SHADOW_SIZE_L)
         FOOTPRINT(Machamp)
@@ -11394,6 +11393,8 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         )
         .levelUpLearnset = sMagnezoneLevelUpLearnset,
         .teachableLearnset = sMagnezoneTeachableLearnset,
+        .formChangeTable = sMagnezoneFormChangeTable,
+        .formSpeciesIdTable = sMagnezoneFormSpeciesIdTable,
     },
 #endif //P_GEN_4_CROSS_EVOS
 
@@ -11455,7 +11456,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .palette = gMonPalette_MagnezoneMega,
         .shinyPalette = gMonShinyPalette_MagnezoneMega,
         .iconSprite = gMonIcon_MagnezoneMega,
-        .iconPalIndex = 2,
+        .iconPalIndex = P_GBA_STYLE_SPECIES_ICONS ? 1 : 4, // Bulbasaur icon copy
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(0, 11, SHADOW_SIZE_XL_BATTLE_ONLY)
         FOOTPRINT(Magnezone)
@@ -11592,7 +11593,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .speciesName = _("Malar'kee"),
         .cryId = CRY_MALARKEE,
         .natDexNum = NATIONAL_DEX_MALARKEE,
-        .categoryName = _("Swordsmaster Duck"),
+        .categoryName = _("Swordsmaster"),
         .height = 9,
         .weight = 180,
         .description = COMPOUND_STRING(
@@ -11629,7 +11630,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .palette = gMonPalette_Malarkee,
         .shinyPalette = gMonShinyPalette_Malarkee,
         .iconSprite = gMonIcon_Malarkee,
-        .iconPalIndex = 1,
+        .iconPalIndex = P_GBA_STYLE_SPECIES_ICONS ? 1 : 4, // Bulbasaur icon copy
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(-3, 5, SHADOW_SIZE_M)
         FOOTPRINT(Malarkee)
@@ -13531,7 +13532,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .palette = gMonPalette_KinglerMega,
         .shinyPalette = gMonShinyPalette_KinglerMega,
         .iconSprite = gMonIcon_KinglerMega,
-        .iconPalIndex = P_GBA_STYLE_SPECIES_ICONS ? 2 : 0,
+        .iconPalIndex = P_GBA_STYLE_SPECIES_ICONS ? 1 : 4, // Bulbasaur icon copy
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(-2, 4, SHADOW_SIZE_XL_BATTLE_ONLY)
         FOOTPRINT(Kingler)
@@ -13973,10 +13974,11 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sExeggcuteLevelUpLearnset,
         .teachableLearnset = sExeggcuteTeachableLearnset,
         .eggMoveLearnset = sExeggcuteEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_ITEM, ITEM_LEAF_STONE, SPECIES_EXEGGUTOR})
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_LEAF_STONE, SPECIES_EXEGGUTOR}
                             #if P_ALOLAN_FORMS
-                                ,({EVO_ITEM, ITEM_SUN_STONE, SPECIES_EXEGGUTOR_ALOLA})
+                                ,{EVO_ITEM, ITEM_SUN_STONE, SPECIES_EXEGGUTOR_ALOLA}
                             #endif
+                            ),
     },
 
     [SPECIES_EXEGGUTOR] =
@@ -14231,7 +14233,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_MONSTER),
-        .abilities = { ABILITY_ROCK_HEAD, ABILITY_BATTLE_ARMOR ABILITY_BONE_ZONE },
+        .abilities = { ABILITY_ROCK_HEAD, ABILITY_BATTLE_ARMOR, ABILITY_BONE_ZONE },
         .bodyColor = BODY_COLOR_BROWN,
         .noFlip = TRUE,
         .speciesName = _("Marowak"),
@@ -14944,7 +14946,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sKoffingLevelUpLearnset,
         .teachableLearnset = sKoffingTeachableLearnset,
         .eggMoveLearnset = sKoffingEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 35, SPECIES_WEEZING, CONDITIONS({IF_NOT_TIME, TIME_NIGHT})},
+        .evolutions = EVOLUTION({EVO_LEVEL, 35, SPECIES_WEEZING, CONDITIONS({IF_NOT_TIME, TIME_NIGHT})}
                             #if P_GALARIAN_FORMS
                                 ,{EVO_LEVEL, 35, SPECIES_WEEZING_GALAR, CONDITIONS({IF_TIME, TIME_NIGHT})}
                             #endif
@@ -16129,6 +16131,8 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         )
         .levelUpLearnset = sKingdraLevelUpLearnset,
         .teachableLearnset = sKingdraTeachableLearnset,
+        .formChangeTable = sKingdraFormChangeTable,
+        .formSpeciesIdTable = sKingdraFormSpeciesIdTable,
     },
 #endif //P_GEN_2_CROSS_EVOS
 
@@ -16198,7 +16202,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .palette = gMonPalette_KingdraMega,
         .shinyPalette = gMonShinyPalette_KingdraMega,
         .iconSprite = gMonIcon_KingdraMega,
-        .iconPalIndex = 2,
+        .iconPalIndex = P_GBA_STYLE_SPECIES_ICONS ? 1 : 4, // Bulbasaur icon copy
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(3, 12, SHADOW_SIZE_M)
         FOOTPRINT(Kingdra)
@@ -16216,7 +16220,6 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .isMegaEvolution = TRUE,
         .levelUpLearnset = sKingdraLevelUpLearnset,
         .teachableLearnset = sKingdraTeachableLearnset,
-        .eggMoveLearnset = sKingdraEggMoveLearnset,
         .formSpeciesIdTable = sKingdraFormSpeciesIdTable,
         .formChangeTable = sKingdraFormChangeTable,
     },
@@ -16767,7 +16770,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .teachableLearnset = sMrMimeTeachableLearnset,
         .eggMoveLearnset = sMrMimeEggMoveLearnset,
         .formSpeciesIdTable = sMrMimeFormSpeciesIdTable,
-        .evolutions = EVOLUTION({EVO_LEVEL, 42, SPECIES_MR_HYME})
+        .evolutions = EVOLUTION({EVO_LEVEL, 42, SPECIES_MR_HYMN})
     },
 
     [SPECIES_MR_HYMN] =
@@ -16823,7 +16826,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .palette = gMonPalette_MrHymn,
         .shinyPalette = gMonShinyPalette_MrHymn,
         .iconSprite = gMonIcon_MrHymn,
-        .iconPalIndex = 0,
+        .iconPalIndex = P_GBA_STYLE_SPECIES_ICONS ? 1 : 4, // Bulbasaur icon copy
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(-1, 7, SHADOW_SIZE_M)
         FOOTPRINT(MrHymn)
@@ -17068,6 +17071,9 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
                             #if P_GEN_2_CROSS_EVOS
                                 {EVO_TRADE, 0, SPECIES_SCIZOR, CONDITIONS({IF_HOLD_ITEM, ITEM_METAL_COAT})},
                                 {EVO_ITEM, ITEM_METAL_COAT, SPECIES_SCIZOR}
+                            #if P_GEN_8_CROSS_EVOS
+                                ,
+                            #endif
                             #endif
                             #if P_GEN_8_CROSS_EVOS
                                 {EVO_ITEM, ITEM_KINGS_ROCK, SPECIES_KLEAVOR}
@@ -18724,7 +18730,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .palette = gMonPalette_LaprasMega,
         .shinyPalette = gMonShinyPalette_LaprasMega,
         .iconSprite = gMonIcon_LaprasMega,
-        .iconPalIndex = 0,
+        .iconPalIndex = P_GBA_STYLE_SPECIES_ICONS ? 1 : 4, // Bulbasaur icon copy
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(3, 17, SHADOW_SIZE_XL_BATTLE_ONLY)
         FOOTPRINT(Lapras)
@@ -20552,7 +20558,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .palette = gMonPalette_SnorlaxMega,
         .shinyPalette = gMonShinyPalette_SnorlaxMega,
         .iconSprite = gMonIcon_SnorlaxMega,
-        .iconPalIndex = 2,
+        .iconPalIndex = P_GBA_STYLE_SPECIES_ICONS ? 1 : 4, // Bulbasaur icon copy
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(-2, 16, SHADOW_SIZE_M)
         FOOTPRINT(Snorlax)

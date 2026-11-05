@@ -761,6 +761,31 @@ static const u16 sFarfetchdEggMoveLearnset[] = {
     MOVE_SKY_ATTACK,
     MOVE_UNAVAILABLE,
 };
+
+// Copy of sFarfetchdEggMoveLearnset (placeholder for the new species)
+static const u16 sMalarkeeEggMoveLearnset[] = {
+    MOVE_STEEL_WING,
+    MOVE_FORESIGHT,
+    MOVE_WISH,
+    MOVE_MIRROR_MOVE,
+    MOVE_GUST,
+    MOVE_QUICK_ATTACK,
+    MOVE_FLAIL,
+    MOVE_FEATHER_DANCE,
+    MOVE_CURSE,
+    MOVE_COVET,
+    MOVE_MUD_SLAP,
+    MOVE_NIGHT_SLASH,
+    MOVE_LEAF_BLADE,
+    MOVE_REVENGE,
+    MOVE_ROOST,
+    MOVE_TRUMP_CARD,
+    MOVE_SIMPLE_BEAM,
+    MOVE_FIRST_IMPRESSION,
+    MOVE_FINAL_GAMBIT,
+    MOVE_SKY_ATTACK,
+    MOVE_UNAVAILABLE,
+};
 #if P_GALARIAN_FORMS
 static const u16 sFarfetchdGalarEggMoveLearnset[] = {
     MOVE_COUNTER,
@@ -1210,6 +1235,26 @@ static const u16 sMimeJrEggMoveLearnset[] = {
 };
 #endif //P_GEN_4_CROSS_EVOS
 static const u16 sMrMimeEggMoveLearnset[] = {
+    MOVE_FUTURE_SIGHT,
+    MOVE_HYPNOSIS,
+    MOVE_MIMIC,
+    MOVE_FAKE_OUT,
+    MOVE_TRICK,
+    MOVE_CONFUSE_RAY,
+    MOVE_WAKE_UP_SLAP,
+    MOVE_TEETER_DANCE,
+    MOVE_HEALING_WISH,
+    MOVE_CHARM,
+    MOVE_NASTY_PLOT,
+    MOVE_POWER_SPLIT,
+    MOVE_MAGIC_ROOM,
+    MOVE_ICY_WIND,
+    MOVE_PSYCHIC_TERRAIN,
+    MOVE_UNAVAILABLE,
+};
+
+// Copy of sMrMimeEggMoveLearnset (placeholder for the new species)
+static const u16 sMrHymnEggMoveLearnset[] = {
     MOVE_FUTURE_SIGHT,
     MOVE_HYPNOSIS,
     MOVE_MIMIC,
@@ -2040,6 +2085,20 @@ static const u16 sQwilfishEggMoveLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 
+// Copy of sQwilfishEggMoveLearnset (placeholder for the new species)
+static const u16 sBarbeqwilEggMoveLearnset[] = {
+    MOVE_FLAIL,
+    MOVE_BUBBLE_BEAM,
+    MOVE_SUPERSONIC,
+    MOVE_ASTONISH,
+    MOVE_SIGNAL_BEAM,
+    MOVE_AQUA_JET,
+    MOVE_WATER_PULSE,
+    MOVE_BRINE,
+    MOVE_ACID_SPRAY,
+    MOVE_UNAVAILABLE,
+};
+
 #if P_HISUIAN_FORMS
 static const u16 sQwilfishHisuiEggMoveLearnset[] = {
     MOVE_ACID_SPRAY,
@@ -2185,6 +2244,26 @@ static const u16 sSwinubEggMoveLearnset[] = {
 
 #if P_FAMILY_CORSOLA
 static const u16 sCorsolaEggMoveLearnset[] = {
+    MOVE_SCREECH,
+    MOVE_MIST,
+    MOVE_AMNESIA,
+    MOVE_BARRIER,
+    MOVE_INGRAIN,
+    MOVE_CONFUSE_RAY,
+    MOVE_ICICLE_SPEAR,
+    MOVE_NATURE_POWER,
+    MOVE_AQUA_RING,
+    MOVE_CURSE,
+    MOVE_BIDE,
+    MOVE_WATER_PULSE,
+    MOVE_HEAD_SMASH,
+    MOVE_CAMOUFLAGE,
+    MOVE_LIQUIDATION,
+    MOVE_UNAVAILABLE,
+};
+
+// Copy of sCorsolaEggMoveLearnset (placeholder for the new species)
+static const u16 sPursolaEggMoveLearnset[] = {
     MOVE_SCREECH,
     MOVE_MIST,
     MOVE_AMNESIA,

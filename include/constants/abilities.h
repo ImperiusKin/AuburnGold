@@ -357,6 +357,8 @@ enum __attribute__((packed)) Ability
     ABILITY_BAD_COMPANY = 333,
     ABILITY_THE_GRIPPER = 334,
     ABILITY_ICE_BODY_OLD = 335,
+    ABILITY_QUILL_RUSH = 336, // Placeholder: no effect yet
+    ABILITY_WATER_HYDRATION = 337, // Placeholder: no effect yet
     
     ABILITIES_COUNT_GEN9,
     ABILITIES_COUNT = ABILITIES_COUNT_GEN9,

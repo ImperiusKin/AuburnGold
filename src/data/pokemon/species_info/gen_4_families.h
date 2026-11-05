@@ -214,10 +214,12 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         )
         .levelUpLearnset = sTorterraLevelUpLearnset,
         .teachableLearnset = sTorterraTeachableLearnset,
+        .formChangeTable = sTorterraFormChangeTable,
+        .formSpeciesIdTable = sTorterraFormSpeciesIdTable,
     },
 
 #if P_MEGA_EVOLUTIONS
-    [SPECIES_TORTERRA] =
+    [SPECIES_TORTERRA_MEGA] =
     {
         .baseHP        = 95,
         .baseAttack    = 139,
@@ -494,10 +496,12 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         )
         .levelUpLearnset = sInfernapeLevelUpLearnset,
         .teachableLearnset = sInfernapeTeachableLearnset,
+        .formChangeTable = sInfernapeFormChangeTable,
+        .formSpeciesIdTable = sInfernapeFormSpeciesIdTable,
     },
 
 #if P_MEGA_EVOLUTIONS
-    [SPECIES_INFERNAPE] =
+    [SPECIES_INFERNAPE_MEGA] =
     {
         .baseHP        = 76,
         .baseAttack    = 134, // +30
@@ -782,6 +786,8 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         )
         .levelUpLearnset = sEmpoleonLevelUpLearnset,
         .teachableLearnset = sEmpoleonTeachableLearnset,
+        .formChangeTable = sEmpoleonFormChangeTable,
+        .formSpeciesIdTable = sEmpoleonFormSpeciesIdTable,
     },
 #if P_MEGA_EVOLUTIONS
     [SPECIES_EMPOLEON_MEGA] =
@@ -801,7 +807,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_WATER_1, EGG_GROUP_FIELD),
-        .abilities = { ABILITY_LIGHTNING_ROD, ABILITY_LIGHTNING_ROD, ABILITY_EMPERORS_PRESENCE },
+        .abilities = { ABILITY_LIGHTNING_ROD, ABILITY_LIGHTNING_ROD, ABILITY_EMPEROR_PRESENCE },
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = TRUE,
         .speciesName = _("Empoleon"),
@@ -1710,7 +1716,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_ILLUNIMATE, ABILITY_INTIMIDATE, ABILITY_GUTS },
+        .abilities = { ABILITY_ILLUMINATE, ABILITY_INTIMIDATE, ABILITY_GUTS },
         .bodyColor = BODY_COLOR_BLUE,
         .speciesName = _("Luxray"),
         .cryId = CRY_LUXRAY,
@@ -1773,6 +1779,8 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         )
         .levelUpLearnset = sLuxrayLevelUpLearnset,
         .teachableLearnset = sLuxrayTeachableLearnset,
+        .formChangeTable = sLuxrayFormChangeTable,
+        .formSpeciesIdTable = sLuxrayFormSpeciesIdTable,
     },
 
 #if P_MEGA_EVOLUTIONS
@@ -1799,7 +1807,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
-        .abilities = { ABILITY_ILLUNIMATE, ABILITY_INTIMIDATE, ABILITY_GUTS },
+        .abilities = { ABILITY_ILLUMINATE, ABILITY_INTIMIDATE, ABILITY_GUTS },
         .bodyColor = BODY_COLOR_BLUE,
         .speciesName = _("Luxray"),
         .cryId = CRY_LUXRAY,
@@ -1834,7 +1842,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .palette = gMonPalette_LuxrayMega,
         .shinyPalette = gMonShinyPalette_LuxrayMega,
         .iconSprite = gMonIcon_LuxrayMega,
-        .iconPalIndex = 0,
+        .iconPalIndex = P_GBA_STYLE_SPECIES_ICONS ? 1 : 4, // Bulbasaur icon copy
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         FOOTPRINT(Luxray)
         SHADOW(-1, 10, SHADOW_SIZE_L)
@@ -2705,7 +2713,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
-        .abilities = { ABILITY_QUEENLY_MAGESTY, ABILITY_HUSTLE, ABILITY_UNNERVE },
+        .abilities = { ABILITY_QUEENLY_MAJESTY, ABILITY_HUSTLE, ABILITY_UNNERVE },
         .bodyColor = BODY_COLOR_YELLOW,
         .speciesName = _("Vespiquen"),
         .cryId = CRY_VESPIQUEN,
@@ -5437,6 +5445,8 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         )
         .levelUpLearnset = sDrapionLevelUpLearnset,
         .teachableLearnset = sDrapionTeachableLearnset,
+        .formChangeTable = sDrapionFormChangeTable,
+        .formSpeciesIdTable = sDrapionFormSpeciesIdTable,
     },
 
 #if P_MEGA_EVOLUTIONS
@@ -5497,7 +5507,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .palette = gMonPalette_DrapionMega,
         .shinyPalette = gMonShinyPalette_DrapionMega,
         .iconSprite = gMonIcon_DrapionMega,
-        .iconPalIndex = 2,
+        .iconPalIndex = P_GBA_STYLE_SPECIES_ICONS ? 1 : 4, // Bulbasaur icon copy
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(-1, 11, SHADOW_SIZE_M)
         FOOTPRINT(Drapion)
@@ -7853,7 +7863,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .friendship = 0,
         .growthRate = GROWTH_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
-        .abilities = { ABILITY_BAD_DREAMS, ABILITY_BAD_DREAMS, ABILITY_PRANSKTER },
+        .abilities = { ABILITY_BAD_DREAMS, ABILITY_BAD_DREAMS, ABILITY_PRANKSTER },
         .bodyColor = BODY_COLOR_BLACK,
         .noFlip = TRUE,
         .speciesName = _("Darkrai"),
