@@ -3,29 +3,141 @@
   "name": "Route29",
   "layout": "LAYOUT_ROUTE29",
   "music": "MUS_ROUTE101",
-  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_ROUTE_29",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
-  "map_type": "MAP_TYPE_NONE",
-  "allow_cycling": false,
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
   "allow_escaping": false,
-  "allow_running": false,
+  "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
       "map": "MAP_SOUTHERN_FIELD",
-      "offset": 17,
+      "offset": 16,
       "direction": "down"
     },
     {
       "map": "MAP_NEW_BARK_TOWN",
       "offset": -2,
       "direction": "right"
+    },
+    {
+      "map": "MAP_ROUTE_45",
+      "offset": 16,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_CHERRYGROVE_CITY",
+      "offset": 2,
+      "direction": "left"
     }
   ],
-  "object_events": [],
-  "warp_events": [],
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GEN4_YOUNGSTER_2",
+      "x": 38,
+      "y": 26,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "Route29_EventScript_Trainer_1",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GEN4_BUG_CATCHER",
+      "x": 28,
+      "y": 22,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "Route29_EventScript_Trainer_2",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GEN4_YOUNGSTER",
+      "x": 4,
+      "y": 22,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "Route29_EventScript_Trainer_3",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GEN4_GYM_LEADER_CHEREN",
+      "x": 15,
+      "y": 8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route29_EventScript_Cheren",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GEN4_SAILOR",
+      "x": 19,
+      "y": 24,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route29_EventScript_Train_Conductor",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 29,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_CONNECTION_RT29_RT46",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 28,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_CONNECTION_RT29_RT46",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 4,
+      "y": 24,
+      "elevation": 0,
+      "dest_map": "MAP_CONNECTION_RT29CHERRYGROVE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 4,
+      "y": 25,
+      "elevation": 0,
+      "dest_map": "MAP_CONNECTION_RT29CHERRYGROVE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 4,
+      "y": 26,
+      "elevation": 0,
+      "dest_map": "MAP_CONNECTION_RT29CHERRYGROVE",
+      "dest_warp_id": "0"
+    }
+  ],
   "coord_events": [],
   "bg_events": []
 }

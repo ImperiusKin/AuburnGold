@@ -11,11 +11,18 @@ Or target a tileset directly:
 
 Wipe touches only metatile_attributes.bin (behavior / terrain type / encounter
 type / layer type). Dedupe touches only tiles.png and metatiles.bin (tile
-graphics + which tile/flip/palette each metatile slot points at).
+graphics + which tile/flip/palette each metatile slot points at). --delete
+refuses to run if any layout in layouts.json still references the tileset -
+it doesn't just remove the header declarations, it also moves the data
+directory aside to '<dir>.deleted' rather than actually deleting it. --rename
+renames the struct/symbols/directory and every gTileset_/METATILE_ reference
+across headers, layouts.json, metatile_labels.h, and all of src/+include/ -
+except a .callback function (e.g. InitTilesetAnim_X), which is left alone.
 """
 import argparse
 import json
 import re
+import shutil
 import struct
 import sys
 from pathlib import Path
@@ -27,7 +34,11 @@ HEADERS_H = ROOT / "src/data/tilesets/headers.h"
 METATILES_H = ROOT / "src/data/tilesets/metatiles.h"
 GRAPHICS_H = ROOT / "src/data/tilesets/graphics.h"
 LAYOUTS_JSON = ROOT / "data/layouts/layouts.json"
+METATILE_LABELS_H = ROOT / "include/constants/metatile_labels.h"
+PORYMAP_CFG = ROOT / "porymap.project.cfg"
 MAPS_DIR = ROOT / "data/maps"
+SCAN_DIRS = (ROOT / "src", ROOT / "include")
+SCAN_EXTS = {".c", ".h"}
 
 TILES_INCBIN_RE = re.compile(r"const u32 (\w+)\[\]\s*=\s*INCBIN_U32\(\"([^\"]+)\"\)")
 PALETTES_BLOCK_RE = re.compile(r"const u16 (\w+)\[\]\[16\]\s*=\s*\{(.*?)\};", re.DOTALL)
@@ -978,8 +989,300 @@ def find_paired_primaries(secondary_ts):
     return prims
 
 
+def find_layouts_using_tileset(ts):
+    """Every layout id that references ts as its primary or secondary tileset.
+    Stronger than checking ts.maps: a layout can exist (and so still need
+    this tileset to build) without any map.json actually using it."""
+    layouts = json.loads(LAYOUTS_JSON.read_text())["layouts"]
+    return [layout["id"] for layout in layouts
+            if layout.get("primary_tileset") == ts.name or layout.get("secondary_tileset") == ts.name]
+
+
+def _strip_line_for_symbol(text, sym, array_decl_type):
+    """Removes a single-line `const {array_decl_type} {sym}[] = ...;` declaration."""
+    pattern = re.compile(rf'^const {re.escape(array_decl_type)} {re.escape(sym)}\[\].*\n', re.MULTILINE)
+    return pattern.sub('', text, count=1)
+
+
+def _strip_tileset_struct(text, name):
+    pattern = re.compile(rf'\nconst struct Tileset {re.escape(name)}\s*=\s*\{{.*?\}};\n', re.DOTALL)
+    return pattern.sub('\n', text, count=1)
+
+
+def _strip_palettes_block(text, sym):
+    pattern = re.compile(rf'\nconst u16 {re.escape(sym)}\[\]\[16\]\s*=\s*\{{.*?\}};\n', re.DOTALL)
+    return pattern.sub('\n', text, count=1)
+
+
+def _collapse_blank_lines(text):
+    return re.sub(r'\n{3,}', '\n\n', text)
+
+
+def delete_tileset(ts, tilesets, ask_restore=True):
+    """Deletes an unused tileset: its data directory and its declarations in
+    headers.h/metatiles.h/graphics.h. Refuses if any layout (not just any
+    map - see find_layouts_using_tileset) still references it.
+
+    Nothing is permanently destroyed: the data directory is renamed (not
+    removed) to '<dir>.deleted', and the three header files are snapshotted
+    first, so this can always be undone by hand even outside ask_restore."""
+    using = find_layouts_using_tileset(ts)
+    if using:
+        print(f"  ! {ts.name} is still used by {len(using)} layout(s), refusing to delete: "
+              f"{', '.join(using[:5])}{', ...' if len(using) > 5 else ''}")
+        return False
+
+    if not ts.dir or not ts.dir.is_dir():
+        print(f"  ! Could not find {ts.name}'s data directory. Aborting.")
+        return False
+
+    deleted_dir = ts.dir.with_name(ts.dir.name + ".deleted")
+    if deleted_dir.exists():
+        print(f"  ! {deleted_dir.relative_to(ROOT)} already exists (a previous delete?). Aborting.")
+        return False
+
+    snapshots = {p: p.read_text() for p in (HEADERS_H, METATILES_H, GRAPHICS_H)}
+
+    headers_text = _collapse_blank_lines(_strip_tileset_struct(snapshots[HEADERS_H], ts.name))
+    HEADERS_H.write_text(headers_text)
+
+    metatiles_text = snapshots[METATILES_H]
+    if ts.metatiles_sym:
+        metatiles_text = _strip_line_for_symbol(metatiles_text, ts.metatiles_sym, "u16")
+    if ts.attrs_sym:
+        metatiles_text = _strip_line_for_symbol(metatiles_text, ts.attrs_sym, "u16")
+    METATILES_H.write_text(_collapse_blank_lines(metatiles_text))
+
+    graphics_text = snapshots[GRAPHICS_H]
+    if ts.tiles_sym:
+        graphics_text = _strip_line_for_symbol(graphics_text, ts.tiles_sym, "u32")
+    if ts.palettes_sym:
+        graphics_text = _strip_palettes_block(graphics_text, ts.palettes_sym)
+    GRAPHICS_H.write_text(_collapse_blank_lines(graphics_text))
+
+    import shutil
+    shutil.move(str(ts.dir), str(deleted_dir))
+
+    print(f"  Removed {ts.name} from headers.h/metatiles.h/graphics.h")
+    print(f"  Moved {ts.dir.relative_to(ROOT)}/ -> {deleted_dir.relative_to(ROOT)}/ (not deleted)")
+
+    if _prompt_restore(f"(undo the header edits and move {deleted_dir.name}/ back)", ask_restore):
+        for path, text in snapshots.items():
+            path.write_text(text)
+        shutil.move(str(deleted_dir), str(ts.dir))
+        print("  Restored.")
+    else:
+        print(f"  Kept deleted. Once you've confirmed the build is fine, you can permanently remove "
+              f"{deleted_dir.relative_to(ROOT)}/ by hand.")
+    del tilesets[ts.name]
+    return True
+
+
 def _new_c_symbol(new_dir_name):
     return "gTileset_" + "".join(part.capitalize() for part in new_dir_name.split("_"))
+
+
+def _camel_words(s):
+    return re.findall(r"[A-Z]+(?![a-z])|[A-Z][a-z]*|[a-z0-9]+", s)
+
+
+def _dir_name_from_suffix(suffix):
+    """'PokemonCenter_Frlg' -> 'pokemon_center_frlg' (mirrors _new_c_symbol's inverse)."""
+    words = []
+    for part in suffix.split("_"):
+        words.extend(_camel_words(part))
+    return "_".join(w.lower() for w in words if w)
+
+
+def _word_replace(text, old, new):
+    return re.sub(r"\b" + re.escape(old) + r"\b", new, text)
+
+
+def _prefix_replace(text, old, new):
+    """Like _word_replace, but also matches when followed by '_' (identifier
+    prefixes like METATILE_Old_Door - a trailing '_' means \\b alone won't
+    see a boundary there, since '_' is itself a word character)."""
+    return re.sub(r"\b" + re.escape(old) + r"(?=_|\b)", new, text)
+
+
+def _metatile_label_group_span(lines, tileset_name):
+    """Returns (start, end) line indices [start, end) of the "// gTileset_X"
+    section for this tileset in metatile_labels.h, or None if it has no
+    labels defined."""
+    header_re = re.compile(r"^// (\S+)\s*$")
+    start = None
+    for i, line in enumerate(lines):
+        m = header_re.match(line.rstrip("\n"))
+        if m and start is None and m.group(1) == tileset_name:
+            start = i
+            continue
+        if start is not None and m:
+            return start, i
+    if start is not None:
+        return start, len(lines)
+    return None
+
+
+def _iter_scan_files():
+    for base in SCAN_DIRS:
+        for path in base.rglob("*"):
+            if path.is_file() and path.suffix in SCAN_EXTS:
+                yield path
+
+
+def rename_tileset(ts, tilesets, new_name, ask_restore=True):
+    """Renames a tileset: its struct symbol, its tiles/palettes/metatiles/
+    attributes symbols (normalized to the standard gTilesetTiles_X /
+    gTilesetPalettes_X / gMetatiles_X / gMetatileAttributes_X convention,
+    regardless of what the old ones happened to be named), its data
+    directory, every layouts.json reference, its metatile_labels.h section
+    (including the METATILE_X_* label prefix), porymap.project.cfg's
+    default tileset fields, and every other `gTileset_X` reference found in
+    src/ and include/ (door tables, special-case tileset checks, etc).
+
+    Does NOT rename a .callback function (e.g. InitTilesetAnim_X) even if
+    it happens to follow the same naming convention - that's a real
+    function defined (and possibly called) elsewhere, renaming it safely
+    would need its own review."""
+    if not new_name.startswith("gTileset_"):
+        print(f"  ! New name must start with \"gTileset_\", got {new_name!r}. Aborting.")
+        return False
+    if new_name == ts.name:
+        print("  ! New name is the same as the current name.")
+        return False
+    if new_name in tilesets:
+        print(f"  ! {new_name} already exists. Aborting.")
+        return False
+
+    old_name = ts.name
+    old_suffix = old_name[len("gTileset_"):]
+    new_suffix = new_name[len("gTileset_"):]
+
+    new_syms = {}
+    if ts.tiles_sym:
+        new_syms[ts.tiles_sym] = f"gTilesetTiles_{new_suffix}"
+    if ts.palettes_sym:
+        new_syms[ts.palettes_sym] = f"gTilesetPalettes_{new_suffix}"
+    if ts.metatiles_sym:
+        new_syms[ts.metatiles_sym] = f"gMetatiles_{new_suffix}"
+    if ts.attrs_sym:
+        new_syms[ts.attrs_sym] = f"gMetatileAttributes_{new_suffix}"
+
+    combined_existing = HEADERS_H.read_text() + METATILES_H.read_text() + GRAPHICS_H.read_text()
+    collisions = [new for old, new in new_syms.items()
+                  if old != new and re.search(r"\b" + re.escape(new) + r"\b", combined_existing)]
+    if collisions:
+        print(f"  ! Symbol collision(s), aborting: {', '.join(collisions)} already exist.")
+        return False
+
+    if not ts.dir or not ts.dir.is_dir():
+        print(f"  ! Could not find {ts.name}'s data directory. Aborting.")
+        return False
+    old_dir = ts.dir
+    new_dir_name = _dir_name_from_suffix(new_suffix)
+    new_dir = old_dir.parent / new_dir_name
+    if new_dir != old_dir and new_dir.exists():
+        print(f"  ! {new_dir.relative_to(ROOT)}/ already exists. Aborting.")
+        return False
+    old_rel_dir = str(old_dir.relative_to(ROOT))
+    new_rel_dir = str(new_dir.relative_to(ROOT))
+
+    snapshot_paths = [HEADERS_H, METATILES_H, GRAPHICS_H, LAYOUTS_JSON, METATILE_LABELS_H, PORYMAP_CFG]
+    scan_files = [p for p in _iter_scan_files() if p not in snapshot_paths]
+    snapshots = {p: p.read_text() for p in snapshot_paths if p.is_file()}
+    snapshots.update({p: p.read_text() for p in scan_files})
+
+    # headers.h: struct name + its 4 field symbol values
+    text = _word_replace(snapshots[HEADERS_H], old_name, new_name)
+    for old_sym, new_sym in new_syms.items():
+        text = _word_replace(text, old_sym, new_sym)
+    HEADERS_H.write_text(text)
+
+    # metatiles.h: metatiles/attrs symbols + the embedded directory path
+    text = snapshots[METATILES_H]
+    for sym in (ts.metatiles_sym, ts.attrs_sym):
+        if sym:
+            text = _word_replace(text, sym, new_syms[sym])
+    text = text.replace(f'"{old_rel_dir}/', f'"{new_rel_dir}/')
+    METATILES_H.write_text(text)
+
+    # graphics.h: tiles/palettes symbols + the embedded directory path
+    text = snapshots[GRAPHICS_H]
+    for sym in (ts.tiles_sym, ts.palettes_sym):
+        if sym:
+            text = _word_replace(text, sym, new_syms[sym])
+    text = text.replace(f'"{old_rel_dir}/', f'"{new_rel_dir}/')
+    GRAPHICS_H.write_text(text)
+
+    # layouts.json: primary_tileset / secondary_tileset references
+    if LAYOUTS_JSON in snapshots:
+        LAYOUTS_JSON.write_text(_word_replace(snapshots[LAYOUTS_JSON], old_name, new_name))
+
+    # porymap.project.cfg: default_primary_tileset / default_secondary_tileset
+    if PORYMAP_CFG in snapshots:
+        PORYMAP_CFG.write_text(_word_replace(snapshots[PORYMAP_CFG], old_name, new_name))
+
+    # metatile_labels.h: rename the section header and its METATILE_<suffix>_* prefix
+    labels_changed = 0
+    if METATILE_LABELS_H in snapshots:
+        lines = snapshots[METATILE_LABELS_H].splitlines(keepends=True)
+        span = _metatile_label_group_span(lines, old_name)
+        if span:
+            start, end = span
+            lines[start] = f"// {new_name}\n"
+            for i in range(start + 1, end):
+                new_line = _prefix_replace(lines[i], f"METATILE_{old_suffix}", f"METATILE_{new_suffix}")
+                if new_line != lines[i]:
+                    labels_changed += 1
+                lines[i] = new_line
+            METATILE_LABELS_H.write_text("".join(lines))
+
+    # every other gTileset_<old> reference in src/ and include/ (door tables,
+    # special-case tileset pointer checks, etc.), plus every USE of a
+    # METATILE_<old_suffix>_* constant this tileset owns (its own
+    # metatile_labels.h entries were already renamed above - callers of
+    # those constants elsewhere need to follow, or they'd reference an
+    # undefined symbol)
+    other_changed = 0
+    for path in scan_files:
+        text = snapshots[path]
+        new_text = _word_replace(text, old_name, new_name)
+        new_text = _prefix_replace(new_text, f"METATILE_{old_suffix}", f"METATILE_{new_suffix}")
+        if new_text != text:
+            path.write_text(new_text)
+            other_changed += 1
+
+    shutil.move(str(old_dir), str(new_dir))
+
+    print(f"  {old_name} -> {new_name}")
+    for old_sym, new_sym in new_syms.items():
+        if old_sym != new_sym:
+            print(f"  {old_sym} -> {new_sym}")
+    print(f"  {old_dir.relative_to(ROOT)}/ -> {new_dir.relative_to(ROOT)}/")
+    if labels_changed:
+        print(f"  metatile_labels.h: renamed the section and {labels_changed} label(s)")
+    if other_changed:
+        print(f"  updated {other_changed} other file(s) referencing {old_name}")
+
+    if _prompt_restore("(undo every file above and move the directory back)", ask_restore):
+        for path, old_text in snapshots.items():
+            path.write_text(old_text)
+        shutil.move(str(new_dir), str(old_dir))
+        print("  Restored.")
+        return True
+
+    del tilesets[ts.name]
+    ts.name = new_name
+    ts.tiles_sym = new_syms.get(ts.tiles_sym, ts.tiles_sym)
+    ts.palettes_sym = new_syms.get(ts.palettes_sym, ts.palettes_sym)
+    ts.metatiles_sym = new_syms.get(ts.metatiles_sym, ts.metatiles_sym)
+    ts.attrs_sym = new_syms.get(ts.attrs_sym, ts.attrs_sym)
+    ts.metatiles_path = Path(str(ts.metatiles_path).replace(old_rel_dir, new_rel_dir)) if ts.metatiles_path else None
+    ts.attrs_path = Path(str(ts.attrs_path).replace(old_rel_dir, new_rel_dir)) if ts.attrs_path else None
+    ts.tiles_path = Path(str(ts.tiles_path).replace(old_rel_dir, new_rel_dir)) if ts.tiles_path else None
+    ts.palette_paths = [Path(str(p).replace(old_rel_dir, new_rel_dir)) for p in ts.palette_paths]
+    tilesets[new_name] = ts
+    return True
 
 
 def merge_secondary_absorbing_primary(primary_ts, secondary_ts, new_dir_name):
@@ -1243,6 +1546,10 @@ def interactive(tilesets, args):
         print("  7. Minimize own palette usage (repack only this tileset's own "
               "banks; banks borrowed from its primary are pinned, never touched "
               "or duplicated)")
+    using = find_layouts_using_tileset(ts)
+    print(f"  8. Delete tileset ({'BLOCKED - used by ' + str(len(using)) + ' layout(s)' if using else 'unused, OK to delete'})")
+    print("  9. Rename tileset (struct/symbols/directory/layouts.json/metatile_labels.h/"
+          "every gTileset_ or METATILE_ reference in src+include)")
     action = input("Select an action (or blank to quit): ").strip()
     if action == "1":
         confirm = input(
@@ -1326,6 +1633,35 @@ def interactive(tilesets, args):
                     apply_secondary_palette_minimization(primary_ts, ts)
                 else:
                     print("Cancelled.")
+    elif action == "8":
+        if using:
+            print(f"  ! {ts.name} is still used by {len(using)} layout(s), can't delete: "
+                  f"{', '.join(using[:5])}{', ...' if len(using) > 5 else ''}")
+        else:
+            confirm = input(
+                f"This will remove {ts.name} from headers.h/metatiles.h/graphics.h and move "
+                f"{ts.dir.relative_to(ROOT)}/ to {ts.dir.name}.deleted/. Type 'yes' to continue: "
+            ).strip().lower()
+            if confirm == "yes":
+                delete_tileset(ts, tilesets)
+            else:
+                print("Cancelled.")
+    elif action == "9":
+        new_name = input("New name (e.g. gTileset_MyNewName): ").strip()
+        if not new_name:
+            print("Cancelled.")
+        else:
+            if not new_name.startswith("gTileset_"):
+                new_name = "gTileset_" + new_name
+            confirm = input(
+                f"This will rename {ts.name} to {new_name} everywhere (headers, layouts.json, "
+                f"metatile_labels.h, and every reference in src/+include/) and rename its data "
+                f"directory. Type 'yes' to continue: "
+            ).strip().lower()
+            if confirm == "yes":
+                rename_tileset(ts, tilesets, new_name)
+            else:
+                print("Cancelled.")
 
 
 def main():
@@ -1345,6 +1681,12 @@ def main():
     parser.add_argument("--minimize-secondary-palettes", action="store_true",
                          help="Repack --tileset's own palette banks into fewer of its own slots, "
                               "pinning (never touching or duplicating) any bank borrowed from its primary")
+    parser.add_argument("--delete", action="store_true",
+                         help="Delete --tileset (its directory and headers.h/metatiles.h/graphics.h "
+                              "declarations) - refuses if any layout still references it")
+    parser.add_argument("--rename", metavar="gTileset_NewName",
+                         help="Rename --tileset to this (struct/symbols/directory/layouts.json/"
+                              "metatile_labels.h/every gTileset_ or METATILE_ reference in src+include)")
     parser.add_argument("--yes", action="store_true",
                          help="Skip confirmation and restore prompts (non-interactive, keeps all changes)")
     args = parser.parse_args()
@@ -1462,6 +1804,33 @@ def main():
                     print("Cancelled.")
                     return
             apply_secondary_palette_minimization(primary_ts, ts, ask_restore=not args.yes)
+        if args.delete:
+            using = find_layouts_using_tileset(ts)
+            if using:
+                print(f"  ! {ts.name} is still used by {len(using)} layout(s), can't delete: "
+                      f"{', '.join(using[:5])}{', ...' if len(using) > 5 else ''}")
+                return
+            if not args.yes:
+                confirm = input(
+                    f"This will remove {ts.name} from headers.h/metatiles.h/graphics.h and move "
+                    f"{ts.dir.relative_to(ROOT)}/ to {ts.dir.name}.deleted/. Type 'yes' to continue: "
+                ).strip().lower()
+                if confirm != "yes":
+                    print("Cancelled.")
+                    return
+            delete_tileset(ts, tilesets, ask_restore=not args.yes)
+        if args.rename:
+            new_name = args.rename if args.rename.startswith("gTileset_") else "gTileset_" + args.rename
+            if not args.yes:
+                confirm = input(
+                    f"This will rename {ts.name} to {new_name} everywhere (headers, layouts.json, "
+                    f"metatile_labels.h, and every reference in src/+include/) and rename its data "
+                    f"directory. Type 'yes' to continue: "
+                ).strip().lower()
+                if confirm != "yes":
+                    print("Cancelled.")
+                    return
+            rename_tileset(ts, tilesets, new_name, ask_restore=not args.yes)
         return
 
     interactive(tilesets, args)

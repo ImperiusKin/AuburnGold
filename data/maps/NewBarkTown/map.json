@@ -3,7 +3,7 @@
   "name": "NewBarkTown",
   "layout": "LAYOUT_NEW_BARK_TOWN",
   "music": "MUS_LITTLEROOT",
-  "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
+  "region_map_section": "MAPSEC_NEW_BARK_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
   "map_type": "MAP_TYPE_TOWN",
@@ -27,7 +27,7 @@
   "object_events": [
     {
       "local_id": "LOCALID_NEWBARK_ELM",
-      "graphics_id": "OBJ_EVENT_GFX_PROF_BIRCH",
+      "graphics_id": "OBJ_EVENT_GFX_GEN4_PROF_ELM",
       "x": 23,
       "y": 13,
       "elevation": 0,
@@ -36,12 +36,12 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "NewBarkTown_EventScript_Elm",
       "flag": "FLAG_ADVENTURE_STARTED"
     },
     {
       "local_id": "LOCALID_NEWBARK_TRAINER_3",
-      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
+      "graphics_id": "OBJ_EVENT_GFX_GEN4_YOUNGSTER",
       "x": 10,
       "y": 33,
       "elevation": 0,
@@ -55,7 +55,7 @@
     },
     {
       "local_id": "LOCALID_NEWBARK_TRAINER_1",
-      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
+      "graphics_id": "OBJ_EVENT_GFX_GEN4_CAMPER",
       "x": 20,
       "y": 22,
       "elevation": 0,
@@ -68,22 +68,8 @@
       "flag": "FLAG_DEFEATED_CHEREN"
     },
     {
-      "local_id": "LOCALID_NEWBARK_RIVAL",
-      "graphics_id": "OBJ_EVENT_GFX_VAR_0",
-      "x": 23,
-      "y": 14,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NewBarkTown_EventScript_Rival",
-      "flag": "FLAG_ADVENTURE_STARTED"
-    },
-    {
       "local_id": "LOCALID_NEWBARK_TRAINER_2",
-      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
+      "graphics_id": "OBJ_EVENT_GFX_GEN4_COWGIRL",
       "x": 34,
       "y": 18,
       "elevation": 0,
@@ -97,7 +83,7 @@
     },
     {
       "local_id": "LOCALID_NEWBARK_TRAINER_4",
-      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
+      "graphics_id": "OBJ_EVENT_GFX_GEN4_FIREBREATHER",
       "x": 25,
       "y": 33,
       "elevation": 0,
@@ -111,7 +97,7 @@
     },
     {
       "local_id": "LOCALID_NEWBARK_WOMAN",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "graphics_id": "OBJ_EVENT_GFX_GEN4_AROMA_LADY",
       "x": 6,
       "y": 22,
       "elevation": 0,
@@ -122,6 +108,123 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NewBarkTown_EventScript_Woman",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GEN4_CAMPER",
+      "x": 22,
+      "y": 14,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 3,
+      "movement_range_y": 3,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NewBarkTown_EventScript_Youngerster9",
+      "flag": "FLAG_ADVENTURE_STARTED"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GEN4_BEAUTY",
+      "x": 21,
+      "y": 13,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 3,
+      "movement_range_y": 3,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NewBarkTown_EventScript_Youngerster7",
+      "flag": "FLAG_SYS_POKEMON_GET"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GEN4_ACE_TRAINER_F_3",
+      "x": 25,
+      "y": 14,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 3,
+      "movement_range_y": 3,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NewBarkTown_EventScript_Youngerster8",
+      "flag": "FLAG_SYS_POKEMON_GET"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GEN4_BUG_CATCHER",
+      "x": 24,
+      "y": 14,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 3,
+      "movement_range_y": 3,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NewBarkTown_EventScript_Youngerster10",
+      "flag": "FLAG_ADVENTURE_STARTED"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GEN4_ACE_TRAINER_M_2",
+      "x": 21,
+      "y": 15,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 3,
+      "movement_range_y": 3,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NewBarkTown_EventScript_Youngerster5",
+      "flag": "FLAG_SYS_POKEMON_GET"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GEN4_ACE_TRAINER_F_2",
+      "x": 21,
+      "y": 14,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 3,
+      "movement_range_y": 3,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NewBarkTown_EventScript_Youngerster6",
+      "flag": "FLAG_SYS_POKEMON_GET"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GEN4_REPORTER",
+      "x": 23,
+      "y": 14,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 3,
+      "movement_range_y": 3,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "0x0",
+      "flag": "FLAG_ADVENTURE_STARTED"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GEN4_CAMERAMAN",
+      "x": 24,
+      "y": 13,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 3,
+      "movement_range_y": 3,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "0x0",
+      "flag": "FLAG_ADVENTURE_STARTED"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GEN4_SCIENTIST_M",
+      "x": 22,
+      "y": 13,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 3,
+      "movement_range_y": 3,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NewBarkTown_EventScript_Aide",
+      "flag": "FLAG_SYS_POKEMON_GET"
     }
   ],
   "warp_events": [
@@ -153,8 +256,8 @@
       "x": 6,
       "y": 23,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
-      "var_value": "1",
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
       "script": "NewBarkTown_EventScript_Woman_Trigger_0"
     },
     {
@@ -162,8 +265,8 @@
       "x": 6,
       "y": 24,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
-      "var_value": "1",
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
       "script": "NewBarkTown_EventScript_Woman_Trigger_1"
     },
     {
@@ -171,9 +274,18 @@
       "x": 6,
       "y": 25,
       "elevation": 0,
-      "var": "VAR_TEMP_0",
-      "var_value": "1",
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
       "script": "NewBarkTown_EventScript_Woman_Trigger_2"
+    },
+    {
+      "type": "trigger",
+      "x": 23,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_NEWBARK_TOWN_STATE",
+      "var_value": "0",
+      "script": "NewBarkTown_EventScript_Elm"
     }
   ],
   "bg_events": [
@@ -232,6 +344,38 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "NewBarkTown_EventScript_AreaIsClosed"
+    },
+    {
+      "type": "sign",
+      "x": 27,
+      "y": 12,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NewBarkTown_EventScript_Sign_Pokemon_Lab"
+    },
+    {
+      "type": "sign",
+      "x": 35,
+      "y": 22,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NewBarkTown_EventScript_Sign_Player_House"
+    },
+    {
+      "type": "sign",
+      "x": 30,
+      "y": 22,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "Common_EventScript_ShowPokemonCenterSign"
+    },
+    {
+      "type": "sign",
+      "x": 31,
+      "y": 22,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "Common_EventScript_ShowPokemonCenterSign"
     }
   ]
 }

@@ -3,7 +3,7 @@
   "name": "Route_45",
   "layout": "LAYOUT_ROUTE_45",
   "music": "MUS_DUMMY",
-  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_ROUTE_45",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_NONE",
@@ -12,9 +12,44 @@
   "allow_running": false,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": null,
+  "connections": [
+    {
+      "map": "MAP_ROUTE29",
+      "offset": -16,
+      "direction": "down"
+    }
+  ],
   "object_events": [],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "x": 12,
+      "y": 42,
+      "elevation": 0,
+      "dest_map": "MAP_CONNECTION_RT29_RT46",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 11,
+      "y": 42,
+      "elevation": 0,
+      "dest_map": "MAP_CONNECTION_RT29_RT46",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 13,
+      "y": 42,
+      "elevation": 0,
+      "dest_map": "MAP_CONNECTION_RT29_RT46",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 14,
+      "y": 42,
+      "elevation": 0,
+      "dest_map": "MAP_CONNECTION_RT29_RT46",
+      "dest_warp_id": "1"
+    }
+  ],
   "coord_events": [],
   "bg_events": []
 }
