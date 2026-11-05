@@ -25,10 +25,10 @@ script Mt_Freeze_EventScript_Trainer_3{
 
 const TRAINER_GRUSHA = TRAINER_MAY_ROUTE_103_TORCHIC
 script Mt_Freeze_EventScript_Grusha{
-    faceplayer
     lock
+    faceplayer
     if(flag(FLAG_DEFEATED_GRUSHA)){
-        msgbox(format("Still here? The path back down is open. You've got other challenges waiting for you. ...Don't keep them waiting."))
+        msgbox(format("Still here? The path back down is open. You've got other challenges waiting for you....Don't keep them waiting."))
     }
     else{
         msgbox(format("You made it. Most Trainers turn back before reaching the summit. Guess you're more determined than you look. The tournament organizers picked this mountain for my challenge. Pretty convenient for an Ice-type specialist, don't you think? ...But don't expect me to go easy on you. The mountain doesn't care how prepared you are. And neither do I. Ready?"), MSGBOX_YESNO)
@@ -37,10 +37,14 @@ script Mt_Freeze_EventScript_Grusha{
             trainerbattle_no_intro(TRAINER_GRUSHA, format("...Huh. Guess I underestimated you."))
             msgbox(format("You handled yourself pretty well. Most Trainers panic when the weather turns against them. You didn't. ...That's worth something. Go on. You've earned the right to continue. Just remember... One wrong move can send everything crashing down. ...Before you go, take these"))
             giveitem(ITEM_HEX_ORB, 1)
-            msgbox(format("hat TM contains Icy Wind. It damages your opponent while lowering their Speed. Useful for slowing down anything that gets too aggressive."))
+            msgbox(format("That TM contains Icy Wind. It damages your opponent while lowering their Speed. Useful for slowing down anything that gets too aggressive."))
             giveitem(ITEM_SHELL_BELL, 1)
             msgbox(format("here's a Shell Bell. It restores a little HP whenever your Pokémon deals damage. ...Nothing fancy, but knowing how to use what you've got can make all the difference. Anyway... Good luck out there."))
             setflag(FLAG_DEFEATED_GRUSHA)
+        }
+        else{
+            msgbox(format("...Fine."))
+            msgbox(format("Just don't stand around too long, It's freezing out here.."))
         }
     }
     release
