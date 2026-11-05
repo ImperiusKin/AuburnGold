@@ -1563,4 +1563,11 @@ enum
     FLAG_SET_CAUGHT
 };
 
+// Placeholder dex numbers for new species from LevelUpData-PokemonUpdates (share the pre-evolution's entry)
+#define NATIONAL_DEX_MALARKEE     NATIONAL_DEX_FARFETCHD
+#define NATIONAL_DEX_PURSOLA      NATIONAL_DEX_CORSOLA
+#define NATIONAL_DEX_BARBEQWIL    NATIONAL_DEX_QWILFISH
+#define NATIONAL_DEX_LIBERGOON    NATIONAL_DEX_LINOONE
+#define NATIONAL_DEX_MR_HYMN      NATIONAL_DEX_MR_MIME
+
 #endif // GUARD_CONSTANTS_POKEDEX_H

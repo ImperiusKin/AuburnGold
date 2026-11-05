@@ -903,6 +903,15 @@ enum __attribute__((packed)) Move
     MOVE_PSYCHIC_NOISE = 845,
     MOVE_UPPER_HAND = 846,
     MOVE_MALIGNANT_CHAIN = 847,
+    // Auburn Gold placeholder moves (referenced by learnsets, not implemented yet)
+    MOVE_AQUA_FANG = 848, // Placeholder: no effect yet
+    MOVE_DARK_HOLE = 849, // Placeholder: no effect yet
+    MOVE_DRACO_BARRAGE = 850, // Placeholder: no effect yet
+    MOVE_PLOW = 851, // Placeholder: no effect yet
+    MOVE_SAVAGE_SPIN = 852, // Placeholder: no effect yet
+    MOVE_IRON_POLISH = 853, // Placeholder: no effect yet
+    MOVE_ICE_SPEAR = 854, // Placeholder: no effect yet
+    MOVE_FIRE_CHARGE = 855, // Placeholder: no effect yet
     MOVES_COUNT_GEN9,
 
     // Add any custom moves here, not further down!

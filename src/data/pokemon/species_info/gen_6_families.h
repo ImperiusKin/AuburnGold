@@ -5290,6 +5290,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .levelUpLearnset = sGoodraLevelUpLearnset,
         .teachableLearnset = sGoodraTeachableLearnset,
         .formSpeciesIdTable = sGoodraFormSpeciesIdTable,
+        .formChangeTable = sGoodraFormChangeTable,
     },
 
 #if P_MEGA_EVOLUTIONS
@@ -5340,7 +5341,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .palette = gMonPalette_GoodraMega,
         .shinyPalette = gMonShinyPalette_GoodraMega,
         .iconSprite = gMonIcon_GoodraMega,
-        .iconPalIndex = 2,
+        .iconPalIndex = P_GBA_STYLE_SPECIES_ICONS ? 1 : 4, // Bulbasaur icon copy
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         FOOTPRINT(Goodra)
     #if OW_BATTLE_ONLY_FORMS
@@ -5497,6 +5498,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .levelUpLearnset = sGoodraHisuiLevelUpLearnset,
         .teachableLearnset = sGoodraHisuiTeachableLearnset,
         .formSpeciesIdTable = sGoodraFormSpeciesIdTable,
+        .formChangeTable = sGoodraHisuiFormChangeTable,
     },
 
 #if P_MEGA_EVOLUTIONS
@@ -5523,9 +5525,9 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
     #if P_MODIFIED_MEGA_CRIES
         .cryId = CRY_GOODRA_HISUI_MEGA,
     #else
-        .cryId = CRY_GOODRA_HISUI,
+        .cryId = CRY_GOODRA,
     #endif // P_MODIFIED_MEGA_CRIES
-        .natDexNum = NATIONAL_DEX_GOODRA_HISUI,
+        .natDexNum = NATIONAL_DEX_GOODRA,
         .categoryName = _("Shell Bunker"),
         .height = 17,
         .weight = 3341,
@@ -5546,7 +5548,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .palette = gMonPalette_GoodraHisuiMega,
         .shinyPalette = gMonShinyPalette_GoodraHisuiMega,
         .iconSprite = gMonIcon_GoodraHisuiMega,
-        .iconPalIndex = 2,
+        .iconPalIndex = P_GBA_STYLE_SPECIES_ICONS ? 1 : 4, // Bulbasaur icon copy
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         FOOTPRINT(Goodra)
     #if OW_BATTLE_ONLY_FORMS
@@ -5564,7 +5566,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .isMegaEvolution = TRUE,
         .levelUpLearnset = sGoodraHisuiLevelUpLearnset,
         .teachableLearnset = sGoodraHisuiTeachableLearnset,
-        .formSpeciesIdTable = sGoodraHisuiFormSpeciesIdTable,
+        .formSpeciesIdTable = sGoodraFormSpeciesIdTable,
         .formChangeTable = sGoodraHisuiFormChangeTable,
     },
 #endif //P_MEGA_EVOLUTIONS

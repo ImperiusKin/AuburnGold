@@ -439,7 +439,7 @@ static const struct FormChange sHoundoomFormChangeTable[] =
 
 #if P_FAMILY_HORSEA
 #if P_GEN_2_CROSS_EVOS
-static const struct FormChange sKingraFormChangeTable[] =
+static const struct FormChange sKingdraFormChangeTable[] =
 {
 #if P_MEGA_EVOLUTIONS
     {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_KINGDRA_MEGA, ITEM_KINGDRITE},
@@ -1210,6 +1210,9 @@ static const struct FormChange sScraftyFormChangeTable[] =
 #if P_FAMILY_TRUBBISH
 static const struct FormChange sGarbodorFormChangeTable[] =
 {
+#if P_MEGA_EVOLUTIONS
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_GARBODOR_MEGA, ITEM_GARBODORITE},
+#endif
 #if P_GIGANTAMAX_FORMS
     {FORM_CHANGE_BATTLE_GIGANTAMAX, SPECIES_GARBODOR_GMAX},
 #endif
@@ -2321,3 +2324,86 @@ static const struct FormChange sTerapagosFormChangeTable[] =
 
 #undef WHEN_LEARNED
 #undef WHEN_FORGOTTEN
+
+// Mega Evolutions added in LevelUpData-PokemonUpdates
+static const struct FormChange sMagnezoneFormChangeTable[] =
+{
+#if P_MEGA_EVOLUTIONS
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_MAGNEZONE_MEGA, ITEM_MAGNEZONITE},
+#endif
+    {FORM_CHANGE_FAINT,                         SPECIES_MAGNEZONE},
+    {FORM_CHANGE_END_BATTLE,                    SPECIES_MAGNEZONE},
+    {FORM_CHANGE_TERMINATOR},
+};
+static const struct FormChange sDusknoirFormChangeTable[] =
+{
+#if P_MEGA_EVOLUTIONS
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_DUSKNOIR_MEGA, ITEM_DUSKNOIRITE},
+#endif
+    {FORM_CHANGE_FAINT,                         SPECIES_DUSKNOIR},
+    {FORM_CHANGE_END_BATTLE,                    SPECIES_DUSKNOIR},
+    {FORM_CHANGE_TERMINATOR},
+};
+static const struct FormChange sRoseradeFormChangeTable[] =
+{
+#if P_MEGA_EVOLUTIONS
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_ROSERADE_MEGA, ITEM_ROSERADITE},
+#endif
+    {FORM_CHANGE_FAINT,                         SPECIES_ROSERADE},
+    {FORM_CHANGE_END_BATTLE,                    SPECIES_ROSERADE},
+    {FORM_CHANGE_TERMINATOR},
+};
+static const struct FormChange sDrapionFormChangeTable[] =
+{
+#if P_MEGA_EVOLUTIONS
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_DRAPION_MEGA, ITEM_DRAPIONITE},
+#endif
+    {FORM_CHANGE_FAINT,                         SPECIES_DRAPION},
+    {FORM_CHANGE_END_BATTLE,                    SPECIES_DRAPION},
+    {FORM_CHANGE_TERMINATOR},
+};
+static const struct FormChange sLuxrayFormChangeTable[] =
+{
+#if P_MEGA_EVOLUTIONS
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_LUXRAY_MEGA, ITEM_LUXRAYITE},
+#endif
+    {FORM_CHANGE_FAINT,                         SPECIES_LUXRAY},
+    {FORM_CHANGE_END_BATTLE,                    SPECIES_LUXRAY},
+    {FORM_CHANGE_TERMINATOR},
+};
+static const struct FormChange sHaxorusFormChangeTable[] =
+{
+#if P_MEGA_EVOLUTIONS
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_HAXORUS_MEGA, ITEM_HAXORUSITE},
+#endif
+    {FORM_CHANGE_FAINT,                         SPECIES_HAXORUS},
+    {FORM_CHANGE_END_BATTLE,                    SPECIES_HAXORUS},
+    {FORM_CHANGE_TERMINATOR},
+};
+static const struct FormChange sHydreigonFormChangeTable[] =
+{
+#if P_MEGA_EVOLUTIONS
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_HYDREIGON_MEGA, ITEM_HYDREIGONITE},
+#endif
+    {FORM_CHANGE_FAINT,                         SPECIES_HYDREIGON},
+    {FORM_CHANGE_END_BATTLE,                    SPECIES_HYDREIGON},
+    {FORM_CHANGE_TERMINATOR},
+};
+static const struct FormChange sGoodraFormChangeTable[] =
+{
+#if P_MEGA_EVOLUTIONS
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_GOODRA_MEGA, ITEM_GOODRITE},
+#endif
+    {FORM_CHANGE_FAINT,                         SPECIES_GOODRA},
+    {FORM_CHANGE_END_BATTLE,                    SPECIES_GOODRA},
+    {FORM_CHANGE_TERMINATOR},
+};
+static const struct FormChange sGoodraHisuiFormChangeTable[] =
+{
+#if P_MEGA_EVOLUTIONS
+    {FORM_CHANGE_BATTLE_MEGA_EVOLUTION_ITEM,    SPECIES_GOODRA_HISUI_MEGA, ITEM_GOODRITE},
+#endif
+    {FORM_CHANGE_FAINT,                         SPECIES_GOODRA_HISUI},
+    {FORM_CHANGE_END_BATTLE,                    SPECIES_GOODRA_HISUI},
+    {FORM_CHANGE_TERMINATOR},
+};
