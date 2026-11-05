@@ -11,7 +11,7 @@ script Route30_EventScript_Trainer_1{
 
 const ROUTE30_TRAINER_2= TRAINER_ALLEN
 script Route30_EventScript_Trainer_2{
-    trainerbattle_single(ROUTE30_TRAINER_2, format("There are all kinds of Pokémon hiding in the grass around here! Wanna see what I've caught?"), format("Guess I didn't catch enough kinds of pokemon."))
+    trainerbattle_single(ROUTE30_TRAINER_2, format("There are all kinds of Pokémon hiding in the grass around here! Wanna see what I've caught?"), format("Guess I didn't catch enough kinds of Pokémon."))
     msgbox(format("Maybe I should try catching something in Hallu Forest... I bet there are some really rare Pokémon in there!"), MSGBOX_AUTOCLOSE)
     end
 }

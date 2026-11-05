@@ -21,7 +21,7 @@ script SouthernFields_EventScript_Katy{
     faceplayer
     lock
     if(flag(FLAG_DEFEATED_KATY)){
-        msgbox(format("Bug Pokémon can seem fragile at first. Give them a little time, though... You might be surprised by what they become."))
+        msgbox(format("Katy: Bug Pokémon can seem fragile at first. Give them a little time, though... You might be surprised by what they become."))
     }
     else{
         msgbox(format("Katy: Hello there! I'm Katy, a Gym Leader from Paldea. I came to Johto to help with the tournament... but I couldn't pass up a place like this! Since you're here too... How about a battle?"))
