@@ -860,12 +860,43 @@
 #define TRAINER_BRENDAN_PLACEHOLDER         853
 #define TRAINER_MAY_PLACEHOLDER             854
 
-// NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
+// Auburn Gold trainers
+#define TRAINER_RANDY                       855
+#define TRAINER_EMILY                       856
+#define TRAINER_LUKE                        857
+#define TRAINER_CHEREN                      858
+#define TRAINER_DYLAN                       859
+#define TRAINER_SOPHIE_JOHTO                860
+#define TRAINER_KATY                        861
+#define TRAINER_ELLIOT_JOHTO                862
+#define TRAINER_SOPHIE_AROMA_LADY           863
+#define TRAINER_ADRIAN                      864
+#define TRAINER_SOREN                       865
+#define TRAINER_HALA                        866
+#define TRAINER_CALEB                       867
+#define TRAINER_CHARLES                     868
+#define TRAINER_GRUSHA                      869
+#define TRAINER_JOEY_JOHTO                  870
+#define TRAINER_MICHAEL                     871
+#define TRAINER_DONALD_JOHTO                872
+#define TRAINER_WADE_JOHTO                  873
+#define TRAINER_ROARK                       874
+#define TRAINER_ROXANNE                     875
+#define TRAINER_JIN                         876
+#define TRAINER_TROY                        877
+#define TRAINER_CHOW                        878
+#define TRAINER_EDMOND_JOHTO                879
+#define TRAINER_MILO                        880
+#define TRAINER_FALKNER_SINGLE              881
+#define TRAINER_FALKNER_DOUBLE              882
+#define TRAINER_METAL                       883
+
+// NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 12 additional trainers before trainer flag space overflows
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT_EMERALD     855
-#define MAX_TRAINERS_COUNT_EMERALD 864
+#define TRAINERS_COUNT_EMERALD     884
+#define MAX_TRAINERS_COUNT_EMERALD 896
 
 #if IS_FRLG
 #define TRAINERS_COUNT                      TRAINERS_COUNT_FRLG
