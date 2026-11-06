@@ -226,7 +226,7 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
         .camouflageType = PLAIN_CAMOUFLAGE_TYPE,
         .camouflageBlend = PLAIN_CAMOUFLAGE_BLEND,
         .entry = ENVIRONMENT_ENTRY(Building),
-        .background = ENVIRONMENT_BACKGROUND(Building),
+        .background = ENVIRONMENT_BACKGROUND(Plain),
         .palette = gBattleEnvironmentPalette_Plain,
         .battleIntroSlide = PLAIN_BATTLE_INTRO_SLIDE,
     },
