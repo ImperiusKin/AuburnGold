@@ -22,7 +22,6 @@ script Route29_EventScript_Trainer_3{
 	msgbox(format("Fine! ONE loss doesn't mean anything!\pThere's still all of Johto ahead of me!"), MSGBOX_AUTOCLOSE)
 	end
 }
-const TRAINER_CHEREN = TRAINER_MAY_ROUTE_103_TORCHIC 
 script Route29_EventScript_Cheren{
     faceplayer
     lock

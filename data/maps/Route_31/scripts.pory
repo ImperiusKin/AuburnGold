@@ -16,8 +16,6 @@ script Route31_EventScript_Trainer_2{
     end
 }
 
-const ROUTE31_TRAINER_ROXANNE = TRAINER_ALLEN
-const ROUTE31_TRAINER_ROARK = TRAINER_ALLEN
 script Route31_EventScript_Roxanne_Roark{
     faceplayer
     lock
@@ -34,14 +32,14 @@ script Route31_EventScript_Roxanne_Roark{
         }
         msgbox(format("Roxanne: Let us demonstrate the strength of a well-coordinated team!"))
         msgbox(format("Roark: Get ready! We're gonna rock your world!"))
-        trainerbattle_two_trainers(ROUTE31_TRAINER_ROXANNE, format("An impressive display of strategy and cooperation!"), ROUTE31_TRAINER_ROARK, format("Whoa! You broke right through our defenses!"))
+        trainerbattle_two_trainers(TRAINER_ROXANNE, format("An impressive display of strategy and cooperation!"), TRAINER_ROARK, format("Whoa! You broke right through our defenses!"))
         msgbox(format("Roxanne: Before you go, we'd each like to give you something for overcoming our challenge! First, please accept this TM"))
-        giveitem(ITEM_TM_ROCK_TOMB) //Rock Tomb
+        giveitem(ITEM_TM_ROCK_TOMB)
         msgbox(format("It damages your opponent while lowering their Speed. I'm also giving you this!"))
         giveitem(ITEM_MUSCLE_BAND, 1)
         msgbox(format("It slightly increases the power of your Pokémon's physical attacks."))
         msgbox(format("Roark: And I've got a couple of things for you, too!"))
-        giveitem(ITEM_TM_SMACK_DOWN, 1) //Smack Down
+        giveitem(ITEM_TM_SMACK_DOWN, 1)
         msgbox(format("It's great for knocking Flying-type Pokémon out of the sky!"))
         msgbox(format("And take this!"))
         giveitem(ITEM_QUICK_CLAW, 1)
