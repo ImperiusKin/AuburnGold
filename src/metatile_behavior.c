@@ -210,6 +210,9 @@ bool8 MetatileBehavior_IsDeepSand(u8 metatileBehavior)
 
 bool8 MetatileBehavior_IsReflective(u8 metatileBehavior)
 {
+    return FALSE;
+
+    //Reflection is disabled to avoid problems while mapping
     if (metatileBehavior == MB_POND_WATER
      || metatileBehavior == MB_PUDDLE
      || metatileBehavior == MB_UNUSED_SOOTOPOLIS_DEEP_WATER_2
