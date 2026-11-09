@@ -8142,17 +8142,19 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .levelUpLearnset = sMiltankLevelUpLearnset,
         .teachableLearnset = sMiltankTeachableLearnset,
         .eggMoveLearnset = sMiltankEggMoveLearnset,
+        .formSpeciesIdTable = sMiltankFormSpeciesIdTable,
+        .formChangeTable = sMiltankFormChangeTable,
     },
 
 #if P_MEGA_EVOLUTIONS
     [SPECIES_MILTANK_MEGA] =
     {
         .baseHP        = 95,
-        .baseAttack    = 80,
-        .baseDefense   = 105,
-        .baseSpeed     = 100,
-        .baseSpAttack  = 40,
-        .baseSpDefense = 70,
+        .baseAttack    = 100,
+        .baseDefense   = 135,
+        .baseSpeed     = 110,
+        .baseSpAttack  = 50,
+        .baseSpDefense = 100,
         .types = MON_TYPES(TYPE_FIGHTING, TYPE_FAIRY),
         .catchRate = 45,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 172 : 200,
