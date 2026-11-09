@@ -6276,6 +6276,8 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         )
         .levelUpLearnset = sRoseradeLevelUpLearnset,
         .teachableLearnset = sRoseradeTeachableLearnset,
+        .formSpeciesIdTable = sRoseradeFormSpeciesIdTable,
+        .formChangeTable = sRoseradeFormChangeTable,
     },
 #endif //P_GEN_4_CROSS_EVOS
 
@@ -10301,6 +10303,8 @@ const struct SpeciesInfo gSpeciesInfoGen3[] =
         )
         .levelUpLearnset = sDusknoirLevelUpLearnset,
         .teachableLearnset = sDusknoirTeachableLearnset,
+        .formSpeciesIdTable = sDusknoirFormSpeciesIdTable,
+        .formChangeTable = sDusknoirFormChangeTable,
     },
 #endif //P_GEN_4_CROSS_EVOS
 
