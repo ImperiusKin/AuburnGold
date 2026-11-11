@@ -1750,7 +1750,7 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 
 	.include "data/maps/Trading_Facility/scripts.inc"
 
-	.include "data/maps/Connection_rt29_rt46/scripts.inc"
+	.include "data/maps/Route29_Connection_Route46/scripts.inc"
 
 	.include "data/maps/Connection_HappyTown/scripts.inc"
 
