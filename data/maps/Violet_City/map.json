@@ -55,10 +55,38 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 38,
+      "x": 36,
       "y": 7,
       "elevation": 0,
       "dest_map": "MAP_SPROUT_TOWER",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 34,
+      "y": 40,
+      "elevation": 0,
+      "dest_map": "MAP_VIOLET_CITY_CONNECTION_HAPPY_TOWN",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 35,
+      "y": 40,
+      "elevation": 0,
+      "dest_map": "MAP_VIOLET_CITY_CONNECTION_HAPPY_TOWN",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 36,
+      "y": 40,
+      "elevation": 0,
+      "dest_map": "MAP_VIOLET_CITY_CONNECTION_HAPPY_TOWN",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 37,
+      "y": 40,
+      "elevation": 0,
+      "dest_map": "MAP_VIOLET_CITY_CONNECTION_HAPPY_TOWN",
       "dest_warp_id": "0"
     }
   ],

@@ -1752,13 +1752,13 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 
 	.include "data/maps/Route29_Connection_Route46/scripts.inc"
 
-	.include "data/maps/Connection_HappyTown/scripts.inc"
+	.include "data/maps/Violet_City_Connection_Happy_Town/scripts.inc"
 
 	.include "data/maps/NewBarkTown_Elms_Lab/scripts.inc"
 
 	.include "data/maps/Oaks_Lab/scripts.inc"
 
-	.include "data/maps/Violet_Gym/scripts.inc"
+	.include "data/maps/Violet_City_Gym/scripts.inc"
 
 	.include "data/maps/Sprout_Tower/scripts.inc"
 
@@ -1770,9 +1770,8 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 
 	.include "data/maps/TestMap/scripts.inc"
 
-	.include "data/maps/VioletCity_HappyTown_Connection/scripts.inc"
 
-	.include "data/maps/VioletCityConnectionRoute31/scripts.inc"
+	.include "data/maps/Violet_City_Connection_Route31/scripts.inc"
 
 
 	.include "data/maps/Violet_City_Pokemon_Center/scripts.inc"
@@ -1794,3 +1793,5 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/Amberite_Valley_Connection_Palm_Hill_City/scripts.inc"
 
 	.include "data/maps/Catallia_City_Pokemon_Center/scripts.inc"
+
+	.include "data/maps/Happy_Town_Pokemon_Center/scripts.inc"
