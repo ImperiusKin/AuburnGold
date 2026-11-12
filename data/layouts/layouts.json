@@ -9557,8 +9557,8 @@
     {
       "id": "LAYOUT_CONNECTION_HAPPY_TOWN",
       "name": "Connection_HappyTown_Layout",
-      "width": 22,
-      "height": 12,
+      "width": 17,
+      "height": 13,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_Connections",
       "border_filepath": "data/layouts/Connection_HappyTown/border.bin",
@@ -9665,16 +9665,6 @@
       "blockdata_filepath": "data/layouts/TestMap/map.bin"
     },
     {
-      "id": "LAYOUT_VIOLET_CITY_HAPPY_TOWN_CONNECTION",
-      "name": "VioletCity_HappyTown_Connection_Layout",
-      "width": 16,
-      "height": 15,
-      "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_Connections",
-      "border_filepath": "data/layouts/VioletCity_HappyTown_Connection/border.bin",
-      "blockdata_filepath": "data/layouts/VioletCity_HappyTown_Connection/map.bin"
-    },
-    {
       "id": "LAYOUT_VIOLET_CITY_CONNECTION_ROUTE31",
       "name": "VioletCityConnectionRoute31_Layout",
       "width": 15,
@@ -9737,8 +9727,8 @@
     {
       "id": "LAYOUT_CONNECTION_HALLU_MTFREEZE",
       "name": "ConnectionHallu_Mtfreeze_Layout",
-      "width": 11,
-      "height": 17,
+      "width": 23,
+      "height": 13,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_Connections",
       "border_filepath": "data/layouts/ConnectionHallu_Mtfreeze/border.bin",
@@ -9773,6 +9763,16 @@
       "secondary_tileset": "gTileset_Connections",
       "border_filepath": "data/layouts/Connection_AmbValley_PalmHill/border.bin",
       "blockdata_filepath": "data/layouts/Connection_AmbValley_PalmHill/map.bin"
+    },
+    {
+      "id": "LAYOUT_HAPPY_TOWN_POKEMON_CENTER",
+      "name": "Happy_Town_Pokemon_Center_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Pokemon_Center_Jotho",
+      "border_filepath": "data/layouts/Happy_Town_Pokemon_Center/border.bin",
+      "blockdata_filepath": "data/layouts/Happy_Town_Pokemon_Center/map.bin"
     }
   ]
 }

@@ -157,10 +157,10 @@
     "Trading_Center",
     "Trading_Facility",
     "Route29_Connection_Route46",
-    "Connection_HappyTown",
+    "Violet_City_Connection_Happy_Town",
     "NewBarkTown_Elms_Lab",
     "Oaks_Lab",
-    "Violet_Gym",
+    "Violet_City_Gym",
     "Sprout_Tower",
     "Sprout_Tower_F2",
     "Sprout_Tower_F3",
@@ -168,8 +168,7 @@
     "NewBarkTown_Player_House_1F",
     "NewBarkTown_Player_House_2F",
     "TestMap",
-    "VioletCity_HappyTown_Connection",
-    "VioletCityConnectionRoute31",
+    "Violet_City_Connection_Route31",
     "Violet_City_Pokemon_Center",
     "Cherrygrove_City_Pokemon_Center",
     "Amberite_Valley_Pokemon_Center",
@@ -178,7 +177,8 @@
     "Hallu_Forest_Connection_Mt_Freeze",
     "Amberite_Valley_Connection_Florando_City",
     "Amberite_Valley_Connection_Palm_Hill_City",
-    "Catallia_City_Pokemon_Center"
+    "Catallia_City_Pokemon_Center",
+    "Happy_Town_Pokemon_Center"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",
