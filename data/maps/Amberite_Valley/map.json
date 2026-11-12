@@ -72,63 +72,63 @@
       "x": 29,
       "y": 41,
       "elevation": 0,
-      "dest_map": "MAP_CONNECTION_AMBERITE_HALLU_FOREST",
+      "dest_map": "MAP_AMBERITE_VALLEY_CONNECTION_HALLU_FOREST",
       "dest_warp_id": "0"
     },
     {
       "x": 30,
       "y": 41,
       "elevation": 0,
-      "dest_map": "MAP_CONNECTION_AMBERITE_HALLU_FOREST",
+      "dest_map": "MAP_AMBERITE_VALLEY_CONNECTION_HALLU_FOREST",
       "dest_warp_id": "0"
     },
     {
       "x": 31,
       "y": 41,
       "elevation": 0,
-      "dest_map": "MAP_CONNECTION_AMBERITE_HALLU_FOREST",
+      "dest_map": "MAP_AMBERITE_VALLEY_CONNECTION_HALLU_FOREST",
       "dest_warp_id": "1"
     },
     {
       "x": 14,
       "y": 29,
       "elevation": 0,
-      "dest_map": "MAP_CONNECTION_AMB_FLORANDO_CATALLIA",
+      "dest_map": "MAP_AMBERITE_VALLEY_CONNECTION_FLORANDO_CITY",
       "dest_warp_id": "0"
     },
     {
       "x": 14,
       "y": 28,
       "elevation": 0,
-      "dest_map": "MAP_CONNECTION_AMB_FLORANDO_CATALLIA",
+      "dest_map": "MAP_AMBERITE_VALLEY_CONNECTION_FLORANDO_CITY",
       "dest_warp_id": "0"
     },
     {
       "x": 14,
       "y": 30,
       "elevation": 0,
-      "dest_map": "MAP_CONNECTION_AMB_FLORANDO_CATALLIA",
+      "dest_map": "MAP_AMBERITE_VALLEY_CONNECTION_FLORANDO_CITY",
       "dest_warp_id": "0"
     },
     {
       "x": 48,
       "y": 39,
       "elevation": 0,
-      "dest_map": "MAP_CONNECTION_AMB_VALLEY_PALM_HILL",
+      "dest_map": "MAP_AMBERITE_VALLEY_CONNECTION_PALM_HILL_CITY",
       "dest_warp_id": "1"
     },
     {
       "x": 48,
       "y": 38,
       "elevation": 0,
-      "dest_map": "MAP_CONNECTION_AMB_VALLEY_PALM_HILL",
+      "dest_map": "MAP_AMBERITE_VALLEY_CONNECTION_PALM_HILL_CITY",
       "dest_warp_id": "1"
     },
     {
       "x": 48,
       "y": 37,
       "elevation": 0,
-      "dest_map": "MAP_CONNECTION_AMB_VALLEY_PALM_HILL",
+      "dest_map": "MAP_AMBERITE_VALLEY_CONNECTION_PALM_HILL_CITY",
       "dest_warp_id": "1"
     }
   ],

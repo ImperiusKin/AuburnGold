@@ -1694,6 +1694,10 @@
     {
       "id": "MAPSEC_CHERRYGROVE_CITY",
       "name": "CHERRYGROVE CITY"
+    },
+    {
+      "id": "MAPSEC_BLUEMOON_FALLS",
+      "name": "Bluemoon Falls"
     }
   ]
 }

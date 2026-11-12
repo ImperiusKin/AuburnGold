@@ -9685,16 +9685,6 @@
       "blockdata_filepath": "data/layouts/VioletCityConnectionRoute31/map.bin"
     },
     {
-      "id": "LAYOUT_CHERRYGROVE_BLUEMOON_CONNECTION",
-      "name": "CherrygroveBluemoonConnection_Layout",
-      "width": 11,
-      "height": 17,
-      "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_Connections",
-      "border_filepath": "data/layouts/CherrygroveBluemoonConnection/border.bin",
-      "blockdata_filepath": "data/layouts/CherrygroveBluemoonConnection/map.bin"
-    },
-    {
       "id": "LAYOUT_VIOLET_CITY_POKEMON_CENTER",
       "name": "Violet_City_Pokemon_Center_Layout",
       "width": 20,
@@ -9725,16 +9715,6 @@
       "blockdata_filepath": "data/layouts/Amberite_Valley_Pokemon_Center/map.bin"
     },
     {
-      "id": "LAYOUT_CONNECTION_RT29RT46",
-      "name": "ConnectionRt29Rt46_Layout",
-      "width": 11,
-      "height": 17,
-      "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_Connections",
-      "border_filepath": "data/layouts/ConnectionRt29Rt46/border.bin",
-      "blockdata_filepath": "data/layouts/ConnectionRt29Rt46/map.bin"
-    },
-    {
       "id": "LAYOUT_CONNECTION_RT29CHERRYGROVE",
       "name": "ConnectionRt29Cherrygrove_Layout",
       "width": 15,
@@ -9763,16 +9743,6 @@
       "secondary_tileset": "gTileset_Connections",
       "border_filepath": "data/layouts/ConnectionHallu_Mtfreeze/border.bin",
       "blockdata_filepath": "data/layouts/ConnectionHallu_Mtfreeze/map.bin"
-    },
-    {
-      "id": "LAYOUT_CONNECTION_AMBVALLEY_HALLU_FOREST",
-      "name": "ConnectionAmbvalleyHalluForest_Layout",
-      "width": 11,
-      "height": 17,
-      "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_Connections",
-      "border_filepath": "data/layouts/ConnectionAmbvalleyHalluForest/border.bin",
-      "blockdata_filepath": "data/layouts/ConnectionAmbvalleyHalluForest/map.bin"
     },
     {
       "id": "LAYOUT_CONNECTION_AMB_FLORANDO_CATALLIA",
