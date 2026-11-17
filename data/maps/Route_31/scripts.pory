@@ -1,5 +1,10 @@
 mapscripts Route_31_MapScripts {
-	
+    MAP_SCRIPT_ON_TRANSITION {
+        if(flag(FLAG_DEFEATED_ROXANNE)){
+                setobjectxyperm(LOCALID_ROUTE31_ROARK, 52, 8)
+                setobjectmovementtype (LOCALID_ROUTE31_ROARK, MOVEMENT_TYPE_FACE_DOWN)
+        }
+    }
 }
 
 const ROUTE31_TRAINER_1 = TRAINER_ALLEN
@@ -32,6 +37,7 @@ script Route31_EventScript_Roxanne_Roark{
         }
         msgbox(format("Roxanne: Let us demonstrate the strength of a well-coordinated team!"))
         msgbox(format("Roark: Get ready! We're gonna rock your world!"))
+        setvar(VAR_BATTLE_ENVIROMENT_OVERRIDE, BATTLE_ENVIRONMENT_MOUNTAIN)
         trainerbattle_two_trainers(TRAINER_ROXANNE, format("An impressive display of strategy and cooperation!"), TRAINER_ROARK, format("Whoa! You broke right through our defenses!"))
         msgbox(format("Roxanne: Before you go, we'd each like to give you something for overcoming our challenge! First, please accept this TM"))
         giveitem(ITEM_TM_ROCK_TOMB)
@@ -47,6 +53,7 @@ script Route31_EventScript_Roxanne_Roark{
         setflag(FLAG_DEFEATED_ROXANNE)
         msgbox(format("Roxanne: I hope these rewards prove useful in your future battles."))
         msgbox(format("Roark: Keep getting stronger! Maybe we'll get another chance to battle someday!"))
+        call(Route31_EventScript_Roxanne_Roark_Move)
         msgbox(format("Roxanne: Do enjoy exploration of Dark Cave!"))
     }
     else{
@@ -57,6 +64,11 @@ script Route31_EventScript_Roxanne_Roark{
     end
 }
 
+script Route31_EventScript_Roxanne_Roark_Move{
+    applymovement(LOCALID_ROUTE31_ROARK, moves(walk_right, face_down))
+    waitmovement(0)
+    return
+}
 
 script Route31_EventScript_Roxanne_Roark_No{
     msgbox(format("Roark: Aw, come on! We were just getting fired up!"))

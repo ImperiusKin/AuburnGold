@@ -9,6 +9,7 @@
 #include "bg.h"
 #include "data.h"
 #include "decompress.h"
+#include "event_data.h"
 #include "gpu_regs.h"
 #include "graphics.h"
 #include "link.h"
@@ -886,6 +887,9 @@ static void LoadBattleEnvironmentEntryGfx(u16 environment)
 static u8 GetBattleEnvironmentOverride(void)
 {
     u8 battleScene = GetCurrentMapBattleScene();
+
+    if(VarGet(VAR_BATTLE_ENVIROMENT_OVERRIDE) != 0xFF)
+        return VarGet(VAR_BATTLE_ENVIROMENT_OVERRIDE);
 
     if (TestRunner_Battle_GetForcedEnvironment()
      && gBattleEnvironmentInfo[gBattleEnvironment].background.tilemap
