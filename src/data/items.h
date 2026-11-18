@@ -14738,11 +14738,14 @@ const struct ItemInfo gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM176] =
+    [ITEM_TM_PSYBEAM] =
     {
         .name = ITEM_NAME("TM176"),
         .price = 3000,
-        .description = sQuestionMarksDesc,
+        .description = COMPOUND_STRING(
+            "Fires a peculiar\n"
+            "ray that may\n"
+            "confuse the foe."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -14760,11 +14763,14 @@ const struct ItemInfo gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM178] =
+    [ITEM_TM_MUD_SHOT] =
     {
         .name = ITEM_NAME("TM178"),
         .price = 3000,
-        .description = sQuestionMarksDesc,
+        .description = COMPOUND_STRING(
+            "Hurls mud at the\n"
+            "foe and reduces\n"
+            "its Speed."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -15057,11 +15063,14 @@ const struct ItemInfo gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM205] =
+    [ITEM_TM_BUBBLE_BEAM] =
     {
         .name = ITEM_NAME("TM205"),
         .price = 3000,
-        .description = sQuestionMarksDesc,
+        .description = COMPOUND_STRING(
+            "Sprays bubbles\n"
+            "that may lower\n"
+            "the foe's Speed."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,

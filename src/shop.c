@@ -597,7 +597,7 @@ static void BuyMenuBuildListMenuTemplate(void)
 static void BuyMenuSetListEntry(struct ListMenuItem *menuItem, enum Item item, u8 *name)
 {
     if (sMartInfo.martType == MART_TYPE_NORMAL)
-        CopyItemName(item, name);
+        CopyItemNameForDisplay(item, name, 1);
     else
         StringCopy(name, gDecorations[item].name);
 
@@ -1050,7 +1050,7 @@ static void Task_BuyMenu(u8 taskId)
             {
                 if (sMartInfo.martType == MART_TYPE_NORMAL)
                 {
-                    CopyItemName(itemId, gStringVar1);
+                    CopyItemNameForDisplay(itemId, gStringVar1, 1);
                     if (GetItemImportance(itemId))
                     {
                         ConvertIntToDecimalStringN(gStringVar2, sShopData->totalCost, STR_CONV_MODE_LEFT_ALIGN, 6);
@@ -1136,7 +1136,7 @@ static void Task_BuyHowManyDialogueHandleInput(u8 taskId)
             ClearWindowTilemap(WIN_QUANTITY_PRICE);
             ClearWindowTilemap(WIN_QUANTITY_IN_BAG);
             PutWindowTilemap(WIN_ITEM_LIST);
-            CopyItemName(tItemId, gStringVar1);
+            CopyItemNameForDisplay(tItemId, gStringVar1, 1);
             ConvertIntToDecimalStringN(gStringVar2, tItemCount, STR_CONV_MODE_LEFT_ALIGN, MAX_ITEM_DIGITS);
             ConvertIntToDecimalStringN(gStringVar3, sShopData->totalCost, STR_CONV_MODE_LEFT_ALIGN, MAX_MONEY_DIGITS);
             BuyMenuDisplayMessage(taskId, gText_Var1AndYouWantedVar2, BuyMenuConfirmPurchase);

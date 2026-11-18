@@ -8,6 +8,7 @@
 #include "malloc.h"
 #include "secret_base.h"
 #include "item_menu.h"
+#include "move.h"
 #include "party_menu.h"
 #include "strings.h"
 #include "load_save.h"
@@ -171,6 +172,23 @@ u8 *CopyItemName(enum Item itemId, u8 *dst)
 }
 
 const u8 sText_s[] =_("s");
+static const u8 sText_TMPrefix[] = _("TM ");
+static const u8 sText_HMPrefix[] = _("HM ");
+
+// Like CopyItemNameHandlePlural, but TMs/HMs are shown as "TM <Move>" / "HM <Move>"
+// instead of their item name (e.g. "TM Psybeam" instead of "TM176").
+// Used by shops and the obtain/find item messages.
+u8 *CopyItemNameForDisplay(enum Item itemId, u8 *dst, u32 quantity)
+{
+    enum TMHMIndex index = GetItemTMHMIndex(itemId);
+
+    if (index != 0)
+    {
+        u8 *end = StringCopy(dst, index > NUM_TECHNICAL_MACHINES ? sText_HMPrefix : sText_TMPrefix);
+        return StringCopy(end, GetMoveName(GetTMHMMoveId(index)));
+    }
+    return CopyItemNameHandlePlural(itemId, dst, quantity);
+}
 
 u8 *CopyItemNameHandlePlural(enum Item itemId, u8 *dst, u32 quantity)
 {

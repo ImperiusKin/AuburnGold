@@ -41,7 +41,7 @@ script Amberite_Valley_EventScript_Market_Mart{
 
 mart Amberite_Valley_EventScript_Market_Mart_Items {
     ITEM_POMEG_BERRY
-    //ITEM_TM_BUBBLE_BEAM
-    //ITEM_TM_MUD_SHOT
-    //ITEM_TM_PSYBEAM
+    ITEM_TM_BUBBLE_BEAM
+    ITEM_TM_MUD_SHOT
+    ITEM_TM_PSYBEAM
 }
