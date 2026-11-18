@@ -154,7 +154,7 @@
     "Florando_City",
     "Palm_Hill_City",
     "NewBarkTown_Pokemon_Center",
-    "Trading_Center",
+    "Amberite_Valley_Trading_Center",
     "Trading_Facility",
     "Route29_Connection_Route46",
     "Violet_City_Connection_Happy_Town",
@@ -178,7 +178,8 @@
     "Amberite_Valley_Connection_Florando_City",
     "Amberite_Valley_Connection_Palm_Hill_City",
     "Catallia_City_Pokemon_Center",
-    "Happy_Town_Pokemon_Center"
+    "Happy_Town_Pokemon_Center",
+    "Amberite_Valley_Shopping_Area"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",

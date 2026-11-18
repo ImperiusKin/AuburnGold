@@ -9773,6 +9773,16 @@
       "secondary_tileset": "gTileset_Pokemon_Center_Jotho",
       "border_filepath": "data/layouts/Happy_Town_Pokemon_Center/border.bin",
       "blockdata_filepath": "data/layouts/Happy_Town_Pokemon_Center/map.bin"
+    },
+    {
+      "id": "LAYOUT_AMBERITE_VALLEY_SHOPPING_AREA",
+      "name": "Amberite_Valley_Shopping_Area_Layout",
+      "width": 11,
+      "height": 12,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Trading_Center",
+      "border_filepath": "data/layouts/Amberite_Valley_Shopping_Area/border.bin",
+      "blockdata_filepath": "data/layouts/Amberite_Valley_Shopping_Area/map.bin"
     }
   ]
 }

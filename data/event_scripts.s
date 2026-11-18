@@ -1746,7 +1746,7 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 
 	.include "data/maps/NewBarkTown_Pokemon_Center/scripts.inc"
 
-	.include "data/maps/Trading_Center/scripts.inc"
+	.include "data/maps/Amberite_Valley_Trading_Center/scripts.inc"
 
 	.include "data/maps/Trading_Facility/scripts.inc"
 
@@ -1795,3 +1795,5 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/Catallia_City_Pokemon_Center/scripts.inc"
 
 	.include "data/maps/Happy_Town_Pokemon_Center/scripts.inc"
+
+	.include "data/maps/Amberite_Valley_Shopping_Area/scripts.inc"
