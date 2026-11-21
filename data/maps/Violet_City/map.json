@@ -60,6 +60,13 @@
       "elevation": 0,
       "dest_map": "MAP_SPROUT_TOWER",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 21,
+      "y": 18,
+      "elevation": 0,
+      "dest_map": "MAP_VIOLET_GYM",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],

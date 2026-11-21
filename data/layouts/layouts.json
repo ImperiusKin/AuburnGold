@@ -9803,6 +9803,16 @@
       "secondary_tileset": "gTileset_Connections",
       "border_filepath": "data/layouts/Connection_AmbValley_PalmHill/border.bin",
       "blockdata_filepath": "data/layouts/Connection_AmbValley_PalmHill/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE_32_POKEMON_CENTER",
+      "name": "Route_32_Pokemon_Center_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Pokemon_Center_Jotho",
+      "border_filepath": "data/layouts/Route_32_Pokemon_Center/border.bin",
+      "blockdata_filepath": "data/layouts/Route_32_Pokemon_Center/map.bin"
     }
   ]
 }
