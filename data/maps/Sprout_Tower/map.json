@@ -28,6 +28,48 @@
       "elevation": 0,
       "dest_map": "MAP_VIOLET_CITY",
       "dest_warp_id": "4"
+    },
+    {
+      "x": 2,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_SPROUT_TOWER_F2",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 1,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_SPROUT_TOWER_F2",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 4,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_SPROUT_TOWER_F2",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 5,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_SPROUT_TOWER_F2",
+      "dest_warp_id": "5"
+    },
+    {
+      "x": 19,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_SPROUT_TOWER_F2",
+      "dest_warp_id": "6"
+    },
+    {
+      "x": 20,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_SPROUT_TOWER_F2",
+      "dest_warp_id": "7"
     }
   ],
   "coord_events": [],
