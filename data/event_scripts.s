@@ -1797,3 +1797,5 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/Happy_Town_Pokemon_Center/scripts.inc"
 
 	.include "data/maps/Amberite_Valley_Shopping_Area/scripts.inc"
+
+	.include "data/maps/Route32_Pokemon_Center/scripts.inc"

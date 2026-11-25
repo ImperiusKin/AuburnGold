@@ -9447,8 +9447,8 @@
     {
       "id": "LAYOUT_ROUTE_32",
       "name": "Route_32_Layout",
-      "width": 45,
-      "height": 135,
+      "width": 46,
+      "height": 145,
       "primary_tileset": "gTileset_General_Jotho",
       "secondary_tileset": "gTileset_Violet_City",
       "border_filepath": "data/layouts/Route_32/border.bin",
@@ -9783,6 +9783,16 @@
       "secondary_tileset": "gTileset_Trading_Center",
       "border_filepath": "data/layouts/Amberite_Valley_Shopping_Area/border.bin",
       "blockdata_filepath": "data/layouts/Amberite_Valley_Shopping_Area/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE32_POKEMON_CENTER",
+      "name": "Route32_Pokemon_Center_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Pokemon_Center_Jotho",
+      "border_filepath": "data/layouts/Route32_Pokemon_Center/border.bin",
+      "blockdata_filepath": "data/layouts/Route32_Pokemon_Center/map.bin"
     }
   ]
 }
