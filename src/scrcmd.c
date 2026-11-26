@@ -2224,7 +2224,7 @@ bool8 ScrCmd_bufferitemname(struct ScriptContext *ctx)
 
     Script_RequestEffects(SCREFF_V1);
 
-    CopyItemName(itemId, sScriptStringVars[stringVarIndex]);
+    CopyItemNameForDisplay(itemId, sScriptStringVars[stringVarIndex], 1);
     return FALSE;
 }
 
@@ -2236,7 +2236,7 @@ bool8 ScrCmd_bufferitemnameplural(struct ScriptContext *ctx)
 
     Script_RequestEffects(SCREFF_V1);
 
-    CopyItemNameHandlePlural(itemId, sScriptStringVars[stringVarIndex], quantity);
+    CopyItemNameForDisplay(itemId, sScriptStringVars[stringVarIndex], quantity);
     return FALSE;
 }
 

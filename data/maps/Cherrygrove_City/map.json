@@ -30,35 +30,35 @@
       "x": 60,
       "y": 22,
       "elevation": 0,
-      "dest_map": "MAP_CONNECTION_RT29CHERRYGROVE",
+      "dest_map": "MAP_ROUTE29_CONNECTION_CHERRYGROVE_CITY",
       "dest_warp_id": "1"
     },
     {
       "x": 15,
       "y": 5,
       "elevation": 0,
-      "dest_map": "MAP_CONNECTION_CHERRY_BLUEMOON",
+      "dest_map": "MAP_CHERRYGROVE_CITY_CONNECTION_BLUEMOON_FALLS",
       "dest_warp_id": "0"
     },
     {
       "x": 16,
       "y": 5,
       "elevation": 0,
-      "dest_map": "MAP_CONNECTION_CHERRY_BLUEMOON",
+      "dest_map": "MAP_CHERRYGROVE_CITY_CONNECTION_BLUEMOON_FALLS",
       "dest_warp_id": "0"
     },
     {
       "x": 60,
       "y": 23,
       "elevation": 0,
-      "dest_map": "MAP_CONNECTION_RT29CHERRYGROVE",
+      "dest_map": "MAP_ROUTE29_CONNECTION_CHERRYGROVE_CITY",
       "dest_warp_id": "1"
     },
     {
       "x": 60,
       "y": 24,
       "elevation": 0,
-      "dest_map": "MAP_CONNECTION_RT29CHERRYGROVE",
+      "dest_map": "MAP_ROUTE29_CONNECTION_CHERRYGROVE_CITY",
       "dest_warp_id": "1"
     },
     {

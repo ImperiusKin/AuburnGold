@@ -9447,7 +9447,7 @@
     {
       "id": "LAYOUT_ROUTE_32",
       "name": "Route_32_Layout",
-      "width": 45,
+      "width": 46,
       "height": 145,
       "primary_tileset": "gTileset_General_Jotho",
       "secondary_tileset": "gTileset_Violet_City",
@@ -9557,8 +9557,8 @@
     {
       "id": "LAYOUT_CONNECTION_HAPPY_TOWN",
       "name": "Connection_HappyTown_Layout",
-      "width": 22,
-      "height": 12,
+      "width": 17,
+      "height": 13,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_Connections",
       "border_filepath": "data/layouts/Connection_HappyTown/border.bin",
@@ -9588,7 +9588,7 @@
       "id": "LAYOUT_VIOLET_GYM",
       "name": "Violet_Gym_Layout",
       "width": 16,
-      "height": 16,
+      "height": 18,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_Violet_Gym",
       "border_filepath": "data/layouts/Violet_Gym/border.bin",
@@ -9665,16 +9665,6 @@
       "blockdata_filepath": "data/layouts/TestMap/map.bin"
     },
     {
-      "id": "LAYOUT_VIOLET_CITY_HAPPY_TOWN_CONNECTION",
-      "name": "VioletCity_HappyTown_Connection_Layout",
-      "width": 16,
-      "height": 15,
-      "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_Connections",
-      "border_filepath": "data/layouts/VioletCity_HappyTown_Connection/border.bin",
-      "blockdata_filepath": "data/layouts/VioletCity_HappyTown_Connection/map.bin"
-    },
-    {
       "id": "LAYOUT_VIOLET_CITY_CONNECTION_ROUTE31",
       "name": "VioletCityConnectionRoute31_Layout",
       "width": 15,
@@ -9683,16 +9673,6 @@
       "secondary_tileset": "gTileset_Connections",
       "border_filepath": "data/layouts/VioletCityConnectionRoute31/border.bin",
       "blockdata_filepath": "data/layouts/VioletCityConnectionRoute31/map.bin"
-    },
-    {
-      "id": "LAYOUT_CHERRYGROVE_BLUEMOON_CONNECTION",
-      "name": "CherrygroveBluemoonConnection_Layout",
-      "width": 11,
-      "height": 17,
-      "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_Connections",
-      "border_filepath": "data/layouts/CherrygroveBluemoonConnection/border.bin",
-      "blockdata_filepath": "data/layouts/CherrygroveBluemoonConnection/map.bin"
     },
     {
       "id": "LAYOUT_VIOLET_CITY_POKEMON_CENTER",
@@ -9725,16 +9705,6 @@
       "blockdata_filepath": "data/layouts/Amberite_Valley_Pokemon_Center/map.bin"
     },
     {
-      "id": "LAYOUT_CONNECTION_RT29RT46",
-      "name": "ConnectionRt29Rt46_Layout",
-      "width": 11,
-      "height": 17,
-      "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_Connections",
-      "border_filepath": "data/layouts/ConnectionRt29Rt46/border.bin",
-      "blockdata_filepath": "data/layouts/ConnectionRt29Rt46/map.bin"
-    },
-    {
       "id": "LAYOUT_CONNECTION_RT29CHERRYGROVE",
       "name": "ConnectionRt29Cherrygrove_Layout",
       "width": 15,
@@ -9757,22 +9727,12 @@
     {
       "id": "LAYOUT_CONNECTION_HALLU_MTFREEZE",
       "name": "ConnectionHallu_Mtfreeze_Layout",
-      "width": 11,
-      "height": 17,
+      "width": 23,
+      "height": 13,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_Connections",
       "border_filepath": "data/layouts/ConnectionHallu_Mtfreeze/border.bin",
       "blockdata_filepath": "data/layouts/ConnectionHallu_Mtfreeze/map.bin"
-    },
-    {
-      "id": "LAYOUT_CONNECTION_AMBVALLEY_HALLU_FOREST",
-      "name": "ConnectionAmbvalleyHalluForest_Layout",
-      "width": 11,
-      "height": 17,
-      "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_Connections",
-      "border_filepath": "data/layouts/ConnectionAmbvalleyHalluForest/border.bin",
-      "blockdata_filepath": "data/layouts/ConnectionAmbvalleyHalluForest/map.bin"
     },
     {
       "id": "LAYOUT_CONNECTION_AMB_FLORANDO_CATALLIA",
@@ -9805,14 +9765,34 @@
       "blockdata_filepath": "data/layouts/Connection_AmbValley_PalmHill/map.bin"
     },
     {
-      "id": "LAYOUT_ROUTE_32_POKEMON_CENTER",
-      "name": "Route_32_Pokemon_Center_Layout",
+      "id": "LAYOUT_HAPPY_TOWN_POKEMON_CENTER",
+      "name": "Happy_Town_Pokemon_Center_Layout",
       "width": 20,
       "height": 20,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_Pokemon_Center_Jotho",
-      "border_filepath": "data/layouts/Route_32_Pokemon_Center/border.bin",
-      "blockdata_filepath": "data/layouts/Route_32_Pokemon_Center/map.bin"
+      "border_filepath": "data/layouts/Happy_Town_Pokemon_Center/border.bin",
+      "blockdata_filepath": "data/layouts/Happy_Town_Pokemon_Center/map.bin"
+    },
+    {
+      "id": "LAYOUT_AMBERITE_VALLEY_SHOPPING_AREA",
+      "name": "Amberite_Valley_Shopping_Area_Layout",
+      "width": 11,
+      "height": 12,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Trading_Center",
+      "border_filepath": "data/layouts/Amberite_Valley_Shopping_Area/border.bin",
+      "blockdata_filepath": "data/layouts/Amberite_Valley_Shopping_Area/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE32_POKEMON_CENTER",
+      "name": "Route32_Pokemon_Center_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Pokemon_Center_Jotho",
+      "border_filepath": "data/layouts/Route32_Pokemon_Center/border.bin",
+      "blockdata_filepath": "data/layouts/Route32_Pokemon_Center/map.bin"
     }
   ]
 }

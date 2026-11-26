@@ -450,6 +450,8 @@ void Overworld_ResetBattleFlagsAndVars(void)
         VarSet(B_VAR_NO_BAG_USE, 0);
     #endif
 
+    VarSet(VAR_BATTLE_ENVIROMENT_OVERRIDE, 0xFF);
+
     FlagClear(B_FLAG_INVERSE_BATTLE);
     FlagClear(WE_FLAG_FORCE_DOUBLE_WILD);
     FlagClear(WE_SMART_WILD_AI_FLAG);

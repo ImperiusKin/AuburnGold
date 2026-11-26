@@ -1425,11 +1425,6 @@ static void QueueAnimTiles_General_Jotho_Water(u16 timer)
     AppendTilesetAnimToBuffer(sTilesetAnims_General_Jotho_Water[timer % ARRAY_COUNT(sTilesetAnims_General_Jotho_Water)], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(500)), 4 * TILE_SIZE_4BPP);
 }
 
-static void QueueAnimTiles_General_Jotho_Water_Current_LandWatersEdge(u16 timer)
-{
-    AppendTilesetAnimToBuffer(sTilesetAnims_General_Jotho_Water_Current_LandWatersEdge[timer % ARRAY_COUNT(sTilesetAnims_General_Jotho_Water_Current_LandWatersEdge)], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(416)), 32 * TILE_SIZE_4BPP);
-}
-
 static void QueueAnimTiles_General_Jotho_SandWatersEdge(u16 timer)
 {
     AppendTilesetAnimToBuffer(sTilesetAnims_General_Jotho_SandWatersEdge[timer % ARRAY_COUNT(sTilesetAnims_General_Jotho_SandWatersEdge)], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(464)), 18 * TILE_SIZE_4BPP);
@@ -1439,8 +1434,6 @@ static void TilesetAnim_General_Jotho(u16 timer)
 {
     if (timer % 8 == 0)
         QueueAnimTiles_General_Jotho_SandWatersEdge(timer / 8);
-    //if (timer % 16 == 1)
-    //    QueueAnimTiles_General_Jotho_Water_Current_LandWatersEdge(timer / 16);
     if (timer % 16 == 2)
         QueueAnimTiles_General_Jotho_Flower(timer / 16);
     if (timer % 16 == 3)

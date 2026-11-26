@@ -1738,27 +1738,27 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 
 	.include "data/maps/Catallia_City/scripts.inc"
 
-	.include "data/maps/bluemoon_falls/scripts.inc"
+	.include "data/maps/Bluemoon_Falls/scripts.inc"
 
-	.include "data/maps/PalmHillCity/scripts.inc"
+	.include "data/maps/Palm_Hill_City/scripts.inc"
 
-	.include "data/maps/florando_City/scripts.inc"
+	.include "data/maps/Florando_City/scripts.inc"
 
 	.include "data/maps/NewBarkTown_Pokemon_Center/scripts.inc"
 
-	.include "data/maps/Trading_Center/scripts.inc"
+	.include "data/maps/Amberite_Valley_Trading_Center/scripts.inc"
 
 	.include "data/maps/Trading_Facility/scripts.inc"
 
-	.include "data/maps/Connection_rt29_rt46/scripts.inc"
+	.include "data/maps/Route29_Connection_Route46/scripts.inc"
 
-	.include "data/maps/Connection_HappyTown/scripts.inc"
+	.include "data/maps/Violet_City_Connection_Happy_Town/scripts.inc"
 
 	.include "data/maps/NewBarkTown_Elms_Lab/scripts.inc"
 
 	.include "data/maps/Oaks_Lab/scripts.inc"
 
-	.include "data/maps/Violet_Gym/scripts.inc"
+	.include "data/maps/Violet_City_Gym/scripts.inc"
 
 	.include "data/maps/Sprout_Tower/scripts.inc"
 
@@ -1766,15 +1766,13 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 
 	.include "data/maps/Sprout_Tower_F3/scripts.inc"
 
-	.include "data/maps/Connection_Amberite_HalluForest/scripts.inc"
+	.include "data/maps/Amberite_Valley_Connection_Hallu_Forest/scripts.inc"
 
 	.include "data/maps/TestMap/scripts.inc"
 
-	.include "data/maps/VioletCity_HappyTown_Connection/scripts.inc"
 
-	.include "data/maps/VioletCityConnectionRoute31/scripts.inc"
+	.include "data/maps/Violet_City_Connection_Route31/scripts.inc"
 
-	.include "data/maps/CherrygroveBluemoonConnection/scripts.inc"
 
 	.include "data/maps/Violet_City_Pokemon_Center/scripts.inc"
 
@@ -1782,20 +1780,22 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 
 	.include "data/maps/Amberite_Valley_Pokemon_Center/scripts.inc"
 
-	.include "data/maps/ConnectionRt29Rt46/scripts.inc"
 
-	.include "data/maps/ConnectionRt29Cherrygrove/scripts.inc"
+	.include "data/maps/Route29_Connection_Cherrygrove_City/scripts.inc"
 
-	.include "data/maps/Connection_CherryBluemoon/scripts.inc"
+	.include "data/maps/Cherrygrove_City_Connection_Bluemoon_Falls/scripts.inc"
 
-	.include "data/maps/ConnectionAmbvalleyHalluForest/scripts.inc"
 
-	.include "data/maps/ConnectionHallu_Mtfreeze/scripts.inc"
+	.include "data/maps/Hallu_Forest_Connection_Mt_Freeze/scripts.inc"
 
-	.include "data/maps/Connection_Amb_Florando_Catallia/scripts.inc"
+	.include "data/maps/Amberite_Valley_Connection_Florando_City/scripts.inc"
 
-	.include "data/maps/Connection_AmbValley_PalmHill/scripts.inc"
+	.include "data/maps/Amberite_Valley_Connection_Palm_Hill_City/scripts.inc"
 
 	.include "data/maps/Catallia_City_Pokemon_Center/scripts.inc"
 
-	.include "data/maps/Route_32_Pokemon_Center/scripts.inc"
+	.include "data/maps/Happy_Town_Pokemon_Center/scripts.inc"
+
+	.include "data/maps/Amberite_Valley_Shopping_Area/scripts.inc"
+
+	.include "data/maps/Route32_Pokemon_Center/scripts.inc"

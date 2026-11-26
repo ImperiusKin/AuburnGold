@@ -22011,6 +22011,198 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_MalignantChain,
     },
 
+    // Placeholder: behaves like Splash until implemented.
+    [MOVE_AQUA_FANG] =
+    {
+        .name = COMPOUND_STRING("Aqua Fang"),
+        .description = COMPOUND_STRING(
+            "Placeholder move.\n"
+            "Has no effect yet."),
+        .effect = EFFECT_DO_NOTHING,
+        .power = 0,
+        .type = TYPE_NORMAL,
+        .accuracy = 0,
+        .pp = 10,
+        .target = TARGET_USER,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .ignoresProtect = TRUE,
+        .mirrorMoveBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_BETTER_IF_LAST,
+        .contestCategory = CONTEST_CATEGORY_CUTE,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Splash,
+    },
+
+    // Placeholder: behaves like Splash until implemented.
+    [MOVE_DARK_HOLE] =
+    {
+        .name = COMPOUND_STRING("Dark Hole"),
+        .description = COMPOUND_STRING(
+            "Placeholder move.\n"
+            "Has no effect yet."),
+        .effect = EFFECT_DO_NOTHING,
+        .power = 0,
+        .type = TYPE_NORMAL,
+        .accuracy = 0,
+        .pp = 10,
+        .target = TARGET_USER,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .ignoresProtect = TRUE,
+        .mirrorMoveBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_BETTER_IF_LAST,
+        .contestCategory = CONTEST_CATEGORY_CUTE,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Splash,
+    },
+
+    // Placeholder: behaves like Splash until implemented.
+    [MOVE_DRACO_BARRAGE] =
+    {
+        .name = COMPOUND_STRING("Draco Barrage"),
+        .description = COMPOUND_STRING(
+            "Placeholder move.\n"
+            "Has no effect yet."),
+        .effect = EFFECT_DO_NOTHING,
+        .power = 0,
+        .type = TYPE_NORMAL,
+        .accuracy = 0,
+        .pp = 10,
+        .target = TARGET_USER,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .ignoresProtect = TRUE,
+        .mirrorMoveBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_BETTER_IF_LAST,
+        .contestCategory = CONTEST_CATEGORY_CUTE,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Splash,
+    },
+
+    // Placeholder: behaves like Splash until implemented.
+    [MOVE_PLOW] =
+    {
+        .name = COMPOUND_STRING("Plow"),
+        .description = COMPOUND_STRING(
+            "Placeholder move.\n"
+            "Has no effect yet."),
+        .effect = EFFECT_DO_NOTHING,
+        .power = 0,
+        .type = TYPE_NORMAL,
+        .accuracy = 0,
+        .pp = 10,
+        .target = TARGET_USER,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .ignoresProtect = TRUE,
+        .mirrorMoveBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_BETTER_IF_LAST,
+        .contestCategory = CONTEST_CATEGORY_CUTE,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Splash,
+    },
+
+    // Placeholder: behaves like Splash until implemented.
+    [MOVE_SAVAGE_SPIN] =
+    {
+        .name = COMPOUND_STRING("Savage Spin"),
+        .description = COMPOUND_STRING(
+            "Placeholder move.\n"
+            "Has no effect yet."),
+        .effect = EFFECT_DO_NOTHING,
+        .power = 0,
+        .type = TYPE_NORMAL,
+        .accuracy = 0,
+        .pp = 10,
+        .target = TARGET_USER,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .ignoresProtect = TRUE,
+        .mirrorMoveBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_BETTER_IF_LAST,
+        .contestCategory = CONTEST_CATEGORY_CUTE,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Splash,
+    },
+
+    // Placeholder: behaves like Splash until implemented.
+    [MOVE_IRON_POLISH] =
+    {
+        .name = COMPOUND_STRING("Iron Polish"),
+        .description = COMPOUND_STRING(
+            "Placeholder move.\n"
+            "Has no effect yet."),
+        .effect = EFFECT_DO_NOTHING,
+        .power = 0,
+        .type = TYPE_NORMAL,
+        .accuracy = 0,
+        .pp = 10,
+        .target = TARGET_USER,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .ignoresProtect = TRUE,
+        .mirrorMoveBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_BETTER_IF_LAST,
+        .contestCategory = CONTEST_CATEGORY_CUTE,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Splash,
+    },
+
+    // Placeholder: behaves like Splash until implemented.
+    [MOVE_ICE_SPEAR] =
+    {
+        .name = COMPOUND_STRING("Ice Spear"),
+        .description = COMPOUND_STRING(
+            "Placeholder move.\n"
+            "Has no effect yet."),
+        .effect = EFFECT_DO_NOTHING,
+        .power = 0,
+        .type = TYPE_NORMAL,
+        .accuracy = 0,
+        .pp = 10,
+        .target = TARGET_USER,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .ignoresProtect = TRUE,
+        .mirrorMoveBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_BETTER_IF_LAST,
+        .contestCategory = CONTEST_CATEGORY_CUTE,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Splash,
+    },
+
+    // Placeholder: behaves like Splash until implemented.
+    [MOVE_FIRE_CHARGE] =
+    {
+        .name = COMPOUND_STRING("Fire Charge"),
+        .description = COMPOUND_STRING(
+            "Placeholder move.\n"
+            "Has no effect yet."),
+        .effect = EFFECT_DO_NOTHING,
+        .power = 0,
+        .type = TYPE_NORMAL,
+        .accuracy = 0,
+        .pp = 10,
+        .target = TARGET_USER,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .ignoresProtect = TRUE,
+        .mirrorMoveBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_BETTER_IF_LAST,
+        .contestCategory = CONTEST_CATEGORY_CUTE,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Splash,
+    },
+
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
     {

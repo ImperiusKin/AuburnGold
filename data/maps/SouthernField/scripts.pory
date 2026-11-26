@@ -16,7 +16,6 @@ script SouthernFields_EventScript_Trainer_2{
     end
 }
 
-const SOUTHERNFIELDS_KATY = TRAINER_RICK
 script SouthernFields_EventScript_Katy{
     faceplayer
     lock
@@ -25,7 +24,7 @@ script SouthernFields_EventScript_Katy{
     }
     else{
         msgbox(format("Katy: Hello there! I'm Katy, a Gym Leader from Paldea. I came to Johto to help with the tournament... but I couldn't pass up a place like this! Since you're here too... How about a battle?"))
-        trainerbattle_no_intro(TRAINER_RICK, format("That was a lovely battle!"))
+        trainerbattle_no_intro(TRAINER_KATY, format("That was a lovely battle!"))
         msgbox(format("Here, these are for you."))
         giveitem(ITEM_TM_ROAR, 1)
         msgbox(format("Signal Beam is a Bug-type move that may confuse the target."))

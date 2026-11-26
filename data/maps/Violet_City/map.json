@@ -15,7 +15,7 @@
   "connections": [
     {
       "map": "MAP_ROUTE_32",
-      "offset": -6,
+      "offset": -7,
       "direction": "down"
     },
     {
@@ -27,21 +27,21 @@
   "object_events": [],
   "warp_events": [
     {
-      "x": 45,
+      "x": 44,
       "y": 35,
       "elevation": 0,
       "dest_map": "MAP_VIOLET_CITY_CONNECTION_ROUTE31",
       "dest_warp_id": "0"
     },
     {
-      "x": 45,
+      "x": 44,
       "y": 36,
       "elevation": 0,
       "dest_map": "MAP_VIOLET_CITY_CONNECTION_ROUTE31",
       "dest_warp_id": "0"
     },
     {
-      "x": 45,
+      "x": 44,
       "y": 37,
       "elevation": 0,
       "dest_map": "MAP_VIOLET_CITY_CONNECTION_ROUTE31",
@@ -62,10 +62,38 @@
       "dest_warp_id": "0"
     },
     {
+      "x": 34,
+      "y": 40,
+      "elevation": 0,
+      "dest_map": "MAP_VIOLET_CITY_CONNECTION_HAPPY_TOWN",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 35,
+      "y": 40,
+      "elevation": 0,
+      "dest_map": "MAP_VIOLET_CITY_CONNECTION_HAPPY_TOWN",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 36,
+      "y": 40,
+      "elevation": 0,
+      "dest_map": "MAP_VIOLET_CITY_CONNECTION_HAPPY_TOWN",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 37,
+      "y": 40,
+      "elevation": 0,
+      "dest_map": "MAP_VIOLET_CITY_CONNECTION_HAPPY_TOWN",
+      "dest_warp_id": "0"
+    },
+    {
       "x": 21,
       "y": 18,
       "elevation": 0,
-      "dest_map": "MAP_VIOLET_GYM",
+      "dest_map": "MAP_VIOLET_CITY_GYM",
       "dest_warp_id": "0"
     }
   ],

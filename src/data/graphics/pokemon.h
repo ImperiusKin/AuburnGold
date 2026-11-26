@@ -27557,3 +27557,952 @@ const u32 gObjectEventPic_Substitute[] = INCGFX_COMP("graphics/pokemon/question_
     const u32 gMonFrontPic_Egg[] = INCGFX_U32("graphics/pokemon/egg/anim_front.png", ".4bpp.smol");
     const u16 gMonPalette_Egg[] = INCGFX_U16("graphics/pokemon/egg/normal.pal", ".gbapal");
     const u8 gMonIcon_Egg[] = INCGFX_U8("graphics/pokemon/egg/icon.png", ".4bpp");
+
+// ===== Auburn Gold: species added in LevelUpData-PokemonUpdates =====
+// Every file below is a copy of Bulbasaur's graphics; replace the PNG/PAL in place.
+
+// AppletunMega: placeholder copy of Bulbasaur's graphics in graphics/pokemon/appletun/mega/
+#if !P_GBA_STYLE_SPECIES_GFX
+    const u32 gMonFrontPic_AppletunMega[] = INCGFX_U32("graphics/pokemon/appletun/mega/anim_front.png", ".4bpp.smol");
+    const u16 gMonPalette_AppletunMega[] = INCGFX_U16("graphics/pokemon/appletun/mega/normal.pal", ".gbapal");
+    const u32 gMonBackPic_AppletunMega[] = INCGFX_U32("graphics/pokemon/appletun/mega/back.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_AppletunMega[] = INCGFX_U16("graphics/pokemon/appletun/mega/shiny.pal", ".gbapal");
+#else
+    const u32 gMonFrontPic_AppletunMega[] = INCGFX_U32("graphics/pokemon/appletun/mega/anim_front_gba.png", ".4bpp.smol");
+    const u16 gMonPalette_AppletunMega[] = INCGFX_U16("graphics/pokemon/appletun/mega/normal_gba.pal", ".gbapal");
+    const u32 gMonBackPic_AppletunMega[] = INCGFX_U32("graphics/pokemon/appletun/mega/back_gba.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_AppletunMega[] = INCGFX_U16("graphics/pokemon/appletun/mega/shiny_gba.pal", ".gbapal");
+#endif //P_GBA_STYLE_SPECIES_GFX
+#if !P_GBA_STYLE_SPECIES_ICONS
+    const u8 gMonIcon_AppletunMega[] = INCGFX_U8("graphics/pokemon/appletun/mega/icon.png", ".4bpp");
+#else
+    const u8 gMonIcon_AppletunMega[] = INCGFX_U8("graphics/pokemon/appletun/mega/icon_gba.png", ".4bpp");
+#endif //P_GBA_STYLE_SPECIES_ICONS
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_AppletunMega[] = INCGFX_COMP("graphics/pokemon/appletun/mega/overworld.png", ".4bpp", "-mwidth 4 -mheight 4");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_AppletunMega[] = INCGFX_U16("graphics/pokemon/appletun/mega/overworld_normal.pal", ".gbapal");
+    const u16 gShinyOverworldPalette_AppletunMega[] = INCGFX_U16("graphics/pokemon/appletun/mega/overworld_shiny.pal", ".gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+
+// Barbeqwil: placeholder copy of Bulbasaur's graphics in graphics/pokemon/barbeqwil/
+#if !P_GBA_STYLE_SPECIES_GFX
+    const u32 gMonFrontPic_Barbeqwil[] = INCGFX_U32("graphics/pokemon/barbeqwil/anim_front.png", ".4bpp.smol");
+    const u16 gMonPalette_Barbeqwil[] = INCGFX_U16("graphics/pokemon/barbeqwil/normal.pal", ".gbapal");
+    const u32 gMonBackPic_Barbeqwil[] = INCGFX_U32("graphics/pokemon/barbeqwil/back.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_Barbeqwil[] = INCGFX_U16("graphics/pokemon/barbeqwil/shiny.pal", ".gbapal");
+#else
+    const u32 gMonFrontPic_Barbeqwil[] = INCGFX_U32("graphics/pokemon/barbeqwil/anim_front_gba.png", ".4bpp.smol");
+    const u16 gMonPalette_Barbeqwil[] = INCGFX_U16("graphics/pokemon/barbeqwil/normal_gba.pal", ".gbapal");
+    const u32 gMonBackPic_Barbeqwil[] = INCGFX_U32("graphics/pokemon/barbeqwil/back_gba.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_Barbeqwil[] = INCGFX_U16("graphics/pokemon/barbeqwil/shiny_gba.pal", ".gbapal");
+#endif //P_GBA_STYLE_SPECIES_GFX
+#if !P_GBA_STYLE_SPECIES_ICONS
+    const u8 gMonIcon_Barbeqwil[] = INCGFX_U8("graphics/pokemon/barbeqwil/icon.png", ".4bpp");
+#else
+    const u8 gMonIcon_Barbeqwil[] = INCGFX_U8("graphics/pokemon/barbeqwil/icon_gba.png", ".4bpp");
+#endif //P_GBA_STYLE_SPECIES_ICONS
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_Barbeqwil[] = INCGFX_U8("graphics/pokemon/barbeqwil/footprint.png", ".1bpp");
+#endif //P_FOOTPRINTS
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_Barbeqwil[] = INCGFX_COMP("graphics/pokemon/barbeqwil/overworld.png", ".4bpp", "-mwidth 4 -mheight 4");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_Barbeqwil[] = INCGFX_U16("graphics/pokemon/barbeqwil/overworld_normal.pal", ".gbapal");
+    const u16 gShinyOverworldPalette_Barbeqwil[] = INCGFX_U16("graphics/pokemon/barbeqwil/overworld_shiny.pal", ".gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+
+// ButterfreeFMega: placeholder copy of Bulbasaur's graphics in graphics/pokemon/butterfree/mega/
+#if !P_GBA_STYLE_SPECIES_GFX
+    const u32 gMonFrontPic_ButterfreeFMega[] = INCGFX_U32("graphics/pokemon/butterfree/mega/anim_frontf.png", ".4bpp.smol");
+    const u32 gMonBackPic_ButterfreeFMega[] = INCGFX_U32("graphics/pokemon/butterfree/mega/backf.png", ".4bpp.smol");
+#else
+    const u32 gMonFrontPic_ButterfreeFMega[] = INCGFX_U32("graphics/pokemon/butterfree/mega/anim_frontf_gba.png", ".4bpp.smol");
+    const u32 gMonBackPic_ButterfreeFMega[] = INCGFX_U32("graphics/pokemon/butterfree/mega/backf_gba.png", ".4bpp.smol");
+#endif //P_GBA_STYLE_SPECIES_GFX
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_ButterfreeFMega[] = INCGFX_COMP("graphics/pokemon/butterfree/mega/overworldf.png", ".4bpp", "-mwidth 4 -mheight 4");
+#endif //OW_POKEMON_OBJECT_EVENTS
+
+// ButterfreeMega: placeholder copy of Bulbasaur's graphics in graphics/pokemon/butterfree/mega/
+#if !P_GBA_STYLE_SPECIES_GFX
+    const u32 gMonFrontPic_ButterfreeMega[] = INCGFX_U32("graphics/pokemon/butterfree/mega/anim_front.png", ".4bpp.smol");
+    const u16 gMonPalette_ButterfreeMega[] = INCGFX_U16("graphics/pokemon/butterfree/mega/normal.pal", ".gbapal");
+    const u32 gMonBackPic_ButterfreeMega[] = INCGFX_U32("graphics/pokemon/butterfree/mega/back.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_ButterfreeMega[] = INCGFX_U16("graphics/pokemon/butterfree/mega/shiny.pal", ".gbapal");
+#else
+    const u32 gMonFrontPic_ButterfreeMega[] = INCGFX_U32("graphics/pokemon/butterfree/mega/anim_front_gba.png", ".4bpp.smol");
+    const u16 gMonPalette_ButterfreeMega[] = INCGFX_U16("graphics/pokemon/butterfree/mega/normal_gba.pal", ".gbapal");
+    const u32 gMonBackPic_ButterfreeMega[] = INCGFX_U32("graphics/pokemon/butterfree/mega/back_gba.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_ButterfreeMega[] = INCGFX_U16("graphics/pokemon/butterfree/mega/shiny_gba.pal", ".gbapal");
+#endif //P_GBA_STYLE_SPECIES_GFX
+#if !P_GBA_STYLE_SPECIES_ICONS
+    const u8 gMonIcon_ButterfreeMega[] = INCGFX_U8("graphics/pokemon/butterfree/mega/icon.png", ".4bpp");
+#else
+    const u8 gMonIcon_ButterfreeMega[] = INCGFX_U8("graphics/pokemon/butterfree/mega/icon_gba.png", ".4bpp");
+#endif //P_GBA_STYLE_SPECIES_ICONS
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_ButterfreeMega[] = INCGFX_COMP("graphics/pokemon/butterfree/mega/overworld.png", ".4bpp", "-mwidth 4 -mheight 4");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_ButterfreeMega[] = INCGFX_U16("graphics/pokemon/butterfree/mega/overworld_normal.pal", ".gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+
+// CentiskorchMega: placeholder copy of Bulbasaur's graphics in graphics/pokemon/centiskorch/mega/
+#if !P_GBA_STYLE_SPECIES_GFX
+    const u32 gMonFrontPic_CentiskorchMega[] = INCGFX_U32("graphics/pokemon/centiskorch/mega/anim_front.png", ".4bpp.smol");
+    const u16 gMonPalette_CentiskorchMega[] = INCGFX_U16("graphics/pokemon/centiskorch/mega/normal.pal", ".gbapal");
+    const u32 gMonBackPic_CentiskorchMega[] = INCGFX_U32("graphics/pokemon/centiskorch/mega/back.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_CentiskorchMega[] = INCGFX_U16("graphics/pokemon/centiskorch/mega/shiny.pal", ".gbapal");
+#else
+    const u32 gMonFrontPic_CentiskorchMega[] = INCGFX_U32("graphics/pokemon/centiskorch/mega/anim_front_gba.png", ".4bpp.smol");
+    const u16 gMonPalette_CentiskorchMega[] = INCGFX_U16("graphics/pokemon/centiskorch/mega/normal_gba.pal", ".gbapal");
+    const u32 gMonBackPic_CentiskorchMega[] = INCGFX_U32("graphics/pokemon/centiskorch/mega/back_gba.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_CentiskorchMega[] = INCGFX_U16("graphics/pokemon/centiskorch/mega/shiny_gba.pal", ".gbapal");
+#endif //P_GBA_STYLE_SPECIES_GFX
+#if !P_GBA_STYLE_SPECIES_ICONS
+    const u8 gMonIcon_CentiskorchMega[] = INCGFX_U8("graphics/pokemon/centiskorch/mega/icon.png", ".4bpp");
+#else
+    const u8 gMonIcon_CentiskorchMega[] = INCGFX_U8("graphics/pokemon/centiskorch/mega/icon_gba.png", ".4bpp");
+#endif //P_GBA_STYLE_SPECIES_ICONS
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_CentiskorchMega[] = INCGFX_COMP("graphics/pokemon/centiskorch/mega/overworld.png", ".4bpp", "-mwidth 4 -mheight 4");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_CentiskorchMega[] = INCGFX_U16("graphics/pokemon/centiskorch/mega/overworld_normal.pal", ".gbapal");
+    const u16 gShinyOverworldPalette_CentiskorchMega[] = INCGFX_U16("graphics/pokemon/centiskorch/mega/overworld_shiny.pal", ".gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+
+// ChandelureMega: placeholder copy of Bulbasaur's graphics in graphics/pokemon/chandelure/mega/
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_ChandelureMega[] = INCGFX_COMP("graphics/pokemon/chandelure/mega/overworld.png", ".4bpp", "-mwidth 4 -mheight 4");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_ChandelureMega[] = INCGFX_U16("graphics/pokemon/chandelure/mega/overworld_normal.pal", ".gbapal");
+    const u16 gShinyOverworldPalette_ChandelureMega[] = INCGFX_U16("graphics/pokemon/chandelure/mega/overworld_shiny.pal", ".gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+
+// CoalossalMega: placeholder copy of Bulbasaur's graphics in graphics/pokemon/coalossal/mega/
+#if !P_GBA_STYLE_SPECIES_GFX
+    const u32 gMonFrontPic_CoalossalMega[] = INCGFX_U32("graphics/pokemon/coalossal/mega/anim_front.png", ".4bpp.smol");
+    const u16 gMonPalette_CoalossalMega[] = INCGFX_U16("graphics/pokemon/coalossal/mega/normal.pal", ".gbapal");
+    const u32 gMonBackPic_CoalossalMega[] = INCGFX_U32("graphics/pokemon/coalossal/mega/back.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_CoalossalMega[] = INCGFX_U16("graphics/pokemon/coalossal/mega/shiny.pal", ".gbapal");
+#else
+    const u32 gMonFrontPic_CoalossalMega[] = INCGFX_U32("graphics/pokemon/coalossal/mega/anim_front_gba.png", ".4bpp.smol");
+    const u16 gMonPalette_CoalossalMega[] = INCGFX_U16("graphics/pokemon/coalossal/mega/normal_gba.pal", ".gbapal");
+    const u32 gMonBackPic_CoalossalMega[] = INCGFX_U32("graphics/pokemon/coalossal/mega/back_gba.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_CoalossalMega[] = INCGFX_U16("graphics/pokemon/coalossal/mega/shiny_gba.pal", ".gbapal");
+#endif //P_GBA_STYLE_SPECIES_GFX
+#if !P_GBA_STYLE_SPECIES_ICONS
+    const u8 gMonIcon_CoalossalMega[] = INCGFX_U8("graphics/pokemon/coalossal/mega/icon.png", ".4bpp");
+#else
+    const u8 gMonIcon_CoalossalMega[] = INCGFX_U8("graphics/pokemon/coalossal/mega/icon_gba.png", ".4bpp");
+#endif //P_GBA_STYLE_SPECIES_ICONS
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_CoalossalMega[] = INCGFX_COMP("graphics/pokemon/coalossal/mega/overworld.png", ".4bpp", "-mwidth 4 -mheight 4");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_CoalossalMega[] = INCGFX_U16("graphics/pokemon/coalossal/mega/overworld_normal.pal", ".gbapal");
+    const u16 gShinyOverworldPalette_CoalossalMega[] = INCGFX_U16("graphics/pokemon/coalossal/mega/overworld_shiny.pal", ".gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+
+// CopperajahMega: placeholder copy of Bulbasaur's graphics in graphics/pokemon/copperajah/mega/
+#if !P_GBA_STYLE_SPECIES_GFX
+    const u32 gMonFrontPic_CopperajahMega[] = INCGFX_U32("graphics/pokemon/copperajah/mega/anim_front.png", ".4bpp.smol");
+    const u16 gMonPalette_CopperajahMega[] = INCGFX_U16("graphics/pokemon/copperajah/mega/normal.pal", ".gbapal");
+    const u32 gMonBackPic_CopperajahMega[] = INCGFX_U32("graphics/pokemon/copperajah/mega/back.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_CopperajahMega[] = INCGFX_U16("graphics/pokemon/copperajah/mega/shiny.pal", ".gbapal");
+#else
+    const u32 gMonFrontPic_CopperajahMega[] = INCGFX_U32("graphics/pokemon/copperajah/mega/anim_front_gba.png", ".4bpp.smol");
+    const u16 gMonPalette_CopperajahMega[] = INCGFX_U16("graphics/pokemon/copperajah/mega/normal_gba.pal", ".gbapal");
+    const u32 gMonBackPic_CopperajahMega[] = INCGFX_U32("graphics/pokemon/copperajah/mega/back_gba.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_CopperajahMega[] = INCGFX_U16("graphics/pokemon/copperajah/mega/shiny_gba.pal", ".gbapal");
+#endif //P_GBA_STYLE_SPECIES_GFX
+#if !P_GBA_STYLE_SPECIES_ICONS
+    const u8 gMonIcon_CopperajahMega[] = INCGFX_U8("graphics/pokemon/copperajah/mega/icon.png", ".4bpp");
+#else
+    const u8 gMonIcon_CopperajahMega[] = INCGFX_U8("graphics/pokemon/copperajah/mega/icon_gba.png", ".4bpp");
+#endif //P_GBA_STYLE_SPECIES_ICONS
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_CopperajahMega[] = INCGFX_COMP("graphics/pokemon/copperajah/mega/overworld.png", ".4bpp", "-mwidth 4 -mheight 4");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_CopperajahMega[] = INCGFX_U16("graphics/pokemon/copperajah/mega/overworld_normal.pal", ".gbapal");
+    const u16 gShinyOverworldPalette_CopperajahMega[] = INCGFX_U16("graphics/pokemon/copperajah/mega/overworld_shiny.pal", ".gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+
+// DrapionMega: placeholder copy of Bulbasaur's graphics in graphics/pokemon/drapion/mega/
+#if !P_GBA_STYLE_SPECIES_GFX
+    const u32 gMonFrontPic_DrapionMega[] = INCGFX_U32("graphics/pokemon/drapion/mega/anim_front.png", ".4bpp.smol");
+    const u16 gMonPalette_DrapionMega[] = INCGFX_U16("graphics/pokemon/drapion/mega/normal.pal", ".gbapal");
+    const u32 gMonBackPic_DrapionMega[] = INCGFX_U32("graphics/pokemon/drapion/mega/back.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_DrapionMega[] = INCGFX_U16("graphics/pokemon/drapion/mega/shiny.pal", ".gbapal");
+#else
+    const u32 gMonFrontPic_DrapionMega[] = INCGFX_U32("graphics/pokemon/drapion/mega/anim_front_gba.png", ".4bpp.smol");
+    const u16 gMonPalette_DrapionMega[] = INCGFX_U16("graphics/pokemon/drapion/mega/normal_gba.pal", ".gbapal");
+    const u32 gMonBackPic_DrapionMega[] = INCGFX_U32("graphics/pokemon/drapion/mega/back_gba.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_DrapionMega[] = INCGFX_U16("graphics/pokemon/drapion/mega/shiny_gba.pal", ".gbapal");
+#endif //P_GBA_STYLE_SPECIES_GFX
+#if !P_GBA_STYLE_SPECIES_ICONS
+    const u8 gMonIcon_DrapionMega[] = INCGFX_U8("graphics/pokemon/drapion/mega/icon.png", ".4bpp");
+#else
+    const u8 gMonIcon_DrapionMega[] = INCGFX_U8("graphics/pokemon/drapion/mega/icon_gba.png", ".4bpp");
+#endif //P_GBA_STYLE_SPECIES_ICONS
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_DrapionMega[] = INCGFX_COMP("graphics/pokemon/drapion/mega/overworld.png", ".4bpp", "-mwidth 4 -mheight 4");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_DrapionMega[] = INCGFX_U16("graphics/pokemon/drapion/mega/overworld_normal.pal", ".gbapal");
+    const u16 gShinyOverworldPalette_DrapionMega[] = INCGFX_U16("graphics/pokemon/drapion/mega/overworld_shiny.pal", ".gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+
+// DrednawMega: placeholder copy of Bulbasaur's graphics in graphics/pokemon/drednaw/mega/
+#if !P_GBA_STYLE_SPECIES_GFX
+    const u32 gMonFrontPic_DrednawMega[] = INCGFX_U32("graphics/pokemon/drednaw/mega/anim_front.png", ".4bpp.smol");
+    const u16 gMonPalette_DrednawMega[] = INCGFX_U16("graphics/pokemon/drednaw/mega/normal.pal", ".gbapal");
+    const u32 gMonBackPic_DrednawMega[] = INCGFX_U32("graphics/pokemon/drednaw/mega/back.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_DrednawMega[] = INCGFX_U16("graphics/pokemon/drednaw/mega/shiny.pal", ".gbapal");
+#else
+    const u32 gMonFrontPic_DrednawMega[] = INCGFX_U32("graphics/pokemon/drednaw/mega/anim_front_gba.png", ".4bpp.smol");
+    const u16 gMonPalette_DrednawMega[] = INCGFX_U16("graphics/pokemon/drednaw/mega/normal_gba.pal", ".gbapal");
+    const u32 gMonBackPic_DrednawMega[] = INCGFX_U32("graphics/pokemon/drednaw/mega/back_gba.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_DrednawMega[] = INCGFX_U16("graphics/pokemon/drednaw/mega/shiny_gba.pal", ".gbapal");
+#endif //P_GBA_STYLE_SPECIES_GFX
+#if !P_GBA_STYLE_SPECIES_ICONS
+    const u8 gMonIcon_DrednawMega[] = INCGFX_U8("graphics/pokemon/drednaw/mega/icon.png", ".4bpp");
+#else
+    const u8 gMonIcon_DrednawMega[] = INCGFX_U8("graphics/pokemon/drednaw/mega/icon_gba.png", ".4bpp");
+#endif //P_GBA_STYLE_SPECIES_ICONS
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_DrednawMega[] = INCGFX_COMP("graphics/pokemon/drednaw/mega/overworld.png", ".4bpp", "-mwidth 4 -mheight 4");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_DrednawMega[] = INCGFX_U16("graphics/pokemon/drednaw/mega/overworld_normal.pal", ".gbapal");
+    const u16 gShinyOverworldPalette_DrednawMega[] = INCGFX_U16("graphics/pokemon/drednaw/mega/overworld_shiny.pal", ".gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+
+// DusknoirMega: placeholder copy of Bulbasaur's graphics in graphics/pokemon/dusknoir/mega/
+#if !P_GBA_STYLE_SPECIES_GFX
+    const u32 gMonFrontPic_DusknoirMega[] = INCGFX_U32("graphics/pokemon/dusknoir/mega/anim_front.png", ".4bpp.smol");
+    const u16 gMonPalette_DusknoirMega[] = INCGFX_U16("graphics/pokemon/dusknoir/mega/normal.pal", ".gbapal");
+    const u32 gMonBackPic_DusknoirMega[] = INCGFX_U32("graphics/pokemon/dusknoir/mega/back.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_DusknoirMega[] = INCGFX_U16("graphics/pokemon/dusknoir/mega/shiny.pal", ".gbapal");
+#else
+    const u32 gMonFrontPic_DusknoirMega[] = INCGFX_U32("graphics/pokemon/dusknoir/mega/anim_front_gba.png", ".4bpp.smol");
+    const u16 gMonPalette_DusknoirMega[] = INCGFX_U16("graphics/pokemon/dusknoir/mega/normal_gba.pal", ".gbapal");
+    const u32 gMonBackPic_DusknoirMega[] = INCGFX_U32("graphics/pokemon/dusknoir/mega/back_gba.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_DusknoirMega[] = INCGFX_U16("graphics/pokemon/dusknoir/mega/shiny_gba.pal", ".gbapal");
+#endif //P_GBA_STYLE_SPECIES_GFX
+#if !P_GBA_STYLE_SPECIES_ICONS
+    const u8 gMonIcon_DusknoirMega[] = INCGFX_U8("graphics/pokemon/dusknoir/mega/icon.png", ".4bpp");
+#else
+    const u8 gMonIcon_DusknoirMega[] = INCGFX_U8("graphics/pokemon/dusknoir/mega/icon_gba.png", ".4bpp");
+#endif //P_GBA_STYLE_SPECIES_ICONS
+
+// EelektrossMega: placeholder copy of Bulbasaur's graphics in graphics/pokemon/eelektross/mega/
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_EelektrossMega[] = INCGFX_COMP("graphics/pokemon/eelektross/mega/overworld.png", ".4bpp", "-mwidth 4 -mheight 4");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_EelektrossMega[] = INCGFX_U16("graphics/pokemon/eelektross/mega/overworld_normal.pal", ".gbapal");
+    const u16 gShinyOverworldPalette_EelektrossMega[] = INCGFX_U16("graphics/pokemon/eelektross/mega/overworld_shiny.pal", ".gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+
+// EmboarMega: placeholder copy of Bulbasaur's graphics in graphics/pokemon/emboar/mega/
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_EmboarMega[] = INCGFX_COMP("graphics/pokemon/emboar/mega/overworld.png", ".4bpp", "-mwidth 4 -mheight 4");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_EmboarMega[] = INCGFX_U16("graphics/pokemon/emboar/mega/overworld_normal.pal", ".gbapal");
+    const u16 gShinyOverworldPalette_EmboarMega[] = INCGFX_U16("graphics/pokemon/emboar/mega/overworld_shiny.pal", ".gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+
+// EmpoleonMega: placeholder copy of Bulbasaur's graphics in graphics/pokemon/empoleon/mega/
+#if !P_GBA_STYLE_SPECIES_GFX
+    const u32 gMonFrontPic_EmpoleonMega[] = INCGFX_U32("graphics/pokemon/empoleon/mega/anim_front.png", ".4bpp.smol");
+    const u16 gMonPalette_EmpoleonMega[] = INCGFX_U16("graphics/pokemon/empoleon/mega/normal.pal", ".gbapal");
+    const u32 gMonBackPic_EmpoleonMega[] = INCGFX_U32("graphics/pokemon/empoleon/mega/back.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_EmpoleonMega[] = INCGFX_U16("graphics/pokemon/empoleon/mega/shiny.pal", ".gbapal");
+#else
+    const u32 gMonFrontPic_EmpoleonMega[] = INCGFX_U32("graphics/pokemon/empoleon/mega/anim_front_gba.png", ".4bpp.smol");
+    const u16 gMonPalette_EmpoleonMega[] = INCGFX_U16("graphics/pokemon/empoleon/mega/normal_gba.pal", ".gbapal");
+    const u32 gMonBackPic_EmpoleonMega[] = INCGFX_U32("graphics/pokemon/empoleon/mega/back_gba.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_EmpoleonMega[] = INCGFX_U16("graphics/pokemon/empoleon/mega/shiny_gba.pal", ".gbapal");
+#endif //P_GBA_STYLE_SPECIES_GFX
+
+// ExcadrillMega: placeholder copy of Bulbasaur's graphics in graphics/pokemon/excadrill/mega/
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_ExcadrillMega[] = INCGFX_COMP("graphics/pokemon/excadrill/mega/overworld.png", ".4bpp", "-mwidth 4 -mheight 4");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_ExcadrillMega[] = INCGFX_U16("graphics/pokemon/excadrill/mega/overworld_normal.pal", ".gbapal");
+    const u16 gShinyOverworldPalette_ExcadrillMega[] = INCGFX_U16("graphics/pokemon/excadrill/mega/overworld_shiny.pal", ".gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+
+// FlappleMega: placeholder copy of Bulbasaur's graphics in graphics/pokemon/flapple/mega/
+#if !P_GBA_STYLE_SPECIES_GFX
+    const u32 gMonFrontPic_FlappleMega[] = INCGFX_U32("graphics/pokemon/flapple/mega/anim_front.png", ".4bpp.smol");
+    const u16 gMonPalette_FlappleMega[] = INCGFX_U16("graphics/pokemon/flapple/mega/normal.pal", ".gbapal");
+    const u32 gMonBackPic_FlappleMega[] = INCGFX_U32("graphics/pokemon/flapple/mega/back.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_FlappleMega[] = INCGFX_U16("graphics/pokemon/flapple/mega/shiny.pal", ".gbapal");
+#else
+    const u32 gMonFrontPic_FlappleMega[] = INCGFX_U32("graphics/pokemon/flapple/mega/anim_front_gba.png", ".4bpp.smol");
+    const u16 gMonPalette_FlappleMega[] = INCGFX_U16("graphics/pokemon/flapple/mega/normal_gba.pal", ".gbapal");
+    const u32 gMonBackPic_FlappleMega[] = INCGFX_U32("graphics/pokemon/flapple/mega/back_gba.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_FlappleMega[] = INCGFX_U16("graphics/pokemon/flapple/mega/shiny_gba.pal", ".gbapal");
+#endif //P_GBA_STYLE_SPECIES_GFX
+#if !P_GBA_STYLE_SPECIES_ICONS
+    const u8 gMonIcon_FlappleMega[] = INCGFX_U8("graphics/pokemon/flapple/mega/icon.png", ".4bpp");
+#else
+    const u8 gMonIcon_FlappleMega[] = INCGFX_U8("graphics/pokemon/flapple/mega/icon_gba.png", ".4bpp");
+#endif //P_GBA_STYLE_SPECIES_ICONS
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_FlappleMega[] = INCGFX_COMP("graphics/pokemon/flapple/mega/overworld.png", ".4bpp", "-mwidth 4 -mheight 4");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_FlappleMega[] = INCGFX_U16("graphics/pokemon/flapple/mega/overworld_normal.pal", ".gbapal");
+    const u16 gShinyOverworldPalette_FlappleMega[] = INCGFX_U16("graphics/pokemon/flapple/mega/overworld_shiny.pal", ".gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+
+// GarbodorMega: placeholder copy of Bulbasaur's graphics in graphics/pokemon/garbodor/mega/
+#if !P_GBA_STYLE_SPECIES_GFX
+    const u32 gMonFrontPic_GarbodorMega[] = INCGFX_U32("graphics/pokemon/garbodor/mega/anim_front.png", ".4bpp.smol");
+    const u16 gMonPalette_GarbodorMega[] = INCGFX_U16("graphics/pokemon/garbodor/mega/normal.pal", ".gbapal");
+    const u32 gMonBackPic_GarbodorMega[] = INCGFX_U32("graphics/pokemon/garbodor/mega/back.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_GarbodorMega[] = INCGFX_U16("graphics/pokemon/garbodor/mega/shiny.pal", ".gbapal");
+#else
+    const u32 gMonFrontPic_GarbodorMega[] = INCGFX_U32("graphics/pokemon/garbodor/mega/anim_front_gba.png", ".4bpp.smol");
+    const u16 gMonPalette_GarbodorMega[] = INCGFX_U16("graphics/pokemon/garbodor/mega/normal_gba.pal", ".gbapal");
+    const u32 gMonBackPic_GarbodorMega[] = INCGFX_U32("graphics/pokemon/garbodor/mega/back_gba.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_GarbodorMega[] = INCGFX_U16("graphics/pokemon/garbodor/mega/shiny_gba.pal", ".gbapal");
+#endif //P_GBA_STYLE_SPECIES_GFX
+#if !P_GBA_STYLE_SPECIES_ICONS
+    const u8 gMonIcon_GarbodorMega[] = INCGFX_U8("graphics/pokemon/garbodor/mega/icon.png", ".4bpp");
+#else
+    const u8 gMonIcon_GarbodorMega[] = INCGFX_U8("graphics/pokemon/garbodor/mega/icon_gba.png", ".4bpp");
+#endif //P_GBA_STYLE_SPECIES_ICONS
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_GarbodorMega[] = INCGFX_COMP("graphics/pokemon/garbodor/mega/overworld.png", ".4bpp", "-mwidth 4 -mheight 4");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_GarbodorMega[] = INCGFX_U16("graphics/pokemon/garbodor/mega/overworld_normal.pal", ".gbapal");
+    const u16 gShinyOverworldPalette_GarbodorMega[] = INCGFX_U16("graphics/pokemon/garbodor/mega/overworld_shiny.pal", ".gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+
+// GolurkMega: placeholder copy of Bulbasaur's graphics in graphics/pokemon/golurk/mega/
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_GolurkMega[] = INCGFX_COMP("graphics/pokemon/golurk/mega/overworld.png", ".4bpp", "-mwidth 4 -mheight 4");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_GolurkMega[] = INCGFX_U16("graphics/pokemon/golurk/mega/overworld_normal.pal", ".gbapal");
+    const u16 gShinyOverworldPalette_GolurkMega[] = INCGFX_U16("graphics/pokemon/golurk/mega/overworld_shiny.pal", ".gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+
+// GoodraHisuiMega: placeholder copy of Bulbasaur's graphics in graphics/pokemon/goodra/hisui/mega/
+#if !P_GBA_STYLE_SPECIES_GFX
+    const u32 gMonFrontPic_GoodraHisuiMega[] = INCGFX_U32("graphics/pokemon/goodra/hisui/mega/anim_front.png", ".4bpp.smol");
+    const u16 gMonPalette_GoodraHisuiMega[] = INCGFX_U16("graphics/pokemon/goodra/hisui/mega/normal.pal", ".gbapal");
+    const u32 gMonBackPic_GoodraHisuiMega[] = INCGFX_U32("graphics/pokemon/goodra/hisui/mega/back.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_GoodraHisuiMega[] = INCGFX_U16("graphics/pokemon/goodra/hisui/mega/shiny.pal", ".gbapal");
+#else
+    const u32 gMonFrontPic_GoodraHisuiMega[] = INCGFX_U32("graphics/pokemon/goodra/hisui/mega/anim_front_gba.png", ".4bpp.smol");
+    const u16 gMonPalette_GoodraHisuiMega[] = INCGFX_U16("graphics/pokemon/goodra/hisui/mega/normal_gba.pal", ".gbapal");
+    const u32 gMonBackPic_GoodraHisuiMega[] = INCGFX_U32("graphics/pokemon/goodra/hisui/mega/back_gba.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_GoodraHisuiMega[] = INCGFX_U16("graphics/pokemon/goodra/hisui/mega/shiny_gba.pal", ".gbapal");
+#endif //P_GBA_STYLE_SPECIES_GFX
+#if !P_GBA_STYLE_SPECIES_ICONS
+    const u8 gMonIcon_GoodraHisuiMega[] = INCGFX_U8("graphics/pokemon/goodra/hisui/mega/icon.png", ".4bpp");
+#else
+    const u8 gMonIcon_GoodraHisuiMega[] = INCGFX_U8("graphics/pokemon/goodra/hisui/mega/icon_gba.png", ".4bpp");
+#endif //P_GBA_STYLE_SPECIES_ICONS
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_GoodraHisuiMega[] = INCGFX_COMP("graphics/pokemon/goodra/hisui/mega/overworld.png", ".4bpp", "-mwidth 4 -mheight 4");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_GoodraHisuiMega[] = INCGFX_U16("graphics/pokemon/goodra/hisui/mega/overworld_normal.pal", ".gbapal");
+    const u16 gShinyOverworldPalette_GoodraHisuiMega[] = INCGFX_U16("graphics/pokemon/goodra/hisui/mega/overworld_shiny.pal", ".gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+
+// GoodraMega: placeholder copy of Bulbasaur's graphics in graphics/pokemon/goodra/mega/
+#if !P_GBA_STYLE_SPECIES_GFX
+    const u32 gMonFrontPic_GoodraMega[] = INCGFX_U32("graphics/pokemon/goodra/mega/anim_front.png", ".4bpp.smol");
+    const u16 gMonPalette_GoodraMega[] = INCGFX_U16("graphics/pokemon/goodra/mega/normal.pal", ".gbapal");
+    const u32 gMonBackPic_GoodraMega[] = INCGFX_U32("graphics/pokemon/goodra/mega/back.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_GoodraMega[] = INCGFX_U16("graphics/pokemon/goodra/mega/shiny.pal", ".gbapal");
+#else
+    const u32 gMonFrontPic_GoodraMega[] = INCGFX_U32("graphics/pokemon/goodra/mega/anim_front_gba.png", ".4bpp.smol");
+    const u16 gMonPalette_GoodraMega[] = INCGFX_U16("graphics/pokemon/goodra/mega/normal_gba.pal", ".gbapal");
+    const u32 gMonBackPic_GoodraMega[] = INCGFX_U32("graphics/pokemon/goodra/mega/back_gba.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_GoodraMega[] = INCGFX_U16("graphics/pokemon/goodra/mega/shiny_gba.pal", ".gbapal");
+#endif //P_GBA_STYLE_SPECIES_GFX
+#if !P_GBA_STYLE_SPECIES_ICONS
+    const u8 gMonIcon_GoodraMega[] = INCGFX_U8("graphics/pokemon/goodra/mega/icon.png", ".4bpp");
+#else
+    const u8 gMonIcon_GoodraMega[] = INCGFX_U8("graphics/pokemon/goodra/mega/icon_gba.png", ".4bpp");
+#endif //P_GBA_STYLE_SPECIES_ICONS
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_GoodraMega[] = INCGFX_COMP("graphics/pokemon/goodra/mega/overworld.png", ".4bpp", "-mwidth 4 -mheight 4");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_GoodraMega[] = INCGFX_U16("graphics/pokemon/goodra/mega/overworld_normal.pal", ".gbapal");
+    const u16 gShinyOverworldPalette_GoodraMega[] = INCGFX_U16("graphics/pokemon/goodra/mega/overworld_shiny.pal", ".gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+
+// GrimmsnarlMega: placeholder copy of Bulbasaur's graphics in graphics/pokemon/grimmsnarl/mega/
+#if !P_GBA_STYLE_SPECIES_GFX
+    const u32 gMonFrontPic_GrimmsnarlMega[] = INCGFX_U32("graphics/pokemon/grimmsnarl/mega/anim_front.png", ".4bpp.smol");
+    const u16 gMonPalette_GrimmsnarlMega[] = INCGFX_U16("graphics/pokemon/grimmsnarl/mega/normal.pal", ".gbapal");
+    const u32 gMonBackPic_GrimmsnarlMega[] = INCGFX_U32("graphics/pokemon/grimmsnarl/mega/back.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_GrimmsnarlMega[] = INCGFX_U16("graphics/pokemon/grimmsnarl/mega/shiny.pal", ".gbapal");
+#else
+    const u32 gMonFrontPic_GrimmsnarlMega[] = INCGFX_U32("graphics/pokemon/grimmsnarl/mega/anim_front_gba.png", ".4bpp.smol");
+    const u16 gMonPalette_GrimmsnarlMega[] = INCGFX_U16("graphics/pokemon/grimmsnarl/mega/normal_gba.pal", ".gbapal");
+    const u32 gMonBackPic_GrimmsnarlMega[] = INCGFX_U32("graphics/pokemon/grimmsnarl/mega/back_gba.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_GrimmsnarlMega[] = INCGFX_U16("graphics/pokemon/grimmsnarl/mega/shiny_gba.pal", ".gbapal");
+#endif //P_GBA_STYLE_SPECIES_GFX
+#if !P_GBA_STYLE_SPECIES_ICONS
+    const u8 gMonIcon_GrimmsnarlMega[] = INCGFX_U8("graphics/pokemon/grimmsnarl/mega/icon.png", ".4bpp");
+#else
+    const u8 gMonIcon_GrimmsnarlMega[] = INCGFX_U8("graphics/pokemon/grimmsnarl/mega/icon_gba.png", ".4bpp");
+#endif //P_GBA_STYLE_SPECIES_ICONS
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_GrimmsnarlMega[] = INCGFX_COMP("graphics/pokemon/grimmsnarl/mega/overworld.png", ".4bpp", "-mwidth 4 -mheight 4");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_GrimmsnarlMega[] = INCGFX_U16("graphics/pokemon/grimmsnarl/mega/overworld_normal.pal", ".gbapal");
+    const u16 gShinyOverworldPalette_GrimmsnarlMega[] = INCGFX_U16("graphics/pokemon/grimmsnarl/mega/overworld_shiny.pal", ".gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+
+// HaxorusMega: placeholder copy of Bulbasaur's graphics in graphics/pokemon/haxorus/mega/
+#if !P_GBA_STYLE_SPECIES_GFX
+    const u32 gMonFrontPic_HaxorusMega[] = INCGFX_U32("graphics/pokemon/haxorus/mega/anim_front.png", ".4bpp.smol");
+    const u16 gMonPalette_HaxorusMega[] = INCGFX_U16("graphics/pokemon/haxorus/mega/normal.pal", ".gbapal");
+    const u32 gMonBackPic_HaxorusMega[] = INCGFX_U32("graphics/pokemon/haxorus/mega/back.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_HaxorusMega[] = INCGFX_U16("graphics/pokemon/haxorus/mega/shiny.pal", ".gbapal");
+#else
+    const u32 gMonFrontPic_HaxorusMega[] = INCGFX_U32("graphics/pokemon/haxorus/mega/anim_front_gba.png", ".4bpp.smol");
+    const u16 gMonPalette_HaxorusMega[] = INCGFX_U16("graphics/pokemon/haxorus/mega/normal_gba.pal", ".gbapal");
+    const u32 gMonBackPic_HaxorusMega[] = INCGFX_U32("graphics/pokemon/haxorus/mega/back_gba.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_HaxorusMega[] = INCGFX_U16("graphics/pokemon/haxorus/mega/shiny_gba.pal", ".gbapal");
+#endif //P_GBA_STYLE_SPECIES_GFX
+#if !P_GBA_STYLE_SPECIES_ICONS
+    const u8 gMonIcon_HaxorusMega[] = INCGFX_U8("graphics/pokemon/haxorus/mega/icon.png", ".4bpp");
+#else
+    const u8 gMonIcon_HaxorusMega[] = INCGFX_U8("graphics/pokemon/haxorus/mega/icon_gba.png", ".4bpp");
+#endif //P_GBA_STYLE_SPECIES_ICONS
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_HaxorusMega[] = INCGFX_COMP("graphics/pokemon/haxorus/mega/overworld.png", ".4bpp", "-mwidth 4 -mheight 4");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_HaxorusMega[] = INCGFX_U16("graphics/pokemon/haxorus/mega/overworld_normal.pal", ".gbapal");
+    const u16 gShinyOverworldPalette_HaxorusMega[] = INCGFX_U16("graphics/pokemon/haxorus/mega/overworld_shiny.pal", ".gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+
+// HydreigonMega: placeholder copy of Bulbasaur's graphics in graphics/pokemon/hydreigon/mega/
+#if !P_GBA_STYLE_SPECIES_GFX
+    const u32 gMonFrontPic_HydreigonMega[] = INCGFX_U32("graphics/pokemon/hydreigon/mega/anim_front.png", ".4bpp.smol");
+    const u16 gMonPalette_HydreigonMega[] = INCGFX_U16("graphics/pokemon/hydreigon/mega/normal.pal", ".gbapal");
+    const u32 gMonBackPic_HydreigonMega[] = INCGFX_U32("graphics/pokemon/hydreigon/mega/back.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_HydreigonMega[] = INCGFX_U16("graphics/pokemon/hydreigon/mega/shiny.pal", ".gbapal");
+#else
+    const u32 gMonFrontPic_HydreigonMega[] = INCGFX_U32("graphics/pokemon/hydreigon/mega/anim_front_gba.png", ".4bpp.smol");
+    const u16 gMonPalette_HydreigonMega[] = INCGFX_U16("graphics/pokemon/hydreigon/mega/normal_gba.pal", ".gbapal");
+    const u32 gMonBackPic_HydreigonMega[] = INCGFX_U32("graphics/pokemon/hydreigon/mega/back_gba.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_HydreigonMega[] = INCGFX_U16("graphics/pokemon/hydreigon/mega/shiny_gba.pal", ".gbapal");
+#endif //P_GBA_STYLE_SPECIES_GFX
+#if !P_GBA_STYLE_SPECIES_ICONS
+    const u8 gMonIcon_HydreigonMega[] = INCGFX_U8("graphics/pokemon/hydreigon/mega/icon.png", ".4bpp");
+#else
+    const u8 gMonIcon_HydreigonMega[] = INCGFX_U8("graphics/pokemon/hydreigon/mega/icon_gba.png", ".4bpp");
+#endif //P_GBA_STYLE_SPECIES_ICONS
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_HydreigonMega[] = INCGFX_COMP("graphics/pokemon/hydreigon/mega/overworld.png", ".4bpp", "-mwidth 4 -mheight 4");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_HydreigonMega[] = INCGFX_U16("graphics/pokemon/hydreigon/mega/overworld_normal.pal", ".gbapal");
+    const u16 gShinyOverworldPalette_HydreigonMega[] = INCGFX_U16("graphics/pokemon/hydreigon/mega/overworld_shiny.pal", ".gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+
+// InfernapeMega: placeholder copy of Bulbasaur's graphics in graphics/pokemon/infernape/mega/
+#if !P_GBA_STYLE_SPECIES_GFX
+    const u16 gMonPalette_InfernapeMega[] = INCGFX_U16("graphics/pokemon/infernape/mega/normal.pal", ".gbapal");
+    const u32 gMonBackPic_InfernapeMega[] = INCGFX_U32("graphics/pokemon/infernape/mega/back.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_InfernapeMega[] = INCGFX_U16("graphics/pokemon/infernape/mega/shiny.pal", ".gbapal");
+#else
+    const u16 gMonPalette_InfernapeMega[] = INCGFX_U16("graphics/pokemon/infernape/mega/normal_gba.pal", ".gbapal");
+    const u32 gMonBackPic_InfernapeMega[] = INCGFX_U32("graphics/pokemon/infernape/mega/back_gba.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_InfernapeMega[] = INCGFX_U16("graphics/pokemon/infernape/mega/shiny_gba.pal", ".gbapal");
+#endif //P_GBA_STYLE_SPECIES_GFX
+
+// KingdraMega: placeholder copy of Bulbasaur's graphics in graphics/pokemon/kingdra/mega/
+#if !P_GBA_STYLE_SPECIES_GFX
+    const u32 gMonFrontPic_KingdraMega[] = INCGFX_U32("graphics/pokemon/kingdra/mega/anim_front.png", ".4bpp.smol");
+    const u16 gMonPalette_KingdraMega[] = INCGFX_U16("graphics/pokemon/kingdra/mega/normal.pal", ".gbapal");
+    const u32 gMonBackPic_KingdraMega[] = INCGFX_U32("graphics/pokemon/kingdra/mega/back.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_KingdraMega[] = INCGFX_U16("graphics/pokemon/kingdra/mega/shiny.pal", ".gbapal");
+#else
+    const u32 gMonFrontPic_KingdraMega[] = INCGFX_U32("graphics/pokemon/kingdra/mega/anim_front_gba.png", ".4bpp.smol");
+    const u16 gMonPalette_KingdraMega[] = INCGFX_U16("graphics/pokemon/kingdra/mega/normal_gba.pal", ".gbapal");
+    const u32 gMonBackPic_KingdraMega[] = INCGFX_U32("graphics/pokemon/kingdra/mega/back_gba.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_KingdraMega[] = INCGFX_U16("graphics/pokemon/kingdra/mega/shiny_gba.pal", ".gbapal");
+#endif //P_GBA_STYLE_SPECIES_GFX
+#if !P_GBA_STYLE_SPECIES_ICONS
+    const u8 gMonIcon_KingdraMega[] = INCGFX_U8("graphics/pokemon/kingdra/mega/icon.png", ".4bpp");
+#else
+    const u8 gMonIcon_KingdraMega[] = INCGFX_U8("graphics/pokemon/kingdra/mega/icon_gba.png", ".4bpp");
+#endif //P_GBA_STYLE_SPECIES_ICONS
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_KingdraMega[] = INCGFX_COMP("graphics/pokemon/kingdra/mega/overworld.png", ".4bpp", "-mwidth 4 -mheight 4");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_KingdraMega[] = INCGFX_U16("graphics/pokemon/kingdra/mega/overworld_normal.pal", ".gbapal");
+    const u16 gShinyOverworldPalette_KingdraMega[] = INCGFX_U16("graphics/pokemon/kingdra/mega/overworld_shiny.pal", ".gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+
+// KinglerMega: placeholder copy of Bulbasaur's graphics in graphics/pokemon/kingler/mega/
+#if !P_GBA_STYLE_SPECIES_GFX
+    const u32 gMonFrontPic_KinglerMega[] = INCGFX_U32("graphics/pokemon/kingler/mega/anim_front.png", ".4bpp.smol");
+    const u16 gMonPalette_KinglerMega[] = INCGFX_U16("graphics/pokemon/kingler/mega/normal.pal", ".gbapal");
+    const u32 gMonBackPic_KinglerMega[] = INCGFX_U32("graphics/pokemon/kingler/mega/back.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_KinglerMega[] = INCGFX_U16("graphics/pokemon/kingler/mega/shiny.pal", ".gbapal");
+#else
+    const u32 gMonFrontPic_KinglerMega[] = INCGFX_U32("graphics/pokemon/kingler/mega/anim_front_gba.png", ".4bpp.smol");
+    const u16 gMonPalette_KinglerMega[] = INCGFX_U16("graphics/pokemon/kingler/mega/normal_gba.pal", ".gbapal");
+    const u32 gMonBackPic_KinglerMega[] = INCGFX_U32("graphics/pokemon/kingler/mega/back_gba.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_KinglerMega[] = INCGFX_U16("graphics/pokemon/kingler/mega/shiny_gba.pal", ".gbapal");
+#endif //P_GBA_STYLE_SPECIES_GFX
+#if !P_GBA_STYLE_SPECIES_ICONS
+    const u8 gMonIcon_KinglerMega[] = INCGFX_U8("graphics/pokemon/kingler/mega/icon.png", ".4bpp");
+#else
+    const u8 gMonIcon_KinglerMega[] = INCGFX_U8("graphics/pokemon/kingler/mega/icon_gba.png", ".4bpp");
+#endif //P_GBA_STYLE_SPECIES_ICONS
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_KinglerMega[] = INCGFX_COMP("graphics/pokemon/kingler/mega/overworld.png", ".4bpp", "-mwidth 4 -mheight 4");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_KinglerMega[] = INCGFX_U16("graphics/pokemon/kingler/mega/overworld_normal.pal", ".gbapal");
+    const u16 gShinyOverworldPalette_KinglerMega[] = INCGFX_U16("graphics/pokemon/kingler/mega/overworld_shiny.pal", ".gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+
+// LaprasMega: placeholder copy of Bulbasaur's graphics in graphics/pokemon/lapras/mega/
+#if !P_GBA_STYLE_SPECIES_GFX
+    const u32 gMonFrontPic_LaprasMega[] = INCGFX_U32("graphics/pokemon/lapras/mega/anim_front.png", ".4bpp.smol");
+    const u16 gMonPalette_LaprasMega[] = INCGFX_U16("graphics/pokemon/lapras/mega/normal.pal", ".gbapal");
+    const u32 gMonBackPic_LaprasMega[] = INCGFX_U32("graphics/pokemon/lapras/mega/back.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_LaprasMega[] = INCGFX_U16("graphics/pokemon/lapras/mega/shiny.pal", ".gbapal");
+#else
+    const u32 gMonFrontPic_LaprasMega[] = INCGFX_U32("graphics/pokemon/lapras/mega/anim_front_gba.png", ".4bpp.smol");
+    const u16 gMonPalette_LaprasMega[] = INCGFX_U16("graphics/pokemon/lapras/mega/normal_gba.pal", ".gbapal");
+    const u32 gMonBackPic_LaprasMega[] = INCGFX_U32("graphics/pokemon/lapras/mega/back_gba.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_LaprasMega[] = INCGFX_U16("graphics/pokemon/lapras/mega/shiny_gba.pal", ".gbapal");
+#endif //P_GBA_STYLE_SPECIES_GFX
+#if !P_GBA_STYLE_SPECIES_ICONS
+    const u8 gMonIcon_LaprasMega[] = INCGFX_U8("graphics/pokemon/lapras/mega/icon.png", ".4bpp");
+#else
+    const u8 gMonIcon_LaprasMega[] = INCGFX_U8("graphics/pokemon/lapras/mega/icon_gba.png", ".4bpp");
+#endif //P_GBA_STYLE_SPECIES_ICONS
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_LaprasMega[] = INCGFX_COMP("graphics/pokemon/lapras/mega/overworld.png", ".4bpp", "-mwidth 4 -mheight 4");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_LaprasMega[] = INCGFX_U16("graphics/pokemon/lapras/mega/overworld_normal.pal", ".gbapal");
+    const u16 gShinyOverworldPalette_LaprasMega[] = INCGFX_U16("graphics/pokemon/lapras/mega/overworld_shiny.pal", ".gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+
+// Libergoon: placeholder copy of Bulbasaur's graphics in graphics/pokemon/libergoon/
+#if !P_GBA_STYLE_SPECIES_GFX
+    const u32 gMonFrontPic_Libergoon[] = INCGFX_U32("graphics/pokemon/libergoon/anim_front.png", ".4bpp.smol");
+    const u16 gMonPalette_Libergoon[] = INCGFX_U16("graphics/pokemon/libergoon/normal.pal", ".gbapal");
+    const u32 gMonBackPic_Libergoon[] = INCGFX_U32("graphics/pokemon/libergoon/back.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_Libergoon[] = INCGFX_U16("graphics/pokemon/libergoon/shiny.pal", ".gbapal");
+#else
+    const u32 gMonFrontPic_Libergoon[] = INCGFX_U32("graphics/pokemon/libergoon/anim_front_gba.png", ".4bpp.smol");
+    const u16 gMonPalette_Libergoon[] = INCGFX_U16("graphics/pokemon/libergoon/normal_gba.pal", ".gbapal");
+    const u32 gMonBackPic_Libergoon[] = INCGFX_U32("graphics/pokemon/libergoon/back_gba.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_Libergoon[] = INCGFX_U16("graphics/pokemon/libergoon/shiny_gba.pal", ".gbapal");
+#endif //P_GBA_STYLE_SPECIES_GFX
+#if !P_GBA_STYLE_SPECIES_ICONS
+    const u8 gMonIcon_Libergoon[] = INCGFX_U8("graphics/pokemon/libergoon/icon.png", ".4bpp");
+#else
+    const u8 gMonIcon_Libergoon[] = INCGFX_U8("graphics/pokemon/libergoon/icon_gba.png", ".4bpp");
+#endif //P_GBA_STYLE_SPECIES_ICONS
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_Libergoon[] = INCGFX_U8("graphics/pokemon/libergoon/footprint.png", ".1bpp");
+#endif //P_FOOTPRINTS
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_Libergoon[] = INCGFX_COMP("graphics/pokemon/libergoon/overworld.png", ".4bpp", "-mwidth 4 -mheight 4");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_Libergoon[] = INCGFX_U16("graphics/pokemon/libergoon/overworld_normal.pal", ".gbapal");
+    const u16 gShinyOverworldPalette_Libergoon[] = INCGFX_U16("graphics/pokemon/libergoon/overworld_shiny.pal", ".gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+
+// LuxrayMega: placeholder copy of Bulbasaur's graphics in graphics/pokemon/luxray/mega/
+#if !P_GBA_STYLE_SPECIES_GFX
+    const u32 gMonFrontPic_LuxrayMega[] = INCGFX_U32("graphics/pokemon/luxray/mega/anim_front.png", ".4bpp.smol");
+    const u16 gMonPalette_LuxrayMega[] = INCGFX_U16("graphics/pokemon/luxray/mega/normal.pal", ".gbapal");
+    const u32 gMonBackPic_LuxrayMega[] = INCGFX_U32("graphics/pokemon/luxray/mega/back.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_LuxrayMega[] = INCGFX_U16("graphics/pokemon/luxray/mega/shiny.pal", ".gbapal");
+#else
+    const u32 gMonFrontPic_LuxrayMega[] = INCGFX_U32("graphics/pokemon/luxray/mega/anim_front_gba.png", ".4bpp.smol");
+    const u16 gMonPalette_LuxrayMega[] = INCGFX_U16("graphics/pokemon/luxray/mega/normal_gba.pal", ".gbapal");
+    const u32 gMonBackPic_LuxrayMega[] = INCGFX_U32("graphics/pokemon/luxray/mega/back_gba.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_LuxrayMega[] = INCGFX_U16("graphics/pokemon/luxray/mega/shiny_gba.pal", ".gbapal");
+#endif //P_GBA_STYLE_SPECIES_GFX
+#if !P_GBA_STYLE_SPECIES_ICONS
+    const u8 gMonIcon_LuxrayMega[] = INCGFX_U8("graphics/pokemon/luxray/mega/icon.png", ".4bpp");
+#else
+    const u8 gMonIcon_LuxrayMega[] = INCGFX_U8("graphics/pokemon/luxray/mega/icon_gba.png", ".4bpp");
+#endif //P_GBA_STYLE_SPECIES_ICONS
+
+// MachampMega: placeholder copy of Bulbasaur's graphics in graphics/pokemon/machamp/mega/
+#if !P_GBA_STYLE_SPECIES_GFX
+    const u32 gMonFrontPic_MachampMega[] = INCGFX_U32("graphics/pokemon/machamp/mega/anim_front.png", ".4bpp.smol");
+    const u16 gMonPalette_MachampMega[] = INCGFX_U16("graphics/pokemon/machamp/mega/normal.pal", ".gbapal");
+    const u32 gMonBackPic_MachampMega[] = INCGFX_U32("graphics/pokemon/machamp/mega/back.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_MachampMega[] = INCGFX_U16("graphics/pokemon/machamp/mega/shiny.pal", ".gbapal");
+#else
+    const u32 gMonFrontPic_MachampMega[] = INCGFX_U32("graphics/pokemon/machamp/mega/anim_front_gba.png", ".4bpp.smol");
+    const u16 gMonPalette_MachampMega[] = INCGFX_U16("graphics/pokemon/machamp/mega/normal_gba.pal", ".gbapal");
+    const u32 gMonBackPic_MachampMega[] = INCGFX_U32("graphics/pokemon/machamp/mega/back_gba.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_MachampMega[] = INCGFX_U16("graphics/pokemon/machamp/mega/shiny_gba.pal", ".gbapal");
+#endif //P_GBA_STYLE_SPECIES_GFX
+#if !P_GBA_STYLE_SPECIES_ICONS
+    const u8 gMonIcon_MachampMega[] = INCGFX_U8("graphics/pokemon/machamp/mega/icon.png", ".4bpp");
+#else
+    const u8 gMonIcon_MachampMega[] = INCGFX_U8("graphics/pokemon/machamp/mega/icon_gba.png", ".4bpp");
+#endif //P_GBA_STYLE_SPECIES_ICONS
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_MachampMega[] = INCGFX_COMP("graphics/pokemon/machamp/mega/overworld.png", ".4bpp", "-mwidth 4 -mheight 4");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_MachampMega[] = INCGFX_U16("graphics/pokemon/machamp/mega/overworld_normal.pal", ".gbapal");
+    const u16 gShinyOverworldPalette_MachampMega[] = INCGFX_U16("graphics/pokemon/machamp/mega/overworld_shiny.pal", ".gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+
+// MagnezoneMega: placeholder copy of Bulbasaur's graphics in graphics/pokemon/magnezone/mega/
+#if !P_GBA_STYLE_SPECIES_GFX
+    const u32 gMonFrontPic_MagnezoneMega[] = INCGFX_U32("graphics/pokemon/magnezone/mega/anim_front.png", ".4bpp.smol");
+    const u16 gMonPalette_MagnezoneMega[] = INCGFX_U16("graphics/pokemon/magnezone/mega/normal.pal", ".gbapal");
+    const u32 gMonBackPic_MagnezoneMega[] = INCGFX_U32("graphics/pokemon/magnezone/mega/back.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_MagnezoneMega[] = INCGFX_U16("graphics/pokemon/magnezone/mega/shiny.pal", ".gbapal");
+#else
+    const u32 gMonFrontPic_MagnezoneMega[] = INCGFX_U32("graphics/pokemon/magnezone/mega/anim_front_gba.png", ".4bpp.smol");
+    const u16 gMonPalette_MagnezoneMega[] = INCGFX_U16("graphics/pokemon/magnezone/mega/normal_gba.pal", ".gbapal");
+    const u32 gMonBackPic_MagnezoneMega[] = INCGFX_U32("graphics/pokemon/magnezone/mega/back_gba.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_MagnezoneMega[] = INCGFX_U16("graphics/pokemon/magnezone/mega/shiny_gba.pal", ".gbapal");
+#endif //P_GBA_STYLE_SPECIES_GFX
+#if !P_GBA_STYLE_SPECIES_ICONS
+    const u8 gMonIcon_MagnezoneMega[] = INCGFX_U8("graphics/pokemon/magnezone/mega/icon.png", ".4bpp");
+#else
+    const u8 gMonIcon_MagnezoneMega[] = INCGFX_U8("graphics/pokemon/magnezone/mega/icon_gba.png", ".4bpp");
+#endif //P_GBA_STYLE_SPECIES_ICONS
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_MagnezoneMega[] = INCGFX_COMP("graphics/pokemon/magnezone/mega/overworld.png", ".4bpp", "-mwidth 4 -mheight 4");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_MagnezoneMega[] = INCGFX_U16("graphics/pokemon/magnezone/mega/overworld_normal.pal", ".gbapal");
+    const u16 gShinyOverworldPalette_MagnezoneMega[] = INCGFX_U16("graphics/pokemon/magnezone/mega/overworld_shiny.pal", ".gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+
+// Malarkee: placeholder copy of Bulbasaur's graphics in graphics/pokemon/malarkee/
+#if !P_GBA_STYLE_SPECIES_GFX
+    const u32 gMonFrontPic_Malarkee[] = INCGFX_U32("graphics/pokemon/malarkee/anim_front.png", ".4bpp.smol");
+    const u16 gMonPalette_Malarkee[] = INCGFX_U16("graphics/pokemon/malarkee/normal.pal", ".gbapal");
+    const u32 gMonBackPic_Malarkee[] = INCGFX_U32("graphics/pokemon/malarkee/back.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_Malarkee[] = INCGFX_U16("graphics/pokemon/malarkee/shiny.pal", ".gbapal");
+#else
+    const u32 gMonFrontPic_Malarkee[] = INCGFX_U32("graphics/pokemon/malarkee/anim_front_gba.png", ".4bpp.smol");
+    const u16 gMonPalette_Malarkee[] = INCGFX_U16("graphics/pokemon/malarkee/normal_gba.pal", ".gbapal");
+    const u32 gMonBackPic_Malarkee[] = INCGFX_U32("graphics/pokemon/malarkee/back_gba.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_Malarkee[] = INCGFX_U16("graphics/pokemon/malarkee/shiny_gba.pal", ".gbapal");
+#endif //P_GBA_STYLE_SPECIES_GFX
+#if !P_GBA_STYLE_SPECIES_ICONS
+    const u8 gMonIcon_Malarkee[] = INCGFX_U8("graphics/pokemon/malarkee/icon.png", ".4bpp");
+#else
+    const u8 gMonIcon_Malarkee[] = INCGFX_U8("graphics/pokemon/malarkee/icon_gba.png", ".4bpp");
+#endif //P_GBA_STYLE_SPECIES_ICONS
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_Malarkee[] = INCGFX_U8("graphics/pokemon/malarkee/footprint.png", ".1bpp");
+#endif //P_FOOTPRINTS
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_Malarkee[] = INCGFX_COMP("graphics/pokemon/malarkee/overworld.png", ".4bpp", "-mwidth 4 -mheight 4");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_Malarkee[] = INCGFX_U16("graphics/pokemon/malarkee/overworld_normal.pal", ".gbapal");
+    const u16 gShinyOverworldPalette_Malarkee[] = INCGFX_U16("graphics/pokemon/malarkee/overworld_shiny.pal", ".gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+
+// MiltankMega: placeholder copy of Bulbasaur's graphics in graphics/pokemon/miltank/mega/
+#if !P_GBA_STYLE_SPECIES_GFX
+    const u32 gMonFrontPic_MiltankMega[] = INCGFX_U32("graphics/pokemon/miltank/mega/anim_front.png", ".4bpp.smol");
+    const u16 gMonPalette_MiltankMega[] = INCGFX_U16("graphics/pokemon/miltank/mega/normal.pal", ".gbapal");
+    const u32 gMonBackPic_MiltankMega[] = INCGFX_U32("graphics/pokemon/miltank/mega/back.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_MiltankMega[] = INCGFX_U16("graphics/pokemon/miltank/mega/shiny.pal", ".gbapal");
+#else
+    const u32 gMonFrontPic_MiltankMega[] = INCGFX_U32("graphics/pokemon/miltank/mega/anim_front_gba.png", ".4bpp.smol");
+    const u16 gMonPalette_MiltankMega[] = INCGFX_U16("graphics/pokemon/miltank/mega/normal_gba.pal", ".gbapal");
+    const u32 gMonBackPic_MiltankMega[] = INCGFX_U32("graphics/pokemon/miltank/mega/back_gba.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_MiltankMega[] = INCGFX_U16("graphics/pokemon/miltank/mega/shiny_gba.pal", ".gbapal");
+#endif //P_GBA_STYLE_SPECIES_GFX
+#if !P_GBA_STYLE_SPECIES_ICONS
+    const u8 gMonIcon_MiltankMega[] = INCGFX_U8("graphics/pokemon/miltank/mega/icon.png", ".4bpp");
+#else
+    const u8 gMonIcon_MiltankMega[] = INCGFX_U8("graphics/pokemon/miltank/mega/icon_gba.png", ".4bpp");
+#endif //P_GBA_STYLE_SPECIES_ICONS
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_MiltankMega[] = INCGFX_COMP("graphics/pokemon/miltank/mega/overworld.png", ".4bpp", "-mwidth 4 -mheight 4");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_MiltankMega[] = INCGFX_U16("graphics/pokemon/miltank/mega/overworld_normal.pal", ".gbapal");
+    const u16 gShinyOverworldPalette_MiltankMega[] = INCGFX_U16("graphics/pokemon/miltank/mega/overworld_shiny.pal", ".gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+
+// MrHymn: placeholder copy of Bulbasaur's graphics in graphics/pokemon/mr_hymn/
+#if !P_GBA_STYLE_SPECIES_GFX
+    const u32 gMonFrontPic_MrHymn[] = INCGFX_U32("graphics/pokemon/mr_hymn/anim_front.png", ".4bpp.smol");
+    const u16 gMonPalette_MrHymn[] = INCGFX_U16("graphics/pokemon/mr_hymn/normal.pal", ".gbapal");
+    const u32 gMonBackPic_MrHymn[] = INCGFX_U32("graphics/pokemon/mr_hymn/back.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_MrHymn[] = INCGFX_U16("graphics/pokemon/mr_hymn/shiny.pal", ".gbapal");
+#else
+    const u32 gMonFrontPic_MrHymn[] = INCGFX_U32("graphics/pokemon/mr_hymn/anim_front_gba.png", ".4bpp.smol");
+    const u16 gMonPalette_MrHymn[] = INCGFX_U16("graphics/pokemon/mr_hymn/normal_gba.pal", ".gbapal");
+    const u32 gMonBackPic_MrHymn[] = INCGFX_U32("graphics/pokemon/mr_hymn/back_gba.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_MrHymn[] = INCGFX_U16("graphics/pokemon/mr_hymn/shiny_gba.pal", ".gbapal");
+#endif //P_GBA_STYLE_SPECIES_GFX
+#if !P_GBA_STYLE_SPECIES_ICONS
+    const u8 gMonIcon_MrHymn[] = INCGFX_U8("graphics/pokemon/mr_hymn/icon.png", ".4bpp");
+#else
+    const u8 gMonIcon_MrHymn[] = INCGFX_U8("graphics/pokemon/mr_hymn/icon_gba.png", ".4bpp");
+#endif //P_GBA_STYLE_SPECIES_ICONS
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_MrHymn[] = INCGFX_U8("graphics/pokemon/mr_hymn/footprint.png", ".1bpp");
+#endif //P_FOOTPRINTS
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_MrHymn[] = INCGFX_COMP("graphics/pokemon/mr_hymn/overworld.png", ".4bpp", "-mwidth 4 -mheight 4");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_MrHymn[] = INCGFX_U16("graphics/pokemon/mr_hymn/overworld_normal.pal", ".gbapal");
+    const u16 gShinyOverworldPalette_MrHymn[] = INCGFX_U16("graphics/pokemon/mr_hymn/overworld_shiny.pal", ".gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+
+// OrbeetleMega: placeholder copy of Bulbasaur's graphics in graphics/pokemon/orbeetle/mega/
+#if !P_GBA_STYLE_SPECIES_GFX
+    const u32 gMonFrontPic_OrbeetleMega[] = INCGFX_U32("graphics/pokemon/orbeetle/mega/anim_front.png", ".4bpp.smol");
+    const u16 gMonPalette_OrbeetleMega[] = INCGFX_U16("graphics/pokemon/orbeetle/mega/normal.pal", ".gbapal");
+    const u32 gMonBackPic_OrbeetleMega[] = INCGFX_U32("graphics/pokemon/orbeetle/mega/back.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_OrbeetleMega[] = INCGFX_U16("graphics/pokemon/orbeetle/mega/shiny.pal", ".gbapal");
+#else
+    const u32 gMonFrontPic_OrbeetleMega[] = INCGFX_U32("graphics/pokemon/orbeetle/mega/anim_front_gba.png", ".4bpp.smol");
+    const u16 gMonPalette_OrbeetleMega[] = INCGFX_U16("graphics/pokemon/orbeetle/mega/normal_gba.pal", ".gbapal");
+    const u32 gMonBackPic_OrbeetleMega[] = INCGFX_U32("graphics/pokemon/orbeetle/mega/back_gba.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_OrbeetleMega[] = INCGFX_U16("graphics/pokemon/orbeetle/mega/shiny_gba.pal", ".gbapal");
+#endif //P_GBA_STYLE_SPECIES_GFX
+#if !P_GBA_STYLE_SPECIES_ICONS
+    const u8 gMonIcon_OrbeetleMega[] = INCGFX_U8("graphics/pokemon/orbeetle/mega/icon.png", ".4bpp");
+#else
+    const u8 gMonIcon_OrbeetleMega[] = INCGFX_U8("graphics/pokemon/orbeetle/mega/icon_gba.png", ".4bpp");
+#endif //P_GBA_STYLE_SPECIES_ICONS
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_OrbeetleMega[] = INCGFX_COMP("graphics/pokemon/orbeetle/mega/overworld.png", ".4bpp", "-mwidth 4 -mheight 4");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_OrbeetleMega[] = INCGFX_U16("graphics/pokemon/orbeetle/mega/overworld_normal.pal", ".gbapal");
+    const u16 gShinyOverworldPalette_OrbeetleMega[] = INCGFX_U16("graphics/pokemon/orbeetle/mega/overworld_shiny.pal", ".gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+
+// PikachuFlying: placeholder copy of Bulbasaur's graphics in graphics/pokemon/pikachu/flying/
+#if !P_GBA_STYLE_SPECIES_GFX
+    const u32 gMonFrontPic_PikachuFlying[] = INCGFX_U32("graphics/pokemon/pikachu/flying/anim_front.png", ".4bpp.smol");
+    const u16 gMonPalette_PikachuFlying[] = INCGFX_U16("graphics/pokemon/pikachu/flying/normal.pal", ".gbapal");
+    const u32 gMonBackPic_PikachuFlying[] = INCGFX_U32("graphics/pokemon/pikachu/flying/back.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_PikachuFlying[] = INCGFX_U16("graphics/pokemon/pikachu/flying/shiny.pal", ".gbapal");
+#else
+    const u32 gMonFrontPic_PikachuFlying[] = INCGFX_U32("graphics/pokemon/pikachu/flying/anim_front_gba.png", ".4bpp.smol");
+    const u16 gMonPalette_PikachuFlying[] = INCGFX_U16("graphics/pokemon/pikachu/flying/normal_gba.pal", ".gbapal");
+    const u32 gMonBackPic_PikachuFlying[] = INCGFX_U32("graphics/pokemon/pikachu/flying/back_gba.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_PikachuFlying[] = INCGFX_U16("graphics/pokemon/pikachu/flying/shiny_gba.pal", ".gbapal");
+#endif //P_GBA_STYLE_SPECIES_GFX
+#if !P_GBA_STYLE_SPECIES_ICONS
+    const u8 gMonIcon_PikachuFlying[] = INCGFX_U8("graphics/pokemon/pikachu/flying/icon.png", ".4bpp");
+#else
+    const u8 gMonIcon_PikachuFlying[] = INCGFX_U8("graphics/pokemon/pikachu/flying/icon_gba.png", ".4bpp");
+#endif //P_GBA_STYLE_SPECIES_ICONS
+
+// PikachuSurfing: placeholder copy of Bulbasaur's graphics in graphics/pokemon/pikachu/surfing/
+#if !P_GBA_STYLE_SPECIES_GFX
+    const u32 gMonFrontPic_PikachuSurfing[] = INCGFX_U32("graphics/pokemon/pikachu/surfing/anim_front.png", ".4bpp.smol");
+    const u16 gMonPalette_PikachuSurfing[] = INCGFX_U16("graphics/pokemon/pikachu/surfing/normal.pal", ".gbapal");
+    const u32 gMonBackPic_PikachuSurfing[] = INCGFX_U32("graphics/pokemon/pikachu/surfing/back.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_PikachuSurfing[] = INCGFX_U16("graphics/pokemon/pikachu/surfing/shiny.pal", ".gbapal");
+#else
+    const u32 gMonFrontPic_PikachuSurfing[] = INCGFX_U32("graphics/pokemon/pikachu/surfing/anim_front_gba.png", ".4bpp.smol");
+    const u16 gMonPalette_PikachuSurfing[] = INCGFX_U16("graphics/pokemon/pikachu/surfing/normal_gba.pal", ".gbapal");
+    const u32 gMonBackPic_PikachuSurfing[] = INCGFX_U32("graphics/pokemon/pikachu/surfing/back_gba.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_PikachuSurfing[] = INCGFX_U16("graphics/pokemon/pikachu/surfing/shiny_gba.pal", ".gbapal");
+#endif //P_GBA_STYLE_SPECIES_GFX
+#if !P_GBA_STYLE_SPECIES_ICONS
+    const u8 gMonIcon_PikachuSurfing[] = INCGFX_U8("graphics/pokemon/pikachu/surfing/icon.png", ".4bpp");
+#else
+    const u8 gMonIcon_PikachuSurfing[] = INCGFX_U8("graphics/pokemon/pikachu/surfing/icon_gba.png", ".4bpp");
+#endif //P_GBA_STYLE_SPECIES_ICONS
+
+// Pursola: placeholder copy of Bulbasaur's graphics in graphics/pokemon/pursola/
+#if !P_GBA_STYLE_SPECIES_GFX
+    const u32 gMonFrontPic_Pursola[] = INCGFX_U32("graphics/pokemon/pursola/anim_front.png", ".4bpp.smol");
+    const u16 gMonPalette_Pursola[] = INCGFX_U16("graphics/pokemon/pursola/normal.pal", ".gbapal");
+    const u32 gMonBackPic_Pursola[] = INCGFX_U32("graphics/pokemon/pursola/back.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_Pursola[] = INCGFX_U16("graphics/pokemon/pursola/shiny.pal", ".gbapal");
+#else
+    const u32 gMonFrontPic_Pursola[] = INCGFX_U32("graphics/pokemon/pursola/anim_front_gba.png", ".4bpp.smol");
+    const u16 gMonPalette_Pursola[] = INCGFX_U16("graphics/pokemon/pursola/normal_gba.pal", ".gbapal");
+    const u32 gMonBackPic_Pursola[] = INCGFX_U32("graphics/pokemon/pursola/back_gba.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_Pursola[] = INCGFX_U16("graphics/pokemon/pursola/shiny_gba.pal", ".gbapal");
+#endif //P_GBA_STYLE_SPECIES_GFX
+#if !P_GBA_STYLE_SPECIES_ICONS
+    const u8 gMonIcon_Pursola[] = INCGFX_U8("graphics/pokemon/pursola/icon.png", ".4bpp");
+#else
+    const u8 gMonIcon_Pursola[] = INCGFX_U8("graphics/pokemon/pursola/icon_gba.png", ".4bpp");
+#endif //P_GBA_STYLE_SPECIES_ICONS
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_Pursola[] = INCGFX_U8("graphics/pokemon/pursola/footprint.png", ".1bpp");
+#endif //P_FOOTPRINTS
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_Pursola[] = INCGFX_COMP("graphics/pokemon/pursola/overworld.png", ".4bpp", "-mwidth 4 -mheight 4");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_Pursola[] = INCGFX_U16("graphics/pokemon/pursola/overworld_normal.pal", ".gbapal");
+    const u16 gShinyOverworldPalette_Pursola[] = INCGFX_U16("graphics/pokemon/pursola/overworld_shiny.pal", ".gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+
+// RoseradeMega: placeholder copy of Bulbasaur's graphics in graphics/pokemon/roserade/mega/
+#if !P_GBA_STYLE_SPECIES_GFX
+    const u32 gMonFrontPic_RoseradeMega[] = INCGFX_U32("graphics/pokemon/roserade/mega/anim_front.png", ".4bpp.smol");
+    const u16 gMonPalette_RoseradeMega[] = INCGFX_U16("graphics/pokemon/roserade/mega/normal.pal", ".gbapal");
+    const u32 gMonBackPic_RoseradeMega[] = INCGFX_U32("graphics/pokemon/roserade/mega/back.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_RoseradeMega[] = INCGFX_U16("graphics/pokemon/roserade/mega/shiny.pal", ".gbapal");
+#else
+    const u32 gMonFrontPic_RoseradeMega[] = INCGFX_U32("graphics/pokemon/roserade/mega/anim_front_gba.png", ".4bpp.smol");
+    const u16 gMonPalette_RoseradeMega[] = INCGFX_U16("graphics/pokemon/roserade/mega/normal_gba.pal", ".gbapal");
+    const u32 gMonBackPic_RoseradeMega[] = INCGFX_U32("graphics/pokemon/roserade/mega/back_gba.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_RoseradeMega[] = INCGFX_U16("graphics/pokemon/roserade/mega/shiny_gba.pal", ".gbapal");
+#endif //P_GBA_STYLE_SPECIES_GFX
+#if !P_GBA_STYLE_SPECIES_ICONS
+    const u8 gMonIcon_RoseradeMega[] = INCGFX_U8("graphics/pokemon/roserade/mega/icon.png", ".4bpp");
+#else
+    const u8 gMonIcon_RoseradeMega[] = INCGFX_U8("graphics/pokemon/roserade/mega/icon_gba.png", ".4bpp");
+#endif //P_GBA_STYLE_SPECIES_ICONS
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_RoseradeMega[] = INCGFX_COMP("graphics/pokemon/roserade/mega/overworld.png", ".4bpp", "-mwidth 4 -mheight 4");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_RoseradeMega[] = INCGFX_U16("graphics/pokemon/roserade/mega/overworld_normal.pal", ".gbapal");
+    const u16 gShinyOverworldPalette_RoseradeMega[] = INCGFX_U16("graphics/pokemon/roserade/mega/overworld_shiny.pal", ".gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+
+// SandacondaMega: placeholder copy of Bulbasaur's graphics in graphics/pokemon/sandaconda/mega/
+#if !P_GBA_STYLE_SPECIES_GFX
+    const u32 gMonFrontPic_SandacondaMega[] = INCGFX_U32("graphics/pokemon/sandaconda/mega/anim_front.png", ".4bpp.smol");
+    const u16 gMonPalette_SandacondaMega[] = INCGFX_U16("graphics/pokemon/sandaconda/mega/normal.pal", ".gbapal");
+    const u32 gMonBackPic_SandacondaMega[] = INCGFX_U32("graphics/pokemon/sandaconda/mega/back.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_SandacondaMega[] = INCGFX_U16("graphics/pokemon/sandaconda/mega/shiny.pal", ".gbapal");
+#else
+    const u32 gMonFrontPic_SandacondaMega[] = INCGFX_U32("graphics/pokemon/sandaconda/mega/anim_front_gba.png", ".4bpp.smol");
+    const u16 gMonPalette_SandacondaMega[] = INCGFX_U16("graphics/pokemon/sandaconda/mega/normal_gba.pal", ".gbapal");
+    const u32 gMonBackPic_SandacondaMega[] = INCGFX_U32("graphics/pokemon/sandaconda/mega/back_gba.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_SandacondaMega[] = INCGFX_U16("graphics/pokemon/sandaconda/mega/shiny_gba.pal", ".gbapal");
+#endif //P_GBA_STYLE_SPECIES_GFX
+#if !P_GBA_STYLE_SPECIES_ICONS
+    const u8 gMonIcon_SandacondaMega[] = INCGFX_U8("graphics/pokemon/sandaconda/mega/icon.png", ".4bpp");
+#else
+    const u8 gMonIcon_SandacondaMega[] = INCGFX_U8("graphics/pokemon/sandaconda/mega/icon_gba.png", ".4bpp");
+#endif //P_GBA_STYLE_SPECIES_ICONS
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_SandacondaMega[] = INCGFX_COMP("graphics/pokemon/sandaconda/mega/overworld.png", ".4bpp", "-mwidth 4 -mheight 4");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_SandacondaMega[] = INCGFX_U16("graphics/pokemon/sandaconda/mega/overworld_normal.pal", ".gbapal");
+    const u16 gShinyOverworldPalette_SandacondaMega[] = INCGFX_U16("graphics/pokemon/sandaconda/mega/overworld_shiny.pal", ".gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+
+// ScolipedeMega: placeholder copy of Bulbasaur's graphics in graphics/pokemon/scolipede/mega/
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_ScolipedeMega[] = INCGFX_COMP("graphics/pokemon/scolipede/mega/overworld.png", ".4bpp", "-mwidth 4 -mheight 4");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_ScolipedeMega[] = INCGFX_U16("graphics/pokemon/scolipede/mega/overworld_normal.pal", ".gbapal");
+    const u16 gShinyOverworldPalette_ScolipedeMega[] = INCGFX_U16("graphics/pokemon/scolipede/mega/overworld_shiny.pal", ".gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+
+// ScraftyMega: placeholder copy of Bulbasaur's graphics in graphics/pokemon/scrafty/mega/
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_ScraftyMega[] = INCGFX_COMP("graphics/pokemon/scrafty/mega/overworld.png", ".4bpp", "-mwidth 4 -mheight 4");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_ScraftyMega[] = INCGFX_U16("graphics/pokemon/scrafty/mega/overworld_normal.pal", ".gbapal");
+    const u16 gShinyOverworldPalette_ScraftyMega[] = INCGFX_U16("graphics/pokemon/scrafty/mega/overworld_shiny.pal", ".gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+
+// SnorlaxMega: placeholder copy of Bulbasaur's graphics in graphics/pokemon/snorlax/mega/
+#if !P_GBA_STYLE_SPECIES_GFX
+    const u32 gMonFrontPic_SnorlaxMega[] = INCGFX_U32("graphics/pokemon/snorlax/mega/anim_front.png", ".4bpp.smol");
+    const u16 gMonPalette_SnorlaxMega[] = INCGFX_U16("graphics/pokemon/snorlax/mega/normal.pal", ".gbapal");
+    const u32 gMonBackPic_SnorlaxMega[] = INCGFX_U32("graphics/pokemon/snorlax/mega/back.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_SnorlaxMega[] = INCGFX_U16("graphics/pokemon/snorlax/mega/shiny.pal", ".gbapal");
+#else
+    const u32 gMonFrontPic_SnorlaxMega[] = INCGFX_U32("graphics/pokemon/snorlax/mega/anim_front_gba.png", ".4bpp.smol");
+    const u16 gMonPalette_SnorlaxMega[] = INCGFX_U16("graphics/pokemon/snorlax/mega/normal_gba.pal", ".gbapal");
+    const u32 gMonBackPic_SnorlaxMega[] = INCGFX_U32("graphics/pokemon/snorlax/mega/back_gba.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_SnorlaxMega[] = INCGFX_U16("graphics/pokemon/snorlax/mega/shiny_gba.pal", ".gbapal");
+#endif //P_GBA_STYLE_SPECIES_GFX
+#if !P_GBA_STYLE_SPECIES_ICONS
+    const u8 gMonIcon_SnorlaxMega[] = INCGFX_U8("graphics/pokemon/snorlax/mega/icon.png", ".4bpp");
+#else
+    const u8 gMonIcon_SnorlaxMega[] = INCGFX_U8("graphics/pokemon/snorlax/mega/icon_gba.png", ".4bpp");
+#endif //P_GBA_STYLE_SPECIES_ICONS
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_SnorlaxMega[] = INCGFX_COMP("graphics/pokemon/snorlax/mega/overworld.png", ".4bpp", "-mwidth 4 -mheight 4");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_SnorlaxMega[] = INCGFX_U16("graphics/pokemon/snorlax/mega/overworld_normal.pal", ".gbapal");
+    const u16 gShinyOverworldPalette_SnorlaxMega[] = INCGFX_U16("graphics/pokemon/snorlax/mega/overworld_shiny.pal", ".gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+
+// TorterraMega: placeholder copy of Bulbasaur's graphics in graphics/pokemon/torterra/mega/
+#if !P_GBA_STYLE_SPECIES_GFX
+    const u16 gMonPalette_TorterraMega[] = INCGFX_U16("graphics/pokemon/torterra/mega/normal.pal", ".gbapal");
+    const u32 gMonBackPic_TorterraMega[] = INCGFX_U32("graphics/pokemon/torterra/mega/back.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_TorterraMega[] = INCGFX_U16("graphics/pokemon/torterra/mega/shiny.pal", ".gbapal");
+#else
+    const u16 gMonPalette_TorterraMega[] = INCGFX_U16("graphics/pokemon/torterra/mega/normal_gba.pal", ".gbapal");
+    const u32 gMonBackPic_TorterraMega[] = INCGFX_U32("graphics/pokemon/torterra/mega/back_gba.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_TorterraMega[] = INCGFX_U16("graphics/pokemon/torterra/mega/shiny_gba.pal", ".gbapal");
+#endif //P_GBA_STYLE_SPECIES_GFX
+
+// ToxtricityMega: placeholder copy of Bulbasaur's graphics in graphics/pokemon/toxtricity/mega/
+#if !P_GBA_STYLE_SPECIES_GFX
+    const u32 gMonFrontPic_ToxtricityMega[] = INCGFX_U32("graphics/pokemon/toxtricity/mega/anim_front.png", ".4bpp.smol");
+    const u16 gMonPalette_ToxtricityMega[] = INCGFX_U16("graphics/pokemon/toxtricity/mega/normal.pal", ".gbapal");
+    const u32 gMonBackPic_ToxtricityMega[] = INCGFX_U32("graphics/pokemon/toxtricity/mega/back.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_ToxtricityMega[] = INCGFX_U16("graphics/pokemon/toxtricity/mega/shiny.pal", ".gbapal");
+#else
+    const u32 gMonFrontPic_ToxtricityMega[] = INCGFX_U32("graphics/pokemon/toxtricity/mega/anim_front_gba.png", ".4bpp.smol");
+    const u16 gMonPalette_ToxtricityMega[] = INCGFX_U16("graphics/pokemon/toxtricity/mega/normal_gba.pal", ".gbapal");
+    const u32 gMonBackPic_ToxtricityMega[] = INCGFX_U32("graphics/pokemon/toxtricity/mega/back_gba.png", ".4bpp.smol");
+    const u16 gMonShinyPalette_ToxtricityMega[] = INCGFX_U16("graphics/pokemon/toxtricity/mega/shiny_gba.pal", ".gbapal");
+#endif //P_GBA_STYLE_SPECIES_GFX
+#if !P_GBA_STYLE_SPECIES_ICONS
+    const u8 gMonIcon_ToxtricityMega[] = INCGFX_U8("graphics/pokemon/toxtricity/mega/icon.png", ".4bpp");
+#else
+    const u8 gMonIcon_ToxtricityMega[] = INCGFX_U8("graphics/pokemon/toxtricity/mega/icon_gba.png", ".4bpp");
+#endif //P_GBA_STYLE_SPECIES_ICONS
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_ToxtricityMega[] = INCGFX_COMP("graphics/pokemon/toxtricity/mega/overworld.png", ".4bpp", "-mwidth 4 -mheight 4");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_ToxtricityMega[] = INCGFX_U16("graphics/pokemon/toxtricity/mega/overworld_normal.pal", ".gbapal");
+    const u16 gShinyOverworldPalette_ToxtricityMega[] = INCGFX_U16("graphics/pokemon/toxtricity/mega/overworld_shiny.pal", ".gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
