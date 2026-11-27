@@ -1,3 +1,5 @@
 mapscripts Amberite_Valley_MapScripts {
-	
+    MAP_SCRIPT_ON_TRANSITION {
+        setrespawn(HEAL_LOCATION_AMBERITE_VALLEY)
+    }
 }

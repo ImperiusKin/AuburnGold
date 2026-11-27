@@ -349,6 +349,66 @@
       "y": 12,
       "respawn_map": "MAP_SIX_ISLAND_POKEMON_CENTER_1F",
       "respawn_npc": "LOCALID_SIX_ISLAND_NURSE"
+    },
+    {
+      "id": "HEAL_LOCATION_NEW_BARK_TOWN",
+      "map": "MAP_NEW_BARK_TOWN",
+      "x": 29,
+      "y": 23,
+      "respawn_map": "MAP_NEW_BARK_TOWN_POKEMON_CENTER",
+      "respawn_npc": "LOCALID_NEW_BARK_TOWN_NURSE",
+      "respawn_x": 10,
+      "respawn_y": 14
+    },
+    {
+      "id": "HEAL_LOCATION_CHERRYGROVE_CITY",
+      "map": "MAP_CHERRYGROVE_CITY",
+      "x": 51,
+      "y": 6,
+      "respawn_map": "MAP_CHERRYGROVE_CITY_POKEMON_CENTER",
+      "respawn_npc": "LOCALID_CHERRYGROVE_CITY_NURSE",
+      "respawn_x": 10,
+      "respawn_y": 14
+    },
+    {
+      "id": "HEAL_LOCATION_VIOLET_CITY",
+      "map": "MAP_VIOLET_CITY",
+      "x": 31,
+      "y": 25,
+      "respawn_map": "MAP_VIOLET_CITY_POKEMON_CENTER",
+      "respawn_npc": "LOCALID_VIOLET_CITY_NURSE",
+      "respawn_x": 10,
+      "respawn_y": 14
+    },
+    {
+      "id": "HEAL_LOCATION_ROUTE32",
+      "map": "MAP_ROUTE_32",
+      "x": 30,
+      "y": 123,
+      "respawn_map": "MAP_ROUTE32_POKEMON_CENTER",
+      "respawn_npc": "LOCALID_ROUTE_32_NURSE",
+      "respawn_x": 10,
+      "respawn_y": 14
+    },
+    {
+      "id": "HEAL_LOCATION_HAPPY_TOWN",
+      "map": "MAP_HAPPY_TOWN",
+      "x": 17,
+      "y": 24,
+      "respawn_map": "MAP_HAPPY_TOWN_POKEMON_CENTER",
+      "respawn_npc": "LOCALID_HAPPY_TOWN_NURSE",
+      "respawn_x": 10,
+      "respawn_y": 14
+    },
+    {
+      "id": "HEAL_LOCATION_AMBERITE_VALLEY",
+      "map": "MAP_AMBERITE_VALLEY",
+      "x": 26,
+      "y": 27,
+      "respawn_map": "MAP_AMBERITE_VALLEY_POKEMON_CENTER",
+      "respawn_npc": "LOCALID_AMBERITE_VALLEY_NURSE",
+      "respawn_x": 10,
+      "respawn_y": 14
     }
   ]
 }

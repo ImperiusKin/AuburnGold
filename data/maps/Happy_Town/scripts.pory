@@ -1,3 +1,5 @@
 mapscripts Happy_Town_MapScripts {
-	
+    MAP_SCRIPT_ON_TRANSITION {
+        setrespawn(HEAL_LOCATION_HAPPY_TOWN)
+    }	
 }
