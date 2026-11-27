@@ -10,6 +10,10 @@ static inline enum Region GetRegionForSectionId(u32 sectionId)
 {
     if (sectionId >= KANTO_MAPSEC_START && sectionId < MAPSEC_SPECIAL_AREA)
         return REGION_KANTO;
+    // Jotho map sections are appended after the vanilla ones, so everything from
+    // MAPSEC_ROUTE_29 on (including MAPSEC_NONE, used by interiors) counts as Jotho.
+    if (sectionId >= JOTHO_MAPSEC_START)
+        return REGION_JOHTO;
     return REGION_HOENN;
 }
 

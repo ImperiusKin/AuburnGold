@@ -134,6 +134,7 @@ static const u8 sRegionMapPlayerIcon_LeafGfx[] = INCGFX_U8("graphics/pokenav/reg
 
 #include "data/region_map/region_map_layout.h"
 #include "data/region_map/region_map_layout_kanto.h"
+#include "data/region_map/region_map_layout_jotho.h"
 #include "data/region_map/region_map_layout_sevii123.h"
 #include "data/region_map/region_map_layout_sevii45.h"
 #include "data/region_map/region_map_layout_sevii67.h"
@@ -304,6 +305,13 @@ static const u16 ALIGNED(4) sRegionMapKanto_Pal[] = INCGFX_U16("graphics/pokenav
 static const u32 sRegionMapKanto_Gfx[] = INCGFX_U32("graphics/pokenav/region_map/map_kanto.png", ".8bpp.smol");
 static const u32 sRegionMapKanto_Tilemap[] = INCGFX_U32("graphics/pokenav/region_map/map_kanto.bin", ".smolTM");
 
+static const u16 ALIGNED(4) sPokedexAreaMapJotho_Pal[] = INCGFX_U16("graphics/pokedex/region_map_jotho.pal", ".gbapal");
+static const u32 sPokedexAreaMapJotho_Gfx[] = INCGFX_U32("graphics/pokedex/region_map_jotho.png", ".8bpp.smol");
+static const u32 sPokedexAreaMapJotho_Tilemap[] = INCGFX_U32("graphics/pokedex/region_map_jotho.bin", ".smolTM");
+static const u16 ALIGNED(4) sRegionMapJotho_Pal[] = INCGFX_U16("graphics/pokenav/region_map/map_jotho.pal", ".gbapal");
+static const u32 sRegionMapJotho_Gfx[] = INCGFX_U32("graphics/pokenav/region_map/map_jotho.png", ".8bpp.smol");
+static const u32 sRegionMapJotho_Tilemap[] = INCGFX_U32("graphics/pokenav/region_map/map_jotho.bin", ".smolTM");
+
 static const u16 ALIGNED(4) sPokedexAreaMapSevii123_Pal[] = INCGFX_U16("graphics/pokedex/region_map_sevii123.pal", ".gbapal");
 static const u32 sPokedexAreaMapSevii123_Gfx[] = INCGFX_U32("graphics/pokedex/region_map_sevii123.png", ".8bpp.smol");
 static const u32 sPokedexAreaMapSevii123_Tilemap[] = INCGFX_U32("graphics/pokedex/region_map_sevii123.bin", ".smolTM");
@@ -346,6 +354,16 @@ const struct RegionMapInfo gRegionMapInfos[] =
         .regionMapPalette = sRegionMapKanto_Pal,
         .regionMapGfx = sRegionMapKanto_Gfx,
         .regionMapTilemap = sRegionMapKanto_Tilemap,
+    },
+    [REGION_MAP_JOTHO]    =
+    {
+        .dexMapPalette = sPokedexAreaMapJotho_Pal,
+        .dexMapGfx = sPokedexAreaMapJotho_Gfx,
+        .dexMapTilemap = sPokedexAreaMapJotho_Tilemap,
+        .dexMapPaletteSize = sizeof(sPokedexAreaMapJotho_Pal),
+        .regionMapPalette = sRegionMapJotho_Pal,
+        .regionMapGfx = sRegionMapJotho_Gfx,
+        .regionMapTilemap = sRegionMapJotho_Tilemap,
     },
     [REGION_MAP_SEVII123] =
     {
@@ -1177,6 +1195,8 @@ enum RegionMapType GetRegionMapType(u32 mapSecId)
         default:
             return REGION_MAP_KANTO;
         }
+    case REGION_JOHTO:
+        return REGION_MAP_JOTHO;
     case REGION_HOENN:
     default:
         return REGION_MAP_HOENN;
@@ -1207,6 +1227,8 @@ static mapsec_u16_t GetMapSecIdAt(u16 x, u16 y)
         default:
                 return sRegionMapSections_Kanto[y][x];
         }
+    case REGION_JOHTO:
+        return sRegionMapSections_Jotho[y][x];
     case REGION_HOENN:
     default:
             return sRegionMap_MapSectionLayout[y][x];

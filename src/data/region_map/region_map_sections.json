@@ -1629,7 +1629,11 @@
     },
     {
       "id": "MAPSEC_ROUTE_29",
-      "name": "ROUTE 29"
+      "name": "ROUTE 29",
+      "x": 6,
+      "y": 4,
+      "width": 4,
+      "height": 1
     },
     {
       "id": "MAPSEC_ROUTE_31",
@@ -1637,67 +1641,147 @@
     },
     {
       "id": "MAPSEC_ROUTE_32",
-      "name": "ROUTE 32"
+      "name": "ROUTE 32",
+      "x": 2,
+      "y": 2,
+      "width": 1,
+      "height": 6
     },
     {
       "id": "MAPSEC_ROUTE_30",
-      "name": "ROUTE 30"
+      "name": "ROUTE 30",
+      "x": 4,
+      "y": 1,
+      "width": 2,
+      "height": 3
     },
     {
       "id": "MAPSEC_ROUTE_45",
-      "name": "ROUTE 45"
+      "name": "ROUTE 45",
+      "x": 8,
+      "y": 1,
+      "width": 1,
+      "height": 3
     },
     {
       "id": "MAPSEC_VIOLET_CITY",
-      "name": "VIOLET CITY"
+      "name": "VIOLET CITY",
+      "x": 2,
+      "y": 1,
+      "width": 2,
+      "height": 1
     },
     {
       "id": "MAPSEC_DARK_CAVE",
-      "name": "DARK CAVE"
+      "name": "DARK CAVE",
+      "x": 5,
+      "y": 0,
+      "width": 1,
+      "height": 1
     },
     {
       "id": "MAPSEC_NEW_BARK_TOWN",
-      "name": "NEW BARK TOWN"
+      "name": "NEW BARK TOWN",
+      "x": 10,
+      "y": 4,
+      "width": 1,
+      "height": 1
     },
     {
       "id": "MAPSEC_MT_FREEZE",
-      "name": "MT FREEZE"
+      "name": "MT FREEZE",
+      "x": 10,
+      "y": 8,
+      "width": 1,
+      "height": 1
     },
     {
       "id": "MAPSEC_SOUTHERN_FIELD",
-      "name": "SOUTHERN FIELD"
+      "name": "SOUTHERN FIELD",
+      "x": 8,
+      "y": 5,
+      "width": 1,
+      "height": 1
     },
     {
       "id": "MAPSEC_CATALLIA_CITY",
-      "name": "CATALLIA CITY"
+      "name": "CATALLIA CITY",
+      "x": 7,
+      "y": 5,
+      "width": 1,
+      "height": 1
     },
     {
       "id": "MAPSEC_HALLU_FOREST",
-      "name": "HALLU FOREST"
+      "name": "HALLU FOREST",
+      "x": 8,
+      "y": 8,
+      "width": 1,
+      "height": 1
     },
     {
       "id": "MAPSEC_HAPPY_TOWN",
-      "name": "HAPPY TOWN"
+      "name": "HAPPY TOWN",
+      "x": 3,
+      "y": 3,
+      "width": 1,
+      "height": 1
     },
     {
       "id": "MAPSEC_FLORANDO_CITY",
-      "name": "FLORANDO CITY"
+      "name": "FLORANDO CITY",
+      "x": 6,
+      "y": 6,
+      "width": 1,
+      "height": 1
     },
     {
       "id": "MAPSEC_AMBERITE_VALLEY",
-      "name": "AMBERITE VALLEY"
+      "name": "AMBERITE VALLEY",
+      "x": 8,
+      "y": 6,
+      "width": 1,
+      "height": 1
     },
     {
       "id": "MAPSEC_PALM_HILL_CITY",
-      "name": "PALM HILL CITY"
+      "name": "PALM HILL CITY",
+      "x": 10,
+      "y": 6,
+      "width": 1,
+      "height": 1
     },
     {
       "id": "MAPSEC_CHERRYGROVE_CITY",
-      "name": "CHERRYGROVE CITY"
+      "name": "CHERRYGROVE CITY",
+      "x": 5,
+      "y": 4,
+      "width": 1,
+      "height": 1
     },
     {
       "id": "MAPSEC_BLUEMOON_FALLS",
-      "name": "Bluemoon Falls"
+      "name": "BLUEMOON FALLS",
+      "x": 4,
+      "y": 4,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_ROUTE_27",
+      "name": "ROUTE 27",
+      "x": 11,
+      "y": 4,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_SPROUT_TOWER",
+      "name": "SPROUT TOWER",
+      "x": 2,
+      "y": 0,
+      "width": 1,
+      "height": 1
     }
   ]
 }

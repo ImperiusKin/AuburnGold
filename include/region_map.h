@@ -8,6 +8,7 @@
 
 enum RegionMapType
 {
+    REGION_MAP_JOTHO,
     REGION_MAP_HOENN,
     REGION_MAP_KANTO,
     REGION_MAP_SEVII123,
