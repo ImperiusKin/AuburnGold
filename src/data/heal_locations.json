@@ -409,6 +409,16 @@
       "respawn_npc": "LOCALID_AMBERITE_VALLEY_NURSE",
       "respawn_x": 10,
       "respawn_y": 14
+    },
+    {
+      "id": "HEAL_LOCATION_CATALLIA_CITY",
+      "map": "MAP_CATALLIA_CITY",
+      "x": 25,
+      "y": 52,
+      "respawn_map": "MAP_CATALLIA_CITY_POKEMON_CENTER",
+      "respawn_npc": "LOCALID_CATALLIA_CITY_NURSE",
+      "respawn_x": 10,
+      "respawn_y": 14
     }
   ]
 }

@@ -1,3 +1,5 @@
 mapscripts Catallia_City_MapScripts {
-	
+    MAP_SCRIPT_ON_TRANSITION {
+        setrespawn(HEAL_LOCATION_CATALLIA_CITY)
+    }
 }
